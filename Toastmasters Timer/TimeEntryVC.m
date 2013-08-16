@@ -128,7 +128,7 @@
     TimerVC *vc = [self.storyboard instantiateViewControllerWithIdentifier:vcId];
     vc.times = self.times;
     [self.navigationController pushViewController:vc animated:YES];
-    [vc startButtonPress:nil];    
+    [vc toggleTimer];
 }
 
 

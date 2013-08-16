@@ -73,6 +73,8 @@
     self.secondsElasped = self.totalSeconds - self.secondsRemaining;
 }
 
-
+- (BOOL)isRunning {
+    return (BOOL)self.timer;
+}
 
 @end

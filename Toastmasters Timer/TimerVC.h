@@ -14,6 +14,5 @@
 @interface TimerVC : UIViewController <TimerDelegate>
 @property (strong, nonatomic) Times *times;
 
-- (IBAction)startButtonPress:(id)sender;
-
+- (void)toggleTimer;
 @end

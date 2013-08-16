@@ -16,6 +16,7 @@
 @property NSInteger totalSeconds;
 @property (strong, nonatomic) IBOutlet UILabel *secondsLabel;
 @property (strong, nonatomic) IBOutlet UILabel *minutesLabel;
+@property (strong, nonatomic) IBOutlet UIButton *pauseButton;
 @end
 
 @implementation TimerVC
@@ -33,6 +34,7 @@
     [super viewDidLoad];
     [self setupTimer];
     [self setupTotalSeconds];
+    [self resetView];
 }
 - (void)setupTimer {
     self.timer = [[Timer alloc] initWithMinutes:self.times.greenMinutes andSeconds:self.times.greenSeconds];
@@ -40,10 +42,6 @@
 }
 - (void)setupTotalSeconds {
     self.totalSeconds = [Helper totalSecondsForMinutes:self.times.greenMinutes andSeconds:self.times.greenSeconds];
-}
-
-- (void)viewWillAppear:(BOOL)animated {
-    [self resetView];
 }
 - (void)resetView {
     self.minutesLabel.text = [Helper unitStringForInteger:0];
@@ -55,16 +53,34 @@
     [super didReceiveMemoryWarning];
 }
 
-- (IBAction)startButtonPress:(id)sender {
-    [self.timer start];
-}
+
 - (IBAction)pauseButtonPress:(id)sender {
-    [self.timer pause];
+    [self toggleTimer];
+}
+- (void)toggleTimer {
+    if ([self.timer isRunning]) {
+        [self.timer pause];
+        [self changeButtonToContinueTimer];
+    } else {
+        [self.timer start];
+        [self changeButtonToPauseTimer];
+    }
+}
+
+- (void)changeButtonToContinueTimer {
+    [self.pauseButton setTitle:@"Continue" forState:UIControlStateNormal]; 
+}
+- (void)changeButtonToPauseTimer {
+    [self.pauseButton setTitle:@"Pause" forState:UIControlStateNormal];
+}
+- (void)changeButtonToStartTimer {
+    [self.pauseButton setTitle:@"Start" forState:UIControlStateNormal];
 }
 
 - (IBAction)resetButtonPress:(id)sender {
     [self.timer reset];
     [self resetView];
+    [self changeButtonToStartTimer];
 }
 
 

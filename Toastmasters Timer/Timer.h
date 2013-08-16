@@ -20,7 +20,7 @@
 - (void)start;
 - (void)pause;
 - (void)reset;
-
+- (BOOL)isRunning;
 
 
 @end
