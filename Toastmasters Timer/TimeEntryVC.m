@@ -73,22 +73,38 @@
 }
 - (IBAction)increaseSecondsButtonPress:(id)sender {
     if (self.seconds + SECONDS_INCREMENT >= 60) {
-        self.seconds = (self.seconds + SECONDS_INCREMENT)%60;
-        self.minutes = self.minutes + MINUTES_INCREMENT;
-        [self updateMinutesLabel];
+        [self rollUpMinutes];
     } else {
         self.seconds = self.seconds + SECONDS_INCREMENT;
     }
-    [self updateSecondsLabel];
+    [self updateLabels];
 }
 - (IBAction)decreaseSecondsButtonPress:(id)sender {
     if (self.seconds - SECONDS_INCREMENT >= 0) {
         self.seconds = self.seconds - SECONDS_INCREMENT;
+    } else {
+        [self rollDownMinutes];
     }
-    [self updateSecondsLabel];
+    [self updateLabels];
+}
+
+- (void)rollUpMinutes {
+    self.seconds = (self.seconds + SECONDS_INCREMENT)%60;
+    self.minutes++;
+}
+
+- (void)rollDownMinutes {
+    if (self.minutes > 0) {
+        self.minutes--;
+        self.seconds = self.seconds - SECONDS_INCREMENT + 60;
+    }
 }
 
 
+- (void)updateLabels {
+    [self updateMinutesLabel];
+    [self updateSecondsLabel];
+}
 - (void)updateMinutesLabel {
     self.minutesLabel.text = [Helper unitStringForInteger:self.minutes];
 }
