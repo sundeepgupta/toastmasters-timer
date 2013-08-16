@@ -10,9 +10,11 @@
 
 @interface Times : NSObject
 
+@property NSInteger greenMinutes;
+@property NSInteger greenSeconds;
 
 
 - (NSDictionary *)greenUnits;
-
+- (void)saveGreenWithUnits:(NSDictionary *)units;
 
 @end

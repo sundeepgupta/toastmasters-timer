@@ -9,6 +9,9 @@
 #import "TimeEntryVC.h"
 #import "Times.h"
 
+#define MINUTES_INCREMENT 1 //If this is not 1, the seconds incremntor will break this.
+#define SECONDS_INCREMENT 5
+
 @interface TimeEntryVC ()
 @property (strong, nonatomic) Times *times;
 @property NSInteger minutes;
@@ -54,19 +57,29 @@
 
 
 - (IBAction)increaseMinutesButtonPress:(id)sender {
-    self.minutes++;
+    self.minutes = self.minutes + MINUTES_INCREMENT;
     [self updateMinutesLabel];
 }
 - (IBAction)decreaseMinutesButtonPress:(id)sender {
-    self.minutes--;
+    if (self.minutes - MINUTES_INCREMENT >= 0) {
+        self.minutes = self.minutes - MINUTES_INCREMENT;
+    }
     [self updateMinutesLabel];
 }
 - (IBAction)increaseSecondsButtonPress:(id)sender {
-    self.seconds = self.seconds + 5;
+    if (self.seconds + SECONDS_INCREMENT >= 60) {
+        self.seconds = (self.seconds + SECONDS_INCREMENT)%60;
+        self.minutes = self.minutes + MINUTES_INCREMENT;
+        [self updateMinutesLabel];
+    } else {
+        self.seconds = self.seconds + SECONDS_INCREMENT;
+    }
     [self updateSecondsLabel];
 }
 - (IBAction)decreaseSecondsButtonPress:(id)sender {
-    self.seconds = self.seconds - 5;
+    if (self.seconds - SECONDS_INCREMENT >= 0) {
+        self.seconds = self.seconds - SECONDS_INCREMENT;
+    }
     [self updateSecondsLabel];
 }
 
@@ -80,8 +93,21 @@
 
 
 - (IBAction)startButtonPress:(id)sender {
+    [self saveTimes];
+    [self transitionView];
+}
+
+- (void)saveTimes {
+    NSDictionary *units = [Helper unitsForMinutes:self.minutes andSeconds:self.seconds];
+    [self.times saveGreenWithUnits:units];
     
 }
+
+- (void)transitionView {
+    
+}
+
+
 
 
 @end
