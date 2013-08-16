@@ -17,7 +17,6 @@
 - (Timer *)initWithSeconds:(NSInteger)seconds;
 - (void)start;
 - (void)pause;
-- (void)stop;
 - (void)reset;
 
 

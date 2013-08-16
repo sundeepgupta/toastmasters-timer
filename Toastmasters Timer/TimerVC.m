@@ -43,7 +43,7 @@
     [self resetView];
 }
 - (void)resetView {
-    self.secondsRemainingLabel.text = @"0";
+    self.secondsRemainingLabel.text = [NSString stringWithFormat:@"%d", START_TIME];
 }
 
 - (void)didReceiveMemoryWarning
@@ -66,6 +66,21 @@
 
 - (void)updateViewWithSecondsRemaining:(NSInteger)secondsRemaining {
     self.secondsRemainingLabel.text = [NSString stringWithFormat:@"%d", secondsRemaining];
+    if (secondsRemaining == 0) {
+        [self handleFinishedTimer];
+    }
+}
+
+- (void)handleFinishedTimer {
+    [self alertUser];
+    [self.timer reset];
+    [self resetView];
+}
+
+- (void)alertUser {
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Timer done" message:nil delegate:nil cancelButtonTitle:@"ok" otherButtonTitles:nil, nil];
+    [alert show];
+    AudioServicesPlaySystemSound(kSystemSoundID_Vibrate);
 }
 
 

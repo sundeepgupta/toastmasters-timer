@@ -41,27 +41,21 @@
 }
 
 - (void)pause {
-    
-}
-
-- (void)stop {
-    [self.timer invalidate];
-    self.timer = nil;
+    [self stop];
 }
 
 - (void)reset {
     [self stop];
     [self setupSeconds];
 }
+- (void)stop {
+    [self.timer invalidate];
+    self.timer = nil;
+}
 
 - (void)updateSecondsRemaining {
     self.secondsRemaining = self.secondsRemaining - SECONDS_INTERVAL;
-    
     [self.delegate updateViewWithSecondsRemaining:self.secondsRemaining];
-
-    if (self.secondsRemaining == 0) {
-        [self timerFinished];
-    }
 }
 
 - (void)timerFinished {

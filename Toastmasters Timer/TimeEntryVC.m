@@ -7,8 +7,10 @@
 //
 
 #import "TimeEntryVC.h"
+#import "Times.h"
 
 @interface TimeEntryVC ()
+@property (strong, nonatomic) Times *times;
 @property NSInteger minutes;
 @property NSInteger seconds;
 @property (strong, nonatomic) IBOutlet UILabel *minutesLabel;
@@ -29,18 +31,28 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.minutes = 0;
-    self.seconds = 0;
-    [self updateMinutesLabel];
-    [self updateSecondsLabel];
+    [self setupTimes];
+    [self setupView];
     
 }
+- (void)setupTimes {
+    self.times = [[Times alloc] init];
+    NSDictionary *units = [self.times greenUnits];
+    self.minutes = [[units valueForKey:MINUTES_KEY] integerValue];
+    self.seconds = [[units valueForKey:SECONDS_KEY] integerValue];
+}
+- (void)setupView {
+    self.minutesLabel.text = [Helper unitStringForInteger:self.minutes];
+    self.secondsLabel.text = [Helper unitStringForInteger:self.seconds];
+}
+
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
+
+
 - (IBAction)increaseMinutesButtonPress:(id)sender {
     self.minutes++;
     [self updateMinutesLabel];
@@ -59,12 +71,16 @@
 }
 
 
-
 - (void)updateMinutesLabel {
-    self.minutesLabel.text = [NSString stringWithFormat:@"%d", self.minutes];
+    self.minutesLabel.text = [Helper unitStringForInteger:self.minutes];
 }
 - (void)updateSecondsLabel {
-    self.secondsLabel.text = [NSString stringWithFormat:@"%d", self.seconds];
+    self.secondsLabel.text = [Helper unitStringForInteger:self.seconds];
+}
+
+
+- (IBAction)startButtonPress:(id)sender {
+    
 }
 
 
