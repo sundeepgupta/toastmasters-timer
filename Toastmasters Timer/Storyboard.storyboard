@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12E55" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="FM3-z2-PnQ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12E55" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="dtZ-qJ-XmN">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
     </dependencies>
@@ -25,7 +25,7 @@
                                     <action selector="startButtonPress:" destination="MHZ-8T-RmM" eventType="touchUpInside" id="UfS-Pn-e7I"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MEi-dn-KAr">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="22" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MEi-dn-KAr">
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -56,33 +56,48 @@
                                     <action selector="resetButtonPress:" destination="MHZ-8T-RmM" eventType="touchUpInside" id="eHg-TQ-mbD"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="05" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ymc-af-61W">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text=":" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Udd-ns-0Ol">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="TKg-VJ-Qsh" firstAttribute="top" secondItem="jbE-fB-4xA" secondAttribute="top" constant="175" id="2hY-vG-TYd"/>
                             <constraint firstItem="MEi-dn-KAr" firstAttribute="centerX" secondItem="jbE-fB-4xA" secondAttribute="centerX" type="default" id="4L4-lb-Gi6"/>
+                            <constraint firstItem="ymc-af-61W" firstAttribute="baseline" secondItem="Udd-ns-0Ol" secondAttribute="baseline" type="default" id="HVm-w7-boM"/>
                             <constraint firstAttribute="trailing" secondItem="G9q-GC-S9s" secondAttribute="trailing" constant="66" id="HwC-y3-fCI"/>
                             <constraint firstAttribute="trailing" secondItem="1rZ-oZ-tef" secondAttribute="trailing" constant="36" id="MTy-aO-HR0"/>
-                            <constraint firstItem="MEi-dn-KAr" firstAttribute="top" secondItem="jbE-fB-4xA" secondAttribute="top" constant="251" id="QBx-Dc-uyc"/>
+                            <constraint firstItem="MEi-dn-KAr" firstAttribute="leading" secondItem="Udd-ns-0Ol" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="NSp-01-E8d"/>
+                            <constraint firstItem="Udd-ns-0Ol" firstAttribute="baseline" secondItem="MEi-dn-KAr" secondAttribute="baseline" type="default" id="Scg-If-Jb8"/>
+                            <constraint firstItem="Udd-ns-0Ol" firstAttribute="leading" secondItem="ymc-af-61W" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="dUu-sT-sH8"/>
                             <constraint firstItem="MEi-dn-KAr" firstAttribute="centerX" secondItem="TKg-VJ-Qsh" secondAttribute="centerX" type="default" id="dXD-TW-MGo"/>
                             <constraint firstItem="1rZ-oZ-tef" firstAttribute="baseline" secondItem="TKg-VJ-Qsh" secondAttribute="baseline" type="default" id="fL0-DQ-Q5V"/>
                             <constraint firstAttribute="bottom" secondItem="G9q-GC-S9s" secondAttribute="bottom" constant="129" id="hdx-eU-2yj"/>
+                            <constraint firstItem="ymc-af-61W" firstAttribute="top" secondItem="jbE-fB-4xA" secondAttribute="top" constant="251" id="oXZ-df-qrU"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="secondsRemainingLabel" destination="MEi-dn-KAr" id="MrP-NK-xZp"/>
+                        <outlet property="minutesLabel" destination="ymc-af-61W" id="CdE-ue-UoC"/>
+                        <outlet property="secondsLabel" destination="MEi-dn-KAr" id="H1h-mM-gmf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AbE-g8-QrS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="263" y="-342"/>
+            <point key="canvasLocation" x="789" y="-342"/>
         </scene>
         <!--Time EntryVC-->
         <scene sceneID="xP2-cJ-96h">
             <objects>
                 <viewController id="FM3-z2-PnQ" customClass="TimeEntryVC" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="9Fw-4P-LEf">
-                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="05" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="019-54-Gqt">
@@ -188,6 +203,7 @@
                             <constraint firstAttribute="bottom" secondItem="Gns-Wa-fJ2" secondAttribute="bottom" constant="37" id="xPt-Ph-a7Z"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="ZcQ-gI-wFu"/>
                     <connections>
                         <outlet property="minutesLabel" destination="019-54-Gqt" id="6Uy-Kd-CfB"/>
                         <outlet property="secondsLabel" destination="tmO-Ty-ePU" id="PV4-Ew-Zil"/>
@@ -195,7 +211,25 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0Ty-Cs-7jD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-86" y="-351"/>
+            <point key="canvasLocation" x="440" y="-351"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="e6v-g1-EyS">
+            <objects>
+                <navigationController id="dtZ-qJ-XmN" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Y6b-f2-z88">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="FM3-z2-PnQ" kind="relationship" relationship="rootViewController" id="88w-bY-h9s"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9Nq-9F-tMz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="388" y="-342"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

@@ -9,14 +9,13 @@
 #import "TimerVC.h"
 #import <AudioToolbox/AudioServices.h>
 #import "Timer.h"
-
-
-#define START_TIME 5
-
+#import "Times.h"
 
 @interface TimerVC ()
 @property (strong, nonatomic) Timer *timer;
-@property (strong, nonatomic) IBOutlet UILabel *secondsRemainingLabel;
+@property NSInteger totalSeconds;
+@property (strong, nonatomic) IBOutlet UILabel *secondsLabel;
+@property (strong, nonatomic) IBOutlet UILabel *minutesLabel;
 @end
 
 @implementation TimerVC
@@ -33,17 +32,22 @@
 {
     [super viewDidLoad];
     [self setupTimer];
+    [self setupTotalSeconds];
 }
 - (void)setupTimer {
-    self.timer = [[Timer alloc] initWithSeconds:START_TIME];
+    self.timer = [[Timer alloc] initWithMinutes:self.times.greenMinutes andSeconds:self.times.greenSeconds];
     self.timer.delegate = self;
+}
+- (void)setupTotalSeconds {
+    self.totalSeconds = [Helper totalSecondsForMinutes:self.times.greenMinutes andSeconds:self.times.greenSeconds];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     [self resetView];
 }
 - (void)resetView {
-    self.secondsRemainingLabel.text = [NSString stringWithFormat:@"%d", START_TIME];
+    self.minutesLabel.text = [Helper unitStringForInteger:0];
+    self.secondsLabel.text = [Helper unitStringForInteger:0];
 }
 
 - (void)didReceiveMemoryWarning
@@ -64,9 +68,9 @@
 }
 
 
-- (void)updateViewWithSecondsRemaining:(NSInteger)secondsRemaining {
-    self.secondsRemainingLabel.text = [NSString stringWithFormat:@"%d", secondsRemaining];
-    if (secondsRemaining == 0) {
+- (void)updateViewWithSeconds:(NSInteger)seconds {
+    self.secondsLabel.text = [Helper unitStringForInteger:seconds];
+    if (seconds >= self.totalSeconds) {
         [self handleFinishedTimer];
     }
 }

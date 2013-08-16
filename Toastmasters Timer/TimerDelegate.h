@@ -11,7 +11,7 @@
 @protocol TimerDelegate <NSObject>
 
 @required
--(void)updateViewWithSecondsRemaining:(NSInteger)secondsRemaining;
+-(void)updateViewWithSeconds:(NSInteger)seconds;
 
 
 @end

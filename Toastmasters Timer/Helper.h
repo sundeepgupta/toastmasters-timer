@@ -17,6 +17,6 @@
 + (NSString *)stringForInteger:(NSInteger)integer;
 + (NSString *)unitStringForInteger:(NSInteger)integer;
 
-+ (NSDictionary *)unitsForSeconds:(NSInteger)seconds;
-+ (NSDictionary *)unitsForMinutes:(NSInteger)minutes andSeconds:(NSInteger)seconds;
++ (NSInteger)totalSecondsForMinutes:(NSInteger)minutes andSeconds:(NSInteger)seconds;
+
 @end

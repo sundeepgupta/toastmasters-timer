@@ -9,7 +9,11 @@
 #import <UIKit/UIKit.h>
 #import "TimerDelegate.h"
 
-@interface TimerVC : UIViewController <TimerDelegate>
+@class Times;
 
+@interface TimerVC : UIViewController <TimerDelegate>
+@property (strong, nonatomic) Times *times;
+
+- (IBAction)startButtonPress:(id)sender;
 
 @end

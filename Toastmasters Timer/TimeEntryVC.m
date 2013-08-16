@@ -8,9 +8,12 @@
 
 #import "TimeEntryVC.h"
 #import "Times.h"
+#import "TimerVC.h"
 
 #define MINUTES_INCREMENT 1 //If this is not 1, the seconds incremntor will break this.
 #define SECONDS_INCREMENT 5
+#define DEFAULT_MINUTES 1
+#define DEFAULT_SECONDS 0
 
 @interface TimeEntryVC ()
 @property (strong, nonatomic) Times *times;
@@ -34,15 +37,17 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [self setupDefaults];
     [self setupTimes];
     [self setupView];
     
 }
+- (void)setupDefaults {
+    self.minutes = DEFAULT_MINUTES;
+    self.seconds = DEFAULT_SECONDS;
+}
 - (void)setupTimes {
     self.times = [[Times alloc] init];
-    NSDictionary *units = [self.times greenUnits];
-    self.minutes = [[units valueForKey:MINUTES_KEY] integerValue];
-    self.seconds = [[units valueForKey:SECONDS_KEY] integerValue];
 }
 - (void)setupView {
     self.minutesLabel.text = [Helper unitStringForInteger:self.minutes];
@@ -98,13 +103,16 @@
 }
 
 - (void)saveTimes {
-    NSDictionary *units = [Helper unitsForMinutes:self.minutes andSeconds:self.seconds];
-    [self.times saveGreenWithUnits:units];
-    
+    self.times.greenMinutes = self.minutes;
+    self.times.greenSeconds = self.seconds;
 }
 
 - (void)transitionView {
-    
+    NSString *vcId = NSStringFromClass([TimerVC class]);
+    TimerVC *vc = [self.storyboard instantiateViewControllerWithIdentifier:vcId];
+    vc.times = self.times;
+    [self.navigationController pushViewController:vc animated:YES];
+    [vc startButtonPress:nil];    
 }
 
 

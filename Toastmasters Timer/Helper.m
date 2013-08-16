@@ -25,18 +25,9 @@
 }
 
 
-+ (NSDictionary *)unitsForSeconds:(NSInteger)seconds {
-    NSInteger minutes = (NSInteger)floor(seconds/60);
-    NSInteger clockSeconds = seconds%60;
-    NSDictionary *units = [self unitsForMinutes:minutes andSeconds:clockSeconds];
-    return  units;
-}
-
-+ (NSDictionary *)unitsForMinutes:(NSInteger)minutes andSeconds:(NSInteger)seconds {
-    NSNumber *minutesNumber = [NSNumber numberWithInteger:minutes];
-    NSNumber *secondsNumber = [NSNumber numberWithInteger:seconds];
-    NSDictionary *units = [NSDictionary dictionaryWithObjectsAndKeys:minutesNumber, MINUTES_KEY, secondsNumber, SECONDS_KEY, nil];
-    return units;
++ (NSInteger)totalSecondsForMinutes:(NSInteger)minutes andSeconds:(NSInteger)seconds {
+    NSInteger total = seconds + minutes*60;
+    return total;
 }
 
 

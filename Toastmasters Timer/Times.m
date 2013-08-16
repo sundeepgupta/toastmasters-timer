@@ -8,24 +8,12 @@
 
 #import "Times.h"
 
-#define DEFAULT_GREEN_MINUTES 1
-#define DEFAULT_GREEN_SECONDS 0
-
 @interface Times()
 
 @end
 
 
 @implementation Times
-
-- (Times *)init {
-    self = [super init];
-    if (self) {
-        self.greenMinutes = DEFAULT_GREEN_MINUTES;
-        self.greenSeconds = DEFAULT_GREEN_SECONDS;
-    }
-    return self;
-}
 
 
 

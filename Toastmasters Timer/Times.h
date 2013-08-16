@@ -14,7 +14,4 @@
 @property NSInteger greenSeconds;
 
 
-- (NSDictionary *)greenUnits;
-- (void)saveGreenWithUnits:(NSDictionary *)units;
-
 @end
