@@ -21,6 +21,8 @@
 @property NSInteger seconds;
 @property (strong, nonatomic) IBOutlet UILabel *minutesLabel;
 @property (strong, nonatomic) IBOutlet UILabel *secondsLabel;
+@property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *greenButtons;
+@property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *amberButtons;
 @end
 
 @implementation TimeEntryVC
@@ -62,6 +64,17 @@
 
 
 - (IBAction)increaseMinutesButtonPress:(id)sender {
+   
+    
+    
+    if ([self.greenButtons containsObject:sender]) {
+        NSLog(@"green");
+    } else if ([self.amberButtons containsObject:sender]) {
+        NSLog(@"amber");
+    }
+    
+    
+    
     self.minutes = self.minutes + MINUTES_INCREMENT;
     [self updateMinutesLabel];
 }
