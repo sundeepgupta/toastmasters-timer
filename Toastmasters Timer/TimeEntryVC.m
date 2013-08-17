@@ -7,29 +7,26 @@
 //
 
 #import "TimeEntryVC.h"
-#import "Times.h"
 #import "TimerVC.h"
 
-#define MINUTES_INCREMENT 1 //If this is not 1, the seconds incremntor will break this.
 #define SECONDS_INCREMENT 5
-#define DEFAULT_MINUTES 1
-#define DEFAULT_SECONDS 0
 
 @interface TimeEntryVC ()
 
+@property (strong, nonatomic) NSDictionary *colors;
 
-
-@property (strong, nonatomic) Times *times;
-@property NSInteger greenMinutes;
-@property NSInteger greenSeconds;
 @property (strong, nonatomic) IBOutlet UILabel *greenMnutesLabel;
 @property (strong, nonatomic) IBOutlet UILabel *greenSecondsLabel;
-@property NSInteger amberMinutes;
-@property NSInteger amberSeconds;
 @property (strong, nonatomic) IBOutlet UILabel *amberMnutesLabel;
 @property (strong, nonatomic) IBOutlet UILabel *amberSecondsLabel;
+@property (strong, nonatomic) IBOutlet UILabel *redMnutesLabel;
+@property (strong, nonatomic) IBOutlet UILabel *redSecondsLabel;
+@property (strong, nonatomic) IBOutlet UILabel *bellMnutesLabel;
+@property (strong, nonatomic) IBOutlet UILabel *bellSecondsLabel;
 @property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *greenButtons;
 @property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *amberButtons;
+@property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *redButtons;
+@property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *bellButtons;
 @end
 
 @implementation TimeEntryVC
@@ -38,7 +35,6 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        // Custom initialization
     }
     return self;
 }
@@ -46,25 +42,46 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [self setupDefaults];
-    [self setupTimes];
+    [self setupDefaultTimes];
     [self setupView];
+}
+- (void)setupDefaultTimes {
+    NSMutableDictionary *green = [[NSMutableDictionary alloc] init];
+    NSMutableDictionary *amber = [[NSMutableDictionary alloc] init];
+    NSMutableDictionary *red = [[NSMutableDictionary alloc] init];
+    NSMutableDictionary *bell = [[NSMutableDictionary alloc] init];
     
+    green[@"minutes"] = @1;
+    green[@"seconds"] = @0;
+    green[@"minutesLabel"] = self.greenMnutesLabel;
+    green[@"secondsLabel"] = self.greenSecondsLabel;
+    
+    amber[@"minutes"] = @1;
+    amber[@"seconds"] = @30;
+    amber[@"minutesLabel"] = self.amberMnutesLabel;
+    amber[@"secondsLabel"] = self.amberSecondsLabel;
+    
+    red[@"minutes"] = @2;
+    red[@"seconds"] = @0;
+    red[@"minutesLabel"] = self.redMnutesLabel;
+    red[@"secondsLabel"] = self.redSecondsLabel;
+    
+    bell[@"minutes"] = @2;
+    bell[@"seconds"] = @10;
+    bell[@"minutesLabel"] = self.bellMnutesLabel;
+    bell[@"secondsLabel"] = self.bellSecondsLabel;
+    
+    self.colors = [NSDictionary dictionaryWithObjectsAndKeys:green,@"green", amber,@"amber", red,@"red", bell,@"bell", nil];
 }
-- (void)setupDefaults {
-    self.greenMinutes = DEFAULT_MINUTES;
-    self.greenSeconds = DEFAULT_SECONDS;
-    self.amberMinutes = DEFAULT_MINUTES;
-    self.amberSeconds = DEFAULT_SECONDS;
-}
-- (void)setupTimes {
-    self.times = [[Times alloc] init];
-}
+
 - (void)setupView {
-    self.greenMnutesLabel.text = [Helper unitStringForInteger:self.greenMinutes];
-    self.greenSecondsLabel.text = [Helper unitStringForInteger:self.greenSeconds];
-    self.amberMnutesLabel.text = [Helper unitStringForInteger:self.amberMinutes];
-    self.amberSecondsLabel.text = [Helper unitStringForInteger:self.amberSeconds];
+    for (NSString *key in self.colors) {
+        NSDictionary *color = self.colors[key];        
+        UILabel *minutesLabel = color[@"minutesLabel"];
+        UILabel *secondsLabel = color[@"secondsLabel"];
+        minutesLabel.text = [Helper unitStringForNumber:color[@"minutes"]];
+        secondsLabel.text = [Helper unitStringForNumber:color[@"seconds"]];
+    }
 }
 
 
@@ -75,88 +92,104 @@
 
 
 - (IBAction)increaseMinutesButtonPress:(id)sender {
-    if ([self.greenButtons containsObject:sender]) {
-        self.greenMinutes += MINUTES_INCREMENT;
-    } else if ([self.amberButtons containsObject:sender]) {
-        self.amberMinutes += MINUTES_INCREMENT;
-    }
-    [self updateMinutesLabels];
+    NSMutableDictionary *color = [self colorForSender:sender];
+    NSInteger minutes = [self integerForUnit:@"minutes" ForColor:color];
+    
+    NSInteger newMinutes = minutes + 1;
+    
+    [self updateUnit:@"minutes" withInteger:newMinutes ForColor:color];
 }
 
 - (IBAction)decreaseMinutesButtonPress:(id)sender {
-    if (self.greenMinutes - MINUTES_INCREMENT >= 0) {
-        self.greenMinutes = self.greenMinutes - MINUTES_INCREMENT;
+    NSMutableDictionary *color = [self colorForSender:sender];
+    NSInteger minutes = [self integerForUnit:@"minutes" ForColor:color];
+    
+    NSInteger newMinutes = minutes - 1;
+    
+    if (newMinutes >= 0) {
+        [self updateUnit:@"minutes" withInteger:newMinutes ForColor:color];
     }
-    [self updateMinutesLabels];
-}
-- (IBAction)increaseSecondsButtonPress:(id)sender {
-    if (self.greenSeconds + SECONDS_INCREMENT >= 60) {
-        [self rollUpMinutes];
-    } else {
-        self.greenSeconds = self.greenSeconds + SECONDS_INCREMENT;
-    }
-    [self updateLabels];
-}
-- (IBAction)decreaseSecondsButtonPress:(id)sender {
-    if (self.greenSeconds - SECONDS_INCREMENT >= 0) {
-        self.greenSeconds = self.greenSeconds - SECONDS_INCREMENT;
-    } else {
-        [self rollDownMinutes];
-    }
-    [self updateLabels];
 }
 
-- (NSString *)colorForSender:(id)sender {
+- (IBAction)increaseSecondsButtonPress:(id)sender {
+    NSMutableDictionary *color = [self colorForSender:sender];
+    NSInteger seconds = [self integerForUnit:@"seconds" ForColor:color];
+    NSInteger newSeconds = seconds + SECONDS_INCREMENT;
+
+    if (newSeconds >= 60) {
+        [self increaseMinutesButtonPress:sender];
+        newSeconds = newSeconds - 60;
+    }
+    
+    [self updateUnit:@"seconds" withInteger:newSeconds ForColor:color];
+}
+
+- (IBAction)decreaseSecondsButtonPress:(id)sender {
+    NSMutableDictionary *color = [self colorForSender:sender];
+    NSInteger seconds = [self integerForUnit:@"seconds" ForColor:color];
+    NSInteger newSeconds = seconds - SECONDS_INCREMENT;
+    
+    NSInteger minutes = [self integerForUnit:@"minutes" ForColor:color];
+    if (newSeconds < 0) {
+        if (minutes > 0) {
+            [self decreaseMinutesButtonPress:sender];
+            newSeconds = newSeconds + 60;
+        } else {
+            newSeconds = seconds;
+        }
+    }
+    
+    [self updateUnit:@"seconds" withInteger:newSeconds ForColor:color];
+}
+
+- (NSMutableDictionary *)colorForSender:(id)sender {
     NSString *color;
     if ([self.greenButtons containsObject:sender]) {
         color = @"green";
     } else if ([self.amberButtons containsObject:sender]) {
         color = @"amber";
+    } else if ([self.redButtons containsObject:sender]) {
+        color = @"red";
+    } else {
+        color = @"bell";
     }
-    return color;
+    NSMutableDictionary *dictionary = self.colors[color];
+    return dictionary;
 }
 
-- (void)rollUpMinutes {
-    self.greenSeconds = (self.greenSeconds + SECONDS_INCREMENT)%60;
-    self.greenMinutes++;
+- (NSInteger)integerForUnit:(NSString *)unit ForColor:(NSDictionary *)color {
+    NSNumber *number = color[unit];
+    NSInteger integer = number.integerValue;
+    return integer;
 }
-- (void)rollDownMinutes {
-    if (self.greenMinutes > 0) {
-        self.greenMinutes--;
-        self.greenSeconds = self.greenSeconds - SECONDS_INCREMENT + 60;
-    }
+
+- (void)updateUnit:(NSString *)unit withInteger:(NSInteger)integer ForColor:(NSMutableDictionary *)color {
+    NSNumber *number = [NSNumber numberWithInteger:integer];
+    color[unit] = number;
+    
+    NSString *labelString = [NSString stringWithFormat:@"%@Label", unit];
+    UILabel *label = color[labelString];
+    label.text = [Helper unitStringForNumber:color[unit]];
 }
 
 
-- (void)updateLabels {
-    [self updateMinutesLabels];
-    [self updateSecondsLabel];
-}
-- (void)updateMinutesLabels {
-    self.greenMnutesLabel.text = [Helper unitStringForInteger:self.greenMinutes];
-    self.amberMnutesLabel.text = [Helper unitStringForInteger:self.amberMinutes];
-}
-- (void)updateSecondsLabel {
-    self.greenSecondsLabel.text = [Helper unitStringForInteger:self.greenSeconds];
-    self.amberSecondsLabel.text = [Helper unitStringForInteger:self.amberSeconds];
-}
 
 - (IBAction)startButtonPress:(id)sender {
-    [self saveTimes];
+//    [self saveTimes];
     [self transitionView];
 }
 
-- (void)saveTimes {
-    self.times.greenMinutes = self.greenMinutes;
-    self.times.greenSeconds = self.greenSeconds;
-    self.times.amberMinutes = self.amberMinutes;
-    self.times.amberSeconds = self.amberSeconds;
-}
+//- (void)saveTimes {
+//    self.times.greenMinutes = self.greenMinutes;
+//    self.times.greenSeconds = self.greenSeconds;
+//    self.times.amberMinutes = self.amberMinutes;
+//    self.times.amberSeconds = self.amberSeconds;
+//}
 
 - (void)transitionView {
     NSString *vcId = NSStringFromClass([TimerVC class]);
     TimerVC *vc = [self.storyboard instantiateViewControllerWithIdentifier:vcId];
-    vc.times = self.times;
+    vc.colors = self.colors;
     [self.navigationController pushViewController:vc animated:YES];
     [vc toggleTimer];
 }

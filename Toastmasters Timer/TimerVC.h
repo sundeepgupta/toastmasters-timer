@@ -9,10 +9,8 @@
 #import <UIKit/UIKit.h>
 #import "TimerDelegate.h"
 
-@class Times;
-
 @interface TimerVC : UIViewController <TimerDelegate>
-@property (strong, nonatomic) Times *times;
+@property (strong, nonatomic) NSDictionary *colors;
 
 - (void)toggleTimer;
 @end

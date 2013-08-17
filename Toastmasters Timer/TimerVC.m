@@ -9,10 +9,11 @@
 #import "TimerVC.h"
 #import <AudioToolbox/AudioServices.h>
 #import "Timer.h"
-#import "Times.h"
+
 
 @interface TimerVC ()
 @property (strong, nonatomic) Timer *timer;
+@property (strong, nonatomic) NSDictionary *lastColor;
 @property NSInteger totalSeconds;
 @property (strong, nonatomic) IBOutlet UILabel *secondsLabel;
 @property (strong, nonatomic) IBOutlet UILabel *minutesLabel;
@@ -39,23 +40,37 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [self setupLastColor];
     [self setupTimer];
     [self setupTotalSeconds];
     [self setupTimesLabels];
     [self resetView];
 }
 - (void)setupTimer {
-    self.timer = [[Timer alloc] initWithMinutes:self.times.greenMinutes andSeconds:self.times.greenSeconds];
+    NSNumber *minutes = self.lastColor[@"minutes"];
+    NSNumber *seconds = self.lastColor[@"seconds"];
+    
+    self.timer = [[Timer alloc] initWithMinutes:minutes.integerValue andSeconds:seconds.integerValue];
     self.timer.delegate = self;
 }
+- (void)setupLastColor {
+    self.lastColor = self.colors[@"amber"];
+}
 - (void)setupTotalSeconds {
-    self.totalSeconds = [Helper totalSecondsForMinutes:self.times.amberMinutes andSeconds:self.times.amberSeconds];
+    NSNumber *minutes = self.lastColor[@"minutes"];
+    NSNumber *seconds = self.lastColor[@"seconds"];
+    self.totalSeconds = [Helper totalSecondsForMinutes:minutes.integerValue  andSeconds:seconds.integerValue];
 }
 - (void)setupTimesLabels {
-    self.greenMinutesLabel.text = [Helper unitStringForInteger:self.times.greenMinutes];
-    self.greenSecondsLabel.text = [Helper unitStringForInteger:self.times.greenSeconds];
-    self.amberMinutesLabel.text = [Helper unitStringForInteger:self.times.amberMinutes];
-    self.amberSecondsLabel.text = [Helper unitStringForInteger:self.times.amberSeconds];
+    NSDictionary *green = self.colors[@"green"];
+    NSDictionary *amber = self.colors[@"amber"];
+    NSDictionary *red = self.colors[@"red"];
+    NSDictionary *bell = self.colors[@"bell"];
+    
+    self.greenMinutesLabel.text = [Helper unitStringForNumber:green[@"minutes"]];
+    self.greenSecondsLabel.text = [Helper unitStringForNumber:green[@"seconds"]];
+    self.amberMinutesLabel.text = [Helper unitStringForNumber:amber[@"minutes"]];
+    self.amberSecondsLabel.text = [Helper unitStringForNumber:amber[@"seconds"]];
 }
 - (void)resetView {
     self.minutesLabel.text = [Helper unitStringForInteger:0];

@@ -464,8 +464,12 @@
                     <connections>
                         <outlet property="amberMnutesLabel" destination="h6h-Rr-44r" id="Qf0-yY-M0z"/>
                         <outlet property="amberSecondsLabel" destination="946-DR-Joa" id="JID-8s-Uxi"/>
+                        <outlet property="bellMnutesLabel" destination="IQE-69-6P6" id="gYl-ac-Yt8"/>
+                        <outlet property="bellSecondsLabel" destination="JcR-BX-phn" id="d7c-BW-vgP"/>
                         <outlet property="greenMnutesLabel" destination="019-54-Gqt" id="ejp-DD-4ko"/>
                         <outlet property="greenSecondsLabel" destination="tmO-Ty-ePU" id="Kd3-FD-bcC"/>
+                        <outlet property="redMnutesLabel" destination="UKl-L4-8Yv" id="nuG-4v-AO6"/>
+                        <outlet property="redSecondsLabel" destination="tXI-Dd-kSG" id="lz2-5a-qWA"/>
                         <outletCollection property="greenButtons" destination="Q3F-cu-5Wz" id="N8T-ne-asE"/>
                         <outletCollection property="amberButtons" destination="8iR-br-At1" id="Jcz-o8-zdA"/>
                         <outletCollection property="greenButtons" destination="65K-57-XXe" id="jX7-F7-ErW"/>
@@ -474,6 +478,14 @@
                         <outletCollection property="amberButtons" destination="EdV-iL-hq8" id="ZWC-RW-vp1"/>
                         <outletCollection property="amberButtons" destination="0Ew-pg-Vsw" id="EJ4-Oi-cda"/>
                         <outletCollection property="amberButtons" destination="dZQ-XR-LoI" id="zo8-Cd-PYD"/>
+                        <outletCollection property="redButtons" destination="NzM-ua-be7" id="1BD-XV-rBn"/>
+                        <outletCollection property="redButtons" destination="gQ2-pw-yMj" id="GIE-KC-DPl"/>
+                        <outletCollection property="redButtons" destination="9S9-yD-ndD" id="JSr-Ei-qai"/>
+                        <outletCollection property="redButtons" destination="GMT-yR-UTs" id="nnd-Db-KgS"/>
+                        <outletCollection property="bellButtons" destination="kQs-pH-Ozu" id="ibn-Ce-wgm"/>
+                        <outletCollection property="bellButtons" destination="TZn-RN-eaX" id="te6-M3-IF4"/>
+                        <outletCollection property="bellButtons" destination="CFX-zh-eLJ" id="G9j-hS-bEF"/>
+                        <outletCollection property="bellButtons" destination="EAc-4a-Ohe" id="ejK-qZ-CRV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0Ty-Cs-7jD" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -499,31 +511,6 @@
             <point key="canvasLocation" x="96" y="-351"/>
         </scene>
     </scenes>
-    <classes>
-        <class className="TimeEntryVC" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/TimeEntryVC.h"/>
-            <relationships>
-                <relationship kind="outlet" name="amberMnutesLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="amberSecondsLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="greenMnutesLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="greenSecondsLabel" candidateClass="UILabel"/>
-                <relationship kind="outletCollection" name="amberButtons" candidateClass="UIButton"/>
-                <relationship kind="outletCollection" name="greenButtons" candidateClass="UIButton"/>
-            </relationships>
-        </class>
-        <class className="TimerVC" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/TimerVC.h"/>
-            <relationships>
-                <relationship kind="outlet" name="amberMinutesLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="amberSecondsLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="greenMinutesLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="greenSecondsLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="minutesLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="pauseButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="secondsLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

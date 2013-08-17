@@ -8,13 +8,12 @@
 
 #import <Foundation/Foundation.h>
 
-#define MINUTES_KEY @"min"
-#define SECONDS_KEY @"sec"
-
 
 
 @interface Helper : NSObject
 + (NSString *)stringForInteger:(NSInteger)integer;
+
++ (NSString *)unitStringForNumber:(NSNumber *)number;
 + (NSString *)unitStringForInteger:(NSInteger)integer;
 
 + (NSInteger)totalSecondsForMinutes:(NSInteger)minutes andSeconds:(NSInteger)seconds;
