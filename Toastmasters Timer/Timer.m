@@ -15,35 +15,22 @@
 @interface Timer()
 
 @property (strong, nonatomic) NSTimer *timer;
-@property NSInteger totalSeconds;
-@property NSInteger secondsRemaining;
-@property NSInteger secondsElasped;
+@property NSInteger seconds;
 
 @end
 
 
 @implementation Timer
-- (Timer *)initWithSeconds:(NSInteger)seconds {
+- (Timer *)init {
     self = [super init];
     if (self) {
-        self.totalSeconds = seconds;
-        [self setupSeconds];
-    }
-    return self;
-}
-- (Timer *)initWithMinutes:(NSInteger)minutes andSeconds:(NSInteger)seconds {
-    self = [super init];
-    if (self) {
-        self.totalSeconds = [Helper totalSecondsForMinutes:minutes andSeconds:seconds];
-        [self setupSeconds];
+        [self resetSeconds];
     }
     return self;
 }
 
-
-- (void)setupSeconds {
-    self.secondsRemaining = self.totalSeconds;
-    [self updateSecondsElasped];
+- (void)resetSeconds {
+    self.seconds = 0;
 }
 
 - (void)start {
@@ -57,7 +44,7 @@
 
 - (void)reset {
     [self stop];
-    [self setupSeconds];
+    [self resetSeconds];
 }
 - (void)stop {
     [self.timer invalidate];
@@ -65,12 +52,8 @@
 }
 
 - (void)updateSeconds {
-    self.secondsRemaining = self.secondsRemaining - SECONDS_INTERVAL;
-    [self updateSecondsElasped];
-    [self.delegate updateViewWithSeconds:self.secondsElasped];
-}
-- (void)updateSecondsElasped {
-    self.secondsElasped = self.totalSeconds - self.secondsRemaining;
+    self.seconds += SECONDS_INTERVAL;
+    [self.delegate updateElaspedSeconds:self.seconds];
 }
 
 - (BOOL)isRunning {

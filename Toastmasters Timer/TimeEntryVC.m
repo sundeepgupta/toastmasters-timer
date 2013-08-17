@@ -175,16 +175,8 @@
 
 
 - (IBAction)startButtonPress:(id)sender {
-//    [self saveTimes];
     [self transitionView];
 }
-
-//- (void)saveTimes {
-//    self.times.greenMinutes = self.greenMinutes;
-//    self.times.greenSeconds = self.greenSeconds;
-//    self.times.amberMinutes = self.amberMinutes;
-//    self.times.amberSeconds = self.amberSeconds;
-//}
 
 - (void)transitionView {
     NSString *vcId = NSStringFromClass([TimerVC class]);

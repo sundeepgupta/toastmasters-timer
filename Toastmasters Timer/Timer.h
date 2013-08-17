@@ -13,10 +13,6 @@
 
 @property (weak, nonatomic) id<TimerDelegate> delegate;
 
-
-- (Timer *)initWithSeconds:(NSInteger)seconds;
-- (Timer *)initWithMinutes:(NSInteger)minutes andSeconds:(NSInteger)seconds;
-
 - (void)start;
 - (void)pause;
 - (void)reset;

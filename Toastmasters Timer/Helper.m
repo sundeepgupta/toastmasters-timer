@@ -25,6 +25,13 @@
 }
 
 
++ (NSInteger)totalSecondsForColor:(NSDictionary *)color {
+    NSNumber *minutes = color[@"minutes"];
+    NSNumber *seconds = color[@"seconds"];
+    NSInteger total = [self totalSecondsForMinutes:minutes.integerValue  andSeconds:seconds.integerValue];
+    return total;
+}
+
 + (NSInteger)totalSecondsForMinutes:(NSInteger)minutes andSeconds:(NSInteger)seconds {
     NSInteger total = seconds + minutes*60;
     return total;

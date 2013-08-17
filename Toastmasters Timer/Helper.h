@@ -16,6 +16,5 @@
 + (NSString *)unitStringForNumber:(NSNumber *)number;
 + (NSString *)unitStringForInteger:(NSInteger)integer;
 
-+ (NSInteger)totalSecondsForMinutes:(NSInteger)minutes andSeconds:(NSInteger)seconds;
-
++ (NSInteger)totalSecondsForColor:(NSDictionary *)color;
 @end
