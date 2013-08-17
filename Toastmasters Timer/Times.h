@@ -12,6 +12,8 @@
 
 @property NSInteger greenMinutes;
 @property NSInteger greenSeconds;
+@property NSInteger amberMinutes;
+@property NSInteger amberSeconds;
 
 
 @end

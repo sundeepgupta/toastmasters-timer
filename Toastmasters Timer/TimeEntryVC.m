@@ -16,11 +16,18 @@
 #define DEFAULT_SECONDS 0
 
 @interface TimeEntryVC ()
+
+
+
 @property (strong, nonatomic) Times *times;
-@property NSInteger minutes;
-@property NSInteger seconds;
-@property (strong, nonatomic) IBOutlet UILabel *minutesLabel;
-@property (strong, nonatomic) IBOutlet UILabel *secondsLabel;
+@property NSInteger greenMinutes;
+@property NSInteger greenSeconds;
+@property (strong, nonatomic) IBOutlet UILabel *greenMnutesLabel;
+@property (strong, nonatomic) IBOutlet UILabel *greenSecondsLabel;
+@property NSInteger amberMinutes;
+@property NSInteger amberSeconds;
+@property (strong, nonatomic) IBOutlet UILabel *amberMnutesLabel;
+@property (strong, nonatomic) IBOutlet UILabel *amberSecondsLabel;
 @property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *greenButtons;
 @property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *amberButtons;
 @end
@@ -45,15 +52,19 @@
     
 }
 - (void)setupDefaults {
-    self.minutes = DEFAULT_MINUTES;
-    self.seconds = DEFAULT_SECONDS;
+    self.greenMinutes = DEFAULT_MINUTES;
+    self.greenSeconds = DEFAULT_SECONDS;
+    self.amberMinutes = DEFAULT_MINUTES;
+    self.amberSeconds = DEFAULT_SECONDS;
 }
 - (void)setupTimes {
     self.times = [[Times alloc] init];
 }
 - (void)setupView {
-    self.minutesLabel.text = [Helper unitStringForInteger:self.minutes];
-    self.secondsLabel.text = [Helper unitStringForInteger:self.seconds];
+    self.greenMnutesLabel.text = [Helper unitStringForInteger:self.greenMinutes];
+    self.greenSecondsLabel.text = [Helper unitStringForInteger:self.greenSeconds];
+    self.amberMnutesLabel.text = [Helper unitStringForInteger:self.amberMinutes];
+    self.amberSecondsLabel.text = [Helper unitStringForInteger:self.amberSeconds];
 }
 
 
@@ -64,67 +75,71 @@
 
 
 - (IBAction)increaseMinutesButtonPress:(id)sender {
-   
-    
-    
     if ([self.greenButtons containsObject:sender]) {
-        NSLog(@"green");
+        self.greenMinutes += MINUTES_INCREMENT;
     } else if ([self.amberButtons containsObject:sender]) {
-        NSLog(@"amber");
+        self.amberMinutes += MINUTES_INCREMENT;
     }
-    
-    
-    
-    self.minutes = self.minutes + MINUTES_INCREMENT;
-    [self updateMinutesLabel];
+    [self updateMinutesLabels];
 }
+
 - (IBAction)decreaseMinutesButtonPress:(id)sender {
-    if (self.minutes - MINUTES_INCREMENT >= 0) {
-        self.minutes = self.minutes - MINUTES_INCREMENT;
+    if (self.greenMinutes - MINUTES_INCREMENT >= 0) {
+        self.greenMinutes = self.greenMinutes - MINUTES_INCREMENT;
     }
-    [self updateMinutesLabel];
+    [self updateMinutesLabels];
 }
 - (IBAction)increaseSecondsButtonPress:(id)sender {
-    if (self.seconds + SECONDS_INCREMENT >= 60) {
+    if (self.greenSeconds + SECONDS_INCREMENT >= 60) {
         [self rollUpMinutes];
     } else {
-        self.seconds = self.seconds + SECONDS_INCREMENT;
+        self.greenSeconds = self.greenSeconds + SECONDS_INCREMENT;
     }
     [self updateLabels];
 }
 - (IBAction)decreaseSecondsButtonPress:(id)sender {
-    if (self.seconds - SECONDS_INCREMENT >= 0) {
-        self.seconds = self.seconds - SECONDS_INCREMENT;
+    if (self.greenSeconds - SECONDS_INCREMENT >= 0) {
+        self.greenSeconds = self.greenSeconds - SECONDS_INCREMENT;
     } else {
         [self rollDownMinutes];
     }
     [self updateLabels];
 }
 
-- (void)rollUpMinutes {
-    self.seconds = (self.seconds + SECONDS_INCREMENT)%60;
-    self.minutes++;
+- (NSString *)colorForSender:(id)sender {
+    NSString *color;
+    if ([self.greenButtons containsObject:sender]) {
+        color = @"green";
+    } else if ([self.amberButtons containsObject:sender]) {
+        color = @"amber";
+    }
+    return color;
 }
 
+- (void)rollUpMinutes {
+    self.greenSeconds = (self.greenSeconds + SECONDS_INCREMENT)%60;
+    self.greenMinutes++;
+}
 - (void)rollDownMinutes {
-    if (self.minutes > 0) {
-        self.minutes--;
-        self.seconds = self.seconds - SECONDS_INCREMENT + 60;
+    if (self.greenMinutes > 0) {
+        self.greenMinutes--;
+        self.greenSeconds = self.greenSeconds - SECONDS_INCREMENT + 60;
     }
 }
 
 
 - (void)updateLabels {
-    [self updateMinutesLabel];
+    [self updateMinutesLabels];
     [self updateSecondsLabel];
 }
-- (void)updateMinutesLabel {
-    self.minutesLabel.text = [Helper unitStringForInteger:self.minutes];
+- (void)updateMinutesLabels {
+    self.greenMnutesLabel.text = [Helper unitStringForInteger:self.greenMinutes];
+    self.amberMnutesLabel.text = [Helper unitStringForInteger:self.amberMinutes];
 }
 - (void)updateSecondsLabel {
-    self.secondsLabel.text = [Helper unitStringForInteger:self.seconds];
+    self.greenSecondsLabel.text = [Helper unitStringForInteger:self.greenSeconds];
+    self.amberSecondsLabel.text = [Helper unitStringForInteger:self.amberSeconds];
 }
-
 
 - (IBAction)startButtonPress:(id)sender {
     [self saveTimes];
@@ -132,8 +147,10 @@
 }
 
 - (void)saveTimes {
-    self.times.greenMinutes = self.minutes;
-    self.times.greenSeconds = self.seconds;
+    self.times.greenMinutes = self.greenMinutes;
+    self.times.greenSeconds = self.greenSeconds;
+    self.times.amberMinutes = self.amberMinutes;
+    self.times.amberSeconds = self.amberSeconds;
 }
 
 - (void)transitionView {

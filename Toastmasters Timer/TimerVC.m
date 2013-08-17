@@ -17,6 +17,13 @@
 @property (strong, nonatomic) IBOutlet UILabel *secondsLabel;
 @property (strong, nonatomic) IBOutlet UILabel *minutesLabel;
 @property (strong, nonatomic) IBOutlet UIButton *pauseButton;
+
+@property (strong, nonatomic) IBOutlet UILabel *greenMinutesLabel;
+@property (strong, nonatomic) IBOutlet UILabel *greenSecondsLabel;
+@property (strong, nonatomic) IBOutlet UILabel *amberMinutesLabel;
+@property (strong, nonatomic) IBOutlet UILabel *amberSecondsLabel;
+
+
 @end
 
 @implementation TimerVC
@@ -34,6 +41,7 @@
     [super viewDidLoad];
     [self setupTimer];
     [self setupTotalSeconds];
+    [self setupTimesLabels];
     [self resetView];
 }
 - (void)setupTimer {
@@ -41,7 +49,13 @@
     self.timer.delegate = self;
 }
 - (void)setupTotalSeconds {
-    self.totalSeconds = [Helper totalSecondsForMinutes:self.times.greenMinutes andSeconds:self.times.greenSeconds];
+    self.totalSeconds = [Helper totalSecondsForMinutes:self.times.amberMinutes andSeconds:self.times.amberSeconds];
+}
+- (void)setupTimesLabels {
+    self.greenMinutesLabel.text = [Helper unitStringForInteger:self.times.greenMinutes];
+    self.greenSecondsLabel.text = [Helper unitStringForInteger:self.times.greenSeconds];
+    self.amberMinutesLabel.text = [Helper unitStringForInteger:self.times.amberMinutes];
+    self.amberSecondsLabel.text = [Helper unitStringForInteger:self.times.amberSeconds];
 }
 - (void)resetView {
     self.minutesLabel.text = [Helper unitStringForInteger:0];
