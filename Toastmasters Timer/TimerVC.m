@@ -40,10 +40,14 @@
 
 - (void)viewDidLoad
 {
+    [self setupView];
     [super viewDidLoad];
     [self setupTimer];
     [self resetTimerUnits];
     [self setupTimesLabels];
+}
+- (void)setupView {
+
 }
 - (void)setupTimer {
     self.timer = [[Timer alloc] init];
@@ -92,19 +96,20 @@
 }
 
 - (void)changeButtonToContinueTimer {
-    [self.pauseButton setTitle:@"Continue" forState:UIControlStateNormal]; 
+    [self setPauseButtonImageWithName:@"play.png"];
 }
 - (void)changeButtonToPauseTimer {
-    [self.pauseButton setTitle:@"Pause" forState:UIControlStateNormal];
+    [self setPauseButtonImageWithName:@"pause.png"];
 }
-- (void)changeButtonToStartTimer {
-    [self.pauseButton setTitle:@"Start" forState:UIControlStateNormal];
+- (void)setPauseButtonImageWithName:(NSString *)name {
+    UIImage *image = [UIImage imageNamed:name];
+    [self.pauseButton setBackgroundImage:image forState:UIControlStateNormal];
 }
 
 - (IBAction)resetButtonPress:(id)sender {
     [self.timer reset];
     [self resetTimerUnits];
-    [self changeButtonToStartTimer];
+    [self changeButtonToContinueTimer];
 }
 
 
@@ -143,6 +148,9 @@
     AudioServicesPlaySystemSound(kSystemSoundID_Vibrate);
 }
 
+- (IBAction)backButtonPress:(id)sender {
+    [self.navigationController popViewControllerAnimated:YES];
+}
 
 
 @end

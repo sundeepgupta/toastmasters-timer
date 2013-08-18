@@ -42,10 +42,10 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [self setupDefaultTimes];
+    [self setupColors];
     [self setupView];
 }
-- (void)setupDefaultTimes {
+- (void)setupColors {
     NSMutableDictionary *green = [[NSMutableDictionary alloc] init];
     NSMutableDictionary *amber = [[NSMutableDictionary alloc] init];
     NSMutableDictionary *red = [[NSMutableDictionary alloc] init];
@@ -72,17 +72,20 @@
     bell[@"secondsLabel"] = self.bellSecondsLabel;
     
     self.colors = [NSDictionary dictionaryWithObjectsAndKeys:green,@"green", amber,@"amber", red,@"red", bell,@"bell", nil];
-}
-
-- (void)setupView {
+    
     for (NSString *key in self.colors) {
-        NSDictionary *color = self.colors[key];        
+        NSDictionary *color = self.colors[key];
         UILabel *minutesLabel = color[@"minutesLabel"];
         UILabel *secondsLabel = color[@"secondsLabel"];
         minutesLabel.text = [Helper unitStringForNumber:color[@"minutes"]];
         secondsLabel.text = [Helper unitStringForNumber:color[@"seconds"]];
     }
 }
+
+- (void)setupView {
+
+}
+
 
 
 - (void)didReceiveMemoryWarning
