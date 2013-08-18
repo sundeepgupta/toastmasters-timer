@@ -13,6 +13,8 @@
 
 @interface TimerVC ()
 @property (strong, nonatomic) Timer *timer;
+@property NSInteger seconds;
+@property NSInteger minutes;
 @property (strong, nonatomic) IBOutlet UILabel *secondsLabel;
 @property (strong, nonatomic) IBOutlet UILabel *minutesLabel;
 @property (strong, nonatomic) IBOutlet UIButton *pauseButton;
@@ -40,12 +42,18 @@
 {
     [super viewDidLoad];
     [self setupTimer];
+    [self resetTimerUnits];
     [self setupTimesLabels];
-    [self resetView];
 }
 - (void)setupTimer {
     self.timer = [[Timer alloc] init];
     self.timer.delegate = self;
+}
+
+- (void)resetTimerUnits {
+    self.seconds = 0;
+    self.minutes = 0;
+    [self updateTimerLabels];
 }
 
 - (void)setupTimesLabels {
@@ -62,10 +70,6 @@
     self.redSecondsLabel.text = [Helper unitStringForNumber:red[@"seconds"]];
     self.bellMinutesLabel.text = [Helper unitStringForNumber:bell[@"minutes"]];
     self.bellSecondsLabel.text = [Helper unitStringForNumber:bell[@"seconds"]];
-}
-- (void)resetView {
-    self.minutesLabel.text = [Helper unitStringForInteger:0];
-    self.secondsLabel.text = [Helper unitStringForInteger:0];
 }
 
 - (void)didReceiveMemoryWarning
@@ -99,32 +103,41 @@
 
 - (IBAction)resetButtonPress:(id)sender {
     [self.timer reset];
-    [self resetView];
+    [self resetTimerUnits];
     [self changeButtonToStartTimer];
 }
 
 
 - (void)updateElaspedSeconds:(NSInteger)seconds {
     [self updateTimerLabelsWithSeconds:seconds];
-    
-}
-- (void)updateTimerLabelsWithSeconds:(NSInteger)seconds {
-    self.secondsLabel.text = [Helper unitStringForInteger:seconds];
     [self assertColorChangeForSeconds:seconds];
 }
+- (void)updateTimerLabelsWithSeconds:(NSInteger)seconds {
+    self.minutes = floor(seconds/60);
+    self.seconds = seconds%60;
+    [self updateTimerLabels];
+}
+
+- (void)updateTimerLabels {
+    self.minutesLabel.text = [Helper unitStringForInteger:self.minutes];
+    self.secondsLabel.text = [Helper unitStringForInteger:self.seconds];
+}
+
 - (void)assertColorChangeForSeconds:(NSInteger)seconds {
     for (NSString *key in self.colors) {
         NSMutableDictionary *color = self.colors[key];
-        NSInteger total = [Helper totalSecondsForColor:color];
         
-        if (total == seconds) {
+        NSInteger minutes = [Helper integerForNumber:color[@"minutes"]];
+        NSInteger seconds = [Helper integerForNumber:color[@"seconds"]];
+        
+        if (minutes == self.minutes  &&  seconds == self.seconds) {
             [self alertReachedColor:key];
         }
     }
 }
 
 - (void)alertReachedColor:(NSString *)color {
-    NSString *title = [NSString stringWithFormat:@"Turn %@ light on", color];
+    NSString *title = [NSString stringWithFormat:@"Turn %@ on", color];
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:title message:nil delegate:nil cancelButtonTitle:@"ok" otherButtonTitles:nil, nil];
     [alert show];
     AudioServicesPlaySystemSound(kSystemSoundID_Vibrate);

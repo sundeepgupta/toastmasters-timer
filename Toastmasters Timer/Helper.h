@@ -11,10 +11,10 @@
 
 
 @interface Helper : NSObject
-+ (NSString *)stringForInteger:(NSInteger)integer;
-
 + (NSString *)unitStringForNumber:(NSNumber *)number;
 + (NSString *)unitStringForInteger:(NSInteger)integer;
 
-+ (NSInteger)totalSecondsForColor:(NSDictionary *)color;
++ (NSInteger)integerForNumber:(NSNumber *)number;
+
+
 @end

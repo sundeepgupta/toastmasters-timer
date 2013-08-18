@@ -9,11 +9,6 @@
 #import "Helper.h"
 
 @implementation Helper
-
-+ (NSString *)stringForInteger:(NSInteger)integer {
-    NSString *string = [NSString stringWithFormat:@"%d", integer];
-    return string;
-}
 + (NSString *)unitStringForNumber:(NSNumber *)number {
     NSInteger integer = number.integerValue;
     NSString *string = [self unitStringForInteger:integer];
@@ -25,17 +20,11 @@
 }
 
 
-+ (NSInteger)totalSecondsForColor:(NSDictionary *)color {
-    NSNumber *minutes = color[@"minutes"];
-    NSNumber *seconds = color[@"seconds"];
-    NSInteger total = [self totalSecondsForMinutes:minutes.integerValue  andSeconds:seconds.integerValue];
-    return total;
++ (NSInteger)integerForNumber:(NSNumber *)number {
+    return number.integerValue;
 }
 
-+ (NSInteger)totalSecondsForMinutes:(NSInteger)minutes andSeconds:(NSInteger)seconds {
-    NSInteger total = seconds + minutes*60;
-    return total;
-}
+
 
 
 
