@@ -9,7 +9,7 @@
 #import "TimerVC.h"
 #import <AudioToolbox/AudioServices.h>
 #import "Timer.h"
-#import "ColorAlert.h"
+#import "Toast+UIView.h"
 
 
 
@@ -172,9 +172,24 @@
     }
 }
 - (void)showAlertForColor:(NSString *)color {
-    NSString *title = [NSString stringWithFormat:@"Turn %@ on", color];
-    ColorAlert *alert = [[ColorAlert alloc] initWithTitle:title];
-    [alert show];
+    UIColor *alertColor;
+    NSString *title = @"Attention!";
+    NSString *message = [NSString stringWithFormat:@"Turn the %@ light on.", color];
+    
+    if ([color isEqualToString:@"green"]) {
+        alertColor = [UIColor colorWithRed:GREEN_R/255 green:GREEN_G/255 blue:GREEN_B/255 alpha:1];
+    } else if ([color isEqualToString:@"amber"]){
+        alertColor = [UIColor colorWithRed:AMBER_R/255 green:AMBER_G/255 blue:AMBER_B/255 alpha:1];
+    } else if ([color isEqualToString:@"red"]){
+        alertColor = [UIColor colorWithRed:RED_R/255 green:RED_G/255 blue:RED_B/255 alpha:1];
+    } else if ([color isEqualToString:@"bell"]){
+        alertColor = [UIColor colorWithRed:BELL_R/255 green:BELL_G/255 blue:BELL_B/255 alpha:1];
+        message = @"Ring the bell.";
+    }
+
+    UIImage *image = [Helper imageWithColor:alertColor];
+    [self.view makeToast:message duration:3 position:@"center" title:title image:image];
+
 }
 - (void)vibrateDevice {
     AudioServicesPlaySystemSound(kSystemSoundID_Vibrate);

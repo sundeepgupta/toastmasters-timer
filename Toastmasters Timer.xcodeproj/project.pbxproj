@@ -21,8 +21,8 @@
 		AE5208C317C10CF6002CFFD7 /* bell@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AE5208C217C10CF6002CFFD7 /* bell@2x.png */; };
 		AE5208C617C11714002CFFD7 /* back.png in Resources */ = {isa = PBXBuildFile; fileRef = AE5208C417C11714002CFFD7 /* back.png */; };
 		AE5208C717C11714002CFFD7 /* back@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AE5208C517C11714002CFFD7 /* back@2x.png */; };
-		AE5208CA17C1264B002CFFD7 /* ColorAlert.m in Sources */ = {isa = PBXBuildFile; fileRef = AE5208C917C1264B002CFFD7 /* ColorAlert.m */; };
-		AE5208CD17C169E4002CFFD7 /* ColorAlertVC.m in Sources */ = {isa = PBXBuildFile; fileRef = AE5208CC17C169E4002CFFD7 /* ColorAlertVC.m */; };
+		AE5208CF17C16FFA002CFFD7 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE5208CE17C16FFA002CFFD7 /* QuartzCore.framework */; };
+		AE5208D317C17034002CFFD7 /* Toast+UIView.m in Sources */ = {isa = PBXBuildFile; fileRef = AE5208D217C17034002CFFD7 /* Toast+UIView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		AE7223A917BDAB65003B60A5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE7223A817BDAB65003B60A5 /* UIKit.framework */; };
 		AE7223AB17BDAB65003B60A5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE7223AA17BDAB65003B60A5 /* Foundation.framework */; };
 		AE7223AD17BDAB65003B60A5 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE7223AC17BDAB65003B60A5 /* CoreGraphics.framework */; };
@@ -73,10 +73,9 @@
 		AE5208C217C10CF6002CFFD7 /* bell@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bell@2x.png"; sourceTree = "<group>"; };
 		AE5208C417C11714002CFFD7 /* back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back.png; sourceTree = "<group>"; };
 		AE5208C517C11714002CFFD7 /* back@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "back@2x.png"; sourceTree = "<group>"; };
-		AE5208C817C1264B002CFFD7 /* ColorAlert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ColorAlert.h; path = "Toastmasters Timer/ColorAlert.h"; sourceTree = "<group>"; };
-		AE5208C917C1264B002CFFD7 /* ColorAlert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ColorAlert.m; path = "Toastmasters Timer/ColorAlert.m"; sourceTree = "<group>"; };
-		AE5208CB17C169E3002CFFD7 /* ColorAlertVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ColorAlertVC.h; path = "Toastmasters Timer/ColorAlertVC.h"; sourceTree = "<group>"; };
-		AE5208CC17C169E4002CFFD7 /* ColorAlertVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ColorAlertVC.m; path = "Toastmasters Timer/ColorAlertVC.m"; sourceTree = "<group>"; };
+		AE5208CE17C16FFA002CFFD7 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		AE5208D117C17034002CFFD7 /* Toast+UIView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Toast+UIView.h"; sourceTree = "<group>"; };
+		AE5208D217C17034002CFFD7 /* Toast+UIView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Toast+UIView.m"; sourceTree = "<group>"; };
 		AE7223A517BDAB65003B60A5 /* Toastmasters Timer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Toastmasters Timer.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE7223A817BDAB65003B60A5 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		AE7223AA17BDAB65003B60A5 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -116,6 +115,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AE5208CF17C16FFA002CFFD7 /* QuartzCore.framework in Frameworks */,
 				AEDA15A217BDB2F300AC9DBA /* AudioToolbox.framework in Frameworks */,
 				AE7223A917BDAB65003B60A5 /* UIKit.framework in Frameworks */,
 				AE7223AB17BDAB65003B60A5 /* Foundation.framework in Frameworks */,
@@ -160,15 +160,21 @@
 			path = "Toastmasters Timer/images";
 			sourceTree = "<group>";
 		};
+		AE5208D017C17034002CFFD7 /* Toast */ = {
+			isa = PBXGroup;
+			children = (
+				AE5208D117C17034002CFFD7 /* Toast+UIView.h */,
+				AE5208D217C17034002CFFD7 /* Toast+UIView.m */,
+			);
+			path = Toast;
+			sourceTree = "<group>";
+		};
 		AE72239C17BDAB65003B60A5 = {
 			isa = PBXGroup;
 			children = (
-				AE5208CB17C169E3002CFFD7 /* ColorAlertVC.h */,
-				AE5208CC17C169E4002CFFD7 /* ColorAlertVC.m */,
-				AE5208C817C1264B002CFFD7 /* ColorAlert.h */,
-				AE5208C917C1264B002CFFD7 /* ColorAlert.m */,
 				AE9F976517BE538100626448 /* Timer.h */,
 				AE9F976617BE538100626448 /* Timer.m */,
+				AE5208D017C17034002CFFD7 /* Toast */,
 				AE9F976217BDC4FA00626448 /* TimeEntryVC.h */,
 				AE9F976317BDC4FA00626448 /* TimeEntryVC.m */,
 				AE5208A717C054AE002CFFD7 /* images */,
@@ -191,6 +197,7 @@
 		AE7223A717BDAB65003B60A5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				AE5208CE17C16FFA002CFFD7 /* QuartzCore.framework */,
 				AEDA15A117BDB2F300AC9DBA /* AudioToolbox.framework */,
 				AE7223A817BDAB65003B60A5 /* UIKit.framework */,
 				AE7223AA17BDAB65003B60A5 /* Foundation.framework */,
@@ -382,8 +389,7 @@
 				AE9F976417BDC4FA00626448 /* TimeEntryVC.m in Sources */,
 				AE9F976717BE538100626448 /* Timer.m in Sources */,
 				AE9F976E17BEA00600626448 /* Helper.m in Sources */,
-				AE5208CA17C1264B002CFFD7 /* ColorAlert.m in Sources */,
-				AE5208CD17C169E4002CFFD7 /* ColorAlertVC.m in Sources */,
+				AE5208D317C17034002CFFD7 /* Toast+UIView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
