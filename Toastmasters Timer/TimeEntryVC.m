@@ -14,7 +14,7 @@
 @interface TimeEntryVC ()
 
 @property (strong, nonatomic) NSDictionary *colors;
-
+@property (strong, nonatomic) NSMutableDictionary *settings;
 @property (strong, nonatomic) IBOutlet UILabel *greenMnutesLabel;
 @property (strong, nonatomic) IBOutlet UILabel *greenSecondsLabel;
 @property (strong, nonatomic) IBOutlet UILabel *amberMnutesLabel;
@@ -27,6 +27,7 @@
 @property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *amberButtons;
 @property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *redButtons;
 @property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *bellButtons;
+
 @end
 
 @implementation TimeEntryVC
@@ -43,6 +44,7 @@
 {
     [super viewDidLoad];
     [self setupColors];
+    [self setupSettings];
     [self setupView];
 }
 - (void)setupColors {
@@ -80,6 +82,11 @@
         minutesLabel.text = [Helper unitStringForNumber:color[@"minutes"]];
         secondsLabel.text = [Helper unitStringForNumber:color[@"seconds"]];
     }
+}
+- (void)setupSettings {
+    self.settings = [[NSMutableDictionary alloc] init];
+    self.settings[@"shouldSoundBell"] = @YES;
+    
 }
 
 - (void)setupView {
@@ -184,6 +191,7 @@
     NSString *vcId = NSStringFromClass([TimerVC class]);
     TimerVC *vc = [self.storyboard instantiateViewControllerWithIdentifier:vcId];
     vc.colors = self.colors;
+    vc.settings = self.settings;
     [self.navigationController pushViewController:vc animated:YES];
     [vc toggleTimer];
 }

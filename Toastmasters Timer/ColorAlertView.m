@@ -30,10 +30,10 @@
 
 - (id)initWithTitle:(NSString *)title
 {
-    self = [super initWithTitle:title message:nil delegate:nil cancelButtonTitle:nil otherButtonTitles:nil, nil];
+    self = [super initWithTitle:title message:nil delegate:nil cancelButtonTitle:@"Dismiss now" otherButtonTitles:nil, nil];
     if (self)
     {
-        [self performSelector:@selector(dismissAfterDelay) withObject:nil afterDelay:2];
+        [self performSelector:@selector(dismissAfterDelay) withObject:nil afterDelay:3];
     }
     return self;
 }

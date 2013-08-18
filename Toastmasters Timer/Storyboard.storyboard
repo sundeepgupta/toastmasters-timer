@@ -75,19 +75,19 @@
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="05" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="sf8-QL-pEk">
                                 <rect key="frame" x="188" y="20" width="34" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <color key="textColor" red="0.0" green="0.73725490199999999" blue="0.0039215686269999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="0.0" green="0.7843137255" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text=":" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="3mb-s7-zXg">
                                 <rect key="frame" x="230" y="20" width="5" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <color key="textColor" red="0.0" green="0.73725490199999999" blue="0.0039215686269999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="0.0" green="0.7843137255" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="22" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="2Gk-7d-FL0">
                                 <rect key="frame" x="243" y="20" width="34" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <color key="textColor" red="0.0" green="0.73725490199999999" blue="0.0039215686269999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="0.0" green="0.7843137255" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="05" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="AmE-Xi-v7v">
@@ -144,8 +144,8 @@
                                 <color key="textColor" red="1" green="0.96470588239999999" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="bell.png" id="nzM-t0-79Z">
-                                <rect key="frame" x="179" y="113" width="12" height="12"/>
+                            <imageView userInteractionEnabled="NO" alpha="0.25" contentMode="scaleToFill" image="bell.png" id="nzM-t0-79Z">
+                                <rect key="frame" x="167" y="108" width="20" height="20"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                         </subviews>
@@ -163,6 +163,21 @@
                         <outlet property="redMinutesLabel" destination="BMi-yv-Y2X" id="XKR-Sj-9bw"/>
                         <outlet property="redSecondsLabel" destination="mze-Iy-71b" id="VQ4-XH-Emu"/>
                         <outlet property="secondsLabel" destination="MEi-dn-KAr" id="H1h-mM-gmf"/>
+                        <outletCollection property="timerLabels" destination="Udd-ns-0Ol" id="JXl-sZ-Sae"/>
+                        <outletCollection property="timerLabels" destination="ymc-af-61W" id="nHj-KQ-CwG"/>
+                        <outletCollection property="timerLabels" destination="MEi-dn-KAr" id="K0Y-oB-vSf"/>
+                        <outletCollection property="greenLabels" destination="2Gk-7d-FL0" id="chY-jJ-GNj"/>
+                        <outletCollection property="greenLabels" destination="3mb-s7-zXg" id="iK0-iW-8fv"/>
+                        <outletCollection property="greenLabels" destination="sf8-QL-pEk" id="jOR-zh-dMA"/>
+                        <outletCollection property="amberLabels" destination="8Lt-IE-QEH" id="8k2-Mq-Rxa"/>
+                        <outletCollection property="amberLabels" destination="5MU-Bn-Ao0" id="YUd-Im-AYV"/>
+                        <outletCollection property="amberLabels" destination="AmE-Xi-v7v" id="fkh-q1-F9u"/>
+                        <outletCollection property="redLabels" destination="mze-Iy-71b" id="F5k-7y-3aA"/>
+                        <outletCollection property="redLabels" destination="THC-8o-95C" id="b0o-8p-T0a"/>
+                        <outletCollection property="redLabels" destination="BMi-yv-Y2X" id="iAu-Pc-tyb"/>
+                        <outletCollection property="bellLabels" destination="NVP-sa-XDa" id="TYN-hR-pwC"/>
+                        <outletCollection property="bellLabels" destination="xbt-Eb-Ewv" id="02I-oi-1l3"/>
+                        <outletCollection property="bellLabels" destination="HSV-2F-r2N" id="ztf-gb-Utl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AbE-g8-QrS" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -180,19 +195,19 @@
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="05" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="019-54-Gqt">
                                 <rect key="frame" x="116" y="46" width="34" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                <color key="textColor" red="0.0015225017881611129" green="0.73612882653061229" blue="0.0023621913666416992" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="0.0" green="0.7843137255" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text=":" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="eSn-Gm-Yax">
                                 <rect key="frame" x="155" y="46" width="10" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                <color key="textColor" red="0.0015225017881611129" green="0.73612882653061229" blue="0.0023621913666416992" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="0.0" green="0.7843137255" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="22" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="tmO-Ty-ePU">
                                 <rect key="frame" x="171" y="46" width="34" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                <color key="textColor" red="0.0015225017881611129" green="0.73612882653061229" blue="0.0023621913666416992" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="0.0" green="0.7843137255" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="rHY-ep-ZLy">
@@ -488,8 +503,8 @@
                                     <action selector="startButtonPress:" destination="FM3-z2-PnQ" eventType="touchUpInside" id="AhR-4l-CBR"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="bell.png" id="iQv-RC-Bht">
-                                <rect key="frame" x="88" y="302" width="20" height="20"/>
+                            <imageView userInteractionEnabled="NO" alpha="0.25" contentMode="scaleToFill" image="bell.png" id="iQv-RC-Bht">
+                                <rect key="frame" x="81" y="302" width="20" height="20"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                         </subviews>

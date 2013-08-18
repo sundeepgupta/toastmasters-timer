@@ -12,6 +12,8 @@
 #import "ColorAlertView.h"
 
 
+
+
 @interface TimerVC ()
 @property (strong, nonatomic) Timer *timer;
 @property NSInteger seconds;
@@ -27,6 +29,11 @@
 @property (strong, nonatomic) IBOutlet UILabel *redSecondsLabel;
 @property (strong, nonatomic) IBOutlet UILabel *bellMinutesLabel;
 @property (strong, nonatomic) IBOutlet UILabel *bellSecondsLabel;
+@property (strong, nonatomic) IBOutletCollection(UILabel) NSArray *timerLabels;
+@property (strong, nonatomic) IBOutletCollection(UILabel) NSArray *greenLabels;
+@property (strong, nonatomic) IBOutletCollection(UILabel) NSArray *amberLabels;
+@property (strong, nonatomic) IBOutletCollection(UILabel) NSArray *redLabels;
+@property (strong, nonatomic) IBOutletCollection(UILabel) NSArray *bellLabels;
 @end
 
 @implementation TimerVC
@@ -154,7 +161,16 @@
 - (void)alertReachedColor:(NSString *)color {
     [self showAlertForColor:color];
     [self vibrateDevice];
+    [self emphasizeLabelsForColor:color];
     
+    if ([color isEqualToString:@"bell"]) {
+        NSNumber *shouldSoundBellNumber = self.settings[@"shouldSoundBell"];
+        BOOL shouldSoundBell = shouldSoundBellNumber.boolValue;
+        if (shouldSoundBell) {
+            ColorAlertView *alert = [[ColorAlertView alloc] initWithTitle:@"sound bell"];
+            [alert show];
+        }
+    }
 }
 - (void)showAlertForColor:(NSString *)color {
     NSString *title = [NSString stringWithFormat:@"Turn %@ on", color];
@@ -164,7 +180,25 @@
 - (void)vibrateDevice {
     AudioServicesPlaySystemSound(kSystemSoundID_Vibrate);
 }
-
+- (void)emphasizeLabelsForColor:(NSString *)color {
+    if ([color isEqualToString:@"green"]) {
+        [self boldLabels:self.greenLabels];
+    } else if ([color isEqualToString:@"amber"]){
+        [self boldLabels:self.amberLabels];
+    } else if ([color isEqualToString:@"red"]){
+        [self boldLabels:self.redLabels];
+    } else if ([color isEqualToString:@"bell"]){
+        [self boldLabels:self.bellLabels];
+    }
+}
+- (void)boldLabels:(NSArray *)labels {
+    for (UILabel *label in labels) {
+        UIFont *font = label.font;
+        CGFloat fontSize = font.pointSize ;
+        UIFont *newFont = [UIFont boldSystemFontOfSize:fontSize];
+        label.font = newFont;
+    }
+}
 
 - (IBAction)backButtonPress:(id)sender {
     [self.navigationController popViewControllerAnimated:YES];

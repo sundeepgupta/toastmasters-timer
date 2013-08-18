@@ -9,6 +9,11 @@
 #import <Foundation/Foundation.h>
 
 
+#define GREY_RGB 237
+#define GREEN_R 0
+#define GREEN_G 200
+#define GREEN_B 0
+
 
 
 @interface Helper : NSObject
