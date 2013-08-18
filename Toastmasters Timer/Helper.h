@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
+#define DISABLED_ALPHA 0.3
 
 #define GREY_RGB 237
 #define GREEN_R 0
@@ -22,5 +23,7 @@
 
 + (NSInteger)integerForNumber:(NSNumber *)number;
 
+
++ (void)updateSoundBellButton:(UIButton *)button forSetting:(BOOL)setting;
 
 @end

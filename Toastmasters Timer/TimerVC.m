@@ -34,6 +34,7 @@
 @property (strong, nonatomic) IBOutletCollection(UILabel) NSArray *amberLabels;
 @property (strong, nonatomic) IBOutletCollection(UILabel) NSArray *redLabels;
 @property (strong, nonatomic) IBOutletCollection(UILabel) NSArray *bellLabels;
+@property (strong, nonatomic) IBOutlet UIButton *soundBellButton;
 @end
 
 @implementation TimerVC
@@ -48,15 +49,14 @@
 
 - (void)viewDidLoad
 {
-    [self setupView];
     [super viewDidLoad];
     [self setupTimer];
     [self resetTimerUnits];
     [self setupTimesLabels];
+    [self setupView];
 }
-- (void)setupView {
 
-}
+
 - (void)setupTimer {
     self.timer = [[Timer alloc] init];
     self.timer.delegate = self;
@@ -82,6 +82,10 @@
     self.redSecondsLabel.text = [Helper unitStringForNumber:red[@"seconds"]];
     self.bellMinutesLabel.text = [Helper unitStringForNumber:bell[@"minutes"]];
     self.bellSecondsLabel.text = [Helper unitStringForNumber:bell[@"seconds"]];
+}
+
+- (void)setupView {
+    [Helper updateSoundBellButton:self.soundBellButton forSetting:[self.settings[@"shouldSoundBell"] boolValue]];
 }
 
 - (void)didReceiveMemoryWarning
@@ -164,12 +168,7 @@
     [self emphasizeLabelsForColor:color];
     
     if ([color isEqualToString:@"bell"]) {
-        NSNumber *shouldSoundBellNumber = self.settings[@"shouldSoundBell"];
-        BOOL shouldSoundBell = shouldSoundBellNumber.boolValue;
-        if (shouldSoundBell) {
-            ColorAlertView *alert = [[ColorAlertView alloc] initWithTitle:@"sound bell"];
-            [alert show];
-        }
+        [self processAlertForBell];
     }
 }
 - (void)showAlertForColor:(NSString *)color {
@@ -199,10 +198,32 @@
         label.font = newFont;
     }
 }
+- (void)processAlertForBell {
+    NSNumber *shouldSoundBellNumber = self.settings[@"shouldSoundBell"];
+    BOOL shouldSoundBell = shouldSoundBellNumber.boolValue;
+    if (shouldSoundBell) {
+        [self soundBell];
+    }
+}
+- (void)soundBell {
+    AudioServicesPlaySystemSound(1025);
+}
 
 - (IBAction)backButtonPress:(id)sender {
     [self.navigationController popViewControllerAnimated:YES];
 }
 
+- (IBAction)soundBellButtonPress:(id)sender {
+    [self toggleSoundBell];
+    [Helper updateSoundBellButton:self.soundBellButton forSetting:[self.settings[@"shouldSoundBell"] boolValue]];
+}
+- (void)toggleSoundBell {
+    BOOL shouldSoundBell = [self.settings[@"shouldSoundBell"] boolValue];
+    if (shouldSoundBell) {
+        self.settings[@"shouldSoundBell"] = @NO;
+    } else {
+        self.settings[@"shouldSoundBell"] = @YES;
+    }
+}
 
 @end

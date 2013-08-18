@@ -27,6 +27,7 @@
 @property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *amberButtons;
 @property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *redButtons;
 @property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *bellButtons;
+@property (strong, nonatomic) IBOutlet UIButton *soundBellButton;
 
 @end
 
@@ -45,8 +46,8 @@
     [super viewDidLoad];
     [self setupColors];
     [self setupSettings];
-    [self setupView];
 }
+
 - (void)setupColors {
     NSMutableDictionary *green = [[NSMutableDictionary alloc] init];
     NSMutableDictionary *amber = [[NSMutableDictionary alloc] init];
@@ -83,17 +84,19 @@
         secondsLabel.text = [Helper unitStringForNumber:color[@"seconds"]];
     }
 }
+
 - (void)setupSettings {
     self.settings = [[NSMutableDictionary alloc] init];
-    self.settings[@"shouldSoundBell"] = @YES;
-    
+    self.settings[@"shouldSoundBell"] = @NO;
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [self setupView];
 }
 
 - (void)setupView {
-
+    [Helper updateSoundBellButton:self.soundBellButton forSetting:[self.settings[@"shouldSoundBell"] boolValue]];
 }
-
-
 
 - (void)didReceiveMemoryWarning
 {
@@ -196,6 +199,18 @@
     [vc toggleTimer];
 }
 
+- (IBAction)soundBellButtonPress:(id)sender {
+    [self toggleSoundBell];
+    [Helper updateSoundBellButton:self.soundBellButton forSetting:[self.settings[@"shouldSoundBell"] boolValue]];
+}
+- (void)toggleSoundBell {
+    BOOL shouldSoundBell = [self.settings[@"shouldSoundBell"] boolValue];
+    if (shouldSoundBell) {
+        self.settings[@"shouldSoundBell"] = @NO;
+    } else {
+        self.settings[@"shouldSoundBell"] = @YES;
+    }
+}
 
 
 

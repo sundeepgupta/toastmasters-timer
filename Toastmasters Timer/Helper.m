@@ -25,7 +25,13 @@
 }
 
 
-
++ (void)updateSoundBellButton:(UIButton *)button forSetting:(BOOL)setting {
+    if (setting == YES) {
+        button.alpha = 1;
+    } else {
+        button.alpha = DISABLED_ALPHA;
+    }
+}
 
 
 @end
