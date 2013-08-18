@@ -9,17 +9,17 @@
             <objects>
                 <viewController storyboardIdentifier="TimerVC" id="MHZ-8T-RmM" customClass="TimerVC" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="jbE-fB-4xA">
-                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="22" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="MEi-dn-KAr">
-                                <rect key="frame" x="171" y="415" width="19" height="21"/>
+                                <rect key="frame" x="171" y="345" width="19" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="1rZ-oZ-tef">
-                                <rect key="frame" x="20" y="393" width="103" height="44"/>
+                                <rect key="frame" x="20" y="324" width="103" height="44"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="pause">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -33,7 +33,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="G9q-GC-S9s">
-                                <rect key="frame" x="240" y="405" width="60" height="44"/>
+                                <rect key="frame" x="240" y="334" width="60" height="44"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="reset">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -47,85 +47,85 @@
                                 </connections>
                             </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="05" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ymc-af-61W">
-                                <rect key="frame" x="131" y="415" width="19" height="21"/>
+                                <rect key="frame" x="131" y="345" width="19" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text=":" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Udd-ns-0Ol">
-                                <rect key="frame" x="158" y="415" width="5" height="21"/>
+                                <rect key="frame" x="158" y="345" width="5" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="05" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="sf8-QL-pEk">
-                                <rect key="frame" x="116" y="16" width="34" height="21"/>
+                                <rect key="frame" x="116" y="13" width="34" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <color key="textColor" red="0.0010159904720000001" green="0.49123086729999998" blue="0.0015763291319999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text=":" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="3mb-s7-zXg">
-                                <rect key="frame" x="158" y="16" width="5" height="21"/>
+                                <rect key="frame" x="158" y="13" width="5" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <color key="textColor" red="0.0010159904720000001" green="0.49123086729999998" blue="0.0015763291319999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="22" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="2Gk-7d-FL0">
-                                <rect key="frame" x="171" y="16" width="34" height="21"/>
+                                <rect key="frame" x="171" y="13" width="34" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <color key="textColor" red="0.0010159904720000001" green="0.49123086729999998" blue="0.0015763291319999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="05" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="AmE-Xi-v7v">
-                                <rect key="frame" x="116" y="110" width="34" height="21"/>
+                                <rect key="frame" x="116" y="91" width="34" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <color key="textColor" red="1" green="0.78147391939999999" blue="0.0031039909339999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text=":" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="5MU-Bn-Ao0">
-                                <rect key="frame" x="158" y="110" width="5" height="21"/>
+                                <rect key="frame" x="158" y="91" width="5" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <color key="textColor" red="1" green="0.78147391939999999" blue="0.0031039909339999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="22" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="8Lt-IE-QEH">
-                                <rect key="frame" x="171" y="110" width="34" height="21"/>
+                                <rect key="frame" x="171" y="91" width="34" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <color key="textColor" red="1" green="0.78147391939999999" blue="0.0031039909339999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="05" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="BMi-yv-Y2X">
-                                <rect key="frame" x="116" y="201" width="34" height="21"/>
+                                <rect key="frame" x="116" y="167" width="34" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text=":" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="THC-8o-95C">
-                                <rect key="frame" x="158" y="201" width="5" height="21"/>
+                                <rect key="frame" x="158" y="167" width="5" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="22" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="mze-Iy-71b">
-                                <rect key="frame" x="171" y="201" width="34" height="21"/>
+                                <rect key="frame" x="171" y="167" width="34" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="05" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="HSV-2F-r2N">
-                                <rect key="frame" x="116" y="295" width="34" height="21"/>
+                                <rect key="frame" x="116" y="245" width="34" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text=":" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="xbt-Eb-Ewv">
-                                <rect key="frame" x="158" y="295" width="5" height="21"/>
+                                <rect key="frame" x="158" y="245" width="5" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="22" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="NVP-sa-XDa">
-                                <rect key="frame" x="171" y="295" width="34" height="21"/>
+                                <rect key="frame" x="171" y="245" width="34" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -156,31 +156,31 @@
             <objects>
                 <viewController id="FM3-z2-PnQ" customClass="TimeEntryVC" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="9Fw-4P-LEf">
-                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="05" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="019-54-Gqt">
-                                <rect key="frame" x="116" y="37" width="34" height="21"/>
+                                <rect key="frame" x="116" y="48" width="34" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <color key="textColor" red="0.0010159904720217431" green="0.49123086734693877" blue="0.0015763291316056045" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="0.0015225017881611129" green="0.73612882653061229" blue="0.0023621913666416992" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text=":" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="eSn-Gm-Yax">
-                                <rect key="frame" x="158" y="37" width="5" height="21"/>
+                                <rect key="frame" x="158" y="48" width="5" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <color key="textColor" red="0.0010159904720217431" green="0.49123086734693877" blue="0.0015763291316056045" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="0.0015225017881611129" green="0.73612882653061229" blue="0.0023621913666416992" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="22" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="tmO-Ty-ePU">
-                                <rect key="frame" x="171" y="37" width="34" height="21"/>
+                                <rect key="frame" x="171" y="48" width="34" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <color key="textColor" red="0.0010159904720217431" green="0.49123086734693877" blue="0.0015763291316056045" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="0.0015225017881611129" green="0.73612882653061229" blue="0.0023621913666416992" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="rHY-ep-ZLy">
-                                <rect key="frame" x="10" y="2" width="64" height="44"/>
+                                <rect key="frame" x="20" y="20" width="30" height="30"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="up">
+                                <state key="normal" backgroundImage="plus.png">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -192,9 +192,9 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="bUG-NA-kNq">
-                                <rect key="frame" x="10" y="44" width="64" height="44"/>
+                                <rect key="frame" x="20" y="58" width="30" height="30"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="down">
+                                <state key="normal" backgroundImage="minus.png">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -206,9 +206,9 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="65K-57-XXe">
-                                <rect key="frame" x="236" y="2" width="64" height="44"/>
+                                <rect key="frame" x="270" y="20" width="30" height="30"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="up">
+                                <state key="normal" backgroundImage="plus.png">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -220,9 +220,9 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Q3F-cu-5Wz">
-                                <rect key="frame" x="236" y="44" width="64" height="44"/>
+                                <rect key="frame" x="270" y="58" width="30" height="30"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="down">
+                                <state key="normal" backgroundImage="minus.png">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -234,27 +234,27 @@
                                 </connections>
                             </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="05" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="h6h-Rr-44r">
-                                <rect key="frame" x="116" y="131" width="34" height="21"/>
+                                <rect key="frame" x="116" y="135" width="34" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <color key="textColor" red="1" green="0.78147391940806366" blue="0.0031039909335769389" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text=":" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="30G-Qq-h83">
-                                <rect key="frame" x="158" y="131" width="5" height="21"/>
+                                <rect key="frame" x="158" y="135" width="5" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <color key="textColor" red="1" green="0.78147391940806366" blue="0.0031039909335769389" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="22" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="946-DR-Joa">
-                                <rect key="frame" x="171" y="131" width="34" height="21"/>
+                                <rect key="frame" x="171" y="135" width="34" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <color key="textColor" red="1" green="0.78147391940806366" blue="0.0031039909335769389" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="dZQ-XR-LoI">
-                                <rect key="frame" x="10" y="95" width="64" height="44"/>
+                                <rect key="frame" x="20" y="109" width="30" height="30"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="up">
+                                <state key="normal" backgroundImage="plus.png">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -266,9 +266,9 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="0Ew-pg-Vsw">
-                                <rect key="frame" x="10" y="137" width="64" height="44"/>
+                                <rect key="frame" x="20" y="147" width="30" height="30"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="down">
+                                <state key="normal" backgroundImage="minus.png">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -280,9 +280,9 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="8iR-br-At1">
-                                <rect key="frame" x="236" y="95" width="64" height="44"/>
+                                <rect key="frame" x="270" y="109" width="30" height="30"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="up">
+                                <state key="normal" backgroundImage="plus.png">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -294,9 +294,9 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="EdV-iL-hq8">
-                                <rect key="frame" x="236" y="137" width="64" height="44"/>
+                                <rect key="frame" x="270" y="147" width="30" height="30"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="down">
+                                <state key="normal" backgroundImage="minus.png">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -308,27 +308,27 @@
                                 </connections>
                             </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="05" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="UKl-L4-8Yv">
-                                <rect key="frame" x="116" y="222" width="34" height="21"/>
+                                <rect key="frame" x="116" y="229" width="34" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text=":" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="NeM-2I-59b">
-                                <rect key="frame" x="158" y="222" width="5" height="21"/>
+                                <rect key="frame" x="158" y="229" width="5" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="22" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="tXI-Dd-kSG">
-                                <rect key="frame" x="171" y="222" width="34" height="21"/>
+                                <rect key="frame" x="171" y="229" width="34" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="NzM-ua-be7">
-                                <rect key="frame" x="10" y="188" width="64" height="44"/>
+                                <rect key="frame" x="20" y="206" width="30" height="30"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="up">
+                                <state key="normal" backgroundImage="plus.png">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -340,9 +340,9 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="gQ2-pw-yMj">
-                                <rect key="frame" x="10" y="230" width="64" height="44"/>
+                                <rect key="frame" x="20" y="244" width="30" height="30"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="down">
+                                <state key="normal" backgroundImage="minus.png">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -354,9 +354,9 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="9S9-yD-ndD">
-                                <rect key="frame" x="236" y="188" width="64" height="44"/>
+                                <rect key="frame" x="270" y="206" width="30" height="30"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="up">
+                                <state key="normal" backgroundImage="plus.png">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -368,9 +368,9 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="GMT-yR-UTs">
-                                <rect key="frame" x="236" y="230" width="64" height="44"/>
+                                <rect key="frame" x="270" y="244" width="30" height="30"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="down">
+                                <state key="normal" backgroundImage="minus.png">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -382,27 +382,27 @@
                                 </connections>
                             </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="05" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="IQE-69-6P6">
-                                <rect key="frame" x="116" y="434" width="34" height="21"/>
+                                <rect key="frame" x="116" y="315" width="34" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text=":" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="GcQ-Ft-uGD">
-                                <rect key="frame" x="158" y="434" width="5" height="21"/>
+                                <rect key="frame" x="158" y="315" width="5" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="22" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="JcR-BX-phn">
-                                <rect key="frame" x="171" y="434" width="34" height="21"/>
+                                <rect key="frame" x="171" y="315" width="34" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="kQs-pH-Ozu">
-                                <rect key="frame" x="10" y="399" width="64" height="44"/>
+                                <rect key="frame" x="20" y="293" width="30" height="30"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="up">
+                                <state key="normal" backgroundImage="plus.png">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -414,9 +414,9 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="TZn-RN-eaX">
-                                <rect key="frame" x="10" y="441" width="64" height="44"/>
+                                <rect key="frame" x="20" y="331" width="30" height="30"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="down">
+                                <state key="normal" backgroundImage="minus.png">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -428,9 +428,9 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="CFX-zh-eLJ">
-                                <rect key="frame" x="236" y="399" width="64" height="44"/>
+                                <rect key="frame" x="270" y="293" width="30" height="30"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="up">
+                                <state key="normal" backgroundImage="plus.png">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -442,9 +442,9 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="EAc-4a-Ohe">
-                                <rect key="frame" x="236" y="441" width="64" height="44"/>
+                                <rect key="frame" x="270" y="331" width="30" height="30"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="down">
+                                <state key="normal" backgroundImage="minus.png">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -455,8 +455,20 @@
                                     <action selector="decreaseSecondsButtonPress:" destination="FM3-z2-PnQ" eventType="touchDown" id="jwf-HF-tfr"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="C7L-au-Kzc">
+                                <rect key="frame" x="124" y="417" width="73" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.10582748724489799" green="0.10582748724489799" blue="0.10582748724489799" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <navigationItem key="navigationItem" id="ZcQ-gI-wFu">
                         <barButtonItem key="rightBarButtonItem" title="Start" id="beL-sl-aJD">
@@ -465,6 +477,8 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <nil key="simulatedTopBarMetrics"/>
                     <connections>
                         <outlet property="amberMnutesLabel" destination="h6h-Rr-44r" id="Qf0-yY-M0z"/>
                         <outlet property="amberSecondsLabel" destination="946-DR-Joa" id="JID-8s-Uxi"/>
@@ -515,9 +529,55 @@
             <point key="canvasLocation" x="96" y="-351"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="minus.png" width="40" height="40"/>
+        <image name="plus.png" width="40" height="40"/>
+    </resources>
+    <classes>
+        <class className="TimeEntryVC" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/TimeEntryVC.h"/>
+            <relationships>
+                <relationship kind="action" name="decreaseMinutesButtonPress:"/>
+                <relationship kind="action" name="decreaseSecondsButtonPress:"/>
+                <relationship kind="action" name="increaseMinutesButtonPress:"/>
+                <relationship kind="action" name="increaseSecondsButtonPress:"/>
+                <relationship kind="action" name="startButtonPress:"/>
+                <relationship kind="outlet" name="amberMnutesLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="amberSecondsLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="bellMnutesLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="bellSecondsLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="greenMnutesLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="greenSecondsLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="redMnutesLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="redSecondsLabel" candidateClass="UILabel"/>
+                <relationship kind="outletCollection" name="amberButtons" candidateClass="UIButton"/>
+                <relationship kind="outletCollection" name="bellButtons" candidateClass="UIButton"/>
+                <relationship kind="outletCollection" name="greenButtons" candidateClass="UIButton"/>
+                <relationship kind="outletCollection" name="redButtons" candidateClass="UIButton"/>
+            </relationships>
+        </class>
+        <class className="TimerVC" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/TimerVC.h"/>
+            <relationships>
+                <relationship kind="action" name="pauseButtonPress:"/>
+                <relationship kind="action" name="resetButtonPress:"/>
+                <relationship kind="outlet" name="amberMinutesLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="amberSecondsLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="bellMinutesLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="bellSecondsLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="greenMinutesLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="greenSecondsLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="minutesLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="pauseButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="redMinutesLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="redSecondsLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="secondsLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
-        <simulatedScreenMetrics key="destination" type="retina4"/>
+        <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
 </document>
