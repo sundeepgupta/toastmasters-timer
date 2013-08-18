@@ -21,6 +21,7 @@
 		AE5208C317C10CF6002CFFD7 /* bell@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AE5208C217C10CF6002CFFD7 /* bell@2x.png */; };
 		AE5208C617C11714002CFFD7 /* back.png in Resources */ = {isa = PBXBuildFile; fileRef = AE5208C417C11714002CFFD7 /* back.png */; };
 		AE5208C717C11714002CFFD7 /* back@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AE5208C517C11714002CFFD7 /* back@2x.png */; };
+		AE5208CA17C1264B002CFFD7 /* ColorAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = AE5208C917C1264B002CFFD7 /* ColorAlertView.m */; };
 		AE7223A917BDAB65003B60A5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE7223A817BDAB65003B60A5 /* UIKit.framework */; };
 		AE7223AB17BDAB65003B60A5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE7223AA17BDAB65003B60A5 /* Foundation.framework */; };
 		AE7223AD17BDAB65003B60A5 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE7223AC17BDAB65003B60A5 /* CoreGraphics.framework */; };
@@ -71,6 +72,8 @@
 		AE5208C217C10CF6002CFFD7 /* bell@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bell@2x.png"; sourceTree = "<group>"; };
 		AE5208C417C11714002CFFD7 /* back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back.png; sourceTree = "<group>"; };
 		AE5208C517C11714002CFFD7 /* back@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "back@2x.png"; sourceTree = "<group>"; };
+		AE5208C817C1264B002CFFD7 /* ColorAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ColorAlertView.h; path = "Toastmasters Timer/ColorAlertView.h"; sourceTree = "<group>"; };
+		AE5208C917C1264B002CFFD7 /* ColorAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ColorAlertView.m; path = "Toastmasters Timer/ColorAlertView.m"; sourceTree = "<group>"; };
 		AE7223A517BDAB65003B60A5 /* Toastmasters Timer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Toastmasters Timer.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE7223A817BDAB65003B60A5 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		AE7223AA17BDAB65003B60A5 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -157,6 +160,8 @@
 		AE72239C17BDAB65003B60A5 = {
 			isa = PBXGroup;
 			children = (
+				AE5208C817C1264B002CFFD7 /* ColorAlertView.h */,
+				AE5208C917C1264B002CFFD7 /* ColorAlertView.m */,
 				AE9F976517BE538100626448 /* Timer.h */,
 				AE9F976617BE538100626448 /* Timer.m */,
 				AE9F976217BDC4FA00626448 /* TimeEntryVC.h */,
@@ -372,6 +377,7 @@
 				AE9F976417BDC4FA00626448 /* TimeEntryVC.m in Sources */,
 				AE9F976717BE538100626448 /* Timer.m in Sources */,
 				AE9F976E17BEA00600626448 /* Helper.m in Sources */,
+				AE5208CA17C1264B002CFFD7 /* ColorAlertView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -9,6 +9,7 @@
 #import "TimerVC.h"
 #import <AudioToolbox/AudioServices.h>
 #import "Timer.h"
+#import "ColorAlertView.h"
 
 
 @interface TimerVC ()
@@ -120,12 +121,16 @@
 - (void)updateTimerLabelsWithSeconds:(NSInteger)seconds {
     self.minutes = floor(seconds/60);
     if (self.minutes == 100) {
-        self.minutes = 0;
-        [self.timer restart];
+        [self rollMinutesOver];
     }
     
     self.seconds = seconds%60;
+    
     [self updateTimerLabels];
+}
+- (void)rollMinutesOver {
+    self.minutes = 0;
+    [self.timer restart];
 }
 
 - (void)updateTimerLabels {
@@ -147,11 +152,19 @@
 }
 
 - (void)alertReachedColor:(NSString *)color {
+    [self showAlertForColor:color];
+    [self vibrateDevice];
+    
+}
+- (void)showAlertForColor:(NSString *)color {
     NSString *title = [NSString stringWithFormat:@"Turn %@ on", color];
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:title message:nil delegate:nil cancelButtonTitle:@"ok" otherButtonTitles:nil, nil];
+    ColorAlertView *alert = [[ColorAlertView alloc] initWithTitle:title];
     [alert show];
+}
+- (void)vibrateDevice {
     AudioServicesPlaySystemSound(kSystemSoundID_Vibrate);
 }
+
 
 - (IBAction)backButtonPress:(id)sender {
     [self.navigationController popViewControllerAnimated:YES];

@@ -51,23 +51,23 @@
     NSMutableDictionary *red = [[NSMutableDictionary alloc] init];
     NSMutableDictionary *bell = [[NSMutableDictionary alloc] init];
     
-    green[@"minutes"] = @1;
+    green[@"minutes"] = @0;
     green[@"seconds"] = @0;
     green[@"minutesLabel"] = self.greenMnutesLabel;
     green[@"secondsLabel"] = self.greenSecondsLabel;
     
-    amber[@"minutes"] = @1;
-    amber[@"seconds"] = @30;
+    amber[@"minutes"] = @0;
+    amber[@"seconds"] = @0;
     amber[@"minutesLabel"] = self.amberMnutesLabel;
     amber[@"secondsLabel"] = self.amberSecondsLabel;
     
-    red[@"minutes"] = @2;
+    red[@"minutes"] = @0;
     red[@"seconds"] = @0;
     red[@"minutesLabel"] = self.redMnutesLabel;
     red[@"secondsLabel"] = self.redSecondsLabel;
     
-    bell[@"minutes"] = @2;
-    bell[@"seconds"] = @10;
+    bell[@"minutes"] = @0;
+    bell[@"seconds"] = @0;
     bell[@"minutesLabel"] = self.bellMnutesLabel;
     bell[@"secondsLabel"] = self.bellSecondsLabel;
     
