@@ -100,6 +100,10 @@
     
     NSInteger newMinutes = minutes + 1;
     
+    if (newMinutes == 100) {
+        newMinutes = 0;
+    }
+    
     [self updateUnit:@"minutes" withInteger:newMinutes ForColor:color];
 }
 
@@ -109,9 +113,11 @@
     
     NSInteger newMinutes = minutes - 1;
     
-    if (newMinutes >= 0) {
-        [self updateUnit:@"minutes" withInteger:newMinutes ForColor:color];
+    if (newMinutes == -1) {
+        newMinutes = 99;
     }
+    
+    [self updateUnit:@"minutes" withInteger:newMinutes ForColor:color];
 }
 
 - (IBAction)increaseSecondsButtonPress:(id)sender {
@@ -120,8 +126,7 @@
     NSInteger newSeconds = seconds + SECONDS_INCREMENT;
 
     if (newSeconds >= 60) {
-        [self increaseMinutesButtonPress:sender];
-        newSeconds = newSeconds - 60;
+        newSeconds -= 60;
     }
     
     [self updateUnit:@"seconds" withInteger:newSeconds ForColor:color];
@@ -131,15 +136,9 @@
     NSMutableDictionary *color = [self colorForSender:sender];
     NSInteger seconds = [self integerForUnit:@"seconds" ForColor:color];
     NSInteger newSeconds = seconds - SECONDS_INCREMENT;
-    
-    NSInteger minutes = [self integerForUnit:@"minutes" ForColor:color];
+
     if (newSeconds < 0) {
-        if (minutes > 0) {
-            [self decreaseMinutesButtonPress:sender];
-            newSeconds = newSeconds + 60;
-        } else {
-            newSeconds = seconds;
-        }
+        newSeconds += 60;
     }
     
     [self updateUnit:@"seconds" withInteger:newSeconds ForColor:color];
