@@ -1,14 +1,15 @@
 //
-//  ColorAlertView.m
+//  ColorAlert.m    
 //  Toastmasters Timer
 //
 //  Created by Sundeep Gupta on 2013-08-18.
 //  Copyright (c) 2013 Sundeep Gupta. All rights reserved.
 //
 
-#import "ColorAlertView.h"
+#import "ColorAlert.h"
+#import "ColorAlertVC.h"
 
-@implementation ColorAlertView
+@implementation ColorAlert
 
 - (id)initWithFrame:(CGRect)frame
 {
@@ -30,9 +31,13 @@
 
 - (id)initWithTitle:(NSString *)title
 {
-    self = [super initWithTitle:title message:nil delegate:nil cancelButtonTitle:@"Dismiss now" otherButtonTitles:nil, nil];
+    self = [super init];
     if (self)
     {
+        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Storyboard" bundle:nil];
+        ColorAlertVC *vc = [storyboard instantiateViewControllerWithIdentifier:@"ColorAlertVC"];
+        [self addSubview:vc.view];
+        
         [self performSelector:@selector(dismissAfterDelay) withObject:nil afterDelay:3];
     }
     return self;

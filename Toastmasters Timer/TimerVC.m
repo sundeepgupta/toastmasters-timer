@@ -9,7 +9,7 @@
 #import "TimerVC.h"
 #import <AudioToolbox/AudioServices.h>
 #import "Timer.h"
-#import "ColorAlertView.h"
+#import "ColorAlert.h"
 
 
 
@@ -173,7 +173,7 @@
 }
 - (void)showAlertForColor:(NSString *)color {
     NSString *title = [NSString stringWithFormat:@"Turn %@ on", color];
-    ColorAlertView *alert = [[ColorAlertView alloc] initWithTitle:title];
+    ColorAlert *alert = [[ColorAlert alloc] initWithTitle:title];
     [alert show];
 }
 - (void)vibrateDevice {
