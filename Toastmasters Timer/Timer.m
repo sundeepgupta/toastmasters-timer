@@ -50,6 +50,10 @@
     [self.timer invalidate];
     self.timer = nil;
 }
+- (void)restart {
+    [self reset];
+    [self start];
+}
 
 - (void)updateSeconds {
     self.seconds += SECONDS_INTERVAL;

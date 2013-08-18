@@ -119,6 +119,11 @@
 }
 - (void)updateTimerLabelsWithSeconds:(NSInteger)seconds {
     self.minutes = floor(seconds/60);
+    if (self.minutes == 100) {
+        self.minutes = 0;
+        [self.timer restart];
+    }
+    
     self.seconds = seconds%60;
     [self updateTimerLabels];
 }

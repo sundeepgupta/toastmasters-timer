@@ -16,6 +16,7 @@
 - (void)start;
 - (void)pause;
 - (void)reset;
+- (void)restart;
 - (BOOL)isRunning;
 
 
