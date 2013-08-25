@@ -16,6 +16,7 @@
 
 @interface TimerVC ()
 @property (strong, nonatomic) Timer *timer;
+//@property (strong, nonatomic) NSDate *startDate;
 @property (strong, nonatomic) NSUserDefaults *defaults;
 @property (strong, nonatomic) NSMutableDictionary *labelsDictionary;
 @property (strong, nonatomic) NSMutableDictionary *colors;
@@ -150,10 +151,19 @@
         [self.timer pause];
         [self changeButtonToContinueTimer];
     } else {
+    
+
+
+        
+        
+        
         [self.timer start];
         [self changeButtonToPauseTimer];
     }
 }
+
+
+
 
 - (void)changeButtonToContinueTimer {
     [self setPauseButtonImageWithName:@"play.png"];

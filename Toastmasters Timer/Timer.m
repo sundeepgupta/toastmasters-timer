@@ -16,6 +16,8 @@
 
 @property (strong, nonatomic) NSTimer *timer;
 @property NSInteger seconds;
+@property (strong, nonatomic) NSDate *startDate;
+@property (strong, nonatomic) NSUserDefaults *defaults;
 
 @end
 
@@ -35,11 +37,18 @@
 
 - (void)start {
     self.timer = [NSTimer timerWithTimeInterval:SECONDS_INTERVAL target:self selector:@selector(updateSeconds) userInfo:nil repeats:YES];
-    [[NSRunLoop currentRunLoop] addTimer:self.timer forMode:NSRunLoopCommonModes];
+    NSRunLoop *currentRunLoop = [NSRunLoop currentRunLoop];
+    [currentRunLoop addTimer:self.timer forMode:NSRunLoopCommonModes];
+    
+   [self saveStartDate];
 }
 
 - (void)pause {
     [self stop];
+}
+
+- (void)unpause {
+    
 }
 
 - (void)reset {
@@ -56,12 +65,19 @@
 }
 
 - (void)updateSeconds {
-    self.seconds += SECONDS_INTERVAL;
+    NSTimeInterval secondsElasped = -[self.startDate timeIntervalSinceNow];
+    self.seconds = round(secondsElasped);
     [self.delegate updateElaspedSeconds:self.seconds];
+    NSLog(@"Timer: %d", self.seconds);
 }
 
 - (BOOL)isRunning {
     return (BOOL)self.timer;
+}
+
+
+- (void)saveStartDate {
+    self.startDate = [NSDate date];
 }
 
 @end
