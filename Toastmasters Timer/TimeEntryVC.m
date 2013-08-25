@@ -14,7 +14,6 @@
 @interface TimeEntryVC ()
 
 @property (strong, nonatomic) NSDictionary *colors;
-@property (strong, nonatomic) NSMutableDictionary *settings;
 @property (strong, nonatomic) IBOutlet UILabel *greenMnutesLabel;
 @property (strong, nonatomic) IBOutlet UILabel *greenSecondsLabel;
 @property (strong, nonatomic) IBOutlet UILabel *amberMnutesLabel;
@@ -27,7 +26,6 @@
 @property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *amberButtons;
 @property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *redButtons;
 @property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *bellButtons;
-@property (strong, nonatomic) IBOutlet UIButton *soundBellButton;
 
 @end
 
@@ -45,7 +43,6 @@
 {
     [super viewDidLoad];
     [self setupColors];
-    [self setupSettings];
 }
 
 - (void)setupColors {
@@ -85,18 +82,6 @@
     }
 }
 
-- (void)setupSettings {
-    self.settings = [[NSMutableDictionary alloc] init];
-    self.settings[@"shouldSoundBell"] = @NO;
-}
-
-- (void)viewWillAppear:(BOOL)animated {
-    [self setupView];
-}
-
-- (void)setupView {
-    [Helper updateSoundBellButton:self.soundBellButton forSetting:[self.settings[@"shouldSoundBell"] boolValue]];
-}
 
 - (void)didReceiveMemoryWarning
 {
@@ -186,30 +171,14 @@
 
 
 
-- (IBAction)startButtonPress:(id)sender {
-    [self transitionView];
+- (IBAction)doneButtonPress:(id)sender {
+    [self setupTimerVC];
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
-- (void)transitionView {
-    NSString *vcId = NSStringFromClass([TimerVC class]);
-    TimerVC *vc = [self.storyboard instantiateViewControllerWithIdentifier:vcId];
+- (void)setupTimerVC {
+    TimerVC *vc = (TimerVC *)self.presentingViewController;
     vc.colors = self.colors;
-    vc.settings = self.settings;
-    [self.navigationController pushViewController:vc animated:YES];
-    [vc toggleTimer];
-}
-
-- (IBAction)soundBellButtonPress:(id)sender {
-    [self toggleSoundBell];
-    [Helper updateSoundBellButton:self.soundBellButton forSetting:[self.settings[@"shouldSoundBell"] boolValue]];
-}
-- (void)toggleSoundBell {
-    BOOL shouldSoundBell = [self.settings[@"shouldSoundBell"] boolValue];
-    if (shouldSoundBell) {
-        self.settings[@"shouldSoundBell"] = @NO;
-    } else {
-        self.settings[@"shouldSoundBell"] = @YES;
-    }
 }
 
 

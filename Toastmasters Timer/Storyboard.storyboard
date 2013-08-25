@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12E55" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="dtZ-qJ-XmN">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12E55" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="MHZ-8T-RmM">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
     </dependencies>
@@ -49,10 +49,10 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="eTG-2E-WR0">
-                                <rect key="frame" x="51" y="35" width="64" height="64"/>
+                                <rect key="frame" x="-4" y="35" width="175" height="64"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" backgroundImage="back.png">
+                                <state key="normal" title="Set Times For Colors">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -60,7 +60,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="backButtonPress:" destination="MHZ-8T-RmM" eventType="touchUpInside" id="GXB-Qn-mfg"/>
+                                    <action selector="setupTimesButtonPress:" destination="MHZ-8T-RmM" eventType="touchUpInside" id="Fy4-YU-grU"/>
                                 </connections>
                             </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="22" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ymc-af-61W">
@@ -159,21 +159,6 @@
                                 <color key="textColor" red="1" green="0.96470588239999999" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" id="f6K-48-GsP">
-                                <rect key="frame" x="158" y="103" width="30" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" backgroundImage="bell.png">
-                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="highlighted">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="soundBellButtonPress:" destination="MHZ-8T-RmM" eventType="touchDown" id="vhj-2R-0sK"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="0.11" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -189,7 +174,6 @@
                         <outlet property="redMinutesLabel" destination="BMi-yv-Y2X" id="XKR-Sj-9bw"/>
                         <outlet property="redSecondsLabel" destination="mze-Iy-71b" id="VQ4-XH-Emu"/>
                         <outlet property="secondsLabel" destination="MEi-dn-KAr" id="H1h-mM-gmf"/>
-                        <outlet property="soundBellButton" destination="f6K-48-GsP" id="XkW-gn-oyE"/>
                         <outletCollection property="timerLabels" destination="Udd-ns-0Ol" id="JXl-sZ-Sae"/>
                         <outletCollection property="timerLabels" destination="ymc-af-61W" id="nHj-KQ-CwG"/>
                         <outletCollection property="timerLabels" destination="MEi-dn-KAr" id="K0Y-oB-vSf"/>
@@ -219,13 +203,16 @@
                         <rect key="frame" x="0.0" y="20" width="260" height="300"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="turn light on" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="FTO-hD-VW7">
-                                <rect key="frame" x="109" y="123" width="89" height="21"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="ayT-5a-Nko">
+                                <rect key="frame" x="13" y="0.0" width="227" height="160"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <string key="text">-background or lock screen causes timer to stop
+
+- need to be able to start timer right away sometimes.  How to do this?  Combine into a single view so user can add/edit color times while timer is running?</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -238,7 +225,7 @@
         <!--Time EntryVC-->
         <scene sceneID="xP2-cJ-96h">
             <objects>
-                <viewController id="FM3-z2-PnQ" customClass="TimeEntryVC" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TimeEntryVC" id="FM3-z2-PnQ" customClass="TimeEntryVC" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="9Fw-4P-LEf">
                         <rect key="frame" x="0.0" y="20" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -554,10 +541,10 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="C7L-au-Kzc">
-                                <rect key="frame" x="128" y="377" width="64" height="64"/>
+                                <rect key="frame" x="116" y="369" width="88" height="80"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" backgroundImage="play.png">
+                                <state key="normal" title="Done">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -565,22 +552,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="startButtonPress:" destination="FM3-z2-PnQ" eventType="touchUpInside" id="AhR-4l-CBR"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" id="6Ac-J8-1Mv">
-                                <rect key="frame" x="76" y="318" width="30" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" backgroundImage="bell.png">
-                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="highlighted">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="soundBellButtonPress:" destination="FM3-z2-PnQ" eventType="touchDown" id="2JA-fo-DVB"/>
+                                    <action selector="doneButtonPress:" destination="FM3-z2-PnQ" eventType="touchUpInside" id="T8P-lb-3Gc"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -596,7 +568,6 @@
                         <outlet property="greenSecondsLabel" destination="tmO-Ty-ePU" id="Kd3-FD-bcC"/>
                         <outlet property="redMnutesLabel" destination="UKl-L4-8Yv" id="nuG-4v-AO6"/>
                         <outlet property="redSecondsLabel" destination="tXI-Dd-kSG" id="lz2-5a-qWA"/>
-                        <outlet property="soundBellButton" destination="6Ac-J8-1Mv" id="Hh6-Wm-1oq"/>
                         <outletCollection property="greenButtons" destination="Q3F-cu-5Wz" id="N8T-ne-asE"/>
                         <outletCollection property="amberButtons" destination="8iR-br-At1" id="Jcz-o8-zdA"/>
                         <outletCollection property="greenButtons" destination="65K-57-XXe" id="jX7-F7-ErW"/>
@@ -619,33 +590,10 @@
             </objects>
             <point key="canvasLocation" x="440" y="-351"/>
         </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="e6v-g1-EyS">
-            <objects>
-                <navigationController navigationBarHidden="YES" id="dtZ-qJ-XmN" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="blackTranslucent"/>
-                    <nil key="simulatedTopBarMetrics"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Y6b-f2-z88">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="FM3-z2-PnQ" kind="relationship" relationship="rootViewController" id="88w-bY-h9s"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="9Nq-9F-tMz" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="96" y="-351"/>
-        </scene>
     </scenes>
     <resources>
-        <image name="back.png" width="64" height="64"/>
-        <image name="bell.png" width="30" height="30"/>
         <image name="minus.png" width="40" height="40"/>
         <image name="pause.png" width="64" height="64"/>
-        <image name="play.png" width="64" height="64"/>
         <image name="plus.png" width="40" height="40"/>
         <image name="stop.png" width="64" height="64"/>
     </resources>

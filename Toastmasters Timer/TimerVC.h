@@ -11,7 +11,6 @@
 
 @interface TimerVC : UIViewController <TimerDelegate>
 @property (strong, nonatomic) NSDictionary *colors;
-@property (strong, nonatomic) NSMutableDictionary *settings;
 
 - (void)toggleTimer;
 @end

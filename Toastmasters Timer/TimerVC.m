@@ -10,6 +10,7 @@
 #import <AudioToolbox/AudioServices.h>
 #import "Timer.h"
 #import "Toast+UIView.h"
+#import "TimeEntryVC.h"
 
 
 
@@ -34,7 +35,6 @@
 @property (strong, nonatomic) IBOutletCollection(UILabel) NSArray *amberLabels;
 @property (strong, nonatomic) IBOutletCollection(UILabel) NSArray *redLabels;
 @property (strong, nonatomic) IBOutletCollection(UILabel) NSArray *bellLabels;
-@property (strong, nonatomic) IBOutlet UIButton *soundBellButton;
 @end
 
 @implementation TimerVC
@@ -52,23 +52,23 @@
     [super viewDidLoad];
     [self setupTimer];
     [self resetTimerUnits];
-    [self setupTimesLabels];
-    [self setupView];
 }
-
-
 - (void)setupTimer {
     self.timer = [[Timer alloc] init];
     self.timer.delegate = self;
 }
-
 - (void)resetTimerUnits {
     self.seconds = 0;
     self.minutes = 0;
     [self updateTimerLabels];
 }
 
-- (void)setupTimesLabels {
+
+- (void)viewWillAppear:(BOOL)animated {
+    [self setupColorsLabels];
+
+}
+- (void)setupColorsLabels {
     NSDictionary *green = self.colors[@"green"];
     NSDictionary *amber = self.colors[@"amber"];
     NSDictionary *red = self.colors[@"red"];
@@ -84,9 +84,8 @@
     self.bellSecondsLabel.text = [Helper unitStringForNumber:bell[@"seconds"]];
 }
 
-- (void)setupView {
-    [Helper updateSoundBellButton:self.soundBellButton forSetting:[self.settings[@"shouldSoundBell"] boolValue]];
-}
+
+
 
 - (void)didReceiveMemoryWarning
 {
@@ -166,10 +165,6 @@
     [self showAlertForColor:color];
     [self vibrateDevice];
     [self emphasizeLabelsForColor:color];
-    
-    if ([color isEqualToString:@"bell"]) {
-        [self processAlertForBell];
-    }
 }
 - (void)showAlertForColor:(NSString *)color {
     UIColor *alertColor;
@@ -213,32 +208,10 @@
         label.font = newFont;
     }
 }
-- (void)processAlertForBell {
-    NSNumber *shouldSoundBellNumber = self.settings[@"shouldSoundBell"];
-    BOOL shouldSoundBell = shouldSoundBellNumber.boolValue;
-    if (shouldSoundBell) {
-        [self soundBell];
-    }
-}
-- (void)soundBell {
-    AudioServicesPlaySystemSound(1025);
-}
 
-- (IBAction)backButtonPress:(id)sender {
-    [self.navigationController popViewControllerAnimated:YES];
-}
-
-- (IBAction)soundBellButtonPress:(id)sender {
-    [self toggleSoundBell];
-    [Helper updateSoundBellButton:self.soundBellButton forSetting:[self.settings[@"shouldSoundBell"] boolValue]];
-}
-- (void)toggleSoundBell {
-    BOOL shouldSoundBell = [self.settings[@"shouldSoundBell"] boolValue];
-    if (shouldSoundBell) {
-        self.settings[@"shouldSoundBell"] = @NO;
-    } else {
-        self.settings[@"shouldSoundBell"] = @YES;
-    }
+- (IBAction)setupTimesButtonPress:(id)sender {
+    TimeEntryVC *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"TimeEntryVC"];
+    [self presentViewController:vc animated:YES completion:nil];
 }
 
 @end
