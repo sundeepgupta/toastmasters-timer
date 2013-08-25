@@ -13,8 +13,6 @@
 #import "TimeEntryVC.h"
 
 
-
-
 @interface TimerVC ()
 @property (strong, nonatomic) Timer *timer;
 @property NSInteger seconds;
@@ -85,8 +83,6 @@
 }
 
 
-
-
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -117,10 +113,11 @@
     [self.pauseButton setBackgroundImage:image forState:UIControlStateNormal];
 }
 
-- (IBAction)resetButtonPress:(id)sender {
+- (IBAction)stopButtonPress:(id)sender {
     [self.timer reset];
     [self resetTimerUnits];
     [self changeButtonToContinueTimer];
+    [self deEmphasizeLabelsForColors];
 }
 
 
@@ -208,6 +205,22 @@
         label.font = newFont;
     }
 }
+
+- (void)deEmphasizeLabelsForColors {
+    [self unBoldLabels:self.greenLabels];
+    [self unBoldLabels:self.amberLabels];
+    [self unBoldLabels:self.redLabels];
+    [self unBoldLabels:self.bellLabels];
+}
+- (void)unBoldLabels:(NSArray *)labels {
+    for (UILabel *label in labels) {
+        UIFont *font = label.font;
+        CGFloat fontSize = font.pointSize ;
+        UIFont *newFont = [UIFont systemFontOfSize:fontSize];
+        label.font = newFont;
+    }
+}
+
 
 - (IBAction)setupTimesButtonPress:(id)sender {
     TimeEntryVC *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"TimeEntryVC"];
