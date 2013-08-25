@@ -6,6 +6,8 @@
 //  Copyright (c) 2013 Sundeep Gupta. All rights reserved.
 //
 
+//http://stackoverflow.com/questions/5453481/how-to-do-true-deep-copy-for-nsarray-and-nsdictionary-with-have-nested-arrays-di
+
 #import "SGDeepCopy.h"
 
 @implementation NSArray (SGDeepCopy)

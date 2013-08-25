@@ -46,6 +46,12 @@
 		AE9F976717BE538100626448 /* Timer.m in Sources */ = {isa = PBXBuildFile; fileRef = AE9F976617BE538100626448 /* Timer.m */; };
 		AE9F976E17BEA00600626448 /* Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = AE9F976D17BEA00600626448 /* Helper.m */; };
 		AEAE24E417CAA78000DA265B /* SGDeepCopy.m in Sources */ = {isa = PBXBuildFile; fileRef = AEAE24E317CAA78000DA265B /* SGDeepCopy.m */; };
+		AEAE24EB17CAB08300DA265B /* cancel.png in Resources */ = {isa = PBXBuildFile; fileRef = AEAE24E517CAB08300DA265B /* cancel.png */; };
+		AEAE24EC17CAB08300DA265B /* cancel@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AEAE24E617CAB08300DA265B /* cancel@2x.png */; };
+		AEAE24ED17CAB08300DA265B /* ok.png in Resources */ = {isa = PBXBuildFile; fileRef = AEAE24E717CAB08300DA265B /* ok.png */; };
+		AEAE24EE17CAB08300DA265B /* ok@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AEAE24E817CAB08300DA265B /* ok@2x.png */; };
+		AEAE24EF17CAB08300DA265B /* settings.png in Resources */ = {isa = PBXBuildFile; fileRef = AEAE24E917CAB08300DA265B /* settings.png */; };
+		AEAE24F017CAB08300DA265B /* settings@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AEAE24EA17CAB08300DA265B /* settings@2x.png */; };
 		AEDA15A217BDB2F300AC9DBA /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEDA15A117BDB2F300AC9DBA /* AudioToolbox.framework */; };
 /* End PBXBuildFile section */
 
@@ -110,6 +116,12 @@
 		AE9F976D17BEA00600626448 /* Helper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Helper.m; sourceTree = "<group>"; };
 		AEAE24E217CAA78000DA265B /* SGDeepCopy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SGDeepCopy.h; path = "Toastmasters Timer/SGDeepCopy.h"; sourceTree = "<group>"; };
 		AEAE24E317CAA78000DA265B /* SGDeepCopy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SGDeepCopy.m; path = "Toastmasters Timer/SGDeepCopy.m"; sourceTree = "<group>"; };
+		AEAE24E517CAB08300DA265B /* cancel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cancel.png; sourceTree = "<group>"; };
+		AEAE24E617CAB08300DA265B /* cancel@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cancel@2x.png"; sourceTree = "<group>"; };
+		AEAE24E717CAB08300DA265B /* ok.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ok.png; sourceTree = "<group>"; };
+		AEAE24E817CAB08300DA265B /* ok@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ok@2x.png"; sourceTree = "<group>"; };
+		AEAE24E917CAB08300DA265B /* settings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = settings.png; sourceTree = "<group>"; };
+		AEAE24EA17CAB08300DA265B /* settings@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "settings@2x.png"; sourceTree = "<group>"; };
 		AEDA15A117BDB2F300AC9DBA /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -144,6 +156,12 @@
 		AE5208A717C054AE002CFFD7 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				AEAE24E517CAB08300DA265B /* cancel.png */,
+				AEAE24E617CAB08300DA265B /* cancel@2x.png */,
+				AEAE24E717CAB08300DA265B /* ok.png */,
+				AEAE24E817CAB08300DA265B /* ok@2x.png */,
+				AEAE24E917CAB08300DA265B /* settings.png */,
+				AEAE24EA17CAB08300DA265B /* settings@2x.png */,
 				AE5208C417C11714002CFFD7 /* back.png */,
 				AE5208C517C11714002CFFD7 /* back@2x.png */,
 				AE5208BA17C102C3002CFFD7 /* bell.png */,
@@ -353,6 +371,12 @@
 				AE5208C317C10CF6002CFFD7 /* bell@2x.png in Resources */,
 				AE5208C617C11714002CFFD7 /* back.png in Resources */,
 				AE5208C717C11714002CFFD7 /* back@2x.png in Resources */,
+				AEAE24EB17CAB08300DA265B /* cancel.png in Resources */,
+				AEAE24EC17CAB08300DA265B /* cancel@2x.png in Resources */,
+				AEAE24ED17CAB08300DA265B /* ok.png in Resources */,
+				AEAE24EE17CAB08300DA265B /* ok@2x.png in Resources */,
+				AEAE24EF17CAB08300DA265B /* settings.png in Resources */,
+				AEAE24F017CAB08300DA265B /* settings@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

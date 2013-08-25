@@ -182,11 +182,16 @@
     [self saveColorsToDefaults];
     [self dismissViewControllerAnimated:YES completion:nil];
 }
-
 - (void)saveColorsToDefaults {
     [self.defaults setObject:self.colors forKey:@"colors"];
     [self.defaults synchronize];
 }
+
+
+- (IBAction)cancelButtonPress:(id)sender {
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
 
 
 
