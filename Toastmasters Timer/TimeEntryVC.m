@@ -8,14 +8,15 @@
 
 #import "TimeEntryVC.h"
 #import "TimerVC.h"
+#import "SGDeepCopy.h"
 
 #define SECONDS_INCREMENT 5
 
 @interface TimeEntryVC ()
 
-@property (strong, nonatomic) NSDictionary *colors;
+@property (strong, nonatomic) NSMutableDictionary *colors;
 @property (strong, nonatomic) NSUserDefaults *defaults;
-@property (strong, nonatomic) NSDictionary *labelsDictionary;
+@property (strong, nonatomic) NSMutableDictionary *labelsDictionary;
 @property (strong, nonatomic) IBOutlet UILabel *greenMinutesLabel;
 @property (strong, nonatomic) IBOutlet UILabel *greenSecondsLabel;
 @property (strong, nonatomic) IBOutlet UILabel *amberMinutesLabel;
@@ -72,12 +73,12 @@
     bell[@"minutes"] = self.bellMinutesLabel;
     bell[@"seconds"] = self.bellSecondsLabel;
     
-    self.labelsDictionary = [NSDictionary dictionaryWithObjectsAndKeys:green,@"green", amber,@"amber", red,@"red", bell,@"bell", nil];
+    self.labelsDictionary = [NSMutableDictionary dictionaryWithObjectsAndKeys:green,@"green", amber,@"amber", red,@"red", bell,@"bell", nil];
 }
 
 - (void)setupColors {
     NSDictionary *savedColors = [self.defaults dictionaryForKey:@"colors"];
-    self.colors = savedColors.mutableCopy;
+    self.colors = [savedColors mutableDeepCopy];
 }
 
 - (void)setupColorsLabels {
@@ -179,18 +180,12 @@
 
 - (IBAction)doneButtonPress:(id)sender {
     [self saveColorsToDefaults];
-    [self setupTimerVC];
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (void)saveColorsToDefaults {
     [self.defaults setObject:self.colors forKey:@"colors"];
     [self.defaults synchronize];
-}
-
-- (void)setupTimerVC {
-    TimerVC *vc = (TimerVC *)self.presentingViewController;
-    vc.colors = self.colors;
 }
 
 

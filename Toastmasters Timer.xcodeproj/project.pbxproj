@@ -45,6 +45,7 @@
 		AE9F976417BDC4FA00626448 /* TimeEntryVC.m in Sources */ = {isa = PBXBuildFile; fileRef = AE9F976317BDC4FA00626448 /* TimeEntryVC.m */; };
 		AE9F976717BE538100626448 /* Timer.m in Sources */ = {isa = PBXBuildFile; fileRef = AE9F976617BE538100626448 /* Timer.m */; };
 		AE9F976E17BEA00600626448 /* Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = AE9F976D17BEA00600626448 /* Helper.m */; };
+		AEAE24E417CAA78000DA265B /* SGDeepCopy.m in Sources */ = {isa = PBXBuildFile; fileRef = AEAE24E317CAA78000DA265B /* SGDeepCopy.m */; };
 		AEDA15A217BDB2F300AC9DBA /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEDA15A117BDB2F300AC9DBA /* AudioToolbox.framework */; };
 /* End PBXBuildFile section */
 
@@ -107,6 +108,8 @@
 		AE9F976817BE5C9B00626448 /* TimerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimerDelegate.h; sourceTree = "<group>"; };
 		AE9F976C17BEA00600626448 /* Helper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Helper.h; sourceTree = "<group>"; };
 		AE9F976D17BEA00600626448 /* Helper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Helper.m; sourceTree = "<group>"; };
+		AEAE24E217CAA78000DA265B /* SGDeepCopy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SGDeepCopy.h; path = "Toastmasters Timer/SGDeepCopy.h"; sourceTree = "<group>"; };
+		AEAE24E317CAA78000DA265B /* SGDeepCopy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SGDeepCopy.m; path = "Toastmasters Timer/SGDeepCopy.m"; sourceTree = "<group>"; };
 		AEDA15A117BDB2F300AC9DBA /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -172,6 +175,8 @@
 		AE72239C17BDAB65003B60A5 = {
 			isa = PBXGroup;
 			children = (
+				AEAE24E217CAA78000DA265B /* SGDeepCopy.h */,
+				AEAE24E317CAA78000DA265B /* SGDeepCopy.m */,
 				AE9F976517BE538100626448 /* Timer.h */,
 				AE9F976617BE538100626448 /* Timer.m */,
 				AE5208D017C17034002CFFD7 /* Toast */,
@@ -390,6 +395,7 @@
 				AE9F976717BE538100626448 /* Timer.m in Sources */,
 				AE9F976E17BEA00600626448 /* Helper.m in Sources */,
 				AE5208D317C17034002CFFD7 /* Toast+UIView.m in Sources */,
+				AEAE24E417CAA78000DA265B /* SGDeepCopy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

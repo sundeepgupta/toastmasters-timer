@@ -39,5 +39,5 @@
 + (UIImage *)imageWithColor:(UIColor *)color;
 
 
-+ (void)setupLabels:(NSDictionary *)labels forColors:(NSDictionary *)colors;
++ (void)setupLabels:(NSMutableDictionary *)labels forColors:(NSMutableDictionary *)colors;
 @end

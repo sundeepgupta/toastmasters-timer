@@ -10,6 +10,5 @@
 #import "TimerDelegate.h"
 
 @interface TimerVC : UIViewController <TimerDelegate>
-@property (strong, nonatomic) NSDictionary *colors;
 
 @end

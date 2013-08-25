@@ -11,12 +11,14 @@
 #import "Timer.h"
 #import "Toast+UIView.h"
 #import "TimeEntryVC.h"
+#import "SGDeepCopy.h"
 
 
 @interface TimerVC ()
 @property (strong, nonatomic) Timer *timer;
 @property (strong, nonatomic) NSUserDefaults *defaults;
-@property (strong, nonatomic) NSDictionary *labelsDictionary;
+@property (strong, nonatomic) NSMutableDictionary *labelsDictionary;
+@property (strong, nonatomic) NSMutableDictionary *colors;
 @property NSInteger seconds;
 @property NSInteger minutes;
 @property (strong, nonatomic) IBOutlet UILabel *secondsLabel;
@@ -77,7 +79,7 @@
     bell[@"minutes"] = self.bellMinutesLabel;
     bell[@"seconds"] = self.bellSecondsLabel;
     
-    self.labelsDictionary = [NSDictionary dictionaryWithObjectsAndKeys:green,@"green", amber,@"amber", red,@"red", bell,@"bell", nil];
+    self.labelsDictionary = [NSMutableDictionary dictionaryWithObjectsAndKeys:green,@"green", amber,@"amber", red,@"red", bell,@"bell", nil];
 }
 
 - (void)setupTimer {
@@ -98,7 +100,7 @@
 - (void)setupColors {
     NSDictionary *savedColors = [self.defaults dictionaryForKey:@"colors"];
     if (savedColors) {
-        self.colors = savedColors.mutableCopy;
+        self.colors = [savedColors mutableDeepCopy];
     } else {
         [self setupColorsForFirstTime];
     }
@@ -121,7 +123,7 @@
     bell[@"minutes"] = @0;
     bell[@"seconds"] = @0;
     
-    self.colors = [NSDictionary dictionaryWithObjectsAndKeys:green,@"green", amber,@"amber", red,@"red", bell,@"bell", nil];
+    self.colors = [NSMutableDictionary dictionaryWithObjectsAndKeys:green,@"green", amber,@"amber", red,@"red", bell,@"bell", nil];
 }
 
 - (void)setupColorsLabels {

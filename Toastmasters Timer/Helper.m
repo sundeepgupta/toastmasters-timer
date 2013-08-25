@@ -44,15 +44,15 @@
 }
 
 
-+ (void)setupLabels:(NSDictionary *)labels forColors:(NSDictionary *)colors {
++ (void)setupLabels:(NSMutableDictionary *)labels forColors:(NSMutableDictionary *)colors {
     NSArray *colorKeys = labels.allKeys;
     
     for (NSString *colorKey in colorKeys) {
-        NSDictionary *colorDict = colors[colorKey];
+        NSMutableDictionary *colorDict = colors[colorKey];
         NSNumber *minutes = colorDict[@"minutes"];
         NSNumber *seconds = colorDict[@"seconds"];
         
-        NSDictionary *labelDict = labels[colorKey];
+        NSMutableDictionary *labelDict = labels[colorKey];
         UILabel *minutesLabel = labelDict[@"minutes"];
         UILabel *secondsLabel = labelDict[@"seconds"];
         minutesLabel.text = [self unitStringForNumber:minutes];
