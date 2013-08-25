@@ -560,13 +560,13 @@
                     </view>
                     <navigationItem key="navigationItem" id="ZcQ-gI-wFu"/>
                     <connections>
-                        <outlet property="amberMnutesLabel" destination="h6h-Rr-44r" id="Qf0-yY-M0z"/>
+                        <outlet property="amberMinutesLabel" destination="h6h-Rr-44r" id="b5v-QS-jed"/>
                         <outlet property="amberSecondsLabel" destination="946-DR-Joa" id="JID-8s-Uxi"/>
-                        <outlet property="bellMnutesLabel" destination="IQE-69-6P6" id="gYl-ac-Yt8"/>
+                        <outlet property="bellMinutesLabel" destination="IQE-69-6P6" id="Oih-z5-fSb"/>
                         <outlet property="bellSecondsLabel" destination="JcR-BX-phn" id="d7c-BW-vgP"/>
-                        <outlet property="greenMnutesLabel" destination="019-54-Gqt" id="ejp-DD-4ko"/>
+                        <outlet property="greenMinutesLabel" destination="019-54-Gqt" id="JrL-7Y-ZwN"/>
                         <outlet property="greenSecondsLabel" destination="tmO-Ty-ePU" id="Kd3-FD-bcC"/>
-                        <outlet property="redMnutesLabel" destination="UKl-L4-8Yv" id="nuG-4v-AO6"/>
+                        <outlet property="redMinutesLabel" destination="UKl-L4-8Yv" id="lbn-zd-Bbp"/>
                         <outlet property="redSecondsLabel" destination="tXI-Dd-kSG" id="lz2-5a-qWA"/>
                         <outletCollection property="greenButtons" destination="Q3F-cu-5Wz" id="N8T-ne-asE"/>
                         <outletCollection property="amberButtons" destination="8iR-br-At1" id="Jcz-o8-zdA"/>

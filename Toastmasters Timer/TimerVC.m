@@ -16,6 +16,7 @@
 @interface TimerVC ()
 @property (strong, nonatomic) Timer *timer;
 @property (strong, nonatomic) NSUserDefaults *defaults;
+@property (strong, nonatomic) NSDictionary *labelsDictionary;
 @property NSInteger seconds;
 @property NSInteger minutes;
 @property (strong, nonatomic) IBOutlet UILabel *secondsLabel;
@@ -50,13 +51,33 @@
 {
     [super viewDidLoad];
     [self setupDefaults];
+    [self setupLabelsDictionary];
     [self setupTimer];
     [self resetTimerUnits];
-    [self setupColorsLabels];
-    
 }
 - (void)setupDefaults {
     self.defaults = [NSUserDefaults standardUserDefaults];
+}
+
+- (void)setupLabelsDictionary {
+    NSMutableDictionary *green = [[NSMutableDictionary alloc] init];
+    NSMutableDictionary *amber = [[NSMutableDictionary alloc] init];
+    NSMutableDictionary *red = [[NSMutableDictionary alloc] init];
+    NSMutableDictionary *bell = [[NSMutableDictionary alloc] init];
+    
+    green[@"minutes"] = self.greenMinutesLabel;
+    green[@"seconds"] = self.greenSecondsLabel;
+    
+    amber[@"minutes"] = self.amberMinutesLabel;
+    amber[@"seconds"] = self.amberSecondsLabel;
+    
+    red[@"minutes"] = self.redMinutesLabel;
+    red[@"seconds"] = self.redSecondsLabel;
+    
+    bell[@"minutes"] = self.bellMinutesLabel;
+    bell[@"seconds"] = self.bellSecondsLabel;
+    
+    self.labelsDictionary = [NSDictionary dictionaryWithObjectsAndKeys:green,@"green", amber,@"amber", red,@"red", bell,@"bell", nil];
 }
 
 - (void)setupTimer {
@@ -71,11 +92,40 @@
 
 
 - (void)viewWillAppear:(BOOL)animated {
+    [self setupColors];
     [self setupColorsLabels];
-
 }
-- (void)setupColorsLabels {
+- (void)setupColors {
+    NSDictionary *savedColors = [self.defaults dictionaryForKey:@"colors"];
+    if (savedColors) {
+        self.colors = savedColors.mutableCopy;
+    } else {
+        [self setupColorsForFirstTime];
+    }
+}
+- (void)setupColorsForFirstTime {
+    NSMutableDictionary *green = [[NSMutableDictionary alloc] init];
+    NSMutableDictionary *amber = [[NSMutableDictionary alloc] init];
+    NSMutableDictionary *red = [[NSMutableDictionary alloc] init];
+    NSMutableDictionary *bell = [[NSMutableDictionary alloc] init];
     
+    green[@"minutes"] = @0;
+    green[@"seconds"] = @0;
+    
+    amber[@"minutes"] = @0;
+    amber[@"seconds"] = @0;
+    
+    red[@"minutes"] = @0;
+    red[@"seconds"] = @0;
+    
+    bell[@"minutes"] = @0;
+    bell[@"seconds"] = @0;
+    
+    self.colors = [NSDictionary dictionaryWithObjectsAndKeys:green,@"green", amber,@"amber", red,@"red", bell,@"bell", nil];
+}
+
+- (void)setupColorsLabels {
+    [Helper setupLabels:self.labelsDictionary forColors:self.colors];
 }
 
 
