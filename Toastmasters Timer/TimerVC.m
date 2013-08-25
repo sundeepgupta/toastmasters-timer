@@ -103,6 +103,7 @@
         self.colors = [savedColors mutableDeepCopy];
     } else {
         [self setupColorsForFirstTime];
+        [self saveColorsToDefaults];
     }
 }
 - (void)setupColorsForFirstTime {
@@ -124,6 +125,10 @@
     bell[@"seconds"] = @0;
     
     self.colors = [NSMutableDictionary dictionaryWithObjectsAndKeys:green,@"green", amber,@"amber", red,@"red", bell,@"bell", nil];
+}
+- (void)saveColorsToDefaults {
+    [self.defaults setObject:self.colors forKey:@"colors"];
+    [self.defaults synchronize];
 }
 
 - (void)setupColorsLabels {
