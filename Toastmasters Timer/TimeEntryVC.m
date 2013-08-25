@@ -14,6 +14,8 @@
 @interface TimeEntryVC ()
 
 @property (strong, nonatomic) NSDictionary *colors;
+@property (strong, nonatomic) NSUserDefaults *defaults;
+@property (strong, nonatomic) NSDictionary *labelsDictionary;
 @property (strong, nonatomic) IBOutlet UILabel *greenMnutesLabel;
 @property (strong, nonatomic) IBOutlet UILabel *greenSecondsLabel;
 @property (strong, nonatomic) IBOutlet UILabel *amberMnutesLabel;
@@ -42,10 +44,46 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [self setupDefaults];
+    [self setupLabelsDictionary];
     [self setupColors];
+    [self setupColorsLabels];
+}
+
+- (void)setupDefaults {
+    self.defaults = [NSUserDefaults standardUserDefaults];
+}
+
+- (void)setupLabelsDictionary {
+    NSMutableDictionary *green = [[NSMutableDictionary alloc] init];
+    NSMutableDictionary *amber = [[NSMutableDictionary alloc] init];
+    NSMutableDictionary *red = [[NSMutableDictionary alloc] init];
+    NSMutableDictionary *bell = [[NSMutableDictionary alloc] init];
+    
+    green[@"minutes"] = self.greenMnutesLabel;
+    green[@"seconds"] = self.greenSecondsLabel;
+    
+    amber[@"minutes"] = self.amberMnutesLabel;
+    amber[@"seconds"] = self.amberSecondsLabel;
+    
+    red[@"minutes"] = self.redMnutesLabel;
+    red[@"seconds"] = self.redSecondsLabel;
+    
+    bell[@"minutes"] = self.bellMnutesLabel;
+    bell[@"seconds"] = self.bellSecondsLabel;
+    
+    self.labelsDictionary = [NSDictionary dictionaryWithObjectsAndKeys:green,@"green", amber,@"amber", red,@"red", bell,@"bell", nil];
 }
 
 - (void)setupColors {
+    NSDictionary *savedColors = [self.defaults dictionaryForKey:@"colors"];
+    if (savedColors) {
+        self.colors = savedColors.mutableCopy;
+    } else {
+        [self setupColorsForFirstTime];
+    }
+}
+- (void)setupColorsForFirstTime {
     NSMutableDictionary *green = [[NSMutableDictionary alloc] init];
     NSMutableDictionary *amber = [[NSMutableDictionary alloc] init];
     NSMutableDictionary *red = [[NSMutableDictionary alloc] init];
@@ -53,33 +91,21 @@
     
     green[@"minutes"] = @0;
     green[@"seconds"] = @0;
-    green[@"minutesLabel"] = self.greenMnutesLabel;
-    green[@"secondsLabel"] = self.greenSecondsLabel;
     
     amber[@"minutes"] = @0;
     amber[@"seconds"] = @0;
-    amber[@"minutesLabel"] = self.amberMnutesLabel;
-    amber[@"secondsLabel"] = self.amberSecondsLabel;
     
     red[@"minutes"] = @0;
     red[@"seconds"] = @0;
-    red[@"minutesLabel"] = self.redMnutesLabel;
-    red[@"secondsLabel"] = self.redSecondsLabel;
     
     bell[@"minutes"] = @0;
     bell[@"seconds"] = @0;
-    bell[@"minutesLabel"] = self.bellMnutesLabel;
-    bell[@"secondsLabel"] = self.bellSecondsLabel;
     
     self.colors = [NSDictionary dictionaryWithObjectsAndKeys:green,@"green", amber,@"amber", red,@"red", bell,@"bell", nil];
-    
-    for (NSString *key in self.colors) {
-        NSDictionary *color = self.colors[key];
-        UILabel *minutesLabel = color[@"minutesLabel"];
-        UILabel *secondsLabel = color[@"secondsLabel"];
-        minutesLabel.text = [Helper unitStringForNumber:color[@"minutes"]];
-        secondsLabel.text = [Helper unitStringForNumber:color[@"seconds"]];
-    }
+}
+
+- (void)setupColorsLabels {
+    [Helper setupLabels:self.labelsDictionary forColors:self.colors];
 }
 
 
@@ -90,8 +116,8 @@
 
 
 - (IBAction)increaseMinutesButtonPress:(id)sender {
-    NSMutableDictionary *color = [self colorForSender:sender];
-    NSInteger minutes = [self integerForUnit:@"minutes" ForColor:color];
+    NSString *color = [self colorForSender:sender];
+    NSInteger minutes = [self integerForUnit:@"minutes" forColor:color];
     
     NSInteger newMinutes = minutes + 1;
     
@@ -103,8 +129,8 @@
 }
 
 - (IBAction)decreaseMinutesButtonPress:(id)sender {
-    NSMutableDictionary *color = [self colorForSender:sender];
-    NSInteger minutes = [self integerForUnit:@"minutes" ForColor:color];
+    NSString *color = [self colorForSender:sender];
+    NSInteger minutes = [self integerForUnit:@"minutes" forColor:color];
     
     NSInteger newMinutes = minutes - 1;
     
@@ -116,8 +142,9 @@
 }
 
 - (IBAction)increaseSecondsButtonPress:(id)sender {
-    NSMutableDictionary *color = [self colorForSender:sender];
-    NSInteger seconds = [self integerForUnit:@"seconds" ForColor:color];
+    NSString *color = [self colorForSender:sender];
+    NSInteger seconds = [self integerForUnit:@"seconds" forColor:color];
+    
     NSInteger newSeconds = seconds + SECONDS_INCREMENT;
 
     if (newSeconds >= 60) {
@@ -128,8 +155,9 @@
 }
 
 - (IBAction)decreaseSecondsButtonPress:(id)sender {
-    NSMutableDictionary *color = [self colorForSender:sender];
-    NSInteger seconds = [self integerForUnit:@"seconds" ForColor:color];
+    NSString *color = [self colorForSender:sender];
+    NSInteger seconds = [self integerForUnit:@"seconds" forColor:color];
+
     NSInteger newSeconds = seconds - SECONDS_INCREMENT;
 
     if (newSeconds < 0) {
@@ -139,7 +167,7 @@
     [self updateUnit:@"seconds" withInteger:newSeconds ForColor:color];
 }
 
-- (NSMutableDictionary *)colorForSender:(id)sender {
+- (NSString *)colorForSender:(id)sender {
     NSString *color;
     if ([self.greenButtons containsObject:sender]) {
         color = @"green";
@@ -150,30 +178,37 @@
     } else {
         color = @"bell";
     }
-    NSMutableDictionary *dictionary = self.colors[color];
-    return dictionary;
+    return color;
 }
 
-- (NSInteger)integerForUnit:(NSString *)unit ForColor:(NSDictionary *)color {
-    NSNumber *number = color[unit];
+- (NSInteger)integerForUnit:(NSString *)unit forColor:(NSString *)color {
+    NSMutableDictionary *colorDict = self.colors[color];
+    NSNumber *number = colorDict[unit];
     NSInteger integer = number.integerValue;
     return integer;
 }
 
-- (void)updateUnit:(NSString *)unit withInteger:(NSInteger)integer ForColor:(NSMutableDictionary *)color {
+- (void)updateUnit:(NSString *)unit withInteger:(NSInteger)integer ForColor:(NSString *)color {
+    NSMutableDictionary *colorDict = self.colors[color];
     NSNumber *number = [NSNumber numberWithInteger:integer];
-    color[unit] = number;
+    colorDict[unit] = number;
     
-    NSString *labelString = [NSString stringWithFormat:@"%@Label", unit];
-    UILabel *label = color[labelString];
-    label.text = [Helper unitStringForNumber:color[unit]];
+    NSMutableDictionary *labelDict = self.labelsDictionary[color];
+    UILabel *label = labelDict[unit];
+    
+    label.text = [Helper unitStringForNumber:colorDict[unit]];
 }
 
 
 
 - (IBAction)doneButtonPress:(id)sender {
+    [self saveColorsToDefaults];
     [self setupTimerVC];
     [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (void)saveColorsToDefaults {
+    [self.defaults setObject:self.colors forKey:@"colors"];
 }
 
 - (void)setupTimerVC {

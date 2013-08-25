@@ -15,6 +15,7 @@
 
 @interface TimerVC ()
 @property (strong, nonatomic) Timer *timer;
+@property (strong, nonatomic) NSUserDefaults *defaults;
 @property NSInteger seconds;
 @property NSInteger minutes;
 @property (strong, nonatomic) IBOutlet UILabel *secondsLabel;
@@ -48,9 +49,16 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [self setupDefaults];
     [self setupTimer];
     [self resetTimerUnits];
+    [self setupColorsLabels];
+    
 }
+- (void)setupDefaults {
+    self.defaults = [NSUserDefaults standardUserDefaults];
+}
+
 - (void)setupTimer {
     self.timer = [[Timer alloc] init];
     self.timer.delegate = self;
@@ -67,19 +75,7 @@
 
 }
 - (void)setupColorsLabels {
-    NSDictionary *green = self.colors[@"green"];
-    NSDictionary *amber = self.colors[@"amber"];
-    NSDictionary *red = self.colors[@"red"];
-    NSDictionary *bell = self.colors[@"bell"];
     
-    self.greenMinutesLabel.text = [Helper unitStringForNumber:green[@"minutes"]];
-    self.greenSecondsLabel.text = [Helper unitStringForNumber:green[@"seconds"]];
-    self.amberMinutesLabel.text = [Helper unitStringForNumber:amber[@"minutes"]];
-    self.amberSecondsLabel.text = [Helper unitStringForNumber:amber[@"seconds"]];
-    self.redMinutesLabel.text = [Helper unitStringForNumber:red[@"minutes"]];
-    self.redSecondsLabel.text = [Helper unitStringForNumber:red[@"seconds"]];
-    self.bellMinutesLabel.text = [Helper unitStringForNumber:bell[@"minutes"]];
-    self.bellSecondsLabel.text = [Helper unitStringForNumber:bell[@"seconds"]];
 }
 
 

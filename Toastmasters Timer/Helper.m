@@ -25,15 +25,6 @@
 }
 
 
-+ (void)updateSoundBellButton:(UIButton *)button forSetting:(BOOL)setting {
-    if (setting == YES) {
-        button.alpha = 1;
-    } else {
-        button.alpha = DISABLED_ALPHA;
-    }
-}
-
-
 + (UIImage *)imageWithColor:(UIColor *)color
 {
     UIImage *img = nil;
@@ -51,6 +42,24 @@
     
     return img;
 }
+
+
++ (void)setupLabels:(NSDictionary *)labels forColors:(NSDictionary *)colors {
+    NSArray *colorKeys = labels.allKeys;
+    
+    for (NSString *colorKey in colorKeys) {
+        NSDictionary *colorDict = colors[colorKey];
+        NSNumber *minutes = colorDict[@"minutes"];
+        NSNumber *seconds = colorDict[@"seconds"];
+        
+        NSDictionary *labelDict = labels[colorKey];
+        UILabel *minutesLabel = labelDict[@"minutes"];
+        UILabel *secondsLabel = labelDict[@"seconds"];
+        minutesLabel.text = [self unitStringForNumber:minutes];
+        secondsLabel.text = [self unitStringForNumber:seconds];
+    }
+}
+
 
 
 

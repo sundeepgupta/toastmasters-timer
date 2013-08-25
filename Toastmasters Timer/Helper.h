@@ -36,8 +36,8 @@
 + (NSInteger)integerForNumber:(NSNumber *)number;
 
 
-+ (void)updateSoundBellButton:(UIButton *)button forSetting:(BOOL)setting;
-
-
 + (UIImage *)imageWithColor:(UIColor *)color;
+
+
++ (void)setupLabels:(NSDictionary *)labels forColors:(NSDictionary *)colors;
 @end
