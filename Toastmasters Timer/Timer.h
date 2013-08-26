@@ -13,12 +13,11 @@
 
 @property (weak, nonatomic) id<TimerDelegate> delegate;
 
-- (void)start;
+- (void)startFromStopped;
 - (void)pause;
-- (void)reset;
-- (void)restart;
-- (BOOL)isRunning;
-
+- (void)unpause;
+- (void)stop;
+- (NSString *)status;
 
 @end
 

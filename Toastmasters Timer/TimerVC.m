@@ -16,7 +16,6 @@
 
 @interface TimerVC ()
 @property (strong, nonatomic) Timer *timer;
-//@property (strong, nonatomic) NSDate *startDate;
 @property (strong, nonatomic) NSUserDefaults *defaults;
 @property (strong, nonatomic) NSMutableDictionary *labelsDictionary;
 @property (strong, nonatomic) NSMutableDictionary *colors;
@@ -147,22 +146,26 @@
     [self toggleTimer];
 }
 - (void)toggleTimer {
-    if ([self.timer isRunning]) {
-        [self.timer pause];
-        [self changeButtonToContinueTimer];
+    NSString *status = [self.timer status];
+    if ([status isEqualToString:@"running"]) {
+        [self pauseTimer];
     } else {
-    
-
-
-        
-        
-        
-        [self.timer start];
-        [self changeButtonToPauseTimer];
+        [self startTimerWithStatus:status];
     }
 }
+- (void)pauseTimer {
+    [self.timer pause];
+    [self changeButtonToContinueTimer];
+}
 
-
+- (void)startTimerWithStatus:(NSString *)status {
+    if ([status isEqualToString:@"paused"]) {
+        [self.timer unpause];
+    } else { //status is stopped
+        [self.timer startFromStopped];
+    }
+    [self changeButtonToPauseTimer];
+}
 
 
 - (void)changeButtonToContinueTimer {
@@ -177,7 +180,7 @@
 }
 
 - (IBAction)stopButtonPress:(id)sender {
-    [self.timer reset];
+    [self.timer stop];
     [self resetTimerUnits];
     [self changeButtonToContinueTimer];
     [self deEmphasizeLabelsForColors];
@@ -200,7 +203,8 @@
 }
 - (void)rollMinutesOver {
     self.minutes = 0;
-    [self.timer restart];
+    [self.timer stop];
+    [self.timer startFromStopped];
 }
 
 - (void)updateTimerLabels {

@@ -13,12 +13,10 @@
 
 
 @interface Timer()
-
 @property (strong, nonatomic) NSTimer *timer;
 @property NSInteger seconds;
 @property (strong, nonatomic) NSDate *startDate;
-@property (strong, nonatomic) NSUserDefaults *defaults;
-
+@property (strong, nonatomic) NSDate *pauseDate;
 @end
 
 
@@ -32,52 +30,66 @@
 }
 
 - (void)resetSeconds {
-    self.seconds = 0;
+    self.seconds = -1;
 }
 
-- (void)start {
+- (void)startFromStopped {
+    [self initializeTimer];
+    [self saveStartDate];
+}
+- (void)initializeTimer {
     self.timer = [NSTimer timerWithTimeInterval:SECONDS_INTERVAL target:self selector:@selector(updateSeconds) userInfo:nil repeats:YES];
     NSRunLoop *currentRunLoop = [NSRunLoop currentRunLoop];
     [currentRunLoop addTimer:self.timer forMode:NSRunLoopCommonModes];
-    
-   [self saveStartDate];
+}
+- (void)saveStartDate {
+    self.startDate = [NSDate date];
 }
 
 - (void)pause {
-    [self stop];
+    [self destroyTimer];
+    self.pauseDate = [NSDate date];
 }
 
 - (void)unpause {
-    
+    [self setupStartDateForUnpause];
+    [self initializeTimer];
+}
+     
+- (void)setupStartDateForUnpause {
+    NSDate *currentDate = [NSDate date];
+    NSDate *adjustedStartDate = [currentDate dateByAddingTimeInterval:-self.seconds];
+    self.startDate = adjustedStartDate;
 }
 
-- (void)reset {
-    [self stop];
+- (void)stop {
+    [self destroyTimer];
     [self resetSeconds];
 }
-- (void)stop {
+- (void)destroyTimer {
     [self.timer invalidate];
     self.timer = nil;
 }
-- (void)restart {
-    [self reset];
-    [self start];
-}
+
 
 - (void)updateSeconds {
     NSTimeInterval secondsElasped = -[self.startDate timeIntervalSinceNow];
     self.seconds = round(secondsElasped);
     [self.delegate updateElaspedSeconds:self.seconds];
-    NSLog(@"Timer: %d", self.seconds);
-}
-
-- (BOOL)isRunning {
-    return (BOOL)self.timer;
 }
 
 
-- (void)saveStartDate {
-    self.startDate = [NSDate date];
+- (NSString *)status {
+    NSString *status;
+    if (self.seconds == -1) {
+        status = @"stopped";
+    } else if (!self.timer) {
+        status = @"paused";
+    } else {
+        status = @"running";
+    }
+    return status;
 }
+
 
 @end
