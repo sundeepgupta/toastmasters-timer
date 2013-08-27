@@ -30,6 +30,7 @@
 @property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *redButtons;
 @property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *bellButtons;
 
+
 @end
 
 @implementation TimeEntryVC
@@ -192,6 +193,12 @@
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
+
+#pragma mark - Timer Delegate
+- (void)updateElaspedSeconds:(NSInteger)seconds {
+
+    
+}
 
 
 

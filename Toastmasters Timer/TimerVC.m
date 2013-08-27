@@ -23,6 +23,7 @@
 @property NSInteger minutes;
 @property (strong, nonatomic) IBOutlet UILabel *secondsLabel;
 @property (strong, nonatomic) IBOutlet UILabel *minutesLabel;
+@property (strong, nonatomic) TimeEntryVC *timeEntryVc;
 @property (strong, nonatomic) IBOutlet UIButton *pauseButton;
 @property (strong, nonatomic) IBOutlet UILabel *greenMinutesLabel;
 @property (strong, nonatomic) IBOutlet UILabel *greenSecondsLabel;
@@ -37,6 +38,7 @@
 @property (strong, nonatomic) IBOutletCollection(UILabel) NSArray *amberLabels;
 @property (strong, nonatomic) IBOutletCollection(UILabel) NSArray *redLabels;
 @property (strong, nonatomic) IBOutletCollection(UILabel) NSArray *bellLabels;
+@property (strong, nonatomic) IBOutlet UIButton *alertButton;
 @end
 
 @implementation TimerVC
@@ -56,9 +58,12 @@
     [self setupLabelsDictionary];
     [self setupTimer];
     [self resetTimerUnits];
+    [self setupAlertButton];
 }
 - (void)setupDefaults {
     self.defaults = [NSUserDefaults standardUserDefaults];
+    
+    [self.defaults setBool:YES forKey:@"shouldAlert"];
 }
 
 - (void)setupLabelsDictionary {
@@ -92,6 +97,13 @@
     [self updateTimerLabels];
 }
 
+- (void)setupAlertButton {
+    if ([self.defaults boolForKey:@"shouldAlert"]) {
+        self.alertButton.alpha = 1;
+    } else {
+        self.alertButton.alpha = DISABLED_ALPHA;
+    }
+}
 
 - (void)viewWillAppear:(BOOL)animated {
     [self setupColors];
@@ -190,6 +202,9 @@
 - (void)updateElaspedSeconds:(NSInteger)seconds {
     [self updateTimerLabelsWithSeconds:seconds];
     [self assertColorChangeForSeconds:seconds];
+    if (self.timeEntryVc) {
+        [self updateTimeEntryVc];
+    }
 }
 - (void)updateTimerLabelsWithSeconds:(NSInteger)seconds {
     self.minutes = floor(seconds/60);
@@ -205,6 +220,11 @@
     self.minutes = 0;
     [self.timer stop];
     [self.timer startFromStopped];
+}
+
+- (void)updateTimeEntryVc {
+    self.timeEntryVc.minutesLabel.text = self.minutesLabel.text;
+    self.timeEntryVc.secondsLabel.text = self.secondsLabel.text;
 }
 
 - (void)updateTimerLabels {
@@ -227,8 +247,11 @@
 
 - (void)alertReachedColor:(NSString *)color {
     [self showAlertForColor:color];
-    [self vibrateDevice];
     [self emphasizeLabelsForColor:color];
+    
+    if ([self.defaults boolForKey:@"shouldAlert"]) {
+        [self performAudioAlert];
+    }
 }
 - (void)showAlertForColor:(NSString *)color {
     UIColor *alertColor;
@@ -247,12 +270,15 @@
     }
 
     UIImage *image = [Helper imageWithColor:alertColor];
-    [self.view makeToast:message duration:3 position:@"center" title:title image:image];
 
+    [self.timeEntryVc.view makeToast:message duration:3 position:@"center" title:title image:image];
+    [self.view makeToast:message duration:3 position:@"center" title:title image:image];
 }
-- (void)vibrateDevice {
-    AudioServicesPlaySystemSound(kSystemSoundID_Vibrate);
+
+- (void)performAudioAlert {
+    AudioServicesPlaySystemSound(1022);
 }
+
 - (void)emphasizeLabelsForColor:(NSString *)color {
     if ([color isEqualToString:@"green"]) {
         [self boldLabels:self.greenLabels];
@@ -291,7 +317,31 @@
 
 - (IBAction)setupTimesButtonPress:(id)sender {
     TimeEntryVC *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"TimeEntryVC"];
+    self.timeEntryVc = vc;
     [self presentViewController:vc animated:YES completion:nil];
+    [self updateTimeEntryVc];
+}
+
+
+
+- (IBAction)toggleAlertButtonPress:(id)sender {
+    [self toggleShouldAlert];
+}
+- (void)toggleShouldAlert {
+    BOOL shouldAlert = [self.defaults boolForKey:@"shouldAlert"];
+    if (shouldAlert) {
+        [self disableAlert];
+    } else {
+        [self enableAlert];
+    }
+}
+- (void)disableAlert {
+    self.alertButton.alpha = DISABLED_ALPHA;
+    [self.defaults setBool:NO forKey:@"shouldAlert"];
+}
+- (void)enableAlert {
+    self.alertButton.alpha = 1;
+    [self.defaults setBool:YES forKey:@"shouldAlert"];
 }
 
 @end
