@@ -149,40 +149,37 @@
 
 
 
-//need to set this up after timer has started otherwise startdate is nil
 - (void)setupLocalNotifications {
-    //get start date
-
-    //foreach color, setup notification
-      //get mins and secs
-      //convet to seconds
-      //convert to date
-    //get dates
-    //get numbers
-    
-    //for each date, setup notification
-    
-    
-    NSDate *startDate = self.timer.startDate;
     NSDictionary *colors = [self.defaults dictionaryForKey:@"colors"];
-    NSDictionary *green = colors[@"green"];
-    NSNumber *minutes = green[@"minutes"];
-    NSNumber *seconds = green[@"seconds"];
+    NSArray *colorNames = colors.allKeys;
     
-    NSInteger totalSeconds = minutes.integerValue*60 + seconds.integerValue;
-    
-    
-    UILocalNotification *notification = [[UILocalNotification alloc] init];
-    notification.fireDate = [NSDate dateWithTimeInterval:totalSeconds sinceDate:startDate];
-    notification.alertBody = @"green";
-    notification.alertAction = @"alert action test";
-    notification.soundName = UILocalNotificationDefaultSoundName;
-    
-    
-    [self scheduleNotification:notification];
+    for (NSString *colorName in colorNames) {
+        [self setupNotificationForColor:colorName];
+    }
 }
 
-
+- (void)setupNotificationForColor:(NSString *)color {
+    NSInteger totalSeconds = [self totalSecondsForColor:color];
+    UILocalNotification *notification = [self notificationForColor:color andTimeInterval:totalSeconds];
+    [self scheduleNotification:notification];
+}
+- (NSInteger)totalSecondsForColor:(NSString *)color {
+    NSDictionary *colorsDict = [self.defaults dictionaryForKey:@"colors"];
+    NSDictionary *colorDict = colorsDict[color];
+    NSInteger minutes = [colorDict[@"minutes"] integerValue];
+    NSInteger seconds = [colorDict[@"seconds"] integerValue];
+    NSInteger totalSeconds = minutes*60 + seconds;
+    return  totalSeconds;
+}
+- (UILocalNotification *)notificationForColor:(NSString *)color andTimeInterval:(NSInteger)timeInterval {
+    NSDate *startDate = self.timer.startDate;
+    
+    UILocalNotification *notification = [[UILocalNotification alloc] init];
+    notification.fireDate = [NSDate dateWithTimeInterval:timeInterval sinceDate:startDate];
+    notification.alertBody = [self alertMessageForColor:color];
+    notification.soundName = UILocalNotificationDefaultSoundName;
+    return notification;
+}
 - (void)scheduleNotification:(UILocalNotification *)notification {
     UIApplication *app = [UIApplication sharedApplication];
     [app scheduleLocalNotification:notification];
@@ -300,7 +297,7 @@
 - (void)showAlertForColor:(NSString *)color {
     UIColor *alertColor;
     NSString *title = @"Attention!";
-    NSString *message = [NSString stringWithFormat:@"Turn the %@ light on.", color];
+    NSString *message = [self alertMessageForColor:color];
     
     if ([color isEqualToString:@"green"]) {
         alertColor = [UIColor colorWithRed:GREEN_R/255 green:GREEN_G/255 blue:GREEN_B/255 alpha:1];
@@ -317,6 +314,10 @@
 
     [self.timeEntryVc.view makeToast:message duration:3 position:@"center" title:title image:image];
     [self.view makeToast:message duration:3 position:@"center" title:title image:image];
+}
+
+- (NSString *)alertMessageForColor:(NSString *)color {
+    return   [NSString stringWithFormat:@"Turn the %@ light on.", color];
 }
 
 - (void)performAudioAlert {
