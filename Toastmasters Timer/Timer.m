@@ -15,7 +15,7 @@
 @interface Timer()
 @property (strong, nonatomic) NSTimer *timer;
 @property NSInteger seconds;
-@property (strong, nonatomic) NSDate *startDate;
+@property (strong, nonatomic, readwrite) NSDate *startDate;
 @property (strong, nonatomic) NSDate *pauseDate;
 @end
 

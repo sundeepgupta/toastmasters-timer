@@ -12,6 +12,7 @@
 @interface Timer : NSObject
 
 @property (weak, nonatomic) id<TimerDelegate> delegate;
+@property (strong, nonatomic, readonly) NSDate *startDate;
 
 - (void)startFromStopped;
 - (void)pause;

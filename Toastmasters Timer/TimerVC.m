@@ -148,6 +148,47 @@
 }
 
 
+
+//need to set this up after timer has started otherwise startdate is nil
+- (void)setupLocalNotifications {
+    //get start date
+
+    //foreach color, setup notification
+      //get mins and secs
+      //convet to seconds
+      //convert to date
+    //get dates
+    //get numbers
+    
+    //for each date, setup notification
+    
+    
+    NSDate *startDate = self.timer.startDate;
+    NSDictionary *colors = [self.defaults dictionaryForKey:@"colors"];
+    NSDictionary *green = colors[@"green"];
+    NSNumber *minutes = green[@"minutes"];
+    NSNumber *seconds = green[@"seconds"];
+    
+    NSInteger totalSeconds = minutes.integerValue*60 + seconds.integerValue;
+    
+    
+    UILocalNotification *notification = [[UILocalNotification alloc] init];
+    notification.fireDate = [NSDate dateWithTimeInterval:totalSeconds sinceDate:startDate];
+    notification.alertBody = @"green";
+    notification.alertAction = @"alert action test";
+    notification.soundName = UILocalNotificationDefaultSoundName;
+    
+    
+    [self scheduleNotification:notification];
+}
+
+
+- (void)scheduleNotification:(UILocalNotification *)notification {
+    UIApplication *app = [UIApplication sharedApplication];
+    [app scheduleLocalNotification:notification];
+}
+
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -161,8 +202,10 @@
     NSString *status = [self.timer status];
     if ([status isEqualToString:@"running"]) {
         [self pauseTimer];
+        [self cancelNotifications];
     } else {
         [self startTimerWithStatus:status];
+        [self setupLocalNotifications];
     }
 }
 - (void)pauseTimer {
@@ -196,6 +239,7 @@
     [self resetTimerUnits];
     [self changeButtonToContinueTimer];
     [self deEmphasizeLabelsForColors];
+    [self cancelNotifications];
 }
 
 
@@ -342,6 +386,12 @@
 - (void)enableAlert {
     self.alertButton.alpha = 1;
     [self.defaults setBool:YES forKey:@"shouldAlert"];
+}
+
+
+- (void)cancelNotifications {
+    UIApplication *app = [UIApplication sharedApplication];
+    [app cancelAllLocalNotifications];
 }
 
 @end
