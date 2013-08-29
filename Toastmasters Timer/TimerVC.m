@@ -395,4 +395,8 @@
     [app cancelAllLocalNotifications];
 }
 
+- (IBAction)infoButtonPress:(id)sender {
+    UIViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"InfoVC"];
+    [self presentViewController:vc animated:YES completion:nil];
+}
 @end

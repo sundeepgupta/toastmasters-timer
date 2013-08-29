@@ -7,6 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AE111F9717CED91D00254EF4 /* libTestFlight.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AE111F9117CED91D00254EF4 /* libTestFlight.a */; };
+		AE111F9817CED91D00254EF4 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = AE111F9217CED91D00254EF4 /* README.md */; };
+		AE111F9917CED91D00254EF4 /* release_notes.md in Resources */ = {isa = PBXBuildFile; fileRef = AE111F9317CED91D00254EF4 /* release_notes.md */; };
+		AE111F9B17CED99900254EF4 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = AE111F9A17CED99900254EF4 /* libz.dylib */; };
+		AE111FA117CEE81500254EF4 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = AE111FA017CEE81500254EF4 /* icon.png */; };
+		AE111FA317CEE81B00254EF4 /* icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AE111FA217CEE81B00254EF4 /* icon@2x.png */; };
+		AE111FA817D0024400254EF4 /* twitter.png in Resources */ = {isa = PBXBuildFile; fileRef = AE111FA417D0024300254EF4 /* twitter.png */; };
+		AE111FA917D0024400254EF4 /* twitter@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AE111FA517D0024300254EF4 /* twitter@2x.png */; };
+		AE111FAA17D0024400254EF4 /* website.png in Resources */ = {isa = PBXBuildFile; fileRef = AE111FA617D0024300254EF4 /* website.png */; };
+		AE111FAB17D0024400254EF4 /* website@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AE111FA717D0024300254EF4 /* website@2x.png */; };
+		AE111FAE17D0036300254EF4 /* InfoVC.m in Sources */ = {isa = PBXBuildFile; fileRef = AE111FAD17D0036300254EF4 /* InfoVC.m */; };
 		AE5208AA17C054AE002CFFD7 /* minus.png in Resources */ = {isa = PBXBuildFile; fileRef = AE5208A817C054AE002CFFD7 /* minus.png */; };
 		AE5208B217C0FF63002CFFD7 /* minus@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AE5208AE17C0FF63002CFFD7 /* minus@2x.png */; };
 		AE5208B317C0FF63002CFFD7 /* play.png in Resources */ = {isa = PBXBuildFile; fileRef = AE5208AF17C0FF63002CFFD7 /* play.png */; };
@@ -66,6 +77,21 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		AE111F9117CED91D00254EF4 /* libTestFlight.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libTestFlight.a; sourceTree = "<group>"; };
+		AE111F9217CED91D00254EF4 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
+		AE111F9317CED91D00254EF4 /* release_notes.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = release_notes.md; sourceTree = "<group>"; };
+		AE111F9417CED91D00254EF4 /* TestFlight+AsyncLogging.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TestFlight+AsyncLogging.h"; sourceTree = "<group>"; };
+		AE111F9517CED91D00254EF4 /* TestFlight+ManualSessions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TestFlight+ManualSessions.h"; sourceTree = "<group>"; };
+		AE111F9617CED91D00254EF4 /* TestFlight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestFlight.h; sourceTree = "<group>"; };
+		AE111F9A17CED99900254EF4 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		AE111FA017CEE81500254EF4 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
+		AE111FA217CEE81B00254EF4 /* icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon@2x.png"; sourceTree = "<group>"; };
+		AE111FA417D0024300254EF4 /* twitter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = twitter.png; sourceTree = "<group>"; };
+		AE111FA517D0024300254EF4 /* twitter@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "twitter@2x.png"; sourceTree = "<group>"; };
+		AE111FA617D0024300254EF4 /* website.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = website.png; sourceTree = "<group>"; };
+		AE111FA717D0024300254EF4 /* website@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "website@2x.png"; sourceTree = "<group>"; };
+		AE111FAC17D0036300254EF4 /* InfoVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = InfoVC.h; path = "Toastmasters Timer/InfoVC.h"; sourceTree = "<group>"; };
+		AE111FAD17D0036300254EF4 /* InfoVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = InfoVC.m; path = "Toastmasters Timer/InfoVC.m"; sourceTree = "<group>"; };
 		AE5208A817C054AE002CFFD7 /* minus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = minus.png; sourceTree = "<group>"; };
 		AE5208AE17C0FF63002CFFD7 /* minus@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "minus@2x.png"; sourceTree = "<group>"; };
 		AE5208AF17C0FF63002CFFD7 /* play.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = play.png; sourceTree = "<group>"; };
@@ -130,12 +156,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AE111F9B17CED99900254EF4 /* libz.dylib in Frameworks */,
 				AE5208CF17C16FFA002CFFD7 /* QuartzCore.framework in Frameworks */,
 				AEDA15A217BDB2F300AC9DBA /* AudioToolbox.framework in Frameworks */,
 				AE7223A917BDAB65003B60A5 /* UIKit.framework in Frameworks */,
 				AE7223AB17BDAB65003B60A5 /* Foundation.framework in Frameworks */,
 				AE7223AD17BDAB65003B60A5 /* CoreGraphics.framework in Frameworks */,
 				AE7223AF17BDAB65003B60A5 /* CoreData.framework in Frameworks */,
+				AE111F9717CED91D00254EF4 /* libTestFlight.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -153,9 +181,28 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AE111F9017CED91D00254EF4 /* TestFlightSDK2.0.0 */ = {
+			isa = PBXGroup;
+			children = (
+				AE111F9117CED91D00254EF4 /* libTestFlight.a */,
+				AE111F9217CED91D00254EF4 /* README.md */,
+				AE111F9317CED91D00254EF4 /* release_notes.md */,
+				AE111F9417CED91D00254EF4 /* TestFlight+AsyncLogging.h */,
+				AE111F9517CED91D00254EF4 /* TestFlight+ManualSessions.h */,
+				AE111F9617CED91D00254EF4 /* TestFlight.h */,
+			);
+			path = TestFlightSDK2.0.0;
+			sourceTree = "<group>";
+		};
 		AE5208A717C054AE002CFFD7 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				AE111FA417D0024300254EF4 /* twitter.png */,
+				AE111FA517D0024300254EF4 /* twitter@2x.png */,
+				AE111FA617D0024300254EF4 /* website.png */,
+				AE111FA717D0024300254EF4 /* website@2x.png */,
+				AE111FA217CEE81B00254EF4 /* icon@2x.png */,
+				AE111FA017CEE81500254EF4 /* icon.png */,
 				AEAE24E517CAB08300DA265B /* cancel.png */,
 				AEAE24E617CAB08300DA265B /* cancel@2x.png */,
 				AEAE24E717CAB08300DA265B /* ok.png */,
@@ -193,6 +240,9 @@
 		AE72239C17BDAB65003B60A5 = {
 			isa = PBXGroup;
 			children = (
+				AE111FAC17D0036300254EF4 /* InfoVC.h */,
+				AE111FAD17D0036300254EF4 /* InfoVC.m */,
+				AE111F9017CED91D00254EF4 /* TestFlightSDK2.0.0 */,
 				AEAE24E217CAA78000DA265B /* SGDeepCopy.h */,
 				AEAE24E317CAA78000DA265B /* SGDeepCopy.m */,
 				AE9F976517BE538100626448 /* Timer.h */,
@@ -220,6 +270,7 @@
 		AE7223A717BDAB65003B60A5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				AE111F9A17CED99900254EF4 /* libz.dylib */,
 				AE5208CE17C16FFA002CFFD7 /* QuartzCore.framework */,
 				AEDA15A117BDB2F300AC9DBA /* AudioToolbox.framework */,
 				AE7223A817BDAB65003B60A5 /* UIKit.framework */,
@@ -377,6 +428,14 @@
 				AEAE24EE17CAB08300DA265B /* ok@2x.png in Resources */,
 				AEAE24EF17CAB08300DA265B /* settings.png in Resources */,
 				AEAE24F017CAB08300DA265B /* settings@2x.png in Resources */,
+				AE111F9817CED91D00254EF4 /* README.md in Resources */,
+				AE111F9917CED91D00254EF4 /* release_notes.md in Resources */,
+				AE111FA117CEE81500254EF4 /* icon.png in Resources */,
+				AE111FA317CEE81B00254EF4 /* icon@2x.png in Resources */,
+				AE111FA817D0024400254EF4 /* twitter.png in Resources */,
+				AE111FA917D0024400254EF4 /* twitter@2x.png in Resources */,
+				AE111FAA17D0024400254EF4 /* website.png in Resources */,
+				AE111FAB17D0024400254EF4 /* website@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -420,6 +479,7 @@
 				AE9F976E17BEA00600626448 /* Helper.m in Sources */,
 				AE5208D317C17034002CFFD7 /* Toast+UIView.m in Sources */,
 				AEAE24E417CAA78000DA265B /* SGDeepCopy.m in Sources */,
+				AE111FAE17D0036300254EF4 /* InfoVC.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -520,11 +580,19 @@
 		AE7223DE17BDAB66003B60A5 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer: Sundeep Gupta (U6Z7XVB628)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Sundeep Gupta (U6Z7XVB628)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Toastmasters Timer/Toastmasters Timer-Prefix.pch";
 				INFOPLIST_FILE = "Toastmasters Timer/Toastmasters Timer-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/TestFlightSDK2.0.0\"",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "ABE51356-AC82-4E0B-9BCA-8009F7D4982B";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "ABE51356-AC82-4E0B-9BCA-8009F7D4982B";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -532,11 +600,19 @@
 		AE7223DF17BDAB66003B60A5 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Sundeep Gupta (M3NJ52HVCE)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Sundeep Gupta (M3NJ52HVCE)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Toastmasters Timer/Toastmasters Timer-Prefix.pch";
 				INFOPLIST_FILE = "Toastmasters Timer/Toastmasters Timer-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/TestFlightSDK2.0.0\"",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "C29F8785-D7CF-4DA4-A468-167CE7C675C8";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "C29F8785-D7CF-4DA4-A468-167CE7C675C8";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
