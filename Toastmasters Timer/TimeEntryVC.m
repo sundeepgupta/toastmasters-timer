@@ -194,12 +194,6 @@
 }
 
 
-#pragma mark - Timer Delegate
-- (void)updateElaspedSeconds:(NSInteger)seconds {
-
-    
-}
-
 
 
 @end

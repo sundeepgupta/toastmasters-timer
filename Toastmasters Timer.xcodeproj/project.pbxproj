@@ -18,6 +18,9 @@
 		AE111FAA17D0024400254EF4 /* website.png in Resources */ = {isa = PBXBuildFile; fileRef = AE111FA617D0024300254EF4 /* website.png */; };
 		AE111FAB17D0024400254EF4 /* website@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AE111FA717D0024300254EF4 /* website@2x.png */; };
 		AE111FAE17D0036300254EF4 /* InfoVC.m in Sources */ = {isa = PBXBuildFile; fileRef = AE111FAD17D0036300254EF4 /* InfoVC.m */; };
+		AE111FB117D019B500254EF4 /* mail.png in Resources */ = {isa = PBXBuildFile; fileRef = AE111FAF17D019B500254EF4 /* mail.png */; };
+		AE111FB217D019B500254EF4 /* mail@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AE111FB017D019B500254EF4 /* mail@2x.png */; };
+		AE111FB417D01FE700254EF4 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE111FB317D01FE700254EF4 /* MessageUI.framework */; };
 		AE5208AA17C054AE002CFFD7 /* minus.png in Resources */ = {isa = PBXBuildFile; fileRef = AE5208A817C054AE002CFFD7 /* minus.png */; };
 		AE5208B217C0FF63002CFFD7 /* minus@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AE5208AE17C0FF63002CFFD7 /* minus@2x.png */; };
 		AE5208B317C0FF63002CFFD7 /* play.png in Resources */ = {isa = PBXBuildFile; fileRef = AE5208AF17C0FF63002CFFD7 /* play.png */; };
@@ -92,6 +95,9 @@
 		AE111FA717D0024300254EF4 /* website@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "website@2x.png"; sourceTree = "<group>"; };
 		AE111FAC17D0036300254EF4 /* InfoVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = InfoVC.h; path = "Toastmasters Timer/InfoVC.h"; sourceTree = "<group>"; };
 		AE111FAD17D0036300254EF4 /* InfoVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = InfoVC.m; path = "Toastmasters Timer/InfoVC.m"; sourceTree = "<group>"; };
+		AE111FAF17D019B500254EF4 /* mail.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mail.png; sourceTree = "<group>"; };
+		AE111FB017D019B500254EF4 /* mail@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mail@2x.png"; sourceTree = "<group>"; };
+		AE111FB317D01FE700254EF4 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		AE5208A817C054AE002CFFD7 /* minus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = minus.png; sourceTree = "<group>"; };
 		AE5208AE17C0FF63002CFFD7 /* minus@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "minus@2x.png"; sourceTree = "<group>"; };
 		AE5208AF17C0FF63002CFFD7 /* play.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = play.png; sourceTree = "<group>"; };
@@ -156,6 +162,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AE111FB417D01FE700254EF4 /* MessageUI.framework in Frameworks */,
 				AE111F9B17CED99900254EF4 /* libz.dylib in Frameworks */,
 				AE5208CF17C16FFA002CFFD7 /* QuartzCore.framework in Frameworks */,
 				AEDA15A217BDB2F300AC9DBA /* AudioToolbox.framework in Frameworks */,
@@ -197,6 +204,8 @@
 		AE5208A717C054AE002CFFD7 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				AE111FAF17D019B500254EF4 /* mail.png */,
+				AE111FB017D019B500254EF4 /* mail@2x.png */,
 				AE111FA417D0024300254EF4 /* twitter.png */,
 				AE111FA517D0024300254EF4 /* twitter@2x.png */,
 				AE111FA617D0024300254EF4 /* website.png */,
@@ -270,6 +279,7 @@
 		AE7223A717BDAB65003B60A5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				AE111FB317D01FE700254EF4 /* MessageUI.framework */,
 				AE111F9A17CED99900254EF4 /* libz.dylib */,
 				AE5208CE17C16FFA002CFFD7 /* QuartzCore.framework */,
 				AEDA15A117BDB2F300AC9DBA /* AudioToolbox.framework */,
@@ -436,6 +446,8 @@
 				AE111FA917D0024400254EF4 /* twitter@2x.png in Resources */,
 				AE111FAA17D0024400254EF4 /* website.png in Resources */,
 				AE111FAB17D0024400254EF4 /* website@2x.png in Resources */,
+				AE111FB117D019B500254EF4 /* mail.png in Resources */,
+				AE111FB217D019B500254EF4 /* mail@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

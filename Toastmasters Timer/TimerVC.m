@@ -18,7 +18,7 @@
 @property (strong, nonatomic) Timer *timer;
 @property (strong, nonatomic) NSUserDefaults *defaults;
 @property (strong, nonatomic) NSMutableDictionary *labelsDictionary;
-@property (strong, nonatomic) NSMutableDictionary *colors;
+@property (strong, nonatomic) NSMutableDictionary *colorTimes;
 @property NSInteger seconds;
 @property NSInteger minutes;
 @property (strong, nonatomic) IBOutlet UILabel *secondsLabel;
@@ -112,7 +112,7 @@
 - (void)setupColors {
     NSDictionary *savedColors = [self.defaults dictionaryForKey:@"colors"];
     if (savedColors) {
-        self.colors = [savedColors mutableDeepCopy];
+        self.colorTimes = [savedColors mutableDeepCopy];
     } else {
         [self setupColorsForFirstTime];
         [self saveColorsToDefaults];
@@ -136,15 +136,15 @@
     bell[@"minutes"] = @0;
     bell[@"seconds"] = @0;
     
-    self.colors = [NSMutableDictionary dictionaryWithObjectsAndKeys:green,@"green", amber,@"amber", red,@"red", bell,@"bell", nil];
+    self.colorTimes = [NSMutableDictionary dictionaryWithObjectsAndKeys:green,@"green", amber,@"amber", red,@"red", bell,@"bell", nil];
 }
 - (void)saveColorsToDefaults {
-    [self.defaults setObject:self.colors forKey:@"colors"];
+    [self.defaults setObject:self.colorTimes forKey:@"colors"];
     [self.defaults synchronize];
 }
 
 - (void)setupColorsLabels {
-    [Helper setupLabels:self.labelsDictionary forColors:self.colors];
+    [Helper setupLabels:self.labelsDictionary forColors:self.colorTimes];
 }
 
 
@@ -235,7 +235,7 @@
     [self.timer stop];
     [self resetTimerUnits];
     [self changeButtonToContinueTimer];
-    [self deEmphasizeLabelsForColors];
+    [self emphasizeLabelsForColor:@""];
     [self cancelNotifications];
 }
 
@@ -274,8 +274,8 @@
 }
 
 - (void)assertColorChangeForSeconds:(NSInteger)seconds {
-    for (NSString *key in self.colors) {
-        NSMutableDictionary *color = self.colors[key];
+    for (NSString *key in self.colorTimes) {
+        NSMutableDictionary *color = self.colorTimes[key];
         
         NSInteger minutes = [Helper integerForNumber:color[@"minutes"]];
         NSInteger seconds = [Helper integerForNumber:color[@"seconds"]];
@@ -311,8 +311,6 @@
     }
 
     UIImage *image = [Helper imageWithColor:alertColor];
-
-    [self.timeEntryVc.view makeToast:message duration:3 position:@"center" title:title image:image];
     [self.view makeToast:message duration:3 position:@"center" title:title image:image];
 }
 
@@ -325,17 +323,19 @@
 }
 
 - (void)emphasizeLabelsForColor:(NSString *)color {
-    if ([color isEqualToString:@"green"]) {
-        [self boldLabels:self.greenLabels];
-    } else if ([color isEqualToString:@"amber"]){
-        [self boldLabels:self.amberLabels];
-    } else if ([color isEqualToString:@"red"]){
-        [self boldLabels:self.redLabels];
-    } else if ([color isEqualToString:@"bell"]){
-        [self boldLabels:self.bellLabels];
+    NSArray *colors = self.labelsDictionary.allKeys;
+    for (NSString *colorInDict in colors) {
+        if ([colorInDict isEqualToString:color]) {
+            [self boldLabelsForColor:color];
+        } else {
+            [self unBoldLabelsForColor:colorInDict];
+        }
     }
 }
-- (void)boldLabels:(NSArray *)labels {
+
+
+- (void)boldLabelsForColor:(NSString *)color {
+    NSArray *labels = [self labelsForColor:color];
     for (UILabel *label in labels) {
         UIFont *font = label.font;
         CGFloat fontSize = font.pointSize ;
@@ -344,19 +344,20 @@
     }
 }
 
-- (void)deEmphasizeLabelsForColors {
-    [self unBoldLabels:self.greenLabels];
-    [self unBoldLabels:self.amberLabels];
-    [self unBoldLabels:self.redLabels];
-    [self unBoldLabels:self.bellLabels];
-}
-- (void)unBoldLabels:(NSArray *)labels {
+- (void)unBoldLabelsForColor:(NSString *)color {
+    NSArray *labels = [self labelsForColor:color];
     for (UILabel *label in labels) {
         UIFont *font = label.font;
         CGFloat fontSize = font.pointSize ;
         UIFont *newFont = [UIFont systemFontOfSize:fontSize];
         label.font = newFont;
     }
+}
+
+- (NSArray *)labelsForColor:(NSString *)color {
+    NSMutableDictionary *colorDict = self.labelsDictionary[color];
+    NSArray *labels = colorDict.allValues;
+    return labels;
 }
 
 

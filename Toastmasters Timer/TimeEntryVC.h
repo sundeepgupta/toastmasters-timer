@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "TimerDelegate.h"
 
-@interface TimeEntryVC : UIViewController <TimerDelegate>
+@interface TimeEntryVC : UIViewController
 
 @property (strong, nonatomic) IBOutlet UILabel *minutesLabel;
 @property (strong, nonatomic) IBOutlet UILabel *secondsLabel;
