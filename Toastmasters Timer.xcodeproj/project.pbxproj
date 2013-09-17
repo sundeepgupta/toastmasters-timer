@@ -66,6 +66,8 @@
 		AEAE24EE17CAB08300DA265B /* ok@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AEAE24E817CAB08300DA265B /* ok@2x.png */; };
 		AEAE24EF17CAB08300DA265B /* settings.png in Resources */ = {isa = PBXBuildFile; fileRef = AEAE24E917CAB08300DA265B /* settings.png */; };
 		AEAE24F017CAB08300DA265B /* settings@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AEAE24EA17CAB08300DA265B /* settings@2x.png */; };
+		AEBAF2F517E7D9B000BA9479 /* info.png in Resources */ = {isa = PBXBuildFile; fileRef = AEBAF2F317E7D9B000BA9479 /* info.png */; };
+		AEBAF2F617E7D9B000BA9479 /* info@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AEBAF2F417E7D9B000BA9479 /* info@2x.png */; };
 		AEDA15A217BDB2F300AC9DBA /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEDA15A117BDB2F300AC9DBA /* AudioToolbox.framework */; };
 /* End PBXBuildFile section */
 
@@ -154,6 +156,8 @@
 		AEAE24E817CAB08300DA265B /* ok@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ok@2x.png"; sourceTree = "<group>"; };
 		AEAE24E917CAB08300DA265B /* settings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = settings.png; sourceTree = "<group>"; };
 		AEAE24EA17CAB08300DA265B /* settings@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "settings@2x.png"; sourceTree = "<group>"; };
+		AEBAF2F317E7D9B000BA9479 /* info.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = info.png; sourceTree = "<group>"; };
+		AEBAF2F417E7D9B000BA9479 /* info@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "info@2x.png"; sourceTree = "<group>"; };
 		AEDA15A117BDB2F300AC9DBA /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -243,6 +247,8 @@
 		AE5208A717C054AE002CFFD7 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				AEBAF2F317E7D9B000BA9479 /* info.png */,
+				AEBAF2F417E7D9B000BA9479 /* info@2x.png */,
 				AE111FAF17D019B500254EF4 /* mail.png */,
 				AE111FB017D019B500254EF4 /* mail@2x.png */,
 				AE111FA417D0024300254EF4 /* twitter.png */,
@@ -440,6 +446,7 @@
 				AE7223B517BDAB66003B60A5 /* InfoPlist.strings in Resources */,
 				AE7223BD17BDAB66003B60A5 /* Default.png in Resources */,
 				AE7223BF17BDAB66003B60A5 /* Default@2x.png in Resources */,
+				AEBAF2F617E7D9B000BA9479 /* info@2x.png in Resources */,
 				AE7223C117BDAB66003B60A5 /* Default-568h@2x.png in Resources */,
 				AE7223E417BDABCA003B60A5 /* Storyboard.storyboard in Resources */,
 				AE5208AA17C054AE002CFFD7 /* minus.png in Resources */,
@@ -448,6 +455,7 @@
 				AE5208B417C0FF63002CFFD7 /* plus.png in Resources */,
 				AE5208B517C0FF63002CFFD7 /* plus@2x.png in Resources */,
 				AE5208B817C100D2002CFFD7 /* pause.png in Resources */,
+				AEBAF2F517E7D9B000BA9479 /* info.png in Resources */,
 				AE5208B917C100D2002CFFD7 /* play@2x.png in Resources */,
 				AE5208BB17C102C3002CFFD7 /* bell.png in Resources */,
 				AE5208BE17C10B8C002CFFD7 /* stop.png in Resources */,

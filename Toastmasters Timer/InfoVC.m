@@ -37,7 +37,7 @@
 
 
 
-- (IBAction)emailButtonPress:(id)sender {
+- (IBAction)sundeepButtonPress:(id)sender {
     if ([MFMailComposeViewController canSendMail]) {
         [self email];
     }
@@ -94,8 +94,8 @@
 
 
 
-- (IBAction)websiteButtonPress:(id)sender {
-    NSString *urlString = @"http://phoenixtoronto.toastmastersclubs.org";
+- (IBAction)nicoleButtonPress:(id)sender {
+    NSString *urlString = @"http://www.redconservatory.com";
     NSURL *url = [NSURL URLWithString:urlString];
     UIApplication *app = [UIApplication sharedApplication];
     [app openURL:url];
