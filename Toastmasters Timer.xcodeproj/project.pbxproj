@@ -419,6 +419,11 @@
 			attributes = {
 				LastUpgradeCheck = 0460;
 				ORGANIZATIONNAME = "Sundeep Gupta";
+				TargetAttributes = {
+					AE7223A417BDAB65003B60A5 = {
+						DevelopmentTeam = M3NJ52HVCE;
+					};
+				};
 			};
 			buildConfigurationList = AE7223A017BDAB65003B60A5 /* Build configuration list for PBXProject "Toastmasters Timer" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -590,7 +595,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 			};
@@ -614,7 +619,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -635,8 +640,8 @@
 					"\"$(SRCROOT)/TestFlightSDK2.0.0\"",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "ABE51356-AC82-4E0B-9BCA-8009F7D4982B";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "ABE51356-AC82-4E0B-9BCA-8009F7D4982B";
+				PROVISIONING_PROFILE = "329C5776-CB2B-418B-8EB8-4D553531D098";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "329C5776-CB2B-418B-8EB8-4D553531D098";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -645,7 +650,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Sundeep Gupta (M3NJ52HVCE)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Sundeep Gupta (M3NJ52HVCE)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Toastmasters Timer/Toastmasters Timer-Prefix.pch";
 				INFOPLIST_FILE = "Toastmasters Timer/Toastmasters Timer-Info.plist";
@@ -655,8 +660,8 @@
 					"\"$(SRCROOT)/TestFlightSDK2.0.0\"",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "C29F8785-D7CF-4DA4-A468-167CE7C675C8";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "C29F8785-D7CF-4DA4-A468-167CE7C675C8";
+				PROVISIONING_PROFILE = "C21BF431-1007-4269-808B-C4D2010F8176";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "C21BF431-1007-4269-808B-C4D2010F8176";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
