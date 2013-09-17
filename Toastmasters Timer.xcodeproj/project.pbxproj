@@ -69,6 +69,13 @@
 		AEBAF2F517E7D9B000BA9479 /* info.png in Resources */ = {isa = PBXBuildFile; fileRef = AEBAF2F317E7D9B000BA9479 /* info.png */; };
 		AEBAF2F617E7D9B000BA9479 /* info@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AEBAF2F417E7D9B000BA9479 /* info@2x.png */; };
 		AEDA15A217BDB2F300AC9DBA /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEDA15A117BDB2F300AC9DBA /* AudioToolbox.framework */; };
+		AEF3115B17E90DB500D10C32 /* icon120.png in Resources */ = {isa = PBXBuildFile; fileRef = AEF3115A17E90DB500D10C32 /* icon120.png */; };
+		AEF3115F17E90EB800D10C32 /* icon29.png in Resources */ = {isa = PBXBuildFile; fileRef = AEF3115C17E90EB800D10C32 /* icon29.png */; };
+		AEF3116017E90EB800D10C32 /* icon29@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AEF3115D17E90EB800D10C32 /* icon29@2x.png */; };
+		AEF3116117E90EB800D10C32 /* icon80.png in Resources */ = {isa = PBXBuildFile; fileRef = AEF3115E17E90EB800D10C32 /* icon80.png */; };
+		AEF3116517E911C000D10C32 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AEF3116217E911C000D10C32 /* Default-568h@2x.png */; };
+		AEF3116617E911C000D10C32 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = AEF3116317E911C000D10C32 /* Default.png */; };
+		AEF3116717E911C000D10C32 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AEF3116417E911C000D10C32 /* Default@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -159,6 +166,13 @@
 		AEBAF2F317E7D9B000BA9479 /* info.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = info.png; sourceTree = "<group>"; };
 		AEBAF2F417E7D9B000BA9479 /* info@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "info@2x.png"; sourceTree = "<group>"; };
 		AEDA15A117BDB2F300AC9DBA /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		AEF3115A17E90DB500D10C32 /* icon120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon120.png; sourceTree = "<group>"; };
+		AEF3115C17E90EB800D10C32 /* icon29.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon29.png; sourceTree = "<group>"; };
+		AEF3115D17E90EB800D10C32 /* icon29@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon29@2x.png"; sourceTree = "<group>"; };
+		AEF3115E17E90EB800D10C32 /* icon80.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon80.png; sourceTree = "<group>"; };
+		AEF3116217E911C000D10C32 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		AEF3116317E911C000D10C32 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		AEF3116417E911C000D10C32 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -247,6 +261,13 @@
 		AE5208A717C054AE002CFFD7 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				AEF3116217E911C000D10C32 /* Default-568h@2x.png */,
+				AEF3116317E911C000D10C32 /* Default.png */,
+				AEF3116417E911C000D10C32 /* Default@2x.png */,
+				AEF3115C17E90EB800D10C32 /* icon29.png */,
+				AEF3115D17E90EB800D10C32 /* icon29@2x.png */,
+				AEF3115E17E90EB800D10C32 /* icon80.png */,
+				AEF3115A17E90DB500D10C32 /* icon120.png */,
 				AEBAF2F317E7D9B000BA9479 /* info.png */,
 				AEBAF2F417E7D9B000BA9479 /* info@2x.png */,
 				AE111FAF17D019B500254EF4 /* mail.png */,
@@ -453,6 +474,7 @@
 				AE7223BF17BDAB66003B60A5 /* Default@2x.png in Resources */,
 				AEBAF2F617E7D9B000BA9479 /* info@2x.png in Resources */,
 				AE7223C117BDAB66003B60A5 /* Default-568h@2x.png in Resources */,
+				AEF3116517E911C000D10C32 /* Default-568h@2x.png in Resources */,
 				AE7223E417BDABCA003B60A5 /* Storyboard.storyboard in Resources */,
 				AE5208AA17C054AE002CFFD7 /* minus.png in Resources */,
 				AE5208B217C0FF63002CFFD7 /* minus@2x.png in Resources */,
@@ -462,11 +484,14 @@
 				AE5208B817C100D2002CFFD7 /* pause.png in Resources */,
 				AEBAF2F517E7D9B000BA9479 /* info.png in Resources */,
 				AE5208B917C100D2002CFFD7 /* play@2x.png in Resources */,
+				AEF3115B17E90DB500D10C32 /* icon120.png in Resources */,
+				AEF3116717E911C000D10C32 /* Default@2x.png in Resources */,
 				AE5208BB17C102C3002CFFD7 /* bell.png in Resources */,
 				AE5208BE17C10B8C002CFFD7 /* stop.png in Resources */,
 				AE5208BF17C10B8C002CFFD7 /* stop@2x.png in Resources */,
 				AE5208C117C10CE4002CFFD7 /* pause@2x.png in Resources */,
 				AE5208C317C10CF6002CFFD7 /* bell@2x.png in Resources */,
+				AEF3115F17E90EB800D10C32 /* icon29.png in Resources */,
 				AE5208C617C11714002CFFD7 /* back.png in Resources */,
 				AE5208C717C11714002CFFD7 /* back@2x.png in Resources */,
 				AEAE24EB17CAB08300DA265B /* cancel.png in Resources */,
@@ -474,16 +499,19 @@
 				AEAE24ED17CAB08300DA265B /* ok.png in Resources */,
 				AEAE24EE17CAB08300DA265B /* ok@2x.png in Resources */,
 				AEAE24EF17CAB08300DA265B /* settings.png in Resources */,
+				AEF3116617E911C000D10C32 /* Default.png in Resources */,
 				AEAE24F017CAB08300DA265B /* settings@2x.png in Resources */,
 				AE111F9817CED91D00254EF4 /* README.md in Resources */,
 				AE111F9917CED91D00254EF4 /* release_notes.md in Resources */,
 				AE111FA117CEE81500254EF4 /* icon.png in Resources */,
 				AE111FA317CEE81B00254EF4 /* icon@2x.png in Resources */,
 				AE111FA817D0024400254EF4 /* twitter.png in Resources */,
+				AEF3116117E90EB800D10C32 /* icon80.png in Resources */,
 				AE111FA917D0024400254EF4 /* twitter@2x.png in Resources */,
 				AE111FAA17D0024400254EF4 /* website.png in Resources */,
 				AE111FAB17D0024400254EF4 /* website@2x.png in Resources */,
 				AE111FB117D019B500254EF4 /* mail.png in Resources */,
+				AEF3116017E90EB800D10C32 /* icon29@2x.png in Resources */,
 				AE111FB217D019B500254EF4 /* mail@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -235,7 +235,7 @@
     [self.timer stop];
     [self resetTimerUnits];
     [self changeButtonToContinueTimer];
-    [self emphasizeLabelsForColor:@""];
+    [self toggleEmphasisForLabelsWithAlertedColor:@""];
     [self cancelNotifications];
 }
 
@@ -288,7 +288,7 @@
 
 - (void)alertReachedColor:(NSString *)color {
     [self showAlertForColor:color];
-    [self emphasizeLabelsForColor:color];
+    [self toggleEmphasisForLabelsWithAlertedColor:color];
     
     if ([self.defaults boolForKey:@"shouldAlert"]) {
         [self performAudioAlert];
@@ -322,36 +322,57 @@
     AudioServicesPlaySystemSound(1022);
 }
 
-- (void)emphasizeLabelsForColor:(NSString *)color {
+- (void)toggleEmphasisForLabelsWithAlertedColor:(NSString *)alertedColor {
     NSArray *colors = self.labelsDictionary.allKeys;
     for (NSString *colorInDict in colors) {
-        if ([colorInDict isEqualToString:color]) {
-            [self boldLabelsForColor:color];
+        if ([colorInDict isEqualToString:alertedColor]) {
+            [self emphasizeLabelsForColor:alertedColor];
         } else {
-            [self unBoldLabelsForColor:colorInDict];
+            [self deEmphasizeLabelsForColor:colorInDict];
         }
     }
 }
 
 
-- (void)boldLabelsForColor:(NSString *)color {
+- (void)emphasizeLabelsForColor:(NSString *)color {
     NSArray *labels = [self labelsForColor:color];
     for (UILabel *label in labels) {
-        UIFont *font = label.font;
-        CGFloat fontSize = font.pointSize ;
-        UIFont *newFont = [UIFont boldSystemFontOfSize:fontSize];
-        label.font = newFont;
+        [self boldLabel:label];
+        [self glowLabel:label];
     }
 }
 
-- (void)unBoldLabelsForColor:(NSString *)color {
+- (void)boldLabel:(UILabel *)label {
+    UIFont *font = label.font;
+    CGFloat fontSize = font.pointSize ;
+    UIFont *newFont = [UIFont boldSystemFontOfSize:fontSize];
+    label.font = newFont;
+}
+- (void)glowLabel:(UILabel *)label {
+    UIColor *color = label.textColor;
+    label.layer.shadowColor = [color CGColor];
+    label.layer.shadowRadius = 4.0f;
+    label.layer.shadowOpacity = .9;
+    label.layer.shadowOffset = CGSizeZero;
+    label.layer.masksToBounds = NO;
+}
+
+- (void)deEmphasizeLabelsForColor:(NSString *)color {
     NSArray *labels = [self labelsForColor:color];
     for (UILabel *label in labels) {
-        UIFont *font = label.font;
-        CGFloat fontSize = font.pointSize ;
-        UIFont *newFont = [UIFont systemFontOfSize:fontSize];
-        label.font = newFont;
+        [self unBoldLabel:label];
+        [self unGlowLabel:label];
     }
+}
+
+- (void)unBoldLabel:(UILabel *)label {
+    UIFont *font = label.font;
+    CGFloat fontSize = font.pointSize ;
+    UIFont *newFont = [UIFont systemFontOfSize:fontSize];
+    label.font = newFont;
+}
+- (void)unGlowLabel:(UILabel *)label {
+    label.layer.shadowOpacity = 0;
 }
 
 - (NSArray *)labelsForColor:(NSString *)color {
@@ -377,8 +398,10 @@
     BOOL shouldAlert = [self.defaults boolForKey:@"shouldAlert"];
     if (shouldAlert) {
         [self disableAlert];
+        [self cancelNotifications];
     } else {
         [self enableAlert];
+        [self setupLocalNotifications];
     }
 }
 - (void)disableAlert {
@@ -389,7 +412,6 @@
     self.alertButton.alpha = 1;
     [self.defaults setBool:YES forKey:@"shouldAlert"];
 }
-
 
 - (void)cancelNotifications {
     UIApplication *app = [UIApplication sharedApplication];
