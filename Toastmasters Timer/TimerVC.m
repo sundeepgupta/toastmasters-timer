@@ -178,6 +178,8 @@
     notification.fireDate = [NSDate dateWithTimeInterval:timeInterval sinceDate:startDate];
     notification.alertBody = [self alertMessageForColor:color];
     notification.soundName = UILocalNotificationDefaultSoundName;
+    notification.timeZone = [NSTimeZone localTimeZone];
+    
     return notification;
 }
 - (void)scheduleNotification:(UILocalNotification *)notification {

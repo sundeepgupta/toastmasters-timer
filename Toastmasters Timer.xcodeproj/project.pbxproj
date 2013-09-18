@@ -44,9 +44,6 @@
 		AE7223B517BDAB66003B60A5 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = AE7223B317BDAB66003B60A5 /* InfoPlist.strings */; };
 		AE7223B717BDAB66003B60A5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AE7223B617BDAB66003B60A5 /* main.m */; };
 		AE7223BB17BDAB66003B60A5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AE7223BA17BDAB66003B60A5 /* AppDelegate.m */; };
-		AE7223BD17BDAB66003B60A5 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = AE7223BC17BDAB66003B60A5 /* Default.png */; };
-		AE7223BF17BDAB66003B60A5 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AE7223BE17BDAB66003B60A5 /* Default@2x.png */; };
-		AE7223C117BDAB66003B60A5 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AE7223C017BDAB66003B60A5 /* Default-568h@2x.png */; };
 		AE7223C417BDAB66003B60A5 /* Toastmasters_Timer.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AE7223C217BDAB66003B60A5 /* Toastmasters_Timer.xcdatamodeld */; };
 		AE7223CC17BDAB66003B60A5 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE7223CB17BDAB66003B60A5 /* SenTestingKit.framework */; };
 		AE7223CD17BDAB66003B60A5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE7223A817BDAB65003B60A5 /* UIKit.framework */; };
@@ -135,9 +132,6 @@
 		AE7223B817BDAB66003B60A5 /* Toastmasters Timer-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Toastmasters Timer-Prefix.pch"; sourceTree = "<group>"; };
 		AE7223B917BDAB66003B60A5 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		AE7223BA17BDAB66003B60A5 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		AE7223BC17BDAB66003B60A5 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
-		AE7223BE17BDAB66003B60A5 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
-		AE7223C017BDAB66003B60A5 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		AE7223C317BDAB66003B60A5 /* Toastmasters_Timer.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Toastmasters_Timer.xcdatamodel; sourceTree = "<group>"; };
 		AE7223CA17BDAB66003B60A5 /* Toastmasters TimerTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Toastmasters TimerTests.octest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE7223CB17BDAB66003B60A5 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
@@ -367,9 +361,6 @@
 				AE7223B317BDAB66003B60A5 /* InfoPlist.strings */,
 				AE7223B617BDAB66003B60A5 /* main.m */,
 				AE7223B817BDAB66003B60A5 /* Toastmasters Timer-Prefix.pch */,
-				AE7223BC17BDAB66003B60A5 /* Default.png */,
-				AE7223BE17BDAB66003B60A5 /* Default@2x.png */,
-				AE7223C017BDAB66003B60A5 /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -470,10 +461,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AE7223B517BDAB66003B60A5 /* InfoPlist.strings in Resources */,
-				AE7223BD17BDAB66003B60A5 /* Default.png in Resources */,
-				AE7223BF17BDAB66003B60A5 /* Default@2x.png in Resources */,
 				AEBAF2F617E7D9B000BA9479 /* info@2x.png in Resources */,
-				AE7223C117BDAB66003B60A5 /* Default-568h@2x.png in Resources */,
 				AEF3116517E911C000D10C32 /* Default-568h@2x.png in Resources */,
 				AE7223E417BDABCA003B60A5 /* Storyboard.storyboard in Resources */,
 				AE5208AA17C054AE002CFFD7 /* minus.png in Resources */,
@@ -688,8 +676,8 @@
 					"\"$(SRCROOT)/TestFlightSDK2.0.0\"",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "C21BF431-1007-4269-808B-C4D2010F8176";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "C21BF431-1007-4269-808B-C4D2010F8176";
+				PROVISIONING_PROFILE = "71363225-3173-4FF0-9279-BAF34E07A74A";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "71363225-3173-4FF0-9279-BAF34E07A74A";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
