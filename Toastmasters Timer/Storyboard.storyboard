@@ -50,7 +50,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="setupTimesButtonPress:" destination="MHZ-8T-RmM" eventType="touchUpInside" id="Fy4-YU-grU"/>
+                                    <action selector="settingsButtonPress:" destination="MHZ-8T-RmM" eventType="touchUpInside" id="B5h-XY-fU3"/>
                                 </connections>
                             </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="22" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ymc-af-61W">
@@ -176,7 +176,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="toggleAlertButtonPress:" destination="MHZ-8T-RmM" eventType="touchDown" id="jBA-tv-oUy"/>
+                                    <action selector="toggleAudioAlertButtonPress:" destination="MHZ-8T-RmM" eventType="touchDown" id="ZUV-GW-IvT"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Ohd-ul-iSe">

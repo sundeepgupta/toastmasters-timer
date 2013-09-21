@@ -8,6 +8,19 @@
 
 #import <Foundation/Foundation.h>
 
+@class TimerVC;
+@class Timer;
+
+
 @interface AlertManager : NSObject
+
+- (id)initWithTimer:(Timer *)timer timerVC:(TimerVC *)timerVC defaults:(NSUserDefaults *)defaults;
+
+
+- (void)resetLocalNotifications;
+- (void)setupLocalNotifications;
+- (void)cancelLocalNotifications;
+
+- (void)performAlertForReachedColorName:(NSString *)colorName;
 
 @end

@@ -9,11 +9,14 @@
 #ifndef Toastmasters_Timer_Constants_h
 #define Toastmasters_Timer_Constants_h
 
-
+//Misc
+#define REALLY_LARGE_INTEGER 999999999
+#define AUDIO_ALERT_SOUND 1022
 
 //Defaults Keys
 #define SHOULD_AUDIO_ALERT_KEY @"shouldAudioAlert"
 #define COLOR_TIMES_KEY @"colorTimes"
+
 
 //ColorTimes Dictionary Keys
 #define MINUTES_KEY @"minutesKey"
@@ -21,13 +24,19 @@
 
 
 //Color Names
-#define GREEN_COLOR_NAME @"greenColorName"
-#define AMBER_COLOR_NAME @"amberColorName"
-#define RED_COLOR_NAME @"redColorName"
-#define BELL_COLOR_NAME @"bellColorName"
+#define GREEN_COLOR_NAME @"green"
+#define AMBER_COLOR_NAME @"amber"
+#define RED_COLOR_NAME @"red"
+#define BELL_COLOR_NAME @"bell"
 
 
-//Color values
+//Toast Stuff
+#define TOAST_DURATION 2
+#define TOAST_TAG 999
+#define TOAST_POSITION @"center"
+
+
+//Color RGB values
 #define DISABLED_ALPHA 0.3
 
 #define GREY_RGB 237

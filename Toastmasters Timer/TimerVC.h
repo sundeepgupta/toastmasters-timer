@@ -11,6 +11,11 @@
 
 @interface TimerVC : UIViewController <TimerDelegate>
 
+
+
+- (void)toggleEmphasisForLabelsWithAlertedColorName:(NSString *)alertedColorName;
+
+
 - (void)setupViewForBackground;
 - (void)setupViewForReturningToForeground;
 
