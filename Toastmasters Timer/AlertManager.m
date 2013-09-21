@@ -125,7 +125,7 @@
 
 
 - (void)performAudioAlert {
-    AudioServicesPlaySystemSound(AUDIO_ALERT_SOUND);
+    AudioServicesPlaySystemSound(AUDIO_ALERT_SOUND_ID);
 }
 
 
