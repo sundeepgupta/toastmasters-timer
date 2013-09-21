@@ -419,20 +419,15 @@
     NSInteger minDifference = REALLY_LARGE_INTEGER;
     
     for (NSString *colorName in self.colorTimes) {
-        NSInteger difference = [self differenceInSecondsForColorName:colorName andTotalSeconds:totalSeconds];
+        NSInteger colorTotalSeconds = [self totalSecondsForColorName:colorName];
+        NSInteger difference = totalSeconds - colorTotalSeconds;
         BOOL colorTimeWasReached = difference >= 0;
-        if (colorTimeWasReached  &&  difference <= minDifference) {
+        if (colorTimeWasReached  &&  colorTotalSeconds > 0  &&  difference <= minDifference) {
             minDifference = difference;
             colorToEmphasize = colorName;
         }
     }
     return colorToEmphasize;
-}
-
-- (NSInteger)differenceInSecondsForColorName:(NSString *)colorName andTotalSeconds:(NSInteger)totalSeconds {
-    NSInteger colorTotalSeconds = [self totalSecondsForColorName:colorName];
-    NSInteger difference = totalSeconds - colorTotalSeconds;
-    return difference;
 }
 
 - (NSInteger) totalSecondsForColorName:(NSString *)colorName {
