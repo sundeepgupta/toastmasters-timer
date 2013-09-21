@@ -62,10 +62,19 @@
 
 
 
++ (NSInteger)totalSecondsForColorDict:(NSDictionary *)colorDict {
+    NSInteger minutes = [colorDict[MINUTES_KEY] integerValue];
+    NSInteger seconds = [colorDict[SECONDS_KEY] integerValue];
+    NSInteger totalSeconds = [self totalSecondsForMinutes:minutes andSeconds:seconds];
+    return totalSeconds;
+}
+
 + (NSInteger)totalSecondsForMinutes:(NSInteger)minutes andSeconds:(NSInteger)seconds {
     NSInteger totalSeconds = minutes*60 + seconds;
     return totalSeconds;
 }
+
+
 
 
 

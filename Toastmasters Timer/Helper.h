@@ -23,6 +23,8 @@
 
 + (void)setupLabels:(NSMutableDictionary *)labels forColors:(NSMutableDictionary *)colors;
 
+
++ (NSInteger)totalSecondsForColorDict:(NSDictionary *)colorDict;
 + (NSInteger)totalSecondsForMinutes:(NSInteger)minutes andSeconds:(NSInteger)seconds;
 
 

@@ -7,9 +7,7 @@
 //
 
 #import "TimerVC.h"
-
 #import "Timer.h"
-
 #import "TimeEntryVC.h"
 #import "SGDeepCopy.h"
 #import "InfoVC.h"
@@ -375,7 +373,7 @@
 
 
 
-#pragma Prepare for Background
+#pragma mark - Prepare for Background
 - (void)setupViewForBackground {
     [self hideTimerLabels];
     [self deEmphasizeLabelsForAllColors];
@@ -437,20 +435,10 @@
     return difference;
 }
 
-
-
-
-#pragma mark - Total Seconds
 - (NSInteger) totalSecondsForColorName:(NSString *)colorName {
     NSDictionary *colorDict = [self.colorTimes objectForKey:colorName];
-    NSInteger colorTotalSeconds = [self totalSecondsForColorDict:colorDict];
+    NSInteger colorTotalSeconds = [Helper totalSecondsForColorDict:colorDict];
     return colorTotalSeconds;
-}
-- (NSInteger)totalSecondsForColorDict:(NSDictionary *)colorDict {
-    NSInteger minutes = [colorDict[MINUTES_KEY] integerValue];
-    NSInteger seconds = [colorDict[SECONDS_KEY] integerValue];
-    NSInteger totalSeconds = [Helper totalSecondsForMinutes:minutes andSeconds:seconds];
-    return totalSeconds;
 }
 - (NSInteger)totalSecondsForTimer {
     NSInteger totalSeconds = [Helper totalSecondsForMinutes:self.minutes andSeconds:self.seconds];
@@ -460,10 +448,4 @@
 
 
 
-
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-}
 @end

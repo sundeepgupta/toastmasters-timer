@@ -32,16 +32,16 @@
 }
 
 
-#pragma mark - Setup Local Notifications
+#pragma mark - Local Notifications
 - (void)resetLocalNotifications {
     [self cancelLocalNotifications];
     [self setupLocalNotifications];
 }
 - (void)setupLocalNotifications {
-    NSDictionary *colors = [self.defaults dictionaryForKey:COLOR_TIMES_KEY];
+    NSDictionary *colorNames = [self.defaults dictionaryForKey:COLOR_TIMES_KEY];
     
-    for (NSString *colorName in colors) {
-        [self setupNotificationForColor:colorName];
+    for (NSString *colorName in colorNames) {
+        [self setupNotificationForColorName:colorName];
     }
 }
 - (void)cancelLocalNotifications {
@@ -49,25 +49,18 @@
     [app cancelAllLocalNotifications];
 }
 
-- (void)setupNotificationForColor:(NSString *)color {
-    NSInteger totalSeconds = [self totalSecondsForColor:color];
-    UILocalNotification *notification = [self notificationForColor:color andTimeInterval:totalSeconds];
+- (void)setupNotificationForColorName:(NSString *)colorName {
+    NSInteger totalSeconds = [self.timerVC totalSecondsForColorName:colorName];
+    UILocalNotification *notification = [self notificationForColorName:colorName andTimeInterval:totalSeconds];
     [self scheduleNotification:notification];
 }
-- (NSInteger)totalSecondsForColor:(NSString *)color {
-    NSDictionary *colorsDict = [self.defaults dictionaryForKey:COLOR_TIMES_KEY];
-    NSDictionary *colorDict = colorsDict[color];
-    NSInteger minutes = [colorDict[MINUTES_KEY] integerValue];
-    NSInteger seconds = [colorDict[SECONDS_KEY] integerValue];
-    NSInteger totalSeconds = minutes*60 + seconds;
-    return  totalSeconds;
-}
-- (UILocalNotification *)notificationForColor:(NSString *)color andTimeInterval:(NSInteger)timeInterval {
+
+- (UILocalNotification *)notificationForColorName:(NSString *)colorName andTimeInterval:(NSInteger)timeInterval {
     NSDate *startDate = self.timer.startDate;
     
     UILocalNotification *notification = [[UILocalNotification alloc] init];
     notification.fireDate = [NSDate dateWithTimeInterval:timeInterval sinceDate:startDate];
-    notification.alertBody = [self alertMessageForColor:color];
+    notification.alertBody = [self alertMessageForColorName:colorName];
     notification.timeZone = [NSTimeZone localTimeZone];
     
     if ([self.defaults boolForKey:SHOULD_AUDIO_ALERT_KEY]) {
@@ -89,19 +82,19 @@
 
 
 
-#pragma mark - Perform Alert
+#pragma mark - Perform Color Alert
 - (void)performAlertForReachedColorName:(NSString *)colorName {
-    [self showAlertForColor:colorName];
+    [self showAlertForColorName:colorName];
     [self.timerVC toggleEmphasisForLabelsWithAlertedColorName:colorName];
     
     if ([self.defaults boolForKey:SHOULD_AUDIO_ALERT_KEY]) {
         [self performAudioAlert];
     }
 }
-- (void)showAlertForColor:(NSString *)colorName {
+- (void)showAlertForColorName:(NSString *)colorName {
     UIColor *alertColor;
     NSString *title = @"Attention!";
-    NSString *message = [self alertMessageForColor:colorName];
+    NSString *message = [self alertMessageForColorName:colorName];
     
     if ([colorName isEqualToString:GREEN_COLOR_NAME]) {
         alertColor = [UIColor colorWithRed:GREEN_R/255 green:GREEN_G/255 blue:GREEN_B/255 alpha:1];
@@ -119,8 +112,8 @@
 }
 
 
-- (NSString *)alertMessageForColor:(NSString *)color {
-    return   [NSString stringWithFormat:@"Turn the %@ light on.", color];
+- (NSString *)alertMessageForColorName:(NSString *)colorName {
+    return   [NSString stringWithFormat:@"Turn the %@ light on.", colorName];
 }
 
 - (void)performAudioAlert {
