@@ -198,9 +198,9 @@
                         <color key="backgroundColor" white="0.11" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
-                        <outlet property="alertButton" destination="E4i-9o-xr5" id="G5N-09-q96"/>
                         <outlet property="amberMinutesLabel" destination="AmE-Xi-v7v" id="Rkj-yg-iYq"/>
                         <outlet property="amberSecondsLabel" destination="8Lt-IE-QEH" id="ovp-6v-FXF"/>
+                        <outlet property="audioAlertButton" destination="E4i-9o-xr5" id="bLO-vj-ai8"/>
                         <outlet property="bellMinutesLabel" destination="HSV-2F-r2N" id="YeN-lb-gMQ"/>
                         <outlet property="bellSecondsLabel" destination="NVP-sa-XDa" id="1MJ-6T-EiJ"/>
                         <outlet property="greenMinutesLabel" destination="sf8-QL-pEk" id="39p-FD-1MM"/>

@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		AE111F9717CED91D00254EF4 /* libTestFlight.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AE111F9117CED91D00254EF4 /* libTestFlight.a */; };
 		AE111F9817CED91D00254EF4 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = AE111F9217CED91D00254EF4 /* README.md */; };
 		AE111F9917CED91D00254EF4 /* release_notes.md in Resources */ = {isa = PBXBuildFile; fileRef = AE111F9317CED91D00254EF4 /* release_notes.md */; };
 		AE111F9B17CED99900254EF4 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = AE111F9A17CED99900254EF4 /* libz.dylib */; };
@@ -21,6 +20,8 @@
 		AE111FB117D019B500254EF4 /* mail.png in Resources */ = {isa = PBXBuildFile; fileRef = AE111FAF17D019B500254EF4 /* mail.png */; };
 		AE111FB217D019B500254EF4 /* mail@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AE111FB017D019B500254EF4 /* mail@2x.png */; };
 		AE111FB417D01FE700254EF4 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE111FB317D01FE700254EF4 /* MessageUI.framework */; };
+		AE3C7EBF17EC7DB00071725C /* libTestFlight.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AE111F9117CED91D00254EF4 /* libTestFlight.a */; };
+		AE3C7EC217ECF9080071725C /* AlertManager.m in Sources */ = {isa = PBXBuildFile; fileRef = AE3C7EC117ECF9080071725C /* AlertManager.m */; };
 		AE5208AA17C054AE002CFFD7 /* minus.png in Resources */ = {isa = PBXBuildFile; fileRef = AE5208A817C054AE002CFFD7 /* minus.png */; };
 		AE5208B217C0FF63002CFFD7 /* minus@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AE5208AE17C0FF63002CFFD7 /* minus@2x.png */; };
 		AE5208B317C0FF63002CFFD7 /* play.png in Resources */ = {isa = PBXBuildFile; fileRef = AE5208AF17C0FF63002CFFD7 /* play.png */; };
@@ -37,6 +38,7 @@
 		AE5208C717C11714002CFFD7 /* back@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AE5208C517C11714002CFFD7 /* back@2x.png */; };
 		AE5208CF17C16FFA002CFFD7 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE5208CE17C16FFA002CFFD7 /* QuartzCore.framework */; };
 		AE5208D317C17034002CFFD7 /* Toast+UIView.m in Sources */ = {isa = PBXBuildFile; fileRef = AE5208D217C17034002CFFD7 /* Toast+UIView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		AE6BB43617EC779C00D23DD6 /* SGDeepCopy.m in Sources */ = {isa = PBXBuildFile; fileRef = AE6BB43517EC779C00D23DD6 /* SGDeepCopy.m */; };
 		AE7223A917BDAB65003B60A5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE7223A817BDAB65003B60A5 /* UIKit.framework */; };
 		AE7223AB17BDAB65003B60A5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE7223AA17BDAB65003B60A5 /* Foundation.framework */; };
 		AE7223AD17BDAB65003B60A5 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE7223AC17BDAB65003B60A5 /* CoreGraphics.framework */; };
@@ -56,7 +58,6 @@
 		AE9F976417BDC4FA00626448 /* TimeEntryVC.m in Sources */ = {isa = PBXBuildFile; fileRef = AE9F976317BDC4FA00626448 /* TimeEntryVC.m */; };
 		AE9F976717BE538100626448 /* Timer.m in Sources */ = {isa = PBXBuildFile; fileRef = AE9F976617BE538100626448 /* Timer.m */; };
 		AE9F976E17BEA00600626448 /* Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = AE9F976D17BEA00600626448 /* Helper.m */; };
-		AEAE24E417CAA78000DA265B /* SGDeepCopy.m in Sources */ = {isa = PBXBuildFile; fileRef = AEAE24E317CAA78000DA265B /* SGDeepCopy.m */; };
 		AEAE24EB17CAB08300DA265B /* cancel.png in Resources */ = {isa = PBXBuildFile; fileRef = AEAE24E517CAB08300DA265B /* cancel.png */; };
 		AEAE24EC17CAB08300DA265B /* cancel@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AEAE24E617CAB08300DA265B /* cancel@2x.png */; };
 		AEAE24ED17CAB08300DA265B /* ok.png in Resources */ = {isa = PBXBuildFile; fileRef = AEAE24E717CAB08300DA265B /* ok.png */; };
@@ -104,6 +105,9 @@
 		AE111FAF17D019B500254EF4 /* mail.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mail.png; sourceTree = "<group>"; };
 		AE111FB017D019B500254EF4 /* mail@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mail@2x.png"; sourceTree = "<group>"; };
 		AE111FB317D01FE700254EF4 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		AE3C7EC017ECF9080071725C /* AlertManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlertManager.h; sourceTree = "<group>"; };
+		AE3C7EC117ECF9080071725C /* AlertManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = AlertManager.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		AE3C7EC317ECFBA90071725C /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 		AE5208A817C054AE002CFFD7 /* minus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = minus.png; sourceTree = "<group>"; };
 		AE5208AE17C0FF63002CFFD7 /* minus@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "minus@2x.png"; sourceTree = "<group>"; };
 		AE5208AF17C0FF63002CFFD7 /* play.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = play.png; sourceTree = "<group>"; };
@@ -121,6 +125,8 @@
 		AE5208CE17C16FFA002CFFD7 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		AE5208D117C17034002CFFD7 /* Toast+UIView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Toast+UIView.h"; sourceTree = "<group>"; };
 		AE5208D217C17034002CFFD7 /* Toast+UIView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Toast+UIView.m"; sourceTree = "<group>"; };
+		AE6BB43417EC779C00D23DD6 /* SGDeepCopy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGDeepCopy.h; sourceTree = "<group>"; };
+		AE6BB43517EC779C00D23DD6 /* SGDeepCopy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGDeepCopy.m; sourceTree = "<group>"; };
 		AE7223A517BDAB65003B60A5 /* Toastmasters Timer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Toastmasters Timer.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE7223A817BDAB65003B60A5 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		AE7223AA17BDAB65003B60A5 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -141,16 +147,14 @@
 		AE7223D917BDAB66003B60A5 /* Toastmasters_TimerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Toastmasters_TimerTests.m; sourceTree = "<group>"; };
 		AE7223E317BDABCA003B60A5 /* Storyboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
 		AE7223E517BDAC8B003B60A5 /* TimerVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimerVC.h; sourceTree = "<group>"; };
-		AE7223E617BDAC8B003B60A5 /* TimerVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimerVC.m; sourceTree = "<group>"; };
+		AE7223E617BDAC8B003B60A5 /* TimerVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = TimerVC.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		AE9F976217BDC4FA00626448 /* TimeEntryVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimeEntryVC.h; sourceTree = "<group>"; };
-		AE9F976317BDC4FA00626448 /* TimeEntryVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimeEntryVC.m; sourceTree = "<group>"; };
+		AE9F976317BDC4FA00626448 /* TimeEntryVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = TimeEntryVC.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		AE9F976517BE538100626448 /* Timer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Timer.h; sourceTree = "<group>"; };
 		AE9F976617BE538100626448 /* Timer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Timer.m; sourceTree = "<group>"; };
 		AE9F976817BE5C9B00626448 /* TimerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimerDelegate.h; sourceTree = "<group>"; };
 		AE9F976C17BEA00600626448 /* Helper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Helper.h; sourceTree = "<group>"; };
-		AE9F976D17BEA00600626448 /* Helper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Helper.m; sourceTree = "<group>"; };
-		AEAE24E217CAA78000DA265B /* SGDeepCopy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SGDeepCopy.h; path = "Toastmasters Timer/SGDeepCopy.h"; sourceTree = "<group>"; };
-		AEAE24E317CAA78000DA265B /* SGDeepCopy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SGDeepCopy.m; path = "Toastmasters Timer/SGDeepCopy.m"; sourceTree = "<group>"; };
+		AE9F976D17BEA00600626448 /* Helper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = Helper.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		AEAE24E517CAB08300DA265B /* cancel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cancel.png; sourceTree = "<group>"; };
 		AEAE24E617CAB08300DA265B /* cancel@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cancel@2x.png"; sourceTree = "<group>"; };
 		AEAE24E717CAB08300DA265B /* ok.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ok.png; sourceTree = "<group>"; };
@@ -174,6 +178,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AE3C7EBF17EC7DB00071725C /* libTestFlight.a in Frameworks */,
 				AE111FB417D01FE700254EF4 /* MessageUI.framework in Frameworks */,
 				AE111F9B17CED99900254EF4 /* libz.dylib in Frameworks */,
 				AE5208CF17C16FFA002CFFD7 /* QuartzCore.framework in Frameworks */,
@@ -182,7 +187,6 @@
 				AE7223AB17BDAB65003B60A5 /* Foundation.framework in Frameworks */,
 				AE7223AD17BDAB65003B60A5 /* CoreGraphics.framework in Frameworks */,
 				AE7223AF17BDAB65003B60A5 /* CoreData.framework in Frameworks */,
-				AE111F9717CED91D00254EF4 /* libTestFlight.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -210,7 +214,8 @@
 				AE111F9517CED91D00254EF4 /* TestFlight+ManualSessions.h */,
 				AE111F9617CED91D00254EF4 /* TestFlight.h */,
 			);
-			path = TestFlightSDK2.0.0;
+			name = TestFlightSDK2.0.0;
+			path = "Toastmasters Timer/libraries/TestFlightSDK2.0.0";
 			sourceTree = "<group>";
 		};
 		AE488FC817DD2A510090E139 /* Views */ = {
@@ -237,6 +242,9 @@
 				AE9F976817BE5C9B00626448 /* TimerDelegate.h */,
 				AE9F976C17BEA00600626448 /* Helper.h */,
 				AE9F976D17BEA00600626448 /* Helper.m */,
+				AE3C7EC017ECF9080071725C /* AlertManager.h */,
+				AE3C7EC117ECF9080071725C /* AlertManager.m */,
+				AE3C7EC317ECFBA90071725C /* Constants.h */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -244,8 +252,7 @@
 		AE488FCA17DD2AC70090E139 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
-				AEAE24E217CAA78000DA265B /* SGDeepCopy.h */,
-				AEAE24E317CAA78000DA265B /* SGDeepCopy.m */,
+				AE6BB43317EC779C00D23DD6 /* SGDeepCopy */,
 				AE111F9017CED91D00254EF4 /* TestFlightSDK2.0.0 */,
 				AE5208D017C17034002CFFD7 /* Toast */,
 			);
@@ -294,7 +301,7 @@
 				AE5208BD17C10B8C002CFFD7 /* stop@2x.png */,
 			);
 			name = Images;
-			path = images;
+			path = "Toastmasters Timer/images";
 			sourceTree = "<group>";
 		};
 		AE5208D017C17034002CFFD7 /* Toast */ = {
@@ -303,14 +310,27 @@
 				AE5208D117C17034002CFFD7 /* Toast+UIView.h */,
 				AE5208D217C17034002CFFD7 /* Toast+UIView.m */,
 			);
-			path = Toast;
+			name = Toast;
+			path = "Toastmasters Timer/libraries/Toast";
+			sourceTree = "<group>";
+		};
+		AE6BB43317EC779C00D23DD6 /* SGDeepCopy */ = {
+			isa = PBXGroup;
+			children = (
+				AE6BB43417EC779C00D23DD6 /* SGDeepCopy.h */,
+				AE6BB43517EC779C00D23DD6 /* SGDeepCopy.m */,
+			);
+			name = SGDeepCopy;
+			path = "Toastmasters Timer/libraries/SGDeepCopy";
 			sourceTree = "<group>";
 		};
 		AE72239C17BDAB65003B60A5 = {
 			isa = PBXGroup;
 			children = (
-				AE488FCA17DD2AC70090E139 /* Libraries */,
 				AE7223B017BDAB65003B60A5 /* Toastmasters Timer */,
+				AE5208A717C054AE002CFFD7 /* Images */,
+				AE7223B117BDAB66003B60A5 /* Supporting Files */,
+				AE488FCA17DD2AC70090E139 /* Libraries */,
 				AE7223D217BDAB66003B60A5 /* Toastmasters TimerTests */,
 				AE7223A717BDAB65003B60A5 /* Frameworks */,
 				AE7223A617BDAB65003B60A5 /* Products */,
@@ -346,8 +366,6 @@
 			isa = PBXGroup;
 			children = (
 				AE488FC917DD2A5B0090E139 /* Controllers */,
-				AE5208A717C054AE002CFFD7 /* Images */,
-				AE7223B117BDAB66003B60A5 /* Supporting Files */,
 				AE7223C217BDAB66003B60A5 /* Toastmasters_Timer.xcdatamodeld */,
 				AE488FC817DD2A510090E139 /* Views */,
 			);
@@ -363,6 +381,7 @@
 				AE7223B817BDAB66003B60A5 /* Toastmasters Timer-Prefix.pch */,
 			);
 			name = "Supporting Files";
+			path = "Toastmasters Timer";
 			sourceTree = "<group>";
 		};
 		AE7223D217BDAB66003B60A5 /* Toastmasters TimerTests */ = {
@@ -537,13 +556,14 @@
 			files = (
 				AE7223B717BDAB66003B60A5 /* main.m in Sources */,
 				AE7223BB17BDAB66003B60A5 /* AppDelegate.m in Sources */,
+				AE3C7EC217ECF9080071725C /* AlertManager.m in Sources */,
 				AE7223C417BDAB66003B60A5 /* Toastmasters_Timer.xcdatamodeld in Sources */,
 				AE7223E717BDAC8B003B60A5 /* TimerVC.m in Sources */,
+				AE6BB43617EC779C00D23DD6 /* SGDeepCopy.m in Sources */,
 				AE9F976417BDC4FA00626448 /* TimeEntryVC.m in Sources */,
 				AE9F976717BE538100626448 /* Timer.m in Sources */,
 				AE9F976E17BEA00600626448 /* Helper.m in Sources */,
 				AE5208D317C17034002CFFD7 /* Toast+UIView.m in Sources */,
-				AEAE24E417CAA78000DA265B /* SGDeepCopy.m in Sources */,
 				AE111FAE17D0036300254EF4 /* InfoVC.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -653,7 +673,8 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/TestFlightSDK2.0.0\"",
+					"\\\"$(SRCROOT)/TestFlightSDK2.0.0\\\"",
+					"/Users/sundeep/Dropbox/Projects/toastmastersTimer/xCode5/Toastmasters\\ Timer/libraries/TestFlightSDK2.0.0",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "329C5776-CB2B-418B-8EB8-4D553531D098";
@@ -673,7 +694,8 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/TestFlightSDK2.0.0\"",
+					"\\\"$(SRCROOT)/TestFlightSDK2.0.0\\\"",
+					"/Users/sundeep/Dropbox/Projects/toastmastersTimer/xCode5/Toastmasters\\ Timer/libraries/TestFlightSDK2.0.0",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "71363225-3173-4FF0-9279-BAF34E07A74A";

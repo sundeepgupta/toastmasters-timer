@@ -79,14 +79,14 @@
 }
 
 
-- (NSString *)status {
-    NSString *status;
+- (TIMER_STATUS)status {
+    TIMER_STATUS status;
     if (self.seconds == -1) {
-        status = @"stopped";
+        status = STOPPED;
     } else if (!self.timer) {
-        status = @"paused";
+        status = PAUSED;
     } else {
-        status = @"running";
+        status = RUNNING;
     }
     return status;
 }

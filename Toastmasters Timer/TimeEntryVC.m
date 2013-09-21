@@ -62,23 +62,23 @@
     NSMutableDictionary *red = [[NSMutableDictionary alloc] init];
     NSMutableDictionary *bell = [[NSMutableDictionary alloc] init];
     
-    green[@"minutes"] = self.greenMinutesLabel;
-    green[@"seconds"] = self.greenSecondsLabel;
+    green[MINUTES_KEY] = self.greenMinutesLabel;
+    green[SECONDS_KEY] = self.greenSecondsLabel;
     
-    amber[@"minutes"] = self.amberMinutesLabel;
-    amber[@"seconds"] = self.amberSecondsLabel;
+    amber[MINUTES_KEY] = self.amberMinutesLabel;
+    amber[SECONDS_KEY] = self.amberSecondsLabel;
     
-    red[@"minutes"] = self.redMinutesLabel;
-    red[@"seconds"] = self.redSecondsLabel;
+    red[MINUTES_KEY] = self.redMinutesLabel;
+    red[SECONDS_KEY] = self.redSecondsLabel;
     
-    bell[@"minutes"] = self.bellMinutesLabel;
-    bell[@"seconds"] = self.bellSecondsLabel;
+    bell[MINUTES_KEY] = self.bellMinutesLabel;
+    bell[SECONDS_KEY] = self.bellSecondsLabel;
     
-    self.labelsDictionary = [NSMutableDictionary dictionaryWithObjectsAndKeys:green,@"green", amber,@"amber", red,@"red", bell,@"bell", nil];
+    self.labelsDictionary = [NSMutableDictionary dictionaryWithObjectsAndKeys:green,GREEN_COLOR_NAME, amber,AMBER_COLOR_NAME, red,RED_COLOR_NAME, bell,BELL_COLOR_NAME, nil];
 }
 
 - (void)setupColors {
-    NSDictionary *savedColors = [self.defaults dictionaryForKey:@"colors"];
+    NSDictionary *savedColors = [self.defaults dictionaryForKey:COLOR_TIMES_KEY];
     self.colors = [savedColors mutableDeepCopy];
 }
 
@@ -95,7 +95,7 @@
 
 - (IBAction)increaseMinutesButtonPress:(id)sender {
     NSString *color = [self colorForSender:sender];
-    NSInteger minutes = [self integerForUnit:@"minutes" forColor:color];
+    NSInteger minutes = [self integerForUnit:MINUTES_KEY forColor:color];
     
     NSInteger newMinutes = minutes + 1;
     
@@ -103,12 +103,12 @@
         newMinutes = 0;
     }
     
-    [self updateUnit:@"minutes" withInteger:newMinutes ForColor:color];
+    [self updateUnit:MINUTES_KEY withInteger:newMinutes ForColor:color];
 }
 
 - (IBAction)decreaseMinutesButtonPress:(id)sender {
     NSString *color = [self colorForSender:sender];
-    NSInteger minutes = [self integerForUnit:@"minutes" forColor:color];
+    NSInteger minutes = [self integerForUnit:MINUTES_KEY forColor:color];
     
     NSInteger newMinutes = minutes - 1;
     
@@ -116,12 +116,12 @@
         newMinutes = 99;
     }
     
-    [self updateUnit:@"minutes" withInteger:newMinutes ForColor:color];
+    [self updateUnit:MINUTES_KEY withInteger:newMinutes ForColor:color];
 }
 
 - (IBAction)increaseSecondsButtonPress:(id)sender {
     NSString *color = [self colorForSender:sender];
-    NSInteger seconds = [self integerForUnit:@"seconds" forColor:color];
+    NSInteger seconds = [self integerForUnit:SECONDS_KEY forColor:color];
     
     NSInteger newSeconds = seconds + SECONDS_INCREMENT;
 
@@ -129,12 +129,12 @@
         newSeconds -= 60;
     }
     
-    [self updateUnit:@"seconds" withInteger:newSeconds ForColor:color];
+    [self updateUnit:SECONDS_KEY withInteger:newSeconds ForColor:color];
 }
 
 - (IBAction)decreaseSecondsButtonPress:(id)sender {
     NSString *color = [self colorForSender:sender];
-    NSInteger seconds = [self integerForUnit:@"seconds" forColor:color];
+    NSInteger seconds = [self integerForUnit:SECONDS_KEY forColor:color];
 
     NSInteger newSeconds = seconds - SECONDS_INCREMENT;
 
@@ -142,19 +142,19 @@
         newSeconds += 60;
     }
     
-    [self updateUnit:@"seconds" withInteger:newSeconds ForColor:color];
+    [self updateUnit:SECONDS_KEY withInteger:newSeconds ForColor:color];
 }
 
 - (NSString *)colorForSender:(id)sender {
     NSString *color;
     if ([self.greenButtons containsObject:sender]) {
-        color = @"green";
+        color = GREEN_COLOR_NAME;
     } else if ([self.amberButtons containsObject:sender]) {
-        color = @"amber";
+        color = AMBER_COLOR_NAME;
     } else if ([self.redButtons containsObject:sender]) {
-        color = @"red";
+        color = RED_COLOR_NAME;
     } else {
-        color = @"bell";
+        color = BELL_COLOR_NAME;
     }
     return color;
 }
@@ -184,7 +184,7 @@
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 - (void)saveColorsToDefaults {
-    [self.defaults setObject:self.colors forKey:@"colors"];
+    [self.defaults setObject:self.colors forKey:COLOR_TIMES_KEY];
     [self.defaults synchronize];
 }
 

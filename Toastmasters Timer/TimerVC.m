@@ -12,12 +12,15 @@
 #import "Toast+UIView.h"
 #import "TimeEntryVC.h"
 #import "SGDeepCopy.h"
+#import "InfoVC.h"
 
+#define TOAST_DURATION 3
+#define TOAST_TAG 999
 
 @interface TimerVC ()
 @property (strong, nonatomic) Timer *timer;
 @property (strong, nonatomic) NSUserDefaults *defaults;
-@property (strong, nonatomic) NSMutableDictionary *labelsDictionary;
+@property (strong, nonatomic) NSMutableDictionary *colorLabelsDictionary;
 @property (strong, nonatomic) NSMutableDictionary *colorTimes;
 @property NSInteger seconds;
 @property NSInteger minutes;
@@ -38,7 +41,7 @@
 @property (strong, nonatomic) IBOutletCollection(UILabel) NSArray *amberLabels;
 @property (strong, nonatomic) IBOutletCollection(UILabel) NSArray *redLabels;
 @property (strong, nonatomic) IBOutletCollection(UILabel) NSArray *bellLabels;
-@property (strong, nonatomic) IBOutlet UIButton *alertButton;
+@property (strong, nonatomic) IBOutlet UIButton *audioAlertButton;
 @end
 
 @implementation TimerVC
@@ -55,36 +58,35 @@
 {
     [super viewDidLoad];
     [self setupDefaults];
-    [self setupLabelsDictionary];
+    [self setupColorLabelsDictionary];
     [self setupTimer];
     [self resetTimerUnits];
     [self setupAlertButton];
 }
 - (void)setupDefaults {
     self.defaults = [NSUserDefaults standardUserDefaults];
-    
-    [self.defaults setBool:YES forKey:@"shouldAlert"];
+    [self.defaults setBool:NO forKey:SHOULD_AUDIO_ALERT_KEY];
 }
 
-- (void)setupLabelsDictionary {
+- (void)setupColorLabelsDictionary {
     NSMutableDictionary *green = [[NSMutableDictionary alloc] init];
     NSMutableDictionary *amber = [[NSMutableDictionary alloc] init];
     NSMutableDictionary *red = [[NSMutableDictionary alloc] init];
     NSMutableDictionary *bell = [[NSMutableDictionary alloc] init];
     
-    green[@"minutes"] = self.greenMinutesLabel;
-    green[@"seconds"] = self.greenSecondsLabel;
+    green[MINUTES_KEY] = self.greenMinutesLabel;
+    green[SECONDS_KEY] = self.greenSecondsLabel;
     
-    amber[@"minutes"] = self.amberMinutesLabel;
-    amber[@"seconds"] = self.amberSecondsLabel;
+    amber[MINUTES_KEY] = self.amberMinutesLabel;
+    amber[SECONDS_KEY] = self.amberSecondsLabel;
     
-    red[@"minutes"] = self.redMinutesLabel;
-    red[@"seconds"] = self.redSecondsLabel;
+    red[MINUTES_KEY] = self.redMinutesLabel;
+    red[SECONDS_KEY] = self.redSecondsLabel;
     
-    bell[@"minutes"] = self.bellMinutesLabel;
-    bell[@"seconds"] = self.bellSecondsLabel;
+    bell[MINUTES_KEY] = self.bellMinutesLabel;
+    bell[SECONDS_KEY] = self.bellSecondsLabel;
     
-    self.labelsDictionary = [NSMutableDictionary dictionaryWithObjectsAndKeys:green,@"green", amber,@"amber", red,@"red", bell,@"bell", nil];
+    self.colorLabelsDictionary = [NSMutableDictionary dictionaryWithObjectsAndKeys:green,GREEN_COLOR_NAME, amber,AMBER_COLOR_NAME, red,RED_COLOR_NAME, bell,BELL_COLOR_NAME, nil];
 }
 
 - (void)setupTimer {
@@ -98,59 +100,58 @@
 }
 
 - (void)setupAlertButton {
-    if ([self.defaults boolForKey:@"shouldAlert"]) {
-        self.alertButton.alpha = 1;
+    if ([self.defaults boolForKey:SHOULD_AUDIO_ALERT_KEY]) {
+        self.audioAlertButton.alpha = 1;
     } else {
-        self.alertButton.alpha = DISABLED_ALPHA;
+        self.audioAlertButton.alpha = DISABLED_ALPHA;
     }
 }
 
 - (void)viewWillAppear:(BOOL)animated {
-    [self setupColors];
-    [self setupColorsLabels];
+    [self setupColorTimes];
+    [self setupColorLabels];
 }
-- (void)setupColors {
-    NSDictionary *savedColors = [self.defaults dictionaryForKey:@"colors"];
+- (void)setupColorTimes {
+    NSDictionary *savedColors = [self.defaults dictionaryForKey:COLOR_TIMES_KEY];
     if (savedColors) {
         self.colorTimes = [savedColors mutableDeepCopy];
     } else {
-        [self setupColorsForFirstTime];
-        [self saveColorsToDefaults];
+        [self initializeColorTimes];
+        [self saveColorTimesToDefaults];
     }
 }
-- (void)setupColorsForFirstTime {
+- (void)initializeColorTimes {
     NSMutableDictionary *green = [[NSMutableDictionary alloc] init];
     NSMutableDictionary *amber = [[NSMutableDictionary alloc] init];
     NSMutableDictionary *red = [[NSMutableDictionary alloc] init];
     NSMutableDictionary *bell = [[NSMutableDictionary alloc] init];
     
-    green[@"minutes"] = @0;
-    green[@"seconds"] = @0;
+    green[MINUTES_KEY] = @0;
+    green[SECONDS_KEY] = @0;
     
-    amber[@"minutes"] = @0;
-    amber[@"seconds"] = @0;
+    amber[MINUTES_KEY] = @0;
+    amber[SECONDS_KEY] = @0;
     
-    red[@"minutes"] = @0;
-    red[@"seconds"] = @0;
+    red[MINUTES_KEY] = @0;
+    red[SECONDS_KEY] = @0;
     
-    bell[@"minutes"] = @0;
-    bell[@"seconds"] = @0;
+    bell[MINUTES_KEY] = @0;
+    bell[SECONDS_KEY] = @0;
     
-    self.colorTimes = [NSMutableDictionary dictionaryWithObjectsAndKeys:green,@"green", amber,@"amber", red,@"red", bell,@"bell", nil];
+    self.colorTimes = [NSMutableDictionary dictionaryWithObjectsAndKeys:green,GREEN_COLOR_NAME, amber,AMBER_COLOR_NAME, red,RED_COLOR_NAME, bell,BELL_COLOR_NAME, nil];
 }
-- (void)saveColorsToDefaults {
-    [self.defaults setObject:self.colorTimes forKey:@"colors"];
+- (void)saveColorTimesToDefaults {
+    [self.defaults setObject:self.colorTimes forKey:COLOR_TIMES_KEY];
     [self.defaults synchronize];
 }
 
-- (void)setupColorsLabels {
-    [Helper setupLabels:self.labelsDictionary forColors:self.colorTimes];
+- (void)setupColorLabels {
+    [Helper setupLabels:self.colorLabelsDictionary forColors:self.colorTimes];
 }
 
 
-
 - (void)setupLocalNotifications {
-    NSDictionary *colors = [self.defaults dictionaryForKey:@"colors"];
+    NSDictionary *colors = [self.defaults dictionaryForKey:COLOR_TIMES_KEY];
     NSArray *colorNames = colors.allKeys;
     
     for (NSString *colorName in colorNames) {
@@ -164,10 +165,10 @@
     [self scheduleNotification:notification];
 }
 - (NSInteger)totalSecondsForColor:(NSString *)color {
-    NSDictionary *colorsDict = [self.defaults dictionaryForKey:@"colors"];
+    NSDictionary *colorsDict = [self.defaults dictionaryForKey:COLOR_TIMES_KEY];
     NSDictionary *colorDict = colorsDict[color];
-    NSInteger minutes = [colorDict[@"minutes"] integerValue];
-    NSInteger seconds = [colorDict[@"seconds"] integerValue];
+    NSInteger minutes = [colorDict[MINUTES_KEY] integerValue];
+    NSInteger seconds = [colorDict[SECONDS_KEY] integerValue];
     NSInteger totalSeconds = minutes*60 + seconds;
     return  totalSeconds;
 }
@@ -177,8 +178,13 @@
     UILocalNotification *notification = [[UILocalNotification alloc] init];
     notification.fireDate = [NSDate dateWithTimeInterval:timeInterval sinceDate:startDate];
     notification.alertBody = [self alertMessageForColor:color];
-    notification.soundName = UILocalNotificationDefaultSoundName;
     notification.timeZone = [NSTimeZone localTimeZone];
+    
+    if ([self.defaults boolForKey:SHOULD_AUDIO_ALERT_KEY]) {
+        notification.soundName = UILocalNotificationDefaultSoundName;
+    } else {
+        notification.soundName = nil;
+    }
     
     return notification;
 }
@@ -198,10 +204,10 @@
     [self toggleTimer];
 }
 - (void)toggleTimer {
-    NSString *status = [self.timer status];
-    if ([status isEqualToString:@"running"]) {
+    TIMER_STATUS status = [self.timer status];
+    if (status == RUNNING) {
         [self pauseTimer];
-        [self cancelNotifications];
+        [self cancelLocalNotifications];
     } else {
         [self startTimerWithStatus:status];
         [self setupLocalNotifications];
@@ -212,8 +218,8 @@
     [self changeButtonToContinueTimer];
 }
 
-- (void)startTimerWithStatus:(NSString *)status {
-    if ([status isEqualToString:@"paused"]) {
+- (void)startTimerWithStatus:(TIMER_STATUS)status {
+    if (status == PAUSED) {
         [self.timer unpause];
     } else { //status is stopped
         [self.timer startFromStopped];
@@ -237,8 +243,8 @@
     [self.timer stop];
     [self resetTimerUnits];
     [self changeButtonToContinueTimer];
-    [self toggleEmphasisForLabelsWithAlertedColor:@""];
-    [self cancelNotifications];
+    [self deEmphasizeLabelsForAllColors];
+    [self cancelLocalNotifications];
 }
 
 
@@ -279,8 +285,8 @@
     for (NSString *key in self.colorTimes) {
         NSMutableDictionary *color = self.colorTimes[key];
         
-        NSInteger minutes = [Helper integerForNumber:color[@"minutes"]];
-        NSInteger seconds = [Helper integerForNumber:color[@"seconds"]];
+        NSInteger minutes = [Helper integerForNumber:color[MINUTES_KEY]];
+        NSInteger seconds = [Helper integerForNumber:color[SECONDS_KEY]];
         
         if (minutes == self.minutes  &&  seconds == self.seconds) {
             [self alertReachedColor:key];
@@ -292,7 +298,7 @@
     [self showAlertForColor:color];
     [self toggleEmphasisForLabelsWithAlertedColor:color];
     
-    if ([self.defaults boolForKey:@"shouldAlert"]) {
+    if ([self.defaults boolForKey:SHOULD_AUDIO_ALERT_KEY]) {
         [self performAudioAlert];
     }
 }
@@ -301,19 +307,19 @@
     NSString *title = @"Attention!";
     NSString *message = [self alertMessageForColor:color];
     
-    if ([color isEqualToString:@"green"]) {
+    if ([color isEqualToString:GREEN_COLOR_NAME]) {
         alertColor = [UIColor colorWithRed:GREEN_R/255 green:GREEN_G/255 blue:GREEN_B/255 alpha:1];
-    } else if ([color isEqualToString:@"amber"]){
+    } else if ([color isEqualToString:AMBER_COLOR_NAME]){
         alertColor = [UIColor colorWithRed:AMBER_R/255 green:AMBER_G/255 blue:AMBER_B/255 alpha:1];
-    } else if ([color isEqualToString:@"red"]){
+    } else if ([color isEqualToString:RED_COLOR_NAME]){
         alertColor = [UIColor colorWithRed:RED_R/255 green:RED_G/255 blue:RED_B/255 alpha:1];
-    } else if ([color isEqualToString:@"bell"]){
+    } else if ([color isEqualToString:BELL_COLOR_NAME]){
         alertColor = [UIColor colorWithRed:BELL_R/255 green:BELL_G/255 blue:BELL_B/255 alpha:1];
         message = @"Ring the bell.";
     }
 
     UIImage *image = [Helper imageWithColor:alertColor];
-    [self.view makeToast:message duration:3 position:@"center" title:title image:image];
+    [self.view makeToast:message duration:TOAST_DURATION position:@"center" title:title image:image tag:TOAST_TAG];
 }
 
 - (NSString *)alertMessageForColor:(NSString *)color {
@@ -325,7 +331,7 @@
 }
 
 - (void)toggleEmphasisForLabelsWithAlertedColor:(NSString *)alertedColor {
-    NSArray *colors = self.labelsDictionary.allKeys;
+    NSArray *colors = self.colorLabelsDictionary.allKeys;
     for (NSString *colorInDict in colors) {
         if ([colorInDict isEqualToString:alertedColor]) {
             [self emphasizeLabelsForColor:alertedColor];
@@ -378,14 +384,19 @@
 }
 
 - (NSArray *)labelsForColor:(NSString *)color {
-    NSMutableDictionary *colorDict = self.labelsDictionary[color];
+    NSMutableDictionary *colorDict = self.colorLabelsDictionary[color];
     NSArray *labels = colorDict.allValues;
     return labels;
 }
 
+- (void)deEmphasizeLabelsForAllColors {
+    [self toggleEmphasisForLabelsWithAlertedColor:@""];
+}
+
 
 - (IBAction)setupTimesButtonPress:(id)sender {
-    TimeEntryVC *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"TimeEntryVC"];
+    NSString *vcClassName = NSStringFromClass([TimeEntryVC class]);
+    TimeEntryVC *vc = [self.storyboard instantiateViewControllerWithIdentifier:vcClassName];
     self.timeEntryVc = vc;
     [self presentViewController:vc animated:YES completion:nil];
     [self updateTimeEntryVc];
@@ -395,33 +406,127 @@
 
 - (IBAction)toggleAlertButtonPress:(id)sender {
     [self toggleShouldAlert];
+    [self resetLocalNotifications];
 }
 - (void)toggleShouldAlert {
-    BOOL shouldAlert = [self.defaults boolForKey:@"shouldAlert"];
+    BOOL shouldAlert = [self.defaults boolForKey:SHOULD_AUDIO_ALERT_KEY];
     if (shouldAlert) {
         [self disableAlert];
-        [self cancelNotifications];
     } else {
         [self enableAlert];
-        [self setupLocalNotifications];
     }
 }
 - (void)disableAlert {
-    self.alertButton.alpha = DISABLED_ALPHA;
-    [self.defaults setBool:NO forKey:@"shouldAlert"];
+    self.audioAlertButton.alpha = DISABLED_ALPHA;
+    [self.defaults setBool:NO forKey:SHOULD_AUDIO_ALERT_KEY];
 }
 - (void)enableAlert {
-    self.alertButton.alpha = 1;
-    [self.defaults setBool:YES forKey:@"shouldAlert"];
+    self.audioAlertButton.alpha = 1;
+    [self.defaults setBool:YES forKey:SHOULD_AUDIO_ALERT_KEY];
 }
 
-- (void)cancelNotifications {
+
+- (void)resetLocalNotifications {
+    [self cancelLocalNotifications];
+    [self setupLocalNotifications];
+}
+- (void)cancelLocalNotifications {
     UIApplication *app = [UIApplication sharedApplication];
     [app cancelAllLocalNotifications];
 }
 
 - (IBAction)infoButtonPress:(id)sender {
-    UIViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"InfoVC"];
+    NSString *vcClassName = NSStringFromClass([InfoVC class]);
+    UIViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:vcClassName];
     [self presentViewController:vc animated:YES completion:nil];
 }
+
+
+
+- (void)setupViewForBackground {
+    [self hideTimerLabels];
+    [self deEmphasizeLabelsForAllColors];
+    [self removeToast];
+}
+- (void)hideTimerLabels {
+    for (UILabel *label in self.timerLabels) {
+        label.hidden = YES;
+    }
+}
+- (void)removeToast {
+    NSArray *subviews = self.view.subviews;
+    for (UIView *subview in subviews) {
+        if (subview.tag == TOAST_TAG) {
+            [subview removeFromSuperview];
+        }
+    }
+}
+
+
+
+
+
+- (void)setupViewForReturningToForeground {
+    [self showTimerLabels];
+    [self emphasizeCorrectColorLabels];
+}
+
+- (void)showTimerLabels {
+    for (UILabel *label in self.timerLabels) {
+        label.hidden = NO;
+    }
+}
+
+- (void)emphasizeCorrectColorLabels {
+    NSInteger totalSeconds = [self totalSecondsForTimer];
+    NSString *colorToEmphasize = [self colorToEmphasizeForTotalSeconds:totalSeconds];
+    [self emphasizeLabelsForColor:colorToEmphasize];
+}
+
+- (NSString *)colorToEmphasizeForTotalSeconds:(NSInteger)totalSeconds {
+
+    NSString *colorToEmphasize = @"";
+    NSInteger minDifference = 999999999;
+    
+    NSArray *colorNames = self.colorTimes.allKeys;
+    for (NSString *colorName in colorNames) {
+        NSInteger colorTotalSeconds = [self totalSecondsForColorName:colorName];
+        NSInteger difference = totalSeconds - colorTotalSeconds;
+        
+        BOOL colorTimeWasReached = difference > 0;
+        
+        if (colorTimeWasReached  &&  difference < minDifference) {
+            minDifference = difference;
+            colorToEmphasize = colorName;
+        }
+    }
+    
+    return colorToEmphasize;
+}
+
+- (NSInteger) totalSecondsForColorName:(NSString *)colorName {
+    NSDictionary *colorDict = [self.colorTimes objectForKey:colorName];
+    NSInteger colorTotalSeconds = [self totalSecondsForColorDict:colorDict];
+    return colorTotalSeconds;
+}
+
+
+
+- (NSInteger)totalSecondsForTimer {
+    NSInteger totalSeconds = [Helper totalSecondsForMinutes:self.minutes andSeconds:self.seconds];
+    return totalSeconds;
+}
+
+- (NSInteger)totalSecondsForColorDict:(NSDictionary *)colorDict {
+    NSInteger minutes = [colorDict[MINUTES_KEY] integerValue];
+    NSInteger seconds = [colorDict[SECONDS_KEY] integerValue];
+    NSInteger totalSeconds = [Helper totalSecondsForMinutes:minutes andSeconds:seconds];
+    return totalSeconds;
+}
+
+
+
+
+
+
 @end

@@ -49,18 +49,23 @@
     
     for (NSString *colorKey in colorKeys) {
         NSMutableDictionary *colorDict = colors[colorKey];
-        NSNumber *minutes = colorDict[@"minutes"];
-        NSNumber *seconds = colorDict[@"seconds"];
+        NSNumber *minutes = colorDict[MINUTES_KEY];
+        NSNumber *seconds = colorDict[SECONDS_KEY];
         
         NSMutableDictionary *labelDict = labels[colorKey];
-        UILabel *minutesLabel = labelDict[@"minutes"];
-        UILabel *secondsLabel = labelDict[@"seconds"];
+        UILabel *minutesLabel = labelDict[MINUTES_KEY];
+        UILabel *secondsLabel = labelDict[SECONDS_KEY];
         minutesLabel.text = [self unitStringForNumber:minutes];
         secondsLabel.text = [self unitStringForNumber:seconds];
     }
 }
 
 
+
++ (NSInteger)totalSecondsForMinutes:(NSInteger)minutes andSeconds:(NSInteger)seconds {
+    NSInteger totalSeconds = minutes*60 + seconds;
+    return totalSeconds;
+}
 
 
 

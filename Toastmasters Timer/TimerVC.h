@@ -11,5 +11,9 @@
 
 @interface TimerVC : UIViewController <TimerDelegate>
 
+- (void)setupViewForBackground;
+- (void)setupViewForReturningToForeground;
+
+
 
 @end

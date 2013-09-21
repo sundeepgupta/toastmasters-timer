@@ -9,6 +9,14 @@
 #import <Foundation/Foundation.h>
 #import "TimerDelegate.h"
 
+
+typedef NS_ENUM(NSInteger, TIMER_STATUS) {
+    STOPPED,
+    PAUSED,
+    RUNNING,
+};
+
+
 @interface Timer : NSObject
 
 @property (weak, nonatomic) id<TimerDelegate> delegate;
@@ -18,7 +26,7 @@
 - (void)pause;
 - (void)unpause;
 - (void)stop;
-- (NSString *)status;
+- (TIMER_STATUS)status;
 
 @end
 

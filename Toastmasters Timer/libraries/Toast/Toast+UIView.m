@@ -84,6 +84,16 @@ static const NSString * CSToastActivityViewKey  = @"CSToastActivityViewKey";
     [self showToast:toast duration:interval position:position];  
 }
 
+//Sundeep's version
+- (void)makeToast:(NSString *)message duration:(CGFloat)interval position:(id)position title:(NSString *)title image:(UIImage *)image tag:(NSInteger)tag {
+    UIView *toast = [self viewForMessage:message title:title image:image];
+    toast.tag = tag;
+    [self showToast:toast duration:interval position:position];
+}
+
+
+
+
 - (void)showToast:(UIView *)toast {
     [self showToast:toast duration:CSToastDefaultDuration position:CSToastDefaultPosition];
 }
@@ -308,8 +318,16 @@ static const NSString * CSToastActivityViewKey  = @"CSToastActivityViewKey";
     if(imageView != nil) {
         [wrapperView addSubview:imageView];
     }
+    
         
     return wrapperView;
 }
+
+
+// My (Sundeep's) own custom method
+- (void)removeToast {
+    
+}
+
 
 @end
