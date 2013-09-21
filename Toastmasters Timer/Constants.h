@@ -37,9 +37,10 @@
 
 
 //Color RGB values
-#define DISABLED_ALPHA 0.3
+#define DISABLED_ALPHA 0.2
 
 #define GREY_RGB 237
+//#ededed
 
 #define GREEN_R 0.
 #define GREEN_G 200.
