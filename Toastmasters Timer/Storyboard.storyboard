@@ -231,33 +231,6 @@
             </objects>
             <point key="canvasLocation" x="109" y="-346"/>
         </scene>
-        <!--Color AlertVC-->
-        <scene sceneID="UZd-s3-zbK">
-            <objects>
-                <viewController storyboardIdentifier="ColorAlertVC" id="Uqj-k1-XK7" customClass="ColorAlertVC" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="U2h-GE-Ium">
-                        <rect key="frame" x="0.0" y="0.0" width="260" height="300"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="ayT-5a-Nko">
-                                <rect key="frame" x="13" y="0.0" width="227" height="300"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <string key="text">- animate something to show color changing
-
-</string>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    </view>
-                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="rFj-6B-i8W" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1134" y="-346"/>
-        </scene>
         <!--Time EntryVC-->
         <scene sceneID="xP2-cJ-96h">
             <objects>

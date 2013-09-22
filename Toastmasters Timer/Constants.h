@@ -11,7 +11,7 @@
 
 //Misc
 #define REALLY_LARGE_INTEGER 999999999
-#define AUDIO_ALERT_SOUND_ID 1002 //Default tri-tone sound. 
+#define AUDIO_ALERT_SOUND_ID 1002 //http://iphonedevwiki.net/index.php/AudioServices
 
 //Defaults Keys
 #define SHOULD_AUDIO_ALERT_KEY @"shouldAudioAlert"
