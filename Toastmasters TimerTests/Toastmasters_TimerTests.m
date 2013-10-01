@@ -8,25 +8,39 @@
 
 #import "Toastmasters_TimerTests.h"
 
+@interface Toastmasters_TimerTests ()
+@property (strong, nonatomic) NSNumber *singleDigitNumber;
+
+@end
+
 @implementation Toastmasters_TimerTests
 
 - (void)setUp
 {
     [super setUp];
+    self.singleDigitNumber = @4;
     
-    // Set-up code here.
 }
 
 - (void)tearDown
 {
-    // Tear-down code here.
-    
     [super tearDown];
 }
 
-- (void)testExample
+- (void)testStringsForUnits
 {
-    STFail(@"Unit tests are not implemented yet in Toastmasters TimerTests");
+
+    NSNumber *number = @4;
+    NSString *string = [Helper unitStringForNumber:number];
+    NSString *result = @"04";
+    STAssertTrue([string isEqualToString:result], @"%@ should covert to %@", string, result);
+
+    NSNumber *number1 = @55;
+    NSString *string1 = [Helper unitStringForNumber:number1];
+    NSString *result1 = @"55";
+    STAssertTrue([string1 isEqualToString:result1], @"%@ should covert to %@", string1, result1);
 }
+
+
 
 @end

@@ -20,6 +20,15 @@
 		AE111FB117D019B500254EF4 /* mail.png in Resources */ = {isa = PBXBuildFile; fileRef = AE111FAF17D019B500254EF4 /* mail.png */; };
 		AE111FB217D019B500254EF4 /* mail@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AE111FB017D019B500254EF4 /* mail@2x.png */; };
 		AE111FB417D01FE700254EF4 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE111FB317D01FE700254EF4 /* MessageUI.framework */; };
+		AE2AF6FD17F9A4FF00683303 /* Timer.m in Sources */ = {isa = PBXBuildFile; fileRef = AE9F976617BE538100626448 /* Timer.m */; };
+		AE2AF6FE17F9A4FF00683303 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AE7223BA17BDAB66003B60A5 /* AppDelegate.m */; };
+		AE2AF6FF17F9A4FF00683303 /* Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = AE9F976D17BEA00600626448 /* Helper.m */; };
+		AE2AF70017F9A4FF00683303 /* AlertManager.m in Sources */ = {isa = PBXBuildFile; fileRef = AE3C7EC117ECF9080071725C /* AlertManager.m */; };
+		AE2AF70117F9A50500683303 /* InfoVC.m in Sources */ = {isa = PBXBuildFile; fileRef = AE111FAD17D0036300254EF4 /* InfoVC.m */; };
+		AE2AF70217F9A50500683303 /* TimeEntryVC.m in Sources */ = {isa = PBXBuildFile; fileRef = AE9F976317BDC4FA00626448 /* TimeEntryVC.m */; };
+		AE2AF70317F9A50500683303 /* TimerVC.m in Sources */ = {isa = PBXBuildFile; fileRef = AE7223E617BDAC8B003B60A5 /* TimerVC.m */; };
+		AE2AF70417F9A52400683303 /* SGDeepCopy.m in Sources */ = {isa = PBXBuildFile; fileRef = AE6BB43517EC779C00D23DD6 /* SGDeepCopy.m */; };
+		AE2AF70517F9A52B00683303 /* Toast+UIView.m in Sources */ = {isa = PBXBuildFile; fileRef = AE5208D217C17034002CFFD7 /* Toast+UIView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		AE3C7EBF17EC7DB00071725C /* libTestFlight.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AE111F9117CED91D00254EF4 /* libTestFlight.a */; };
 		AE3C7EC217ECF9080071725C /* AlertManager.m in Sources */ = {isa = PBXBuildFile; fileRef = AE3C7EC117ECF9080071725C /* AlertManager.m */; };
 		AE5208AA17C054AE002CFFD7 /* minus.png in Resources */ = {isa = PBXBuildFile; fileRef = AE5208A817C054AE002CFFD7 /* minus.png */; };
@@ -64,6 +73,10 @@
 		AEAE24F017CAB08300DA265B /* settings@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AEAE24EA17CAB08300DA265B /* settings@2x.png */; };
 		AEBAF2F517E7D9B000BA9479 /* info.png in Resources */ = {isa = PBXBuildFile; fileRef = AEBAF2F317E7D9B000BA9479 /* info.png */; };
 		AEBAF2F617E7D9B000BA9479 /* info@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AEBAF2F417E7D9B000BA9479 /* info@2x.png */; };
+		AED96F4D17FA318C00FFFDA5 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE111FB317D01FE700254EF4 /* MessageUI.framework */; };
+		AED96F4E17FA319300FFFDA5 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE5208CE17C16FFA002CFFD7 /* QuartzCore.framework */; };
+		AED96F4F17FA319800FFFDA5 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEDA15A117BDB2F300AC9DBA /* AudioToolbox.framework */; };
+		AED96F5017FA31B400FFFDA5 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE7223AC17BDAB65003B60A5 /* CoreGraphics.framework */; };
 		AEDA15A217BDB2F300AC9DBA /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEDA15A117BDB2F300AC9DBA /* AudioToolbox.framework */; };
 		AEF3115B17E90DB500D10C32 /* icon120.png in Resources */ = {isa = PBXBuildFile; fileRef = AEF3115A17E90DB500D10C32 /* icon120.png */; };
 		AEF3115F17E90EB800D10C32 /* icon29.png in Resources */ = {isa = PBXBuildFile; fileRef = AEF3115C17E90EB800D10C32 /* icon29.png */; };
@@ -190,6 +203,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AED96F5017FA31B400FFFDA5 /* CoreGraphics.framework in Frameworks */,
+				AED96F4F17FA319800FFFDA5 /* AudioToolbox.framework in Frameworks */,
+				AED96F4E17FA319300FFFDA5 /* QuartzCore.framework in Frameworks */,
+				AED96F4D17FA318C00FFFDA5 /* MessageUI.framework in Frameworks */,
 				AE7223CC17BDAB66003B60A5 /* SenTestingKit.framework in Frameworks */,
 				AE7223CD17BDAB66003B60A5 /* UIKit.framework in Frameworks */,
 				AE7223CE17BDAB66003B60A5 /* Foundation.framework in Frameworks */,
@@ -240,7 +257,6 @@
 				AE9F976D17BEA00600626448 /* Helper.m */,
 				AE3C7EC017ECF9080071725C /* AlertManager.h */,
 				AE3C7EC117ECF9080071725C /* AlertManager.m */,
-				AE3C7EC317ECFBA90071725C /* Constants.h */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -359,6 +375,7 @@
 		AE7223B017BDAB65003B60A5 /* Toastmasters Timer */ = {
 			isa = PBXGroup;
 			children = (
+				AE3C7EC317ECFBA90071725C /* Constants.h */,
 				AE488FC917DD2A5B0090E139 /* Controllers */,
 				AE7223C217BDAB66003B60A5 /* Toastmasters_Timer.xcdatamodeld */,
 				AE488FC817DD2A510090E139 /* Views */,
@@ -564,7 +581,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AE2AF70117F9A50500683303 /* InfoVC.m in Sources */,
 				AE7223DA17BDAB66003B60A5 /* Toastmasters_TimerTests.m in Sources */,
+				AE2AF6FD17F9A4FF00683303 /* Timer.m in Sources */,
+				AE2AF70217F9A50500683303 /* TimeEntryVC.m in Sources */,
+				AE2AF70017F9A4FF00683303 /* AlertManager.m in Sources */,
+				AE2AF70417F9A52400683303 /* SGDeepCopy.m in Sources */,
+				AE2AF70517F9A52B00683303 /* Toast+UIView.m in Sources */,
+				AE2AF6FE17F9A4FF00683303 /* AppDelegate.m in Sources */,
+				AE2AF70317F9A50500683303 /* TimerVC.m in Sources */,
+				AE2AF6FF17F9A4FF00683303 /* Helper.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

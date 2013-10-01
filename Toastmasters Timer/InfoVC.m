@@ -40,6 +40,9 @@
 - (IBAction)sundeepButtonPress:(id)sender {
     if ([MFMailComposeViewController canSendMail]) {
         [self email];
+    } else {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Can't Send Mail" message:@"It looks like your device isn't setup to send mail. If your device supports it, make sure you've configured your email account." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+        [alert show];
     }
 }
 
@@ -76,7 +79,7 @@
 
 - (void)setupSubjectForMailer:(MFMailComposeViewController *)mailer {
     NSBundle *bundle = [NSBundle mainBundle];
-    NSString *appName = [bundle objectForInfoDictionaryKey:@"CFBundleDisplayName"];
+    NSString *appName = [bundle objectForInfoDictionaryKey:@"CFBundleName"];
     NSString *subject = [NSString stringWithFormat:@"%@ App", appName];
     [mailer setSubject:subject];
 }
@@ -98,7 +101,12 @@
     NSString *urlString = @"http://www.redconservatory.com";
     NSURL *url = [NSURL URLWithString:urlString];
     UIApplication *app = [UIApplication sharedApplication];
-    [app openURL:url];
+    if ([app canOpenURL:url]) {
+        [app openURL:url];
+    } else {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Can't Open Link" message:@"It looks like your device can't open the website link." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+        [alert show];
+    }
 }
 
 

@@ -322,12 +322,4 @@ static const NSString * CSToastActivityViewKey  = @"CSToastActivityViewKey";
         
     return wrapperView;
 }
-
-
-// My (Sundeep's) own custom method
-- (void)removeToast {
-    
-}
-
-
 @end
