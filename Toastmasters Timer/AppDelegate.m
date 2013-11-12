@@ -7,7 +7,6 @@
 //
 
 #import "AppDelegate.h"
-#import "TestFlight.h"
 #import "TimerVC.h"
 
 @interface AppDelegate ()
@@ -23,8 +22,6 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    [TestFlight takeOff:@"8339503d-c4c0-4669-916d-afbafc927205"];
-    
     application.statusBarStyle = UIStatusBarStyleLightContent;
     
     self.timerVc = (TimerVC *)self.window.rootViewController;
