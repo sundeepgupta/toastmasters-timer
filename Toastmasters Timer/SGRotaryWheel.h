@@ -18,7 +18,7 @@
 @interface SGRotaryWheel : UIControl
 @property (weak) id <SGRotaryWheelDelegate> delegate;
 @property (nonatomic, strong) UIView *containerView;
-@property NSInteger numberOfSections;
+@property NSInteger sectionCount;
 
 - (id)initWithFrame:(CGRect)frame delegate:(id)delegate numberOfSections:(NSInteger)numberOfSections;
 

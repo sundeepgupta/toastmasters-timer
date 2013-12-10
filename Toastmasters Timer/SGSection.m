@@ -6,12 +6,12 @@
 //  Copyright (c) 2013 Sundeep Gupta. All rights reserved.
 //
 
-#import "SGSector.h"
+#import "SGSection.h"
 
-@implementation SGSector
+@implementation SGSection
 
 - (NSString *)description {
-    NSString *description = [NSString stringWithFormat:@"%i  |  %f, %f, %f", self.sector, self.minValue, self.midValue, self.maxValue];
+    NSString *description = [NSString stringWithFormat:@"%i  |  %f, %f, %f", self.sectionNumber, self.minValue, self.midValue, self.maxValue];
     return description;
 }
 @end

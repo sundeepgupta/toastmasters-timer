@@ -23,7 +23,7 @@
 }
 
 - (void)setupRotaryWheel {
-    self.rotaryWheel = [[SGRotaryWheel alloc] initWithFrame:CGRectMake(0, 0, 300, 300) delegate:self numberOfSections:12];
+    self.rotaryWheel = [[SGRotaryWheel alloc] initWithFrame:CGRectMake(0, 0, 300, 300) delegate:self numberOfSections:8];
     [self.view addSubview:self.rotaryWheel];
 }
 

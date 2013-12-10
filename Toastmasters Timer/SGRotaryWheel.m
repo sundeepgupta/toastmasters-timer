@@ -8,29 +8,31 @@
 
 #import "SGRotaryWheel.h"
 #import <QuartzCore/QuartzCore.h>
-#import "SGSector.h"
+#import "SGSection.h"
 
 
 static CGFloat deltaAngle;
 
 @interface SGRotaryWheel ()
 @property CGAffineTransform startTransform;
-@property (nonatomic) CGFloat angleSize;
-@property (nonatomic, strong) NSMutableArray *sectors;
+@property (nonatomic) CGFloat sectionAngleSize;
+@property (nonatomic, strong) NSMutableArray *sections;
 @end
 
 
 @implementation SGRotaryWheel
 
+#pragma mark - Initialize
 - (id)initWithFrame:(CGRect)frame delegate:(id)delegate numberOfSections:(NSInteger)numberOfSections;
 {
     self = [super initWithFrame:frame];
     if (self) {
         self.backgroundColor = [UIColor yellowColor];
     
-        self.numberOfSections = numberOfSections;
+        self.sectionCount = numberOfSections;
         self.delegate = delegate;
         [self drawWheel];
+        [self setupSections];
     }
     return self;
 }
@@ -45,8 +47,8 @@ static CGFloat deltaAngle;
     self.containerView.backgroundColor = [UIColor lightGrayColor];
 }
 - (void)setupLabels {
-    self.angleSize = 2*M_PI/self.numberOfSections;
-    for (NSInteger i = 0; i < self.numberOfSections; i++) {
+    self.sectionAngleSize = 2*M_PI/self.sectionCount;
+    for (NSInteger i = 0; i < self.sectionCount; i++) {
         UILabel *label = [self labelForSection:i];
         [self.containerView addSubview:label];
     }
@@ -58,7 +60,7 @@ static CGFloat deltaAngle;
     label.text = [NSString stringWithFormat:@"%d", section];
     label.layer.anchorPoint = CGPointMake(1.0f, 0.5f);
     label.layer.position = CGPointMake(self.containerView.bounds.size.width/2.0, self.containerView.bounds.size.height/2.0);
-    label.transform = CGAffineTransformMakeRotation(self.angleSize*section);
+    label.transform = CGAffineTransformMakeRotation(self.sectionAngleSize*section);
     label.tag = section;
     return label;
 }
@@ -116,5 +118,60 @@ static CGFloat deltaAngle;
     self.containerView.transform = CGAffineTransformRotate(self.startTransform, angleDifference);
 }
 
+
+
+#pragma mark - Sectors
+- (void)setupSections {
+    self.sections = [NSMutableArray arrayWithCapacity:self.sectionCount];
+    if (self.sectionCount%2 == 0) {
+        [self buildEvenNumberOfSections];
+    } else {
+        [self buildOddNumberOfSections];
+    }
+}
+
+- (void)buildEvenNumberOfSections {
+    CGFloat midValue = 0;
+    for (NSInteger i = 0; i < self.sectionCount; i++) {
+        SGSection *section = [self sectionWithMidValue:midValue andSectionNumber:i];
+        
+        if ((section.maxValue - self.sectionAngleSize) < -M_PI) {
+            midValue = M_PI;
+            section.midValue = midValue;
+            section.minValue = fabsf(section.maxValue);
+        }
+        midValue -= self.sectionAngleSize;
+        
+        [self.sections addObject:section];
+        NSLog(@"Created section: %@", section);
+    }
+}
+
+- (void)buildOddNumberOfSections {
+    CGFloat midValue = 0;
+    for (NSInteger i = 0; i < self.sectionCount; i++) {
+        SGSection *section = [self sectionWithMidValue:midValue andSectionNumber:i];
+        
+        midValue -= self.sectionAngleSize;
+        if (section.minValue < -M_PI) {
+            midValue = -midValue;
+            midValue -= self.sectionAngleSize;
+        }
+        
+        [self.sections addObject:section];
+        NSLog(@"Created section: %@", section);
+    }
+}
+
+
+
+- (SGSection *)sectionWithMidValue:(CGFloat)midValue andSectionNumber:(NSInteger)sectionNumber {
+    SGSection *section = [SGSection new];
+    section.midValue = midValue;
+    section.minValue = midValue - self.sectionAngleSize/2;
+    section.maxValue = midValue + self.sectionAngleSize/2;
+    section.sectionNumber = sectionNumber;
+    return section;
+}
 
 @end
