@@ -8,12 +8,16 @@
 
 #import "SGRotaryWheel.h"
 #import <QuartzCore/QuartzCore.h>
+#import "SGSector.h"
 
 
 static CGFloat deltaAngle;
 
 @interface SGRotaryWheel ()
 @property CGAffineTransform startTransform;
+@property (nonatomic) NSInteger currentSection;
+@property (nonatomic) CGFloat angleSize;
+@property (nonatomic, strong) NSMutableArray *sectors;
 @end
 
 
@@ -23,42 +27,54 @@ static CGFloat deltaAngle;
 {
     self = [super initWithFrame:frame];
     if (self) {
-        
         self.backgroundColor = [UIColor yellowColor];
-        
+    
         self.numberOfSections = numberOfSections;
         self.delegate = delegate;
+        self.currentSection = 0;
         [self drawWheel];
     }
     return self;
 }
 
 - (void)drawWheel {
+    [self setupContainerView];
+    [self setupLabels];
+    [self addSubview:self.containerView];
+}
+
+- (void)setupContainerView {
     self.containerView = [[UIView alloc] initWithFrame:self.frame];
     self.containerView.userInteractionEnabled = NO;
     self.containerView.backgroundColor = [UIColor lightGrayColor];
-    
-    CGFloat angleSize = 2*M_PI/self.numberOfSections;
-    
-    for (NSInteger i = 0; i < self.numberOfSections; i++) {
-        UILabel *im = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 80, 20)];
-        im.userInteractionEnabled = NO;
-        im.backgroundColor = [UIColor redColor];
-        im.text = [NSString stringWithFormat:@"%d", i];
-        im.layer.anchorPoint = CGPointMake(1.0f, 0.5f);
-        im.layer.position = CGPointMake(self.containerView.bounds.size.width/2.0, self.containerView.bounds.size.height/2.0);
-        im.transform = CGAffineTransformMakeRotation(angleSize*i);
-        im.tag = i;
-        [self.containerView addSubview:im];
-    }
-    
-    [self addSubview:self.containerView]; //this is already drawn via storyboard, no need to draw it again
 }
 
-- (void)rotate {
-    CGAffineTransform transform = CGAffineTransformRotate(self.containerView.transform, -0.78);
-    self.containerView.transform = transform;
+- (void)setupLabels {
+    self.angleSize = 2*M_PI/self.numberOfSections;
+    for (NSInteger i = 0; i < self.numberOfSections; i++) {
+        UILabel *label = [self labelForSection:i];
+        [self.containerView addSubview:label];
+    }
 }
+
+- (UILabel *)labelForSection:(NSInteger)section {
+    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 80, 20)];
+    label.userInteractionEnabled = NO;
+    label.backgroundColor = [UIColor redColor];
+    label.text = [NSString stringWithFormat:@"%d", section];
+    label.layer.anchorPoint = CGPointMake(1.0f, 0.5f);
+    label.layer.position = CGPointMake(self.containerView.bounds.size.width/2.0, self.containerView.bounds.size.height/2.0);
+    label.transform = CGAffineTransformMakeRotation(self.angleSize*section);
+    label.tag = section;
+    return label;
+}
+
+
+
+//- (void)rotate {
+//    CGAffineTransform transform = CGAffineTransformRotate(self.containerView.transform, -0.78);
+//    self.containerView.transform = transform;
+//}
 
 - (BOOL)beginTrackingWithTouch:(UITouch *)touch withEvent:(UIEvent *)event {
     BOOL beginTracking;
@@ -80,6 +96,11 @@ static CGFloat deltaAngle;
 }
 
 - (BOOL)continueTrackingWithTouch:(UITouch *)touch withEvent:(UIEvent *)event {
+    CGFloat radians = atan2f(self.containerView.transform.b, self.containerView.transform.a);
+    NSLog(@"rad is %f", radians);
+    
+    
+    
     CGPoint touchPoint = [touch locationInView:self];
     
     CGFloat dx = touchPoint.x - self.containerView.center.x;
@@ -89,6 +110,9 @@ static CGFloat deltaAngle;
     CGFloat angleDifference = angle - deltaAngle;
     
     self.containerView.transform = CGAffineTransformRotate(self.startTransform, angleDifference);
+    
+    
+    
     
     return YES;
 }
@@ -100,6 +124,10 @@ static CGFloat deltaAngle;
     return sqrt(dx*dx + dy*dy);
 }
 
+
+- (NSInteger)newSection {
+    
+}
 
 
 @end

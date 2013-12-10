@@ -21,5 +21,5 @@
 @property NSInteger numberOfSections;
 
 - (id)initWithFrame:(CGRect)frame delegate:(id)delegate numberOfSections:(NSInteger)numberOfSections;
-- (void)rotate;
+
 @end

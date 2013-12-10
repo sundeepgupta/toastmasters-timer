@@ -72,6 +72,7 @@
 		AEAE24F017CAB08300DA265B /* settings@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AEAE24EA17CAB08300DA265B /* settings@2x.png */; };
 		AEBAF2F517E7D9B000BA9479 /* info.png in Resources */ = {isa = PBXBuildFile; fileRef = AEBAF2F317E7D9B000BA9479 /* info.png */; };
 		AEBAF2F617E7D9B000BA9479 /* info@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AEBAF2F417E7D9B000BA9479 /* info@2x.png */; };
+		AECC0AF41856B61400815DA2 /* SGSector.m in Sources */ = {isa = PBXBuildFile; fileRef = AECC0AF31856B61400815DA2 /* SGSector.m */; };
 		AED96F4D17FA318C00FFFDA5 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE111FB317D01FE700254EF4 /* MessageUI.framework */; };
 		AED96F4E17FA319300FFFDA5 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE5208CE17C16FFA002CFFD7 /* QuartzCore.framework */; };
 		AED96F4F17FA319800FFFDA5 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEDA15A117BDB2F300AC9DBA /* AudioToolbox.framework */; };
@@ -169,6 +170,8 @@
 		AEAE24EA17CAB08300DA265B /* settings@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "settings@2x.png"; sourceTree = "<group>"; };
 		AEBAF2F317E7D9B000BA9479 /* info.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = info.png; sourceTree = "<group>"; };
 		AEBAF2F417E7D9B000BA9479 /* info@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "info@2x.png"; sourceTree = "<group>"; };
+		AECC0AF21856B61400815DA2 /* SGSector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SGSector.h; path = "Toastmasters Timer/SGSector.h"; sourceTree = "<group>"; };
+		AECC0AF31856B61400815DA2 /* SGSector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SGSector.m; path = "Toastmasters Timer/SGSector.m"; sourceTree = "<group>"; };
 		AEDA15A117BDB2F300AC9DBA /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		AEF3115A17E90DB500D10C32 /* icon120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon120.png; sourceTree = "<group>"; };
 		AEF3115C17E90EB800D10C32 /* icon29.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon29.png; sourceTree = "<group>"; };
@@ -318,6 +321,8 @@
 		AE72239C17BDAB65003B60A5 = {
 			isa = PBXGroup;
 			children = (
+				AECC0AF21856B61400815DA2 /* SGSector.h */,
+				AECC0AF31856B61400815DA2 /* SGSector.m */,
 				AE87325B1831D48B00BDD4B2 /* ColorTimeEntryVC.h */,
 				AE87325C1831D48B00BDD4B2 /* ColorTimeEntryVC.m */,
 				AE87325E1831D51200BDD4B2 /* SGRotaryWheel.h */,
@@ -557,6 +562,7 @@
 				AE9F976717BE538100626448 /* Timer.m in Sources */,
 				AE8732601831D51200BDD4B2 /* SGRotaryWheel.m in Sources */,
 				AE9F976E17BEA00600626448 /* Helper.m in Sources */,
+				AECC0AF41856B61400815DA2 /* SGSector.m in Sources */,
 				AE5208D317C17034002CFFD7 /* Toast+UIView.m in Sources */,
 				AE111FAE17D0036300254EF4 /* InfoVC.m in Sources */,
 			);
@@ -668,8 +674,8 @@
 		AE7223DE17BDAB66003B60A5 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer: Sundeep Gupta (U6Z7XVB628)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Sundeep Gupta (U6Z7XVB628)";
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Toastmasters Timer/Toastmasters Timer-Prefix.pch";
 				INFOPLIST_FILE = "Toastmasters Timer/Toastmasters Timer-Info.plist";
@@ -680,8 +686,8 @@
 					"/Users/sundeep/Dropbox/Projects/toastmastersTimer/xCode5/Toastmasters\\ Timer/libraries/TestFlightSDK2.0.0",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "329C5776-CB2B-418B-8EB8-4D553531D098";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "329C5776-CB2B-418B-8EB8-4D553531D098";
+				PROVISIONING_PROFILE = "ABE51356-AC82-4E0B-9BCA-8009F7D4982B";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -689,8 +695,8 @@
 		AE7223DF17BDAB66003B60A5 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Sundeep Gupta (M3NJ52HVCE)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Toastmasters Timer/Toastmasters Timer-Prefix.pch";
 				INFOPLIST_FILE = "Toastmasters Timer/Toastmasters Timer-Info.plist";
@@ -701,8 +707,8 @@
 					"/Users/sundeep/Dropbox/Projects/toastmastersTimer/xCode5/Toastmasters\\ Timer/libraries/TestFlightSDK2.0.0",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "71363225-3173-4FF0-9279-BAF34E07A74A";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "71363225-3173-4FF0-9279-BAF34E07A74A";
+				PROVISIONING_PROFILE = "ABE51356-AC82-4E0B-9BCA-8009F7D4982B";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

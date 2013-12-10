@@ -11,18 +11,10 @@
 
 @interface ColorTimeEntryVC () <SGRotaryWheelDelegate>
 @property (nonatomic, strong) SGRotaryWheel *rotaryWheel;
+@property (strong, nonatomic) IBOutlet UILabel *label;
 @end
 
 @implementation ColorTimeEntryVC
-
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
 
 - (void)viewDidLoad
 {
@@ -31,11 +23,8 @@
 }
 
 - (void)setupRotaryWheel {
-    self.rotaryWheel = [[SGRotaryWheel alloc] initWithFrame:CGRectMake(0, 0, 300, 300) delegate:self numberOfSections:8];
+    self.rotaryWheel = [[SGRotaryWheel alloc] initWithFrame:CGRectMake(0, 0, 300, 300) delegate:self numberOfSections:12];
     [self.view addSubview:self.rotaryWheel];
-}
-- (IBAction)rotateButtonTapped:(id)sender {
-    [self.rotaryWheel rotate];
 }
 
 
@@ -44,7 +33,7 @@
 
 #pragma mark - Rotary wheel delegates
 - (void)wheelDidChangeValue:(NSString *)newValue {
-    
+    self.label.text = newValue;
 }
 
 
