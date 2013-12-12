@@ -17,6 +17,7 @@ static CGFloat deltaAngle;
 @property CGAffineTransform startTransform;
 @property (nonatomic) CGFloat sectionAngleSize;
 @property (nonatomic, strong) NSMutableArray *sections;
+@property NSInteger currentSectionNumber;
 @end
 
 
@@ -107,7 +108,7 @@ static CGFloat deltaAngle;
     return YES;
 }
 - (void)logTracking {
-    CGFloat radians = atan2f(self.containerView.transform.b, self.containerView.transform.a);
+    CGFloat radians = [self currentRadians];
     NSLog(@"rad is %f", radians);
 }
 - (void)transformToPoint:(CGPoint)point {
@@ -118,6 +119,29 @@ static CGFloat deltaAngle;
     self.containerView.transform = CGAffineTransformRotate(self.startTransform, angleDifference);
 }
 
+
+
+#pragma mark - End Tracking 
+- (void)endTrackingWithTouch:(UITouch *)touch withEvent:(UIEvent *)event {
+    [self updateCurrentSectionNumber];
+}
+- (void)updateCurrentSectionNumber {
+    CGFloat radians = [self currentRadians];
+    for (NSInteger i = 0; i < self.sections.count; i++) {
+        SGSection *section = self.sections[i];
+        if (radians > section.minValue  &&  radians < section.maxValue) {
+            self.currentSectionNumber = i;
+            break;
+        }
+    }
+    NSLog(@"Current Section Number: %i", self.currentSectionNumber);
+}
+
+
+- (CGFloat)currentRadians {
+    CGFloat radians = atan2f(self.containerView.transform.b, self.containerView.transform.a);
+    return radians;
+}
 
 
 #pragma mark - Sectors
