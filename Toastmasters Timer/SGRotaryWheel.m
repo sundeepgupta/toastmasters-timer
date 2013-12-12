@@ -11,7 +11,11 @@
 #import "SGSection.h"
 
 
+#define kRadiansOffset M_PI/2 //put 0 on top instead of on left
+
+
 static CGFloat deltaAngle;
+
 
 @interface SGRotaryWheel ()
 @property CGAffineTransform startTransform;
@@ -29,7 +33,7 @@ static CGFloat deltaAngle;
     self = [super initWithFrame:frame];
     if (self) {
         self.backgroundColor = [UIColor yellowColor];
-    
+        
         self.sectionCount = numberOfSections;
         self.delegate = delegate;
         [self drawWheel];
@@ -46,6 +50,7 @@ static CGFloat deltaAngle;
     self.containerView = [[UIView alloc] initWithFrame:self.frame];
     self.containerView.userInteractionEnabled = NO;
     self.containerView.backgroundColor = [UIColor lightGrayColor];
+    self.containerView.transform = CGAffineTransformMakeRotation(kRadiansOffset);
 }
 - (void)setupLabels {
     self.sectionAngleSize = 2*M_PI/self.sectionCount;
@@ -102,15 +107,12 @@ static CGFloat deltaAngle;
 
 #pragma mark - Continue Tracking
 - (BOOL)continueTrackingWithTouch:(UITouch *)touch withEvent:(UIEvent *)event {
-    [self logTracking];
     CGPoint touchPoint = [touch locationInView:self];
     [self transformToPoint:touchPoint];
+    [self updateDelegate];
     return YES;
 }
-- (void)logTracking {
-    CGFloat radians = [self currentRadians];
-    NSLog(@"rad is %f", radians);
-}
+
 - (void)transformToPoint:(CGPoint)point {
     CGFloat dx = point.x - self.containerView.center.x;
     CGFloat dy = point.y - self.containerView.center.y;
@@ -119,22 +121,33 @@ static CGFloat deltaAngle;
     self.containerView.transform = CGAffineTransformRotate(self.startTransform, angleDifference);
 }
 
-
-
-#pragma mark - End Tracking 
-- (void)endTrackingWithTouch:(UITouch *)touch withEvent:(UIEvent *)event {
+- (void)updateDelegate {
     [self updateCurrentSectionNumber];
+    [self.delegate wheelDidChangeSectionNumber:self.currentSectionNumber];
 }
+
 - (void)updateCurrentSectionNumber {
     CGFloat radians = [self currentRadians];
     for (NSInteger i = 0; i < self.sections.count; i++) {
         SGSection *section = self.sections[i];
-        if (radians > section.minValue  &&  radians < section.maxValue) {
+        if ([self radians:radians isInSection:section]) {
             self.currentSectionNumber = i;
-            break;
         }
     }
-    NSLog(@"Current Section Number: %i", self.currentSectionNumber);
+//    NSLog(@"Radians: %f, Section: %i", radians, self.currentSectionNumber);
+}
+
+
+- (BOOL)radians:(CGFloat)radians isInSection:(SGSection *)section {
+    BOOL isInSection = NO;
+    if (section.minValue > 0  &&  section.maxValue < 0) { //anomaly case
+        if (radians > section.minValue  ||  radians < section.maxValue) {
+            isInSection = YES;
+        }
+    } else if (radians > section.minValue  &&  radians < section.maxValue) {
+        isInSection = YES;
+    }
+    return isInSection;
 }
 
 
@@ -142,6 +155,7 @@ static CGFloat deltaAngle;
     CGFloat radians = atan2f(self.containerView.transform.b, self.containerView.transform.a);
     return radians;
 }
+
 
 
 #pragma mark - Sectors
@@ -155,7 +169,7 @@ static CGFloat deltaAngle;
 }
 
 - (void)buildEvenNumberOfSections {
-    CGFloat midValue = 0;
+    CGFloat midValue = kRadiansOffset;
     for (NSInteger i = 0; i < self.sectionCount; i++) {
         SGSection *section = [self sectionWithMidValue:midValue andSectionNumber:i];
         
@@ -172,7 +186,7 @@ static CGFloat deltaAngle;
 }
 
 - (void)buildOddNumberOfSections {
-    CGFloat midValue = 0;
+    CGFloat midValue = kRadiansOffset;
     for (NSInteger i = 0; i < self.sectionCount; i++) {
         SGSection *section = [self sectionWithMidValue:midValue andSectionNumber:i];
         
@@ -183,7 +197,7 @@ static CGFloat deltaAngle;
         }
         
         [self.sections addObject:section];
-        NSLog(@"Created section: %@", section);
+//        NSLog(@"Created section: %@", section);
     }
 }
 

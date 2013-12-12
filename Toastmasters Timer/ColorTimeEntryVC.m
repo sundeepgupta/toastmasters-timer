@@ -29,11 +29,9 @@
 
 
 
-
-
 #pragma mark - Rotary wheel delegates
-- (void)wheelDidChangeValue:(NSString *)newValue {
-    self.label.text = newValue;
+- (void)wheelDidChangeSectionNumber:(NSInteger)sectionNumber {
+    self.label.text = [NSString stringWithFormat:@"Section %i", sectionNumber];
 }
 
 

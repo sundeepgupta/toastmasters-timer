@@ -11,7 +11,7 @@
 
 @protocol SGRotaryWheelDelegate <NSObject>
 @required
-- (void)wheelDidChangeValue:(NSString *)newValue;
+- (void)wheelDidChangeSectionNumber:(NSInteger)sectionNumber;
 @end
 
 
