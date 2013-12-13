@@ -12,7 +12,7 @@
 #import "SGRotaryWheel.h"
 
 #define SECONDS_INCREMENT 5
-#define WHEEL_PADDING 15
+#define WHEEL_PADDING 0
 
 @interface TimeEntryVC () <SGRotaryWheelDelegate>
 @property (strong, nonatomic) NSMutableDictionary *colors;
@@ -40,8 +40,7 @@
 - (void)setupRotaryWheel {
     CGFloat sideLength = self.wheelView.frame.size.width + 2*WHEEL_PADDING;
     CGRect frame = CGRectMake(-WHEEL_PADDING, -WHEEL_PADDING, sideLength, sideLength);
-    
-    self.rotaryWheel = [[SGRotaryWheel alloc] initWithFrame:frame delegate:self numberOfSections:12];
+    self.rotaryWheel = [[SGRotaryWheel alloc] initWithFrame:frame delegate:self numberOfSections:60/SECONDS_INCREMENT];
     [self.wheelView addSubview:self.rotaryWheel];
 }
 
@@ -49,8 +48,17 @@
 
 #pragma mark - Rotary wheel delegates
 - (void)wheelDidChangeSectionNumber:(NSInteger)sectionNumber withLevelNumber:(NSInteger)levelNumber{
-    self.colorMinutesLabel.text = [NSString stringWithFormat:@"%i", sectionNumber];
-    self.colorSecondsLabel.text = [NSString stringWithFormat:@"%i", levelNumber];
+    [self updateMinutesLabelWithLevelNumber:levelNumber];
+    [self updateSecondsLabelWithSectionNumber:sectionNumber];
+}
+
+- (void)updateMinutesLabelWithLevelNumber:(NSInteger)levelNumber {
+    self.colorMinutesLabel.text = [Helper unitStringForInteger:levelNumber];
+
+}
+
+- (void)updateSecondsLabelWithSectionNumber:(NSInteger)sectionNumber {
+    self.colorSecondsLabel.text = [Helper unitStringForInteger:sectionNumber*SECONDS_INCREMENT];
 }
 
 

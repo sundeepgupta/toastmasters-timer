@@ -12,6 +12,7 @@
 
 
 #define kRadiansOffset M_PI/2 //put 0 on top instead of on left
+#define kTouchTrackWidth 50
 
 
 static CGFloat deltaAngle;
@@ -47,10 +48,6 @@ static CGFloat deltaAngle;
         [self setupTouchDistanceRange];
         [self setupSections];
         self.currentLevelNumber = 0;
-        
-        
-        
-        
     }
     return self;
 }
@@ -61,14 +58,13 @@ static CGFloat deltaAngle;
 
 - (void)drawWheel {
     [self setupContainerView];
-//    [self setupLabels];
     [self addSubview:self.containerView];
 }
 
 - (void)setupTouchDistanceRange {
     CGFloat width = self.bounds.size.width;
-    self.minTouchDistanceFromCenter = width/4;
     self.maxTouchDistanceFromCenter = width/2;
+    self.minTouchDistanceFromCenter = self.maxTouchDistanceFromCenter - kTouchTrackWidth;
 }
 
 
@@ -77,27 +73,8 @@ static CGFloat deltaAngle;
     self.containerView.userInteractionEnabled = NO;
     self.containerView.transform = CGAffineTransformMakeRotation(kRadiansOffset);
     
-    self.containerView.backgroundColor = [UIColor whiteColor];
+    self.containerView.backgroundColor = [UIColor lightGrayColor];
     self.containerView.alpha = 0.5;
-}
-
-- (void)setupLabels {
-    for (NSInteger i = 0; i < self.sectionCount; i++) {
-        UILabel *label = [self labelForSection:i];
-        [self.containerView addSubview:label];
-    }
-}
-
-- (UILabel *)labelForSection:(NSInteger)section {
-    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 80, 20)];
-    label.userInteractionEnabled = NO;
-    label.backgroundColor = [UIColor redColor];
-    label.text = [NSString stringWithFormat:@"%d", section];
-    label.layer.anchorPoint = CGPointMake(1.0f, 0.5f);
-    label.layer.position = CGPointMake(self.containerView.bounds.size.width/2.0, self.containerView.bounds.size.height/2.0);
-    label.transform = CGAffineTransformMakeRotation(self.sectionAngleSize*section);
-    label.tag = section;
-    return label;
 }
 
 
@@ -188,9 +165,17 @@ static CGFloat deltaAngle;
 
 - (void)updateCurrentLevelWithNewSectionNumber:(NSInteger)newSectionNumber {
     if (newSectionNumber == 0) {
-        self.currentLevelNumber++;
+        if (self.currentLevelNumber < 99) {
+            self.currentLevelNumber++;
+        } else {
+            self.currentLevelNumber = 0;
+        }
     } else {
-        self.currentLevelNumber--;
+        if (self.currentLevelNumber > 0) {
+            self.currentLevelNumber--;
+        } else {
+            self.currentLevelNumber = 99;
+        }
     }
 }
 
@@ -221,7 +206,6 @@ static CGFloat deltaAngle;
     if (self.sectionCount%2 == 0) {
         [self buildEvenNumberOfSections];
     } else {
-//        [self buildOddNumberOfSections];
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error" message:@"Odd number of wheel sections not supported yet." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
         [alert show];
     }
@@ -243,24 +227,6 @@ static CGFloat deltaAngle;
         NSLog(@"Created section: %@", section);
     }
 }
-
-//this is broken, so don't use it
-//- (void)buildOddNumberOfSections {
-//    CGFloat midValue = kRadiansOffset;
-//    for (NSInteger i = 0; i < self.sectionCount; i++) {
-//        SGSection *section = [self sectionWithMidValue:midValue andSectionNumber:i];
-//        
-//        midValue += self.sectionAngleSize;
-//        if (section.maxValue > M_PI) {
-//            midValue = -midValue;
-//            midValue += self.sectionAngleSize;
-//        }
-//        
-//        [self.sections addObject:section];
-//        NSLog(@"Created section: %@", section);
-//    }
-//}
-
 
 
 - (SGSection *)sectionWithMidValue:(CGFloat)midValue andSectionNumber:(NSInteger)sectionNumber {

@@ -248,15 +248,15 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EPW-ih-eam">
-                                <rect key="frame" x="45" y="125" width="230" height="230"/>
+                                <rect key="frame" x="38" y="117" width="245" height="245"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="greenWheel" translatesAutoresizingMaskIntoConstraints="NO" id="rrW-J8-M7H">
-                                        <rect key="frame" x="0.0" y="0.0" width="230" height="230"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="245" height="245"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     </imageView>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" text="05" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="019-54-Gqt">
-                                        <rect key="frame" x="71" y="103" width="34" height="24"/>
+                                        <rect key="frame" x="78" y="111" width="34" height="24"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
                                         <inset key="insetFor6xAndEarlier" minX="0.0" minY="20" maxX="0.0" maxY="-20"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="30"/>
@@ -264,7 +264,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" text=":" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eSn-Gm-Yax">
-                                        <rect key="frame" x="110" y="103" width="10" height="24"/>
+                                        <rect key="frame" x="117" y="111" width="10" height="24"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
                                         <inset key="insetFor6xAndEarlier" minX="0.0" minY="20" maxX="0.0" maxY="-20"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="30"/>
@@ -272,7 +272,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" text="22" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tmO-Ty-ePU">
-                                        <rect key="frame" x="126" y="103" width="34" height="24"/>
+                                        <rect key="frame" x="133" y="111" width="34" height="24"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
                                         <inset key="insetFor6xAndEarlier" minX="0.0" minY="20" maxX="0.0" maxY="-20"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="30"/>
@@ -281,8 +281,8 @@
                                     </label>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="230" id="AtI-Id-z6p"/>
-                                    <constraint firstAttribute="height" constant="230" id="HxP-L7-PLv"/>
+                                    <constraint firstAttribute="width" constant="245" id="AtI-Id-z6p"/>
+                                    <constraint firstAttribute="height" constant="245" id="HxP-L7-PLv"/>
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C7L-au-Kzc">
