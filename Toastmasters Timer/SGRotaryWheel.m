@@ -21,7 +21,11 @@ static CGFloat deltaAngle;
 @property CGAffineTransform startTransform;
 @property (nonatomic) CGFloat sectionAngleSize;
 @property (nonatomic, strong) NSMutableArray *sections;
+@property NSInteger previousSectionNumber;
 @property NSInteger currentSectionNumber;
+@property NSInteger currentLevelNumber;
+@property BOOL isRotatingClockwise;
+
 @end
 
 
@@ -38,6 +42,7 @@ static CGFloat deltaAngle;
         self.delegate = delegate;
         [self drawWheel];
         [self setupSections];
+        self.currentLevelNumber = 0;
     }
     return self;
 }
@@ -109,7 +114,7 @@ static CGFloat deltaAngle;
 - (BOOL)continueTrackingWithTouch:(UITouch *)touch withEvent:(UIEvent *)event {
     CGPoint touchPoint = [touch locationInView:self];
     [self transformToPoint:touchPoint];
-    [self updateDelegate];
+    [self updateValues];
     return YES;
 }
 
@@ -121,23 +126,46 @@ static CGFloat deltaAngle;
     self.containerView.transform = CGAffineTransformRotate(self.startTransform, angleDifference);
 }
 
-- (void)updateDelegate {
-    [self updateCurrentSectionNumber];
-    [self.delegate wheelDidChangeSectionNumber:self.currentSectionNumber];
+
+- (void)updateValues {
+    NSInteger newSectionNumber = [self sectionNumberForCurrentRadians];
+    if (newSectionNumber != self.currentSectionNumber) {
+        [self updateCurrentValuesWithNewSectionNumber:newSectionNumber];
+        [self.delegate wheelDidChangeSectionNumber:self.currentSectionNumber withLevelNumber:self.currentLevelNumber];
+    }
 }
 
-- (void)updateCurrentSectionNumber {
+- (void)updateCurrentValuesWithNewSectionNumber:(NSInteger)newSectionNumber {
+    NSInteger newSectionNumberDifference = abs(newSectionNumber - self.currentSectionNumber);
+    if (newSectionNumberDifference > 1) {
+        [self updateCurrentLevelWithNewSectionNumber:newSectionNumber];
+    }
+    self.currentSectionNumber = newSectionNumber;
+}
+
+- (void)updateCurrentLevelWithNewSectionNumber:(NSInteger)newSectionNumber {
+    if (newSectionNumber == 0) {
+        self.currentLevelNumber++;
+    } else {
+        self.currentLevelNumber--;
+    }
+}
+
+
+
+- (NSInteger)sectionNumberForCurrentRadians {
     CGFloat radians = [self currentRadians];
+    NSInteger sectionNumber;
     for (NSInteger i = 0; i < self.sections.count; i++) {
         SGSection *section = self.sections[i];
         if ([self radians:radians isInSection:section]) {
-            self.currentSectionNumber = i;
+            sectionNumber = i;
         }
     }
-//    NSLog(@"Radians: %f, Section: %i", radians, self.currentSectionNumber);
+    
+    NSLog(@"Radians: %f, Section: %i", radians, self.currentSectionNumber);
+    return sectionNumber;
 }
-
-
 - (BOOL)radians:(CGFloat)radians isInSection:(SGSection *)section {
     BOOL isInSection = NO;
     if (section.minValue > 0  &&  section.maxValue < 0) { //anomaly case
@@ -149,8 +177,6 @@ static CGFloat deltaAngle;
     }
     return isInSection;
 }
-
-
 - (CGFloat)currentRadians {
     CGFloat radians = atan2f(self.containerView.transform.b, self.containerView.transform.a);
     return radians;

@@ -12,6 +12,7 @@
 @interface ColorTimeEntryVC () <SGRotaryWheelDelegate>
 @property (nonatomic, strong) SGRotaryWheel *rotaryWheel;
 @property (strong, nonatomic) IBOutlet UILabel *label;
+@property (strong, nonatomic) IBOutlet UILabel *levelLabel;
 @end
 
 @implementation ColorTimeEntryVC
@@ -30,8 +31,9 @@
 
 
 #pragma mark - Rotary wheel delegates
-- (void)wheelDidChangeSectionNumber:(NSInteger)sectionNumber {
+- (void)wheelDidChangeSectionNumber:(NSInteger)sectionNumber withLevelNumber:(NSInteger)levelNumber{
     self.label.text = [NSString stringWithFormat:@"Section %i", sectionNumber];
+    self.levelLabel.text = [NSString stringWithFormat:@"Level %i", levelNumber];
 }
 
 
