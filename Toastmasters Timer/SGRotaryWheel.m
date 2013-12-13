@@ -40,30 +40,54 @@ static CGFloat deltaAngle;
         
         self.sectionCount = numberOfSections;
         self.delegate = delegate;
+        [self setupAngleSize];
         [self drawWheel];
         [self setupSections];
         self.currentLevelNumber = 0;
     }
     return self;
 }
+
+- (id)initWithView:(UIView *)view delegate:(id)delegate numberOfSections:(NSInteger)numberOfSections;
+{
+    self = [super initWithFrame:view.bounds];
+    if (self) {
+//        self.backgroundColor = [UIColor yellowColor];
+        
+        self.sectionCount = numberOfSections;
+        self.delegate = delegate;
+        [self setupAngleSize];
+        [self drawWheel];
+        [self setupSections];
+        self.currentLevelNumber = 0;
+    }
+    return self;
+}
+
+- (void)setupAngleSize {
+    self.sectionAngleSize = 2*M_PI/self.sectionCount;
+}
+
 - (void)drawWheel {
     [self setupContainerView];
-    [self setupLabels];
+//    [self setupLabels];
     [self addSubview:self.containerView];
 }
+
 - (void)setupContainerView {
     self.containerView = [[UIView alloc] initWithFrame:self.frame];
     self.containerView.userInteractionEnabled = NO;
-    self.containerView.backgroundColor = [UIColor lightGrayColor];
+//    self.containerView.backgroundColor = [UIColor lightGrayColor];
     self.containerView.transform = CGAffineTransformMakeRotation(kRadiansOffset);
 }
+
 - (void)setupLabels {
-    self.sectionAngleSize = 2*M_PI/self.sectionCount;
     for (NSInteger i = 0; i < self.sectionCount; i++) {
         UILabel *label = [self labelForSection:i];
         [self.containerView addSubview:label];
     }
 }
+
 - (UILabel *)labelForSection:(NSInteger)section {
     UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 80, 20)];
     label.userInteractionEnabled = NO;
@@ -146,7 +170,7 @@ static CGFloat deltaAngle;
         }
     }
     
-    NSLog(@"Radians: %f, Section: %i", radians, self.currentSectionNumber);
+//    NSLog(@"Radians: %f, Section: %i", radians, self.currentSectionNumber);
     return sectionNumber;
 }
 

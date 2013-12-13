@@ -73,6 +73,7 @@
 		AEBAF2F517E7D9B000BA9479 /* info.png in Resources */ = {isa = PBXBuildFile; fileRef = AEBAF2F317E7D9B000BA9479 /* info.png */; };
 		AEBAF2F617E7D9B000BA9479 /* info@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AEBAF2F417E7D9B000BA9479 /* info@2x.png */; };
 		AECC0AF41856B61400815DA2 /* SGSection.m in Sources */ = {isa = PBXBuildFile; fileRef = AECC0AF31856B61400815DA2 /* SGSection.m */; };
+		AECC0AF9185AA97500815DA2 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AECC0AF8185AA97500815DA2 /* Images.xcassets */; };
 		AED96F4D17FA318C00FFFDA5 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE111FB317D01FE700254EF4 /* MessageUI.framework */; };
 		AED96F4E17FA319300FFFDA5 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE5208CE17C16FFA002CFFD7 /* QuartzCore.framework */; };
 		AED96F4F17FA319800FFFDA5 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEDA15A117BDB2F300AC9DBA /* AudioToolbox.framework */; };
@@ -172,6 +173,7 @@
 		AEBAF2F417E7D9B000BA9479 /* info@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "info@2x.png"; sourceTree = "<group>"; };
 		AECC0AF21856B61400815DA2 /* SGSection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SGSection.h; path = "Toastmasters Timer/SGSection.h"; sourceTree = "<group>"; };
 		AECC0AF31856B61400815DA2 /* SGSection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SGSection.m; path = "Toastmasters Timer/SGSection.m"; sourceTree = "<group>"; };
+		AECC0AF8185AA97500815DA2 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = "Toastmasters Timer/Images.xcassets"; sourceTree = "<group>"; };
 		AEDA15A117BDB2F300AC9DBA /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		AEF3115A17E90DB500D10C32 /* icon120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon120.png; sourceTree = "<group>"; };
 		AEF3115C17E90EB800D10C32 /* icon29.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon29.png; sourceTree = "<group>"; };
@@ -323,6 +325,7 @@
 			children = (
 				AECC0AF21856B61400815DA2 /* SGSection.h */,
 				AECC0AF31856B61400815DA2 /* SGSection.m */,
+				AECC0AF8185AA97500815DA2 /* Images.xcassets */,
 				AE87325B1831D48B00BDD4B2 /* ColorTimeEntryVC.h */,
 				AE87325C1831D48B00BDD4B2 /* ColorTimeEntryVC.m */,
 				AE87325E1831D51200BDD4B2 /* SGRotaryWheel.h */,
@@ -495,6 +498,7 @@
 				AEF3115B17E90DB500D10C32 /* icon120.png in Resources */,
 				AEF3116717E911C000D10C32 /* Default@2x.png in Resources */,
 				AE5208BE17C10B8C002CFFD7 /* stop.png in Resources */,
+				AECC0AF9185AA97500815DA2 /* Images.xcassets in Resources */,
 				AE5208BF17C10B8C002CFFD7 /* stop@2x.png in Resources */,
 				AE5208C117C10CE4002CFFD7 /* pause@2x.png in Resources */,
 				AEF3115F17E90EB800D10C32 /* icon29.png in Resources */,
