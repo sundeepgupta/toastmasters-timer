@@ -25,41 +25,32 @@ static CGFloat deltaAngle;
 @property NSInteger currentSectionNumber;
 @property NSInteger currentLevelNumber;
 @property BOOL isRotatingClockwise;
-
+@property CGFloat minTouchDistanceFromCenter;
+@property CGFloat maxTouchDistanceFromCenter;
 @end
 
 
 @implementation SGRotaryWheel
 
 #pragma mark - Initialize
-- (id)initWithFrame:(CGRect)frame delegate:(id)delegate numberOfSections:(NSInteger)numberOfSections;
-{
+
+- (id)initWithFrame:(CGRect)frame delegate:(id)delegate numberOfSections:(NSInteger)numberOfSections {
     self = [super initWithFrame:frame];
     if (self) {
         self.backgroundColor = [UIColor yellowColor];
+        self.alpha = 0.3;
         
         self.sectionCount = numberOfSections;
         self.delegate = delegate;
         [self setupAngleSize];
         [self drawWheel];
+        [self setupTouchDistanceRange];
         [self setupSections];
         self.currentLevelNumber = 0;
-    }
-    return self;
-}
-
-- (id)initWithView:(UIView *)view delegate:(id)delegate numberOfSections:(NSInteger)numberOfSections;
-{
-    self = [super initWithFrame:view.bounds];
-    if (self) {
-//        self.backgroundColor = [UIColor yellowColor];
         
-        self.sectionCount = numberOfSections;
-        self.delegate = delegate;
-        [self setupAngleSize];
-        [self drawWheel];
-        [self setupSections];
-        self.currentLevelNumber = 0;
+        
+        
+        
     }
     return self;
 }
@@ -74,11 +65,20 @@ static CGFloat deltaAngle;
     [self addSubview:self.containerView];
 }
 
+- (void)setupTouchDistanceRange {
+    CGFloat width = self.bounds.size.width;
+    self.minTouchDistanceFromCenter = width/4;
+    self.maxTouchDistanceFromCenter = width/2;
+}
+
+
 - (void)setupContainerView {
-    self.containerView = [[UIView alloc] initWithFrame:self.frame];
+    self.containerView = [[UIView alloc] initWithFrame:self.bounds];
     self.containerView.userInteractionEnabled = NO;
-//    self.containerView.backgroundColor = [UIColor lightGrayColor];
     self.containerView.transform = CGAffineTransformMakeRotation(kRadiansOffset);
+    
+    self.containerView.backgroundColor = [UIColor whiteColor];
+    self.containerView.alpha = 0.5;
 }
 
 - (void)setupLabels {
@@ -104,6 +104,7 @@ static CGFloat deltaAngle;
 
 #pragma mark - Begin Tracking
 - (BOOL)beginTrackingWithTouch:(UITouch *)touch withEvent:(UIEvent *)event {
+    [super beginTrackingWithTouch:touch withEvent:event];
     CGPoint touchPoint = [touch locationInView:self];
     CGFloat distanceFromCenter = [self distanceFromCenterForPoint:touchPoint];
     BOOL shouldTrack = [self shouldTrackForDistanceFromCenter:distanceFromCenter];
@@ -116,12 +117,13 @@ static CGFloat deltaAngle;
     CGPoint center = CGPointMake(self.bounds.size.width/2, self.bounds.size.height/2);
     CGFloat dx = point.x - center.x;
     CGFloat dy = point.y - center.y;
-    return sqrt(dx*dx + dy*dy);
+    CGFloat distance = sqrt(dx*dx + dy*dy);
+    return distance;
 }
 - (BOOL)shouldTrackForDistanceFromCenter:(CGFloat)distanceFromCenter {
-    BOOL shouldTrack = YES;
-    if (distanceFromCenter < 40  ||  distanceFromCenter > 100) {
-        shouldTrack = NO;
+    BOOL shouldTrack = NO;
+    if (distanceFromCenter > self.minTouchDistanceFromCenter  &&  distanceFromCenter < self.maxTouchDistanceFromCenter) {
+        shouldTrack = YES;
     }
     return shouldTrack;
 }
@@ -136,6 +138,7 @@ static CGFloat deltaAngle;
 
 #pragma mark - Continue Tracking
 - (BOOL)continueTrackingWithTouch:(UITouch *)touch withEvent:(UIEvent *)event {
+    [super continueTrackingWithTouch:touch withEvent:event];
     CGPoint touchPoint = [touch locationInView:self];
     [self transformToPoint:touchPoint];
     [self updateValues];

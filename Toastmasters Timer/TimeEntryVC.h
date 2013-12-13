@@ -11,7 +11,7 @@
 
 @interface TimeEntryVC : UIViewController
 
-@property (strong, nonatomic) IBOutlet UILabel *minutesLabel;
-@property (strong, nonatomic) IBOutlet UILabel *secondsLabel;
+@property (strong, nonatomic) IBOutlet UILabel *timerMinutesLabel;
+@property (strong, nonatomic) IBOutlet UILabel *timerSecondsLabel;
 
 @end

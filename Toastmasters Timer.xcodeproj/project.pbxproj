@@ -57,7 +57,6 @@
 		AE7223DA17BDAB66003B60A5 /* Toastmasters_TimerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AE7223D917BDAB66003B60A5 /* Toastmasters_TimerTests.m */; };
 		AE7223E417BDABCA003B60A5 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE7223E317BDABCA003B60A5 /* Storyboard.storyboard */; };
 		AE7223E717BDAC8B003B60A5 /* TimerVC.m in Sources */ = {isa = PBXBuildFile; fileRef = AE7223E617BDAC8B003B60A5 /* TimerVC.m */; };
-		AE87325D1831D48B00BDD4B2 /* ColorTimeEntryVC.m in Sources */ = {isa = PBXBuildFile; fileRef = AE87325C1831D48B00BDD4B2 /* ColorTimeEntryVC.m */; };
 		AE8732601831D51200BDD4B2 /* SGRotaryWheel.m in Sources */ = {isa = PBXBuildFile; fileRef = AE87325F1831D51200BDD4B2 /* SGRotaryWheel.m */; };
 		AE8D52FE17EE2D1300F265FC /* speakerOn.png in Resources */ = {isa = PBXBuildFile; fileRef = AE8D52FA17EE2D1300F265FC /* speakerOn.png */; };
 		AE8D52FF17EE2D1300F265FC /* speakerOn@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AE8D52FB17EE2D1300F265FC /* speakerOn@2x.png */; };
@@ -150,8 +149,6 @@
 		AE7223E317BDABCA003B60A5 /* Storyboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
 		AE7223E517BDAC8B003B60A5 /* TimerVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimerVC.h; sourceTree = "<group>"; };
 		AE7223E617BDAC8B003B60A5 /* TimerVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = TimerVC.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
-		AE87325B1831D48B00BDD4B2 /* ColorTimeEntryVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ColorTimeEntryVC.h; path = "Toastmasters Timer/ColorTimeEntryVC.h"; sourceTree = "<group>"; };
-		AE87325C1831D48B00BDD4B2 /* ColorTimeEntryVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ColorTimeEntryVC.m; path = "Toastmasters Timer/ColorTimeEntryVC.m"; sourceTree = "<group>"; };
 		AE87325E1831D51200BDD4B2 /* SGRotaryWheel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SGRotaryWheel.h; path = "Toastmasters Timer/SGRotaryWheel.h"; sourceTree = "<group>"; };
 		AE87325F1831D51200BDD4B2 /* SGRotaryWheel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SGRotaryWheel.m; path = "Toastmasters Timer/SGRotaryWheel.m"; sourceTree = "<group>"; };
 		AE8D52FA17EE2D1300F265FC /* speakerOn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = speakerOn.png; sourceTree = "<group>"; };
@@ -326,8 +323,6 @@
 				AECC0AF21856B61400815DA2 /* SGSection.h */,
 				AECC0AF31856B61400815DA2 /* SGSection.m */,
 				AECC0AF8185AA97500815DA2 /* Images.xcassets */,
-				AE87325B1831D48B00BDD4B2 /* ColorTimeEntryVC.h */,
-				AE87325C1831D48B00BDD4B2 /* ColorTimeEntryVC.m */,
 				AE87325E1831D51200BDD4B2 /* SGRotaryWheel.h */,
 				AE87325F1831D51200BDD4B2 /* SGRotaryWheel.m */,
 				AE7223B017BDAB65003B60A5 /* Toastmasters Timer */,
@@ -557,7 +552,6 @@
 			files = (
 				AE7223B717BDAB66003B60A5 /* main.m in Sources */,
 				AE7223BB17BDAB66003B60A5 /* AppDelegate.m in Sources */,
-				AE87325D1831D48B00BDD4B2 /* ColorTimeEntryVC.m in Sources */,
 				AE3C7EC217ECF9080071725C /* AlertManager.m in Sources */,
 				AE7223C417BDAB66003B60A5 /* Toastmasters_Timer.xcdatamodeld in Sources */,
 				AE7223E717BDAC8B003B60A5 /* TimerVC.m in Sources */,

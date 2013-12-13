@@ -13,8 +13,6 @@
 #import "InfoVC.h"
 #import "AlertManager.h"
 
-#import "ColorTimeEntryVC.h"
-
 
 @interface TimerVC ()
 @property (strong, nonatomic) Timer *timer;
@@ -305,8 +303,8 @@
 }
 
 - (void)updateTimeEntryVc {
-    self.timeEntryVc.minutesLabel.text = self.minutesLabel.text;
-    self.timeEntryVc.secondsLabel.text = self.secondsLabel.text;
+    self.timeEntryVc.timerMinutesLabel.text = self.minutesLabel.text;
+    self.timeEntryVc.timerSecondsLabel.text = self.secondsLabel.text;
 }
 
 - (void)updateTimerLabels {
@@ -332,11 +330,11 @@
 
 #pragma mark - Settings Button
 - (IBAction)settingsButtonPress:(id)sender {
-    NSString *vcClassName = NSStringFromClass([ColorTimeEntryVC class]);
+    NSString *vcClassName = NSStringFromClass([TimeEntryVC class]);
     TimeEntryVC *vc = [self.storyboard instantiateViewControllerWithIdentifier:vcClassName];
     self.timeEntryVc = vc;
     [self presentViewController:vc animated:YES completion:nil];
-//    [self updateTimeEntryVc];
+    [self updateTimeEntryVc];
 }
 
 
