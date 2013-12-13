@@ -118,6 +118,7 @@ static CGFloat deltaAngle;
     return YES;
 }
 
+
 - (void)transformToPoint:(CGPoint)point {
     CGFloat dx = point.x - self.containerView.center.x;
     CGFloat dy = point.y - self.containerView.center.y;
@@ -126,7 +127,6 @@ static CGFloat deltaAngle;
     self.containerView.transform = CGAffineTransformRotate(self.startTransform, angleDifference);
 }
 
-
 - (void)updateValues {
     NSInteger newSectionNumber = [self sectionNumberForCurrentRadians];
     if (newSectionNumber != self.currentSectionNumber) {
@@ -134,23 +134,6 @@ static CGFloat deltaAngle;
         [self.delegate wheelDidChangeSectionNumber:self.currentSectionNumber withLevelNumber:self.currentLevelNumber];
     }
 }
-
-- (void)updateCurrentValuesWithNewSectionNumber:(NSInteger)newSectionNumber {
-    NSInteger newSectionNumberDifference = abs(newSectionNumber - self.currentSectionNumber);
-    if (newSectionNumberDifference > 1) {
-        [self updateCurrentLevelWithNewSectionNumber:newSectionNumber];
-    }
-    self.currentSectionNumber = newSectionNumber;
-}
-
-- (void)updateCurrentLevelWithNewSectionNumber:(NSInteger)newSectionNumber {
-    if (newSectionNumber == 0) {
-        self.currentLevelNumber++;
-    } else {
-        self.currentLevelNumber--;
-    }
-}
-
 
 
 - (NSInteger)sectionNumberForCurrentRadians {
@@ -166,8 +149,28 @@ static CGFloat deltaAngle;
     NSLog(@"Radians: %f, Section: %i", radians, self.currentSectionNumber);
     return sectionNumber;
 }
+
+- (void)updateCurrentValuesWithNewSectionNumber:(NSInteger)newSectionNumber {
+    NSInteger newSectionNumberDifference = abs(newSectionNumber - self.currentSectionNumber);
+    if (newSectionNumberDifference > 1) {
+        [self updateCurrentLevelWithNewSectionNumber:newSectionNumber];
+    }
+    self.currentSectionNumber = newSectionNumber;
+}
+
+
+- (void)updateCurrentLevelWithNewSectionNumber:(NSInteger)newSectionNumber {
+    if (newSectionNumber == 0) {
+        self.currentLevelNumber++;
+    } else {
+        self.currentLevelNumber--;
+    }
+}
+
+
 - (BOOL)radians:(CGFloat)radians isInSection:(SGSection *)section {
     BOOL isInSection = NO;
+    
     if (section.minValue > 0  &&  section.maxValue < 0) { //anomaly case
         if (radians > section.minValue  ||  radians < section.maxValue) {
             isInSection = YES;
@@ -177,6 +180,7 @@ static CGFloat deltaAngle;
     }
     return isInSection;
 }
+
 - (CGFloat)currentRadians {
     CGFloat radians = atan2f(self.containerView.transform.b, self.containerView.transform.a);
     return radians;
@@ -190,7 +194,9 @@ static CGFloat deltaAngle;
     if (self.sectionCount%2 == 0) {
         [self buildEvenNumberOfSections];
     } else {
-        [self buildOddNumberOfSections];
+//        [self buildOddNumberOfSections];
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error" message:@"Odd number of wheel sections not supported yet." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+        [alert show];
     }
 }
 
@@ -199,33 +205,34 @@ static CGFloat deltaAngle;
     for (NSInteger i = 0; i < self.sectionCount; i++) {
         SGSection *section = [self sectionWithMidValue:midValue andSectionNumber:i];
         
-        if ((section.maxValue - self.sectionAngleSize) < -M_PI) {
-            midValue = M_PI;
+        if (section.maxValue > M_PI) {
+            midValue = -M_PI;
             section.midValue = midValue;
-            section.minValue = fabsf(section.maxValue);
+            section.maxValue = -section.minValue;
         }
-        midValue -= self.sectionAngleSize;
+        midValue += self.sectionAngleSize;
         
         [self.sections addObject:section];
         NSLog(@"Created section: %@", section);
     }
 }
 
-- (void)buildOddNumberOfSections {
-    CGFloat midValue = kRadiansOffset;
-    for (NSInteger i = 0; i < self.sectionCount; i++) {
-        SGSection *section = [self sectionWithMidValue:midValue andSectionNumber:i];
-        
-        midValue -= self.sectionAngleSize;
-        if (section.minValue < -M_PI) {
-            midValue = -midValue;
-            midValue -= self.sectionAngleSize;
-        }
-        
-        [self.sections addObject:section];
+//this is broken, so don't use it
+//- (void)buildOddNumberOfSections {
+//    CGFloat midValue = kRadiansOffset;
+//    for (NSInteger i = 0; i < self.sectionCount; i++) {
+//        SGSection *section = [self sectionWithMidValue:midValue andSectionNumber:i];
+//        
+//        midValue += self.sectionAngleSize;
+//        if (section.maxValue > M_PI) {
+//            midValue = -midValue;
+//            midValue += self.sectionAngleSize;
+//        }
+//        
+//        [self.sections addObject:section];
 //        NSLog(@"Created section: %@", section);
-    }
-}
+//    }
+//}
 
 
 
