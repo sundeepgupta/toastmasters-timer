@@ -44,14 +44,6 @@
 
 @implementation TimerVC
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-    }
-    return self;
-}
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -332,6 +324,7 @@
 - (IBAction)settingsButtonPress:(id)sender {
     NSString *vcClassName = NSStringFromClass([TimeEntryVC class]);
     TimeEntryVC *vc = [self.storyboard instantiateViewControllerWithIdentifier:vcClassName];
+
     self.timeEntryVc = vc;
     [self presentViewController:vc animated:YES completion:nil];
     [self updateTimeEntryVc];

@@ -9,6 +9,29 @@
 #import "Helper.h"
 
 @implementation Helper
+
++ (NSString *)stringForLevelNumber:(NSInteger)levelNumber andSectionNumber:(NSInteger)sectionNumber {
+    NSInteger totalSeconds = [self totalSecondsForLevelNumber:levelNumber andSectionNumber:sectionNumber];
+    NSString *string = [self stringForTotalSeconds:totalSeconds];
+    return string;
+}
++ (NSInteger)totalSecondsForLevelNumber:(NSInteger)levelNumber andSectionNumber:(NSInteger)sectionNumber {
+    NSInteger totalSeconds = 60*levelNumber + SECONDS_INCREMENT*sectionNumber;
+    return totalSeconds;
+}
++ (NSString *)stringForTotalSeconds:(NSInteger)totalSeconds {
+    NSInteger minutes = floor(totalSeconds/60);
+    NSInteger seconds = totalSeconds%60;
+    NSString *string = [NSString stringWithFormat:@"%02i:%02i", minutes, seconds];
+    return string;
+}
+
+
+
+
+
+
+
 + (NSString *)unitStringForNumber:(NSNumber *)number {
     NSInteger integer = number.integerValue;
     NSString *string = [self unitStringForInteger:integer];
@@ -76,6 +99,13 @@
 
 
 
+
+#pragma mark - Universal Helpers 
++ (void)updateTitle:(NSString *)title forButton:(UIButton *)button {
+    [UIView setAnimationsEnabled:NO];
+    [button setTitle:title forState:UIControlStateNormal];
+    [UIView setAnimationsEnabled:YES];
+}
 
 
 @end

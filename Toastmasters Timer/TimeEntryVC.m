@@ -6,13 +6,15 @@
 //  Copyright (c) 2013 Sundeep Gupta. All rights reserved.
 //
 
+
 #import "TimeEntryVC.h"
 #import "TimerVC.h"
 #import "SGDeepCopy.h"
 #import "SGRotaryWheel.h"
 
-#define SECONDS_INCREMENT 5
+
 #define WHEEL_PADDING 0
+
 
 @interface TimeEntryVC () <SGRotaryWheelDelegate>
 @property (strong, nonatomic) NSMutableDictionary *colors;
@@ -22,7 +24,12 @@
 @property (strong, nonatomic) IBOutlet UIView *wheelView;
 @property (strong, nonatomic) IBOutlet UILabel *colorMinutesLabel;
 @property (strong, nonatomic) IBOutlet UILabel *colorSecondsLabel;
+@property (strong, nonatomic) IBOutlet UIButton *greenButton;
+@property (strong, nonatomic) IBOutlet UIButton *amberButton;
+@property (nonatomic, strong) NSString *currentColorName;
+@property NSInteger totalSeconds;
 @end
+
 
 @implementation TimeEntryVC
 
@@ -31,6 +38,9 @@
     [super viewDidLoad];
     [self setupDefaults];
     [self setupRotaryWheel];
+    
+    
+    self.currentColorName = GREEN_COLOR_NAME;
 }
 
 - (void)setupDefaults {
@@ -48,97 +58,42 @@
 
 #pragma mark - Rotary wheel delegates
 - (void)wheelDidChangeSectionNumber:(NSInteger)sectionNumber withLevelNumber:(NSInteger)levelNumber{
-    [self updateMinutesLabelWithLevelNumber:levelNumber];
-    [self updateSecondsLabelWithSectionNumber:sectionNumber];
-}
-
-- (void)updateMinutesLabelWithLevelNumber:(NSInteger)levelNumber {
-    self.colorMinutesLabel.text = [Helper unitStringForInteger:levelNumber];
-
-}
-
-- (void)updateSecondsLabelWithSectionNumber:(NSInteger)sectionNumber {
-    self.colorSecondsLabel.text = [Helper unitStringForInteger:sectionNumber*SECONDS_INCREMENT];
+    NSString *timeString = [Helper stringForLevelNumber:levelNumber andSectionNumber:sectionNumber];
+    [self updateCurrentColorButtonTitle:timeString];
 }
 
 
-//- (IBAction)increaseMinutesButtonPress:(id)sender {
-//    NSString *color = [self colorForSender:sender];
-//    NSInteger minutes = [self integerForUnit:MINUTES_KEY forColor:color];
-//    
-//    NSInteger newMinutes = minutes + 1;
-//    
-//    if (newMinutes == 100) {
-//        newMinutes = 0;
-//    }
-//    
-//    [self updateUnit:MINUTES_KEY withInteger:newMinutes ForColor:color];
-//}
-//
-//- (IBAction)decreaseMinutesButtonPress:(id)sender {
-//    NSString *color = [self colorForSender:sender];
-//    NSInteger minutes = [self integerForUnit:MINUTES_KEY forColor:color];
-//    
-//    NSInteger newMinutes = minutes - 1;
-//    
-//    if (newMinutes == -1) {
-//        newMinutes = 99;
-//    }
-//    
-//    [self updateUnit:MINUTES_KEY withInteger:newMinutes ForColor:color];
-//}
-//
-//- (IBAction)increaseSecondsButtonPress:(id)sender {
-//    NSString *color = [self colorForSender:sender];
-//    NSInteger seconds = [self integerForUnit:SECONDS_KEY forColor:color];
-//    
-//    NSInteger newSeconds = seconds + SECONDS_INCREMENT;
-//
-//    if (newSeconds >= 60) {
-//        newSeconds -= 60;
-//    }
-//    
-//    [self updateUnit:SECONDS_KEY withInteger:newSeconds ForColor:color];
-//}
-//
-//- (IBAction)decreaseSecondsButtonPress:(id)sender {
-//    NSString *color = [self colorForSender:sender];
-//    NSInteger seconds = [self integerForUnit:SECONDS_KEY forColor:color];
-//
-//    NSInteger newSeconds = seconds - SECONDS_INCREMENT;
-//
-//    if (newSeconds < 0) {
-//        newSeconds += 60;
-//    }
-//    
-//    [self updateUnit:SECONDS_KEY withInteger:newSeconds ForColor:color];
-//}
-
-
-- (NSInteger)integerForUnit:(NSString *)unit forColor:(NSString *)color {
-    NSMutableDictionary *colorDict = self.colors[color];
-    NSNumber *number = colorDict[unit];
-    NSInteger integer = number.integerValue;
-    return integer;
-}
-
-- (void)updateUnit:(NSString *)unit withInteger:(NSInteger)integer ForColor:(NSString *)color {
-    NSMutableDictionary *colorDict = self.colors[color];
-    NSNumber *number = [NSNumber numberWithInteger:integer];
-    colorDict[unit] = number;
-    
-    NSMutableDictionary *labelDict = self.labelsDictionary[color];
-    UILabel *label = labelDict[unit];
-    
-    label.text = [Helper unitStringForNumber:colorDict[unit]];
+- (void)updateCurrentColorButtonTitle:(NSString *)title {
+    UIButton *buttonToUpdate;
+    if ([self.currentColorName isEqualToString:GREEN_COLOR_NAME]) {
+        buttonToUpdate = self.greenButton;
+    } else if ([self.currentColorName isEqualToString:AMBER_COLOR_NAME]) {
+        buttonToUpdate = self.amberButton;
+    }
+    [Helper updateTitle:title forButton:buttonToUpdate];
 }
 
 
 
+
+
+#pragma mark - Color Buttons 
+- (IBAction)greenButtonTapped:(id)sender {
+    self.currentColorName = GREEN_COLOR_NAME;
+}
+
+- (IBAction)amberButtonTapped:(id)sender {
+    self.currentColorName = AMBER_COLOR_NAME;
+}
+
+
+
+#pragma mark - Save and Cancel
 - (IBAction)doneButtonPress:(id)sender {
     [self saveColorsToDefaults];
     [self dismissViewControllerAnimated:YES completion:nil];
 }
+
 - (void)saveColorsToDefaults {
     [self.defaults setObject:self.colors forKey:COLOR_TIMES_KEY];
     [self.defaults synchronize];

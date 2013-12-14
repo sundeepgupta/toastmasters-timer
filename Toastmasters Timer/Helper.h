@@ -9,9 +9,15 @@
 #import <Foundation/Foundation.h>
 
 
+#define SECONDS_INCREMENT 5
+
+
 
 
 @interface Helper : NSObject
++ (NSString *)stringForLevelNumber:(NSInteger)levelNumber andSectionNumber:(NSInteger)sectionNumber;
+
+
 + (NSString *)unitStringForNumber:(NSNumber *)number;
 + (NSString *)unitStringForInteger:(NSInteger)integer;
 
@@ -27,5 +33,9 @@
 + (NSInteger)totalSecondsForColorDict:(NSDictionary *)colorDict;
 + (NSInteger)totalSecondsForMinutes:(NSInteger)minutes andSeconds:(NSInteger)seconds;
 
+
+
+#pragma mark - Universal Helpers 
++ (void)updateTitle:(NSString *)title forButton:(UIButton *)button;
 
 @end
