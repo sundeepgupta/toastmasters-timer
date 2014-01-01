@@ -11,7 +11,7 @@
 #import "TimerVC.h"
 #import "SGDeepCopy.h"
 #import "SGRotaryWheel.h"
-
+#import "ColorButton.h"
 
 #define WHEEL_PADDING 0
 
@@ -24,8 +24,8 @@
 @property (strong, nonatomic) IBOutlet UIView *wheelView;
 @property (strong, nonatomic) IBOutlet UILabel *colorMinutesLabel;
 @property (strong, nonatomic) IBOutlet UILabel *colorSecondsLabel;
-@property (strong, nonatomic) IBOutlet UIButton *greenButton;
-@property (strong, nonatomic) IBOutlet UIButton *amberButton;
+@property (strong, nonatomic) IBOutlet ColorButton *greenButton;
+@property (strong, nonatomic) IBOutlet ColorButton *amberButton;
 @property (nonatomic, strong) NSString *currentColorName;
 @property NSInteger totalSeconds;
 @end

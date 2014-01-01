@@ -22,23 +22,8 @@
 @property (strong, nonatomic) NSMutableDictionary *colorTimes;
 @property NSInteger seconds;
 @property NSInteger minutes;
-@property (strong, nonatomic) IBOutlet UILabel *secondsLabel;
-@property (strong, nonatomic) IBOutlet UILabel *minutesLabel;
 @property (strong, nonatomic) TimeEntryVC *timeEntryVc;
 @property (strong, nonatomic) IBOutlet UIButton *pauseButton;
-@property (strong, nonatomic) IBOutlet UILabel *greenMinutesLabel;
-@property (strong, nonatomic) IBOutlet UILabel *greenSecondsLabel;
-@property (strong, nonatomic) IBOutlet UILabel *amberMinutesLabel;
-@property (strong, nonatomic) IBOutlet UILabel *amberSecondsLabel;
-@property (strong, nonatomic) IBOutlet UILabel *redMinutesLabel;
-@property (strong, nonatomic) IBOutlet UILabel *redSecondsLabel;
-@property (strong, nonatomic) IBOutlet UILabel *bellMinutesLabel;
-@property (strong, nonatomic) IBOutlet UILabel *bellSecondsLabel;
-@property (strong, nonatomic) IBOutletCollection(UILabel) NSArray *timerLabels;
-@property (strong, nonatomic) IBOutletCollection(UILabel) NSArray *greenLabels;
-@property (strong, nonatomic) IBOutletCollection(UILabel) NSArray *amberLabels;
-@property (strong, nonatomic) IBOutletCollection(UILabel) NSArray *redLabels;
-@property (strong, nonatomic) IBOutletCollection(UILabel) NSArray *bellLabels;
 @property (strong, nonatomic) IBOutlet UIButton *audioAlertButton;
 @end
 
@@ -66,17 +51,17 @@
     NSMutableDictionary *red = [[NSMutableDictionary alloc] init];
     NSMutableDictionary *bell = [[NSMutableDictionary alloc] init];
     
-    green[MINUTES_KEY] = self.greenMinutesLabel;
-    green[SECONDS_KEY] = self.greenSecondsLabel;
-    
-    amber[MINUTES_KEY] = self.amberMinutesLabel;
-    amber[SECONDS_KEY] = self.amberSecondsLabel;
-    
-    red[MINUTES_KEY] = self.redMinutesLabel;
-    red[SECONDS_KEY] = self.redSecondsLabel;
-    
-    bell[MINUTES_KEY] = self.bellMinutesLabel;
-    bell[SECONDS_KEY] = self.bellSecondsLabel;
+//    green[MINUTES_KEY] = self.greenMinutesLabel;
+//    green[SECONDS_KEY] = self.greenSecondsLabel;
+//    
+//    amber[MINUTES_KEY] = self.amberMinutesLabel;
+//    amber[SECONDS_KEY] = self.amberSecondsLabel;
+//    
+//    red[MINUTES_KEY] = self.redMinutesLabel;
+//    red[SECONDS_KEY] = self.redSecondsLabel;
+//    
+//    bell[MINUTES_KEY] = self.bellMinutesLabel;
+//    bell[SECONDS_KEY] = self.bellSecondsLabel;
     
     self.colorLabelsDictionary = [NSMutableDictionary dictionaryWithObjectsAndKeys:green,GREEN_COLOR_NAME, amber,AMBER_COLOR_NAME, red,RED_COLOR_NAME, bell,BELL_COLOR_NAME, nil];
 }
@@ -295,13 +280,13 @@
 }
 
 - (void)updateTimeEntryVc {
-    self.timeEntryVc.timerMinutesLabel.text = self.minutesLabel.text;
-    self.timeEntryVc.timerSecondsLabel.text = self.secondsLabel.text;
+//    self.timeEntryVc.timerMinutesLabel.text = self.minutesLabel.text;
+//    self.timeEntryVc.timerSecondsLabel.text = self.secondsLabel.text;
 }
 
 - (void)updateTimerLabels {
-    self.minutesLabel.text = [Helper unitStringForInteger:self.minutes];
-    self.secondsLabel.text = [Helper unitStringForInteger:self.seconds];
+//    self.minutesLabel.text = [Helper unitStringForInteger:self.minutes];
+//    self.secondsLabel.text = [Helper unitStringForInteger:self.seconds];
 }
 
 - (void)assertColorChangeForSeconds:(NSInteger)seconds {
@@ -373,9 +358,9 @@
     [self removeToast];
 }
 - (void)hideTimerLabels {
-    for (UILabel *label in self.timerLabels) {
-        label.hidden = YES;
-    }
+//    for (UILabel *label in self.timerLabels) {
+//        label.hidden = YES;
+//    }
 }
 - (void)removeToast {
     NSArray *subviews = self.view.subviews;
@@ -396,9 +381,9 @@
 }
 
 - (void)showTimerLabels {
-    for (UILabel *label in self.timerLabels) {
-        label.hidden = NO;
-    }
+//    for (UILabel *label in self.timerLabels) {
+//        label.hidden = NO;
+//    }
 }
 
 - (void)emphasizeCorrectColorLabels {
