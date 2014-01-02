@@ -20,12 +20,13 @@
 @property (strong, nonatomic) NSUserDefaults *defaults;
 @property (strong, nonatomic) NSMutableDictionary *colorLabelsDictionary;
 @property (strong, nonatomic) NSMutableDictionary *colorTimes;
-@property NSInteger seconds;
-@property NSInteger minutes;
+@property NSInteger timerSeconds;
 @property (strong, nonatomic) TimeEntryVC *timeEntryVc;
 @property (strong, nonatomic) IBOutlet UIButton *pauseButton;
 @property (strong, nonatomic) IBOutlet UIButton *audioAlertButton;
+@property (strong, nonatomic) IBOutlet UILabel *timeLabel;
 @end
+
 
 @implementation TimerVC
 
@@ -53,7 +54,7 @@
     
 //    green[MINUTES_KEY] = self.greenMinutesLabel;
 //    green[SECONDS_KEY] = self.greenSecondsLabel;
-//    
+//
 //    amber[MINUTES_KEY] = self.amberMinutesLabel;
 //    amber[SECONDS_KEY] = self.amberSecondsLabel;
 //    
@@ -71,9 +72,8 @@
     self.timer.delegate = self;
 }
 - (void)resetTimerUnits {
-    self.seconds = 0;
-    self.minutes = 0;
-    [self updateTimerLabels];
+    self.timerSeconds = 0;
+    [self updateTimeLabel];
 }
 
 - (void)setupAlertManager {
@@ -264,29 +264,19 @@
     }
 }
 - (void)updateTimerLabelsWithSeconds:(NSInteger)seconds {
-    self.minutes = floor(seconds/60);
-    if (self.minutes == 100) {
-        [self rollMinutesOver];
-    }
-    
-    self.seconds = seconds%60;
-    
-    [self updateTimerLabels];
+    self.timerSeconds = seconds;
+    [self updateTimeLabel];
 }
-- (void)rollMinutesOver {
-    self.minutes = 0;
-    [self.timer stop];
-    [self.timer startFromStopped];
-}
+
+
 
 - (void)updateTimeEntryVc {
 //    self.timeEntryVc.timerMinutesLabel.text = self.minutesLabel.text;
 //    self.timeEntryVc.timerSecondsLabel.text = self.secondsLabel.text;
 }
 
-- (void)updateTimerLabels {
-//    self.minutesLabel.text = [Helper unitStringForInteger:self.minutes];
-//    self.secondsLabel.text = [Helper unitStringForInteger:self.seconds];
+- (void)updateTimeLabel {
+    self.timeLabel.text = [Helper stringForTotalSeconds:self.timerSeconds];
 }
 
 - (void)assertColorChangeForSeconds:(NSInteger)seconds {
@@ -296,7 +286,7 @@
         NSInteger minutes = [Helper integerForNumber:color[MINUTES_KEY]];
         NSInteger seconds = [Helper integerForNumber:color[SECONDS_KEY]];
         
-        if (minutes == self.minutes  &&  seconds == self.seconds) {
+        if (seconds == self.timerSeconds) {
             [self.alertManager performAlertForReachedColorName:colorName];
         }
     }
@@ -387,18 +377,17 @@
 }
 
 - (void)emphasizeCorrectColorLabels {
-    NSInteger totalSeconds = [self totalSecondsForTimer];
-    NSString *colorToEmphasize = [self colorToEmphasizeForTotalSeconds:totalSeconds];
+    NSString *colorToEmphasize = [self colorToEmphasize];
     [self emphasizeLabelsForColor:colorToEmphasize];
 }
 
-- (NSString *)colorToEmphasizeForTotalSeconds:(NSInteger)totalSeconds {
+- (NSString *)colorToEmphasize {
     NSString *colorToEmphasize;
     NSInteger minDifference = REALLY_LARGE_INTEGER;
     
     for (NSString *colorName in self.colorTimes) {
         NSInteger colorTotalSeconds = [self totalSecondsForColorName:colorName];
-        NSInteger difference = totalSeconds - colorTotalSeconds;
+        NSInteger difference = self.timerSeconds - colorTotalSeconds;
         BOOL colorTimeWasReached = difference >= 0;
         if (colorTimeWasReached  &&  colorTotalSeconds > 0  &&  difference <= minDifference) {
             minDifference = difference;
@@ -412,10 +401,6 @@
     NSDictionary *colorDict = [self.colorTimes objectForKey:colorName];
     NSInteger colorTotalSeconds = [Helper totalSecondsForColorDict:colorDict];
     return colorTotalSeconds;
-}
-- (NSInteger)totalSecondsForTimer {
-    NSInteger totalSeconds = [Helper totalSecondsForMinutes:self.minutes andSeconds:self.seconds];
-    return totalSeconds;
 }
 
 

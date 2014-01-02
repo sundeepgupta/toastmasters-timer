@@ -16,6 +16,9 @@
 
 @interface Helper : NSObject
 + (NSString *)stringForLevelNumber:(NSInteger)levelNumber andSectionNumber:(NSInteger)sectionNumber;
++ (NSString *)stringForTotalSeconds:(NSInteger)totalSeconds;
+
+
 
 
 + (NSString *)unitStringForNumber:(NSNumber *)number;
