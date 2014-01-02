@@ -212,11 +212,21 @@
 
 
 
-#pragma mark - Settings Button
-- (IBAction)settingsButtonPress:(id)sender {
+#pragma mark - Color Button
+- (IBAction)greenButtonTapped:(id)sender {
+    [self changeSecondsForColorIndex:kGreen];
+}
+- (IBAction)amberButtonTapped:(id)sender {
+}
+- (IBAction)redButtonTapped:(id)sender {
+}
+- (IBAction)bellButtonTapped:(id)sender {
+}
+
+
+- (void)changeSecondsForColorIndex:(ColorIndex)index {
     NSString *vcClassName = NSStringFromClass([TimeEntryVC class]);
     TimeEntryVC *vc = [self.storyboard instantiateViewControllerWithIdentifier:vcClassName];
-
     self.timeEntryVc = vc;
     [self presentViewController:vc animated:YES completion:nil];
     [self updateTimeEntryVc];
@@ -273,7 +283,6 @@
         }
     }
 }
-
 
 
 
