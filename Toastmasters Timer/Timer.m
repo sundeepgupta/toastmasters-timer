@@ -14,7 +14,6 @@
 
 @interface Timer()
 @property (strong, nonatomic) NSTimer *timer;
-@property NSInteger seconds;
 @property (strong, nonatomic, readwrite) NSDate *startDate;
 @property (strong, nonatomic) NSDate *pauseDate;
 @end
@@ -75,7 +74,12 @@
 - (void)updateSeconds {
     NSTimeInterval secondsElasped = -[self.startDate timeIntervalSinceNow];
     self.seconds = round(secondsElasped);
-    [self.delegate updateElaspedSeconds:self.seconds];
+//    [self.delegate updateElaspedSeconds:self.seconds];
+    
+
+    
+    [[NSNotificationCenter defaultCenter] postNotificationName:TIMER_NOTIFICATION object:nil];
+
 }
 
 

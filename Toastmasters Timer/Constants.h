@@ -20,6 +20,8 @@ typedef enum {
 
 
 
+//Timer Notification
+#define TIMER_NOTIFICATION @"timerNotification"
 
 
 

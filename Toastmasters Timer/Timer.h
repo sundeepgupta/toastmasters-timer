@@ -18,7 +18,7 @@ typedef NS_ENUM(NSInteger, TIMER_STATUS) {
 
 
 @interface Timer : NSObject
-
+@property NSInteger seconds;
 @property (weak, nonatomic) id<TimerDelegate> delegate;
 @property (strong, nonatomic, readonly) NSDate *startDate;
 
@@ -27,7 +27,6 @@ typedef NS_ENUM(NSInteger, TIMER_STATUS) {
 - (void)unpause;
 - (void)stop;
 - (TIMER_STATUS)status;
-
 @end
 
 

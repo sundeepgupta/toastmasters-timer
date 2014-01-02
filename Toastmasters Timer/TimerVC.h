@@ -7,9 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "TimerDelegate.h"
 
-@interface TimerVC : UIViewController <TimerDelegate>
+
+@interface TimerVC : UIViewController
 
 - (void)toggleEmphasisForColorWithIndex:(ColorIndex)index;
 

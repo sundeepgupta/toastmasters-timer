@@ -10,6 +10,5 @@
 #import "TimerDelegate.h"
 
 @interface TimeEntryVC : UIViewController
-@property (strong, nonatomic) IBOutlet UILabel *timerMinutesLabel;
-@property (strong, nonatomic) IBOutlet UILabel *timerSecondsLabel;
+
 @end

@@ -13,6 +13,7 @@
 #import "SGRotaryWheel.h"
 #import "ColorButton.h"
 
+
 #define WHEEL_PADDING 0
 
 
@@ -22,12 +23,13 @@
 @property (strong, nonatomic) NSMutableDictionary *labelsDictionary;
 @property (nonatomic, strong) SGRotaryWheel *rotaryWheel;
 @property (strong, nonatomic) IBOutlet UIView *wheelView;
-@property (strong, nonatomic) IBOutlet UILabel *colorMinutesLabel;
-@property (strong, nonatomic) IBOutlet UILabel *colorSecondsLabel;
 @property (strong, nonatomic) IBOutlet ColorButton *greenButton;
 @property (strong, nonatomic) IBOutlet ColorButton *amberButton;
+@property (strong, nonatomic) IBOutlet ColorButton *redButton;
+@property (strong, nonatomic) IBOutlet ColorButton *bellButton;
 @property (nonatomic, strong) NSString *currentColorName;
 @property NSInteger totalSeconds;
+@property (strong, nonatomic) IBOutlet UILabel *timerLabel;
 @end
 
 
@@ -39,6 +41,8 @@
     [self setupDefaults];
     [self setupRotaryWheel];
     
+    
+
     
     self.currentColorName = GREEN_COLOR_NAME;
 }

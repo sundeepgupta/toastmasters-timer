@@ -20,7 +20,6 @@
 @property (strong, nonatomic) AlertManager *alertManager;
 @property (strong, nonatomic) NSUserDefaults *defaults;
 @property (nonatomic, strong) NSArray *colorArray;
-@property NSInteger timerSeconds;
 @property (strong, nonatomic) TimeEntryVC *timeEntryVc;
 @property (strong, nonatomic) IBOutlet UIButton *pauseButton;
 @property (strong, nonatomic) IBOutlet UIButton *audioAlertButton;
@@ -42,9 +41,22 @@
     [self setupDefaults];
     [self setupTimer];
     [self setupAlertManager];
-    [self resetTimerUnits];
     [self setupAlertButton];
+    [Helper registerForTimerNotificationsWithObject:self];
 }
+
+
+
+- (void)timerUpdatedSeconds {
+    [self updateTimerLabel];
+    [self assertColorChange];
+    if (self.timeEntryVc) {
+        [self updateTimeEntryVc];
+    }
+}
+
+
+
 
 - (void)setupColorButtons {
     self.colorButtons = @[self.greenButton, self.amberButton, self.redButton, self.bellButton];
@@ -60,10 +72,7 @@
     self.timer = [[Timer alloc] init];
     self.timer.delegate = self;
 }
-- (void)resetTimerUnits {
-    self.timerSeconds = 0;
-    [self updateTimerLabel];
-}
+
 
 - (void)setupAlertManager {
     self.alertManager = [[AlertManager alloc] initWithTimer:self.timer timerVC:self defaults:self.defaults];
@@ -76,6 +85,7 @@
         self.audioAlertButton.alpha = DISABLED_ALPHA;
     }
 }
+
 
 #pragma mark - View Will Appear
 - (void)viewWillAppear:(BOOL)animated {
@@ -168,25 +178,10 @@
 
 - (IBAction)stopButtonPress:(id)sender {
     [self.timer stop];
-    [self resetTimerUnits];
+    [self updateTimerLabel];
     [self changeButtonToContinueTimer];
     [self deEmphasizeAllColors];
     [self.alertManager cancelLocalNotifications];
-}
-
-
-
-#pragma mark - Timer Delegate
-- (void)updateElaspedSeconds:(NSInteger)seconds {
-    [self updateTimerLabelsWithSeconds:seconds];
-    [self assertColorChangeForSeconds:seconds];
-    if (self.timeEntryVc) {
-        [self updateTimeEntryVc];
-    }
-}
-- (void)updateTimerLabelsWithSeconds:(NSInteger)seconds {
-    self.timerSeconds = seconds;
-    [self updateTimerLabel];
 }
 
 
@@ -197,13 +192,13 @@
 }
 
 - (void)updateTimerLabel {
-    self.timerLabel.text = [Helper stringForTotalSeconds:self.timerSeconds];
+    self.timerLabel.text = [Helper stringForTotalSeconds:self.timer.seconds];
 }
 
-- (void)assertColorChangeForSeconds:(NSInteger)seconds {
+- (void)assertColorChange {
     for (ColorIndex i = kGreen; i < kColorIndexCount; i++) {
         NSInteger colorSeconds = [self.colorArray[i] integerValue];
-        if (seconds == colorSeconds) {
+        if (self.timer.seconds == colorSeconds) {
             [self.alertManager performAlertForColorIndex:i];
         }
     }
@@ -303,7 +298,7 @@
     
     for (ColorIndex i = kGreen; i < kColorIndexCount; i++) {
         NSInteger colorSeconds = [self.colorArray[i] integerValue];
-        NSInteger difference = self.timerSeconds - colorSeconds;
+        NSInteger difference = self.timer.seconds - colorSeconds;
         BOOL colorTimeWasReached = difference >= 0;
         if (colorTimeWasReached  &&  colorSeconds > 0  &&  difference <= minDifference) {
             minDifference = difference;
