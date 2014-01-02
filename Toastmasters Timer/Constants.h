@@ -9,6 +9,21 @@
 #ifndef Toastmasters_Timer_Constants_h
 #define Toastmasters_Timer_Constants_h
 
+
+typedef enum {
+    kGreen,
+    kAmber,
+    kRed,
+    kBell,
+    kColorIndexCount
+} ColorIndex;
+
+
+
+
+
+
+
 //Misc
 #define REALLY_LARGE_INTEGER 999999999
 #define AUDIO_ALERT_SOUND_ID 1002 //http://iphonedevwiki.net/index.php/AudioServices
@@ -39,8 +54,7 @@
 //Color RGB values
 #define DISABLED_ALPHA 0.2
 
-#define GREY_RGB 237
-//#ededed
+#define GREY_RGB 237  //#ededed
 
 #define GREEN_R 0.
 #define GREEN_G 200.

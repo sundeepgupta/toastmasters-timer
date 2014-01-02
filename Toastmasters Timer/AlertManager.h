@@ -21,6 +21,5 @@
 - (void)setupLocalNotifications;
 - (void)cancelLocalNotifications;
 
-- (void)performAlertForReachedColorName:(NSString *)colorName;
-
+- (void)performAlertForColorIndex:(ColorIndex)index;
 @end

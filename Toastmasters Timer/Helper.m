@@ -28,73 +28,41 @@
 
 
 
-
-
-
-
-+ (NSString *)unitStringForNumber:(NSNumber *)number {
-    NSInteger integer = number.integerValue;
-    NSString *string = [self unitStringForInteger:integer];
-    return string;
-}
-+ (NSString *)unitStringForInteger:(NSInteger)integer {
-    NSString *string = [NSString stringWithFormat:@"%02d", integer];
-    return string;
-}
-
-
-+ (NSInteger)integerForNumber:(NSNumber *)number {
-    return number.integerValue;
-}
-
-
-+ (UIImage *)imageWithColor:(UIColor *)color
-{
++ (UIImage *)imageWithColor:(UIColor *)color {
     UIImage *img = nil;
-    
     CGRect rect = CGRectMake(0, 0, 1, 1);
     UIGraphicsBeginImageContextWithOptions(rect.size, NO, 0);
     CGContextRef context = UIGraphicsGetCurrentContext();
-    CGContextSetFillColorWithColor(context,
-                                   color.CGColor);
+    CGContextSetFillColorWithColor(context, color.CGColor);
     CGContextFillRect(context, rect);
-    
     img = UIGraphicsGetImageFromCurrentImageContext();
-    
     UIGraphicsEndImageContext();
-    
     return img;
 }
 
 
-+ (void)setupLabels:(NSMutableDictionary *)labels forColors:(NSMutableDictionary *)colors {
-    NSArray *colorKeys = labels.allKeys;
+
++ (NSString *)nameForColorIndex:(ColorIndex)index {
+    NSString *name;
     
-    for (NSString *colorKey in colorKeys) {
-        NSMutableDictionary *colorDict = colors[colorKey];
-        NSNumber *minutes = colorDict[MINUTES_KEY];
-        NSNumber *seconds = colorDict[SECONDS_KEY];
-        
-        NSMutableDictionary *labelDict = labels[colorKey];
-        UILabel *minutesLabel = labelDict[MINUTES_KEY];
-        UILabel *secondsLabel = labelDict[SECONDS_KEY];
-        minutesLabel.text = [self unitStringForNumber:minutes];
-        secondsLabel.text = [self unitStringForNumber:seconds];
+    switch (index) {
+        case kGreen:
+            name = @"green";
+            break;
+        case kAmber:
+            name = @"amber";
+            break;
+        case kRed:
+            name = @"red";
+            break;
+        case kBell:
+            name = @"bell";
+            break;
+        default:
+            break;
     }
-}
 
-
-
-+ (NSInteger)totalSecondsForColorDict:(NSDictionary *)colorDict {
-    NSInteger minutes = [colorDict[MINUTES_KEY] integerValue];
-    NSInteger seconds = [colorDict[SECONDS_KEY] integerValue];
-    NSInteger totalSeconds = [self totalSecondsForMinutes:minutes andSeconds:seconds];
-    return totalSeconds;
-}
-
-+ (NSInteger)totalSecondsForMinutes:(NSInteger)minutes andSeconds:(NSInteger)seconds {
-    NSInteger totalSeconds = minutes*60 + seconds;
-    return totalSeconds;
+    return name;
 }
 
 

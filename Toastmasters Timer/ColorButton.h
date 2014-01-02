@@ -11,4 +11,5 @@
 @interface ColorButton : UIButton
 - (void)emphasize;
 - (void)deEmphasize;
+- (void)toggleEmphasis;
 @end

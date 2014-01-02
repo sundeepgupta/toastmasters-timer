@@ -12,19 +12,24 @@
 #import "SGDeepCopy.h"
 #import "InfoVC.h"
 #import "AlertManager.h"
+#import "ColorButton.h"
 
 
 @interface TimerVC ()
 @property (strong, nonatomic) Timer *timer;
 @property (strong, nonatomic) AlertManager *alertManager;
 @property (strong, nonatomic) NSUserDefaults *defaults;
-@property (strong, nonatomic) NSMutableDictionary *colorLabelsDictionary;
-@property (strong, nonatomic) NSMutableDictionary *colorTimes;
+@property (nonatomic, strong) NSArray *colorArray;
 @property NSInteger timerSeconds;
 @property (strong, nonatomic) TimeEntryVC *timeEntryVc;
 @property (strong, nonatomic) IBOutlet UIButton *pauseButton;
 @property (strong, nonatomic) IBOutlet UIButton *audioAlertButton;
-@property (strong, nonatomic) IBOutlet UILabel *timeLabel;
+@property (strong, nonatomic) IBOutlet UILabel *timerLabel;
+@property (strong, nonatomic) IBOutlet ColorButton *greenButton;
+@property (strong, nonatomic) IBOutlet ColorButton *amberButton;
+@property (strong, nonatomic) IBOutlet ColorButton *redButton;
+@property (strong, nonatomic) IBOutlet ColorButton *bellButton;
+@property (nonatomic, strong) NSArray *colorButtons;
 @end
 
 
@@ -33,12 +38,16 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [self setupColorButtons];
     [self setupDefaults];
-    [self setupColorLabelsDictionary];
     [self setupTimer];
     [self setupAlertManager];
     [self resetTimerUnits];
     [self setupAlertButton];
+}
+
+- (void)setupColorButtons {
+    self.colorButtons = @[self.greenButton, self.amberButton, self.redButton, self.bellButton];
 }
 
 - (void)setupDefaults {
@@ -46,26 +55,6 @@
     [self.defaults setBool:NO forKey:SHOULD_AUDIO_ALERT_KEY];
 }
 
-- (void)setupColorLabelsDictionary {
-    NSMutableDictionary *green = [[NSMutableDictionary alloc] init];
-    NSMutableDictionary *amber = [[NSMutableDictionary alloc] init];
-    NSMutableDictionary *red = [[NSMutableDictionary alloc] init];
-    NSMutableDictionary *bell = [[NSMutableDictionary alloc] init];
-    
-//    green[MINUTES_KEY] = self.greenMinutesLabel;
-//    green[SECONDS_KEY] = self.greenSecondsLabel;
-//
-//    amber[MINUTES_KEY] = self.amberMinutesLabel;
-//    amber[SECONDS_KEY] = self.amberSecondsLabel;
-//    
-//    red[MINUTES_KEY] = self.redMinutesLabel;
-//    red[SECONDS_KEY] = self.redSecondsLabel;
-//    
-//    bell[MINUTES_KEY] = self.bellMinutesLabel;
-//    bell[SECONDS_KEY] = self.bellSecondsLabel;
-    
-    self.colorLabelsDictionary = [NSMutableDictionary dictionaryWithObjectsAndKeys:green,GREEN_COLOR_NAME, amber,AMBER_COLOR_NAME, red,RED_COLOR_NAME, bell,BELL_COLOR_NAME, nil];
-}
 
 - (void)setupTimer {
     self.timer = [[Timer alloc] init];
@@ -73,7 +62,7 @@
 }
 - (void)resetTimerUnits {
     self.timerSeconds = 0;
-    [self updateTimeLabel];
+    [self updateTimerLabel];
 }
 
 - (void)setupAlertManager {
@@ -90,117 +79,49 @@
 
 #pragma mark - View Will Appear
 - (void)viewWillAppear:(BOOL)animated {
-    [self setupColorTimes];
+    [self setupColorArray];
     [self setupColorLabels];
 }
-- (void)setupColorTimes {
-    NSDictionary *savedColorTimes = [self.defaults dictionaryForKey:COLOR_TIMES_KEY];
-    if (savedColorTimes) {
-        self.colorTimes = [savedColorTimes mutableDeepCopy];
-    } else {
-        [self initializeColorTimes];
-        [self saveColorTimesToDefaults];
-    }
-}
-- (void)initializeColorTimes {
-    NSMutableDictionary *green = [[NSMutableDictionary alloc] init];
-    NSMutableDictionary *amber = [[NSMutableDictionary alloc] init];
-    NSMutableDictionary *red = [[NSMutableDictionary alloc] init];
-    NSMutableDictionary *bell = [[NSMutableDictionary alloc] init];
-    
-    green[MINUTES_KEY] = @0;
-    green[SECONDS_KEY] = @0;
-    
-    amber[MINUTES_KEY] = @0;
-    amber[SECONDS_KEY] = @0;
-    
-    red[MINUTES_KEY] = @0;
-    red[SECONDS_KEY] = @0;
-    
-    bell[MINUTES_KEY] = @0;
-    bell[SECONDS_KEY] = @0;
-    
-    self.colorTimes = [NSMutableDictionary dictionaryWithObjectsAndKeys:green,GREEN_COLOR_NAME, amber,AMBER_COLOR_NAME, red,RED_COLOR_NAME, bell,BELL_COLOR_NAME, nil];
-}
-- (void)saveColorTimesToDefaults {
-    [self.defaults setObject:self.colorTimes forKey:COLOR_TIMES_KEY];
-    [self.defaults synchronize];
+
+- (void)setupColorArray {
+    self.colorArray = [self.defaults arrayForKey:COLOR_TIMES_KEY];
 }
 
 - (void)setupColorLabels {
-    [Helper setupLabels:self.colorLabelsDictionary forColors:self.colorTimes];
+    for (ColorIndex i = kGreen; i < kColorIndexCount; i++) {
+        [self setupColorLabelForColorName:i];
+    }
 }
-
-
+- (void)setupColorLabelForColorName:(ColorIndex)i {
+    NSInteger seconds = [self.colorArray[i] integerValue];
+    ColorButton *button = self.colorButtons[i];
+    [self setupTitleForButton:button withSeconds:seconds];
+}
+- (void)setupTitleForButton:(ColorButton *)button withSeconds:(NSInteger)seconds {
+    NSString *title = [Helper stringForTotalSeconds:seconds];
+    [Helper updateTitle:title forButton:button];
+}
 
 #pragma mark - Emphasize Color Labels
-- (void)emphasizeLabelsForColor:(NSString *)color {
-    NSArray *labels = [self labelsForColor:color];
-    for (UILabel *label in labels) {
-        [self emphasizeLabel:label];
+- (void)emphasizeColorWithIndex:(ColorIndex)index {
+    ColorButton *button = self.colorButtons[index];
+    [button emphasize];
+}
+
+- (void)deEmphasizeColorWithIndex:(ColorIndex)index {
+    ColorButton *button = self.colorButtons[index];
+    [button deEmphasize];
+}
+
+- (void)deEmphasizeAllColors {
+    for (ColorButton *button in self.colorButtons) {
+        [button deEmphasize];
     }
 }
 
-- (void)emphasizeLabel:(UILabel *)label {
-    [self boldLabel:label];
-    [self glowLabel:label];
-}
-
-- (void)boldLabel:(UILabel *)label {
-    UIFont *font = label.font;
-    CGFloat fontSize = font.pointSize ;
-    UIFont *newFont = [UIFont boldSystemFontOfSize:fontSize];
-    label.font = newFont;
-}
-- (void)glowLabel:(UILabel *)label {
-    UIColor *color = label.textColor;
-    label.layer.shadowColor = [color CGColor];
-    label.layer.shadowRadius = 4.0f;
-    label.layer.shadowOpacity = .9;
-    label.layer.shadowOffset = CGSizeZero;
-    label.layer.masksToBounds = NO;
-}
-
-- (void)deEmphasizeLabelsForColor:(NSString *)color {
-    NSArray *labels = [self labelsForColor:color];
-    for (UILabel *label in labels) {
-        [self deEmphasizeLabel:label];
-    }
-}
-
-- (void)deEmphasizeLabel:(UILabel *)label {
-    [self unBoldLabel:label];
-    [self unGlowLabel:label];
-}
-
-- (void)unBoldLabel:(UILabel *)label {
-    UIFont *font = label.font;
-    CGFloat fontSize = font.pointSize ;
-    UIFont *newFont = [UIFont systemFontOfSize:fontSize];
-    label.font = newFont;
-}
-- (void)unGlowLabel:(UILabel *)label {
-    label.layer.shadowOpacity = 0;
-}
-
-- (NSArray *)labelsForColor:(NSString *)color {
-    NSMutableDictionary *colorDict = self.colorLabelsDictionary[color];
-    NSArray *labels = colorDict.allValues;
-    return labels;
-}
-
-- (void)deEmphasizeLabelsForAllColors {
-    [self toggleEmphasisForLabelsWithAlertedColorName:@""];
-}
-
-- (void)toggleEmphasisForLabelsWithAlertedColorName:(NSString *)alertedColorName {
-    for (NSString *colorName in self.colorLabelsDictionary) {
-        if ([colorName isEqualToString:alertedColorName]) {
-            [self emphasizeLabelsForColor:alertedColorName];
-        } else {
-            [self deEmphasizeLabelsForColor:colorName];
-        }
-    }
+- (void)toggleEmphasisForColorWithIndex:(ColorIndex)index {
+    ColorButton *button = self.colorButtons[index];
+    [button toggleEmphasis];
 }
 
 
@@ -249,7 +170,7 @@
     [self.timer stop];
     [self resetTimerUnits];
     [self changeButtonToContinueTimer];
-    [self deEmphasizeLabelsForAllColors];
+    [self deEmphasizeAllColors];
     [self.alertManager cancelLocalNotifications];
 }
 
@@ -265,7 +186,7 @@
 }
 - (void)updateTimerLabelsWithSeconds:(NSInteger)seconds {
     self.timerSeconds = seconds;
-    [self updateTimeLabel];
+    [self updateTimerLabel];
 }
 
 
@@ -275,19 +196,15 @@
 //    self.timeEntryVc.timerSecondsLabel.text = self.secondsLabel.text;
 }
 
-- (void)updateTimeLabel {
-    self.timeLabel.text = [Helper stringForTotalSeconds:self.timerSeconds];
+- (void)updateTimerLabel {
+    self.timerLabel.text = [Helper stringForTotalSeconds:self.timerSeconds];
 }
 
 - (void)assertColorChangeForSeconds:(NSInteger)seconds {
-    for (NSString *colorName in self.colorTimes) {
-        NSMutableDictionary *color = self.colorTimes[colorName];
-        
-        NSInteger minutes = [Helper integerForNumber:color[MINUTES_KEY]];
-        NSInteger seconds = [Helper integerForNumber:color[SECONDS_KEY]];
-        
-        if (seconds == self.timerSeconds) {
-            [self.alertManager performAlertForReachedColorName:colorName];
+    for (ColorIndex i = kGreen; i < kColorIndexCount; i++) {
+        NSInteger colorSeconds = [self.colorArray[i] integerValue];
+        if (seconds == colorSeconds) {
+            [self.alertManager performAlertForColorIndex:i];
         }
     }
 }
@@ -343,15 +260,11 @@
 
 #pragma mark - Prepare for Background
 - (void)setupViewForBackground {
-    [self hideTimerLabels];
-    [self deEmphasizeLabelsForAllColors];
+    self.timerLabel.hidden = YES;
+    [self deEmphasizeAllColors];
     [self removeToast];
 }
-- (void)hideTimerLabels {
-//    for (UILabel *label in self.timerLabels) {
-//        label.hidden = YES;
-//    }
-}
+
 - (void)removeToast {
     NSArray *subviews = self.view.subviews;
     for (UIView *subview in subviews) {
@@ -366,41 +279,29 @@
 
 #pragma mark - Return to Foreground
 - (void)setupViewForReturningToForeground {
-    [self showTimerLabels];
-    [self emphasizeCorrectColorLabels];
+    self.timerLabel.hidden = NO;
+    [self emphasizeCorrectColor];
 }
 
-- (void)showTimerLabels {
-//    for (UILabel *label in self.timerLabels) {
-//        label.hidden = NO;
-//    }
+- (void)emphasizeCorrectColor {
+    ColorIndex index = [self colorIndexToEmphasize];
+    [self emphasizeColorWithIndex:index];
 }
 
-- (void)emphasizeCorrectColorLabels {
-    NSString *colorToEmphasize = [self colorToEmphasize];
-    [self emphasizeLabelsForColor:colorToEmphasize];
-}
-
-- (NSString *)colorToEmphasize {
-    NSString *colorToEmphasize;
+- (ColorIndex)colorIndexToEmphasize {
+    ColorIndex colorIndexToEmphasize;
     NSInteger minDifference = REALLY_LARGE_INTEGER;
     
-    for (NSString *colorName in self.colorTimes) {
-        NSInteger colorTotalSeconds = [self totalSecondsForColorName:colorName];
-        NSInteger difference = self.timerSeconds - colorTotalSeconds;
+    for (ColorIndex i = kGreen; i < kColorIndexCount; i++) {
+        NSInteger colorSeconds = [self.colorArray[i] integerValue];
+        NSInteger difference = self.timerSeconds - colorSeconds;
         BOOL colorTimeWasReached = difference >= 0;
-        if (colorTimeWasReached  &&  colorTotalSeconds > 0  &&  difference <= minDifference) {
+        if (colorTimeWasReached  &&  colorSeconds > 0  &&  difference <= minDifference) {
             minDifference = difference;
-            colorToEmphasize = colorName;
+            colorIndexToEmphasize = i;
         }
     }
-    return colorToEmphasize;
-}
-
-- (NSInteger) totalSecondsForColorName:(NSString *)colorName {
-    NSDictionary *colorDict = [self.colorTimes objectForKey:colorName];
-    NSInteger colorTotalSeconds = [Helper totalSecondsForColorDict:colorDict];
-    return colorTotalSeconds;
+    return colorIndexToEmphasize;
 }
 
 

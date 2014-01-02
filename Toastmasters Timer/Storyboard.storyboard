@@ -190,9 +190,13 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="amberButton" destination="MOK-cG-Dzx" id="TMR-dA-qqv"/>
                         <outlet property="audioAlertButton" destination="E4i-9o-xr5" id="bLO-vj-ai8"/>
+                        <outlet property="bellButton" destination="5gi-2j-BJn" id="e45-kR-Zu7"/>
+                        <outlet property="greenButton" destination="RbR-Qd-yeT" id="tua-DC-Scs"/>
                         <outlet property="pauseButton" destination="teM-6H-gYQ" id="jOa-d7-KOZ"/>
-                        <outlet property="timeLabel" destination="ioh-FI-OgF" id="9cn-hJ-Dpm"/>
+                        <outlet property="redButton" destination="Sr3-wu-sLO" id="pW9-Ru-ctR"/>
+                        <outlet property="timerLabel" destination="ioh-FI-OgF" id="pSf-bJ-MSg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AbE-g8-QrS" userLabel="First Responder" sceneMemberID="firstResponder"/>

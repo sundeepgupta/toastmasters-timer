@@ -9,7 +9,7 @@
 #import "ColorButton.h"
 
 @interface ColorButton ()
-
+@property BOOL isEmphasized;
 @end
 
 @implementation ColorButton
@@ -17,6 +17,7 @@
 - (void)emphasize {
     [self bold];
     [self glow];
+    self.isEmphasized = YES;
 }
 - (void)bold {
     UIFont *font = self.titleLabel.font;
@@ -37,6 +38,7 @@
 - (void)deEmphasize {
     [self unBold];
     [self unGlow];
+    self.isEmphasized = NO;
 }
 - (void)unBold {
     UIFont *font = self.titleLabel.font;
@@ -46,6 +48,15 @@
 }
 - (void)unGlow {
     self.titleLabel.layer.shadowOpacity = 0;
+}
+
+
+- (void)toggleEmphasis {
+    if (self.isEmphasized) {
+        [self deEmphasize];
+    } else {
+        [self emphasize];
+    }
 }
 
 @end

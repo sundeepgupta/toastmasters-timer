@@ -23,18 +23,23 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     application.statusBarStyle = UIStatusBarStyleLightContent;
-    
     self.timerVc = (TimerVC *)self.window.rootViewController;
+    
+    [self setupDefaults];
     
     return YES;
 }
 
-- (void)application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification {
+- (void)setupDefaults {
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSArray *colorArray = [defaults arrayForKey:COLOR_TIMES_KEY];
+    if (!colorArray  ||  colorArray.count != 4) {
+        colorArray = @[@0, @0, @0, @0];
+        [defaults setObject:colorArray forKey:COLOR_TIMES_KEY];
+        [defaults synchronize];
+    }
 }
 
-- (void)applicationWillResignActive:(UIApplication *)application
-{
-}
 
 - (void)applicationDidEnterBackground:(UIApplication *)application
 {
@@ -44,10 +49,6 @@
 - (void)applicationWillEnterForeground:(UIApplication *)application
 {
     [self.timerVc setupViewForReturningToForeground];
-}
-
-- (void)applicationDidBecomeActive:(UIApplication *)application
-{
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application
