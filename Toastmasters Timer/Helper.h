@@ -22,8 +22,12 @@
 
 + (NSString *)nameForColorIndex:(ColorIndex)index;
 
-+ (void)registerForTimerNotificationsWithObject:(id)object;
 
+#pragma mark - Timer Notifications
++ (void)registerForTimerNotificationsWithObject:(id)object;
++ (NSInteger)secondsForNotification:(NSNotification *)notification;
+
+    
 #pragma mark - Universal Helpers
 + (void)updateTitle:(NSString *)title forButton:(UIButton *)button;
 

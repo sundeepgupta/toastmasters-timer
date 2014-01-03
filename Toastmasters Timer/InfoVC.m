@@ -8,31 +8,36 @@
 
 #import "InfoVC.h"
 
-@interface InfoVC ()
 
+@interface InfoVC ()
+@property (strong, nonatomic) IBOutlet UILabel *timerLabel;
 @end
 
-@implementation InfoVC
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
+@implementation InfoVC
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
+    [Helper registerForTimerNotificationsWithObject:self];
+    [self setupTimerLabel];
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void)setupTimerLabel {
+    if (self.currentTimerString  &&  self.currentTimerString.length > 0) {
+        self.timerLabel.text = self.currentTimerString;
+    }
+}
+
+
+
+#pragma mark - Timer Notification
+- (void)timerUpdatedSecondsWithNotification:(NSNotification *)notification {
+    NSInteger seconds = [Helper secondsForNotification:notification];
+    [self updateTimerLabelWithSeconds:seconds];
+}
+- (void)updateTimerLabelWithSeconds:(NSInteger)seconds {
+    self.timerLabel.text = [Helper stringForTotalSeconds:seconds];
 }
 
 

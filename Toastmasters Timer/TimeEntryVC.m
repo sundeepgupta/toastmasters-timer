@@ -84,12 +84,9 @@
 
 #pragma mark - Timer Notification
 - (void)timerUpdatedSecondsWithNotification:(NSNotification *)notification {
-    NSDictionary *userInfo = notification.userInfo;
-    NSNumber *secondsNumber = userInfo[SECONDS_INFO_KEY];
-    NSInteger seconds = secondsNumber.integerValue;
+    NSInteger seconds = [Helper secondsForNotification:notification];
     [self updateTimerLabelWithSeconds:seconds];
 }
-
 - (void)updateTimerLabelWithSeconds:(NSInteger)seconds {
     self.timerLabel.text = [Helper stringForTotalSeconds:seconds];
 }

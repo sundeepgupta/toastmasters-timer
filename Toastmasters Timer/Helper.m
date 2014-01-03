@@ -69,9 +69,17 @@
 }
 
 
+#pragma mark - Timer Notifications
 + (void)registerForTimerNotificationsWithObject:(id)object {
     NSNotificationCenter *notificationCenter = [NSNotificationCenter defaultCenter];
     [notificationCenter addObserver:object selector:@selector(timerUpdatedSecondsWithNotification:) name:TIMER_NOTIFICATION object:nil];
+}
+
++ (NSInteger)secondsForNotification:(NSNotification *)notification {
+    NSDictionary *userInfo = notification.userInfo;
+    NSNumber *secondsNumber = userInfo[SECONDS_INFO_KEY];
+    NSInteger seconds = secondsNumber.integerValue;
+    return seconds;
 }
 
 

@@ -10,5 +10,5 @@
 #import <MessageUI/MessageUI.h>
 
 @interface InfoVC : UIViewController <MFMailComposeViewControllerDelegate>
-
+@property (nonatomic, strong) NSString *currentTimerString;
 @end
