@@ -25,6 +25,16 @@
 + (NSInteger)secondsForTimeString:(NSString *)timeString;
 
 
+#pragma mark - Color Buttons
++ (void)setupTitlesForColorButtons:(NSArray *)colorButtons withColorArray:(NSArray *)colorArray;
+
+
+
+
+
+
+
+
 + (UIImage *)imageWithColor:(UIColor *)color;
 
 

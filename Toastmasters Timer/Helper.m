@@ -7,6 +7,7 @@
 //
 
 #import "Helper.h"
+#import "ColorButton.h"
 
 @implementation Helper
 
@@ -46,6 +47,30 @@
 
 
 
+#pragma mark - Color Buttons
++ (void)setupTitlesForColorButtons:(NSArray *)colorButtons withColorArray:(NSArray *)colorArray{
+    for (ColorIndex i = GREEN_COLOR_INDEX; i < COLOR_INDEX_COUNT; i++) {
+        NSInteger seconds = [colorArray[i] integerValue];
+        ColorButton *button = colorButtons[i];
+        [self setupTitleForColorButton:button withSeconds:seconds];
+
+    }
+}
++ (void)setupTitleForColorButton:(ColorButton *)button withSeconds:(NSInteger)seconds {
+    NSString *title = [self stringForTotalSeconds:seconds];
+    [self updateTitle:title forButton:button];
+}
+
+
+
+
+
+
+
+
+
+
+
 + (UIImage *)imageWithColor:(UIColor *)color {
     UIImage *img = nil;
     CGRect rect = CGRectMake(0, 0, 1, 1);
@@ -57,6 +82,15 @@
     UIGraphicsEndImageContext();
     return img;
 }
+
+
+
+
+
+
+
+
+
 
 
 
@@ -82,6 +116,12 @@
 
     return name;
 }
+
+
+
+
+
+
 
 
 #pragma mark - Timer Notifications

@@ -75,27 +75,15 @@
 #pragma mark - View Will Appear
 - (void)viewWillAppear:(BOOL)animated {
     [self setupColorArray];
-    [self setupColorButtonTitles];
+    [Helper setupTitlesForColorButtons:self.colorButtonArray withColorArray:self.colorArray];
 }
+
+
 
 - (void)setupColorArray {
     self.colorArray = [self.defaults arrayForKey:COLOR_TIMES_KEY];
 }
 
-- (void)setupColorButtonTitles {
-    for (ColorIndex i = GREEN_COLOR_INDEX; i < COLOR_INDEX_COUNT; i++) {
-        [self setupColorButtonTitleForColorIndex:i];
-    }
-}
-- (void)setupColorButtonTitleForColorIndex:(ColorIndex)index {
-    NSInteger seconds = [self.colorArray[index] integerValue];
-    ColorButton *button = self.colorButtonArray[index];
-    [self setupTitleForColorButton:button withSeconds:seconds];
-}
-- (void)setupTitleForColorButton:(ColorButton *)button withSeconds:(NSInteger)seconds {
-    NSString *title = [Helper stringForTotalSeconds:seconds];
-    [Helper updateTitle:title forButton:button];
-}
 
 #pragma mark - Emphasize Color Labels
 - (void)emphasizeColorWithIndex:(ColorIndex)index {

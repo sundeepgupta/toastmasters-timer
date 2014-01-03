@@ -36,22 +36,27 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [self setupColorButtonArray];
     [self setupDefaults];
+    [self setupColorButtonArray];
+    [self setupColorArray];
+    [Helper setupTitlesForColorButtons:self.colorButtonArray withColorArray:self.colorArray];
     [self setupRotaryWheel];
     [Helper registerForTimerNotificationsWithObject:self];
     [self setupTimerLabel];
-    [self setupColorArray];
-    [self setupColorButtonTitles];
+}
+
+- (void)setupDefaults {
+    self.defaults = [NSUserDefaults standardUserDefaults];
 }
 
 - (void)setupColorButtonArray {
     self.colorButtonArray = @[self.greenButton, self.amberButton, self.redButton, self.bellButton];
 }
 
-- (void)setupDefaults {
-    self.defaults = [NSUserDefaults standardUserDefaults];
+- (void)setupColorArray {
+    self.colorArray = [self.defaults arrayForKey:COLOR_TIMES_KEY];
 }
+
 
 - (void)setupRotaryWheel {
     CGFloat sideLength = self.wheelView.frame.size.width + 2*WHEEL_PADDING;
@@ -66,24 +71,7 @@
     }
 }
 
-- (void)setupColorArray {
-    self.colorArray = [self.defaults arrayForKey:COLOR_TIMES_KEY];
-}
 
-- (void)setupColorButtonTitles {
-    for (ColorIndex i = GREEN_COLOR_INDEX; i < COLOR_INDEX_COUNT; i++) {
-        [self setupColorButtonTitleForColorIndex:i];
-    }
-}
-- (void)setupColorButtonTitleForColorIndex:(ColorIndex)index {
-    NSInteger seconds = [self.colorArray[index] integerValue];
-    ColorButton *button = self.colorButtonArray[index];
-    [self setupTitleForColorButton:button withSeconds:seconds];
-}
-- (void)setupTitleForColorButton:(ColorButton *)button withSeconds:(NSInteger)seconds {
-    NSString *title = [Helper stringForTotalSeconds:seconds];
-    [Helper updateTitle:title forButton:button];
-}
 
 
 
