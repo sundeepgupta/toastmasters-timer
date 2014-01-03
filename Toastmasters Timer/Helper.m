@@ -34,6 +34,11 @@
 
 
 #pragma mark - Seconds from Strings
++ (NSNumber *)secondsNumberForTimeString:(NSString *)timeString {
+    NSInteger secondsInteger = [self secondsForTimeString:timeString];
+    NSNumber *secondsNumber = [NSNumber numberWithInteger:secondsInteger];
+    return secondsNumber;
+}
 + (NSInteger)secondsForTimeString:(NSString *)timeString {
     NSArray *components = [timeString componentsSeparatedByString:@":"];
     NSString *minutesString = components[0];

@@ -22,8 +22,7 @@
 
 
 #pragma mark - Seconds from Strings
-+ (NSInteger)secondsForTimeString:(NSString *)timeString;
-
++ (NSNumber *)secondsNumberForTimeString:(NSString *)timeString;
 
 #pragma mark - Color Buttons
 + (void)setupTitlesForColorButtons:(NSArray *)colorButtons withColorArray:(NSArray *)colorArray;

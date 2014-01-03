@@ -123,16 +123,19 @@
     [self saveColorsToDefaults];
     [self dismissViewControllerAnimated:YES completion:nil];
 }
-
 - (void)saveColorsToDefaults {
-    NSInteger greenSeconds = [Helper secondsForTimeString:self.greenButton.titleLabel.text];
-    NSNumber *greenNumber = [NSNumber numberWithInteger:greenSeconds];
-
-    NSInteger amberSeconds = [Helper secondsForTimeString:self.amberButton.titleLabel.text];
-    NSNumber *amberNumber = [NSNumber numberWithInteger:amberSeconds];
-
-    
-    NSArray *colorArray = @[greenNumber, amberNumber, @0, @0];
+    NSArray *colorArray = [self newColorArray];
+    [self saveColorArray:colorArray];
+}
+- (NSArray *)newColorArray {
+    NSNumber *greenNumber = [Helper secondsNumberForTimeString:self.greenButton.titleLabel.text];
+    NSNumber *amberNumber = [Helper secondsNumberForTimeString:self.amberButton.titleLabel.text];
+    NSNumber *redNumber = [Helper secondsNumberForTimeString:self.redButton.titleLabel.text];
+    NSNumber *bellNumber = [Helper secondsNumberForTimeString:self.bellButton.titleLabel.text];
+    NSArray *colorArray = @[greenNumber, amberNumber, redNumber, bellNumber];
+    return colorArray;
+}
+- (void)saveColorArray:(NSArray *)colorArray {
     [self.defaults setObject:colorArray forKey:COLOR_TIMES_KEY];
     [self.defaults synchronize];
 }
