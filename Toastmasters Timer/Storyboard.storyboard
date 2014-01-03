@@ -233,7 +233,6 @@
                                         </state>
                                         <connections>
                                             <action selector="greenButtonTapped:" destination="FM3-z2-PnQ" eventType="touchUpInside" id="8ft-Wt-zsV"/>
-                                            <action selector="greenButtonTapped:" destination="MHZ-8T-RmM" eventType="touchUpInside" id="epf-jm-xBw"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0GS-aF-amz" userLabel="red color label" customClass="ColorButton">
@@ -245,8 +244,7 @@
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
-                                            <action selector="greenButtonTapped:" destination="FM3-z2-PnQ" eventType="touchUpInside" id="mUC-04-3Hk"/>
-                                            <action selector="redButtonTapped:" destination="MHZ-8T-RmM" eventType="touchUpInside" id="GK7-7k-NUx"/>
+                                            <action selector="redButtonTapped:" destination="FM3-z2-PnQ" eventType="touchUpInside" id="3lM-Ku-cbp"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lLa-wF-dEO" userLabel="amber color label" customClass="ColorButton">
@@ -258,7 +256,6 @@
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
-                                            <action selector="amberButtonTapped:" destination="MHZ-8T-RmM" eventType="touchUpInside" id="bjD-88-wr2"/>
                                             <action selector="amberButtonTapped:" destination="FM3-z2-PnQ" eventType="touchUpInside" id="vtt-B3-dhu"/>
                                         </connections>
                                     </button>
@@ -271,8 +268,7 @@
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
-                                            <action selector="bellButtonTapped:" destination="MHZ-8T-RmM" eventType="touchUpInside" id="HBp-tx-Cr2"/>
-                                            <action selector="greenButtonTapped:" destination="FM3-z2-PnQ" eventType="touchUpInside" id="9hT-h2-KYM"/>
+                                            <action selector="bellButtonTapped:" destination="FM3-z2-PnQ" eventType="touchUpInside" id="c4y-yq-AvR"/>
                                         </connections>
                                     </button>
                                 </subviews>

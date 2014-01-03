@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		AE0BAEBE1874B91B009F8066 /* ColorButton.m in Sources */ = {isa = PBXBuildFile; fileRef = AE0BAEBD1874B91B009F8066 /* ColorButton.m */; };
+		AE0BAEC1187730F6009F8066 /* NSDog.m in Sources */ = {isa = PBXBuildFile; fileRef = AE0BAEC0187730F6009F8066 /* NSDog.m */; };
 		AE111F9B17CED99900254EF4 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = AE111F9A17CED99900254EF4 /* libz.dylib */; };
 		AE111FA117CEE81500254EF4 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = AE111FA017CEE81500254EF4 /* icon.png */; };
 		AE111FA317CEE81B00254EF4 /* icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AE111FA217CEE81B00254EF4 /* icon@2x.png */; };
@@ -101,6 +102,8 @@
 /* Begin PBXFileReference section */
 		AE0BAEBC1874B91B009F8066 /* ColorButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColorButton.h; sourceTree = "<group>"; };
 		AE0BAEBD1874B91B009F8066 /* ColorButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColorButton.m; sourceTree = "<group>"; };
+		AE0BAEBF187730F6009F8066 /* NSDog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSDog.h; sourceTree = "<group>"; };
+		AE0BAEC0187730F6009F8066 /* NSDog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSDog.m; sourceTree = "<group>"; };
 		AE111F9A17CED99900254EF4 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		AE111FA017CEE81500254EF4 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
 		AE111FA217CEE81B00254EF4 /* icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon@2x.png"; sourceTree = "<group>"; };
@@ -266,6 +269,8 @@
 		AE488FCA17DD2AC70090E139 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				AE0BAEBF187730F6009F8066 /* NSDog.h */,
+				AE0BAEC0187730F6009F8066 /* NSDog.m */,
 				AE0BAEBB1874B6E9009F8066 /* Scroll Wheel */,
 				AE6BB43317EC779C00D23DD6 /* SGDeepCopy */,
 				AE5208D017C17034002CFFD7 /* Toast */,
@@ -562,6 +567,7 @@
 				AE7223B717BDAB66003B60A5 /* main.m in Sources */,
 				AE7223BB17BDAB66003B60A5 /* AppDelegate.m in Sources */,
 				AE3C7EC217ECF9080071725C /* AlertManager.m in Sources */,
+				AE0BAEC1187730F6009F8066 /* NSDog.m in Sources */,
 				AE7223C417BDAB66003B60A5 /* Toastmasters_Timer.xcdatamodeld in Sources */,
 				AE7223E717BDAC8B003B60A5 /* TimerVC.m in Sources */,
 				AE6BB43617EC779C00D23DD6 /* SGDeepCopy.m in Sources */,

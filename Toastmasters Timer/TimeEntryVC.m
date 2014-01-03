@@ -84,14 +84,32 @@
 
 
 - (void)updateCurrentColorButtonTitle:(NSString *)title {
-    UIButton *buttonToUpdate;
-    if (self.currentColorIndex == GREEN_COLOR_INDEX) {
-        buttonToUpdate = self.greenButton;
-    } else if (self.currentColorIndex == AMBER_COLOR_INDEX) {
-        buttonToUpdate = self.amberButton;
-    }
-    [Helper updateTitle:title forButton:buttonToUpdate];
+    ColorButton *button = [self buttonForCurrentColorIndex];
+    [Helper updateTitle:title forButton:button];
 }
+
+- (ColorButton *)buttonForCurrentColorIndex {
+    ColorButton *button;
+    switch (self.currentColorIndex) {
+        case GREEN_COLOR_INDEX:
+            button = self.greenButton;
+            break;
+        case AMBER_COLOR_INDEX:
+            button = self.amberButton;
+            break;
+        case RED_COLOR_INDEX:
+            button = self.redButton;
+            break;
+        case BELL_COLOR_INDEX:
+            button = self.bellButton;
+            break;
+        default:
+            break;
+    }
+    return button;
+}
+
+
 
 
 
@@ -111,9 +129,16 @@
 - (IBAction)greenButtonTapped:(id)sender {
     self.currentColorIndex = GREEN_COLOR_INDEX;
 }
-
 - (IBAction)amberButtonTapped:(id)sender {
     self.currentColorIndex = AMBER_COLOR_INDEX;
+}
+- (IBAction)redButtonTapped:(id)sender {
+    self.currentColorIndex = RED_COLOR_INDEX;
+}
+- (IBAction)bellButtonTapped:(id)sender {
+    self.currentColorIndex = BELL_COLOR_INDEX;
+    
+//    NSDog(self, @"currentColorIndex");
 }
 
 
