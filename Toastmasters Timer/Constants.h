@@ -22,7 +22,7 @@ typedef enum {
 
 //Timer Notification
 #define TIMER_NOTIFICATION @"timerNotification"
-
+#define SECONDS_INFO_KEY @"seconds"
 
 
 
@@ -35,9 +35,6 @@ typedef enum {
 #define COLOR_TIMES_KEY @"colorTimes"
 
 
-//ColorTimes Dictionary Keys
-#define MINUTES_KEY @"minutesKey"
-#define SECONDS_KEY @"secondsKey"
 
 
 //Color Names

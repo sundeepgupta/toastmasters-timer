@@ -160,7 +160,6 @@
 		AE9F976317BDC4FA00626448 /* TimeEntryVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = TimeEntryVC.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		AE9F976517BE538100626448 /* Timer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Timer.h; sourceTree = "<group>"; };
 		AE9F976617BE538100626448 /* Timer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Timer.m; sourceTree = "<group>"; };
-		AE9F976817BE5C9B00626448 /* TimerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimerDelegate.h; sourceTree = "<group>"; };
 		AE9F976C17BEA00600626448 /* Helper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Helper.h; sourceTree = "<group>"; };
 		AE9F976D17BEA00600626448 /* Helper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = Helper.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		AEAE24E517CAB08300DA265B /* cancel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cancel.png; sourceTree = "<group>"; };
@@ -255,7 +254,6 @@
 				AE9F976617BE538100626448 /* Timer.m */,
 				AE7223B917BDAB66003B60A5 /* AppDelegate.h */,
 				AE7223BA17BDAB66003B60A5 /* AppDelegate.m */,
-				AE9F976817BE5C9B00626448 /* TimerDelegate.h */,
 				AE9F976C17BEA00600626448 /* Helper.h */,
 				AE9F976D17BEA00600626448 /* Helper.m */,
 				AE3C7EC017ECF9080071725C /* AlertManager.h */,

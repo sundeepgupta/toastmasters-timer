@@ -28,7 +28,6 @@
 @property (strong, nonatomic) IBOutlet ColorButton *redButton;
 @property (strong, nonatomic) IBOutlet ColorButton *bellButton;
 @property (nonatomic, strong) NSString *currentColorName;
-@property NSInteger totalSeconds;
 @property (strong, nonatomic) IBOutlet UILabel *timerLabel;
 @end
 
@@ -40,7 +39,8 @@
     [super viewDidLoad];
     [self setupDefaults];
     [self setupRotaryWheel];
-    
+    [Helper registerForTimerNotificationsWithObject:self];
+
     
 
     
@@ -77,6 +77,19 @@
     [Helper updateTitle:title forButton:buttonToUpdate];
 }
 
+
+
+#pragma mark - Timer Notification
+- (void)timerUpdatedSeconds:(NSNotification *)notification {
+    NSDictionary *userInfo = notification.userInfo;
+    NSNumber *secondsNumber = userInfo[SECONDS_INFO_KEY];
+    NSInteger seconds = secondsNumber.integerValue;
+    [self updateTimerLabelWithSeconds:seconds];
+}
+
+- (void)updateTimerLabelWithSeconds:(NSInteger)seconds {
+    self.timerLabel.text = [Helper stringForTotalSeconds:seconds];
+}
 
 
 

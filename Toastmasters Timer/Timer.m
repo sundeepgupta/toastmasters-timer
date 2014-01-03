@@ -74,14 +74,26 @@
 - (void)updateSeconds {
     NSTimeInterval secondsElasped = -[self.startDate timeIntervalSinceNow];
     self.seconds = round(secondsElasped);
-//    [self.delegate updateElaspedSeconds:self.seconds];
-    
-
-    
-    [[NSNotificationCenter defaultCenter] postNotificationName:TIMER_NOTIFICATION object:nil];
-
+    [self postNotification];
+    [self callDelegate];
 }
 
+- (void)postNotification {
+    NSDictionary *info = [self notificationInfo];
+    [[NSNotificationCenter defaultCenter] postNotificationName:TIMER_NOTIFICATION object:self userInfo:info];
+}
+
+- (void)callDelegate {
+    if (self.delegate) {
+        [self.delegate didUpdateWithSeconds:self.seconds];
+    }
+}
+
+- (NSDictionary *)notificationInfo {
+    NSNumber *secondsNumber = [NSNumber numberWithInteger:self.seconds];
+    NSDictionary *info = @{SECONDS_INFO_KEY:secondsNumber};
+    return info;
+}
 
 - (TIMER_STATUS)status {
     TIMER_STATUS status;

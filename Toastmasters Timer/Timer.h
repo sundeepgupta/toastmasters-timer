@@ -7,7 +7,6 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "TimerDelegate.h"
 
 
 typedef NS_ENUM(NSInteger, TIMER_STATUS) {
@@ -15,6 +14,12 @@ typedef NS_ENUM(NSInteger, TIMER_STATUS) {
     PAUSED,
     RUNNING,
 };
+
+
+@protocol TimerDelegate <NSObject>
+@required
+- (void)didUpdateWithSeconds:(NSInteger)seconds;
+@end
 
 
 @interface Timer : NSObject

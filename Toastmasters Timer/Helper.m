@@ -68,7 +68,7 @@
 
 + (void)registerForTimerNotificationsWithObject:(id)object {
     NSNotificationCenter *notificationCenter = [NSNotificationCenter defaultCenter];
-    [notificationCenter addObserver:object selector:@selector(timerUpdatedSeconds) name:TIMER_NOTIFICATION object:nil];
+    [notificationCenter addObserver:object selector:@selector(timerUpdatedSeconds:) name:TIMER_NOTIFICATION object:nil];
 }
 
 

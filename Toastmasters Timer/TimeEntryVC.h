@@ -7,7 +7,6 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "TimerDelegate.h"
 
 @interface TimeEntryVC : UIViewController
 

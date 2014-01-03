@@ -45,19 +45,6 @@
     [Helper registerForTimerNotificationsWithObject:self];
 }
 
-
-
-- (void)timerUpdatedSeconds {
-    [self updateTimerLabel];
-    [self assertColorChange];
-    if (self.timeEntryVc) {
-        [self updateTimeEntryVc];
-    }
-}
-
-
-
-
 - (void)setupColorButtons {
     self.colorButtons = @[self.greenButton, self.amberButton, self.redButton, self.bellButton];
 }
@@ -70,7 +57,6 @@
 
 - (void)setupTimer {
     self.timer = [[Timer alloc] init];
-    self.timer.delegate = self;
 }
 
 
@@ -186,9 +172,10 @@
 
 
 
-- (void)updateTimeEntryVc {
-//    self.timeEntryVc.timerMinutesLabel.text = self.minutesLabel.text;
-//    self.timeEntryVc.timerSecondsLabel.text = self.secondsLabel.text;
+#pragma mark - Timer Notification
+- (void)timerUpdatedSeconds:(NSNotification *)notification {
+    [self updateTimerLabel];
+    [self assertColorChange];
 }
 
 - (void)updateTimerLabel {
@@ -224,7 +211,6 @@
     TimeEntryVC *vc = [self.storyboard instantiateViewControllerWithIdentifier:vcClassName];
     self.timeEntryVc = vc;
     [self presentViewController:vc animated:YES completion:nil];
-    [self updateTimeEntryVc];
 }
 
 
