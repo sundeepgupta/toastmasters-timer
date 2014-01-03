@@ -112,8 +112,13 @@
 }
 
 - (void)saveColorsToDefaults {
-//    [self.defaults setObject:self.colors forKey:COLOR_TIMES_KEY];
-    [self.defaults synchronize];
+    NSInteger greenSeconds = [Helper secondsForTimeString:self.greenButton.titleLabel.text];
+    NSNumber *greenNumber = [NSNumber numberWithInteger:greenSeconds];
+
+    
+    NSArray *colorArray = @[greenNumber, @0, @0, @0];
+        [self.defaults setObject:colorArray forKey:COLOR_TIMES_KEY];
+        [self.defaults synchronize];
 }
 
 

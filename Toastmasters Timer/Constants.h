@@ -36,14 +36,6 @@ typedef enum {
 
 
 
-
-//Color Names
-#define GREEN_COLOR_NAME @"green"
-#define AMBER_COLOR_NAME @"amber"
-#define RED_COLOR_NAME @"red"
-#define BELL_COLOR_NAME @"bell"
-
-
 //Toast Stuff
 #define TOAST_DURATION 2
 #define TOAST_TAG 999

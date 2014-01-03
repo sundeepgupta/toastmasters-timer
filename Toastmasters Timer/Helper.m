@@ -10,6 +10,7 @@
 
 @implementation Helper
 
+#pragma mark - Strings from seconds and wheel
 + (NSString *)stringForLevelNumber:(NSInteger)levelNumber andSectionNumber:(NSInteger)sectionNumber {
     NSInteger totalSeconds = [self totalSecondsForLevelNumber:levelNumber andSectionNumber:sectionNumber];
     NSString *string = [self stringForTotalSeconds:totalSeconds];
@@ -28,6 +29,20 @@
     NSString *string = [NSString stringWithFormat:@"%02i:%02i", minutes, seconds];
     return string;
 }
+
+
+
+#pragma mark - Seconds from Strings
++ (NSInteger)secondsForTimeString:(NSString *)timeString {
+    NSArray *components = [timeString componentsSeparatedByString:@":"];
+    NSString *minutesString = components[0];
+    NSInteger minutes = minutesString.integerValue;
+    NSString *secondsString = components[1];
+    NSInteger seconds = secondsString.integerValue;
+    NSInteger totalSeconds = minutes*60 + seconds;
+    return totalSeconds;
+}
+
 
 
 

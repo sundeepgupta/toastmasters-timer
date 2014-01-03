@@ -15,10 +15,18 @@
 
 
 @interface Helper : NSObject
+
+#pragma mark - Strings from seconds and wheel
 + (NSString *)stringForLevelNumber:(NSInteger)levelNumber andSectionNumber:(NSInteger)sectionNumber;
 + (NSString *)stringForTotalSeconds:(NSInteger)totalSeconds;
 
+
+#pragma mark - Seconds from Strings
++ (NSInteger)secondsForTimeString:(NSString *)timeString;
+
+
 + (UIImage *)imageWithColor:(UIColor *)color;
+
 
 + (NSString *)nameForColorIndex:(ColorIndex)index;
 
