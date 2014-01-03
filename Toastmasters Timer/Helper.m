@@ -20,6 +20,9 @@
     return totalSeconds;
 }
 + (NSString *)stringForTotalSeconds:(NSInteger)totalSeconds {
+    if (totalSeconds == -1) {
+        totalSeconds = 0;
+    }
     NSInteger minutes = floor(totalSeconds/60);
     NSInteger seconds = totalSeconds%60;
     NSString *string = [NSString stringWithFormat:@"%02i:%02i", minutes, seconds];
@@ -68,7 +71,7 @@
 
 + (void)registerForTimerNotificationsWithObject:(id)object {
     NSNotificationCenter *notificationCenter = [NSNotificationCenter defaultCenter];
-    [notificationCenter addObserver:object selector:@selector(timerUpdatedSeconds:) name:TIMER_NOTIFICATION object:nil];
+    [notificationCenter addObserver:object selector:@selector(timerUpdatedSecondsWithNotification:) name:TIMER_NOTIFICATION object:nil];
 }
 
 

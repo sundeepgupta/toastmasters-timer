@@ -83,7 +83,7 @@
 
 
 #pragma mark - Timer Notification
-- (void)timerUpdatedSeconds:(NSNotification *)notification {
+- (void)timerUpdatedSecondsWithNotification:(NSNotification *)notification {
     NSDictionary *userInfo = notification.userInfo;
     NSNumber *secondsNumber = userInfo[SECONDS_INFO_KEY];
     NSInteger seconds = secondsNumber.integerValue;

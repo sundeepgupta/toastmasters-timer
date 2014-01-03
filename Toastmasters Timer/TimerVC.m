@@ -172,7 +172,7 @@
 
 
 #pragma mark - Timer Notification
-- (void)timerUpdatedSeconds:(NSNotification *)notification {
+- (void)timerUpdatedSecondsWithNotification:(NSNotification *)notification {
     [self updateTimerLabel];
     [self assertColorChange];
 }
