@@ -19,13 +19,14 @@
 
 @interface TimeEntryVC () <SGRotaryWheelDelegate>
 @property (strong, nonatomic) NSUserDefaults *defaults;
+@property (nonatomic, strong) NSArray *colorArray;
 @property (nonatomic, strong) SGRotaryWheel *rotaryWheel;
 @property (strong, nonatomic) IBOutlet UIView *wheelView;
 @property (strong, nonatomic) IBOutlet ColorButton *greenButton;
 @property (strong, nonatomic) IBOutlet ColorButton *amberButton;
 @property (strong, nonatomic) IBOutlet ColorButton *redButton;
 @property (strong, nonatomic) IBOutlet ColorButton *bellButton;
-@property ColorIndex currentColorIndex;
+@property (nonatomic, strong) NSArray *colorButtonArray;
 @property (strong, nonatomic) IBOutlet UILabel *timerLabel;
 @end
 
@@ -35,14 +36,17 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [self setupColorButtonArray];
     [self setupDefaults];
     [self setupRotaryWheel];
     [Helper registerForTimerNotificationsWithObject:self];
     [self setupTimerLabel];
-    
+    [self setupColorArray];
+    [self setupColorButtonTitles];
+}
 
-    
-    self.currentColorIndex = GREEN_COLOR_INDEX;
+- (void)setupColorButtonArray {
+    self.colorButtonArray = @[self.greenButton, self.amberButton, self.redButton, self.bellButton];
 }
 
 - (void)setupDefaults {
@@ -61,6 +65,27 @@
         self.timerLabel.text = self.currentTimerString;
     }
 }
+
+- (void)setupColorArray {
+    self.colorArray = [self.defaults arrayForKey:COLOR_TIMES_KEY];
+}
+
+- (void)setupColorButtonTitles {
+    for (ColorIndex i = GREEN_COLOR_INDEX; i < COLOR_INDEX_COUNT; i++) {
+        [self setupColorButtonTitleForColorIndex:i];
+    }
+}
+- (void)setupColorButtonTitleForColorIndex:(ColorIndex)index {
+    NSInteger seconds = [self.colorArray[index] integerValue];
+    ColorButton *button = self.colorButtonArray[index];
+    [self setupTitleForColorButton:button withSeconds:seconds];
+}
+- (void)setupTitleForColorButton:(ColorButton *)button withSeconds:(NSInteger)seconds {
+    NSString *title = [Helper stringForTotalSeconds:seconds];
+    [Helper updateTitle:title forButton:button];
+}
+
+
 
 
 #pragma mark - Rotary wheel delegates
@@ -115,10 +140,13 @@
     NSInteger greenSeconds = [Helper secondsForTimeString:self.greenButton.titleLabel.text];
     NSNumber *greenNumber = [NSNumber numberWithInteger:greenSeconds];
 
+    NSInteger amberSeconds = [Helper secondsForTimeString:self.amberButton.titleLabel.text];
+    NSNumber *amberNumber = [NSNumber numberWithInteger:amberSeconds];
+
     
-    NSArray *colorArray = @[greenNumber, @0, @0, @0];
-        [self.defaults setObject:colorArray forKey:COLOR_TIMES_KEY];
-        [self.defaults synchronize];
+    NSArray *colorArray = @[greenNumber, amberNumber, @0, @0];
+    [self.defaults setObject:colorArray forKey:COLOR_TIMES_KEY];
+    [self.defaults synchronize];
 }
 
 

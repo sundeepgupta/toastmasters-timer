@@ -27,7 +27,7 @@
 @property (strong, nonatomic) IBOutlet ColorButton *amberButton;
 @property (strong, nonatomic) IBOutlet ColorButton *redButton;
 @property (strong, nonatomic) IBOutlet ColorButton *bellButton;
-@property (nonatomic, strong) NSArray *colorButtons;
+@property (nonatomic, strong) NSArray *colorButtonArray;
 @end
 
 
@@ -36,7 +36,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [self setupColorButtons];
+    [self setupColorButtonArray];
     [self setupDefaults];
     [self setupTimer];
     [self setupAlertManager];
@@ -44,8 +44,8 @@
     [Helper registerForTimerNotificationsWithObject:self];
 }
 
-- (void)setupColorButtons {
-    self.colorButtons = @[self.greenButton, self.amberButton, self.redButton, self.bellButton];
+- (void)setupColorButtonArray {
+    self.colorButtonArray = @[self.greenButton, self.amberButton, self.redButton, self.bellButton];
 }
 
 - (void)setupDefaults {
@@ -75,47 +75,47 @@
 #pragma mark - View Will Appear
 - (void)viewWillAppear:(BOOL)animated {
     [self setupColorArray];
-    [self setupColorLabels];
+    [self setupColorButtonTitles];
 }
 
 - (void)setupColorArray {
     self.colorArray = [self.defaults arrayForKey:COLOR_TIMES_KEY];
 }
 
-- (void)setupColorLabels {
+- (void)setupColorButtonTitles {
     for (ColorIndex i = GREEN_COLOR_INDEX; i < COLOR_INDEX_COUNT; i++) {
-        [self setupColorLabelForColorName:i];
+        [self setupColorButtonTitleForColorIndex:i];
     }
 }
-- (void)setupColorLabelForColorName:(ColorIndex)i {
-    NSInteger seconds = [self.colorArray[i] integerValue];
-    ColorButton *button = self.colorButtons[i];
-    [self setupTitleForButton:button withSeconds:seconds];
+- (void)setupColorButtonTitleForColorIndex:(ColorIndex)index {
+    NSInteger seconds = [self.colorArray[index] integerValue];
+    ColorButton *button = self.colorButtonArray[index];
+    [self setupTitleForColorButton:button withSeconds:seconds];
 }
-- (void)setupTitleForButton:(ColorButton *)button withSeconds:(NSInteger)seconds {
+- (void)setupTitleForColorButton:(ColorButton *)button withSeconds:(NSInteger)seconds {
     NSString *title = [Helper stringForTotalSeconds:seconds];
     [Helper updateTitle:title forButton:button];
 }
 
 #pragma mark - Emphasize Color Labels
 - (void)emphasizeColorWithIndex:(ColorIndex)index {
-    ColorButton *button = self.colorButtons[index];
+    ColorButton *button = self.colorButtonArray[index];
     [button emphasize];
 }
 
 - (void)deEmphasizeColorWithIndex:(ColorIndex)index {
-    ColorButton *button = self.colorButtons[index];
+    ColorButton *button = self.colorButtonArray[index];
     [button deEmphasize];
 }
 
 - (void)deEmphasizeAllColors {
-    for (ColorButton *button in self.colorButtons) {
+    for (ColorButton *button in self.colorButtonArray) {
         [button deEmphasize];
     }
 }
 
 - (void)toggleEmphasisForColorWithIndex:(ColorIndex)index {
-    ColorButton *button = self.colorButtons[index];
+    ColorButton *button = self.colorButtonArray[index];
     [button toggleEmphasis];
 }
 
@@ -195,20 +195,24 @@
 
 #pragma mark - Color Button
 - (IBAction)greenButtonTapped:(id)sender {
-    [self changeSecondsForColorIndex:GREEN_COLOR_INDEX];
+    [self presentTimeEntryVcWith:GREEN_COLOR_INDEX];
 }
 - (IBAction)amberButtonTapped:(id)sender {
+    [self presentTimeEntryVcWith:AMBER_COLOR_INDEX];
 }
 - (IBAction)redButtonTapped:(id)sender {
+    [self presentTimeEntryVcWith:RED_COLOR_INDEX];
 }
 - (IBAction)bellButtonTapped:(id)sender {
+    [self presentTimeEntryVcWith:BELL_COLOR_INDEX];
 }
 
 
-- (void)changeSecondsForColorIndex:(ColorIndex)index {
+- (void)presentTimeEntryVcWith:(ColorIndex)index {
     NSString *vcClassName = NSStringFromClass([TimeEntryVC class]);
     TimeEntryVC *vc = [self.storyboard instantiateViewControllerWithIdentifier:vcClassName];
     vc.currentTimerString = self.timerLabel.text;
+    vc.currentColorIndex = index;
     [self presentViewController:vc animated:YES completion:nil];
 }
 

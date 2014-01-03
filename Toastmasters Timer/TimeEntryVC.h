@@ -10,4 +10,5 @@
 
 @interface TimeEntryVC : UIViewController
 @property (nonatomic, strong) NSString *currentTimerString;
+@property ColorIndex currentColorIndex;
 @end
