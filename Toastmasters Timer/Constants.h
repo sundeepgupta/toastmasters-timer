@@ -11,11 +11,11 @@
 
 
 typedef enum {
-    kGreen,
-    kAmber,
-    kRed,
-    kBell,
-    kColorIndexCount
+    GREEN_COLOR_INDEX,
+    AMBER_COLOR_INDEX,
+    RED_COLOR_INDEX,
+    BELL_COLOR_INDEX,
+    COLOR_INDEX_COUNT
 } ColorIndex;
 
 

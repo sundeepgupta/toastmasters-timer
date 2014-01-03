@@ -20,7 +20,6 @@
 @property (strong, nonatomic) AlertManager *alertManager;
 @property (strong, nonatomic) NSUserDefaults *defaults;
 @property (nonatomic, strong) NSArray *colorArray;
-@property (strong, nonatomic) TimeEntryVC *timeEntryVc;
 @property (strong, nonatomic) IBOutlet UIButton *pauseButton;
 @property (strong, nonatomic) IBOutlet UIButton *audioAlertButton;
 @property (strong, nonatomic) IBOutlet UILabel *timerLabel;
@@ -84,7 +83,7 @@
 }
 
 - (void)setupColorLabels {
-    for (ColorIndex i = kGreen; i < kColorIndexCount; i++) {
+    for (ColorIndex i = GREEN_COLOR_INDEX; i < COLOR_INDEX_COUNT; i++) {
         [self setupColorLabelForColorName:i];
     }
 }
@@ -183,7 +182,7 @@
 }
 
 - (void)assertColorChange {
-    for (ColorIndex i = kGreen; i < kColorIndexCount; i++) {
+    for (ColorIndex i = GREEN_COLOR_INDEX; i < COLOR_INDEX_COUNT; i++) {
         NSInteger colorSeconds = [self.colorArray[i] integerValue];
         if (self.timer.seconds == colorSeconds) {
             [self.alertManager performAlertForColorIndex:i];
@@ -196,7 +195,7 @@
 
 #pragma mark - Color Button
 - (IBAction)greenButtonTapped:(id)sender {
-    [self changeSecondsForColorIndex:kGreen];
+    [self changeSecondsForColorIndex:GREEN_COLOR_INDEX];
 }
 - (IBAction)amberButtonTapped:(id)sender {
 }
@@ -209,7 +208,7 @@
 - (void)changeSecondsForColorIndex:(ColorIndex)index {
     NSString *vcClassName = NSStringFromClass([TimeEntryVC class]);
     TimeEntryVC *vc = [self.storyboard instantiateViewControllerWithIdentifier:vcClassName];
-    self.timeEntryVc = vc;
+    vc.currentTimerString = self.timerLabel.text;
     [self presentViewController:vc animated:YES completion:nil];
 }
 
@@ -282,7 +281,7 @@
     ColorIndex colorIndexToEmphasize;
     NSInteger minDifference = REALLY_LARGE_INTEGER;
     
-    for (ColorIndex i = kGreen; i < kColorIndexCount; i++) {
+    for (ColorIndex i = GREEN_COLOR_INDEX; i < COLOR_INDEX_COUNT; i++) {
         NSInteger colorSeconds = [self.colorArray[i] integerValue];
         NSInteger difference = self.timer.seconds - colorSeconds;
         BOOL colorTimeWasReached = difference >= 0;

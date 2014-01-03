@@ -46,16 +46,16 @@
     NSString *name;
     
     switch (index) {
-        case kGreen:
+        case GREEN_COLOR_INDEX:
             name = @"green";
             break;
-        case kAmber:
+        case AMBER_COLOR_INDEX:
             name = @"amber";
             break;
-        case kRed:
+        case RED_COLOR_INDEX:
             name = @"red";
             break;
-        case kBell:
+        case BELL_COLOR_INDEX:
             name = @"bell";
             break;
         default:

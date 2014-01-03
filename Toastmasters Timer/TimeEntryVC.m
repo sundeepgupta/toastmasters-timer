@@ -18,16 +18,14 @@
 
 
 @interface TimeEntryVC () <SGRotaryWheelDelegate>
-@property (strong, nonatomic) NSMutableDictionary *colors;
 @property (strong, nonatomic) NSUserDefaults *defaults;
-@property (strong, nonatomic) NSMutableDictionary *labelsDictionary;
 @property (nonatomic, strong) SGRotaryWheel *rotaryWheel;
 @property (strong, nonatomic) IBOutlet UIView *wheelView;
 @property (strong, nonatomic) IBOutlet ColorButton *greenButton;
 @property (strong, nonatomic) IBOutlet ColorButton *amberButton;
 @property (strong, nonatomic) IBOutlet ColorButton *redButton;
 @property (strong, nonatomic) IBOutlet ColorButton *bellButton;
-@property (nonatomic, strong) NSString *currentColorName;
+@property ColorIndex currentColorIndex;
 @property (strong, nonatomic) IBOutlet UILabel *timerLabel;
 @end
 
@@ -40,11 +38,11 @@
     [self setupDefaults];
     [self setupRotaryWheel];
     [Helper registerForTimerNotificationsWithObject:self];
-
+    [self setupTimerLabel];
     
 
     
-    self.currentColorName = GREEN_COLOR_NAME;
+    self.currentColorIndex = GREEN_COLOR_INDEX;
 }
 
 - (void)setupDefaults {
@@ -58,6 +56,11 @@
     [self.wheelView addSubview:self.rotaryWheel];
 }
 
+- (void)setupTimerLabel {
+    if (self.currentTimerString  &&  self.currentTimerString.length > 0) {
+        self.timerLabel.text = self.currentTimerString;
+    }
+}
 
 
 #pragma mark - Rotary wheel delegates
@@ -69,9 +72,9 @@
 
 - (void)updateCurrentColorButtonTitle:(NSString *)title {
     UIButton *buttonToUpdate;
-    if ([self.currentColorName isEqualToString:GREEN_COLOR_NAME]) {
+    if (self.currentColorIndex == GREEN_COLOR_INDEX) {
         buttonToUpdate = self.greenButton;
-    } else if ([self.currentColorName isEqualToString:AMBER_COLOR_NAME]) {
+    } else if (self.currentColorIndex == AMBER_COLOR_INDEX) {
         buttonToUpdate = self.amberButton;
     }
     [Helper updateTitle:title forButton:buttonToUpdate];
@@ -96,11 +99,11 @@
 
 #pragma mark - Color Buttons 
 - (IBAction)greenButtonTapped:(id)sender {
-    self.currentColorName = GREEN_COLOR_NAME;
+    self.currentColorIndex = GREEN_COLOR_INDEX;
 }
 
 - (IBAction)amberButtonTapped:(id)sender {
-    self.currentColorName = AMBER_COLOR_NAME;
+    self.currentColorIndex = AMBER_COLOR_INDEX;
 }
 
 
@@ -112,7 +115,7 @@
 }
 
 - (void)saveColorsToDefaults {
-    [self.defaults setObject:self.colors forKey:COLOR_TIMES_KEY];
+//    [self.defaults setObject:self.colors forKey:COLOR_TIMES_KEY];
     [self.defaults synchronize];
 }
 

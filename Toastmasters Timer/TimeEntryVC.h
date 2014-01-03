@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface TimeEntryVC : UIViewController
-
+@property (nonatomic, strong) NSString *currentTimerString;
 @end

@@ -41,7 +41,7 @@
     [self setupLocalNotifications];
 }
 - (void)setupLocalNotifications {
-    for (ColorIndex i = kGreen; i < kColorIndexCount; i++) {
+    for (ColorIndex i = GREEN_COLOR_INDEX; i < COLOR_INDEX_COUNT; i++) {
         [self setupNotificationForColorIndex:i];
     }
 }
@@ -102,7 +102,7 @@
 
 - (NSString *)alertMessageForColorIndex:(ColorIndex)index {
     NSString *message;
-    if (index == kBell) {
+    if (index == BELL_COLOR_INDEX) {
         message = @"Ring the bell.";
     } else {
         NSString *colorName = [Helper nameForColorIndex:index];
@@ -115,16 +115,16 @@
     UIColor *alertColor;
     
     switch (index) {
-        case kGreen:
+        case GREEN_COLOR_INDEX:
             alertColor = [UIColor colorWithRed:GREEN_R/255 green:GREEN_G/255 blue:GREEN_B/255 alpha:1];
             break;
-        case kAmber:
+        case AMBER_COLOR_INDEX:
             alertColor = [UIColor colorWithRed:AMBER_R/255 green:AMBER_G/255 blue:AMBER_B/255 alpha:1];
             break;
-        case kRed:
+        case RED_COLOR_INDEX:
             alertColor = [UIColor colorWithRed:RED_R/255 green:RED_G/255 blue:RED_B/255 alpha:1];
             break;
-        case kBell:
+        case BELL_COLOR_INDEX:
             alertColor = [UIColor colorWithRed:BELL_R/255 green:BELL_G/255 blue:BELL_B/255 alpha:1];
             break;
         default:
