@@ -276,7 +276,6 @@
 				AE5208D017C17034002CFFD7 /* Toast */,
 			);
 			name = Libraries;
-			path = ..;
 			sourceTree = "<group>";
 		};
 		AE5208A717C054AE002CFFD7 /* Images */ = {
@@ -349,6 +348,7 @@
 				AE3C7EC317ECFBA90071725C /* Constants.h */,
 				AE488FC917DD2A5B0090E139 /* Controllers */,
 				AE488FC817DD2A510090E139 /* Views */,
+				AE488FCA17DD2AC70090E139 /* Libraries */,
 				AE7223B117BDAB66003B60A5 /* Supporting Files */,
 			);
 			sourceTree = "<group>";
@@ -387,7 +387,6 @@
 				AE7223A617BDAB65003B60A5 /* Products */,
 				AE7223A717BDAB65003B60A5 /* Frameworks */,
 				AE7223D217BDAB66003B60A5 /* Toastmasters TimerTests */,
-				AE488FCA17DD2AC70090E139 /* Libraries */,
 				AE7223B217BDAB66003B60A5 /* Toastmasters Timer-Info.plist */,
 				AE7223B317BDAB66003B60A5 /* InfoPlist.strings */,
 				AE7223B617BDAB66003B60A5 /* main.m */,

@@ -24,9 +24,8 @@
 {
     application.statusBarStyle = UIStatusBarStyleLightContent;
     self.timerVc = (TimerVC *)self.window.rootViewController;
-    
     [self setupDefaults];
-    
+    [self clearIconBadge];
     return YES;
 }
 
@@ -40,15 +39,24 @@
     }
 }
 
+- (void)clearIconBadge {
+    [UIApplication sharedApplication].applicationIconBadgeNumber = 0;
+}
+
+- (void)applicationWillResignActive:(UIApplication *)application {
+    [self clearIconBadge];
+}
 
 - (void)applicationDidEnterBackground:(UIApplication *)application
 {
     [self.timerVc setupViewForBackground];
+    [self clearIconBadge];
 }
 
 - (void)applicationWillEnterForeground:(UIApplication *)application
 {
     [self.timerVc setupViewForReturningToForeground];
+    [self clearIconBadge];
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application
