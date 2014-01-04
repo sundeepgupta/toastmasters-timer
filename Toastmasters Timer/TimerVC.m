@@ -274,12 +274,14 @@
 }
 
 - (void)emphasizeCorrectColor {
-    ColorIndex index = [self colorIndexToEmphasize];
-    [self emphasizeColorWithIndex:index];
+    NSInteger index = [self colorIndexToEmphasize];
+    if (index > -1) {
+        [self emphasizeColorWithIndex:index];
+    }
 }
 
-- (ColorIndex)colorIndexToEmphasize {
-    ColorIndex colorIndexToEmphasize;
+- (NSInteger)colorIndexToEmphasize {
+    NSInteger colorIndexToEmphasize = -1;
     NSInteger minDifference = REALLY_LARGE_INTEGER;
     
     for (ColorIndex i = GREEN_COLOR_INDEX; i < COLOR_INDEX_COUNT; i++) {
