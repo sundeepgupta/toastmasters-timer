@@ -25,10 +25,35 @@
     if (totalSeconds == -1) {
         totalSeconds = 0;
     }
-    NSInteger minutes = floor(totalSeconds/60);
-    NSInteger seconds = totalSeconds%60;
+    NSInteger minutes = [self minutesForSeconds:totalSeconds];
+    NSInteger seconds = [self remainderSecondsForSeconds:totalSeconds];
     NSString *string = [NSString stringWithFormat:@"%02i:%02i", minutes, seconds];
     return string;
+}
+
+
+
+#pragma mark - Convert total seconds to minutes and seconds
++ (NSInteger)minutesForSeconds:(NSInteger)seconds {
+    NSInteger minutes = floor(seconds/60);
+    return minutes;
+}
+
++ (NSInteger)remainderSecondsForSeconds:(NSInteger)seconds {
+    NSInteger remainderSeconds = seconds%60;
+    return remainderSeconds;
+}
+
+
+#pragma mark - Convert seconds to level and section number
++ (NSInteger)levelNumberForSeconds:(NSInteger)seconds {
+    return [self minutesForSeconds:seconds];
+}
+
++ (NSInteger)sectionNumberForSeconds:(NSInteger)seconds {
+    NSInteger remainingSeconds = [self remainderSecondsForSeconds:seconds];
+    NSInteger sectionNumber = remainingSeconds/SECONDS_INCREMENT;
+    return sectionNumber;
 }
 
 
@@ -48,6 +73,8 @@
     NSInteger totalSeconds = minutes*60 + seconds;
     return totalSeconds;
 }
+
+
 
 
 

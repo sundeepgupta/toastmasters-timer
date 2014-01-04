@@ -21,4 +21,5 @@
 @property NSInteger sectionCount;
 
 - (id)initWithFrame:(CGRect)frame delegate:(id)delegate numberOfSections:(NSInteger)numberOfSections;
+- (void)resetToLevelNumber:(NSInteger)levelNumber andSectionNumber:(NSInteger)sectionNumber;
 @end

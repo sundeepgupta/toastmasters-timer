@@ -64,8 +64,19 @@
     CGFloat sideLength = self.wheelView.frame.size.width + 2*WHEEL_PADDING;
     CGRect frame = CGRectMake(-WHEEL_PADDING, -WHEEL_PADDING, sideLength, sideLength);
     self.rotaryWheel = [[SGRotaryWheel alloc] initWithFrame:frame delegate:self numberOfSections:60/SECONDS_INCREMENT];
+    [self setupRotaryWheelValues];
+    
     [self.wheelView addSubview:self.rotaryWheel];
 }
+
+- (void)setupRotaryWheelValues {
+    ColorButton *button = [self buttonForCurrentColorIndex];
+    NSInteger totalSeconds = [Helper secondsForTimeString:button.titleLabel.text];
+    NSInteger levelNumber = [Helper levelNumberForSeconds:totalSeconds];
+    NSInteger sectionNumber = [Helper sectionNumberForSeconds:totalSeconds];
+    [self.rotaryWheel resetToLevelNumber:levelNumber andSectionNumber:sectionNumber];
+}
+
 
 - (void)setupTimerLabel {
     if (self.currentTimerString  &&  self.currentTimerString.length > 0) {
@@ -76,6 +87,7 @@
 - (void)setupViewWithColorIndex:(ColorIndex)index {
     self.currentColorIndex = index;
     [self setupWheelImageView];
+    [self setupRotaryWheelValues];
 }
 
 - (void)setupWheelImageView {

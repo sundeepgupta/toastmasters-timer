@@ -21,8 +21,15 @@
 + (NSString *)stringForTotalSeconds:(NSInteger)totalSeconds;
 
 
+#pragma mark - Convert seconds to level and section number
++ (NSInteger)levelNumberForSeconds:(NSInteger)seconds;
++ (NSInteger)sectionNumberForSeconds:(NSInteger)seconds;
+
+
 #pragma mark - Seconds from Strings
 + (NSNumber *)secondsNumberForTimeString:(NSString *)timeString;
++ (NSInteger)secondsForTimeString:(NSString *)timeString;
+
 
 #pragma mark - Color Buttons
 + (void)setupTitlesForColorButtons:(NSArray *)colorButtons withColorArray:(NSArray *)colorArray;

@@ -38,8 +38,8 @@ static CGFloat deltaAngle;
 - (id)initWithFrame:(CGRect)frame delegate:(id)delegate numberOfSections:(NSInteger)numberOfSections {
     self = [super initWithFrame:frame];
     if (self) {
-        self.backgroundColor = [UIColor yellowColor];
-        self.alpha = 0.3;
+//        self.backgroundColor = [UIColor yellowColor];
+//        self.alpha = 0.3;
         
         self.sectionCount = numberOfSections;
         self.delegate = delegate;
@@ -73,8 +73,8 @@ static CGFloat deltaAngle;
     self.containerView.userInteractionEnabled = NO;
     self.containerView.transform = CGAffineTransformMakeRotation(kRadiansOffset);
     
-    self.containerView.backgroundColor = [UIColor lightGrayColor];
-    self.containerView.alpha = 0.5;
+//    self.containerView.backgroundColor = [UIColor lightGrayColor];
+//    self.containerView.alpha = 0.5;
 }
 
 
@@ -154,6 +154,21 @@ static CGFloat deltaAngle;
     return sectionNumber;
 }
 
+
+
+#pragma mark - updating section and level numbers
+
+- (void)resetToLevelNumber:(NSInteger)levelNumber andSectionNumber:(NSInteger)sectionNumber {
+    self.currentLevelNumber = levelNumber;
+    self.currentSectionNumber = sectionNumber;
+    [self rotateToCurrentSectionNumber];
+}
+
+- (void)rotateToCurrentSectionNumber {
+    
+}
+
+
 - (void)updateCurrentValuesWithNewSectionNumber:(NSInteger)newSectionNumber {
     NSInteger newSectionNumberDifference = abs(newSectionNumber - self.currentSectionNumber);
     if (newSectionNumberDifference > 1) {
@@ -200,7 +215,7 @@ static CGFloat deltaAngle;
 
 
 
-#pragma mark - Sectors
+#pragma mark - Sections
 - (void)setupSections {
     self.sections = [NSMutableArray arrayWithCapacity:self.sectionCount];
     if (self.sectionCount%2 == 0) {
@@ -237,5 +252,7 @@ static CGFloat deltaAngle;
     section.sectionNumber = sectionNumber;
     return section;
 }
+
+
 
 @end
