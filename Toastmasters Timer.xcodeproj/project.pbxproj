@@ -59,7 +59,7 @@
 		AE7223DA17BDAB66003B60A5 /* Toastmasters_TimerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AE7223D917BDAB66003B60A5 /* Toastmasters_TimerTests.m */; };
 		AE7223E417BDABCA003B60A5 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE7223E317BDABCA003B60A5 /* Storyboard.storyboard */; };
 		AE7223E717BDAC8B003B60A5 /* TimerVC.m in Sources */ = {isa = PBXBuildFile; fileRef = AE7223E617BDAC8B003B60A5 /* TimerVC.m */; };
-		AE8732601831D51200BDD4B2 /* SGRotaryWheel.m in Sources */ = {isa = PBXBuildFile; fileRef = AE87325F1831D51200BDD4B2 /* SGRotaryWheel.m */; };
+		AE8732601831D51200BDD4B2 /* SGScrollWheel.m in Sources */ = {isa = PBXBuildFile; fileRef = AE87325F1831D51200BDD4B2 /* SGScrollWheel.m */; };
 		AE8D52FE17EE2D1300F265FC /* speakerOn.png in Resources */ = {isa = PBXBuildFile; fileRef = AE8D52FA17EE2D1300F265FC /* speakerOn.png */; };
 		AE8D52FF17EE2D1300F265FC /* speakerOn@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AE8D52FB17EE2D1300F265FC /* speakerOn@2x.png */; };
 		AE9F976417BDC4FA00626448 /* TimeEntryVC.m in Sources */ = {isa = PBXBuildFile; fileRef = AE9F976317BDC4FA00626448 /* TimeEntryVC.m */; };
@@ -155,8 +155,8 @@
 		AE7223E317BDABCA003B60A5 /* Storyboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
 		AE7223E517BDAC8B003B60A5 /* TimerVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimerVC.h; sourceTree = "<group>"; };
 		AE7223E617BDAC8B003B60A5 /* TimerVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = TimerVC.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
-		AE87325E1831D51200BDD4B2 /* SGRotaryWheel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGRotaryWheel.h; sourceTree = "<group>"; };
-		AE87325F1831D51200BDD4B2 /* SGRotaryWheel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGRotaryWheel.m; sourceTree = "<group>"; };
+		AE87325E1831D51200BDD4B2 /* SGScrollWheel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGScrollWheel.h; sourceTree = "<group>"; };
+		AE87325F1831D51200BDD4B2 /* SGScrollWheel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGScrollWheel.m; sourceTree = "<group>"; };
 		AE8D52FA17EE2D1300F265FC /* speakerOn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = speakerOn.png; sourceTree = "<group>"; };
 		AE8D52FB17EE2D1300F265FC /* speakerOn@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "speakerOn@2x.png"; sourceTree = "<group>"; };
 		AE9F976217BDC4FA00626448 /* TimeEntryVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimeEntryVC.h; sourceTree = "<group>"; };
@@ -225,8 +225,8 @@
 			children = (
 				AECC0AF21856B61400815DA2 /* SGSection.h */,
 				AECC0AF31856B61400815DA2 /* SGSection.m */,
-				AE87325E1831D51200BDD4B2 /* SGRotaryWheel.h */,
-				AE87325F1831D51200BDD4B2 /* SGRotaryWheel.m */,
+				AE87325E1831D51200BDD4B2 /* SGScrollWheel.h */,
+				AE87325F1831D51200BDD4B2 /* SGScrollWheel.m */,
 			);
 			name = "Scroll Wheel";
 			path = "Toastmasters Timer";
@@ -573,7 +573,7 @@
 				AE6BB43617EC779C00D23DD6 /* SGDeepCopy.m in Sources */,
 				AE9F976417BDC4FA00626448 /* TimeEntryVC.m in Sources */,
 				AE9F976717BE538100626448 /* Timer.m in Sources */,
-				AE8732601831D51200BDD4B2 /* SGRotaryWheel.m in Sources */,
+				AE8732601831D51200BDD4B2 /* SGScrollWheel.m in Sources */,
 				AE0BAEBE1874B91B009F8066 /* ColorButton.m in Sources */,
 				AE9F976E17BEA00600626448 /* Helper.m in Sources */,
 				AECC0AF41856B61400815DA2 /* SGSection.m in Sources */,

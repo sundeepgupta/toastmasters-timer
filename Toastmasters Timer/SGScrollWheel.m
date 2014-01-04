@@ -1,45 +1,43 @@
 //
-//  SGRotaryWheel.m
+//  SGScrollWheel.m
 //  Toastmasters Timer
 //
 //  Created by Sundeep Gupta on 11/11/2013.
 //  Copyright (c) 2013 Sundeep Gupta. All rights reserved.
 //
 
-#import "SGRotaryWheel.h"
+#import "SGScrollWheel.h"
 #import <QuartzCore/QuartzCore.h>
 #import "SGSection.h"
 
 
-#define kRadiansOffset M_PI/2 //put 0 on top instead of on left
+#define kRadiansOffset M_PI/2 //put 0th section on top instead of on left
 #define kTouchTrackWidth 50
 
 
 static CGFloat deltaAngle;
 
 
-@interface SGRotaryWheel ()
+@interface SGScrollWheel ()
 @property CGAffineTransform startTransform;
 @property (nonatomic) CGFloat sectionAngleSize;
 @property (nonatomic, strong) NSMutableArray *sections;
 @property NSInteger previousSectionNumber;
 @property NSInteger currentSectionNumber;
-@property NSInteger currentLevelNumber;
-@property BOOL isRotatingClockwise;
 @property CGFloat minTouchDistanceFromCenter;
 @property CGFloat maxTouchDistanceFromCenter;
 @end
 
 
-@implementation SGRotaryWheel
+@implementation SGScrollWheel
 
 #pragma mark - Initialize
 
 - (id)initWithFrame:(CGRect)frame delegate:(id)delegate numberOfSections:(NSInteger)numberOfSections {
     self = [super initWithFrame:frame];
     if (self) {
-//        self.backgroundColor = [UIColor yellowColor];
-//        self.alpha = 0.3;
+        self.backgroundColor = [UIColor yellowColor];
+        self.alpha = 0.3;
         
         self.sectionCount = numberOfSections;
         self.delegate = delegate;
@@ -47,7 +45,6 @@ static CGFloat deltaAngle;
         [self drawWheel];
         [self setupTouchDistanceRange];
         [self setupSections];
-        self.currentLevelNumber = 0;
     }
     return self;
 }
@@ -73,8 +70,8 @@ static CGFloat deltaAngle;
     self.containerView.userInteractionEnabled = NO;
     self.containerView.transform = CGAffineTransformMakeRotation(kRadiansOffset);
     
-//    self.containerView.backgroundColor = [UIColor lightGrayColor];
-//    self.containerView.alpha = 0.5;
+    self.containerView.backgroundColor = [UIColor lightGrayColor];
+    self.containerView.alpha = 0.5;
 }
 
 
@@ -118,7 +115,7 @@ static CGFloat deltaAngle;
     [super continueTrackingWithTouch:touch withEvent:event];
     CGPoint touchPoint = [touch locationInView:self];
     [self transformToPoint:touchPoint];
-    [self updateValues];
+    [self updateCurrentSectionNumber];
     return YES;
 }
 
@@ -131,11 +128,10 @@ static CGFloat deltaAngle;
     self.containerView.transform = CGAffineTransformRotate(self.startTransform, angleDifference);
 }
 
-- (void)updateValues {
+- (void)updateCurrentSectionNumber {
     NSInteger newSectionNumber = [self sectionNumberForCurrentRadians];
     if (newSectionNumber != self.currentSectionNumber) {
-        [self updateCurrentValuesWithNewSectionNumber:newSectionNumber];
-        [self.delegate wheelDidChangeSectionNumber:self.currentSectionNumber withLevelNumber:self.currentLevelNumber];
+        [self updateCurrentSectionNumberWithNewSectionNumber:newSectionNumber];
     }
 }
 
@@ -154,45 +150,16 @@ static CGFloat deltaAngle;
     return sectionNumber;
 }
 
-
-
-#pragma mark - updating section and level numbers
-
-- (void)resetToLevelNumber:(NSInteger)levelNumber andSectionNumber:(NSInteger)sectionNumber {
-    self.currentLevelNumber = levelNumber;
-    self.currentSectionNumber = sectionNumber;
-    [self rotateToCurrentSectionNumber];
-}
-
-- (void)rotateToCurrentSectionNumber {
-    
-}
-
-
-- (void)updateCurrentValuesWithNewSectionNumber:(NSInteger)newSectionNumber {
-    NSInteger newSectionNumberDifference = abs(newSectionNumber - self.currentSectionNumber);
-    if (newSectionNumberDifference > 1) {
-        [self updateCurrentLevelWithNewSectionNumber:newSectionNumber];
+- (void)updateCurrentSectionNumberWithNewSectionNumber:(NSInteger)newSectionNumber {
+    NSInteger sectionNumberDifference = newSectionNumber - self.currentSectionNumber;
+    if (sectionNumberDifference == 1  ||  sectionNumberDifference < -1) {
+        [self.delegate wheelDidTurnClockwise];
+    } else {
+        [self.delegate wheelDidTurnCounterClockwise];
     }
     self.currentSectionNumber = newSectionNumber;
 }
 
-
-- (void)updateCurrentLevelWithNewSectionNumber:(NSInteger)newSectionNumber {
-    if (newSectionNumber == 0) {
-        if (self.currentLevelNumber < 99) {
-            self.currentLevelNumber++;
-        } else {
-            self.currentLevelNumber = 0;
-        }
-    } else {
-        if (self.currentLevelNumber > 0) {
-            self.currentLevelNumber--;
-        } else {
-            self.currentLevelNumber = 99;
-        }
-    }
-}
 
 
 - (BOOL)radians:(CGFloat)radians isInSection:(SGSection *)section {

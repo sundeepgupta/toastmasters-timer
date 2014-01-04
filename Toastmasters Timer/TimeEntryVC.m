@@ -10,17 +10,41 @@
 #import "TimeEntryVC.h"
 #import "TimerVC.h"
 #import "SGDeepCopy.h"
-#import "SGRotaryWheel.h"
+#import "SGScrollWheel.h"
 #import "ColorButton.h"
 
 
 #define WHEEL_PADDING 0
 
 
-@interface TimeEntryVC () <SGRotaryWheelDelegate>
+
+
+
+
+//- (void)updateCurrentLevelWithNewSectionNumber:(NSInteger)newSectionNumber {
+//    if (newSectionNumber == 0) {
+//        if (self.currentLevelNumber < 99) {
+//            self.currentLevelNumber++;
+//        } else {
+//            self.currentLevelNumber = 0;
+//        }
+//    } else {
+//        if (self.currentLevelNumber > 0) {
+//            self.currentLevelNumber--;
+//        } else {
+//            self.currentLevelNumber = 99;
+//        }
+//    }
+//}
+
+
+
+
+
+@interface TimeEntryVC () <SGScrollWheelDelegate>
 @property (strong, nonatomic) NSUserDefaults *defaults;
 @property (nonatomic, strong) NSArray *colorArray;
-@property (nonatomic, strong) SGRotaryWheel *rotaryWheel;
+@property (nonatomic, strong) SGScrollWheel *rotaryWheel;
 @property (strong, nonatomic) IBOutlet UIView *wheelView;
 @property (strong, nonatomic) IBOutlet ColorButton *greenButton;
 @property (strong, nonatomic) IBOutlet ColorButton *amberButton;
@@ -63,7 +87,7 @@
 - (void)setupRotaryWheel {
     CGFloat sideLength = self.wheelView.frame.size.width + 2*WHEEL_PADDING;
     CGRect frame = CGRectMake(-WHEEL_PADDING, -WHEEL_PADDING, sideLength, sideLength);
-    self.rotaryWheel = [[SGRotaryWheel alloc] initWithFrame:frame delegate:self numberOfSections:60/SECONDS_INCREMENT];
+    self.rotaryWheel = [[SGScrollWheel alloc] initWithFrame:frame delegate:self numberOfSections:60/SECONDS_INCREMENT];
     [self setupRotaryWheelValues];
     
     [self.wheelView addSubview:self.rotaryWheel];
@@ -74,7 +98,6 @@
     NSInteger totalSeconds = [Helper secondsForTimeString:button.titleLabel.text];
     NSInteger levelNumber = [Helper levelNumberForSeconds:totalSeconds];
     NSInteger sectionNumber = [Helper sectionNumberForSeconds:totalSeconds];
-    [self.rotaryWheel resetToLevelNumber:levelNumber andSectionNumber:sectionNumber];
 }
 
 
@@ -100,6 +123,15 @@
 
 
 #pragma mark - Rotary wheel delegates
+- (void)wheelDidTurnClockwise {
+    
+}
+
+- (void)wheelDidTurnCounterClockwise {
+    
+}
+
+
 - (void)wheelDidChangeSectionNumber:(NSInteger)sectionNumber withLevelNumber:(NSInteger)levelNumber{
     NSString *timeString = [Helper stringForLevelNumber:levelNumber andSectionNumber:sectionNumber];
     [self updateCurrentColorButtonTitle:timeString];

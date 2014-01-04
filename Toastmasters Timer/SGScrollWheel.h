@@ -1,5 +1,5 @@
 //
-//  SGRotaryWheel.h
+//  SGScrollWheel.h
 //  Toastmasters Timer
 //
 //  Created by Sundeep Gupta on 11/11/2013.
@@ -9,17 +9,17 @@
 #import <UIKit/UIKit.h>
 
 
-@protocol SGRotaryWheelDelegate <NSObject>
+@protocol SGScrollWheelDelegate <NSObject>
 @required
-- (void)wheelDidChangeSectionNumber:(NSInteger)sectionNumber withLevelNumber:(NSInteger)levelNumber;
+- (void)wheelDidTurnClockwise;
+- (void)wheelDidTurnCounterClockwise;
 @end
 
 
-@interface SGRotaryWheel : UIControl
-@property (weak) id <SGRotaryWheelDelegate> delegate;
+@interface SGScrollWheel : UIControl
+@property (weak) id <SGScrollWheelDelegate> delegate;
 @property (nonatomic, strong) UIView *containerView;
 @property NSInteger sectionCount;
 
 - (id)initWithFrame:(CGRect)frame delegate:(id)delegate numberOfSections:(NSInteger)numberOfSections;
-- (void)resetToLevelNumber:(NSInteger)levelNumber andSectionNumber:(NSInteger)sectionNumber;
 @end
