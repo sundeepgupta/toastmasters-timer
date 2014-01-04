@@ -87,7 +87,6 @@
 #pragma mark - Perform Color Alert
 - (void)performAlertForColorIndex:(ColorIndex)index {
     [self showAlertForColorIndex:index];
-    [self.timerVC toggleEmphasisForColorWithIndex:index];
     
     if ([self.defaults boolForKey:SHOULD_AUDIO_ALERT_KEY]) {
         [self performAudioAlert];

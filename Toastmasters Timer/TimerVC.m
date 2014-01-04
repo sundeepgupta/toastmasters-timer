@@ -78,8 +78,6 @@
     [Helper setupTitlesForColorButtons:self.colorButtonArray withColorArray:self.colorArray];
 }
 
-
-
 - (void)setupColorArray {
     self.colorArray = [self.defaults arrayForKey:COLOR_TIMES_KEY];
 }
@@ -162,22 +160,36 @@
 #pragma mark - Timer Notification
 - (void)timerUpdatedSecondsWithNotification:(NSNotification *)notification {
     [self updateTimerLabel];
-    [self assertColorChange];
+    [self alertColorIfNeeded];
 }
 
 - (void)updateTimerLabel {
     self.timerLabel.text = [Helper stringForSeconds:self.timer.seconds];
 }
 
-- (void)assertColorChange {
-    for (ColorIndex i = GREEN_COLOR_INDEX; i < COLOR_INDEX_COUNT; i++) {
-        NSInteger colorSeconds = [self.colorArray[i] integerValue];
-        if (self.timer.seconds == colorSeconds) {
-            [self.alertManager performAlertForColorIndex:i];
-        }
+
+- (void)alertColorIfNeeded {
+    NSInteger colorIndexToAlert = [self colorIndexToAlert];
+    if (colorIndexToAlert > -1) {
+        [self alertColorWithIndex:colorIndexToAlert];
     }
 }
 
+- (NSInteger)colorIndexToAlert {
+    NSInteger index = -1;
+    for (ColorIndex i = GREEN_COLOR_INDEX; i < COLOR_INDEX_COUNT; i++) {
+        NSInteger colorSeconds = [self.colorArray[i] integerValue];
+        if (self.timer.seconds == colorSeconds) {
+            index = i;
+        }
+    }
+    return index;
+}
+
+- (void)alertColorWithIndex:(ColorIndex)index {
+    [self emphasizeColorWithIndex:index];
+    [self.alertManager performAlertForColorIndex:index];
+}
 
 
 
@@ -194,7 +206,6 @@
 - (IBAction)bellButtonTapped:(id)sender {
     [self presentTimeEntryVcWith:BELL_COLOR_INDEX];
 }
-
 
 - (void)presentTimeEntryVcWith:(ColorIndex)index {
     NSString *vcClassName = NSStringFromClass([TimeEntryVC class]);
@@ -262,7 +273,10 @@
 #pragma mark - Return to Foreground
 - (void)setupViewForReturningToForeground {
     self.timerLabel.hidden = NO;
-    [self emphasizeCorrectColor];
+    
+    if (self.timer.status == RUNNING) {
+        [self emphasizeCorrectColor];
+    }
 }
 
 - (void)emphasizeCorrectColor {
@@ -283,6 +297,7 @@
             colorIndexToEmphasize = i;
         }
     }
+        
     return colorIndexToEmphasize;
 }
 
