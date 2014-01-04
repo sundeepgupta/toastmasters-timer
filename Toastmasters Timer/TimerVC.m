@@ -85,13 +85,9 @@
 
 #pragma mark - Emphasize Color Labels
 - (void)emphasizeColorWithIndex:(ColorIndex)index {
+    [self deEmphasizeAllColors];
     ColorButton *button = self.colorButtonArray[index];
     [button emphasize];
-}
-
-- (void)deEmphasizeColorWithIndex:(ColorIndex)index {
-    ColorButton *button = self.colorButtonArray[index];
-    [button deEmphasize];
 }
 
 - (void)deEmphasizeAllColors {
@@ -100,10 +96,6 @@
     }
 }
 
-- (void)toggleEmphasisForColorWithIndex:(ColorIndex)index {
-    ColorButton *button = self.colorButtonArray[index];
-    [button toggleEmphasis];
-}
 
 
 
