@@ -106,7 +106,19 @@
     NSString *title = @"Attention!";
     NSString *message = [self alertMessageForColorIndex:index];
     UIImage *image = [self visualAlertImageForColorIndex:index];
-    [self.timerVC.view makeToast:message duration:TOAST_DURATION position:TOAST_POSITION title:title image:image tag:TOAST_TAG];
+    UIViewController *vcForToast = [self currentViewController];
+    [vcForToast.view makeToast:message duration:TOAST_DURATION position:TOAST_POSITION title:title image:image tag:TOAST_TAG];
+}
+
+- (UIViewController *)currentViewController {
+    UIViewController *currentVc;
+    UIViewController *modalVc = self.timerVC.presentedViewController;
+    if (modalVc) {
+        currentVc = modalVc;
+    } else {
+        currentVc = self.timerVC;
+    }
+    return currentVc;
 }
 
 - (NSString *)alertMessageForColorIndex:(ColorIndex)index {
