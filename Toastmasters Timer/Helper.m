@@ -9,17 +9,28 @@
 #import "Helper.h"
 #import "ColorButton.h"
 
+
+#define MAX_SECONDS 5995 //99:55
+
+
 @implementation Helper
 
 #pragma mark - Strings from seconds and wheel
 + (NSString *)stringForSeconds:(NSInteger)seconds {
-    if (seconds < 0) {
-        seconds = 0;
-    }
-    NSInteger minutes = [self minutesForSeconds:seconds];
-    NSInteger remainderSeconds = [self remainderSecondsForSeconds:seconds];
+    NSInteger adjustedSeconds = [self adjustedSeconds:seconds];
+    NSInteger minutes = [self minutesForSeconds:adjustedSeconds];
+    NSInteger remainderSeconds = [self remainderSecondsForSeconds:adjustedSeconds];
     NSString *string = [NSString stringWithFormat:@"%02i:%02i", minutes, remainderSeconds];
     return string;
+}
+
++ (NSInteger)adjustedSeconds:(NSInteger)seconds {
+    if (seconds < 0) {
+        seconds = 0;
+    } else if (seconds > MAX_SECONDS) {
+        seconds = MAX_SECONDS;
+    }
+    return seconds;
 }
 
 
