@@ -422,6 +422,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = AE7223DD17BDAB66003B60A5 /* Build configuration list for PBXNativeTarget "Toastmasters Timer" */;
 			buildPhases = (
+				AE0BAEC51878D4AB009F8066 /* ShellScript */,
 				AE7223A117BDAB65003B60A5 /* Sources */,
 				AE7223A217BDAB65003B60A5 /* Frameworks */,
 				AE7223A317BDAB65003B60A5 /* Resources */,
@@ -543,6 +544,19 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		AE0BAEC51878D4AB009F8066 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "#!/bin/bash\nbN=$(/usr/libexec/PlistBuddy -c \"Print CFBundleVersion\" \"$INFOPLIST_FILE\")\nbN=$((0x$bN))\nbN=$(($bN + 1))\nbN=$(printf \"%X\" $bN)\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $bN\" \"$INFOPLIST_FILE\"";
+		};
 		AE7223C817BDAB66003B60A5 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -688,7 +702,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Toastmasters Timer/Toastmasters Timer-Prefix.pch";
 				INFOPLIST_FILE = "Toastmasters Timer/Toastmasters Timer-Info.plist";
@@ -696,7 +709,6 @@
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "ABE51356-AC82-4E0B-9BCA-8009F7D4982B";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -705,15 +717,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Toastmasters Timer/Toastmasters Timer-Prefix.pch";
 				INFOPLIST_FILE = "Toastmasters Timer/Toastmasters Timer-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "ABE51356-AC82-4E0B-9BCA-8009F7D4982B";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
+				PROVISIONING_PROFILE = "71363225-3173-4FF0-9279-BAF34E07A74A";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
