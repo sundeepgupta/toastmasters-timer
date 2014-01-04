@@ -166,7 +166,7 @@
 }
 
 - (void)updateTimerLabel {
-    self.timerLabel.text = [Helper stringForTotalSeconds:self.timer.seconds];
+    self.timerLabel.text = [Helper stringForSeconds:self.timer.seconds];
 }
 
 - (void)assertColorChange {

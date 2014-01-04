@@ -9,21 +9,17 @@
 #import <Foundation/Foundation.h>
 #import "Constants.h"
 
+
+@class ColorButton;
+
+
 #define SECONDS_INCREMENT 5
-
-
 
 
 @interface Helper : NSObject
 
 #pragma mark - Strings from seconds and wheel
-+ (NSString *)stringForLevelNumber:(NSInteger)levelNumber andSectionNumber:(NSInteger)sectionNumber;
-+ (NSString *)stringForTotalSeconds:(NSInteger)totalSeconds;
-
-
-#pragma mark - Convert seconds to level and section number
-+ (NSInteger)levelNumberForSeconds:(NSInteger)seconds;
-+ (NSInteger)sectionNumberForSeconds:(NSInteger)seconds;
++ (NSString *)stringForSeconds:(NSInteger)totalSeconds;
 
 
 #pragma mark - Seconds from Strings
@@ -33,7 +29,7 @@
 
 #pragma mark - Color Buttons
 + (void)setupTitlesForColorButtons:(NSArray *)colorButtons withColorArray:(NSArray *)colorArray;
-
++ (void)setupTitleForColorButton:(ColorButton *)button withSeconds:(NSInteger)seconds;
 
 
 

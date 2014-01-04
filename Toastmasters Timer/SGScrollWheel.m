@@ -36,8 +36,8 @@ static CGFloat deltaAngle;
 - (id)initWithFrame:(CGRect)frame delegate:(id)delegate numberOfSections:(NSInteger)numberOfSections {
     self = [super initWithFrame:frame];
     if (self) {
-        self.backgroundColor = [UIColor yellowColor];
-        self.alpha = 0.3;
+//        self.backgroundColor = [UIColor yellowColor];
+//        self.alpha = 0.3;
         
         self.sectionCount = numberOfSections;
         self.delegate = delegate;
@@ -70,8 +70,8 @@ static CGFloat deltaAngle;
     self.containerView.userInteractionEnabled = NO;
     self.containerView.transform = CGAffineTransformMakeRotation(kRadiansOffset);
     
-    self.containerView.backgroundColor = [UIColor lightGrayColor];
-    self.containerView.alpha = 0.5;
+//    self.containerView.backgroundColor = [UIColor lightGrayColor];
+//    self.containerView.alpha = 0.5;
 }
 
 
@@ -152,11 +152,13 @@ static CGFloat deltaAngle;
 
 - (void)updateCurrentSectionNumberWithNewSectionNumber:(NSInteger)newSectionNumber {
     NSInteger sectionNumberDifference = newSectionNumber - self.currentSectionNumber;
+    BOOL didTurnClockWise;
     if (sectionNumberDifference == 1  ||  sectionNumberDifference < -1) {
-        [self.delegate wheelDidTurnClockwise];
+        didTurnClockWise = YES;
     } else {
-        [self.delegate wheelDidTurnCounterClockwise];
+        didTurnClockWise = NO;
     }
+    [self.delegate wheelDidTurnClockwise:didTurnClockWise];
     self.currentSectionNumber = newSectionNumber;
 }
 

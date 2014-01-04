@@ -17,30 +17,6 @@
 #define WHEEL_PADDING 0
 
 
-
-
-
-
-//- (void)updateCurrentLevelWithNewSectionNumber:(NSInteger)newSectionNumber {
-//    if (newSectionNumber == 0) {
-//        if (self.currentLevelNumber < 99) {
-//            self.currentLevelNumber++;
-//        } else {
-//            self.currentLevelNumber = 0;
-//        }
-//    } else {
-//        if (self.currentLevelNumber > 0) {
-//            self.currentLevelNumber--;
-//        } else {
-//            self.currentLevelNumber = 99;
-//        }
-//    }
-//}
-
-
-
-
-
 @interface TimeEntryVC () <SGScrollWheelDelegate>
 @property (strong, nonatomic) NSUserDefaults *defaults;
 @property (nonatomic, strong) NSArray *colorArray;
@@ -88,16 +64,7 @@
     CGFloat sideLength = self.wheelView.frame.size.width + 2*WHEEL_PADDING;
     CGRect frame = CGRectMake(-WHEEL_PADDING, -WHEEL_PADDING, sideLength, sideLength);
     self.rotaryWheel = [[SGScrollWheel alloc] initWithFrame:frame delegate:self numberOfSections:60/SECONDS_INCREMENT];
-    [self setupRotaryWheelValues];
-    
     [self.wheelView addSubview:self.rotaryWheel];
-}
-
-- (void)setupRotaryWheelValues {
-    ColorButton *button = [self buttonForCurrentColorIndex];
-    NSInteger totalSeconds = [Helper secondsForTimeString:button.titleLabel.text];
-    NSInteger levelNumber = [Helper levelNumberForSeconds:totalSeconds];
-    NSInteger sectionNumber = [Helper sectionNumberForSeconds:totalSeconds];
 }
 
 
@@ -110,7 +77,6 @@
 - (void)setupViewWithColorIndex:(ColorIndex)index {
     self.currentColorIndex = index;
     [self setupWheelImageView];
-    [self setupRotaryWheelValues];
 }
 
 - (void)setupWheelImageView {
@@ -123,25 +89,24 @@
 
 
 #pragma mark - Rotary wheel delegates
-- (void)wheelDidTurnClockwise {
-    
+- (void)wheelDidTurnClockwise:(BOOL)didTurnClockwise {
+    [self updateCurrentButtonTitleShouldIncrement:didTurnClockwise];
 }
-
-- (void)wheelDidTurnCounterClockwise {
-    
-}
-
-
-- (void)wheelDidChangeSectionNumber:(NSInteger)sectionNumber withLevelNumber:(NSInteger)levelNumber{
-    NSString *timeString = [Helper stringForLevelNumber:levelNumber andSectionNumber:sectionNumber];
-    [self updateCurrentColorButtonTitle:timeString];
-}
-
-
-- (void)updateCurrentColorButtonTitle:(NSString *)title {
+- (void)updateCurrentButtonTitleShouldIncrement:(BOOL)shouldIncrement {
     ColorButton *button = [self buttonForCurrentColorIndex];
-    [Helper updateTitle:title forButton:button];
+    NSInteger currentSeconds = [Helper secondsForTimeString:button.titleLabel.text];
+    
+    NSInteger newSeconds;
+    if (shouldIncrement) {
+        newSeconds = currentSeconds + SECONDS_INCREMENT;
+    } else {
+        newSeconds = currentSeconds - SECONDS_INCREMENT;
+    }
+    
+    [Helper setupTitleForColorButton:button withSeconds:newSeconds];
 }
+
+
 
 - (ColorButton *)buttonForCurrentColorIndex {
     ColorButton *button;
@@ -174,7 +139,7 @@
     [self updateTimerLabelWithSeconds:seconds];
 }
 - (void)updateTimerLabelWithSeconds:(NSInteger)seconds {
-    self.timerLabel.text = [Helper stringForTotalSeconds:seconds];
+    self.timerLabel.text = [Helper stringForSeconds:seconds];
 }
 
 

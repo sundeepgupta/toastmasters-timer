@@ -37,7 +37,7 @@
     [self updateTimerLabelWithSeconds:seconds];
 }
 - (void)updateTimerLabelWithSeconds:(NSInteger)seconds {
-    self.timerLabel.text = [Helper stringForTotalSeconds:seconds];
+    self.timerLabel.text = [Helper stringForSeconds:seconds];
 }
 
 

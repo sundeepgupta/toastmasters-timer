@@ -12,22 +12,13 @@
 @implementation Helper
 
 #pragma mark - Strings from seconds and wheel
-+ (NSString *)stringForLevelNumber:(NSInteger)levelNumber andSectionNumber:(NSInteger)sectionNumber {
-    NSInteger totalSeconds = [self totalSecondsForLevelNumber:levelNumber andSectionNumber:sectionNumber];
-    NSString *string = [self stringForTotalSeconds:totalSeconds];
-    return string;
-}
-+ (NSInteger)totalSecondsForLevelNumber:(NSInteger)levelNumber andSectionNumber:(NSInteger)sectionNumber {
-    NSInteger totalSeconds = 60*levelNumber + SECONDS_INCREMENT*sectionNumber;
-    return totalSeconds;
-}
-+ (NSString *)stringForTotalSeconds:(NSInteger)totalSeconds {
-    if (totalSeconds == -1) {
-        totalSeconds = 0;
++ (NSString *)stringForSeconds:(NSInteger)seconds {
+    if (seconds < 0) {
+        seconds = 0;
     }
-    NSInteger minutes = [self minutesForSeconds:totalSeconds];
-    NSInteger seconds = [self remainderSecondsForSeconds:totalSeconds];
-    NSString *string = [NSString stringWithFormat:@"%02i:%02i", minutes, seconds];
+    NSInteger minutes = [self minutesForSeconds:seconds];
+    NSInteger remainderSeconds = [self remainderSecondsForSeconds:seconds];
+    NSString *string = [NSString stringWithFormat:@"%02i:%02i", minutes, remainderSeconds];
     return string;
 }
 
@@ -44,17 +35,6 @@
     return remainderSeconds;
 }
 
-
-#pragma mark - Convert seconds to level and section number
-+ (NSInteger)levelNumberForSeconds:(NSInteger)seconds {
-    return [self minutesForSeconds:seconds];
-}
-
-+ (NSInteger)sectionNumberForSeconds:(NSInteger)seconds {
-    NSInteger remainingSeconds = [self remainderSecondsForSeconds:seconds];
-    NSInteger sectionNumber = remainingSeconds/SECONDS_INCREMENT;
-    return sectionNumber;
-}
 
 
 
@@ -85,11 +65,10 @@
         NSInteger seconds = [colorArray[i] integerValue];
         ColorButton *button = colorButtons[i];
         [self setupTitleForColorButton:button withSeconds:seconds];
-
     }
 }
 + (void)setupTitleForColorButton:(ColorButton *)button withSeconds:(NSInteger)seconds {
-    NSString *title = [self stringForTotalSeconds:seconds];
+    NSString *title = [self stringForSeconds:seconds];
     [self updateTitle:title forButton:button];
 }
 

@@ -11,8 +11,7 @@
 
 @protocol SGScrollWheelDelegate <NSObject>
 @required
-- (void)wheelDidTurnClockwise;
-- (void)wheelDidTurnCounterClockwise;
+- (void)wheelDidTurnClockwise:(BOOL)didTurnClockwise;
 @end
 
 
