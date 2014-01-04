@@ -356,6 +356,7 @@
                         <outlet property="greenButton" destination="LI2-pQ-8kB" id="ULX-nk-Lrz"/>
                         <outlet property="redButton" destination="0GS-aF-amz" id="dAB-lL-bgB"/>
                         <outlet property="timerLabel" destination="U6Q-az-m9l" id="W6C-22-kNI"/>
+                        <outlet property="wheelImageView" destination="rrW-J8-M7H" id="4xI-G5-JGs"/>
                         <outlet property="wheelView" destination="EPW-ih-eam" id="hUU-Mw-ftu"/>
                     </connections>
                 </viewController>

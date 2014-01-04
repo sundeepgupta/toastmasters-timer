@@ -28,6 +28,7 @@
 @property (strong, nonatomic) IBOutlet ColorButton *bellButton;
 @property (nonatomic, strong) NSArray *colorButtonArray;
 @property (strong, nonatomic) IBOutlet UILabel *timerLabel;
+@property (strong, nonatomic) IBOutlet UIImageView *wheelImageView;
 @end
 
 
@@ -43,6 +44,7 @@
     [self setupRotaryWheel];
     [Helper registerForTimerNotificationsWithObject:self];
     [self setupTimerLabel];
+    [self setupWheelImageView];
 }
 
 - (void)setupDefaults {
@@ -71,7 +73,16 @@
     }
 }
 
+- (void)setupViewWithColorIndex:(ColorIndex)index {
+    self.currentColorIndex = index;
+    [self setupWheelImageView];
+}
 
+- (void)setupWheelImageView {
+    NSString *imageName = [self wheelImageNameForCurrentColorIndex];
+    UIImage *image = [UIImage imageNamed:imageName];
+    self.wheelImageView.image = image;
+}
 
 
 
@@ -127,20 +138,40 @@
 
 #pragma mark - Color Buttons 
 - (IBAction)greenButtonTapped:(id)sender {
-    self.currentColorIndex = GREEN_COLOR_INDEX;
+    [self setupViewWithColorIndex:GREEN_COLOR_INDEX];
 }
 - (IBAction)amberButtonTapped:(id)sender {
-    self.currentColorIndex = AMBER_COLOR_INDEX;
+    [self setupViewWithColorIndex:AMBER_COLOR_INDEX];
 }
 - (IBAction)redButtonTapped:(id)sender {
-    self.currentColorIndex = RED_COLOR_INDEX;
+    [self setupViewWithColorIndex:RED_COLOR_INDEX];
 }
 - (IBAction)bellButtonTapped:(id)sender {
-    self.currentColorIndex = BELL_COLOR_INDEX;
-    
-//    NSDog(self, @"currentColorIndex");
+    [self setupViewWithColorIndex:BELL_COLOR_INDEX];
 }
 
+
+
+- (NSString *)wheelImageNameForCurrentColorIndex {
+    NSString *name;
+    switch (self.currentColorIndex) {
+        case GREEN_COLOR_INDEX:
+            name = @"greenWheel";
+            break;
+        case AMBER_COLOR_INDEX:
+            name = @"amberWheel";
+            break;
+        case RED_COLOR_INDEX:
+            name = @"redWheel";
+            break;
+        case BELL_COLOR_INDEX:
+            name = @"bellWheel";
+            break;
+        default:
+            break;
+    }
+    return name;
+}
 
 
 #pragma mark - Save and Cancel
