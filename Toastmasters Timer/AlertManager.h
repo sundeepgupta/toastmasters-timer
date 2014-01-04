@@ -17,7 +17,7 @@
 - (id)initWithTimer:(Timer *)timer timerVC:(TimerVC *)timerVC defaults:(NSUserDefaults *)defaults;
 
 
-- (void)resetLocalNotifications;
+- (void)recreateNotifications;
 - (void)setupLocalNotifications;
 - (void)cancelLocalNotifications;
 

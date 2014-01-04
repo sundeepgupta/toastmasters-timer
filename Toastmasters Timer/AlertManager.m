@@ -29,18 +29,19 @@
         self.defaults = defaults;
         self.timer = timer;
         self.timerVC = timerVC;
-        self.colorArray = [self.defaults arrayForKey:COLOR_TIMES_KEY];
+        [self cancelLocalNotifications];
     }
     return self;
 }
 
 
 #pragma mark - Local Notifications
-- (void)resetLocalNotifications {
+- (void)recreateNotifications {
     [self cancelLocalNotifications];
     [self setupLocalNotifications];
 }
 - (void)setupLocalNotifications {
+    self.colorArray = [self.defaults arrayForKey:COLOR_TIMES_KEY];
     for (ColorIndex i = GREEN_COLOR_INDEX; i < COLOR_INDEX_COUNT; i++) {
         [self setupNotificationForColorIndex:i];
     }
@@ -52,27 +53,36 @@
 
 - (void)setupNotificationForColorIndex:(ColorIndex)index {
     UILocalNotification *notification = [self notificationForColorIndex:index];
-    [self scheduleNotification:notification];
+    if (notification) {
+        [self scheduleNotification:notification];
+    }
 }
 
 - (UILocalNotification *)notificationForColorIndex:(ColorIndex)index {
+    UILocalNotification *notification;
     
     NSInteger timeInterval = [self.colorArray[index] integerValue];
-    NSDate *startDate = self.timer.startDate;
     
-    UILocalNotification *notification = [[UILocalNotification alloc] init];
-    notification.fireDate = [NSDate dateWithTimeInterval:timeInterval sinceDate:startDate];
-    notification.alertBody = [self alertMessageForColorIndex:index];
-    notification.timeZone = [NSTimeZone localTimeZone];
-    
-    if ([self.defaults boolForKey:SHOULD_AUDIO_ALERT_KEY]) {
-        notification.soundName = UILocalNotificationDefaultSoundName;
-    } else {
-        notification.soundName = nil;
+    if (timeInterval > 0) {
+        NSDate *startDate = self.timer.startDate;
+
+        notification = [[UILocalNotification alloc] init];
+        notification.fireDate = [NSDate dateWithTimeInterval:timeInterval sinceDate:startDate];
+        notification.alertBody = [self alertMessageForColorIndex:index];
+        notification.timeZone = [NSTimeZone localTimeZone];
+        notification.soundName = [self notificationSoundName];
     }
-    
     return notification;
 }
+
+- (NSString *)notificationSoundName {
+    NSString *name = nil;
+    if ([self.defaults boolForKey:SHOULD_AUDIO_ALERT_KEY]) {
+        name = UILocalNotificationDefaultSoundName;
+    }
+    return name;
+}
+
 - (void)scheduleNotification:(UILocalNotification *)notification {
     UIApplication *app = [UIApplication sharedApplication];
     [app scheduleLocalNotification:notification];

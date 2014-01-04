@@ -72,6 +72,7 @@
 }
 
 
+
 #pragma mark - View Will Appear
 - (void)viewWillAppear:(BOOL)animated {
     [self setupColorArray];
@@ -81,6 +82,7 @@
 - (void)setupColorArray {
     self.colorArray = [self.defaults arrayForKey:COLOR_TIMES_KEY];
 }
+
 
 
 #pragma mark - Emphasize Color Labels
@@ -107,15 +109,14 @@
     TIMER_STATUS status = [self.timer status];
     if (status == RUNNING) {
         [self pauseTimer];
-        [self.alertManager cancelLocalNotifications];
     } else {
         [self startTimerWithStatus:status];
-        [self.alertManager setupLocalNotifications];
     }
 }
 - (void)pauseTimer {
     [self.timer pause];
     [self changeButtonToContinueTimer];
+    [self.alertManager cancelLocalNotifications];
 }
 
 - (void)startTimerWithStatus:(TIMER_STATUS)status {
@@ -125,6 +126,7 @@
         [self.timer startFromStopped];
     }
     [self changeButtonToPauseTimer];
+    [self.alertManager setupLocalNotifications];
 }
 
 
@@ -212,7 +214,7 @@
 #pragma mark - Audio Alert Button
 - (IBAction)toggleAudioAlertButtonPress:(id)sender {
     [self toggleShouldAlert];
-    [self.alertManager resetLocalNotifications];
+    [self.alertManager recreateNotifications];
 }
 - (void)toggleShouldAlert {
     BOOL shouldAlert = [self.defaults boolForKey:SHOULD_AUDIO_ALERT_KEY];

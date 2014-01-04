@@ -10,12 +10,6 @@
 
 
 @interface TimerVC : UIViewController
-
-- (void)toggleEmphasisForColorWithIndex:(ColorIndex)index;
-
 - (void)setupViewForBackground;
 - (void)setupViewForReturningToForeground;
-
-
-
 @end
