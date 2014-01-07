@@ -560,7 +560,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "#!/bin/bash\nbN=$(/usr/libexec/PlistBuddy -c \"Print CFBundleVersion\" \"$INFOPLIST_FILE\")\nbN=$((bN += 1))\nbN=$(printf \"%d\" $bN)\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $bN\" \"$INFOPLIST_FILE\"\n\n./Crashlytics.framework/run 8326e081af65babd59690e3dc0bbfea5dcd9abd3";
+			shellScript = "#!/bin/bash\nbN=$(/usr/libexec/PlistBuddy -c \"Print CFBundleVersion\" \"$INFOPLIST_FILE\")\nbN=$((bN += 1))\nbN=$(printf \"%d\" $bN)\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $bN\" \"$INFOPLIST_FILE\"";
 		};
 		AE0BAEC6187BA0CA009F8066 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -573,7 +573,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "";
+			shellScript = "./Crashlytics.framework/run 8326e081af65babd59690e3dc0bbfea5dcd9abd3";
 		};
 		AE7223C817BDAB66003B60A5 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
