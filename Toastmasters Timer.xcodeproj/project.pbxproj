@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		AE0BAEBE1874B91B009F8066 /* ColorButton.m in Sources */ = {isa = PBXBuildFile; fileRef = AE0BAEBD1874B91B009F8066 /* ColorButton.m */; };
 		AE0BAEC1187730F6009F8066 /* NSDog.m in Sources */ = {isa = PBXBuildFile; fileRef = AE0BAEC0187730F6009F8066 /* NSDog.m */; };
+		AE0BAEC8187BA11F009F8066 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE0BAEC7187BA11F009F8066 /* Crashlytics.framework */; };
 		AE111F9B17CED99900254EF4 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = AE111F9A17CED99900254EF4 /* libz.dylib */; };
 		AE111FA117CEE81500254EF4 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = AE111FA017CEE81500254EF4 /* icon.png */; };
 		AE111FA317CEE81B00254EF4 /* icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AE111FA217CEE81B00254EF4 /* icon@2x.png */; };
@@ -104,6 +105,7 @@
 		AE0BAEBD1874B91B009F8066 /* ColorButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColorButton.m; sourceTree = "<group>"; };
 		AE0BAEBF187730F6009F8066 /* NSDog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSDog.h; sourceTree = "<group>"; };
 		AE0BAEC0187730F6009F8066 /* NSDog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSDog.m; sourceTree = "<group>"; };
+		AE0BAEC7187BA11F009F8066 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 		AE111F9A17CED99900254EF4 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		AE111FA017CEE81500254EF4 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
 		AE111FA217CEE81B00254EF4 /* icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon@2x.png"; sourceTree = "<group>"; };
@@ -192,6 +194,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AE111FB417D01FE700254EF4 /* MessageUI.framework in Frameworks */,
+				AE0BAEC8187BA11F009F8066 /* Crashlytics.framework in Frameworks */,
 				AE111F9B17CED99900254EF4 /* libz.dylib in Frameworks */,
 				AE5208CF17C16FFA002CFFD7 /* QuartzCore.framework in Frameworks */,
 				AEDA15A217BDB2F300AC9DBA /* AudioToolbox.framework in Frameworks */,
@@ -366,6 +369,7 @@
 		AE7223A717BDAB65003B60A5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				AE0BAEC7187BA11F009F8066 /* Crashlytics.framework */,
 				AE111FB317D01FE700254EF4 /* MessageUI.framework */,
 				AE111F9A17CED99900254EF4 /* libz.dylib */,
 				AE5208CE17C16FFA002CFFD7 /* QuartzCore.framework */,
@@ -426,6 +430,7 @@
 				AE7223A117BDAB65003B60A5 /* Sources */,
 				AE7223A217BDAB65003B60A5 /* Frameworks */,
 				AE7223A317BDAB65003B60A5 /* Resources */,
+				AE0BAEC6187BA0CA009F8066 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -555,7 +560,20 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "#!/bin/bash\nbN=$(/usr/libexec/PlistBuddy -c \"Print CFBundleVersion\" \"$INFOPLIST_FILE\")\nbN=$((bN += 1))\nbN=$(printf \"%d\" $bN)\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $bN\" \"$INFOPLIST_FILE\"";
+			shellScript = "#!/bin/bash\nbN=$(/usr/libexec/PlistBuddy -c \"Print CFBundleVersion\" \"$INFOPLIST_FILE\")\nbN=$((bN += 1))\nbN=$(printf \"%d\" $bN)\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $bN\" \"$INFOPLIST_FILE\"\n\n./Crashlytics.framework/run 8326e081af65babd59690e3dc0bbfea5dcd9abd3";
+		};
+		AE0BAEC6187BA0CA009F8066 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "";
 		};
 		AE7223C817BDAB66003B60A5 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -702,6 +720,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/sundeep/drive/projects/toastmastersTimer/app,
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Toastmasters Timer/Toastmasters Timer-Prefix.pch";
 				INFOPLIST_FILE = "Toastmasters Timer/Toastmasters Timer-Info.plist";
@@ -717,6 +739,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/sundeep/drive/projects/toastmastersTimer/app,
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Toastmasters Timer/Toastmasters Timer-Prefix.pch";
 				INFOPLIST_FILE = "Toastmasters Timer/Toastmasters Timer-Info.plist";

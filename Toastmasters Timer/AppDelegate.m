@@ -8,6 +8,8 @@
 
 #import "AppDelegate.h"
 #import "TimerVC.h"
+#import <Crashlytics/Crashlytics.h>
+
 
 @interface AppDelegate ()
 @property (strong, nonatomic) TimerVC *timerVc;
@@ -26,6 +28,7 @@
     self.timerVc = (TimerVC *)self.window.rootViewController;
     [self setupDefaults];
     [self clearIconBadge];
+    [Crashlytics startWithAPIKey:@"8326e081af65babd59690e3dc0bbfea5dcd9abd3"];
     return YES;
 }
 
