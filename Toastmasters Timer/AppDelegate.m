@@ -32,11 +32,16 @@
 }
 
 - (void)setupLogger {
+    [self setupLogLevel];
+    [self addLoggers];
+}
+- (void)setupLogLevel {
     static int ddLogLevel = LOG_LEVEL_ERROR;
 #ifdef DEBUG
     ddLogLevel = LOG_LEVEL_VERBOSE;
 #endif
-
+}
+- (void)addLoggers {
     [DDLog addLogger:[DDASLLogger sharedInstance]];
     [DDLog addLogger:[DDTTYLogger sharedInstance]];
 }
