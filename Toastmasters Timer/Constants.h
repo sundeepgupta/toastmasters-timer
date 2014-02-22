@@ -1,15 +1,4 @@
-//
-//  Constants.h
-//  Toastmasters Timer
-//
-//  Created by Sundeep Gupta on 2013-09-20.
-//  Copyright (c) 2013 Sundeep Gupta. All rights reserved.
-//
-
-#ifndef Toastmasters_Timer_Constants_h
-#define Toastmasters_Timer_Constants_h
-
-
+#pragma mark - Enums
 typedef enum {
     GREEN_COLOR_INDEX,
     AMBER_COLOR_INDEX,
@@ -17,6 +6,12 @@ typedef enum {
     BELL_COLOR_INDEX,
     COLOR_INDEX_COUNT
 } ColorIndex;
+
+
+
+#pragma mark - API Keys
+static NSString *const API_KEY_CRASHLYTICS = @"8326e081af65babd59690e3dc0bbfea5dcd9abd3";
+
 
 
 
@@ -63,4 +58,3 @@ typedef enum {
 #define BELL_G 246.
 #define BELL_B 0.
 
-#endif

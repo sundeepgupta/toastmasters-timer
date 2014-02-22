@@ -9,6 +9,8 @@
 #import "AppDelegate.h"
 #import "TimerVC.h"
 #import <Crashlytics/Crashlytics.h>
+#import "DDTTYLogger.h"
+#import "DDASLLogger.h"
 
 
 @interface AppDelegate ()
@@ -24,12 +26,31 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    application.statusBarStyle = UIStatusBarStyleLightContent;
-    self.timerVc = (TimerVC *)self.window.rootViewController;
+    [self setupLogger];
+    [self setupStatusBarForApplication:application];
+    [self setupTimerVc];
     [self setupDefaults];
-    [self clearIconBadge];
-    [Crashlytics startWithAPIKey:@"8326e081af65babd59690e3dc0bbfea5dcd9abd3"];
+    [self clearAppIconBadge];
+    [self setupCrashlytics];
     return YES;
+}
+
+- (void)setupLogger {
+    static int ddLogLevel = LOG_LEVEL_ERROR;
+#ifdef DEBUG
+    ddLogLevel = LOG_LEVEL_VERBOSE;
+#endif
+
+    [DDLog addLogger:[DDASLLogger sharedInstance]];
+    [DDLog addLogger:[DDTTYLogger sharedInstance]];
+}
+
+- (void)setupStatusBarForApplication:(UIApplication *)application {
+    application.statusBarStyle = UIStatusBarStyleLightContent;
+}
+
+- (void)setupTimerVc {
+    self.timerVc = (TimerVC *)self.window.rootViewController;
 }
 
 - (void)setupDefaults {
@@ -42,24 +63,28 @@
     }
 }
 
-- (void)clearIconBadge {
+- (void)clearAppIconBadge {
     [UIApplication sharedApplication].applicationIconBadgeNumber = 0;
 }
 
+- (void)setupCrashlytics {
+    [Crashlytics startWithAPIKey:API_KEY_CRASHLYTICS];
+}
+
 - (void)applicationWillResignActive:(UIApplication *)application {
-    [self clearIconBadge];
+    [self clearAppIconBadge];
 }
 
 - (void)applicationDidEnterBackground:(UIApplication *)application
 {
     [self.timerVc setupViewForBackground];
-    [self clearIconBadge];
+    [self clearAppIconBadge];
 }
 
 - (void)applicationWillEnterForeground:(UIApplication *)application
 {
     [self.timerVc setupViewForReturningToForeground];
-    [self clearIconBadge];
+    [self clearAppIconBadge];
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application
