@@ -13,6 +13,9 @@
 #import "DDASLLogger.h"
 
 
+int ddLogLevel;
+
+
 @interface AppDelegate ()
 @property (strong, nonatomic) TimerVC *timerVc;
 @end
@@ -36,7 +39,7 @@
     [self addLoggers];
 }
 - (void)setupLogLevel {
-    static int ddLogLevel = LOG_LEVEL_ERROR;
+    ddLogLevel = LOG_LEVEL_ERROR;
 #ifdef DEBUG
     ddLogLevel = LOG_LEVEL_VERBOSE;
 #endif

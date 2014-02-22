@@ -146,7 +146,7 @@ static CGFloat deltaAngle;
         }
     }
     
-//    NSLog(@"Radians: %f, Section: %i", radians, self.currentSectionNumber);
+    DDLogVerbose(@"Radians: %f, Section: %i", radians, self.currentSectionNumber);
     return sectionNumber;
 }
 
@@ -208,7 +208,7 @@ static CGFloat deltaAngle;
         midValue += self.sectionAngleSize;
         
         [self.sections addObject:section];
-        NSLog(@"Created section: %@", section);
+        DDLogVerbose(@"Created section: %@", section);
     }
 }
 
