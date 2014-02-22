@@ -7,8 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		892860AD74CE40D1A754749B /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 72DF7A9796AB4451856D0F01 /* libPods.a */; };
+		9F5C02F20DAC41F19921AF8D /* libPods-Toastmasters Timer Tests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D922069EBAB54014839BEFB7 /* libPods-Toastmasters Timer Tests.a */; };
+		AE0648A518B924B0006902A4 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE06488C18B9243E006902A4 /* XCTest.framework */; };
+		AE0648A618B924B0006902A4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE06488E18B9243E006902A4 /* Foundation.framework */; };
+		AE0648A718B924B0006902A4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE06489018B9243E006902A4 /* UIKit.framework */; };
+		AE0648AD18B924B0006902A4 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = AE0648AB18B924B0006902A4 /* InfoPlist.strings */; };
+		AE0648B618B92540006902A4 /* LocalNotificationsSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = AE06488418B91E0F006902A4 /* LocalNotificationsSpec.m */; };
 		AE0BAEBE1874B91B009F8066 /* ColorButton.m in Sources */ = {isa = PBXBuildFile; fileRef = AE0BAEBD1874B91B009F8066 /* ColorButton.m */; };
-		AE0BAEC1187730F6009F8066 /* NSDog.m in Sources */ = {isa = PBXBuildFile; fileRef = AE0BAEC0187730F6009F8066 /* NSDog.m */; };
 		AE0BAEC8187BA11F009F8066 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE0BAEC7187BA11F009F8066 /* Crashlytics.framework */; };
 		AE111F9B17CED99900254EF4 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = AE111F9A17CED99900254EF4 /* libz.dylib */; };
 		AE111FA117CEE81500254EF4 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = AE111FA017CEE81500254EF4 /* icon.png */; };
@@ -21,15 +27,6 @@
 		AE111FB117D019B500254EF4 /* mail.png in Resources */ = {isa = PBXBuildFile; fileRef = AE111FAF17D019B500254EF4 /* mail.png */; };
 		AE111FB217D019B500254EF4 /* mail@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AE111FB017D019B500254EF4 /* mail@2x.png */; };
 		AE111FB417D01FE700254EF4 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE111FB317D01FE700254EF4 /* MessageUI.framework */; };
-		AE2AF6FD17F9A4FF00683303 /* Timer.m in Sources */ = {isa = PBXBuildFile; fileRef = AE9F976617BE538100626448 /* Timer.m */; };
-		AE2AF6FE17F9A4FF00683303 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AE7223BA17BDAB66003B60A5 /* AppDelegate.m */; };
-		AE2AF6FF17F9A4FF00683303 /* Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = AE9F976D17BEA00600626448 /* Helper.m */; };
-		AE2AF70017F9A4FF00683303 /* AlertManager.m in Sources */ = {isa = PBXBuildFile; fileRef = AE3C7EC117ECF9080071725C /* AlertManager.m */; };
-		AE2AF70117F9A50500683303 /* InfoVC.m in Sources */ = {isa = PBXBuildFile; fileRef = AE111FAD17D0036300254EF4 /* InfoVC.m */; };
-		AE2AF70217F9A50500683303 /* TimeEntryVC.m in Sources */ = {isa = PBXBuildFile; fileRef = AE9F976317BDC4FA00626448 /* TimeEntryVC.m */; };
-		AE2AF70317F9A50500683303 /* TimerVC.m in Sources */ = {isa = PBXBuildFile; fileRef = AE7223E617BDAC8B003B60A5 /* TimerVC.m */; };
-		AE2AF70417F9A52400683303 /* SGDeepCopy.m in Sources */ = {isa = PBXBuildFile; fileRef = AE6BB43517EC779C00D23DD6 /* SGDeepCopy.m */; };
-		AE2AF70517F9A52B00683303 /* Toast+UIView.m in Sources */ = {isa = PBXBuildFile; fileRef = AE5208D217C17034002CFFD7 /* Toast+UIView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		AE3C7EC217ECF9080071725C /* AlertManager.m in Sources */ = {isa = PBXBuildFile; fileRef = AE3C7EC117ECF9080071725C /* AlertManager.m */; };
 		AE5208AA17C054AE002CFFD7 /* minus.png in Resources */ = {isa = PBXBuildFile; fileRef = AE5208A817C054AE002CFFD7 /* minus.png */; };
 		AE5208B217C0FF63002CFFD7 /* minus@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AE5208AE17C0FF63002CFFD7 /* minus@2x.png */; };
@@ -52,12 +49,6 @@
 		AE7223B717BDAB66003B60A5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AE7223B617BDAB66003B60A5 /* main.m */; };
 		AE7223BB17BDAB66003B60A5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AE7223BA17BDAB66003B60A5 /* AppDelegate.m */; };
 		AE7223C417BDAB66003B60A5 /* Toastmasters_Timer.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AE7223C217BDAB66003B60A5 /* Toastmasters_Timer.xcdatamodeld */; };
-		AE7223CC17BDAB66003B60A5 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE7223CB17BDAB66003B60A5 /* SenTestingKit.framework */; };
-		AE7223CD17BDAB66003B60A5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE7223A817BDAB65003B60A5 /* UIKit.framework */; };
-		AE7223CE17BDAB66003B60A5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE7223AA17BDAB65003B60A5 /* Foundation.framework */; };
-		AE7223CF17BDAB66003B60A5 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE7223AE17BDAB65003B60A5 /* CoreData.framework */; };
-		AE7223D717BDAB66003B60A5 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = AE7223D517BDAB66003B60A5 /* InfoPlist.strings */; };
-		AE7223DA17BDAB66003B60A5 /* Toastmasters_TimerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AE7223D917BDAB66003B60A5 /* Toastmasters_TimerTests.m */; };
 		AE7223E417BDABCA003B60A5 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE7223E317BDABCA003B60A5 /* Storyboard.storyboard */; };
 		AE7223E717BDAC8B003B60A5 /* TimerVC.m in Sources */ = {isa = PBXBuildFile; fileRef = AE7223E617BDAC8B003B60A5 /* TimerVC.m */; };
 		AE8732601831D51200BDD4B2 /* SGScrollWheel.m in Sources */ = {isa = PBXBuildFile; fileRef = AE87325F1831D51200BDD4B2 /* SGScrollWheel.m */; };
@@ -76,10 +67,6 @@
 		AEBAF2F617E7D9B000BA9479 /* info@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AEBAF2F417E7D9B000BA9479 /* info@2x.png */; };
 		AECC0AF41856B61400815DA2 /* SGSection.m in Sources */ = {isa = PBXBuildFile; fileRef = AECC0AF31856B61400815DA2 /* SGSection.m */; };
 		AECC0AF9185AA97500815DA2 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AECC0AF8185AA97500815DA2 /* Images.xcassets */; };
-		AED96F4D17FA318C00FFFDA5 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE111FB317D01FE700254EF4 /* MessageUI.framework */; };
-		AED96F4E17FA319300FFFDA5 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE5208CE17C16FFA002CFFD7 /* QuartzCore.framework */; };
-		AED96F4F17FA319800FFFDA5 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEDA15A117BDB2F300AC9DBA /* AudioToolbox.framework */; };
-		AED96F5017FA31B400FFFDA5 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE7223AC17BDAB65003B60A5 /* CoreGraphics.framework */; };
 		AEDA15A217BDB2F300AC9DBA /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEDA15A117BDB2F300AC9DBA /* AudioToolbox.framework */; };
 		AEF3115B17E90DB500D10C32 /* icon120.png in Resources */ = {isa = PBXBuildFile; fileRef = AEF3115A17E90DB500D10C32 /* icon120.png */; };
 		AEF3115F17E90EB800D10C32 /* icon29.png in Resources */ = {isa = PBXBuildFile; fileRef = AEF3115C17E90EB800D10C32 /* icon29.png */; };
@@ -91,7 +78,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		AE7223D017BDAB66003B60A5 /* PBXContainerItemProxy */ = {
+		AE0648B118B924B1006902A4 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = AE72239D17BDAB65003B60A5 /* Project object */;
 			proxyType = 1;
@@ -101,10 +88,18 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		72DF7A9796AB4451856D0F01 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		9601ED1DC6624F528E0C2AB1 /* Pods-Toastmasters Timer Tests.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Toastmasters Timer Tests.xcconfig"; path = "../Pods/Pods-Toastmasters Timer Tests.xcconfig"; sourceTree = "<group>"; };
+		AE06488418B91E0F006902A4 /* LocalNotificationsSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LocalNotificationsSpec.m; path = "Toastmasters Timer/LocalNotificationsSpec.m"; sourceTree = "<group>"; };
+		AE06488C18B9243E006902A4 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		AE06488E18B9243E006902A4 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		AE06489018B9243E006902A4 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		AE0648A418B924B0006902A4 /* Toastmasters Timer Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Toastmasters Timer Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		AE0648AA18B924B0006902A4 /* Toastmasters Timer Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Toastmasters Timer Tests-Info.plist"; sourceTree = "<group>"; };
+		AE0648AC18B924B0006902A4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		AE0648B018B924B0006902A4 /* Toastmasters Timer Tests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Toastmasters Timer Tests-Prefix.pch"; sourceTree = "<group>"; };
 		AE0BAEBC1874B91B009F8066 /* ColorButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColorButton.h; sourceTree = "<group>"; };
 		AE0BAEBD1874B91B009F8066 /* ColorButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColorButton.m; sourceTree = "<group>"; };
-		AE0BAEBF187730F6009F8066 /* NSDog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSDog.h; sourceTree = "<group>"; };
-		AE0BAEC0187730F6009F8066 /* NSDog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSDog.m; sourceTree = "<group>"; };
 		AE0BAEC7187BA11F009F8066 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 		AE111F9A17CED99900254EF4 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		AE111FA017CEE81500254EF4 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
@@ -148,12 +143,7 @@
 		AE7223B917BDAB66003B60A5 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		AE7223BA17BDAB66003B60A5 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		AE7223C317BDAB66003B60A5 /* Toastmasters_Timer.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Toastmasters_Timer.xcdatamodel; sourceTree = "<group>"; };
-		AE7223CA17BDAB66003B60A5 /* Toastmasters TimerTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Toastmasters TimerTests.octest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE7223CB17BDAB66003B60A5 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
-		AE7223D417BDAB66003B60A5 /* Toastmasters TimerTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Toastmasters TimerTests-Info.plist"; sourceTree = "<group>"; };
-		AE7223D617BDAB66003B60A5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		AE7223D817BDAB66003B60A5 /* Toastmasters_TimerTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Toastmasters_TimerTests.h; sourceTree = "<group>"; };
-		AE7223D917BDAB66003B60A5 /* Toastmasters_TimerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Toastmasters_TimerTests.m; sourceTree = "<group>"; };
 		AE7223E317BDABCA003B60A5 /* Storyboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
 		AE7223E517BDAC8B003B60A5 /* TimerVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimerVC.h; sourceTree = "<group>"; };
 		AE7223E617BDAC8B003B60A5 /* TimerVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = TimerVC.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
@@ -186,9 +176,23 @@
 		AEF3116217E911C000D10C32 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		AEF3116317E911C000D10C32 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		AEF3116417E911C000D10C32 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		B4CF1A3C75604EC39B94C368 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = ../Pods/Pods.xcconfig; sourceTree = "<group>"; };
+		D922069EBAB54014839BEFB7 /* libPods-Toastmasters Timer Tests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Toastmasters Timer Tests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FDF4590CAB9E48DCA7FF886C /* libPods-Toastmasters TimerTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Toastmasters TimerTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		AE0648A118B924B0006902A4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AE0648A518B924B0006902A4 /* XCTest.framework in Frameworks */,
+				AE0648A718B924B0006902A4 /* UIKit.framework in Frameworks */,
+				AE0648A618B924B0006902A4 /* Foundation.framework in Frameworks */,
+				9F5C02F20DAC41F19921AF8D /* libPods-Toastmasters Timer Tests.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		AE7223A217BDAB65003B60A5 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -202,27 +206,65 @@
 				AE7223AB17BDAB65003B60A5 /* Foundation.framework in Frameworks */,
 				AE7223AD17BDAB65003B60A5 /* CoreGraphics.framework in Frameworks */,
 				AE7223AF17BDAB65003B60A5 /* CoreData.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		AE7223C617BDAB66003B60A5 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				AED96F5017FA31B400FFFDA5 /* CoreGraphics.framework in Frameworks */,
-				AED96F4F17FA319800FFFDA5 /* AudioToolbox.framework in Frameworks */,
-				AED96F4E17FA319300FFFDA5 /* QuartzCore.framework in Frameworks */,
-				AED96F4D17FA318C00FFFDA5 /* MessageUI.framework in Frameworks */,
-				AE7223CC17BDAB66003B60A5 /* SenTestingKit.framework in Frameworks */,
-				AE7223CD17BDAB66003B60A5 /* UIKit.framework in Frameworks */,
-				AE7223CE17BDAB66003B60A5 /* Foundation.framework in Frameworks */,
-				AE7223CF17BDAB66003B60A5 /* CoreData.framework in Frameworks */,
+				892860AD74CE40D1A754749B /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AE06488118B91ABF006902A4 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				AE5208A717C054AE002CFFD7 /* Images */,
+				AE3C7EC317ECFBA90071725C /* Constants.h */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		AE06488218B91BEF006902A4 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				AE06488418B91E0F006902A4 /* LocalNotificationsSpec.m */,
+				AE0648A918B924B0006902A4 /* Supporting Files */,
+			);
+			name = Tests;
+			sourceTree = "<group>";
+		};
+		AE06488318B91C65006902A4 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				AE06488118B91ABF006902A4 /* Resources */,
+				AE488FC917DD2A5B0090E139 /* Controllers */,
+				AE488FC817DD2A510090E139 /* Views */,
+				AE7223B117BDAB66003B60A5 /* Supporting Files */,
+			);
+			name = App;
+			sourceTree = "<group>";
+		};
+		AE06488B18B9243E006902A4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AE06488C18B9243E006902A4 /* XCTest.framework */,
+				AE06488E18B9243E006902A4 /* Foundation.framework */,
+				AE06489018B9243E006902A4 /* UIKit.framework */,
+				D922069EBAB54014839BEFB7 /* libPods-Toastmasters Timer Tests.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		AE0648A918B924B0006902A4 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				9601ED1DC6624F528E0C2AB1 /* Pods-Toastmasters Timer Tests.xcconfig */,
+				AE0648AA18B924B0006902A4 /* Toastmasters Timer Tests-Info.plist */,
+				AE0648AB18B924B0006902A4 /* InfoPlist.strings */,
+				AE0648B018B924B0006902A4 /* Toastmasters Timer Tests-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			path = "Toastmasters Timer Tests";
+			sourceTree = "<group>";
+		};
 		AE0BAEBB1874B6E9009F8066 /* Scroll Wheel */ = {
 			isa = PBXGroup;
 			children = (
@@ -238,7 +280,6 @@
 		AE488FC817DD2A510090E139 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				AE5208A717C054AE002CFFD7 /* Images */,
 				AE111FAC17D0036300254EF4 /* InfoVC.h */,
 				AE111FAD17D0036300254EF4 /* InfoVC.m */,
 				AE7223E317BDABCA003B60A5 /* Storyboard.storyboard */,
@@ -272,13 +313,12 @@
 		AE488FCA17DD2AC70090E139 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
-				AE0BAEBF187730F6009F8066 /* NSDog.h */,
-				AE0BAEC0187730F6009F8066 /* NSDog.m */,
 				AE0BAEBB1874B6E9009F8066 /* Scroll Wheel */,
 				AE6BB43317EC779C00D23DD6 /* SGDeepCopy */,
 				AE5208D017C17034002CFFD7 /* Toast */,
 			);
 			name = Libraries;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		AE5208A717C054AE002CFFD7 /* Images */ = {
@@ -322,7 +362,7 @@
 				AE111FA717D0024300254EF4 /* website@2x.png */,
 			);
 			name = Images;
-			path = images;
+			path = "Toastmasters Timer/images";
 			sourceTree = "<group>";
 		};
 		AE5208D017C17034002CFFD7 /* Toast */ = {
@@ -348,11 +388,9 @@
 		AE72239C17BDAB65003B60A5 = {
 			isa = PBXGroup;
 			children = (
-				AE3C7EC317ECFBA90071725C /* Constants.h */,
-				AE488FC917DD2A5B0090E139 /* Controllers */,
-				AE488FC817DD2A510090E139 /* Views */,
-				AE488FCA17DD2AC70090E139 /* Libraries */,
-				AE7223B117BDAB66003B60A5 /* Supporting Files */,
+				AE06488318B91C65006902A4 /* App */,
+				AE06488218B91BEF006902A4 /* Tests */,
+				AE06488B18B9243E006902A4 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -360,7 +398,7 @@
 			isa = PBXGroup;
 			children = (
 				AE7223A517BDAB65003B60A5 /* Toastmasters Timer.app */,
-				AE7223CA17BDAB66003B60A5 /* Toastmasters TimerTests.octest */,
+				AE0648A418B924B0006902A4 /* Toastmasters Timer Tests.xctest */,
 			);
 			name = Products;
 			path = ..;
@@ -369,6 +407,8 @@
 		AE7223A717BDAB65003B60A5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				72DF7A9796AB4451856D0F01 /* libPods.a */,
+				FDF4590CAB9E48DCA7FF886C /* libPods-Toastmasters TimerTests.a */,
 				AE0BAEC7187BA11F009F8066 /* Crashlytics.framework */,
 				AE111FB317D01FE700254EF4 /* MessageUI.framework */,
 				AE111F9A17CED99900254EF4 /* libz.dylib */,
@@ -387,50 +427,54 @@
 		AE7223B117BDAB66003B60A5 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				AE7223C217BDAB66003B60A5 /* Toastmasters_Timer.xcdatamodeld */,
-				AE7223A617BDAB65003B60A5 /* Products */,
 				AE7223A717BDAB65003B60A5 /* Frameworks */,
-				AE7223D217BDAB66003B60A5 /* Toastmasters TimerTests */,
-				AE7223B217BDAB66003B60A5 /* Toastmasters Timer-Info.plist */,
 				AE7223B317BDAB66003B60A5 /* InfoPlist.strings */,
+				AE488FCA17DD2AC70090E139 /* Libraries */,
 				AE7223B617BDAB66003B60A5 /* main.m */,
+				B4CF1A3C75604EC39B94C368 /* Pods.xcconfig */,
+				AE7223A617BDAB65003B60A5 /* Products */,
+				AE7223B217BDAB66003B60A5 /* Toastmasters Timer-Info.plist */,
 				AE7223B817BDAB66003B60A5 /* Toastmasters Timer-Prefix.pch */,
+				AE7223C217BDAB66003B60A5 /* Toastmasters_Timer.xcdatamodeld */,
 			);
 			name = "Supporting Files";
 			path = "Toastmasters Timer";
 			sourceTree = "<group>";
 		};
-		AE7223D217BDAB66003B60A5 /* Toastmasters TimerTests */ = {
-			isa = PBXGroup;
-			children = (
-				AE7223D817BDAB66003B60A5 /* Toastmasters_TimerTests.h */,
-				AE7223D917BDAB66003B60A5 /* Toastmasters_TimerTests.m */,
-				AE7223D317BDAB66003B60A5 /* Supporting Files */,
-			);
-			path = "Toastmasters TimerTests";
-			sourceTree = SOURCE_ROOT;
-		};
-		AE7223D317BDAB66003B60A5 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				AE7223D417BDAB66003B60A5 /* Toastmasters TimerTests-Info.plist */,
-				AE7223D517BDAB66003B60A5 /* InfoPlist.strings */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		AE0648A318B924B0006902A4 /* Toastmasters Timer Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AE0648B318B924B1006902A4 /* Build configuration list for PBXNativeTarget "Toastmasters Timer Tests" */;
+			buildPhases = (
+				ABF1131D2C744192A1CA4DBA /* Check Pods Manifest.lock */,
+				AE0648A018B924B0006902A4 /* Sources */,
+				AE0648A118B924B0006902A4 /* Frameworks */,
+				AE0648A218B924B0006902A4 /* Resources */,
+				748D9AB3573340F0AB7D8523 /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AE0648B218B924B1006902A4 /* PBXTargetDependency */,
+			);
+			name = "Toastmasters Timer Tests";
+			productName = "Toastmasters Timer Tests";
+			productReference = AE0648A418B924B0006902A4 /* Toastmasters Timer Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		AE7223A417BDAB65003B60A5 /* Toastmasters Timer */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = AE7223DD17BDAB66003B60A5 /* Build configuration list for PBXNativeTarget "Toastmasters Timer" */;
 			buildPhases = (
+				F6079043BE5B41BE8CD19E37 /* Check Pods Manifest.lock */,
 				AE0BAEC51878D4AB009F8066 /* ShellScript */,
 				AE7223A117BDAB65003B60A5 /* Sources */,
 				AE7223A217BDAB65003B60A5 /* Frameworks */,
 				AE7223A317BDAB65003B60A5 /* Resources */,
 				AE0BAEC6187BA0CA009F8066 /* ShellScript */,
+				DAE3F2B8B7D94D5CBB85ED05 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -441,25 +485,6 @@
 			productReference = AE7223A517BDAB65003B60A5 /* Toastmasters Timer.app */;
 			productType = "com.apple.product-type.application";
 		};
-		AE7223C917BDAB66003B60A5 /* Toastmasters TimerTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = AE7223E017BDAB66003B60A5 /* Build configuration list for PBXNativeTarget "Toastmasters TimerTests" */;
-			buildPhases = (
-				AE7223C517BDAB66003B60A5 /* Sources */,
-				AE7223C617BDAB66003B60A5 /* Frameworks */,
-				AE7223C717BDAB66003B60A5 /* Resources */,
-				AE7223C817BDAB66003B60A5 /* ShellScript */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				AE7223D117BDAB66003B60A5 /* PBXTargetDependency */,
-			);
-			name = "Toastmasters TimerTests";
-			productName = "Toastmasters TimerTests";
-			productReference = AE7223CA17BDAB66003B60A5 /* Toastmasters TimerTests.octest */;
-			productType = "com.apple.product-type.bundle";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -469,6 +494,9 @@
 				LastUpgradeCheck = 0460;
 				ORGANIZATIONNAME = "Sundeep Gupta";
 				TargetAttributes = {
+					AE0648A318B924B0006902A4 = {
+						TestTargetID = AE7223A417BDAB65003B60A5;
+					};
 					AE7223A417BDAB65003B60A5 = {
 						DevelopmentTeam = M3NJ52HVCE;
 					};
@@ -487,12 +515,20 @@
 			projectRoot = "";
 			targets = (
 				AE7223A417BDAB65003B60A5 /* Toastmasters Timer */,
-				AE7223C917BDAB66003B60A5 /* Toastmasters TimerTests */,
+				AE0648A318B924B0006902A4 /* Toastmasters Timer Tests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		AE0648A218B924B0006902A4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AE0648AD18B924B0006902A4 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		AE7223A317BDAB65003B60A5 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -538,17 +574,39 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		AE7223C717BDAB66003B60A5 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				AE7223D717BDAB66003B60A5 /* InfoPlist.strings in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		748D9AB3573340F0AB7D8523 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-Toastmasters Timer Tests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		ABF1131D2C744192A1CA4DBA /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
 		AE0BAEC51878D4AB009F8066 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -575,22 +633,47 @@
 			shellPath = /bin/sh;
 			shellScript = "./Crashlytics.framework/run 8326e081af65babd59690e3dc0bbfea5dcd9abd3";
 		};
-		AE7223C817BDAB66003B60A5 /* ShellScript */ = {
+		DAE3F2B8B7D94D5CBB85ED05 /* Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
+			name = "Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F6079043BE5B41BE8CD19E37 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		AE0648A018B924B0006902A4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AE0648B618B92540006902A4 /* LocalNotificationsSpec.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		AE7223A117BDAB65003B60A5 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -598,7 +681,6 @@
 				AE7223B717BDAB66003B60A5 /* main.m in Sources */,
 				AE7223BB17BDAB66003B60A5 /* AppDelegate.m in Sources */,
 				AE3C7EC217ECF9080071725C /* AlertManager.m in Sources */,
-				AE0BAEC1187730F6009F8066 /* NSDog.m in Sources */,
 				AE7223C417BDAB66003B60A5 /* Toastmasters_Timer.xcdatamodeld in Sources */,
 				AE7223E717BDAC8B003B60A5 /* TimerVC.m in Sources */,
 				AE6BB43617EC779C00D23DD6 /* SGDeepCopy.m in Sources */,
@@ -613,34 +695,25 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		AE7223C517BDAB66003B60A5 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				AE2AF70117F9A50500683303 /* InfoVC.m in Sources */,
-				AE7223DA17BDAB66003B60A5 /* Toastmasters_TimerTests.m in Sources */,
-				AE2AF6FD17F9A4FF00683303 /* Timer.m in Sources */,
-				AE2AF70217F9A50500683303 /* TimeEntryVC.m in Sources */,
-				AE2AF70017F9A4FF00683303 /* AlertManager.m in Sources */,
-				AE2AF70417F9A52400683303 /* SGDeepCopy.m in Sources */,
-				AE2AF70517F9A52B00683303 /* Toast+UIView.m in Sources */,
-				AE2AF6FE17F9A4FF00683303 /* AppDelegate.m in Sources */,
-				AE2AF70317F9A50500683303 /* TimerVC.m in Sources */,
-				AE2AF6FF17F9A4FF00683303 /* Helper.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		AE7223D117BDAB66003B60A5 /* PBXTargetDependency */ = {
+		AE0648B218B924B1006902A4 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = AE7223A417BDAB65003B60A5 /* Toastmasters Timer */;
-			targetProxy = AE7223D017BDAB66003B60A5 /* PBXContainerItemProxy */;
+			targetProxy = AE0648B118B924B1006902A4 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		AE0648AB18B924B0006902A4 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AE0648AC18B924B0006902A4 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
 		AE7223B317BDAB66003B60A5 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -649,17 +722,70 @@
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
-		AE7223D517BDAB66003B60A5 /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				AE7223D617BDAB66003B60A5 /* en */,
-			);
-			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		AE0648B418B924B1006902A4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9601ED1DC6624F528E0C2AB1 /* Pods-Toastmasters Timer Tests.xcconfig */;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Toastmasters Timer.app/Toastmasters Timer";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Toastmasters Timer Tests/Toastmasters Timer Tests-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				INFOPLIST_FILE = "Toastmasters Timer Tests/Toastmasters Timer Tests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		AE0648B518B924B1006902A4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9601ED1DC6624F528E0C2AB1 /* Pods-Toastmasters Timer Tests.xcconfig */;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Toastmasters Timer.app/Toastmasters Timer";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				ENABLE_NS_ASSERTIONS = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Toastmasters Timer Tests/Toastmasters Timer Tests-Prefix.pch";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				INFOPLIST_FILE = "Toastmasters Timer Tests/Toastmasters Timer Tests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
 		AE7223DB17BDAB66003B60A5 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -718,6 +844,7 @@
 		};
 		AE7223DE17BDAB66003B60A5 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B4CF1A3C75604EC39B94C368 /* Pods.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -737,6 +864,7 @@
 		};
 		AE7223DF17BDAB66003B60A5 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B4CF1A3C75604EC39B94C368 /* Pods.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -754,43 +882,18 @@
 			};
 			name = Release;
 		};
-		AE7223E117BDAB66003B60A5 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Toastmasters Timer.app/Toastmasters Timer";
-				FRAMEWORK_SEARCH_PATHS = (
-					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
-					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Toastmasters Timer/Toastmasters Timer-Prefix.pch";
-				INFOPLIST_FILE = "Toastmasters TimerTests/Toastmasters TimerTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = octest;
-			};
-			name = Debug;
-		};
-		AE7223E217BDAB66003B60A5 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Toastmasters Timer.app/Toastmasters Timer";
-				FRAMEWORK_SEARCH_PATHS = (
-					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
-					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Toastmasters Timer/Toastmasters Timer-Prefix.pch";
-				INFOPLIST_FILE = "Toastmasters TimerTests/Toastmasters TimerTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = octest;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		AE0648B318B924B1006902A4 /* Build configuration list for PBXNativeTarget "Toastmasters Timer Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AE0648B418B924B1006902A4 /* Debug */,
+				AE0648B518B924B1006902A4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		AE7223A017BDAB65003B60A5 /* Build configuration list for PBXProject "Toastmasters Timer" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -805,15 +908,6 @@
 			buildConfigurations = (
 				AE7223DE17BDAB66003B60A5 /* Debug */,
 				AE7223DF17BDAB66003B60A5 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		AE7223E017BDAB66003B60A5 /* Build configuration list for PBXNativeTarget "Toastmasters TimerTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				AE7223E117BDAB66003B60A5 /* Debug */,
-				AE7223E217BDAB66003B60A5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
