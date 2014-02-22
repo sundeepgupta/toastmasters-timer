@@ -48,7 +48,6 @@
 		AE7223B517BDAB66003B60A5 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = AE7223B317BDAB66003B60A5 /* InfoPlist.strings */; };
 		AE7223B717BDAB66003B60A5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AE7223B617BDAB66003B60A5 /* main.m */; };
 		AE7223BB17BDAB66003B60A5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AE7223BA17BDAB66003B60A5 /* AppDelegate.m */; };
-		AE7223C417BDAB66003B60A5 /* Toastmasters_Timer.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AE7223C217BDAB66003B60A5 /* Toastmasters_Timer.xcdatamodeld */; };
 		AE7223E417BDABCA003B60A5 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE7223E317BDABCA003B60A5 /* Storyboard.storyboard */; };
 		AE7223E717BDAC8B003B60A5 /* TimerVC.m in Sources */ = {isa = PBXBuildFile; fileRef = AE7223E617BDAC8B003B60A5 /* TimerVC.m */; };
 		AE8732601831D51200BDD4B2 /* SGScrollWheel.m in Sources */ = {isa = PBXBuildFile; fileRef = AE87325F1831D51200BDD4B2 /* SGScrollWheel.m */; };
@@ -142,7 +141,6 @@
 		AE7223B817BDAB66003B60A5 /* Toastmasters Timer-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Toastmasters Timer-Prefix.pch"; sourceTree = "<group>"; };
 		AE7223B917BDAB66003B60A5 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		AE7223BA17BDAB66003B60A5 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		AE7223C317BDAB66003B60A5 /* Toastmasters_Timer.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Toastmasters_Timer.xcdatamodel; sourceTree = "<group>"; };
 		AE7223CB17BDAB66003B60A5 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		AE7223E317BDABCA003B60A5 /* Storyboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
 		AE7223E517BDAC8B003B60A5 /* TimerVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimerVC.h; sourceTree = "<group>"; };
@@ -433,7 +431,6 @@
 				AE7223A617BDAB65003B60A5 /* Products */,
 				AE7223B217BDAB66003B60A5 /* Toastmasters Timer-Info.plist */,
 				AE7223B817BDAB66003B60A5 /* Toastmasters Timer-Prefix.pch */,
-				AE7223C217BDAB66003B60A5 /* Toastmasters_Timer.xcdatamodeld */,
 			);
 			name = "Supporting Files";
 			path = "Toastmasters Timer";
@@ -679,7 +676,6 @@
 				AE7223B717BDAB66003B60A5 /* main.m in Sources */,
 				AE7223BB17BDAB66003B60A5 /* AppDelegate.m in Sources */,
 				AE3C7EC217ECF9080071725C /* AlertManager.m in Sources */,
-				AE7223C417BDAB66003B60A5 /* Toastmasters_Timer.xcdatamodeld in Sources */,
 				AE7223E717BDAC8B003B60A5 /* TimerVC.m in Sources */,
 				AE6BB43617EC779C00D23DD6 /* SGDeepCopy.m in Sources */,
 				AE9F976417BDC4FA00626448 /* TimeEntryVC.m in Sources */,
@@ -912,19 +908,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		AE7223C217BDAB66003B60A5 /* Toastmasters_Timer.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				AE7223C317BDAB66003B60A5 /* Toastmasters_Timer.xcdatamodel */,
-			);
-			currentVersion = AE7223C317BDAB66003B60A5 /* Toastmasters_Timer.xcdatamodel */;
-			path = Toastmasters_Timer.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = AE72239D17BDAB65003B60A5 /* Project object */;
 }
