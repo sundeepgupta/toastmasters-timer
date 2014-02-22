@@ -39,7 +39,7 @@
 		AE5208BF17C10B8C002CFFD7 /* stop@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AE5208BD17C10B8C002CFFD7 /* stop@2x.png */; };
 		AE5208C117C10CE4002CFFD7 /* pause@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AE5208C017C10CE4002CFFD7 /* pause@2x.png */; };
 		AE5208CF17C16FFA002CFFD7 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE5208CE17C16FFA002CFFD7 /* QuartzCore.framework */; };
-		AE5208D317C17034002CFFD7 /* Toast+UIView.m in Sources */ = {isa = PBXBuildFile; fileRef = AE5208D217C17034002CFFD7 /* Toast+UIView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		AE5208D317C17034002CFFD7 /* Toast+UIView.m in Sources */ = {isa = PBXBuildFile; fileRef = AE5208D217C17034002CFFD7 /* Toast+UIView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc -w"; }; };
 		AE6BB43617EC779C00D23DD6 /* SGDeepCopy.m in Sources */ = {isa = PBXBuildFile; fileRef = AE6BB43517EC779C00D23DD6 /* SGDeepCopy.m */; };
 		AE7223A917BDAB65003B60A5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE7223A817BDAB65003B60A5 /* UIKit.framework */; };
 		AE7223AB17BDAB65003B60A5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE7223AA17BDAB65003B60A5 /* Foundation.framework */; };
@@ -245,6 +245,19 @@
 		AE06488B18B9243E006902A4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				72DF7A9796AB4451856D0F01 /* libPods.a */,
+				FDF4590CAB9E48DCA7FF886C /* libPods-Toastmasters TimerTests.a */,
+				AE0BAEC7187BA11F009F8066 /* Crashlytics.framework */,
+				AE111FB317D01FE700254EF4 /* MessageUI.framework */,
+				AE111F9A17CED99900254EF4 /* libz.dylib */,
+				AE5208CE17C16FFA002CFFD7 /* QuartzCore.framework */,
+				AEDA15A117BDB2F300AC9DBA /* AudioToolbox.framework */,
+				AE7223A817BDAB65003B60A5 /* UIKit.framework */,
+				AE7223AA17BDAB65003B60A5 /* Foundation.framework */,
+				AE7223AC17BDAB65003B60A5 /* CoreGraphics.framework */,
+				AE7223AE17BDAB65003B60A5 /* CoreData.framework */,
+				AE7223CB17BDAB66003B60A5 /* SenTestingKit.framework */,
+				AE7223B317BDAB66003B60A5 /* InfoPlist.strings */,
 				AE06488C18B9243E006902A4 /* XCTest.framework */,
 				AE06488E18B9243E006902A4 /* Foundation.framework */,
 				AE06489018B9243E006902A4 /* UIKit.framework */,
@@ -275,6 +288,15 @@
 			);
 			name = "Scroll Wheel";
 			path = "Toastmasters Timer";
+			sourceTree = "<group>";
+		};
+		AE1FF8CE18B927590074AC7B /* External */ = {
+			isa = PBXGroup;
+			children = (
+				AE488FCA17DD2AC70090E139 /* Libraries */,
+				AE06488B18B9243E006902A4 /* Frameworks */,
+			);
+			name = External;
 			sourceTree = "<group>";
 		};
 		AE488FC817DD2A510090E139 /* Views */ = {
@@ -318,7 +340,6 @@
 				AE5208D017C17034002CFFD7 /* Toast */,
 			);
 			name = Libraries;
-			path = ..;
 			sourceTree = "<group>";
 		};
 		AE5208A717C054AE002CFFD7 /* Images */ = {
@@ -389,8 +410,8 @@
 			isa = PBXGroup;
 			children = (
 				AE06488318B91C65006902A4 /* App */,
+				AE1FF8CE18B927590074AC7B /* External */,
 				AE06488218B91BEF006902A4 /* Tests */,
-				AE06488B18B9243E006902A4 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -404,32 +425,9 @@
 			path = ..;
 			sourceTree = "<group>";
 		};
-		AE7223A717BDAB65003B60A5 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				72DF7A9796AB4451856D0F01 /* libPods.a */,
-				FDF4590CAB9E48DCA7FF886C /* libPods-Toastmasters TimerTests.a */,
-				AE0BAEC7187BA11F009F8066 /* Crashlytics.framework */,
-				AE111FB317D01FE700254EF4 /* MessageUI.framework */,
-				AE111F9A17CED99900254EF4 /* libz.dylib */,
-				AE5208CE17C16FFA002CFFD7 /* QuartzCore.framework */,
-				AEDA15A117BDB2F300AC9DBA /* AudioToolbox.framework */,
-				AE7223A817BDAB65003B60A5 /* UIKit.framework */,
-				AE7223AA17BDAB65003B60A5 /* Foundation.framework */,
-				AE7223AC17BDAB65003B60A5 /* CoreGraphics.framework */,
-				AE7223AE17BDAB65003B60A5 /* CoreData.framework */,
-				AE7223CB17BDAB66003B60A5 /* SenTestingKit.framework */,
-			);
-			name = Frameworks;
-			path = ..;
-			sourceTree = "<group>";
-		};
 		AE7223B117BDAB66003B60A5 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				AE7223A717BDAB65003B60A5 /* Frameworks */,
-				AE7223B317BDAB66003B60A5 /* InfoPlist.strings */,
-				AE488FCA17DD2AC70090E139 /* Libraries */,
 				AE7223B617BDAB66003B60A5 /* main.m */,
 				B4CF1A3C75604EC39B94C368 /* Pods.xcconfig */,
 				AE7223A617BDAB65003B60A5 /* Products */,
@@ -720,6 +718,7 @@
 				AE7223B417BDAB66003B60A5 /* en */,
 			);
 			name = InfoPlist.strings;
+			path = "Toastmasters Timer";
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
