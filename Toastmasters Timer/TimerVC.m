@@ -211,6 +211,7 @@
     vc.currentTimerString = self.timerLabel.text;
     vc.currentColorIndex = index;
     vc.alertManager = self.alertManager;
+    vc.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
     return vc;
 }
 
@@ -244,6 +245,7 @@
     NSString *vcClassName = NSStringFromClass([InfoVC class]);
     InfoVC *vc = [self.storyboard instantiateViewControllerWithIdentifier:vcClassName];
     vc.currentTimerString = self.timerLabel.text;
+    vc.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
     [self presentViewController:vc animated:YES completion:nil];
 }
 
