@@ -7,8 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Constants.h"
+
+@class AlertManager;
 
 @interface TimeEntryVC : UIViewController
 @property (nonatomic, strong) NSString *currentTimerString;
 @property ColorIndex currentColorIndex;
+@property (nonatomic, strong) AlertManager *alertManager;
 @end

@@ -13,7 +13,7 @@
 		AE0648A618B924B0006902A4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE06488E18B9243E006902A4 /* Foundation.framework */; };
 		AE0648A718B924B0006902A4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE06489018B9243E006902A4 /* UIKit.framework */; };
 		AE0648AD18B924B0006902A4 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = AE0648AB18B924B0006902A4 /* InfoPlist.strings */; };
-		AE0648B618B92540006902A4 /* LocalNotificationsSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = AE06488418B91E0F006902A4 /* LocalNotificationsSpec.m */; };
+		AE0648B618B92540006902A4 /* TimeEntryVCSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = AE06488418B91E0F006902A4 /* TimeEntryVCSpec.m */; };
 		AE0BAEBE1874B91B009F8066 /* ColorButton.m in Sources */ = {isa = PBXBuildFile; fileRef = AE0BAEBD1874B91B009F8066 /* ColorButton.m */; };
 		AE0BAEC8187BA11F009F8066 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE0BAEC7187BA11F009F8066 /* Crashlytics.framework */; };
 		AE111F9B17CED99900254EF4 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = AE111F9A17CED99900254EF4 /* libz.dylib */; };
@@ -67,6 +67,8 @@
 		AECC0AF41856B61400815DA2 /* SGSection.m in Sources */ = {isa = PBXBuildFile; fileRef = AECC0AF31856B61400815DA2 /* SGSection.m */; };
 		AECC0AF9185AA97500815DA2 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AECC0AF8185AA97500815DA2 /* Images.xcassets */; };
 		AEDA15A217BDB2F300AC9DBA /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEDA15A117BDB2F300AC9DBA /* AudioToolbox.framework */; };
+		AEE1D65118B9C773006FF6C2 /* TimerVCSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = AEE1D65018B9C773006FF6C2 /* TimerVCSpec.m */; };
+		AEE1D65418B9CC3B006FF6C2 /* SpecHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = AEE1D65318B9CC3B006FF6C2 /* SpecHelper.m */; };
 		AEF3115B17E90DB500D10C32 /* icon120.png in Resources */ = {isa = PBXBuildFile; fileRef = AEF3115A17E90DB500D10C32 /* icon120.png */; };
 		AEF3115F17E90EB800D10C32 /* icon29.png in Resources */ = {isa = PBXBuildFile; fileRef = AEF3115C17E90EB800D10C32 /* icon29.png */; };
 		AEF3116017E90EB800D10C32 /* icon29@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AEF3115D17E90EB800D10C32 /* icon29@2x.png */; };
@@ -89,7 +91,7 @@
 /* Begin PBXFileReference section */
 		72DF7A9796AB4451856D0F01 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		9601ED1DC6624F528E0C2AB1 /* Pods-Toastmasters Timer Tests.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Toastmasters Timer Tests.xcconfig"; path = "../Pods/Pods-Toastmasters Timer Tests.xcconfig"; sourceTree = "<group>"; };
-		AE06488418B91E0F006902A4 /* LocalNotificationsSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LocalNotificationsSpec.m; path = "Toastmasters Timer/LocalNotificationsSpec.m"; sourceTree = "<group>"; };
+		AE06488418B91E0F006902A4 /* TimeEntryVCSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TimeEntryVCSpec.m; path = "Toastmasters Timer/TimeEntryVCSpec.m"; sourceTree = "<group>"; };
 		AE06488C18B9243E006902A4 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		AE06488E18B9243E006902A4 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		AE06489018B9243E006902A4 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
@@ -167,6 +169,9 @@
 		AECC0AF31856B61400815DA2 /* SGSection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGSection.m; sourceTree = "<group>"; };
 		AECC0AF8185AA97500815DA2 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = ../Images.xcassets; sourceTree = "<group>"; };
 		AEDA15A117BDB2F300AC9DBA /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		AEE1D65018B9C773006FF6C2 /* TimerVCSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimerVCSpec.m; sourceTree = "<group>"; };
+		AEE1D65218B9CC3B006FF6C2 /* SpecHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SpecHelper.h; path = "Toastmasters Timer Tests/SpecHelper.h"; sourceTree = "<group>"; };
+		AEE1D65318B9CC3B006FF6C2 /* SpecHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SpecHelper.m; path = "Toastmasters Timer Tests/SpecHelper.m"; sourceTree = "<group>"; };
 		AEF3115A17E90DB500D10C32 /* icon120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon120.png; sourceTree = "<group>"; };
 		AEF3115C17E90EB800D10C32 /* icon29.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon29.png; sourceTree = "<group>"; };
 		AEF3115D17E90EB800D10C32 /* icon29@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon29@2x.png"; sourceTree = "<group>"; };
@@ -223,8 +228,11 @@
 		AE06488218B91BEF006902A4 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				AE06488418B91E0F006902A4 /* LocalNotificationsSpec.m */,
+				AE06488418B91E0F006902A4 /* TimeEntryVCSpec.m */,
 				AE0648A918B924B0006902A4 /* Supporting Files */,
+				AEE1D65018B9C773006FF6C2 /* TimerVCSpec.m */,
+				AEE1D65218B9CC3B006FF6C2 /* SpecHelper.h */,
+				AEE1D65318B9CC3B006FF6C2 /* SpecHelper.m */,
 			);
 			name = Tests;
 			sourceTree = "<group>";
@@ -665,7 +673,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AE0648B618B92540006902A4 /* LocalNotificationsSpec.m in Sources */,
+				AE0648B618B92540006902A4 /* TimeEntryVCSpec.m in Sources */,
+				AEE1D65118B9C773006FF6C2 /* TimerVCSpec.m in Sources */,
+				AEE1D65418B9CC3B006FF6C2 /* SpecHelper.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -745,6 +755,12 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
+				HEADER_SEARCH_PATHS = (
+					"\"${PODS_ROOT}/Headers\"",
+					"\"${PODS_ROOT}/Headers/CocoaLumberjack\"",
+					"\"${PODS_ROOT}/Headers/Kiwi\"",
+					"\"${PODS_ROOT}/Headers/iRate\"",
+				);
 				INFOPLIST_FILE = "Toastmasters Timer Tests/Toastmasters Timer Tests-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
@@ -774,6 +790,12 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
+				HEADER_SEARCH_PATHS = (
+					"\"${PODS_ROOT}/Headers\"",
+					"\"${PODS_ROOT}/Headers/CocoaLumberjack\"",
+					"\"${PODS_ROOT}/Headers/Kiwi\"",
+					"\"${PODS_ROOT}/Headers/iRate\"",
+				);
 				INFOPLIST_FILE = "Toastmasters Timer Tests/Toastmasters Timer Tests-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";

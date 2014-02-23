@@ -1,17 +1,16 @@
 #pragma mark - Enums
-typedef enum {
+typedef NS_ENUM(NSUInteger, ColorIndex) {
     GREEN_COLOR_INDEX,
     AMBER_COLOR_INDEX,
     RED_COLOR_INDEX,
     BELL_COLOR_INDEX,
     COLOR_INDEX_COUNT
-} ColorIndex;
+};
 
 
 
 #pragma mark - API Keys
 static NSString *const API_KEY_CRASHLYTICS = @"8326e081af65babd59690e3dc0bbfea5dcd9abd3";
-
 
 
 
@@ -57,4 +56,3 @@ static NSString *const API_KEY_CRASHLYTICS = @"8326e081af65babd59690e3dc0bbfea5d
 #define BELL_R 255.
 #define BELL_G 246.
 #define BELL_B 0.
-

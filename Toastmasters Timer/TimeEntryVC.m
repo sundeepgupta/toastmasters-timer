@@ -8,10 +8,10 @@
 
 
 #import "TimeEntryVC.h"
-#import "TimerVC.h"
 #import "SGDeepCopy.h"
 #import "SGScrollWheel.h"
 #import "ColorButton.h"
+#import "AlertManager.h"
 
 
 #define WHEEL_PADDING 0
@@ -186,6 +186,7 @@
 #pragma mark - Save and Cancel
 - (IBAction)doneButtonPress:(id)sender {
     [self saveColorsToDefaults];
+    [self.alertManager recreateNotifications];
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 - (void)saveColorsToDefaults {

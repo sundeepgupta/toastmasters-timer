@@ -15,10 +15,10 @@
 
 
     #import "Helper.h"
-    #import "Constants.h"
+
 
     #import "DDLog.h"
-extern int ddLogLevel;
+    extern int ddLogLevel;
 
 
 #endif

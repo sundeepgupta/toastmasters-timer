@@ -189,26 +189,30 @@
 
 #pragma mark - Color Button
 - (IBAction)greenButtonTapped:(id)sender {
-    [self presentTimeEntryVcWith:GREEN_COLOR_INDEX];
+    [self presentTimeEntryVcWithIndex:GREEN_COLOR_INDEX];
 }
 - (IBAction)amberButtonTapped:(id)sender {
-    [self presentTimeEntryVcWith:AMBER_COLOR_INDEX];
+    [self presentTimeEntryVcWithIndex:AMBER_COLOR_INDEX];
 }
 - (IBAction)redButtonTapped:(id)sender {
-    [self presentTimeEntryVcWith:RED_COLOR_INDEX];
+    [self presentTimeEntryVcWithIndex:RED_COLOR_INDEX];
 }
 - (IBAction)bellButtonTapped:(id)sender {
-    [self presentTimeEntryVcWith:BELL_COLOR_INDEX];
+    [self presentTimeEntryVcWithIndex:BELL_COLOR_INDEX];
 }
 
-- (void)presentTimeEntryVcWith:(ColorIndex)index {
+- (void)presentTimeEntryVcWithIndex:(ColorIndex)index {
+    UIViewController *vc = [self timeEntryVcWithIndex:index];
+    [self presentViewController:vc animated:YES completion:nil];
+}
+- (TimeEntryVC *)timeEntryVcWithIndex:(ColorIndex)index {
     NSString *vcClassName = NSStringFromClass([TimeEntryVC class]);
     TimeEntryVC *vc = [self.storyboard instantiateViewControllerWithIdentifier:vcClassName];
     vc.currentTimerString = self.timerLabel.text;
     vc.currentColorIndex = index;
-    [self presentViewController:vc animated:YES completion:nil];
+    vc.alertManager = self.alertManager;
+    return vc;
 }
-
 
 
 #pragma mark - Audio Alert Button
