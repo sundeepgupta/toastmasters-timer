@@ -240,10 +240,10 @@
 		AE06488318B91C65006902A4 /* App */ = {
 			isa = PBXGroup;
 			children = (
-				AE06488118B91ABF006902A4 /* Resources */,
 				AE488FC917DD2A5B0090E139 /* Controllers */,
-				AE488FC817DD2A510090E139 /* Views */,
+				AE06488118B91ABF006902A4 /* Resources */,
 				AE7223B117BDAB66003B60A5 /* Supporting Files */,
+				AE488FC817DD2A510090E139 /* Views */,
 			);
 			name = App;
 			sourceTree = "<group>";
