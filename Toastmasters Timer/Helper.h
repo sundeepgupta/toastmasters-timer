@@ -18,6 +18,15 @@
 
 @interface Helper : NSObject
 
+
+
++ (void)openWebsiteWithUrlString:(NSString *)urlString;
++ (void)openAppWithUrlString:(NSString *)urlString;
+
++ (void)showAlertWithTitle:(NSString *)title withMessage:(NSString *)message;
+
+
+
 #pragma mark - Strings from seconds and wheel
 + (NSString *)stringForSeconds:(NSInteger)totalSeconds;
 

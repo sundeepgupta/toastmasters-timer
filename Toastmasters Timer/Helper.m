@@ -15,6 +15,46 @@
 
 @implementation Helper
 
+
+#pragma mark - App and Url handling
++ (void)openWebsiteWithUrlString:(NSString *)urlString {
+    if ([self canOpenAppWithUrlPrefix:@"http://"]) {
+        [self openAppWithUrlString:urlString];
+    } else {
+        [self showAlertWithTitle:@"Can't Open" withMessage:@"Sorry, your device cannot open the url specified."];
+    }
+}
++ (BOOL)canOpenAppWithUrlPrefix:(NSString *)urlPrefix {
+    BOOL canOpen = NO;
+    NSURL *url = [NSURL URLWithString:urlPrefix];
+    UIApplication *app = [UIApplication sharedApplication];
+    if ([app canOpenURL:url]) {
+        canOpen = YES;
+    }
+    return canOpen;
+}
++ (void)openAppWithUrlString:(NSString *)urlString {    
+    NSURL *url = [NSURL URLWithString:urlString];
+    UIApplication *app = [UIApplication sharedApplication];
+    [app openURL:url];
+}
+
+
+
+
+#pragma mark - Alert views
++ (void)showAlertWithTitle:(NSString *)title withMessage:(NSString *)message {
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:title message:message delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+    [alert show];
+}
+
+
+
+
+
+
+
+
 #pragma mark - Strings from seconds and wheel
 + (NSString *)stringForSeconds:(NSInteger)seconds {
     NSInteger adjustedSeconds = [self adjustedSeconds:seconds];

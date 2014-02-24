@@ -13,6 +13,10 @@ typedef NS_ENUM(NSUInteger, ColorIndex) {
 static NSString *const API_KEY_CRASHLYTICS = @"8326e081af65babd59690e3dc0bbfea5dcd9abd3";
 
 
+#pragma mark - URLs
+static NSString *const BASE_URL_RATE_APP = @"itms-apps://itunes.apple.com/app/id";
+static NSString *const APP_ID = @"708807408";
+
 
 //Timer Notification
 #define TIMER_NOTIFICATION @"timerNotification"

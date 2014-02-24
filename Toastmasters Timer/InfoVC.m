@@ -42,6 +42,16 @@
 
 
 
+#pragma mark - Rate App Button
+- (IBAction)rateAppButtonPress:(id)sender {
+    [Helper openAppWithUrlString:self.urlStringForRateApp];
+}
+- (NSString *)urlStringForRateApp {
+    return [NSString stringWithFormat:@"%@%@", BASE_URL_RATE_APP, APP_ID];
+}
+
+
+#pragma mark - Sundeep Button
 - (IBAction)sundeepButtonPress:(id)sender {
     if ([MFMailComposeViewController canSendMail]) {
         [self email];
@@ -99,9 +109,7 @@
 
 
 
-
-
-
+#pragma mark - Nicole Button
 - (IBAction)nicoleButtonPress:(id)sender {
     NSString *urlString = @"http://www.redconservatory.com";
     NSURL *url = [NSURL URLWithString:urlString];
