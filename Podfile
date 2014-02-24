@@ -9,5 +9,4 @@ target :"Toastmasters Timer Tests", :exclusive => true do
    pod "Kiwi/XCTest"
 end
 
-pod "iRate"
 pod 'CocoaLumberjack'
