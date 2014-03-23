@@ -209,4 +209,16 @@
 }
 
 
++ (BOOL)isFirstLaunch {
+    BOOL isFirstLaunch;
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    if ([defaults objectForKey:IS_NOT_FIRST_LAUNCH]) {
+        isFirstLaunch = NO;
+    } else {
+        isFirstLaunch = YES;
+        [defaults setObject:@1 forKey:IS_NOT_FIRST_LAUNCH];
+    }
+    return isFirstLaunch;
+}
+
 @end

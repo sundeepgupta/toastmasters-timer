@@ -13,6 +13,7 @@
 #import "InfoVC.h"
 #import "AlertManager.h"
 #import "ColorButton.h"
+#import "TTStrings.h"
 
 
 @interface TimerVC ()
@@ -42,6 +43,10 @@
     [self setupAlertManager];
     [self setupAlertButton];
     [Helper registerForTimerNotificationsWithObject:self];
+    
+    if ([Helper isFirstLaunch]) {
+        [self doFirstLaunchActions];
+    }
 }
 
 - (void)setupColorButtonArray {
@@ -71,6 +76,10 @@
     }
 }
 
+
+- (void)doFirstLaunchActions {
+    [self showTips];
+}
 
 
 #pragma mark - View Will Appear
@@ -247,6 +256,12 @@
     vc.currentTimerString = self.timerLabel.text;
     vc.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
     [self presentViewController:vc animated:YES completion:nil];
+}
+
+
+#pragma mark - Tips
+- (void)showTips {
+    [Helper showAlertWithTitle:STRING_TIP_TITLE withMessage:STRING_TIP_START_TIMER_EARLIER];
 }
 
 

@@ -1,0 +1,2 @@
+#define STRING_TIP_TITLE NSLocalizedString(@"Tip", @"The title of the tip alert")
+#define STRING_TIP_START_TIMER_EARLIER NSLocalizedString(@"In case you're in a rush, you can always start the timer before setting the colors.", @"The title of the tip alert")

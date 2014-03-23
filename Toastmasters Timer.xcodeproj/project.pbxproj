@@ -28,6 +28,7 @@
 		AE111FB117D019B500254EF4 /* mail.png in Resources */ = {isa = PBXBuildFile; fileRef = AE111FAF17D019B500254EF4 /* mail.png */; };
 		AE111FB217D019B500254EF4 /* mail@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AE111FB017D019B500254EF4 /* mail@2x.png */; };
 		AE111FB417D01FE700254EF4 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE111FB317D01FE700254EF4 /* MessageUI.framework */; };
+		AE393C0B18DF427B0058AEC6 /* HelperSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = AE393C0A18DF427B0058AEC6 /* HelperSpec.m */; };
 		AE3C7EC217ECF9080071725C /* AlertManager.m in Sources */ = {isa = PBXBuildFile; fileRef = AE3C7EC117ECF9080071725C /* AlertManager.m */; };
 		AE5208AA17C054AE002CFFD7 /* minus.png in Resources */ = {isa = PBXBuildFile; fileRef = AE5208A817C054AE002CFFD7 /* minus.png */; };
 		AE5208B217C0FF63002CFFD7 /* minus@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AE5208AE17C0FF63002CFFD7 /* minus@2x.png */; };
@@ -116,6 +117,8 @@
 		AE111FAF17D019B500254EF4 /* mail.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mail.png; sourceTree = "<group>"; };
 		AE111FB017D019B500254EF4 /* mail@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mail@2x.png"; sourceTree = "<group>"; };
 		AE111FB317D01FE700254EF4 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		AE393C0A18DF427B0058AEC6 /* HelperSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HelperSpec.m; path = "Toastmasters Timer Tests/HelperSpec.m"; sourceTree = "<group>"; };
+		AE393C0D18DF49B30058AEC6 /* TTStrings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TTStrings.h; path = "Toastmasters Timer/TTStrings.h"; sourceTree = "<group>"; };
 		AE3C7EC017ECF9080071725C /* AlertManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlertManager.h; sourceTree = "<group>"; };
 		AE3C7EC117ECF9080071725C /* AlertManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = AlertManager.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		AE3C7EC317ECFBA90071725C /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Constants.h; path = "Toastmasters Timer/Constants.h"; sourceTree = "<group>"; };
@@ -223,6 +226,7 @@
 			children = (
 				AE5208A717C054AE002CFFD7 /* Images */,
 				AE3C7EC317ECFBA90071725C /* Constants.h */,
+				AE393C0D18DF49B30058AEC6 /* TTStrings.h */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -459,6 +463,7 @@
 				AE06488418B91E0F006902A4 /* TimeEntryVCSpec.m */,
 				AEE1D65018B9C773006FF6C2 /* TimerVCSpec.m */,
 				AE07586718BAB4570052784C /* InfoVCSpec.m */,
+				AE393C0A18DF427B0058AEC6 /* HelperSpec.m */,
 			);
 			name = Specs;
 			sourceTree = "<group>";
@@ -513,7 +518,7 @@
 		AE72239D17BDAB65003B60A5 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0460;
+				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = "Sundeep Gupta";
 				TargetAttributes = {
 					AE0648A318B924B0006902A4 = {
@@ -695,6 +700,7 @@
 				AE0648B618B92540006902A4 /* TimeEntryVCSpec.m in Sources */,
 				AEE1D65118B9C773006FF6C2 /* TimerVCSpec.m in Sources */,
 				AEE1D65418B9CC3B006FF6C2 /* SpecHelper.m in Sources */,
+				AE393C0B18DF427B0058AEC6 /* HelperSpec.m in Sources */,
 				AE07586818BAB4570052784C /* InfoVCSpec.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -754,7 +760,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 9601ED1DC6624F528E0C2AB1 /* Pods-Toastmasters Timer Tests.xcconfig */;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Toastmasters Timer.app/Toastmasters Timer";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
@@ -792,7 +797,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 9601ED1DC6624F528E0C2AB1 /* Pods-Toastmasters Timer Tests.xcconfig */;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Toastmasters Timer.app/Toastmasters Timer";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;

@@ -7,6 +7,8 @@ typedef NS_ENUM(NSUInteger, ColorIndex) {
     COLOR_INDEX_COUNT
 };
 
+#pragma mark - Keys
+static NSString *const IS_NOT_FIRST_LAUNCH = @"IsNotFirstLaunch";
 
 
 #pragma mark - API Keys

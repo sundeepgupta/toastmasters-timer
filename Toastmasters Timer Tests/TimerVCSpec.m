@@ -4,6 +4,8 @@
 #import "TimeEntryVC.h"
 #import "AlertManager.h"
 #import "ColorButton.h"
+#import "Helper.h"
+#import "TTStrings.h"
 
 
 @interface TimerVC ()
@@ -13,6 +15,7 @@
 
 - (void)presentTimeEntryVcWithIndex:(ColorIndex)index;
 - (TimeEntryVC *)timeEntryVcWithIndex:(ColorIndex)index;
+- (void)showTips;
 @end
 
 
@@ -28,13 +31,23 @@ describe(@"TimerVC", ^{
         [subject view];
     });
     
+    context(@"on first launch", ^{
+
+        beforeEach(^{
+            [Helper stub:@selector(isFirstLaunch) andReturn:theValue(YES)];
+        });
+        
+        it(@"should let the user know of any tips", ^{
+            [[Helper should] receive:@selector(showAlertWithTitle:withMessage:) withArguments:STRING_TIP_TITLE, STRING_TIP_START_TIMER_EARLIER];
+            [subject viewDidLoad];
+        });
+    });
+    
     context(@"when pressing one of the color buttons", ^{
         it(@"should perform the correct segue", ^{
             [[subject shouldEventually] receive:@selector(presentTimeEntryVcWithIndex:) withArguments:theValue(GREEN_COLOR_INDEX)];
             [subject.greenButton sendActionsForControlEvents:UIControlEventTouchUpInside];
         });
-        
-        
         
         it(@"it should present the TimeEntryVC", ^{
             [[subject.presentedViewController shouldEventually] beKindOfClass:[TimeEntryVC class]];
