@@ -7,6 +7,7 @@
 
 
 @implementation SpecHelper
+
 + (UIViewController *)vcForClass:(Class)aClass {
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Storyboard" bundle:nil];
     NSString *className = NSStringFromClass(aClass);

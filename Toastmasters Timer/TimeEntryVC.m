@@ -1,12 +1,3 @@
-//
-//  TimeEntryVC.m
-//  Toastmasters Timer
-//
-//  Created by Sundeep Gupta on 2013-08-15.
-//  Copyright (c) 2013 Sundeep Gupta. All rights reserved.
-//
-
-
 #import "TimeEntryVC.h"
 #import "SGDeepCopy.h"
 #import "SGScrollWheel.h"
@@ -29,6 +20,7 @@
 @property (nonatomic, strong) NSArray *colorButtonArray;
 @property (strong, nonatomic) IBOutlet UILabel *timerLabel;
 @property (strong, nonatomic) IBOutlet UIImageView *wheelImageView;
+@property (nonatomic, weak) IBOutlet UIButton *resetButton;
 @end
 
 
@@ -41,7 +33,7 @@
     [self setupColorButtonArray];
     [self setupColorArray];
     [Helper setupTitlesForColorButtons:self.colorButtonArray withColorArray:self.colorArray];
-    [self setupRotaryWheel];
+    [self setupScrollWheel];
     [Helper registerForTimerNotificationsWithObject:self];
     [self setupTimerLabel];
     [self setupWheelImageView];
@@ -60,7 +52,7 @@
 }
 
 
-- (void)setupRotaryWheel {
+- (void)setupScrollWheel {
     CGFloat sideLength = self.wheelView.frame.size.width + 2*WHEEL_PADDING;
     CGRect frame = CGRectMake(-WHEEL_PADDING, -WHEEL_PADDING, sideLength, sideLength);
     self.rotaryWheel = [[SGScrollWheel alloc] initWithFrame:frame delegate:self numberOfSections:60/SECONDS_INCREMENT];
@@ -106,6 +98,17 @@
     [Helper setupTitleForColorButton:button withSeconds:newSeconds];
 }
 
+
+
+#pragma mark - Resetting colours
+- (IBAction)resetButtonPress {
+    [self resetColors];
+}
+- (void)resetColors {
+    for (ColorButton *button in self.colorButtonArray) {
+        [Helper setupTitleForColorButton:button withSeconds:0];
+    }
+}
 
 
 - (ColorButton *)buttonForCurrentColorIndex {
@@ -181,6 +184,7 @@
     }
     return name;
 }
+
 
 
 #pragma mark - Save and Cancel
