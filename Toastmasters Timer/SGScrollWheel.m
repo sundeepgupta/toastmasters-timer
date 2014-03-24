@@ -13,6 +13,7 @@
 
 #define kRadiansOffset M_PI/2 //put 0th section on top instead of on left
 #define kTouchTrackWidth 50
+#define kMinTouchDistanceFromCenter 50
 
 
 static CGFloat deltaAngle;
@@ -60,8 +61,8 @@ static CGFloat deltaAngle;
 
 - (void)setupTouchDistanceRange {
     CGFloat width = self.bounds.size.width;
-    self.maxTouchDistanceFromCenter = width/2;
-    self.minTouchDistanceFromCenter = self.maxTouchDistanceFromCenter - kTouchTrackWidth;
+    self.maxTouchDistanceFromCenter = width/2 + kTouchTrackWidth;
+    self.minTouchDistanceFromCenter = kMinTouchDistanceFromCenter;
 }
 
 

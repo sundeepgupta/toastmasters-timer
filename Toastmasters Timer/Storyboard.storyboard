@@ -296,21 +296,23 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EPW-ih-eam" userLabel="scroll wheel view">
-                                <rect key="frame" x="45" y="234" width="230" height="226"/>
+                                <rect key="frame" x="45" y="234" width="230" height="230"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="greenWheel" translatesAutoresizingMaskIntoConstraints="NO" id="rrW-J8-M7H">
-                                        <rect key="frame" x="0.0" y="0.0" width="230" height="226"/>
+                                        <rect key="frame" x="15" y="15" width="200" height="200"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="200" id="Zng-Ec-xGc"/>
+                                            <constraint firstAttribute="height" constant="200" id="llm-xF-xG5"/>
+                                        </constraints>
                                     </imageView>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="226" id="11I-oM-GUI"/>
-                                    <constraint firstItem="rrW-J8-M7H" firstAttribute="width" secondItem="EPW-ih-eam" secondAttribute="width" id="1rq-VH-2Cb"/>
-                                    <constraint firstItem="rrW-J8-M7H" firstAttribute="leading" secondItem="EPW-ih-eam" secondAttribute="leading" id="6Tr-kZ-kgL"/>
+                                    <constraint firstAttribute="height" constant="230" id="11I-oM-GUI"/>
+                                    <constraint firstAttribute="centerY" secondItem="rrW-J8-M7H" secondAttribute="centerY" id="1HM-rN-LEZ"/>
                                     <constraint firstAttribute="width" constant="230" id="BgO-Aj-ZDX"/>
-                                    <constraint firstItem="rrW-J8-M7H" firstAttribute="height" secondItem="EPW-ih-eam" secondAttribute="height" id="gAg-qK-NIn"/>
-                                    <constraint firstItem="rrW-J8-M7H" firstAttribute="top" secondItem="EPW-ih-eam" secondAttribute="top" id="gNt-3s-8SP"/>
+                                    <constraint firstAttribute="centerX" secondItem="rrW-J8-M7H" secondAttribute="centerX" id="Kfz-oz-jPH"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="toD-yk-PvK" userLabel="spacer 2">
@@ -360,7 +362,7 @@
                             <constraint firstAttribute="trailing" secondItem="toD-yk-PvK" secondAttribute="trailing" constant="20" id="eFf-LK-plu"/>
                             <constraint firstItem="ffR-7o-vMb" firstAttribute="height" secondItem="toD-yk-PvK" secondAttribute="height" constant="1" id="i69-fl-HSn"/>
                             <constraint firstItem="IZy-is-lCp" firstAttribute="top" secondItem="4Sj-yU-dEL" secondAttribute="bottom" constant="20" id="kSl-Kn-xwJ"/>
-                            <constraint firstItem="toD-yk-PvK" firstAttribute="top" secondItem="EPW-ih-eam" secondAttribute="bottom" id="qnv-lZ-SYE"/>
+                            <constraint firstItem="toD-yk-PvK" firstAttribute="top" secondItem="EPW-ih-eam" secondAttribute="bottom" constant="-4" id="qnv-lZ-SYE"/>
                             <constraint firstItem="3JZ-es-6bI" firstAttribute="leading" secondItem="9Fw-4P-LEf" secondAttribute="leading" constant="20" id="sfo-FX-xUp"/>
                             <constraint firstItem="ffR-7o-vMb" firstAttribute="top" secondItem="IZy-is-lCp" secondAttribute="bottom" constant="8" id="umR-Lg-iuH"/>
                         </constraints>

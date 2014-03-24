@@ -11,7 +11,7 @@
 @interface TimeEntryVC () <SGScrollWheelDelegate>
 @property (strong, nonatomic) NSUserDefaults *defaults;
 @property (nonatomic, strong) NSArray *colorArray;
-@property (nonatomic, strong) SGScrollWheel *rotaryWheel;
+@property (nonatomic, strong) SGScrollWheel *scrollWheel;
 @property (strong, nonatomic) IBOutlet UIView *wheelView;
 @property (strong, nonatomic) IBOutlet ColorButton *greenButton;
 @property (strong, nonatomic) IBOutlet ColorButton *amberButton;
@@ -55,8 +55,8 @@
 - (void)setupScrollWheel {
     CGFloat sideLength = self.wheelView.frame.size.width + 2*WHEEL_PADDING;
     CGRect frame = CGRectMake(-WHEEL_PADDING, -WHEEL_PADDING, sideLength, sideLength);
-    self.rotaryWheel = [[SGScrollWheel alloc] initWithFrame:frame delegate:self numberOfSections:60/SECONDS_INCREMENT];
-    [self.wheelView addSubview:self.rotaryWheel];
+    self.scrollWheel = [[SGScrollWheel alloc] initWithFrame:frame delegate:self numberOfSections:60/SECONDS_INCREMENT];
+    [self.wheelView addSubview:self.scrollWheel];
 }
 
 
