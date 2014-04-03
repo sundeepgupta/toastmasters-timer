@@ -6,6 +6,7 @@
 #import "ColorButton.h"
 #import "Helper.h"
 #import "TTStrings.h"
+#import "TTModalDelegate.h"
 
 
 @interface TimerVC ()
@@ -16,6 +17,10 @@
 - (void)presentTimeEntryVcWithIndex:(ColorIndex)index;
 - (TimeEntryVC *)timeEntryVcWithIndex:(ColorIndex)index;
 - (void)showTips;
+- (void)modalShouldDismiss;
+- (void)colorTimeDidChangeForIndex:(ColorIndex)index;
+- (void)deEmphasizeAllColors;
+- (void)deEmphasizeColorWithIndex:(ColorIndex)index;
 @end
 
 
@@ -43,6 +48,7 @@ describe(@"TimerVC", ^{
         });
     });
     
+    
     context(@"when pressing one of the color buttons", ^{
         it(@"should perform the correct segue", ^{
             [[subject shouldEventually] receive:@selector(presentTimeEntryVcWithIndex:) withArguments:theValue(GREEN_COLOR_INDEX)];
@@ -63,9 +69,30 @@ describe(@"TimerVC", ^{
             [[timeEntryVc.currentTimerString should] equal:@"testText"];
             [[timeEntryVc.alertManager should] equal:subject.alertManager];
             [[theValue(timeEntryVc.modalTransitionStyle) should] equal:theValue(UIModalTransitionStyleCrossDissolve)];
+            [[subject should] conformToProtocol:@protocol(TTModalDelegate)];
+            [[subject should] conformToProtocol:@protocol(TTTimeEntryVCDelegate)];
+            [[timeEntryVc.delegate should] equal:subject];
         });
     });
     
+    context(@"when the time entry VC's notifies us that its done button was pressed", ^{
+        it(@"should dismiss the time entry VC modal", ^{
+            [[subject should] receive:@selector(dismissViewControllerAnimated:completion:) withArguments:theValue(YES), nil];
+            [subject modalShouldDismiss];
+        });
+        
+        it(@"should de-emphasize all colours", ^{
+            [[subject shouldNot] receive:@selector(deEmphasizeAllColors)];
+            [subject modalShouldDismiss];
+        });
+    });
+    
+    context(@"when the colour time did change", ^{
+        it(@"should de-emphasize that colour", ^{
+            [[subject should] receive:@selector(deEmphasizeColorWithIndex:) withArguments:theValue(AMBER_COLOR_INDEX)];
+            [subject colorTimeDidChangeForIndex:AMBER_COLOR_INDEX];
+        });
+    });
 });
 
 SPEC_END

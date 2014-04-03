@@ -80,9 +80,10 @@
 
 
 
-#pragma mark - Rotary wheel delegates
+#pragma mark - Scroll wheel delegates
 - (void)wheelDidTurnClockwise:(BOOL)didTurnClockwise {
     [self updateCurrentButtonTitleShouldIncrement:didTurnClockwise];
+    [self.delegate colorTimeDidChangeForIndex:self.currentColorIndex];
 }
 - (void)updateCurrentButtonTitleShouldIncrement:(BOOL)shouldIncrement {
     ColorButton *button = [self buttonForCurrentColorIndex];
@@ -191,7 +192,7 @@
 - (IBAction)doneButtonPress:(id)sender {
     [self saveColorsToDefaults];
     [self.alertManager recreateNotifications];
-    [self dismissViewControllerAnimated:YES completion:nil];
+    [self.delegate modalShouldDismiss];
 }
 - (void)saveColorsToDefaults {
     NSArray *colorArray = [self newColorArray];

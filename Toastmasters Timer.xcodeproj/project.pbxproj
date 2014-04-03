@@ -168,6 +168,7 @@
 		AEAE24E817CAB08300DA265B /* ok@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ok@2x.png"; sourceTree = "<group>"; };
 		AEAE24E917CAB08300DA265B /* settings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = settings.png; sourceTree = "<group>"; };
 		AEAE24EA17CAB08300DA265B /* settings@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "settings@2x.png"; sourceTree = "<group>"; };
+		AEB3E4EA18ECEDA400E6A5FA /* TTModalDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TTModalDelegate.h; path = "Toastmasters Timer/TTModalDelegate.h"; sourceTree = "<group>"; };
 		AEBAF2F317E7D9B000BA9479 /* info.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = info.png; sourceTree = "<group>"; };
 		AEBAF2F417E7D9B000BA9479 /* info@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "info@2x.png"; sourceTree = "<group>"; };
 		AECC0AF21856B61400815DA2 /* SGSection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGSection.h; sourceTree = "<group>"; };
@@ -248,6 +249,7 @@
 				AE06488118B91ABF006902A4 /* Resources */,
 				AE7223B117BDAB66003B60A5 /* Supporting Files */,
 				AE488FC817DD2A510090E139 /* Views */,
+				AEB3E4EA18ECEDA400E6A5FA /* TTModalDelegate.h */,
 			);
 			name = App;
 			sourceTree = "<group>";

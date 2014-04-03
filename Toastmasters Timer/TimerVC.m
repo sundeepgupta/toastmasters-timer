@@ -16,7 +16,7 @@
 #import "TTStrings.h"
 
 
-@interface TimerVC ()
+@interface TimerVC () <TTModalDelegate, TTTimeEntryVCDelegate>
 @property (strong, nonatomic) Timer *timer;
 @property (strong, nonatomic) AlertManager *alertManager;
 @property (strong, nonatomic) NSUserDefaults *defaults;
@@ -82,8 +82,12 @@
 }
 
 
-#pragma mark - View Will Appear
 - (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [self updateView];
+}
+
+- (void)updateView {
     [self setupColorArray];
     [Helper setupTitlesForColorButtons:self.colorButtonArray withColorArray:self.colorArray];
 }
@@ -105,6 +109,11 @@
     for (ColorButton *button in self.colorButtonArray) {
         [button deEmphasize];
     }
+}
+
+- (void)deEmphasizeColorWithIndex:(ColorIndex)index {
+    ColorButton *button = self.colorButtonArray[index];
+    [button deEmphasize];
 }
 
 
@@ -221,6 +230,7 @@
     vc.currentColorIndex = index;
     vc.alertManager = self.alertManager;
     vc.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
+    vc.delegate = self;
     return vc;
 }
 
@@ -264,6 +274,20 @@
     [Helper showAlertWithTitle:STRING_TIP_TITLE withMessage:STRING_TIP_START_TIMER_EARLIER];
 }
 
+
+
+#pragma mark - Time Entry VC Delegate Methods
+- (void)colorTimeDidChangeForIndex:(ColorIndex)index {
+    [self deEmphasizeColorWithIndex:index];
+}
+
+
+
+
+#pragma mark - Modal Delegate Methods
+- (void)modalShouldDismiss {
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
 
 
 

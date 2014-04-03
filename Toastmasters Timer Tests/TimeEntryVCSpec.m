@@ -15,6 +15,7 @@
 
 - (IBAction)doneButtonPress:(id)sender;
 - (IBAction)resetButtonPress;
+- (void)wheelDidTurnClockwise:(BOOL)didTurnClockwise;
 @end
 
 
@@ -62,8 +63,18 @@ describe(@"TimeEntryVC", ^{
     
     
     context(@"when changing the times", ^{
+        
+        beforeEach(^{
+            subject.currentColorIndex = AMBER_COLOR_INDEX;
+        });
+        
         it(@"should allow the user to reset the times to zero", ^{
             
+        });
+        
+        it(@"should notify the delegate that the colour has changed", ^{
+            [[subject.delegate shouldEventually] receive:@selector(colorTimeDidChangeForIndex:) withArguments:theValue(AMBER_COLOR_INDEX)];
+            [subject wheelDidTurnClockwise:YES];
         });
     });
     
@@ -75,6 +86,15 @@ describe(@"TimeEntryVC", ^{
             [subject doneButtonPress:nil];
         });
     });
+    
+    
+    context(@"when pressing the done button", ^{
+        it(@"should notify its delegate with the correct methods", ^{
+            [[subject.delegate shouldEventually] receive:@selector(modalShouldDismiss)];
+            [subject doneButtonPress:nil];
+        });
+    });
+    
 });
 
 SPEC_END

@@ -8,6 +8,13 @@
 
 #import <UIKit/UIKit.h>
 #import "Constants.h"
+#import "TTModalDelegate.h"
+
+
+@protocol TTTimeEntryVCDelegate <NSObject>
+@required
+- (void)colorTimeDidChangeForIndex:(ColorIndex)index;
+@end
 
 @class AlertManager;
 
@@ -15,4 +22,5 @@
 @property (nonatomic, strong) NSString *currentTimerString;
 @property ColorIndex currentColorIndex;
 @property (nonatomic, strong) AlertManager *alertManager;
+@property (nonatomic, weak) NSObject<TTModalDelegate, TTTimeEntryVCDelegate> *delegate;
 @end
