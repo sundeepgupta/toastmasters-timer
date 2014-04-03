@@ -261,10 +261,15 @@
 
 #pragma mark - Info Button
 - (IBAction)infoButtonPress:(id)sender {
+    [self presentInfoVC];
+}
+
+- (void)presentInfoVC {
     NSString *vcClassName = NSStringFromClass([InfoVC class]);
     InfoVC *vc = [self.storyboard instantiateViewControllerWithIdentifier:vcClassName];
     vc.currentTimerString = self.timerLabel.text;
     vc.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
+    vc.delegate = self;
     [self presentViewController:vc animated:YES completion:nil];
 }
 

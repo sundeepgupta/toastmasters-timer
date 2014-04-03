@@ -121,7 +121,7 @@
 
 
 - (IBAction)doneButtonPress:(id)sender {
-    [self dismissViewControllerAnimated:YES completion:nil];
+    [self.delegate modalShouldDismiss];
 }
 
 

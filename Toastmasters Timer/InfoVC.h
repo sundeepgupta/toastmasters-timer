@@ -8,7 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import <MessageUI/MessageUI.h>
+#import "TTModalDelegate.h"
 
 @interface InfoVC : UIViewController <MFMailComposeViewControllerDelegate>
 @property (nonatomic, strong) NSString *currentTimerString;
+@property (nonatomic, weak) NSObject<TTModalDelegate> *delegate;
 @end

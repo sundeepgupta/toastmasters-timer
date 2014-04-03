@@ -7,6 +7,7 @@
 #import "Helper.h"
 #import "TTStrings.h"
 #import "TTModalDelegate.h"
+#import "InfoVC.h"
 
 
 @interface TimerVC ()
@@ -21,6 +22,8 @@
 - (void)colorTimeDidChangeForIndex:(ColorIndex)index;
 - (void)deEmphasizeAllColors;
 - (void)deEmphasizeColorWithIndex:(ColorIndex)index;
+- (void)presentInfoVC;
+- (IBAction)infoButtonPress:(id)sender;
 @end
 
 
@@ -32,7 +35,10 @@ describe(@"TimerVC", ^{
     __block TimerVC *subject;
     
     beforeEach(^{
+        UIWindow *window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+        [window makeKeyAndVisible];
         subject = (TimerVC *)[SpecHelper vcForClass:[TimerVC class]];
+        window.rootViewController = subject;
         [subject view];
     });
     
@@ -74,6 +80,41 @@ describe(@"TimerVC", ^{
             [[timeEntryVc.delegate should] equal:subject];
         });
     });
+    
+    context(@"when pressing the info button", ^{
+        it(@"should perform the correct segue", ^{
+            [[subject shouldEventually] receive:@selector(presentInfoVC)];
+            [subject infoButtonPress:nil];
+        });
+        
+        it(@"it should present the info view", ^{
+            [[subject.presentedViewController shouldEventually] beKindOfClass:[InfoVC class]];
+            [subject presentInfoVC];
+        });
+        
+        it(@"should be set as the info VC's delegate", ^{
+            [subject stub:@selector(presentViewController:animated:completion:) withArguments:subject, theValue(NO), nil];
+            [subject presentInfoVC];
+            InfoVC *infoVC = (InfoVC *)subject.presentedViewController;
+            [[infoVC.delegate should] equal:subject];
+        });
+    });;
+    
+    context(@"When creating the TimeEntryVC", ^{
+        it(@"should be setup correctly", ^{
+            subject.timerLabel.text = @"testText";
+            TimeEntryVC *timeEntryVc = [subject timeEntryVcWithIndex:AMBER_COLOR_INDEX];
+            [[theValue(timeEntryVc.currentColorIndex) should] equal:theValue(AMBER_COLOR_INDEX)];
+            [[timeEntryVc.currentTimerString should] equal:@"testText"];
+            [[timeEntryVc.alertManager should] equal:subject.alertManager];
+            [[theValue(timeEntryVc.modalTransitionStyle) should] equal:theValue(UIModalTransitionStyleCrossDissolve)];
+            [[subject should] conformToProtocol:@protocol(TTModalDelegate)];
+            [[subject should] conformToProtocol:@protocol(TTTimeEntryVCDelegate)];
+            [[timeEntryVc.delegate should] equal:subject];
+        });
+    });
+
+    
     
     context(@"when the time entry VC's notifies us that its done button was pressed", ^{
         it(@"should dismiss the time entry VC modal", ^{

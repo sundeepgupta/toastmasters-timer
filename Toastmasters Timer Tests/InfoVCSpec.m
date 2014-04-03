@@ -6,6 +6,7 @@
 
 @interface InfoVC ()
 - (IBAction)rateAppButtonPress:(id)sender;
+- (IBAction)doneButtonPress:(id)sender;
 @end
 
 
@@ -21,15 +22,19 @@ describe(@"InfoVC", ^{
         [subject view];
     });
     
-    context(@"rate me button", ^{
-        it(@"opens the correct website", ^{
+    context(@"when the rate me button is pressed", ^{
+        it(@"should open the correct website", ^{
             [[Helper shouldEventually] receive:@selector(openAppWithUrlString:) withArguments:@"itms-apps://itunes.apple.com/app/id708807408"];
             [subject rateAppButtonPress:nil];
         });
     });
     
-
-    
+    context(@"when the done button is pressed", ^{
+        it(@"it should notify the delegate", ^{
+            [[subject.delegate shouldEventually] receive:@selector(modalShouldDismiss)];
+            [subject doneButtonPress:nil];
+        });
+    });
     
     
 });
