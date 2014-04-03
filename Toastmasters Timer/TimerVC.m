@@ -230,7 +230,8 @@
     vc.currentColorIndex = index;
     vc.alertManager = self.alertManager;
     vc.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
-    vc.delegate = self;
+    vc.modalDelegate = self;
+    vc.timeEntryDelegate = self;
     return vc;
 }
 
@@ -284,6 +285,10 @@
 #pragma mark - Time Entry VC Delegate Methods
 - (void)colorTimeDidChangeForIndex:(ColorIndex)index {
     [self deEmphasizeColorWithIndex:index];
+}
+
+- (void)didResetAllColourTimes {
+    [self deEmphasizeAllColors];
 }
 
 

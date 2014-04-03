@@ -27,28 +27,33 @@ describe(@"TimeEntryVC", ^{
     
     beforeEach(^{
         subject = (TimeEntryVC *)[SpecHelper vcForClass:[TimeEntryVC class]];
+        NSObject *mockTimeEntryDelegate = [KWMock nullMockForProtocol:@protocol(TTTimeEntryVCDelegate)];
+        [subject stub:@selector(timeEntryDelegate) andReturn:mockTimeEntryDelegate];
+        NSObject *mockModalDelegate = [KWMock nullMockForProtocol:@protocol(TTTimeEntryVCDelegate)];
+        [subject stub:@selector(modalDelegate) andReturn:mockModalDelegate];
+        [subject view];
+        
     });
     
-    
-    context(@"time resetting", ^{
-        
-        __block NSArray *actions;
-        
-        beforeEach(^{
-            [subject view];
-        });
-        
-        it(@"should be setup properly", ^{
+    context(@"when loaded", ^{
+        it(@"should setup the reset button properly", ^{
             [[subject.resetButton should] beKindOfClass:[UIButton class]];
             [[theValue(subject.resetButton.allTargets.count) should] equal:theValue(1)];
-            actions = [subject.resetButton actionsForTarget:subject forControlEvent:UIControlEventTouchUpInside];
+            NSArray *actions = [subject.resetButton actionsForTarget:subject forControlEvent:UIControlEventTouchUpInside];
             [[theValue(actions.count) should] equal:theValue(1)];
             NSString *buttonSelectorName = actions.firstObject;
             NSString *subjectSelectorName = NSStringFromSelector(@selector(resetButtonPress));
             [[buttonSelectorName should] equal:subjectSelectorName];
         });
+    });
+    
+    context(@"when pressing the reset button", ^{
+        it(@"should notify its delegate with the correct methods", ^{
+            [[subject.timeEntryDelegate should] receive:@selector(didResetAllColourTimes)];
+            [subject resetButtonPress];
+        });
         
-        it(@"reset all of the colours' time to zero ", ^{
+        it(@"it should reset all of the colours' time to zero ", ^{
             [Helper setupTitleForColorButton:subject.greenButton withSeconds:99];
             [Helper setupTitleForColorButton:subject.amberButton withSeconds:99];
             [Helper setupTitleForColorButton:subject.redButton withSeconds:99];
@@ -59,6 +64,8 @@ describe(@"TimeEntryVC", ^{
             [[subject.redButton.titleLabel.text should] equal:@"00:00"];
             [[subject.bellButton.titleLabel.text should] equal:@"00:00"];
         });
+        
+        
     });
     
     
@@ -68,12 +75,8 @@ describe(@"TimeEntryVC", ^{
             subject.currentColorIndex = AMBER_COLOR_INDEX;
         });
         
-        it(@"should allow the user to reset the times to zero", ^{
-            
-        });
-        
         it(@"should notify the delegate that the colour has changed", ^{
-            [[subject.delegate shouldEventually] receive:@selector(colorTimeDidChangeForIndex:) withArguments:theValue(AMBER_COLOR_INDEX)];
+            [[subject.timeEntryDelegate should] receive:@selector(colorTimeDidChangeForIndex:) withArguments:theValue(AMBER_COLOR_INDEX)];
             [subject wheelDidTurnClockwise:YES];
         });
     });
@@ -82,7 +85,7 @@ describe(@"TimeEntryVC", ^{
         it(@"the local notifications should be recreated", ^{
             AlertManager *alertManager = [AlertManager new];
             subject.alertManager = alertManager;
-            [[alertManager shouldEventually] receive:@selector(recreateNotifications)];
+            [[alertManager should] receive:@selector(recreateNotifications)];
             [subject doneButtonPress:nil];
         });
     });
@@ -90,11 +93,10 @@ describe(@"TimeEntryVC", ^{
     
     context(@"when pressing the done button", ^{
         it(@"should notify its delegate with the correct methods", ^{
-            [[subject.delegate shouldEventually] receive:@selector(modalShouldDismiss)];
+            [[subject.modalDelegate should] receive:@selector(modalShouldDismiss)];
             [subject doneButtonPress:nil];
         });
     });
-    
 });
 
 SPEC_END

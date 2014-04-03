@@ -14,6 +14,7 @@
 @protocol TTTimeEntryVCDelegate <NSObject>
 @required
 - (void)colorTimeDidChangeForIndex:(ColorIndex)index;
+- (void)didResetAllColourTimes;
 @end
 
 @class AlertManager;
@@ -22,5 +23,6 @@
 @property (nonatomic, strong) NSString *currentTimerString;
 @property ColorIndex currentColorIndex;
 @property (nonatomic, strong) AlertManager *alertManager;
-@property (nonatomic, weak) NSObject<TTModalDelegate, TTTimeEntryVCDelegate> *delegate;
+@property (nonatomic, weak) NSObject<TTModalDelegate> *modalDelegate;
+@property (nonatomic, weak) NSObject<TTTimeEntryVCDelegate> *timeEntryDelegate;
 @end

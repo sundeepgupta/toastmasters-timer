@@ -83,7 +83,7 @@
 #pragma mark - Scroll wheel delegates
 - (void)wheelDidTurnClockwise:(BOOL)didTurnClockwise {
     [self updateCurrentButtonTitleShouldIncrement:didTurnClockwise];
-    [self.delegate colorTimeDidChangeForIndex:self.currentColorIndex];
+    [self.timeEntryDelegate colorTimeDidChangeForIndex:self.currentColorIndex];
 }
 - (void)updateCurrentButtonTitleShouldIncrement:(BOOL)shouldIncrement {
     ColorButton *button = [self buttonForCurrentColorIndex];
@@ -104,6 +104,7 @@
 #pragma mark - Resetting colours
 - (IBAction)resetButtonPress {
     [self resetColors];
+    [self.timeEntryDelegate didResetAllColourTimes];
 }
 - (void)resetColors {
     for (ColorButton *button in self.colorButtonArray) {
@@ -192,7 +193,7 @@
 - (IBAction)doneButtonPress:(id)sender {
     [self saveColorsToDefaults];
     [self.alertManager recreateNotifications];
-    [self.delegate modalShouldDismiss];
+    [self.modalDelegate modalShouldDismiss];
 }
 - (void)saveColorsToDefaults {
     NSArray *colorArray = [self newColorArray];

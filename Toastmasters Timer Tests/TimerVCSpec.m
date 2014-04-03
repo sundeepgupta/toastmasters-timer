@@ -24,6 +24,7 @@
 - (void)deEmphasizeColorWithIndex:(ColorIndex)index;
 - (void)presentInfoVC;
 - (IBAction)infoButtonPress:(id)sender;
+- (void)didResetAllColourTimes;
 @end
 
 
@@ -57,7 +58,7 @@ describe(@"TimerVC", ^{
     
     context(@"when pressing one of the color buttons", ^{
         it(@"should perform the correct segue", ^{
-            [[subject shouldEventually] receive:@selector(presentTimeEntryVcWithIndex:) withArguments:theValue(GREEN_COLOR_INDEX)];
+            [[subject should] receive:@selector(presentTimeEntryVcWithIndex:) withArguments:theValue(GREEN_COLOR_INDEX)];
             [subject.greenButton sendActionsForControlEvents:UIControlEventTouchUpInside];
         });
         
@@ -77,13 +78,14 @@ describe(@"TimerVC", ^{
             [[theValue(timeEntryVc.modalTransitionStyle) should] equal:theValue(UIModalTransitionStyleCrossDissolve)];
             [[subject should] conformToProtocol:@protocol(TTModalDelegate)];
             [[subject should] conformToProtocol:@protocol(TTTimeEntryVCDelegate)];
-            [[timeEntryVc.delegate should] equal:subject];
+            [[timeEntryVc.modalDelegate should] equal:subject];
+            [[timeEntryVc.timeEntryDelegate should] equal:subject];
         });
     });
     
     context(@"when pressing the info button", ^{
         it(@"should perform the correct segue", ^{
-            [[subject shouldEventually] receive:@selector(presentInfoVC)];
+            [[subject should] receive:@selector(presentInfoVC)];
             [subject infoButtonPress:nil];
         });
         
@@ -110,7 +112,8 @@ describe(@"TimerVC", ^{
             [[theValue(timeEntryVc.modalTransitionStyle) should] equal:theValue(UIModalTransitionStyleCrossDissolve)];
             [[subject should] conformToProtocol:@protocol(TTModalDelegate)];
             [[subject should] conformToProtocol:@protocol(TTTimeEntryVCDelegate)];
-            [[timeEntryVc.delegate should] equal:subject];
+            [[timeEntryVc.modalDelegate should] equal:subject];
+            [[timeEntryVc.timeEntryDelegate should] equal:subject];
         });
     });
 
@@ -134,6 +137,14 @@ describe(@"TimerVC", ^{
             [subject colorTimeDidChangeForIndex:AMBER_COLOR_INDEX];
         });
     });
+    
+    context(@"when the reset all colours button was pressed", ^{
+        it(@"should de-emphasize that colour", ^{
+            [[subject should] receive:@selector(deEmphasizeAllColors)];
+            [subject didResetAllColourTimes];
+        });
+    });
+    
 });
 
 SPEC_END
