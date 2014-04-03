@@ -121,7 +121,7 @@
 
 
 - (IBAction)doneButtonPress:(id)sender {
-    [self.delegate modalShouldDismiss];
+    [self.modalDelegate modalShouldDismiss];
 }
 
 

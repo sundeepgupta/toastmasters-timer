@@ -24,14 +24,16 @@ describe(@"InfoVC", ^{
     
     context(@"when the rate me button is pressed", ^{
         it(@"should open the correct website", ^{
-            [[Helper shouldEventually] receive:@selector(openAppWithUrlString:) withArguments:@"itms-apps://itunes.apple.com/app/id708807408"];
+            [[Helper should] receive:@selector(openAppWithUrlString:) withArguments:@"itms-apps://itunes.apple.com/app/id708807408"];
             [subject rateAppButtonPress:nil];
         });
     });
     
     context(@"when the done button is pressed", ^{
         it(@"it should notify the delegate", ^{
-            [[subject.delegate shouldEventually] receive:@selector(modalShouldDismiss)];
+            NSObject *mockDelegate = [KWMock nullMockForProtocol:@protocol(TTModalDelegate)];
+            [subject stub:@selector(modalDelegate) andReturn:mockDelegate];
+            [[subject.modalDelegate should] receive:@selector(modalShouldDismiss)];
             [subject doneButtonPress:nil];
         });
     });

@@ -98,7 +98,7 @@ describe(@"TimerVC", ^{
             [subject stub:@selector(presentViewController:animated:completion:) withArguments:subject, theValue(NO), nil];
             [subject presentInfoVC];
             InfoVC *infoVC = (InfoVC *)subject.presentedViewController;
-            [[infoVC.delegate should] equal:subject];
+            [[infoVC.modalDelegate should] equal:subject];
         });
     });;
     

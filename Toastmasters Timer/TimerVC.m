@@ -270,7 +270,7 @@
     InfoVC *vc = [self.storyboard instantiateViewControllerWithIdentifier:vcClassName];
     vc.currentTimerString = self.timerLabel.text;
     vc.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
-    vc.delegate = self;
+    vc.modalDelegate = self;
     [self presentViewController:vc animated:YES completion:nil];
 }
 

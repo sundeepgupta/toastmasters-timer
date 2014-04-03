@@ -12,5 +12,5 @@
 
 @interface InfoVC : UIViewController <MFMailComposeViewControllerDelegate>
 @property (nonatomic, strong) NSString *currentTimerString;
-@property (nonatomic, weak) NSObject<TTModalDelegate> *delegate;
+@property (nonatomic, weak) NSObject<TTModalDelegate> *modalDelegate;
 @end
