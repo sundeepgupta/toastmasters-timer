@@ -1,12 +1,4 @@
-//
-//  AppDelegate.m
-//  Toastmasters Timer
-//
-//  Created by Sundeep Gupta on 2013-08-15.
-//  Copyright (c) 2013 Sundeep Gupta. All rights reserved.
-//
-
-#import "AppDelegate.h"
+#import "TTAppDelegate.h"
 #import "TimerVC.h"
 #import <Crashlytics/Crashlytics.h>
 #import "DDTTYLogger.h"
@@ -17,12 +9,12 @@
 int ddLogLevel;
 
 
-@interface AppDelegate ()
+@interface TTAppDelegate ()
 @property (strong, nonatomic) TimerVC *timerVc;
 @end
 
 
-@implementation AppDelegate
+@implementation TTAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
@@ -79,7 +71,7 @@ int ddLogLevel;
 
 - (void)setupGoogleAnalytics {
     [GAI sharedInstance].trackUncaughtExceptions = YES;
-    [GAI sharedInstance].dispatchInterval = 20;
+    [GAI sharedInstance].dispatchInterval = GOOGLE_ANALYTICS_DISPATCH_TIME_INTERVAL;
     [[[GAI sharedInstance] logger] setLogLevel:kGAILogLevelVerbose];
     [[GAI sharedInstance] trackerWithTrackingId:GOOGLE_ANALYTICS_TRACKING_ID];
 }

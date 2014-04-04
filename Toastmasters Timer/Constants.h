@@ -64,5 +64,6 @@ static NSString *const APP_ID = @"708807408";
 #define BELL_B 0.
 
 
-//API Keys
+//Google Analytics
 static NSString *const GOOGLE_ANALYTICS_TRACKING_ID = @"UA-49711300-2";
+#define GOOGLE_ANALYTICS_DISPATCH_TIME_INTERVAL 20
