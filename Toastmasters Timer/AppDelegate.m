@@ -11,6 +11,7 @@
 #import <Crashlytics/Crashlytics.h>
 #import "DDTTYLogger.h"
 #import "DDASLLogger.h"
+#import "GAI.h"
 
 
 int ddLogLevel;
@@ -31,6 +32,7 @@ int ddLogLevel;
     [self setupDefaults];
     [self clearAppIconBadge];
     [self setupCrashlytics];
+    [self setupGoogleAnalytics];
     return YES;
 }
 
@@ -74,6 +76,13 @@ int ddLogLevel;
 - (void)setupCrashlytics {
     [Crashlytics startWithAPIKey:API_KEY_CRASHLYTICS];
 }
+
+- (void)setupGoogleAnalytics {
+    [GAI sharedInstance].trackUncaughtExceptions = YES;
+    [[[GAI sharedInstance] logger] setLogLevel:kGAILogLevelVerbose];
+    [[GAI sharedInstance] trackerWithTrackingId:GOOGLE_ANALYTICS_TRACKING_ID];
+}
+
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     [self clearAppIconBadge];

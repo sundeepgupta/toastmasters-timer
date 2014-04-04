@@ -62,3 +62,7 @@ static NSString *const APP_ID = @"708807408";
 #define BELL_R 255.
 #define BELL_G 246.
 #define BELL_B 0.
+
+
+//API Keys
+static NSString *const GOOGLE_ANALYTICS_TRACKING_ID = @"UA-49711300-2";
