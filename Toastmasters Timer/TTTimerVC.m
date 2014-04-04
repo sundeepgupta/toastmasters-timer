@@ -8,6 +8,8 @@
 #import "TTStrings.h"
 
 
+
+
 @interface TTTimerVC () <TTModalDelegate, TTTimeEntryVCDelegate>
 @property (strong, nonatomic) TTTimer *timer;
 @property (strong, nonatomic) TTAlertManager *alertManager;
@@ -114,6 +116,8 @@
 #pragma mark - Timer Controls
 - (IBAction)pauseButtonPress:(id)sender {
     [self toggleTimer];
+    
+    
 }
 - (void)toggleTimer {
     TIMER_STATUS status = [self.timer status];
@@ -199,16 +203,21 @@
 
 #pragma mark - Color Button
 - (IBAction)greenButtonTapped:(id)sender {
-    [self presentTimeEntryVcWithIndex:GREEN_COLOR_INDEX];
+    [self handleColorButtonPressForIndex:GREEN_COLOR_INDEX];
 }
 - (IBAction)amberButtonTapped:(id)sender {
-    [self presentTimeEntryVcWithIndex:AMBER_COLOR_INDEX];
+    [self handleColorButtonPressForIndex:AMBER_COLOR_INDEX];
 }
 - (IBAction)redButtonTapped:(id)sender {
-    [self presentTimeEntryVcWithIndex:RED_COLOR_INDEX];
+    [self handleColorButtonPressForIndex:RED_COLOR_INDEX];
 }
 - (IBAction)bellButtonTapped:(id)sender {
-    [self presentTimeEntryVcWithIndex:BELL_COLOR_INDEX];
+    [self handleColorButtonPressForIndex:BELL_COLOR_INDEX];
+}
+
+- (void)handleColorButtonPressForIndex:(ColorIndex)index {
+    [self presentTimeEntryVcWithIndex:index];
+    [TTHelper sendTrackingInfoWithCategory:GOOGLE_ANALYTICS_CATEGORY_COLOR_TIMES action:GOOGLE_ANALYTICS_ACTION_CHANGE label:nil value:nil];
 }
 
 - (void)presentTimeEntryVcWithIndex:(ColorIndex)index {

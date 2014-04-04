@@ -1,5 +1,5 @@
 #import "Kiwi.h"
-#import "SpecHelper.h"
+#import "TTSpecHelper.h"
 #import "TTTimerVC.h"
 #import "TTTimeEntryVC.h"
 #import "TTAlertManager.h"
@@ -62,9 +62,14 @@ describe(@"TimerVC", ^{
             [subject.greenButton sendActionsForControlEvents:UIControlEventTouchUpInside];
         });
         
-        it(@"it should present the TimeEntryVC", ^{
+        it(@"should present the TimeEntryVC", ^{
             [[subject.presentedViewController shouldEventually] beKindOfClass:[TTTimeEntryVC class]];
             [subject presentTimeEntryVcWithIndex:0];
+        });
+        
+        it(@"should send GA tracking event ", ^{
+            [[TTHelper should] receive:@selector(sendTrackingInfoWithCategory:action:label:value:) withArguments:GOOGLE_ANALYTICS_CATEGORY_COLOR_TIMES, GOOGLE_ANALYTICS_ACTION_CHANGE, nil, nil];
+            [subject.greenButton sendActionsForControlEvents:UIControlEventTouchUpInside];
         });
     });
 

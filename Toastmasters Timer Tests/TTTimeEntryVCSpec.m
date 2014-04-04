@@ -1,7 +1,7 @@
 #import "Kiwi.h"
 #import "TTTimeEntryVC.h"
 #import "TTAlertManager.h"
-#import "SpecHelper.h"
+#import "TTSpecHelper.h"
 #import "TTColorButton.h"
 #import "TTHelper.h"
 

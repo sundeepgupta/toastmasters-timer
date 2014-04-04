@@ -67,3 +67,5 @@ static NSString *const APP_ID = @"708807408";
 //Google Analytics
 static NSString *const GOOGLE_ANALYTICS_TRACKING_ID = @"UA-49711300-2";
 #define GOOGLE_ANALYTICS_DISPATCH_TIME_INTERVAL 20
+static NSString *const GOOGLE_ANALYTICS_CATEGORY_COLOR_TIMES = @"Colour Times";
+static NSString *const GOOGLE_ANALYTICS_ACTION_CHANGE = @"Change";

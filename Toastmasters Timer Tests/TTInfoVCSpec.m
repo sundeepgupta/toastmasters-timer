@@ -1,5 +1,5 @@
 #import "Kiwi.h"
-#import "SpecHelper.h"
+#import "TTSpecHelper.h"
 #import "TTInfoVC.h"
 #import "TTHelper.h"
 
