@@ -7,9 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "TTBaseVc.h"
 
 
-@interface TimerVC : UIViewController
+@interface TimerVC : TTBaseVc
 - (void)setupViewForBackground;
 - (void)setupViewForReturningToForeground;
 @end

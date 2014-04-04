@@ -64,6 +64,8 @@
 		AEAE24EE17CAB08300DA265B /* ok@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AEAE24E817CAB08300DA265B /* ok@2x.png */; };
 		AEAE24EF17CAB08300DA265B /* settings.png in Resources */ = {isa = PBXBuildFile; fileRef = AEAE24E917CAB08300DA265B /* settings.png */; };
 		AEAE24F017CAB08300DA265B /* settings@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AEAE24EA17CAB08300DA265B /* settings@2x.png */; };
+		AEB3E4FD18EE31BF00E6A5FA /* TTBaseVc.m in Sources */ = {isa = PBXBuildFile; fileRef = AEB3E4FC18EE31BF00E6A5FA /* TTBaseVc.m */; };
+		AEB3E50118EE34B000E6A5FA /* TTAppDelegateSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = AEB3E50018EE34B000E6A5FA /* TTAppDelegateSpec.m */; };
 		AEBAF2F517E7D9B000BA9479 /* info.png in Resources */ = {isa = PBXBuildFile; fileRef = AEBAF2F317E7D9B000BA9479 /* info.png */; };
 		AEBAF2F617E7D9B000BA9479 /* info@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AEBAF2F417E7D9B000BA9479 /* info@2x.png */; };
 		AECC0AF41856B61400815DA2 /* SGSection.m in Sources */ = {isa = PBXBuildFile; fileRef = AECC0AF31856B61400815DA2 /* SGSection.m */; };
@@ -169,6 +171,9 @@
 		AEAE24E917CAB08300DA265B /* settings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = settings.png; sourceTree = "<group>"; };
 		AEAE24EA17CAB08300DA265B /* settings@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "settings@2x.png"; sourceTree = "<group>"; };
 		AEB3E4EA18ECEDA400E6A5FA /* TTModalDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TTModalDelegate.h; path = "Toastmasters Timer/TTModalDelegate.h"; sourceTree = "<group>"; };
+		AEB3E4FB18EE31BF00E6A5FA /* TTBaseVc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTBaseVc.h; sourceTree = "<group>"; };
+		AEB3E4FC18EE31BF00E6A5FA /* TTBaseVc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTBaseVc.m; sourceTree = "<group>"; };
+		AEB3E50018EE34B000E6A5FA /* TTAppDelegateSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TTAppDelegateSpec.m; path = "Toastmasters Timer Tests/TTAppDelegateSpec.m"; sourceTree = "<group>"; };
 		AEBAF2F317E7D9B000BA9479 /* info.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = info.png; sourceTree = "<group>"; };
 		AEBAF2F417E7D9B000BA9479 /* info@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "info@2x.png"; sourceTree = "<group>"; };
 		AECC0AF21856B61400815DA2 /* SGSection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGSection.h; sourceTree = "<group>"; };
@@ -332,6 +337,8 @@
 				AE7223E617BDAC8B003B60A5 /* TimerVC.m */,
 				AE0BAEBC1874B91B009F8066 /* ColorButton.h */,
 				AE0BAEBD1874B91B009F8066 /* ColorButton.m */,
+				AEB3E4FB18EE31BF00E6A5FA /* TTBaseVc.h */,
+				AEB3E4FC18EE31BF00E6A5FA /* TTBaseVc.m */,
 			);
 			name = Views;
 			path = "Toastmasters Timer";
@@ -466,6 +473,7 @@
 				AEE1D65018B9C773006FF6C2 /* TimerVCSpec.m */,
 				AE07586718BAB4570052784C /* InfoVCSpec.m */,
 				AE393C0A18DF427B0058AEC6 /* HelperSpec.m */,
+				AEB3E50018EE34B000E6A5FA /* TTAppDelegateSpec.m */,
 			);
 			name = Specs;
 			sourceTree = "<group>";
@@ -702,6 +710,7 @@
 				AE0648B618B92540006902A4 /* TimeEntryVCSpec.m in Sources */,
 				AEE1D65118B9C773006FF6C2 /* TimerVCSpec.m in Sources */,
 				AEE1D65418B9CC3B006FF6C2 /* SpecHelper.m in Sources */,
+				AEB3E50118EE34B000E6A5FA /* TTAppDelegateSpec.m in Sources */,
 				AE393C0B18DF427B0058AEC6 /* HelperSpec.m in Sources */,
 				AE07586818BAB4570052784C /* InfoVCSpec.m in Sources */,
 			);
@@ -722,6 +731,7 @@
 				AE0BAEBE1874B91B009F8066 /* ColorButton.m in Sources */,
 				AE9F976E17BEA00600626448 /* Helper.m in Sources */,
 				AECC0AF41856B61400815DA2 /* SGSection.m in Sources */,
+				AEB3E4FD18EE31BF00E6A5FA /* TTBaseVc.m in Sources */,
 				AE5208D317C17034002CFFD7 /* Toast+UIView.m in Sources */,
 				AE111FAE17D0036300254EF4 /* InfoVC.m in Sources */,
 			);

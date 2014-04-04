@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "Constants.h"
 #import "TTModalDelegate.h"
+#import "TTBaseVc.h"
 
 
 @protocol TTTimeEntryVCDelegate <NSObject>
@@ -19,7 +20,7 @@
 
 @class AlertManager;
 
-@interface TimeEntryVC : UIViewController
+@interface TimeEntryVC : TTBaseVc
 @property (nonatomic, strong) NSString *currentTimerString;
 @property ColorIndex currentColorIndex;
 @property (nonatomic, strong) AlertManager *alertManager;
