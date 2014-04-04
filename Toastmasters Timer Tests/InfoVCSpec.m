@@ -1,10 +1,10 @@
 #import "Kiwi.h"
 #import "SpecHelper.h"
-#import "InfoVC.h"
-#import "Helper.h"
+#import "TTInfoVC.h"
+#import "TTHelper.h"
 
 
-@interface InfoVC ()
+@interface TTInfoVC ()
 - (IBAction)rateAppButtonPress:(id)sender;
 - (IBAction)doneButtonPress:(id)sender;
 @end
@@ -15,16 +15,16 @@ SPEC_BEGIN(InfoVCSpec)
 
 describe(@"InfoVC", ^{
     
-    __block InfoVC *subject;
+    __block TTInfoVC *subject;
     
     beforeEach(^{
-        subject = (InfoVC *)[SpecHelper vcForClass:[InfoVC class]];
+        subject = (TTInfoVC *)[SpecHelper vcForClass:[TTInfoVC class]];
         [subject view];
     });
     
     context(@"when the rate me button is pressed", ^{
         it(@"should open the correct website", ^{
-            [[Helper should] receive:@selector(openAppWithUrlString:) withArguments:@"itms-apps://itunes.apple.com/app/id708807408"];
+            [[TTHelper should] receive:@selector(openAppWithUrlString:) withArguments:@"itms-apps://itunes.apple.com/app/id708807408"];
             [subject rateAppButtonPress:nil];
         });
     });

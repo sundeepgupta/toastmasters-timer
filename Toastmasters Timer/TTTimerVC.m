@@ -1,38 +1,30 @@
-//
-//  TimerVC.m
-//  Toastmasters Timer
-//
-//  Created by Sundeep Gupta on 2013-08-15.
-//  Copyright (c) 2013 Sundeep Gupta. All rights reserved.
-//
-
-#import "TimerVC.h"
-#import "Timer.h"
-#import "TimeEntryVC.h"
+#import "TTTimerVC.h"
+#import "TTTimer.h"
+#import "TTTimeEntryVC.h"
 #import "SGDeepCopy.h"
-#import "InfoVC.h"
-#import "AlertManager.h"
-#import "ColorButton.h"
+#import "TTInfoVC.h"
+#import "TTAlertManager.h"
+#import "TTColorButton.h"
 #import "TTStrings.h"
 
 
-@interface TimerVC () <TTModalDelegate, TTTimeEntryVCDelegate>
-@property (strong, nonatomic) Timer *timer;
-@property (strong, nonatomic) AlertManager *alertManager;
+@interface TTTimerVC () <TTModalDelegate, TTTimeEntryVCDelegate>
+@property (strong, nonatomic) TTTimer *timer;
+@property (strong, nonatomic) TTAlertManager *alertManager;
 @property (strong, nonatomic) NSUserDefaults *defaults;
 @property (nonatomic, strong) NSArray *colorArray;
 @property (strong, nonatomic) IBOutlet UIButton *pauseButton;
 @property (strong, nonatomic) IBOutlet UIButton *audioAlertButton;
 @property (strong, nonatomic) IBOutlet UILabel *timerLabel;
-@property (strong, nonatomic) IBOutlet ColorButton *greenButton;
-@property (strong, nonatomic) IBOutlet ColorButton *amberButton;
-@property (strong, nonatomic) IBOutlet ColorButton *redButton;
-@property (strong, nonatomic) IBOutlet ColorButton *bellButton;
+@property (strong, nonatomic) IBOutlet TTColorButton *greenButton;
+@property (strong, nonatomic) IBOutlet TTColorButton *amberButton;
+@property (strong, nonatomic) IBOutlet TTColorButton *redButton;
+@property (strong, nonatomic) IBOutlet TTColorButton *bellButton;
 @property (nonatomic, strong) NSArray *colorButtonArray;
 @end
 
 
-@implementation TimerVC
+@implementation TTTimerVC
 
 - (void)viewDidLoad
 {
@@ -42,9 +34,9 @@
     [self setupTimer];
     [self setupAlertManager];
     [self setupAlertButton];
-    [Helper registerForTimerNotificationsWithObject:self];
+    [TTHelper registerForTimerNotificationsWithObject:self];
     
-    if ([Helper isFirstLaunch]) {
+    if ([TTHelper isFirstLaunch]) {
         [self doFirstLaunchActions];
     }
 }
@@ -60,12 +52,12 @@
 
 
 - (void)setupTimer {
-    self.timer = [[Timer alloc] init];
+    self.timer = [[TTTimer alloc] init];
 }
 
 
 - (void)setupAlertManager {
-    self.alertManager = [[AlertManager alloc] initWithTimer:self.timer timerVC:self defaults:self.defaults];
+    self.alertManager = [[TTAlertManager alloc] initWithTimer:self.timer timerVC:self defaults:self.defaults];
 }
 
 - (void)setupAlertButton {
@@ -89,7 +81,7 @@
 
 - (void)updateView {
     [self setupColorArray];
-    [Helper setupTitlesForColorButtons:self.colorButtonArray withColorArray:self.colorArray];
+    [TTHelper setupTitlesForColorButtons:self.colorButtonArray withColorArray:self.colorArray];
 }
 
 - (void)setupColorArray {
@@ -101,18 +93,18 @@
 #pragma mark - Emphasize Color Labels
 - (void)emphasizeColorWithIndex:(ColorIndex)index {
     [self deEmphasizeAllColors];
-    ColorButton *button = self.colorButtonArray[index];
+    TTColorButton *button = self.colorButtonArray[index];
     [button emphasize];
 }
 
 - (void)deEmphasizeAllColors {
-    for (ColorButton *button in self.colorButtonArray) {
+    for (TTColorButton *button in self.colorButtonArray) {
         [button deEmphasize];
     }
 }
 
 - (void)deEmphasizeColorWithIndex:(ColorIndex)index {
-    ColorButton *button = self.colorButtonArray[index];
+    TTColorButton *button = self.colorButtonArray[index];
     [button deEmphasize];
 }
 
@@ -176,7 +168,7 @@
 }
 
 - (void)updateTimerLabel {
-    self.timerLabel.text = [Helper stringForSeconds:self.timer.seconds];
+    self.timerLabel.text = [TTHelper stringForSeconds:self.timer.seconds];
 }
 
 
@@ -223,9 +215,9 @@
     UIViewController *vc = [self timeEntryVcWithIndex:index];
     [self presentViewController:vc animated:YES completion:nil];
 }
-- (TimeEntryVC *)timeEntryVcWithIndex:(ColorIndex)index {
-    NSString *vcClassName = NSStringFromClass([TimeEntryVC class]);
-    TimeEntryVC *vc = [self.storyboard instantiateViewControllerWithIdentifier:vcClassName];
+- (TTTimeEntryVC *)timeEntryVcWithIndex:(ColorIndex)index {
+    NSString *vcClassName = NSStringFromClass([TTTimeEntryVC class]);
+    TTTimeEntryVC *vc = [self.storyboard instantiateViewControllerWithIdentifier:vcClassName];
     vc.currentTimerString = self.timerLabel.text;
     vc.currentColorIndex = index;
     vc.alertManager = self.alertManager;
@@ -266,8 +258,8 @@
 }
 
 - (void)presentInfoVC {
-    NSString *vcClassName = NSStringFromClass([InfoVC class]);
-    InfoVC *vc = [self.storyboard instantiateViewControllerWithIdentifier:vcClassName];
+    NSString *vcClassName = NSStringFromClass([TTInfoVC class]);
+    TTInfoVC *vc = [self.storyboard instantiateViewControllerWithIdentifier:vcClassName];
     vc.currentTimerString = self.timerLabel.text;
     vc.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
     vc.modalDelegate = self;
@@ -277,7 +269,7 @@
 
 #pragma mark - Tips
 - (void)showTips {
-    [Helper showAlertWithTitle:STRING_TIP_TITLE withMessage:STRING_TIP_START_TIMER_EARLIER];
+    [TTHelper showAlertWithTitle:STRING_TIP_TITLE withMessage:STRING_TIP_START_TIMER_EARLIER];
 }
 
 

@@ -1,17 +1,9 @@
-//
-//  ColorButton.m
-//  Toastmasters Timer
-//
-//  Created by Sundeep Gupta on 1/1/2014.
-//  Copyright (c) 2014 Sundeep Gupta. All rights reserved.
-//
+#import "TTColorButton.h"
 
-#import "ColorButton.h"
-
-@interface ColorButton ()
+@interface TTColorButton ()
 @end
 
-@implementation ColorButton
+@implementation TTColorButton
 
 - (void)emphasize {
     [self bold];

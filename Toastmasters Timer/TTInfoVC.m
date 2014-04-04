@@ -1,17 +1,17 @@
-#import "InfoVC.h"
+#import "TTInfoVC.h"
 
 
-@interface InfoVC ()
+@interface TTInfoVC ()
 @property (strong, nonatomic) IBOutlet UILabel *timerLabel;
 @end
 
 
-@implementation InfoVC
+@implementation TTInfoVC
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [Helper registerForTimerNotificationsWithObject:self];
+    [TTHelper registerForTimerNotificationsWithObject:self];
     [self setupTimerLabel];
 }
 
@@ -25,18 +25,18 @@
 
 #pragma mark - Timer Notification
 - (void)timerUpdatedSecondsWithNotification:(NSNotification *)notification {
-    NSInteger seconds = [Helper secondsForNotification:notification];
+    NSInteger seconds = [TTHelper secondsForNotification:notification];
     [self updateTimerLabelWithSeconds:seconds];
 }
 - (void)updateTimerLabelWithSeconds:(NSInteger)seconds {
-    self.timerLabel.text = [Helper stringForSeconds:seconds];
+    self.timerLabel.text = [TTHelper stringForSeconds:seconds];
 }
 
 
 
 #pragma mark - Rate App Button
 - (IBAction)rateAppButtonPress:(id)sender {
-    [Helper openAppWithUrlString:self.urlStringForRateApp];
+    [TTHelper openAppWithUrlString:self.urlStringForRateApp];
 }
 - (NSString *)urlStringForRateApp {
     return [NSString stringWithFormat:@"%@%@", BASE_URL_RATE_APP, APP_ID];

@@ -15,7 +15,7 @@
 		AE0648AD18B924B0006902A4 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = AE0648AB18B924B0006902A4 /* InfoPlist.strings */; };
 		AE0648B618B92540006902A4 /* TimeEntryVCSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = AE06488418B91E0F006902A4 /* TimeEntryVCSpec.m */; };
 		AE07586818BAB4570052784C /* InfoVCSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = AE07586718BAB4570052784C /* InfoVCSpec.m */; };
-		AE0BAEBE1874B91B009F8066 /* ColorButton.m in Sources */ = {isa = PBXBuildFile; fileRef = AE0BAEBD1874B91B009F8066 /* ColorButton.m */; };
+		AE0BAEBE1874B91B009F8066 /* TTColorButton.m in Sources */ = {isa = PBXBuildFile; fileRef = AE0BAEBD1874B91B009F8066 /* TTColorButton.m */; };
 		AE0BAEC8187BA11F009F8066 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE0BAEC7187BA11F009F8066 /* Crashlytics.framework */; };
 		AE111F9B17CED99900254EF4 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = AE111F9A17CED99900254EF4 /* libz.dylib */; };
 		AE111FA117CEE81500254EF4 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = AE111FA017CEE81500254EF4 /* icon.png */; };
@@ -24,12 +24,12 @@
 		AE111FA917D0024400254EF4 /* twitter@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AE111FA517D0024300254EF4 /* twitter@2x.png */; };
 		AE111FAA17D0024400254EF4 /* website.png in Resources */ = {isa = PBXBuildFile; fileRef = AE111FA617D0024300254EF4 /* website.png */; };
 		AE111FAB17D0024400254EF4 /* website@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AE111FA717D0024300254EF4 /* website@2x.png */; };
-		AE111FAE17D0036300254EF4 /* InfoVC.m in Sources */ = {isa = PBXBuildFile; fileRef = AE111FAD17D0036300254EF4 /* InfoVC.m */; };
+		AE111FAE17D0036300254EF4 /* TTInfoVC.m in Sources */ = {isa = PBXBuildFile; fileRef = AE111FAD17D0036300254EF4 /* TTInfoVC.m */; };
 		AE111FB117D019B500254EF4 /* mail.png in Resources */ = {isa = PBXBuildFile; fileRef = AE111FAF17D019B500254EF4 /* mail.png */; };
 		AE111FB217D019B500254EF4 /* mail@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AE111FB017D019B500254EF4 /* mail@2x.png */; };
 		AE111FB417D01FE700254EF4 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE111FB317D01FE700254EF4 /* MessageUI.framework */; };
 		AE393C0B18DF427B0058AEC6 /* HelperSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = AE393C0A18DF427B0058AEC6 /* HelperSpec.m */; };
-		AE3C7EC217ECF9080071725C /* AlertManager.m in Sources */ = {isa = PBXBuildFile; fileRef = AE3C7EC117ECF9080071725C /* AlertManager.m */; };
+		AE3C7EC217ECF9080071725C /* TTAlertManager.m in Sources */ = {isa = PBXBuildFile; fileRef = AE3C7EC117ECF9080071725C /* TTAlertManager.m */; };
 		AE5208AA17C054AE002CFFD7 /* minus.png in Resources */ = {isa = PBXBuildFile; fileRef = AE5208A817C054AE002CFFD7 /* minus.png */; };
 		AE5208B217C0FF63002CFFD7 /* minus@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AE5208AE17C0FF63002CFFD7 /* minus@2x.png */; };
 		AE5208B317C0FF63002CFFD7 /* play.png in Resources */ = {isa = PBXBuildFile; fileRef = AE5208AF17C0FF63002CFFD7 /* play.png */; };
@@ -51,13 +51,13 @@
 		AE7223B717BDAB66003B60A5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AE7223B617BDAB66003B60A5 /* main.m */; };
 		AE7223BB17BDAB66003B60A5 /* TTAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AE7223BA17BDAB66003B60A5 /* TTAppDelegate.m */; };
 		AE7223E417BDABCA003B60A5 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE7223E317BDABCA003B60A5 /* Storyboard.storyboard */; };
-		AE7223E717BDAC8B003B60A5 /* TimerVC.m in Sources */ = {isa = PBXBuildFile; fileRef = AE7223E617BDAC8B003B60A5 /* TimerVC.m */; };
+		AE7223E717BDAC8B003B60A5 /* TTTimerVC.m in Sources */ = {isa = PBXBuildFile; fileRef = AE7223E617BDAC8B003B60A5 /* TTTimerVC.m */; };
 		AE8732601831D51200BDD4B2 /* SGScrollWheel.m in Sources */ = {isa = PBXBuildFile; fileRef = AE87325F1831D51200BDD4B2 /* SGScrollWheel.m */; };
 		AE8D52FE17EE2D1300F265FC /* speakerOn.png in Resources */ = {isa = PBXBuildFile; fileRef = AE8D52FA17EE2D1300F265FC /* speakerOn.png */; };
 		AE8D52FF17EE2D1300F265FC /* speakerOn@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AE8D52FB17EE2D1300F265FC /* speakerOn@2x.png */; };
-		AE9F976417BDC4FA00626448 /* TimeEntryVC.m in Sources */ = {isa = PBXBuildFile; fileRef = AE9F976317BDC4FA00626448 /* TimeEntryVC.m */; };
-		AE9F976717BE538100626448 /* Timer.m in Sources */ = {isa = PBXBuildFile; fileRef = AE9F976617BE538100626448 /* Timer.m */; };
-		AE9F976E17BEA00600626448 /* Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = AE9F976D17BEA00600626448 /* Helper.m */; };
+		AE9F976417BDC4FA00626448 /* TTTimeEntryVC.m in Sources */ = {isa = PBXBuildFile; fileRef = AE9F976317BDC4FA00626448 /* TTTimeEntryVC.m */; };
+		AE9F976717BE538100626448 /* TTTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = AE9F976617BE538100626448 /* TTTimer.m */; };
+		AE9F976E17BEA00600626448 /* TTHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = AE9F976D17BEA00600626448 /* TTHelper.m */; };
 		AEAE24EB17CAB08300DA265B /* cancel.png in Resources */ = {isa = PBXBuildFile; fileRef = AEAE24E517CAB08300DA265B /* cancel.png */; };
 		AEAE24EC17CAB08300DA265B /* cancel@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AEAE24E617CAB08300DA265B /* cancel@2x.png */; };
 		AEAE24ED17CAB08300DA265B /* ok.png in Resources */ = {isa = PBXBuildFile; fileRef = AEAE24E717CAB08300DA265B /* ok.png */; };
@@ -72,7 +72,7 @@
 		AECC0AF41856B61400815DA2 /* SGSection.m in Sources */ = {isa = PBXBuildFile; fileRef = AECC0AF31856B61400815DA2 /* SGSection.m */; };
 		AECC0AF9185AA97500815DA2 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AECC0AF8185AA97500815DA2 /* Images.xcassets */; };
 		AEDA15A217BDB2F300AC9DBA /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEDA15A117BDB2F300AC9DBA /* AudioToolbox.framework */; };
-		AEE1D65118B9C773006FF6C2 /* TimerVCSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = AEE1D65018B9C773006FF6C2 /* TimerVCSpec.m */; };
+		AEE1D65118B9C773006FF6C2 /* TTTimerVCSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = AEE1D65018B9C773006FF6C2 /* TTTimerVCSpec.m */; };
 		AEE1D65418B9CC3B006FF6C2 /* SpecHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = AEE1D65318B9CC3B006FF6C2 /* SpecHelper.m */; };
 		AEF3115B17E90DB500D10C32 /* icon120.png in Resources */ = {isa = PBXBuildFile; fileRef = AEF3115A17E90DB500D10C32 /* icon120.png */; };
 		AEF3115F17E90EB800D10C32 /* icon29.png in Resources */ = {isa = PBXBuildFile; fileRef = AEF3115C17E90EB800D10C32 /* icon29.png */; };
@@ -105,8 +105,8 @@
 		AE0648AC18B924B0006902A4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		AE0648B018B924B0006902A4 /* Toastmasters Timer Tests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Toastmasters Timer Tests-Prefix.pch"; sourceTree = "<group>"; };
 		AE07586718BAB4570052784C /* InfoVCSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = InfoVCSpec.m; path = "Toastmasters Timer Tests/InfoVCSpec.m"; sourceTree = "<group>"; };
-		AE0BAEBC1874B91B009F8066 /* ColorButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColorButton.h; sourceTree = "<group>"; };
-		AE0BAEBD1874B91B009F8066 /* ColorButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColorButton.m; sourceTree = "<group>"; };
+		AE0BAEBC1874B91B009F8066 /* TTColorButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTColorButton.h; sourceTree = "<group>"; };
+		AE0BAEBD1874B91B009F8066 /* TTColorButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTColorButton.m; sourceTree = "<group>"; };
 		AE0BAEC7187BA11F009F8066 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 		AE111F9A17CED99900254EF4 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		AE111FA017CEE81500254EF4 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
@@ -115,16 +115,16 @@
 		AE111FA517D0024300254EF4 /* twitter@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "twitter@2x.png"; sourceTree = "<group>"; };
 		AE111FA617D0024300254EF4 /* website.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = website.png; sourceTree = "<group>"; };
 		AE111FA717D0024300254EF4 /* website@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "website@2x.png"; sourceTree = "<group>"; };
-		AE111FAC17D0036300254EF4 /* InfoVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InfoVC.h; sourceTree = "<group>"; };
-		AE111FAD17D0036300254EF4 /* InfoVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InfoVC.m; sourceTree = "<group>"; };
+		AE111FAC17D0036300254EF4 /* TTInfoVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTInfoVC.h; sourceTree = "<group>"; };
+		AE111FAD17D0036300254EF4 /* TTInfoVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTInfoVC.m; sourceTree = "<group>"; };
 		AE111FAF17D019B500254EF4 /* mail.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mail.png; sourceTree = "<group>"; };
 		AE111FB017D019B500254EF4 /* mail@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mail@2x.png"; sourceTree = "<group>"; };
 		AE111FB317D01FE700254EF4 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		AE393C0A18DF427B0058AEC6 /* HelperSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HelperSpec.m; path = "Toastmasters Timer Tests/HelperSpec.m"; sourceTree = "<group>"; };
 		AE393C0D18DF49B30058AEC6 /* TTStrings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TTStrings.h; path = "Toastmasters Timer/TTStrings.h"; sourceTree = "<group>"; };
-		AE3C7EC017ECF9080071725C /* AlertManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlertManager.h; sourceTree = "<group>"; };
-		AE3C7EC117ECF9080071725C /* AlertManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = AlertManager.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
-		AE3C7EC317ECFBA90071725C /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Constants.h; path = "Toastmasters Timer/Constants.h"; sourceTree = "<group>"; };
+		AE3C7EC017ECF9080071725C /* TTAlertManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTAlertManager.h; sourceTree = "<group>"; };
+		AE3C7EC117ECF9080071725C /* TTAlertManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = TTAlertManager.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		AE3C7EC317ECFBA90071725C /* TTConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TTConstants.h; path = "Toastmasters Timer/TTConstants.h"; sourceTree = "<group>"; };
 		AE5208A817C054AE002CFFD7 /* minus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = minus.png; sourceTree = "<group>"; };
 		AE5208AE17C0FF63002CFFD7 /* minus@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "minus@2x.png"; sourceTree = "<group>"; };
 		AE5208AF17C0FF63002CFFD7 /* play.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = play.png; sourceTree = "<group>"; };
@@ -153,18 +153,18 @@
 		AE7223BA17BDAB66003B60A5 /* TTAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TTAppDelegate.m; sourceTree = "<group>"; };
 		AE7223CB17BDAB66003B60A5 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		AE7223E317BDABCA003B60A5 /* Storyboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
-		AE7223E517BDAC8B003B60A5 /* TimerVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimerVC.h; sourceTree = "<group>"; };
-		AE7223E617BDAC8B003B60A5 /* TimerVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = TimerVC.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		AE7223E517BDAC8B003B60A5 /* TTTimerVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTTimerVC.h; sourceTree = "<group>"; };
+		AE7223E617BDAC8B003B60A5 /* TTTimerVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = TTTimerVC.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		AE87325E1831D51200BDD4B2 /* SGScrollWheel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGScrollWheel.h; sourceTree = "<group>"; };
 		AE87325F1831D51200BDD4B2 /* SGScrollWheel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGScrollWheel.m; sourceTree = "<group>"; };
 		AE8D52FA17EE2D1300F265FC /* speakerOn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = speakerOn.png; sourceTree = "<group>"; };
 		AE8D52FB17EE2D1300F265FC /* speakerOn@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "speakerOn@2x.png"; sourceTree = "<group>"; };
-		AE9F976217BDC4FA00626448 /* TimeEntryVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimeEntryVC.h; sourceTree = "<group>"; };
-		AE9F976317BDC4FA00626448 /* TimeEntryVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = TimeEntryVC.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
-		AE9F976517BE538100626448 /* Timer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Timer.h; sourceTree = "<group>"; };
-		AE9F976617BE538100626448 /* Timer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Timer.m; sourceTree = "<group>"; };
-		AE9F976C17BEA00600626448 /* Helper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Helper.h; sourceTree = "<group>"; };
-		AE9F976D17BEA00600626448 /* Helper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = Helper.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		AE9F976217BDC4FA00626448 /* TTTimeEntryVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTTimeEntryVC.h; sourceTree = "<group>"; };
+		AE9F976317BDC4FA00626448 /* TTTimeEntryVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = TTTimeEntryVC.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		AE9F976517BE538100626448 /* TTTimer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTTimer.h; sourceTree = "<group>"; };
+		AE9F976617BE538100626448 /* TTTimer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTTimer.m; sourceTree = "<group>"; };
+		AE9F976C17BEA00600626448 /* TTHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTHelper.h; sourceTree = "<group>"; };
+		AE9F976D17BEA00600626448 /* TTHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = TTHelper.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		AEAE24E517CAB08300DA265B /* cancel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cancel.png; sourceTree = "<group>"; };
 		AEAE24E617CAB08300DA265B /* cancel@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cancel@2x.png"; sourceTree = "<group>"; };
 		AEAE24E717CAB08300DA265B /* ok.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ok.png; sourceTree = "<group>"; };
@@ -182,7 +182,7 @@
 		AECC0AF31856B61400815DA2 /* SGSection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGSection.m; sourceTree = "<group>"; };
 		AECC0AF8185AA97500815DA2 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = ../Images.xcassets; sourceTree = "<group>"; };
 		AEDA15A117BDB2F300AC9DBA /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
-		AEE1D65018B9C773006FF6C2 /* TimerVCSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TimerVCSpec.m; path = "Toastmasters Timer Tests/TimerVCSpec.m"; sourceTree = "<group>"; };
+		AEE1D65018B9C773006FF6C2 /* TTTimerVCSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TTTimerVCSpec.m; path = "Toastmasters Timer Tests/TTTimerVCSpec.m"; sourceTree = "<group>"; };
 		AEE1D65218B9CC3B006FF6C2 /* SpecHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SpecHelper.h; path = "Toastmasters Timer Tests/SpecHelper.h"; sourceTree = "<group>"; };
 		AEE1D65318B9CC3B006FF6C2 /* SpecHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SpecHelper.m; path = "Toastmasters Timer Tests/SpecHelper.m"; sourceTree = "<group>"; };
 		AEF3115A17E90DB500D10C32 /* icon120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon120.png; sourceTree = "<group>"; };
@@ -233,7 +233,7 @@
 			isa = PBXGroup;
 			children = (
 				AE5208A717C054AE002CFFD7 /* Images */,
-				AE3C7EC317ECFBA90071725C /* Constants.h */,
+				AE3C7EC317ECFBA90071725C /* TTConstants.h */,
 				AE393C0D18DF49B30058AEC6 /* TTStrings.h */,
 			);
 			name = Resources;
@@ -329,15 +329,15 @@
 		AE488FC817DD2A510090E139 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				AE111FAC17D0036300254EF4 /* InfoVC.h */,
-				AE111FAD17D0036300254EF4 /* InfoVC.m */,
+				AE111FAC17D0036300254EF4 /* TTInfoVC.h */,
+				AE111FAD17D0036300254EF4 /* TTInfoVC.m */,
 				AE7223E317BDABCA003B60A5 /* Storyboard.storyboard */,
-				AE9F976217BDC4FA00626448 /* TimeEntryVC.h */,
-				AE9F976317BDC4FA00626448 /* TimeEntryVC.m */,
-				AE7223E517BDAC8B003B60A5 /* TimerVC.h */,
-				AE7223E617BDAC8B003B60A5 /* TimerVC.m */,
-				AE0BAEBC1874B91B009F8066 /* ColorButton.h */,
-				AE0BAEBD1874B91B009F8066 /* ColorButton.m */,
+				AE9F976217BDC4FA00626448 /* TTTimeEntryVC.h */,
+				AE9F976317BDC4FA00626448 /* TTTimeEntryVC.m */,
+				AE7223E517BDAC8B003B60A5 /* TTTimerVC.h */,
+				AE7223E617BDAC8B003B60A5 /* TTTimerVC.m */,
+				AE0BAEBC1874B91B009F8066 /* TTColorButton.h */,
+				AE0BAEBD1874B91B009F8066 /* TTColorButton.m */,
 				AEB3E4FB18EE31BF00E6A5FA /* TTBaseVc.h */,
 				AEB3E4FC18EE31BF00E6A5FA /* TTBaseVc.m */,
 			);
@@ -349,14 +349,14 @@
 			isa = PBXGroup;
 			children = (
 				AEB3E4EA18ECEDA400E6A5FA /* TTModalDelegate.h */,
-				AE9F976517BE538100626448 /* Timer.h */,
-				AE9F976617BE538100626448 /* Timer.m */,
+				AE9F976517BE538100626448 /* TTTimer.h */,
+				AE9F976617BE538100626448 /* TTTimer.m */,
 				AE7223B917BDAB66003B60A5 /* TTAppDelegate.h */,
 				AE7223BA17BDAB66003B60A5 /* TTAppDelegate.m */,
-				AE9F976C17BEA00600626448 /* Helper.h */,
-				AE9F976D17BEA00600626448 /* Helper.m */,
-				AE3C7EC017ECF9080071725C /* AlertManager.h */,
-				AE3C7EC117ECF9080071725C /* AlertManager.m */,
+				AE9F976C17BEA00600626448 /* TTHelper.h */,
+				AE9F976D17BEA00600626448 /* TTHelper.m */,
+				AE3C7EC017ECF9080071725C /* TTAlertManager.h */,
+				AE3C7EC117ECF9080071725C /* TTAlertManager.m */,
 			);
 			name = Controllers;
 			path = "Toastmasters Timer";
@@ -473,7 +473,7 @@
 			children = (
 				AEB3E50218EE380800E6A5FA /* TTBaseVcSpec.m */,
 				AE06488418B91E0F006902A4 /* TimeEntryVCSpec.m */,
-				AEE1D65018B9C773006FF6C2 /* TimerVCSpec.m */,
+				AEE1D65018B9C773006FF6C2 /* TTTimerVCSpec.m */,
 				AE07586718BAB4570052784C /* InfoVCSpec.m */,
 				AE393C0A18DF427B0058AEC6 /* HelperSpec.m */,
 				AEB3E50018EE34B000E6A5FA /* TTAppDelegateSpec.m */,
@@ -712,7 +712,7 @@
 			files = (
 				AE0648B618B92540006902A4 /* TimeEntryVCSpec.m in Sources */,
 				AEB3E50318EE380800E6A5FA /* TTBaseVcSpec.m in Sources */,
-				AEE1D65118B9C773006FF6C2 /* TimerVCSpec.m in Sources */,
+				AEE1D65118B9C773006FF6C2 /* TTTimerVCSpec.m in Sources */,
 				AEE1D65418B9CC3B006FF6C2 /* SpecHelper.m in Sources */,
 				AEB3E50118EE34B000E6A5FA /* TTAppDelegateSpec.m in Sources */,
 				AE393C0B18DF427B0058AEC6 /* HelperSpec.m in Sources */,
@@ -726,18 +726,18 @@
 			files = (
 				AE7223B717BDAB66003B60A5 /* main.m in Sources */,
 				AE7223BB17BDAB66003B60A5 /* TTAppDelegate.m in Sources */,
-				AE3C7EC217ECF9080071725C /* AlertManager.m in Sources */,
-				AE7223E717BDAC8B003B60A5 /* TimerVC.m in Sources */,
+				AE3C7EC217ECF9080071725C /* TTAlertManager.m in Sources */,
+				AE7223E717BDAC8B003B60A5 /* TTTimerVC.m in Sources */,
 				AE6BB43617EC779C00D23DD6 /* SGDeepCopy.m in Sources */,
-				AE9F976417BDC4FA00626448 /* TimeEntryVC.m in Sources */,
-				AE9F976717BE538100626448 /* Timer.m in Sources */,
+				AE9F976417BDC4FA00626448 /* TTTimeEntryVC.m in Sources */,
+				AE9F976717BE538100626448 /* TTTimer.m in Sources */,
 				AE8732601831D51200BDD4B2 /* SGScrollWheel.m in Sources */,
-				AE0BAEBE1874B91B009F8066 /* ColorButton.m in Sources */,
-				AE9F976E17BEA00600626448 /* Helper.m in Sources */,
+				AE0BAEBE1874B91B009F8066 /* TTColorButton.m in Sources */,
+				AE9F976E17BEA00600626448 /* TTHelper.m in Sources */,
 				AECC0AF41856B61400815DA2 /* SGSection.m in Sources */,
 				AEB3E4FD18EE31BF00E6A5FA /* TTBaseVc.m in Sources */,
 				AE5208D317C17034002CFFD7 /* Toast+UIView.m in Sources */,
-				AE111FAE17D0036300254EF4 /* InfoVC.m in Sources */,
+				AE111FAE17D0036300254EF4 /* TTInfoVC.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

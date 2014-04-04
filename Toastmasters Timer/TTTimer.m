@@ -1,26 +1,18 @@
-//
-//  Timer.m
-//  Toastmasters Timer
-//
-//  Created by Sundeep Gupta on 2013-08-16.
-//  Copyright (c) 2013 Sundeep Gupta. All rights reserved.
-//
-
-#import "Timer.h"
+#import "TTTimer.h"
 
 
 #define SECONDS_INTERVAL 1
 
 
-@interface Timer()
+@interface TTTimer()
 @property (strong, nonatomic) NSTimer *timer;
 @property (strong, nonatomic, readwrite) NSDate *startDate;
 @property (strong, nonatomic) NSDate *pauseDate;
 @end
 
 
-@implementation Timer
-- (Timer *)init {
+@implementation TTTimer
+- (TTTimer *)init {
     self = [super init];
     if (self) {
         [self resetSeconds];

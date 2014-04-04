@@ -1,7 +1,6 @@
 #import "Kiwi.h"
 #import "TTAppDelegate.h"
-//#import "GAI.h"
-#import "Constants.h"
+#import "TTConstants.h"
 
 
 SPEC_BEGIN(TTAppDelegateSpec)

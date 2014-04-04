@@ -1,16 +1,16 @@
 #import "Kiwi.h"
-#import "TimeEntryVC.h"
-#import "AlertManager.h"
+#import "TTTimeEntryVC.h"
+#import "TTAlertManager.h"
 #import "SpecHelper.h"
-#import "ColorButton.h"
-#import "Helper.h"
+#import "TTColorButton.h"
+#import "TTHelper.h"
 
 
-@interface TimeEntryVC ()
-@property (strong, nonatomic) IBOutlet ColorButton *greenButton;
-@property (strong, nonatomic) IBOutlet ColorButton *amberButton;
-@property (strong, nonatomic) IBOutlet ColorButton *redButton;
-@property (strong, nonatomic) IBOutlet ColorButton *bellButton;
+@interface TTTimeEntryVC ()
+@property (strong, nonatomic) IBOutlet TTColorButton *greenButton;
+@property (strong, nonatomic) IBOutlet TTColorButton *amberButton;
+@property (strong, nonatomic) IBOutlet TTColorButton *redButton;
+@property (strong, nonatomic) IBOutlet TTColorButton *bellButton;
 @property (nonatomic, weak) IBOutlet UIButton *resetButton;
 
 - (IBAction)doneButtonPress:(id)sender;
@@ -23,10 +23,10 @@ SPEC_BEGIN(TimeEntryVCSpec)
 
 describe(@"TimeEntryVC", ^{
     
-    __block TimeEntryVC *subject;
+    __block TTTimeEntryVC *subject;
     
     beforeEach(^{
-        subject = (TimeEntryVC *)[SpecHelper vcForClass:[TimeEntryVC class]];
+        subject = (TTTimeEntryVC *)[SpecHelper vcForClass:[TTTimeEntryVC class]];
         NSObject *mockTimeEntryDelegate = [KWMock nullMockForProtocol:@protocol(TTTimeEntryVCDelegate)];
         [subject stub:@selector(timeEntryDelegate) andReturn:mockTimeEntryDelegate];
         NSObject *mockModalDelegate = [KWMock nullMockForProtocol:@protocol(TTTimeEntryVCDelegate)];
@@ -54,10 +54,10 @@ describe(@"TimeEntryVC", ^{
         });
         
         it(@"it should reset all of the colours' time to zero ", ^{
-            [Helper setupTitleForColorButton:subject.greenButton withSeconds:99];
-            [Helper setupTitleForColorButton:subject.amberButton withSeconds:99];
-            [Helper setupTitleForColorButton:subject.redButton withSeconds:99];
-            [Helper setupTitleForColorButton:subject.bellButton withSeconds:99];
+            [TTHelper setupTitleForColorButton:subject.greenButton withSeconds:99];
+            [TTHelper setupTitleForColorButton:subject.amberButton withSeconds:99];
+            [TTHelper setupTitleForColorButton:subject.redButton withSeconds:99];
+            [TTHelper setupTitleForColorButton:subject.bellButton withSeconds:99];
             [subject resetButtonPress];
             [[subject.greenButton.titleLabel.text should] equal:@"00:00"];
             [[subject.amberButton.titleLabel.text should] equal:@"00:00"];
@@ -83,7 +83,7 @@ describe(@"TimeEntryVC", ^{
     
     context(@"when finished changing times when timer is running", ^{
         it(@"the local notifications should be recreated", ^{
-            AlertManager *alertManager = [AlertManager new];
+            TTAlertManager *alertManager = [TTAlertManager new];
             subject.alertManager = alertManager;
             [[alertManager should] receive:@selector(recreateNotifications)];
             [subject doneButtonPress:nil];

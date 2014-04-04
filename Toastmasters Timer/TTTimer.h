@@ -1,11 +1,3 @@
-//
-//  Timer.h
-//  Toastmasters Timer
-//
-//  Created by Sundeep Gupta on 2013-08-16.
-//  Copyright (c) 2013 Sundeep Gupta. All rights reserved.
-//
-
 #import <Foundation/Foundation.h>
 
 
@@ -22,7 +14,7 @@ typedef NS_ENUM(NSInteger, TIMER_STATUS) {
 @end
 
 
-@interface Timer : NSObject
+@interface TTTimer : NSObject
 @property NSInteger seconds;
 @property (weak, nonatomic) id<TimerDelegate> delegate;
 @property (strong, nonatomic, readonly) NSDate *startDate;

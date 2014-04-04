@@ -1,22 +1,22 @@
-#import "TimeEntryVC.h"
+#import "TTTimeEntryVC.h"
 #import "SGDeepCopy.h"
 #import "SGScrollWheel.h"
-#import "ColorButton.h"
-#import "AlertManager.h"
+#import "TTColorButton.h"
+#import "TTAlertManager.h"
 
 
 #define WHEEL_PADDING 0
 
 
-@interface TimeEntryVC () <SGScrollWheelDelegate>
+@interface TTTimeEntryVC () <SGScrollWheelDelegate>
 @property (strong, nonatomic) NSUserDefaults *defaults;
 @property (nonatomic, strong) NSArray *colorArray;
 @property (nonatomic, strong) SGScrollWheel *scrollWheel;
 @property (strong, nonatomic) IBOutlet UIView *wheelView;
-@property (strong, nonatomic) IBOutlet ColorButton *greenButton;
-@property (strong, nonatomic) IBOutlet ColorButton *amberButton;
-@property (strong, nonatomic) IBOutlet ColorButton *redButton;
-@property (strong, nonatomic) IBOutlet ColorButton *bellButton;
+@property (strong, nonatomic) IBOutlet TTColorButton *greenButton;
+@property (strong, nonatomic) IBOutlet TTColorButton *amberButton;
+@property (strong, nonatomic) IBOutlet TTColorButton *redButton;
+@property (strong, nonatomic) IBOutlet TTColorButton *bellButton;
 @property (nonatomic, strong) NSArray *colorButtonArray;
 @property (strong, nonatomic) IBOutlet UILabel *timerLabel;
 @property (strong, nonatomic) IBOutlet UIImageView *wheelImageView;
@@ -24,7 +24,7 @@
 @end
 
 
-@implementation TimeEntryVC
+@implementation TTTimeEntryVC
 
 - (void)viewDidLoad
 {
@@ -32,9 +32,9 @@
     [self setupDefaults];
     [self setupColorButtonArray];
     [self setupColorArray];
-    [Helper setupTitlesForColorButtons:self.colorButtonArray withColorArray:self.colorArray];
+    [TTHelper setupTitlesForColorButtons:self.colorButtonArray withColorArray:self.colorArray];
     [self setupScrollWheel];
-    [Helper registerForTimerNotificationsWithObject:self];
+    [TTHelper registerForTimerNotificationsWithObject:self];
     [self setupTimerLabel];
     [self setupWheelImageView];
 }
@@ -86,8 +86,8 @@
     [self.timeEntryDelegate colorTimeDidChangeForIndex:self.currentColorIndex];
 }
 - (void)updateCurrentButtonTitleShouldIncrement:(BOOL)shouldIncrement {
-    ColorButton *button = [self buttonForCurrentColorIndex];
-    NSInteger currentSeconds = [Helper secondsForTimeString:button.titleLabel.text];
+    TTColorButton *button = [self buttonForCurrentColorIndex];
+    NSInteger currentSeconds = [TTHelper secondsForTimeString:button.titleLabel.text];
     
     NSInteger newSeconds;
     if (shouldIncrement) {
@@ -96,7 +96,7 @@
         newSeconds = currentSeconds - SECONDS_INCREMENT;
     }
     
-    [Helper setupTitleForColorButton:button withSeconds:newSeconds];
+    [TTHelper setupTitleForColorButton:button withSeconds:newSeconds];
 }
 
 
@@ -107,14 +107,14 @@
     [self.timeEntryDelegate didResetAllColourTimes];
 }
 - (void)resetColors {
-    for (ColorButton *button in self.colorButtonArray) {
-        [Helper setupTitleForColorButton:button withSeconds:0];
+    for (TTColorButton *button in self.colorButtonArray) {
+        [TTHelper setupTitleForColorButton:button withSeconds:0];
     }
 }
 
 
-- (ColorButton *)buttonForCurrentColorIndex {
-    ColorButton *button;
+- (TTColorButton *)buttonForCurrentColorIndex {
+    TTColorButton *button;
     switch (self.currentColorIndex) {
         case GREEN_COLOR_INDEX:
             button = self.greenButton;
@@ -140,11 +140,11 @@
 
 #pragma mark - Timer Notification
 - (void)timerUpdatedSecondsWithNotification:(NSNotification *)notification {
-    NSInteger seconds = [Helper secondsForNotification:notification];
+    NSInteger seconds = [TTHelper secondsForNotification:notification];
     [self updateTimerLabelWithSeconds:seconds];
 }
 - (void)updateTimerLabelWithSeconds:(NSInteger)seconds {
-    self.timerLabel.text = [Helper stringForSeconds:seconds];
+    self.timerLabel.text = [TTHelper stringForSeconds:seconds];
 }
 
 
@@ -200,10 +200,10 @@
     [self saveColorArray:colorArray];
 }
 - (NSArray *)newColorArray {
-    NSNumber *greenNumber = [Helper secondsNumberForTimeString:self.greenButton.titleLabel.text];
-    NSNumber *amberNumber = [Helper secondsNumberForTimeString:self.amberButton.titleLabel.text];
-    NSNumber *redNumber = [Helper secondsNumberForTimeString:self.redButton.titleLabel.text];
-    NSNumber *bellNumber = [Helper secondsNumberForTimeString:self.bellButton.titleLabel.text];
+    NSNumber *greenNumber = [TTHelper secondsNumberForTimeString:self.greenButton.titleLabel.text];
+    NSNumber *amberNumber = [TTHelper secondsNumberForTimeString:self.amberButton.titleLabel.text];
+    NSNumber *redNumber = [TTHelper secondsNumberForTimeString:self.redButton.titleLabel.text];
+    NSNumber *bellNumber = [TTHelper secondsNumberForTimeString:self.bellButton.titleLabel.text];
     NSArray *colorArray = @[greenNumber, amberNumber, redNumber, bellNumber];
     return colorArray;
 }

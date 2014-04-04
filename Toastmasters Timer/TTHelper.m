@@ -1,19 +1,11 @@
-//
-//  Helper.m
-//  Toastmasters Timer
-//
-//  Created by Sundeep Gupta on 2013-08-16.
-//  Copyright (c) 2013 Sundeep Gupta. All rights reserved.
-//
-
-#import "Helper.h"
-#import "ColorButton.h"
+#import "TTHelper.h"
+#import "TTColorButton.h"
 
 
 #define MAX_SECONDS 5995 //99:55
 
 
-@implementation Helper
+@implementation TTHelper
 
 
 #pragma mark - App and Url handling
@@ -114,11 +106,11 @@
 + (void)setupTitlesForColorButtons:(NSArray *)colorButtons withColorArray:(NSArray *)colorArray{
     for (ColorIndex i = GREEN_COLOR_INDEX; i < COLOR_INDEX_COUNT; i++) {
         NSInteger seconds = [colorArray[i] integerValue];
-        ColorButton *button = colorButtons[i];
+        TTColorButton *button = colorButtons[i];
         [self setupTitleForColorButton:button withSeconds:seconds];
     }
 }
-+ (void)setupTitleForColorButton:(ColorButton *)button withSeconds:(NSInteger)seconds {
++ (void)setupTitleForColorButton:(TTColorButton *)button withSeconds:(NSInteger)seconds {
     NSString *title = [self stringForSeconds:seconds];
     [self updateTitle:title forButton:button];
 }

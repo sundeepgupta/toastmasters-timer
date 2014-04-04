@@ -1,29 +1,21 @@
-//
-//  AlertManager.m
-//  Toastmasters Timer
-//
-//  Created by Sundeep Gupta on 2013-09-20.
-//  Copyright (c) 2013 Sundeep Gupta. All rights reserved.
-//
-
-#import "AlertManager.h"
-#import "Timer.h"
-#import "TimerVC.h"
+#import "TTAlertManager.h"
+#import "TTTimer.h"
+#import "TTTimerVC.h"
 #import "Toast+UIView.h"
 #import <AudioToolbox/AudioServices.h>
 
 
-@interface AlertManager ()
+@interface TTAlertManager ()
 @property (strong, nonatomic) NSUserDefaults *defaults;
-@property (strong, nonatomic) Timer *timer;
-@property (strong, nonatomic) TimerVC *timerVC;
+@property (strong, nonatomic) TTTimer *timer;
+@property (strong, nonatomic) TTTimerVC *timerVC;
 @property (nonatomic, strong) NSArray *colorArray;
 @end
 
 
-@implementation AlertManager
+@implementation TTAlertManager
 
-- (id)initWithTimer:(Timer *)timer timerVC:(TimerVC *)timerVC defaults:(NSUserDefaults *)defaults {
+- (id)initWithTimer:(TTTimer *)timer timerVC:(TTTimerVC *)timerVC defaults:(NSUserDefaults *)defaults {
     self = [super init];
     if (self) {
         self.defaults = defaults;
@@ -126,7 +118,7 @@
     if (index == BELL_COLOR_INDEX) {
         message = @"Ring the bell.";
     } else {
-        NSString *colorName = [Helper nameForColorIndex:index];
+        NSString *colorName = [TTHelper nameForColorIndex:index];
         message = [NSString stringWithFormat:@"Turn the %@ light on.", colorName];
     }
     return message;
@@ -152,7 +144,7 @@
             break;
     }
     
-    UIImage *image = [Helper imageWithColor:alertColor];
+    UIImage *image = [TTHelper imageWithColor:alertColor];
     return image;
 }
 

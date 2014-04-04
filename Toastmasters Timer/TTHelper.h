@@ -1,22 +1,14 @@
-//
-//  Helper.h
-//  Toastmasters Timer
-//
-//  Created by Sundeep Gupta on 2013-08-16.
-//  Copyright (c) 2013 Sundeep Gupta. All rights reserved.
-//
-
 #import <Foundation/Foundation.h>
-#import "Constants.h"
+#import "TTConstants.h"
 
 
-@class ColorButton;
+@class TTColorButton;
 
 
 #define SECONDS_INCREMENT 5
 
 
-@interface Helper : NSObject
+@interface TTHelper : NSObject
 
 
 
@@ -38,7 +30,7 @@
 
 #pragma mark - Color Buttons
 + (void)setupTitlesForColorButtons:(NSArray *)colorButtons withColorArray:(NSArray *)colorArray;
-+ (void)setupTitleForColorButton:(ColorButton *)button withSeconds:(NSInteger)seconds;
++ (void)setupTitleForColorButton:(TTColorButton *)button withSeconds:(NSInteger)seconds;
 
 
 

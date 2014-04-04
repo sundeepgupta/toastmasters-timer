@@ -1,5 +1,5 @@
 #import "TTAppDelegate.h"
-#import "TimerVC.h"
+#import "TTTimerVC.h"
 #import <Crashlytics/Crashlytics.h>
 #import "DDTTYLogger.h"
 #import "DDASLLogger.h"
@@ -10,7 +10,7 @@ int ddLogLevel;
 
 
 @interface TTAppDelegate ()
-@property (strong, nonatomic) TimerVC *timerVc;
+@property (strong, nonatomic) TTTimerVC *timerVc;
 @end
 
 
@@ -48,7 +48,7 @@ int ddLogLevel;
 }
 
 - (void)setupTimerVc {
-    self.timerVc = (TimerVC *)self.window.rootViewController;
+    self.timerVc = (TTTimerVC *)self.window.rootViewController;
 }
 
 - (void)setupDefaults {

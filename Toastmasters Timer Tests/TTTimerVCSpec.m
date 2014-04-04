@@ -1,22 +1,22 @@
 #import "Kiwi.h"
 #import "SpecHelper.h"
-#import "TimerVC.h"
-#import "TimeEntryVC.h"
-#import "AlertManager.h"
-#import "ColorButton.h"
-#import "Helper.h"
+#import "TTTimerVC.h"
+#import "TTTimeEntryVC.h"
+#import "TTAlertManager.h"
+#import "TTColorButton.h"
+#import "TTHelper.h"
 #import "TTStrings.h"
 #import "TTModalDelegate.h"
-#import "InfoVC.h"
+#import "TTInfoVC.h"
 
 
-@interface TimerVC ()
-@property (nonatomic, strong) AlertManager *alertManager;
-@property (strong, nonatomic) IBOutlet ColorButton *greenButton;
+@interface TTTimerVC ()
+@property (nonatomic, strong) TTAlertManager *alertManager;
+@property (strong, nonatomic) IBOutlet TTColorButton *greenButton;
 @property (strong, nonatomic) IBOutlet UILabel *timerLabel;
 
 - (void)presentTimeEntryVcWithIndex:(ColorIndex)index;
-- (TimeEntryVC *)timeEntryVcWithIndex:(ColorIndex)index;
+- (TTTimeEntryVC *)timeEntryVcWithIndex:(ColorIndex)index;
 - (void)showTips;
 - (void)modalShouldDismiss;
 - (void)colorTimeDidChangeForIndex:(ColorIndex)index;
@@ -33,12 +33,12 @@ SPEC_BEGIN(TimerVCSpec)
 
 describe(@"TimerVC", ^{
     
-    __block TimerVC *subject;
+    __block TTTimerVC *subject;
     
     beforeEach(^{
         UIWindow *window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
         [window makeKeyAndVisible];
-        subject = (TimerVC *)[SpecHelper vcForClass:[TimerVC class]];
+        subject = (TTTimerVC *)[SpecHelper vcForClass:[TTTimerVC class]];
         window.rootViewController = subject;
         [subject view];
     });
@@ -46,11 +46,11 @@ describe(@"TimerVC", ^{
     context(@"on first launch", ^{
 
         beforeEach(^{
-            [Helper stub:@selector(isFirstLaunch) andReturn:theValue(YES)];
+            [TTHelper stub:@selector(isFirstLaunch) andReturn:theValue(YES)];
         });
         
         it(@"should let the user know of any tips", ^{
-            [[Helper should] receive:@selector(showAlertWithTitle:withMessage:) withArguments:STRING_TIP_TITLE, STRING_TIP_START_TIMER_EARLIER];
+            [[TTHelper should] receive:@selector(showAlertWithTitle:withMessage:) withArguments:STRING_TIP_TITLE, STRING_TIP_START_TIMER_EARLIER];
             [subject viewDidLoad];
         });
     });
@@ -63,7 +63,7 @@ describe(@"TimerVC", ^{
         });
         
         it(@"it should present the TimeEntryVC", ^{
-            [[subject.presentedViewController shouldEventually] beKindOfClass:[TimeEntryVC class]];
+            [[subject.presentedViewController shouldEventually] beKindOfClass:[TTTimeEntryVC class]];
             [subject presentTimeEntryVcWithIndex:0];
         });
     });
@@ -71,7 +71,7 @@ describe(@"TimerVC", ^{
     context(@"When creating the TimeEntryVC", ^{
         it(@"should be setup correctly", ^{
             subject.timerLabel.text = @"testText";
-            TimeEntryVC *timeEntryVc = [subject timeEntryVcWithIndex:AMBER_COLOR_INDEX];
+            TTTimeEntryVC *timeEntryVc = [subject timeEntryVcWithIndex:AMBER_COLOR_INDEX];
             [[theValue(timeEntryVc.currentColorIndex) should] equal:theValue(AMBER_COLOR_INDEX)];
             [[timeEntryVc.currentTimerString should] equal:@"testText"];
             [[timeEntryVc.alertManager should] equal:subject.alertManager];
@@ -90,14 +90,14 @@ describe(@"TimerVC", ^{
         });
         
         it(@"it should present the info view", ^{
-            [[subject.presentedViewController shouldEventually] beKindOfClass:[InfoVC class]];
+            [[subject.presentedViewController shouldEventually] beKindOfClass:[TTInfoVC class]];
             [subject presentInfoVC];
         });
         
         it(@"should be set as the info VC's delegate", ^{
             [subject stub:@selector(presentViewController:animated:completion:) withArguments:subject, theValue(NO), nil];
             [subject presentInfoVC];
-            InfoVC *infoVC = (InfoVC *)subject.presentedViewController;
+            TTInfoVC *infoVC = (TTInfoVC *)subject.presentedViewController;
             [[infoVC.modalDelegate should] equal:subject];
         });
     });;
@@ -105,7 +105,7 @@ describe(@"TimerVC", ^{
     context(@"When creating the TimeEntryVC", ^{
         it(@"should be setup correctly", ^{
             subject.timerLabel.text = @"testText";
-            TimeEntryVC *timeEntryVc = [subject timeEntryVcWithIndex:AMBER_COLOR_INDEX];
+            TTTimeEntryVC *timeEntryVc = [subject timeEntryVcWithIndex:AMBER_COLOR_INDEX];
             [[theValue(timeEntryVc.currentColorIndex) should] equal:theValue(AMBER_COLOR_INDEX)];
             [[timeEntryVc.currentTimerString should] equal:@"testText"];
             [[timeEntryVc.alertManager should] equal:subject.alertManager];
