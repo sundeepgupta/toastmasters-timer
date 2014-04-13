@@ -28,7 +28,7 @@ describe(@"Helper", ^{
         });
     });
 
-#warning Need to figure out how to test. 
+#warning Test GA
 //    context(@"Google Analytics", ^{
 //        
 //        __block GAI *gai;
