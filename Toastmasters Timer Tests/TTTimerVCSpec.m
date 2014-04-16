@@ -12,8 +12,8 @@
 
 @interface TTTimerVC ()
 @property (nonatomic, strong) TTAlertManager *alertManager;
-@property (strong, nonatomic) IBOutlet TTColorButton *greenButton;
-@property (strong, nonatomic) IBOutlet UILabel *timerLabel;
+@property (weak, nonatomic) IBOutlet TTColorButton *greenButton;
+@property (weak, nonatomic) IBOutlet UILabel *timerLabel;
 
 - (void)presentTimeEntryVcWithIndex:(ColorIndex)index;
 - (TTTimeEntryVC *)timeEntryVcWithIndex:(ColorIndex)index;

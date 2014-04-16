@@ -15,13 +15,13 @@
 @property (strong, nonatomic) TTAlertManager *alertManager;
 @property (strong, nonatomic) NSUserDefaults *defaults;
 @property (nonatomic, strong) NSArray *colorArray;
-@property (strong, nonatomic) IBOutlet UIButton *pauseButton;
-@property (strong, nonatomic) IBOutlet UIButton *audioAlertButton;
-@property (strong, nonatomic) IBOutlet UILabel *timerLabel;
-@property (strong, nonatomic) IBOutlet TTColorButton *greenButton;
-@property (strong, nonatomic) IBOutlet TTColorButton *amberButton;
-@property (strong, nonatomic) IBOutlet TTColorButton *redButton;
-@property (strong, nonatomic) IBOutlet TTColorButton *bellButton;
+@property (weak, nonatomic) IBOutlet UIButton *pauseButton;
+@property (weak, nonatomic) IBOutlet UIButton *audioAlertButton;
+@property (weak, nonatomic) IBOutlet UILabel *timerLabel;
+@property (weak, nonatomic) IBOutlet TTColorButton *greenButton;
+@property (weak, nonatomic) IBOutlet TTColorButton *amberButton;
+@property (weak, nonatomic) IBOutlet TTColorButton *redButton;
+@property (weak, nonatomic) IBOutlet TTColorButton *bellButton;
 @property (nonatomic, strong) NSArray *colorButtonArray;
 @end
 

@@ -12,14 +12,14 @@
 @property (strong, nonatomic) NSUserDefaults *defaults;
 @property (nonatomic, strong) NSArray *colorArray;
 @property (nonatomic, strong) SGScrollWheel *scrollWheel;
-@property (strong, nonatomic) IBOutlet UIView *wheelView;
-@property (strong, nonatomic) IBOutlet TTColorButton *greenButton;
-@property (strong, nonatomic) IBOutlet TTColorButton *amberButton;
-@property (strong, nonatomic) IBOutlet TTColorButton *redButton;
-@property (strong, nonatomic) IBOutlet TTColorButton *bellButton;
+@property (weak, nonatomic) IBOutlet UIView *wheelView;
+@property (weak, nonatomic) IBOutlet TTColorButton *greenButton;
+@property (weak, nonatomic) IBOutlet TTColorButton *amberButton;
+@property (weak, nonatomic) IBOutlet TTColorButton *redButton;
+@property (weak, nonatomic) IBOutlet TTColorButton *bellButton;
 @property (nonatomic, strong) NSArray *colorButtonArray;
-@property (strong, nonatomic) IBOutlet UILabel *timerLabel;
-@property (strong, nonatomic) IBOutlet UIImageView *wheelImageView;
+@property (weak, nonatomic) IBOutlet UILabel *timerLabel;
+@property (weak, nonatomic) IBOutlet UIImageView *wheelImageView;
 @property (nonatomic, weak) IBOutlet UIButton *resetButton;
 @end
 

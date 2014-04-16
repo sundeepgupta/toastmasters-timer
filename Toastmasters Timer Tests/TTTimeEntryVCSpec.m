@@ -7,10 +7,10 @@
 
 
 @interface TTTimeEntryVC ()
-@property (strong, nonatomic) IBOutlet TTColorButton *greenButton;
-@property (strong, nonatomic) IBOutlet TTColorButton *amberButton;
-@property (strong, nonatomic) IBOutlet TTColorButton *redButton;
-@property (strong, nonatomic) IBOutlet TTColorButton *bellButton;
+@property (weak, nonatomic) IBOutlet TTColorButton *greenButton;
+@property (weak, nonatomic) IBOutlet TTColorButton *amberButton;
+@property (weak, nonatomic) IBOutlet TTColorButton *redButton;
+@property (weak, nonatomic) IBOutlet TTColorButton *bellButton;
 @property (nonatomic, weak) IBOutlet UIButton *resetButton;
 
 - (IBAction)doneButtonPress:(id)sender;

@@ -2,7 +2,7 @@
 
 
 @interface TTInfoVC ()
-@property (strong, nonatomic) IBOutlet UILabel *timerLabel;
+@property (weak, nonatomic) IBOutlet UILabel *timerLabel;
 @end
 
 
