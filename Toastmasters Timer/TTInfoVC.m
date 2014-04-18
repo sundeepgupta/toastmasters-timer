@@ -1,5 +1,5 @@
 #import "TTInfoVC.h"
-#import "TTAnalyticsInterface.h"
+
 
 @interface TTInfoVC ()
 @property (weak, nonatomic) IBOutlet UILabel *timerLabel;

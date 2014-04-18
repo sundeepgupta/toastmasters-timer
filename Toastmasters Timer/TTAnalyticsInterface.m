@@ -19,7 +19,6 @@
 
 + (void)setupAnalytics {
     [GAI sharedInstance].trackUncaughtExceptions = YES;
-    [GAI sharedInstance].dispatchInterval = GOOGLE_ANALYTICS_DISPATCH_TIME_INTERVAL;
     [[[GAI sharedInstance] logger] setLogLevel:kGAILogLevelVerbose];
     [[GAI sharedInstance] trackerWithTrackingId:GOOGLE_ANALYTICS_TRACKING_ID];
 }
@@ -33,6 +32,13 @@
 + (void)sendTrackingInfoWithCategory:(NSString *)category action:(NSString *)action label:(NSString *)label value:(NSNumber *)value {
     NSDictionary *trackerInfo = [[GAIDictionaryBuilder createEventWithCategory:category action:action label:label value:value] build];
     [[GAI sharedInstance].defaultTracker send:trackerInfo];
+    [self dispatchEvents];
+}
+
+
+#pragma mark - Dispatching
++ (void)dispatchEvents {
+    [[GAI sharedInstance] dispatch];
 }
 
 @end

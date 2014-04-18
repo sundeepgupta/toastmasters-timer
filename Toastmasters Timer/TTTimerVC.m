@@ -6,9 +6,6 @@
 #import "TTAlertManager.h"
 #import "TTColorButton.h"
 #import "TTStrings.h"
-#import "TTAnalyticsInterface.h"
-
-
 
 
 @interface TTTimerVC () <TTModalDelegate, TTTimeEntryVCDelegate>
@@ -243,8 +240,7 @@
     [self.alertManager recreateNotifications];
 }
 - (void)toggleShouldAudioAlert {
-    BOOL shouldAlert = [self.defaults boolForKey:SHOULD_AUDIO_ALERT_KEY];
-    if (shouldAlert) {
+    if ([self shouldAudioAlert]) {
         [self disableAudioAlert];
     } else {
         [self enableAudioAlert];
@@ -259,6 +255,10 @@
     self.audioAlertButton.alpha = 1;
     [self.defaults setBool:YES forKey:SHOULD_AUDIO_ALERT_KEY];
     [TTAnalyticsInterface sendTrackingInfoWithCategory:GOOGLE_ANALYTICS_CATEGORY_GENERAL action:GOOGLE_ANALYTICS_ACTION_AUDIO_ENABLED];
+}
+
+- (BOOL)shouldAudioAlert {
+    return [self.defaults boolForKey:SHOULD_AUDIO_ALERT_KEY];
 }
 
 

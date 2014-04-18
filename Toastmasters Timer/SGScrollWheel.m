@@ -147,7 +147,7 @@ static CGFloat deltaAngle;
         }
     }
     
-    DDLogVerbose(@"Radians: %f, Section: %li", radians, self.currentSectionNumber);
+    DDLogVerbose(@"Radians: %f, Section: %li", radians, (long)self.currentSectionNumber);
     return sectionNumber;
 }
 

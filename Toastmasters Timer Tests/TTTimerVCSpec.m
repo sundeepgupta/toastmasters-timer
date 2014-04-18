@@ -28,6 +28,7 @@
 - (void)presentInfoVC;
 - (IBAction)infoButtonPress:(id)sender;
 - (void)didResetAllColourTimes;
+- (BOOL)shouldAudioAlert;
 @end
 
 
@@ -65,14 +66,11 @@ describe(@"TimerVC", ^{
         context(@"when audio is currently disabled", ^{
             
             beforeEach(^{
-                [subject.defaults stub:@selector(boolForKey:) andReturn:theValue(NO) withArguments:SHOULD_AUDIO_ALERT_KEY];
+                [subject stub:@selector(shouldAudioAlert) andReturn:theValue(NO)];
             });
             
             it(@"should enable audio alerts", ^{
                 [subject.audioAlertButton sendActionsForControlEvents:UIControlEventTouchDown];
-                
-#warning need to redesign the code, or explicitly remove the stub
-                
                 BOOL shouldAudioAlert = [subject.defaults boolForKey:SHOULD_AUDIO_ALERT_KEY];
                 [[theValue(shouldAudioAlert) should] equal:theValue(YES)];
             });
@@ -83,8 +81,23 @@ describe(@"TimerVC", ^{
             });
         });
         
-#warning ADD WHEN AUDIO DISABLED
-        
+        context(@"when audio is currently enabled", ^{
+            
+            beforeEach(^{
+                [subject stub:@selector(shouldAudioAlert) andReturn:theValue(YES)];
+            });
+            
+            it(@"should disable audio alerts", ^{
+                [subject.audioAlertButton sendActionsForControlEvents:UIControlEventTouchDown];
+                BOOL shouldAudioAlert = [subject.defaults boolForKey:SHOULD_AUDIO_ALERT_KEY];
+                [[theValue(shouldAudioAlert) should] equal:theValue(NO)];
+            });
+            
+            it(@"should send an analytics tracking event", ^{
+                [[TTAnalyticsInterface should] receive:@selector(sendTrackingInfoWithCategory:action:) withArguments:GOOGLE_ANALYTICS_CATEGORY_GENERAL, GOOGLE_ANALYTICS_ACTION_AUDIO_DISABLED];
+                [subject.audioAlertButton sendActionsForControlEvents:UIControlEventTouchDown];
+            });
+        });
         
         it(@"should recreate the local notifications", ^{
             [[subject.alertManager should] receive:@selector(recreateNotifications)];
