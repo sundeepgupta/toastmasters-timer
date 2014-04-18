@@ -10,6 +10,7 @@
 - (IBAction)rateAppButtonPress:(id)sender;
 - (IBAction)doneButtonPress:(id)sender;
 - (IBAction)developerButtonPress:(id)sender;
+- (IBAction)designerButtonPress:(id)sender;
 @end
 
 
@@ -80,6 +81,20 @@ describe(@"InfoVC", ^{
         });
     });
 
+    
+    context(@"when the designer button is pressed", ^{
+        
+        it(@"should open the email composer", ^{
+            [[TTHelper should] receive:@selector(openWebsiteWithUrlString:) withArguments:URL_DESIGNER];
+            [subject designerButtonPress:nil];
+        });
+        
+        it(@"should send an analytics event", ^{
+            [[TTAnalyticsInterface should] receive:@selector(sendTrackingInfoWithCategory:action:) withArguments:GOOGLE_ANALYTICS_CATEGORY_GENERAL, GOOGLE_ANALYTICS_ACTION_CONTACT_DESIGNER];
+            [subject designerButtonPress:nil];
+        });
+    });
+    
     
     
     context(@"when the done button is pressed", ^{

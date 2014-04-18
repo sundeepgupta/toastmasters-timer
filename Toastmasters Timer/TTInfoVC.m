@@ -1,6 +1,6 @@
 #import "TTInfoVC.h"
 #import "TTStrings.h"
-
+#import "TTConstants.h"
 
 @interface TTInfoVC ()
 @property (weak, nonatomic) IBOutlet UILabel *timerLabel;
@@ -57,7 +57,7 @@
     if ([MFMailComposeViewController canSendMail]) {
         [self email];
     } else {
-        [TTHelper showAlertWithTitle:STRING_ERROR_TTITLE_CANT_SEND_MAIL withMessage:STRING_ERROR_MESSAGE_CANT_SEND_MAIL];
+        [TTHelper showAlertWithTitle:STRING_ERROR_TTITLE_GENERAL withMessage:STRING_ERROR_MESSAGE_CANT_SEND_MAIL];
     }
 }
 
@@ -105,23 +105,13 @@
 
 #pragma mark - Designer Button
 - (IBAction)designerButtonPress:(id)sender {
-    NSString *urlString = @"http://www.redconservatory.com";
-    NSURL *url = [NSURL URLWithString:urlString];
-    UIApplication *app = [UIApplication sharedApplication];
-    if ([app canOpenURL:url]) {
-        [app openURL:url];
-    } else {
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Can't Open Link" message:@"It looks like your device can't open the website link." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
-        [alert show];
-    }
+    [TTHelper openWebsiteWithUrlString:URL_DESIGNER];
+    [TTAnalyticsInterface sendTrackingInfoWithCategory:GOOGLE_ANALYTICS_CATEGORY_GENERAL action:GOOGLE_ANALYTICS_ACTION_CONTACT_DESIGNER];
 }
 
 
 
-
-
-
-
+#pragma mark - Done Button
 - (IBAction)doneButtonPress:(id)sender {
     [self.modalDelegate modalShouldDismiss];
 }

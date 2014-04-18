@@ -74,3 +74,5 @@ static NSString *const GOOGLE_ANALYTICS_ACTION_AUDIO_ENABLED = @"Audio Alerts En
 static NSString *const GOOGLE_ANALYTICS_ACTION_AUDIO_DISABLED = @"Audio Alerts Disabled";
 
 
+//Info View
+static NSString *const URL_DESIGNER = @"http://www.redconservatory.com";

@@ -1,5 +1,6 @@
 #import "TTHelper.h"
 #import "TTColorButton.h"
+#import "TTStrings.h"
 
 #define MAX_SECONDS 5995 //99:55
 
@@ -12,7 +13,7 @@
     if ([self canOpenAppWithUrlPrefix:@"http://"]) {
         [self openAppWithUrlString:urlString];
     } else {
-        [self showAlertWithTitle:@"Can't Open" withMessage:@"Sorry, your device cannot open the url specified."];
+        [self showAlertWithTitle:STRING_ERROR_TTITLE_GENERAL withMessage:STRING_ERROR_MESSAGE_CANT_OPEN_LINK];
     }
 }
 + (BOOL)canOpenAppWithUrlPrefix:(NSString *)urlPrefix {
@@ -31,11 +32,9 @@
 }
 
 
-
-
 #pragma mark - Alert views
 + (void)showAlertWithTitle:(NSString *)title withMessage:(NSString *)message {
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:title message:message delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:title message:message delegate:nil cancelButtonTitle:STRING_ALERT_BUTTON_TITLE_DEFAULT otherButtonTitles:nil, nil];
     [alert show];
 }
 
