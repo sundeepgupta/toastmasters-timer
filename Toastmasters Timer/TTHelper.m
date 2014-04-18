@@ -51,7 +51,7 @@
     NSInteger adjustedSeconds = [self adjustedSeconds:seconds];
     NSInteger minutes = [self minutesForSeconds:adjustedSeconds];
     NSInteger remainderSeconds = [self remainderSecondsForSeconds:adjustedSeconds];
-    NSString *string = [NSString stringWithFormat:@"%02i:%02i", minutes, remainderSeconds];
+    NSString *string = [NSString stringWithFormat:@"%02li:%02li", minutes, remainderSeconds];
     return string;
 }
 

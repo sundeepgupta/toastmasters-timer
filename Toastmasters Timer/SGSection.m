@@ -11,7 +11,7 @@
 @implementation SGSection
 
 - (NSString *)description {
-    NSString *description = [NSString stringWithFormat:@"%i  |  %f, %f, %f", self.sectionNumber, self.minValue, self.midValue, self.maxValue];
+    NSString *description = [NSString stringWithFormat:@"%li  |  %f, %f, %f", self.sectionNumber, self.minValue, self.midValue, self.maxValue];
     return description;
 }
 @end
