@@ -8,12 +8,15 @@
 #import "TTStrings.h"
 #import "TTModalDelegate.h"
 #import "TTInfoVC.h"
+#import "TTAnalyticsInterface.h"
 
 
 @interface TTTimerVC ()
 @property (nonatomic, strong) TTAlertManager *alertManager;
 @property (weak, nonatomic) IBOutlet TTColorButton *greenButton;
 @property (weak, nonatomic) IBOutlet UILabel *timerLabel;
+@property (weak, nonatomic) IBOutlet UIButton *audioAlertButton;
+@property (strong, nonatomic) NSUserDefaults *defaults;
 
 - (void)presentTimeEntryVcWithIndex:(ColorIndex)index;
 - (TTTimeEntryVC *)timeEntryVcWithIndex:(ColorIndex)index;
@@ -55,6 +58,38 @@ describe(@"TimerVC", ^{
         });
     });
     
+    context(@"when pressing the audio alert button", ^{
+        
+        context(@"when audio is currently disabled", ^{
+            
+            beforeEach(^{
+                [subject.defaults stub:@selector(boolForKey:) andReturn:theValue(NO) withArguments:SHOULD_AUDIO_ALERT_KEY];
+            });
+            
+            it(@"should enable audio alerts", ^{
+                [subject.audioAlertButton sendActionsForControlEvents:UIControlEventTouchDown];
+                
+                //need to redesign the code, or explicitly remove the stub
+                
+                BOOL shouldAudioAlert = [subject.defaults boolForKey:SHOULD_AUDIO_ALERT_KEY];
+                [[theValue(shouldAudioAlert) should] equal:theValue(YES)];
+            });
+        });
+        
+        //add flipside context.
+        
+        
+        it(@"should recreate the local notifications", ^{
+            [[subject.alertManager should] receive:@selector(recreateNotifications)];
+            [subject.audioAlertButton sendActionsForControlEvents:UIControlEventTouchDown];
+        });
+        
+        it(@"should send an analytics tracking event", ^{
+            [[TTAnalyticsInterface should] receive:@selector(sendTrackingInfoWithCategory:action:) withArguments:GOOGLE_ANALYTICS_CATEGORY_AUDIO_ALERT, GOOGLE_ANALYTICS_ACTION_CHANGE];
+            [subject.audioAlertButton sendActionsForControlEvents:UIControlEventTouchDown];
+        });
+    });
+    
     
     context(@"when pressing one of the color buttons", ^{
         it(@"should perform the correct segue", ^{
@@ -65,6 +100,11 @@ describe(@"TimerVC", ^{
         it(@"should present the TimeEntryVC", ^{
             [[subject.presentedViewController shouldEventually] beKindOfClass:[TTTimeEntryVC class]];
             [subject presentTimeEntryVcWithIndex:0];
+        });
+        
+        it(@"should send an analytics tracking event", ^{
+            [[TTAnalyticsInterface should] receive:@selector(sendTrackingInfoWithCategory:action:) withArguments:GOOGLE_ANALYTICS_CATEGORY_COLOR_TIMES, GOOGLE_ANALYTICS_ACTION_CHANGE];
+            [subject.greenButton sendActionsForControlEvents:UIControlEventTouchUpInside];
         });
         
     });

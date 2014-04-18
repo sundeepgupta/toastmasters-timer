@@ -240,22 +240,23 @@
 
 #pragma mark - Audio Alert Button
 - (IBAction)toggleAudioAlertButtonPress:(id)sender {
-    [self toggleShouldAlert];
+    [self toggleShouldAudioAlert];
     [self.alertManager recreateNotifications];
+    [TTAnalyticsInterface sendTrackingInfoWithCategory:GOOGLE_ANALYTICS_CATEGORY_AUDIO_ALERT action:GOOGLE_ANALYTICS_ACTION_CHANGE];
 }
-- (void)toggleShouldAlert {
+- (void)toggleShouldAudioAlert {
     BOOL shouldAlert = [self.defaults boolForKey:SHOULD_AUDIO_ALERT_KEY];
     if (shouldAlert) {
-        [self disableAlert];
+        [self disableAudioAlert];
     } else {
-        [self enableAlert];
+        [self enableAudioAlert];
     }
 }
-- (void)disableAlert {
+- (void)disableAudioAlert {
     self.audioAlertButton.alpha = DISABLED_ALPHA;
     [self.defaults setBool:NO forKey:SHOULD_AUDIO_ALERT_KEY];
 }
-- (void)enableAlert {
+- (void)enableAudioAlert {
     self.audioAlertButton.alpha = 1;
     [self.defaults setBool:YES forKey:SHOULD_AUDIO_ALERT_KEY];
 }
@@ -353,7 +354,6 @@
         
     return colorIndexToEmphasize;
 }
-
 
 
 
