@@ -1,8 +1,5 @@
 #import "TTHelper.h"
 #import "TTColorButton.h"
-#import "GAI.h"
-#import "GAITracker.h"
-#import "GAIDictionaryBuilder.h"
 
 #define MAX_SECONDS 5995 //99:55
 
@@ -215,13 +212,6 @@
     return isFirstLaunch;
 }
 
-
-
-#pragma mark - Google Analytics
-+ (void)sendTrackingInfoWithCategory:(NSString *)category action:(NSString *)action label:(NSString *)label value:(NSNumber *)value {
-    NSDictionary *trackerInfo = [[GAIDictionaryBuilder createEventWithCategory:category action:action label:label value:value] build];
-    [[GAI sharedInstance].defaultTracker send:trackerInfo];
-}
 
 
 

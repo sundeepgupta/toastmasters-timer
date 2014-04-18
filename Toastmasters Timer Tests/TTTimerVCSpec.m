@@ -67,10 +67,6 @@ describe(@"TimerVC", ^{
             [subject presentTimeEntryVcWithIndex:0];
         });
         
-        it(@"should send GA tracking event ", ^{
-            [[TTHelper should] receive:@selector(sendTrackingInfoWithCategory:action:label:value:) withArguments:GOOGLE_ANALYTICS_CATEGORY_COLOR_TIMES, GOOGLE_ANALYTICS_ACTION_CHANGE, GOOGLE_ANALYTICS_LABEL_GREEN, nil];
-            [subject.greenButton sendActionsForControlEvents:UIControlEventTouchUpInside];
-        });
     });
 
     context(@"When creating the TimeEntryVC", ^{

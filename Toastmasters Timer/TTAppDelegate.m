@@ -3,7 +3,7 @@
 #import <Crashlytics/Crashlytics.h>
 #import "DDTTYLogger.h"
 #import "DDASLLogger.h"
-#import "GAI.h"
+#import "TTAnalyticsInterface.h"
 
 
 int ddLogLevel;
@@ -24,7 +24,7 @@ int ddLogLevel;
     [self setupDefaults];
     [self clearAppIconBadge];
     [self setupCrashlytics];
-    [self setupGoogleAnalytics];
+    [TTAnalyticsInterface loadAnalytics];
     return YES;
 }
 
@@ -67,13 +67,6 @@ int ddLogLevel;
 
 - (void)setupCrashlytics {
     [Crashlytics startWithAPIKey:API_KEY_CRASHLYTICS];
-}
-
-- (void)setupGoogleAnalytics {
-    [GAI sharedInstance].trackUncaughtExceptions = YES;
-    [GAI sharedInstance].dispatchInterval = GOOGLE_ANALYTICS_DISPATCH_TIME_INTERVAL;
-    [[[GAI sharedInstance] logger] setLogLevel:kGAILogLevelVerbose];
-    [[GAI sharedInstance] trackerWithTrackingId:GOOGLE_ANALYTICS_TRACKING_ID];
 }
 
 

@@ -1,3000 +1,1000 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-<plist version="1.0">
-<dict>
-	<key>archiveVersion</key>
-	<string>1</string>
-	<key>classes</key>
-	<dict/>
-	<key>objectVersion</key>
-	<string>46</string>
-	<key>objects</key>
-	<dict>
-		<key>3B1AE27F6A6D4FEC86180439</key>
-		<dict>
-			<key>explicitFileType</key>
-			<string>archive.ar</string>
-			<key>includeInIndex</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>path</key>
-			<string>libPods.a</string>
-			<key>sourceTree</key>
-			<string>BUILT_PRODUCTS_DIR</string>
-		</dict>
-		<key>72DF7A9796AB4451856D0F01</key>
-		<dict>
-			<key>explicitFileType</key>
-			<string>archive.ar</string>
-			<key>includeInIndex</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>path</key>
-			<string>libPods.a</string>
-			<key>sourceTree</key>
-			<string>BUILT_PRODUCTS_DIR</string>
-		</dict>
-		<key>748D9AB3573340F0AB7D8523</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array/>
-			<key>inputPaths</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXShellScriptBuildPhase</string>
-			<key>name</key>
-			<string>Copy Pods Resources</string>
-			<key>outputPaths</key>
-			<array/>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-			<key>shellPath</key>
-			<string>/bin/sh</string>
-			<key>shellScript</key>
-			<string>"${SRCROOT}/Pods/Pods-resources.sh"
-</string>
-			<key>showEnvVarsInLog</key>
-			<string>0</string>
-		</dict>
-		<key>79E8424783BC43CA9202D5DD</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.xcconfig</string>
-			<key>name</key>
-			<string>Pods.xcconfig</string>
-			<key>path</key>
-			<string>Pods/Pods.xcconfig</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>892860AD74CE40D1A754749B</key>
-		<dict>
-			<key>fileRef</key>
-			<string>72DF7A9796AB4451856D0F01</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>8D25208D1C4D4BC08429557D</key>
-		<dict>
-			<key>fileRef</key>
-			<string>3B1AE27F6A6D4FEC86180439</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>9601ED1DC6624F528E0C2AB1</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.xcconfig</string>
-			<key>name</key>
-			<string>Pods-Toastmasters Timer Tests.xcconfig</string>
-			<key>path</key>
-			<string>../Pods/Pods-Toastmasters Timer Tests.xcconfig</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>9F5C02F20DAC41F19921AF8D</key>
-		<dict>
-			<key>fileRef</key>
-			<string>D922069EBAB54014839BEFB7</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>A8270FFA71A3463F9296307F</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>3B1AE27F6A6D4FEC86180439</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Frameworks</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>ABF1131D2C744192A1CA4DBA</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array/>
-			<key>inputPaths</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXShellScriptBuildPhase</string>
-			<key>name</key>
-			<string>Check Pods Manifest.lock</string>
-			<key>outputPaths</key>
-			<array/>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-			<key>shellPath</key>
-			<string>/bin/sh</string>
-			<key>shellScript</key>
-			<string>diff "${PODS_ROOT}/../Podfile.lock" "${PODS_ROOT}/Manifest.lock" &gt; /dev/null
-if [[ $? != 0 ]] ; then
-    cat &lt;&lt; EOM
-error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.
-EOM
-    exit 1
-fi
-</string>
-			<key>showEnvVarsInLog</key>
-			<string>0</string>
-		</dict>
-		<key>AE06488118B91ABF006902A4</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>AE5208A717C054AE002CFFD7</string>
-				<string>AE3C7EC317ECFBA90071725C</string>
-				<string>AE393C0D18DF49B30058AEC6</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Resources</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>AE06488218B91BEF006902A4</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>AE07586618BAB42E0052784C</string>
-				<string>AEE1D65518BAB2A3006FF6C2</string>
-				<string>AE0648A918B924B0006902A4</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Tests</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>AE06488318B91C65006902A4</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>AE488FC917DD2A5B0090E139</string>
-				<string>AE06488118B91ABF006902A4</string>
-				<string>AE7223B117BDAB66003B60A5</string>
-				<string>AE488FC817DD2A510090E139</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>App</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>AE06488418B91E0F006902A4</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>name</key>
-			<string>TTTimeEntryVCSpec.m</string>
-			<key>path</key>
-			<string>Toastmasters Timer Tests/TTTimeEntryVCSpec.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>AE06488B18B9243E006902A4</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>72DF7A9796AB4451856D0F01</string>
-				<string>FDF4590CAB9E48DCA7FF886C</string>
-				<string>AE0BAEC7187BA11F009F8066</string>
-				<string>AE111FB317D01FE700254EF4</string>
-				<string>AE111F9A17CED99900254EF4</string>
-				<string>AE5208CE17C16FFA002CFFD7</string>
-				<string>AEDA15A117BDB2F300AC9DBA</string>
-				<string>AE7223A817BDAB65003B60A5</string>
-				<string>AE7223AA17BDAB65003B60A5</string>
-				<string>AE7223AC17BDAB65003B60A5</string>
-				<string>AE7223AE17BDAB65003B60A5</string>
-				<string>AE7223CB17BDAB66003B60A5</string>
-				<string>AE7223B317BDAB66003B60A5</string>
-				<string>AE06488C18B9243E006902A4</string>
-				<string>AE06488E18B9243E006902A4</string>
-				<string>AE06489018B9243E006902A4</string>
-				<string>D922069EBAB54014839BEFB7</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Frameworks</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>AE06488C18B9243E006902A4</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>wrapper.framework</string>
-			<key>name</key>
-			<string>XCTest.framework</string>
-			<key>path</key>
-			<string>Library/Frameworks/XCTest.framework</string>
-			<key>sourceTree</key>
-			<string>DEVELOPER_DIR</string>
-		</dict>
-		<key>AE06488E18B9243E006902A4</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>wrapper.framework</string>
-			<key>name</key>
-			<string>Foundation.framework</string>
-			<key>path</key>
-			<string>Library/Frameworks/Foundation.framework</string>
-			<key>sourceTree</key>
-			<string>DEVELOPER_DIR</string>
-		</dict>
-		<key>AE06489018B9243E006902A4</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>wrapper.framework</string>
-			<key>name</key>
-			<string>UIKit.framework</string>
-			<key>path</key>
-			<string>Library/Frameworks/UIKit.framework</string>
-			<key>sourceTree</key>
-			<string>DEVELOPER_DIR</string>
-		</dict>
-		<key>AE0648A018B924B0006902A4</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>AE0648B618B92540006902A4</string>
-				<string>AEB3E50318EE380800E6A5FA</string>
-				<string>AEE1D65118B9C773006FF6C2</string>
-				<string>AEE1D65418B9CC3B006FF6C2</string>
-				<string>AEB3E50118EE34B000E6A5FA</string>
-				<string>AE393C0B18DF427B0058AEC6</string>
-				<string>AE07586818BAB4570052784C</string>
-			</array>
-			<key>isa</key>
-			<string>PBXSourcesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>AE0648A118B924B0006902A4</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>AE0648A518B924B0006902A4</string>
-				<string>AE0648A718B924B0006902A4</string>
-				<string>AE0648A618B924B0006902A4</string>
-				<string>9F5C02F20DAC41F19921AF8D</string>
-				<string>8D25208D1C4D4BC08429557D</string>
-			</array>
-			<key>isa</key>
-			<string>PBXFrameworksBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>AE0648A218B924B0006902A4</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>AE0648AD18B924B0006902A4</string>
-			</array>
-			<key>isa</key>
-			<string>PBXResourcesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>AE0648A318B924B0006902A4</key>
-		<dict>
-			<key>buildConfigurationList</key>
-			<string>AE0648B318B924B1006902A4</string>
-			<key>buildPhases</key>
-			<array>
-				<string>ABF1131D2C744192A1CA4DBA</string>
-				<string>AE0648A018B924B0006902A4</string>
-				<string>AE0648A118B924B0006902A4</string>
-				<string>AE0648A218B924B0006902A4</string>
-				<string>748D9AB3573340F0AB7D8523</string>
-			</array>
-			<key>buildRules</key>
-			<array/>
-			<key>dependencies</key>
-			<array>
-				<string>AE0648B218B924B1006902A4</string>
-			</array>
-			<key>isa</key>
-			<string>PBXNativeTarget</string>
-			<key>name</key>
-			<string>Toastmasters Timer Tests</string>
-			<key>productName</key>
-			<string>Toastmasters Timer Tests</string>
-			<key>productReference</key>
-			<string>AE0648A418B924B0006902A4</string>
-			<key>productType</key>
-			<string>com.apple.product-type.bundle.unit-test</string>
-		</dict>
-		<key>AE0648A418B924B0006902A4</key>
-		<dict>
-			<key>explicitFileType</key>
-			<string>wrapper.cfbundle</string>
-			<key>includeInIndex</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>path</key>
-			<string>Toastmasters Timer Tests.xctest</string>
-			<key>sourceTree</key>
-			<string>BUILT_PRODUCTS_DIR</string>
-		</dict>
-		<key>AE0648A518B924B0006902A4</key>
-		<dict>
-			<key>fileRef</key>
-			<string>AE06488C18B9243E006902A4</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>AE0648A618B924B0006902A4</key>
-		<dict>
-			<key>fileRef</key>
-			<string>AE06488E18B9243E006902A4</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>AE0648A718B924B0006902A4</key>
-		<dict>
-			<key>fileRef</key>
-			<string>AE06489018B9243E006902A4</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>AE0648A918B924B0006902A4</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>9601ED1DC6624F528E0C2AB1</string>
-				<string>AE0648AA18B924B0006902A4</string>
-				<string>AE0648AB18B924B0006902A4</string>
-				<string>AE0648B018B924B0006902A4</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Supporting Files</string>
-			<key>path</key>
-			<string>Toastmasters Timer Tests</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>AE0648AA18B924B0006902A4</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.plist.xml</string>
-			<key>path</key>
-			<string>Toastmasters Timer Tests-Info.plist</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>AE0648AB18B924B0006902A4</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>AE0648AC18B924B0006902A4</string>
-			</array>
-			<key>isa</key>
-			<string>PBXVariantGroup</string>
-			<key>name</key>
-			<string>InfoPlist.strings</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>AE0648AC18B924B0006902A4</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.plist.strings</string>
-			<key>name</key>
-			<string>en</string>
-			<key>path</key>
-			<string>en.lproj/InfoPlist.strings</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>AE0648AD18B924B0006902A4</key>
-		<dict>
-			<key>fileRef</key>
-			<string>AE0648AB18B924B0006902A4</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>AE0648B018B924B0006902A4</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>Toastmasters Timer Tests-Prefix.pch</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>AE0648B118B924B1006902A4</key>
-		<dict>
-			<key>containerPortal</key>
-			<string>AE72239D17BDAB65003B60A5</string>
-			<key>isa</key>
-			<string>PBXContainerItemProxy</string>
-			<key>proxyType</key>
-			<string>1</string>
-			<key>remoteGlobalIDString</key>
-			<string>AE7223A417BDAB65003B60A5</string>
-			<key>remoteInfo</key>
-			<string>Toastmasters Timer</string>
-		</dict>
-		<key>AE0648B218B924B1006902A4</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXTargetDependency</string>
-			<key>target</key>
-			<string>AE7223A417BDAB65003B60A5</string>
-			<key>targetProxy</key>
-			<string>AE0648B118B924B1006902A4</string>
-		</dict>
-		<key>AE0648B318B924B1006902A4</key>
-		<dict>
-			<key>buildConfigurations</key>
-			<array>
-				<string>AE0648B418B924B1006902A4</string>
-				<string>AE0648B518B924B1006902A4</string>
-			</array>
-			<key>defaultConfigurationIsVisible</key>
-			<string>0</string>
-			<key>defaultConfigurationName</key>
-			<string>Release</string>
-			<key>isa</key>
-			<string>XCConfigurationList</string>
-		</dict>
-		<key>AE0648B418B924B1006902A4</key>
-		<dict>
-			<key>baseConfigurationReference</key>
-			<string>79E8424783BC43CA9202D5DD</string>
-			<key>buildSettings</key>
-			<dict>
-				<key>BUNDLE_LOADER</key>
-				<string>$(BUILT_PRODUCTS_DIR)/Toastmasters Timer.app/Toastmasters Timer</string>
-				<key>CLANG_ENABLE_MODULES</key>
-				<string>YES</string>
-				<key>CLANG_WARN_BOOL_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_DIRECT_OBJC_ISA_USAGE</key>
-				<string>YES_ERROR</string>
-				<key>CLANG_WARN_OBJC_ROOT_CLASS</key>
-				<string>YES_ERROR</string>
-				<key>FRAMEWORK_SEARCH_PATHS</key>
-				<array>
-					<string>$(SDKROOT)/Developer/Library/Frameworks</string>
-					<string>$(inherited)</string>
-					<string>$(DEVELOPER_FRAMEWORKS_DIR)</string>
-				</array>
-				<key>GCC_PRECOMPILE_PREFIX_HEADER</key>
-				<string>YES</string>
-				<key>GCC_PREFIX_HEADER</key>
-				<string>Toastmasters Timer Tests/Toastmasters Timer Tests-Prefix.pch</string>
-				<key>GCC_PREPROCESSOR_DEFINITIONS</key>
-				<array>
-					<string>DEBUG=1</string>
-					<string>$(inherited)</string>
-				</array>
-				<key>GCC_WARN_64_TO_32_BIT_CONVERSION</key>
-				<string>YES</string>
-				<key>GCC_WARN_ABOUT_RETURN_TYPE</key>
-				<string>YES_ERROR</string>
-				<key>GCC_WARN_UNDECLARED_SELECTOR</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNUSED_FUNCTION</key>
-				<string>YES</string>
-				<key>HEADER_SEARCH_PATHS</key>
-				<array>
-					<string>"${PODS_ROOT}/Headers"</string>
-					<string>"${PODS_ROOT}/Headers/CocoaLumberjack"</string>
-					<string>"${PODS_ROOT}/Headers/Kiwi"</string>
-					<string>"${PODS_ROOT}/Headers/iRate"</string>
-				</array>
-				<key>INFOPLIST_FILE</key>
-				<string>Toastmasters Timer Tests/Toastmasters Timer Tests-Info.plist</string>
-				<key>PRODUCT_NAME</key>
-				<string>$(TARGET_NAME)</string>
-				<key>TEST_HOST</key>
-				<string>$(BUNDLE_LOADER)</string>
-				<key>WRAPPER_EXTENSION</key>
-				<string>xctest</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Debug</string>
-		</dict>
-		<key>AE0648B518B924B1006902A4</key>
-		<dict>
-			<key>baseConfigurationReference</key>
-			<string>79E8424783BC43CA9202D5DD</string>
-			<key>buildSettings</key>
-			<dict>
-				<key>BUNDLE_LOADER</key>
-				<string>$(BUILT_PRODUCTS_DIR)/Toastmasters Timer.app/Toastmasters Timer</string>
-				<key>CLANG_ENABLE_MODULES</key>
-				<string>YES</string>
-				<key>CLANG_WARN_BOOL_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_DIRECT_OBJC_ISA_USAGE</key>
-				<string>YES_ERROR</string>
-				<key>CLANG_WARN_OBJC_ROOT_CLASS</key>
-				<string>YES_ERROR</string>
-				<key>ENABLE_NS_ASSERTIONS</key>
-				<string>NO</string>
-				<key>FRAMEWORK_SEARCH_PATHS</key>
-				<array>
-					<string>$(SDKROOT)/Developer/Library/Frameworks</string>
-					<string>$(inherited)</string>
-					<string>$(DEVELOPER_FRAMEWORKS_DIR)</string>
-				</array>
-				<key>GCC_PRECOMPILE_PREFIX_HEADER</key>
-				<string>YES</string>
-				<key>GCC_PREFIX_HEADER</key>
-				<string>Toastmasters Timer Tests/Toastmasters Timer Tests-Prefix.pch</string>
-				<key>GCC_WARN_64_TO_32_BIT_CONVERSION</key>
-				<string>YES</string>
-				<key>GCC_WARN_ABOUT_RETURN_TYPE</key>
-				<string>YES_ERROR</string>
-				<key>GCC_WARN_UNDECLARED_SELECTOR</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNUSED_FUNCTION</key>
-				<string>YES</string>
-				<key>HEADER_SEARCH_PATHS</key>
-				<array>
-					<string>"${PODS_ROOT}/Headers"</string>
-					<string>"${PODS_ROOT}/Headers/CocoaLumberjack"</string>
-					<string>"${PODS_ROOT}/Headers/Kiwi"</string>
-					<string>"${PODS_ROOT}/Headers/iRate"</string>
-				</array>
-				<key>INFOPLIST_FILE</key>
-				<string>Toastmasters Timer Tests/Toastmasters Timer Tests-Info.plist</string>
-				<key>PRODUCT_NAME</key>
-				<string>$(TARGET_NAME)</string>
-				<key>TEST_HOST</key>
-				<string>$(BUNDLE_LOADER)</string>
-				<key>WRAPPER_EXTENSION</key>
-				<string>xctest</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Release</string>
-		</dict>
-		<key>AE0648B618B92540006902A4</key>
-		<dict>
-			<key>fileRef</key>
-			<string>AE06488418B91E0F006902A4</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>AE07586618BAB42E0052784C</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>AEE1D65218B9CC3B006FF6C2</string>
-				<string>AEE1D65318B9CC3B006FF6C2</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Helpers</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>AE07586718BAB4570052784C</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>name</key>
-			<string>TTInfoVCSpec.m</string>
-			<key>path</key>
-			<string>Toastmasters Timer Tests/TTInfoVCSpec.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>AE07586818BAB4570052784C</key>
-		<dict>
-			<key>fileRef</key>
-			<string>AE07586718BAB4570052784C</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>AE0BAEBB1874B6E9009F8066</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>AECC0AF21856B61400815DA2</string>
-				<string>AECC0AF31856B61400815DA2</string>
-				<string>AE87325E1831D51200BDD4B2</string>
-				<string>AE87325F1831D51200BDD4B2</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Scroll Wheel</string>
-			<key>path</key>
-			<string>Toastmasters Timer</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>AE0BAEBC1874B91B009F8066</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>TTColorButton.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>AE0BAEBD1874B91B009F8066</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>TTColorButton.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>AE0BAEBE1874B91B009F8066</key>
-		<dict>
-			<key>fileRef</key>
-			<string>AE0BAEBD1874B91B009F8066</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>AE0BAEC51878D4AB009F8066</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array/>
-			<key>inputPaths</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXShellScriptBuildPhase</string>
-			<key>outputPaths</key>
-			<array/>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-			<key>shellPath</key>
-			<string>/bin/sh</string>
-			<key>shellScript</key>
-			<string>#!/bin/bash
-bN=$(/usr/libexec/PlistBuddy -c "Print CFBundleVersion" "$INFOPLIST_FILE")
-bN=$((bN += 1))
-bN=$(printf "%d" $bN)
-/usr/libexec/PlistBuddy -c "Set :CFBundleVersion $bN" "$INFOPLIST_FILE"</string>
-		</dict>
-		<key>AE0BAEC6187BA0CA009F8066</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array/>
-			<key>inputPaths</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXShellScriptBuildPhase</string>
-			<key>outputPaths</key>
-			<array/>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-			<key>shellPath</key>
-			<string>/bin/sh</string>
-			<key>shellScript</key>
-			<string>./Crashlytics.framework/run 8326e081af65babd59690e3dc0bbfea5dcd9abd3</string>
-		</dict>
-		<key>AE0BAEC7187BA11F009F8066</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>wrapper.framework</string>
-			<key>path</key>
-			<string>Crashlytics.framework</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>AE0BAEC8187BA11F009F8066</key>
-		<dict>
-			<key>fileRef</key>
-			<string>AE0BAEC7187BA11F009F8066</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>AE111F9A17CED99900254EF4</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>compiled.mach-o.dylib</string>
-			<key>name</key>
-			<string>libz.dylib</string>
-			<key>path</key>
-			<string>usr/lib/libz.dylib</string>
-			<key>sourceTree</key>
-			<string>SDKROOT</string>
-		</dict>
-		<key>AE111F9B17CED99900254EF4</key>
-		<dict>
-			<key>fileRef</key>
-			<string>AE111F9A17CED99900254EF4</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>AE111FA017CEE81500254EF4</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>image.png</string>
-			<key>path</key>
-			<string>icon.png</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>AE111FA117CEE81500254EF4</key>
-		<dict>
-			<key>fileRef</key>
-			<string>AE111FA017CEE81500254EF4</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>AE111FA217CEE81B00254EF4</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>image.png</string>
-			<key>path</key>
-			<string>icon@2x.png</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>AE111FA317CEE81B00254EF4</key>
-		<dict>
-			<key>fileRef</key>
-			<string>AE111FA217CEE81B00254EF4</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>AE111FA417D0024300254EF4</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>image.png</string>
-			<key>path</key>
-			<string>twitter.png</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>AE111FA517D0024300254EF4</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>image.png</string>
-			<key>path</key>
-			<string>twitter@2x.png</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>AE111FA617D0024300254EF4</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>image.png</string>
-			<key>path</key>
-			<string>website.png</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>AE111FA717D0024300254EF4</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>image.png</string>
-			<key>path</key>
-			<string>website@2x.png</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>AE111FA817D0024400254EF4</key>
-		<dict>
-			<key>fileRef</key>
-			<string>AE111FA417D0024300254EF4</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>AE111FA917D0024400254EF4</key>
-		<dict>
-			<key>fileRef</key>
-			<string>AE111FA517D0024300254EF4</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>AE111FAA17D0024400254EF4</key>
-		<dict>
-			<key>fileRef</key>
-			<string>AE111FA617D0024300254EF4</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>AE111FAB17D0024400254EF4</key>
-		<dict>
-			<key>fileRef</key>
-			<string>AE111FA717D0024300254EF4</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>AE111FAC17D0036300254EF4</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>TTInfoVC.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>AE111FAD17D0036300254EF4</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>TTInfoVC.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>AE111FAE17D0036300254EF4</key>
-		<dict>
-			<key>fileRef</key>
-			<string>AE111FAD17D0036300254EF4</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>AE111FAF17D019B500254EF4</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>image.png</string>
-			<key>path</key>
-			<string>mail.png</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>AE111FB017D019B500254EF4</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>image.png</string>
-			<key>path</key>
-			<string>mail@2x.png</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>AE111FB117D019B500254EF4</key>
-		<dict>
-			<key>fileRef</key>
-			<string>AE111FAF17D019B500254EF4</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>AE111FB217D019B500254EF4</key>
-		<dict>
-			<key>fileRef</key>
-			<string>AE111FB017D019B500254EF4</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>AE111FB317D01FE700254EF4</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>wrapper.framework</string>
-			<key>name</key>
-			<string>MessageUI.framework</string>
-			<key>path</key>
-			<string>System/Library/Frameworks/MessageUI.framework</string>
-			<key>sourceTree</key>
-			<string>SDKROOT</string>
-		</dict>
-		<key>AE111FB417D01FE700254EF4</key>
-		<dict>
-			<key>fileRef</key>
-			<string>AE111FB317D01FE700254EF4</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>AE1FF8CE18B927590074AC7B</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>AE488FCA17DD2AC70090E139</string>
-				<string>AE06488B18B9243E006902A4</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>External</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>AE393C0A18DF427B0058AEC6</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>name</key>
-			<string>TTHelperSpec.m</string>
-			<key>path</key>
-			<string>Toastmasters Timer Tests/TTHelperSpec.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>AE393C0B18DF427B0058AEC6</key>
-		<dict>
-			<key>fileRef</key>
-			<string>AE393C0A18DF427B0058AEC6</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>AE393C0D18DF49B30058AEC6</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>TTStrings.h</string>
-			<key>path</key>
-			<string>Toastmasters Timer/TTStrings.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>AE3C7EC017ECF9080071725C</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>TTAlertManager.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>AE3C7EC117ECF9080071725C</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>lineEnding</key>
-			<string>0</string>
-			<key>path</key>
-			<string>TTAlertManager.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-			<key>xcLanguageSpecificationIdentifier</key>
-			<string>xcode.lang.objc</string>
-		</dict>
-		<key>AE3C7EC217ECF9080071725C</key>
-		<dict>
-			<key>fileRef</key>
-			<string>AE3C7EC117ECF9080071725C</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>AE3C7EC317ECFBA90071725C</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>TTConstants.h</string>
-			<key>path</key>
-			<string>Toastmasters Timer/TTConstants.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>AE488FC817DD2A510090E139</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>AE111FAC17D0036300254EF4</string>
-				<string>AE111FAD17D0036300254EF4</string>
-				<string>AE7223E317BDABCA003B60A5</string>
-				<string>AE9F976217BDC4FA00626448</string>
-				<string>AE9F976317BDC4FA00626448</string>
-				<string>AE7223E517BDAC8B003B60A5</string>
-				<string>AE7223E617BDAC8B003B60A5</string>
-				<string>AE0BAEBC1874B91B009F8066</string>
-				<string>AE0BAEBD1874B91B009F8066</string>
-				<string>AEB3E4FB18EE31BF00E6A5FA</string>
-				<string>AEB3E4FC18EE31BF00E6A5FA</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Views</string>
-			<key>path</key>
-			<string>Toastmasters Timer</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>AE488FC917DD2A5B0090E139</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>AEB3E4EA18ECEDA400E6A5FA</string>
-				<string>AE9F976517BE538100626448</string>
-				<string>AE9F976617BE538100626448</string>
-				<string>AE7223B917BDAB66003B60A5</string>
-				<string>AE7223BA17BDAB66003B60A5</string>
-				<string>AE9F976C17BEA00600626448</string>
-				<string>AE9F976D17BEA00600626448</string>
-				<string>AE3C7EC017ECF9080071725C</string>
-				<string>AE3C7EC117ECF9080071725C</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Controllers</string>
-			<key>path</key>
-			<string>Toastmasters Timer</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>AE488FCA17DD2AC70090E139</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>AE0BAEBB1874B6E9009F8066</string>
-				<string>AE6BB43317EC779C00D23DD6</string>
-				<string>AE5208D017C17034002CFFD7</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Libraries</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>AE5208A717C054AE002CFFD7</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>AECC0AF8185AA97500815DA2</string>
-				<string>AEAE24E517CAB08300DA265B</string>
-				<string>AEAE24E617CAB08300DA265B</string>
-				<string>AEF3116217E911C000D10C32</string>
-				<string>AEF3116317E911C000D10C32</string>
-				<string>AEF3116417E911C000D10C32</string>
-				<string>AE111FA017CEE81500254EF4</string>
-				<string>AEF3115A17E90DB500D10C32</string>
-				<string>AEF3115C17E90EB800D10C32</string>
-				<string>AEF3115D17E90EB800D10C32</string>
-				<string>AEF3115E17E90EB800D10C32</string>
-				<string>AE111FA217CEE81B00254EF4</string>
-				<string>AEBAF2F317E7D9B000BA9479</string>
-				<string>AEBAF2F417E7D9B000BA9479</string>
-				<string>AE111FAF17D019B500254EF4</string>
-				<string>AE111FB017D019B500254EF4</string>
-				<string>AE5208A817C054AE002CFFD7</string>
-				<string>AE5208AE17C0FF63002CFFD7</string>
-				<string>AEAE24E717CAB08300DA265B</string>
-				<string>AEAE24E817CAB08300DA265B</string>
-				<string>AE5208B617C100D2002CFFD7</string>
-				<string>AE5208C017C10CE4002CFFD7</string>
-				<string>AE5208AF17C0FF63002CFFD7</string>
-				<string>AE5208B717C100D2002CFFD7</string>
-				<string>AE5208B017C0FF63002CFFD7</string>
-				<string>AE5208B117C0FF63002CFFD7</string>
-				<string>AEAE24E917CAB08300DA265B</string>
-				<string>AEAE24EA17CAB08300DA265B</string>
-				<string>AE8D52FA17EE2D1300F265FC</string>
-				<string>AE8D52FB17EE2D1300F265FC</string>
-				<string>AE5208BC17C10B8C002CFFD7</string>
-				<string>AE5208BD17C10B8C002CFFD7</string>
-				<string>AE111FA417D0024300254EF4</string>
-				<string>AE111FA517D0024300254EF4</string>
-				<string>AE111FA617D0024300254EF4</string>
-				<string>AE111FA717D0024300254EF4</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Images</string>
-			<key>path</key>
-			<string>Toastmasters Timer/images</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>AE5208A817C054AE002CFFD7</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>image.png</string>
-			<key>path</key>
-			<string>minus.png</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>AE5208AA17C054AE002CFFD7</key>
-		<dict>
-			<key>fileRef</key>
-			<string>AE5208A817C054AE002CFFD7</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>AE5208AE17C0FF63002CFFD7</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>image.png</string>
-			<key>path</key>
-			<string>minus@2x.png</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>AE5208AF17C0FF63002CFFD7</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>image.png</string>
-			<key>path</key>
-			<string>play.png</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>AE5208B017C0FF63002CFFD7</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>image.png</string>
-			<key>path</key>
-			<string>plus.png</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>AE5208B117C0FF63002CFFD7</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>image.png</string>
-			<key>path</key>
-			<string>plus@2x.png</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>AE5208B217C0FF63002CFFD7</key>
-		<dict>
-			<key>fileRef</key>
-			<string>AE5208AE17C0FF63002CFFD7</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>AE5208B317C0FF63002CFFD7</key>
-		<dict>
-			<key>fileRef</key>
-			<string>AE5208AF17C0FF63002CFFD7</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>AE5208B417C0FF63002CFFD7</key>
-		<dict>
-			<key>fileRef</key>
-			<string>AE5208B017C0FF63002CFFD7</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>AE5208B517C0FF63002CFFD7</key>
-		<dict>
-			<key>fileRef</key>
-			<string>AE5208B117C0FF63002CFFD7</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>AE5208B617C100D2002CFFD7</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>image.png</string>
-			<key>path</key>
-			<string>pause.png</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>AE5208B717C100D2002CFFD7</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>image.png</string>
-			<key>path</key>
-			<string>play@2x.png</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>AE5208B817C100D2002CFFD7</key>
-		<dict>
-			<key>fileRef</key>
-			<string>AE5208B617C100D2002CFFD7</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>AE5208B917C100D2002CFFD7</key>
-		<dict>
-			<key>fileRef</key>
-			<string>AE5208B717C100D2002CFFD7</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>AE5208BC17C10B8C002CFFD7</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>image.png</string>
-			<key>path</key>
-			<string>stop.png</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>AE5208BD17C10B8C002CFFD7</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>image.png</string>
-			<key>path</key>
-			<string>stop@2x.png</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>AE5208BE17C10B8C002CFFD7</key>
-		<dict>
-			<key>fileRef</key>
-			<string>AE5208BC17C10B8C002CFFD7</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>AE5208BF17C10B8C002CFFD7</key>
-		<dict>
-			<key>fileRef</key>
-			<string>AE5208BD17C10B8C002CFFD7</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>AE5208C017C10CE4002CFFD7</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>image.png</string>
-			<key>path</key>
-			<string>pause@2x.png</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>AE5208C117C10CE4002CFFD7</key>
-		<dict>
-			<key>fileRef</key>
-			<string>AE5208C017C10CE4002CFFD7</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>AE5208CE17C16FFA002CFFD7</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>wrapper.framework</string>
-			<key>name</key>
-			<string>QuartzCore.framework</string>
-			<key>path</key>
-			<string>System/Library/Frameworks/QuartzCore.framework</string>
-			<key>sourceTree</key>
-			<string>SDKROOT</string>
-		</dict>
-		<key>AE5208CF17C16FFA002CFFD7</key>
-		<dict>
-			<key>fileRef</key>
-			<string>AE5208CE17C16FFA002CFFD7</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>AE5208D017C17034002CFFD7</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>AE5208D117C17034002CFFD7</string>
-				<string>AE5208D217C17034002CFFD7</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Toast</string>
-			<key>path</key>
-			<string>Toastmasters Timer/libraries/Toast</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>AE5208D117C17034002CFFD7</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>Toast+UIView.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>AE5208D217C17034002CFFD7</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>Toast+UIView.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>AE5208D317C17034002CFFD7</key>
-		<dict>
-			<key>fileRef</key>
-			<string>AE5208D217C17034002CFFD7</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-			<key>settings</key>
-			<dict>
-				<key>COMPILER_FLAGS</key>
-				<string>-fno-objc-arc -w</string>
-			</dict>
-		</dict>
-		<key>AE6BB43317EC779C00D23DD6</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>AE6BB43417EC779C00D23DD6</string>
-				<string>AE6BB43517EC779C00D23DD6</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>SGDeepCopy</string>
-			<key>path</key>
-			<string>Toastmasters Timer/libraries/SGDeepCopy</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>AE6BB43417EC779C00D23DD6</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>SGDeepCopy.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>AE6BB43517EC779C00D23DD6</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>SGDeepCopy.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>AE6BB43617EC779C00D23DD6</key>
-		<dict>
-			<key>fileRef</key>
-			<string>AE6BB43517EC779C00D23DD6</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>AE72239C17BDAB65003B60A5</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>AE06488318B91C65006902A4</string>
-				<string>AE1FF8CE18B927590074AC7B</string>
-				<string>AE06488218B91BEF006902A4</string>
-				<string>79E8424783BC43CA9202D5DD</string>
-				<string>A8270FFA71A3463F9296307F</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>AE72239D17BDAB65003B60A5</key>
-		<dict>
-			<key>attributes</key>
-			<dict>
-				<key>CLASSPREFIX</key>
-				<string>TT</string>
-				<key>LastUpgradeCheck</key>
-				<string>0510</string>
-				<key>ORGANIZATIONNAME</key>
-				<string>Sundeep Gupta</string>
-				<key>TargetAttributes</key>
-				<dict>
-					<key>AE0648A318B924B0006902A4</key>
-					<dict>
-						<key>TestTargetID</key>
-						<string>AE7223A417BDAB65003B60A5</string>
-					</dict>
-					<key>AE7223A417BDAB65003B60A5</key>
-					<dict>
-						<key>DevelopmentTeam</key>
-						<string>M3NJ52HVCE</string>
-					</dict>
-				</dict>
-			</dict>
-			<key>buildConfigurationList</key>
-			<string>AE7223A017BDAB65003B60A5</string>
-			<key>compatibilityVersion</key>
-			<string>Xcode 3.2</string>
-			<key>developmentRegion</key>
-			<string>English</string>
-			<key>hasScannedForEncodings</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXProject</string>
-			<key>knownRegions</key>
-			<array>
-				<string>en</string>
-			</array>
-			<key>mainGroup</key>
-			<string>AE72239C17BDAB65003B60A5</string>
-			<key>productRefGroup</key>
-			<string>AE7223A617BDAB65003B60A5</string>
-			<key>projectDirPath</key>
-			<string></string>
-			<key>projectReferences</key>
-			<array/>
-			<key>projectRoot</key>
-			<string></string>
-			<key>targets</key>
-			<array>
-				<string>AE7223A417BDAB65003B60A5</string>
-				<string>AE0648A318B924B0006902A4</string>
-			</array>
-		</dict>
-		<key>AE7223A017BDAB65003B60A5</key>
-		<dict>
-			<key>buildConfigurations</key>
-			<array>
-				<string>AE7223DB17BDAB66003B60A5</string>
-				<string>AE7223DC17BDAB66003B60A5</string>
-			</array>
-			<key>defaultConfigurationIsVisible</key>
-			<string>0</string>
-			<key>defaultConfigurationName</key>
-			<string>Release</string>
-			<key>isa</key>
-			<string>XCConfigurationList</string>
-		</dict>
-		<key>AE7223A117BDAB65003B60A5</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>AE7223B717BDAB66003B60A5</string>
-				<string>AE7223BB17BDAB66003B60A5</string>
-				<string>AE3C7EC217ECF9080071725C</string>
-				<string>AE7223E717BDAC8B003B60A5</string>
-				<string>AE6BB43617EC779C00D23DD6</string>
-				<string>AE9F976417BDC4FA00626448</string>
-				<string>AE9F976717BE538100626448</string>
-				<string>AE8732601831D51200BDD4B2</string>
-				<string>AE0BAEBE1874B91B009F8066</string>
-				<string>AE9F976E17BEA00600626448</string>
-				<string>AECC0AF41856B61400815DA2</string>
-				<string>AEB3E4FD18EE31BF00E6A5FA</string>
-				<string>AE5208D317C17034002CFFD7</string>
-				<string>AE111FAE17D0036300254EF4</string>
-			</array>
-			<key>isa</key>
-			<string>PBXSourcesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>AE7223A217BDAB65003B60A5</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>AE111FB417D01FE700254EF4</string>
-				<string>AE0BAEC8187BA11F009F8066</string>
-				<string>AE111F9B17CED99900254EF4</string>
-				<string>AE5208CF17C16FFA002CFFD7</string>
-				<string>AEDA15A217BDB2F300AC9DBA</string>
-				<string>AE7223A917BDAB65003B60A5</string>
-				<string>AE7223AB17BDAB65003B60A5</string>
-				<string>AE7223AD17BDAB65003B60A5</string>
-				<string>AE7223AF17BDAB65003B60A5</string>
-				<string>892860AD74CE40D1A754749B</string>
-			</array>
-			<key>isa</key>
-			<string>PBXFrameworksBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>AE7223A317BDAB65003B60A5</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>AE7223B517BDAB66003B60A5</string>
-				<string>AEBAF2F617E7D9B000BA9479</string>
-				<string>AEF3116517E911C000D10C32</string>
-				<string>AE7223E417BDABCA003B60A5</string>
-				<string>AE5208AA17C054AE002CFFD7</string>
-				<string>AE5208B217C0FF63002CFFD7</string>
-				<string>AE5208B317C0FF63002CFFD7</string>
-				<string>AE5208B417C0FF63002CFFD7</string>
-				<string>AE5208B517C0FF63002CFFD7</string>
-				<string>AE5208B817C100D2002CFFD7</string>
-				<string>AEBAF2F517E7D9B000BA9479</string>
-				<string>AE5208B917C100D2002CFFD7</string>
-				<string>AEF3115B17E90DB500D10C32</string>
-				<string>AEF3116717E911C000D10C32</string>
-				<string>AE5208BE17C10B8C002CFFD7</string>
-				<string>AECC0AF9185AA97500815DA2</string>
-				<string>AE5208BF17C10B8C002CFFD7</string>
-				<string>AE5208C117C10CE4002CFFD7</string>
-				<string>AEF3115F17E90EB800D10C32</string>
-				<string>AEAE24EB17CAB08300DA265B</string>
-				<string>AEAE24EC17CAB08300DA265B</string>
-				<string>AE8D52FF17EE2D1300F265FC</string>
-				<string>AEAE24ED17CAB08300DA265B</string>
-				<string>AEAE24EE17CAB08300DA265B</string>
-				<string>AEAE24EF17CAB08300DA265B</string>
-				<string>AE8D52FE17EE2D1300F265FC</string>
-				<string>AEF3116617E911C000D10C32</string>
-				<string>AEAE24F017CAB08300DA265B</string>
-				<string>AE111FA117CEE81500254EF4</string>
-				<string>AE111FA317CEE81B00254EF4</string>
-				<string>AE111FA817D0024400254EF4</string>
-				<string>AEF3116117E90EB800D10C32</string>
-				<string>AE111FA917D0024400254EF4</string>
-				<string>AE111FAA17D0024400254EF4</string>
-				<string>AE111FAB17D0024400254EF4</string>
-				<string>AE111FB117D019B500254EF4</string>
-				<string>AEF3116017E90EB800D10C32</string>
-				<string>AE111FB217D019B500254EF4</string>
-			</array>
-			<key>isa</key>
-			<string>PBXResourcesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>AE7223A417BDAB65003B60A5</key>
-		<dict>
-			<key>buildConfigurationList</key>
-			<string>AE7223DD17BDAB66003B60A5</string>
-			<key>buildPhases</key>
-			<array>
-				<string>F6079043BE5B41BE8CD19E37</string>
-				<string>AE0BAEC51878D4AB009F8066</string>
-				<string>AE7223A117BDAB65003B60A5</string>
-				<string>AE7223A217BDAB65003B60A5</string>
-				<string>AE7223A317BDAB65003B60A5</string>
-				<string>AE0BAEC6187BA0CA009F8066</string>
-				<string>DAE3F2B8B7D94D5CBB85ED05</string>
-			</array>
-			<key>buildRules</key>
-			<array/>
-			<key>dependencies</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXNativeTarget</string>
-			<key>name</key>
-			<string>Toastmasters Timer</string>
-			<key>productName</key>
-			<string>Toastmasters Timer</string>
-			<key>productReference</key>
-			<string>AE7223A517BDAB65003B60A5</string>
-			<key>productType</key>
-			<string>com.apple.product-type.application</string>
-		</dict>
-		<key>AE7223A517BDAB65003B60A5</key>
-		<dict>
-			<key>explicitFileType</key>
-			<string>wrapper.application</string>
-			<key>includeInIndex</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>path</key>
-			<string>Toastmasters Timer.app</string>
-			<key>sourceTree</key>
-			<string>BUILT_PRODUCTS_DIR</string>
-		</dict>
-		<key>AE7223A617BDAB65003B60A5</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>AE7223A517BDAB65003B60A5</string>
-				<string>AE0648A418B924B0006902A4</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Products</string>
-			<key>path</key>
-			<string>..</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>AE7223A817BDAB65003B60A5</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>wrapper.framework</string>
-			<key>name</key>
-			<string>UIKit.framework</string>
-			<key>path</key>
-			<string>System/Library/Frameworks/UIKit.framework</string>
-			<key>sourceTree</key>
-			<string>SDKROOT</string>
-		</dict>
-		<key>AE7223A917BDAB65003B60A5</key>
-		<dict>
-			<key>fileRef</key>
-			<string>AE7223A817BDAB65003B60A5</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>AE7223AA17BDAB65003B60A5</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>wrapper.framework</string>
-			<key>name</key>
-			<string>Foundation.framework</string>
-			<key>path</key>
-			<string>System/Library/Frameworks/Foundation.framework</string>
-			<key>sourceTree</key>
-			<string>SDKROOT</string>
-		</dict>
-		<key>AE7223AB17BDAB65003B60A5</key>
-		<dict>
-			<key>fileRef</key>
-			<string>AE7223AA17BDAB65003B60A5</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>AE7223AC17BDAB65003B60A5</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>wrapper.framework</string>
-			<key>name</key>
-			<string>CoreGraphics.framework</string>
-			<key>path</key>
-			<string>System/Library/Frameworks/CoreGraphics.framework</string>
-			<key>sourceTree</key>
-			<string>SDKROOT</string>
-		</dict>
-		<key>AE7223AD17BDAB65003B60A5</key>
-		<dict>
-			<key>fileRef</key>
-			<string>AE7223AC17BDAB65003B60A5</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>AE7223AE17BDAB65003B60A5</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>wrapper.framework</string>
-			<key>name</key>
-			<string>CoreData.framework</string>
-			<key>path</key>
-			<string>System/Library/Frameworks/CoreData.framework</string>
-			<key>sourceTree</key>
-			<string>SDKROOT</string>
-		</dict>
-		<key>AE7223AF17BDAB65003B60A5</key>
-		<dict>
-			<key>fileRef</key>
-			<string>AE7223AE17BDAB65003B60A5</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>AE7223B117BDAB66003B60A5</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>AE7223B617BDAB66003B60A5</string>
-				<string>B4CF1A3C75604EC39B94C368</string>
-				<string>AE7223A617BDAB65003B60A5</string>
-				<string>AE7223B217BDAB66003B60A5</string>
-				<string>AE7223B817BDAB66003B60A5</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Supporting Files</string>
-			<key>path</key>
-			<string>Toastmasters Timer</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>AE7223B217BDAB66003B60A5</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.plist.xml</string>
-			<key>path</key>
-			<string>Toastmasters Timer-Info.plist</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>AE7223B317BDAB66003B60A5</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>AE7223B417BDAB66003B60A5</string>
-			</array>
-			<key>isa</key>
-			<string>PBXVariantGroup</string>
-			<key>name</key>
-			<string>InfoPlist.strings</string>
-			<key>path</key>
-			<string>Toastmasters Timer</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>AE7223B417BDAB66003B60A5</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.plist.strings</string>
-			<key>name</key>
-			<string>en</string>
-			<key>path</key>
-			<string>en.lproj/InfoPlist.strings</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>AE7223B517BDAB66003B60A5</key>
-		<dict>
-			<key>fileRef</key>
-			<string>AE7223B317BDAB66003B60A5</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>AE7223B617BDAB66003B60A5</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>main.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>AE7223B717BDAB66003B60A5</key>
-		<dict>
-			<key>fileRef</key>
-			<string>AE7223B617BDAB66003B60A5</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>AE7223B817BDAB66003B60A5</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>Toastmasters Timer-Prefix.pch</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>AE7223B917BDAB66003B60A5</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>TTAppDelegate.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>AE7223BA17BDAB66003B60A5</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>TTAppDelegate.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>AE7223BB17BDAB66003B60A5</key>
-		<dict>
-			<key>fileRef</key>
-			<string>AE7223BA17BDAB66003B60A5</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>AE7223CB17BDAB66003B60A5</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>wrapper.framework</string>
-			<key>name</key>
-			<string>SenTestingKit.framework</string>
-			<key>path</key>
-			<string>Library/Frameworks/SenTestingKit.framework</string>
-			<key>sourceTree</key>
-			<string>DEVELOPER_DIR</string>
-		</dict>
-		<key>AE7223DB17BDAB66003B60A5</key>
-		<dict>
-			<key>buildSettings</key>
-			<dict>
-				<key>ALWAYS_SEARCH_USER_PATHS</key>
-				<string>NO</string>
-				<key>CLANG_CXX_LANGUAGE_STANDARD</key>
-				<string>gnu++0x</string>
-				<key>CLANG_CXX_LIBRARY</key>
-				<string>libc++</string>
-				<key>CLANG_ENABLE_OBJC_ARC</key>
-				<string>YES</string>
-				<key>CLANG_WARN_CONSTANT_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_EMPTY_BODY</key>
-				<string>YES</string>
-				<key>CLANG_WARN_ENUM_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_INT_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN__DUPLICATE_METHOD_MATCH</key>
-				<string>YES</string>
-				<key>CODE_SIGN_IDENTITY[sdk=iphoneos*]</key>
-				<string>iPhone Developer</string>
-				<key>COPY_PHASE_STRIP</key>
-				<string>NO</string>
-				<key>GCC_C_LANGUAGE_STANDARD</key>
-				<string>gnu99</string>
-				<key>GCC_DYNAMIC_NO_PIC</key>
-				<string>NO</string>
-				<key>GCC_OPTIMIZATION_LEVEL</key>
-				<string>0</string>
-				<key>GCC_PREPROCESSOR_DEFINITIONS</key>
-				<array>
-					<string>DEBUG=1</string>
-					<string>$(inherited)</string>
-				</array>
-				<key>GCC_SYMBOLS_PRIVATE_EXTERN</key>
-				<string>NO</string>
-				<key>GCC_WARN_ABOUT_RETURN_TYPE</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNINITIALIZED_AUTOS</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNUSED_VARIABLE</key>
-				<string>YES</string>
-				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
-				<string>7.0</string>
-				<key>ONLY_ACTIVE_ARCH</key>
-				<string>YES</string>
-				<key>SDKROOT</key>
-				<string>iphoneos</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Debug</string>
-		</dict>
-		<key>AE7223DC17BDAB66003B60A5</key>
-		<dict>
-			<key>buildSettings</key>
-			<dict>
-				<key>ALWAYS_SEARCH_USER_PATHS</key>
-				<string>NO</string>
-				<key>CLANG_CXX_LANGUAGE_STANDARD</key>
-				<string>gnu++0x</string>
-				<key>CLANG_CXX_LIBRARY</key>
-				<string>libc++</string>
-				<key>CLANG_ENABLE_OBJC_ARC</key>
-				<string>YES</string>
-				<key>CLANG_WARN_CONSTANT_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_EMPTY_BODY</key>
-				<string>YES</string>
-				<key>CLANG_WARN_ENUM_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_INT_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN__DUPLICATE_METHOD_MATCH</key>
-				<string>YES</string>
-				<key>CODE_SIGN_IDENTITY[sdk=iphoneos*]</key>
-				<string>iPhone Developer</string>
-				<key>COPY_PHASE_STRIP</key>
-				<string>YES</string>
-				<key>GCC_C_LANGUAGE_STANDARD</key>
-				<string>gnu99</string>
-				<key>GCC_WARN_ABOUT_RETURN_TYPE</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNINITIALIZED_AUTOS</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNUSED_VARIABLE</key>
-				<string>YES</string>
-				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
-				<string>7.0</string>
-				<key>OTHER_CFLAGS</key>
-				<string>-DNS_BLOCK_ASSERTIONS=1</string>
-				<key>SDKROOT</key>
-				<string>iphoneos</string>
-				<key>VALIDATE_PRODUCT</key>
-				<string>YES</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Release</string>
-		</dict>
-		<key>AE7223DD17BDAB66003B60A5</key>
-		<dict>
-			<key>buildConfigurations</key>
-			<array>
-				<string>AE7223DE17BDAB66003B60A5</string>
-				<string>AE7223DF17BDAB66003B60A5</string>
-			</array>
-			<key>defaultConfigurationIsVisible</key>
-			<string>0</string>
-			<key>defaultConfigurationName</key>
-			<string>Release</string>
-			<key>isa</key>
-			<string>XCConfigurationList</string>
-		</dict>
-		<key>AE7223DE17BDAB66003B60A5</key>
-		<dict>
-			<key>baseConfigurationReference</key>
-			<string>B4CF1A3C75604EC39B94C368</string>
-			<key>buildSettings</key>
-			<dict>
-				<key>CODE_SIGN_IDENTITY</key>
-				<string></string>
-				<key>FRAMEWORK_SEARCH_PATHS</key>
-				<array>
-					<string>$(inherited)</string>
-					<string>/Users/sundeep/drive/projects/toastmastersTimer/app</string>
-				</array>
-				<key>GCC_PRECOMPILE_PREFIX_HEADER</key>
-				<string>YES</string>
-				<key>GCC_PREFIX_HEADER</key>
-				<string>Toastmasters Timer/Toastmasters Timer-Prefix.pch</string>
-				<key>INFOPLIST_FILE</key>
-				<string>Toastmasters Timer/Toastmasters Timer-Info.plist</string>
-				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
-				<string>7.0</string>
-				<key>LIBRARY_SEARCH_PATHS</key>
-				<string>$(inherited)</string>
-				<key>PRODUCT_NAME</key>
-				<string>$(TARGET_NAME)</string>
-				<key>PROVISIONING_PROFILE</key>
-				<string>5BA8E67F-F9CA-49DF-B94F-3C5383B1D85B</string>
-				<key>WRAPPER_EXTENSION</key>
-				<string>app</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Debug</string>
-		</dict>
-		<key>AE7223DF17BDAB66003B60A5</key>
-		<dict>
-			<key>baseConfigurationReference</key>
-			<string>B4CF1A3C75604EC39B94C368</string>
-			<key>buildSettings</key>
-			<dict>
-				<key>CODE_SIGN_IDENTITY</key>
-				<string></string>
-				<key>FRAMEWORK_SEARCH_PATHS</key>
-				<array>
-					<string>$(inherited)</string>
-					<string>/Users/sundeep/drive/projects/toastmastersTimer/app</string>
-				</array>
-				<key>GCC_PRECOMPILE_PREFIX_HEADER</key>
-				<string>YES</string>
-				<key>GCC_PREFIX_HEADER</key>
-				<string>Toastmasters Timer/Toastmasters Timer-Prefix.pch</string>
-				<key>INFOPLIST_FILE</key>
-				<string>Toastmasters Timer/Toastmasters Timer-Info.plist</string>
-				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
-				<string>7.0</string>
-				<key>LIBRARY_SEARCH_PATHS</key>
-				<string>$(inherited)</string>
-				<key>PRODUCT_NAME</key>
-				<string>$(TARGET_NAME)</string>
-				<key>PROVISIONING_PROFILE</key>
-				<string>71363225-3173-4FF0-9279-BAF34E07A74A</string>
-				<key>WRAPPER_EXTENSION</key>
-				<string>app</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Release</string>
-		</dict>
-		<key>AE7223E317BDABCA003B60A5</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>file.storyboard</string>
-			<key>path</key>
-			<string>Storyboard.storyboard</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>AE7223E417BDABCA003B60A5</key>
-		<dict>
-			<key>fileRef</key>
-			<string>AE7223E317BDABCA003B60A5</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>AE7223E517BDAC8B003B60A5</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>TTTimerVC.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>AE7223E617BDAC8B003B60A5</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>lineEnding</key>
-			<string>0</string>
-			<key>path</key>
-			<string>TTTimerVC.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-			<key>xcLanguageSpecificationIdentifier</key>
-			<string>xcode.lang.objc</string>
-		</dict>
-		<key>AE7223E717BDAC8B003B60A5</key>
-		<dict>
-			<key>fileRef</key>
-			<string>AE7223E617BDAC8B003B60A5</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>AE87325E1831D51200BDD4B2</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>SGScrollWheel.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>AE87325F1831D51200BDD4B2</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>SGScrollWheel.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>AE8732601831D51200BDD4B2</key>
-		<dict>
-			<key>fileRef</key>
-			<string>AE87325F1831D51200BDD4B2</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>AE8D52FA17EE2D1300F265FC</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>image.png</string>
-			<key>path</key>
-			<string>speakerOn.png</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>AE8D52FB17EE2D1300F265FC</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>image.png</string>
-			<key>path</key>
-			<string>speakerOn@2x.png</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>AE8D52FE17EE2D1300F265FC</key>
-		<dict>
-			<key>fileRef</key>
-			<string>AE8D52FA17EE2D1300F265FC</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>AE8D52FF17EE2D1300F265FC</key>
-		<dict>
-			<key>fileRef</key>
-			<string>AE8D52FB17EE2D1300F265FC</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>AE9F976217BDC4FA00626448</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>TTTimeEntryVC.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>AE9F976317BDC4FA00626448</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>lineEnding</key>
-			<string>0</string>
-			<key>path</key>
-			<string>TTTimeEntryVC.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-			<key>xcLanguageSpecificationIdentifier</key>
-			<string>xcode.lang.objc</string>
-		</dict>
-		<key>AE9F976417BDC4FA00626448</key>
-		<dict>
-			<key>fileRef</key>
-			<string>AE9F976317BDC4FA00626448</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>AE9F976517BE538100626448</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>TTTimer.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>AE9F976617BE538100626448</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>TTTimer.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>AE9F976717BE538100626448</key>
-		<dict>
-			<key>fileRef</key>
-			<string>AE9F976617BE538100626448</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>AE9F976C17BEA00600626448</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>TTHelper.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>AE9F976D17BEA00600626448</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>lineEnding</key>
-			<string>0</string>
-			<key>path</key>
-			<string>TTHelper.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-			<key>xcLanguageSpecificationIdentifier</key>
-			<string>xcode.lang.objc</string>
-		</dict>
-		<key>AE9F976E17BEA00600626448</key>
-		<dict>
-			<key>fileRef</key>
-			<string>AE9F976D17BEA00600626448</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>AEAE24E517CAB08300DA265B</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>image.png</string>
-			<key>path</key>
-			<string>cancel.png</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>AEAE24E617CAB08300DA265B</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>image.png</string>
-			<key>path</key>
-			<string>cancel@2x.png</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>AEAE24E717CAB08300DA265B</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>image.png</string>
-			<key>path</key>
-			<string>ok.png</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>AEAE24E817CAB08300DA265B</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>image.png</string>
-			<key>path</key>
-			<string>ok@2x.png</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>AEAE24E917CAB08300DA265B</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>image.png</string>
-			<key>path</key>
-			<string>settings.png</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>AEAE24EA17CAB08300DA265B</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>image.png</string>
-			<key>path</key>
-			<string>settings@2x.png</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>AEAE24EB17CAB08300DA265B</key>
-		<dict>
-			<key>fileRef</key>
-			<string>AEAE24E517CAB08300DA265B</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>AEAE24EC17CAB08300DA265B</key>
-		<dict>
-			<key>fileRef</key>
-			<string>AEAE24E617CAB08300DA265B</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>AEAE24ED17CAB08300DA265B</key>
-		<dict>
-			<key>fileRef</key>
-			<string>AEAE24E717CAB08300DA265B</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>AEAE24EE17CAB08300DA265B</key>
-		<dict>
-			<key>fileRef</key>
-			<string>AEAE24E817CAB08300DA265B</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>AEAE24EF17CAB08300DA265B</key>
-		<dict>
-			<key>fileRef</key>
-			<string>AEAE24E917CAB08300DA265B</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>AEAE24F017CAB08300DA265B</key>
-		<dict>
-			<key>fileRef</key>
-			<string>AEAE24EA17CAB08300DA265B</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>AEB3E4EA18ECEDA400E6A5FA</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>TTModalDelegate.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>AEB3E4FB18EE31BF00E6A5FA</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>TTBaseVc.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>AEB3E4FC18EE31BF00E6A5FA</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>TTBaseVc.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>AEB3E4FD18EE31BF00E6A5FA</key>
-		<dict>
-			<key>fileRef</key>
-			<string>AEB3E4FC18EE31BF00E6A5FA</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>AEB3E50018EE34B000E6A5FA</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>name</key>
-			<string>TTAppDelegateSpec.m</string>
-			<key>path</key>
-			<string>Toastmasters Timer Tests/TTAppDelegateSpec.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>AEB3E50118EE34B000E6A5FA</key>
-		<dict>
-			<key>fileRef</key>
-			<string>AEB3E50018EE34B000E6A5FA</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>AEB3E50218EE380800E6A5FA</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>name</key>
-			<string>TTBaseVcSpec.m</string>
-			<key>path</key>
-			<string>Toastmasters Timer Tests/TTBaseVcSpec.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>AEB3E50318EE380800E6A5FA</key>
-		<dict>
-			<key>fileRef</key>
-			<string>AEB3E50218EE380800E6A5FA</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>AEBAF2F317E7D9B000BA9479</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>image.png</string>
-			<key>path</key>
-			<string>info.png</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>AEBAF2F417E7D9B000BA9479</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>image.png</string>
-			<key>path</key>
-			<string>info@2x.png</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>AEBAF2F517E7D9B000BA9479</key>
-		<dict>
-			<key>fileRef</key>
-			<string>AEBAF2F317E7D9B000BA9479</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>AEBAF2F617E7D9B000BA9479</key>
-		<dict>
-			<key>fileRef</key>
-			<string>AEBAF2F417E7D9B000BA9479</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>AECC0AF21856B61400815DA2</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>SGSection.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>AECC0AF31856B61400815DA2</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>SGSection.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>AECC0AF41856B61400815DA2</key>
-		<dict>
-			<key>fileRef</key>
-			<string>AECC0AF31856B61400815DA2</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>AECC0AF8185AA97500815DA2</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>folder.assetcatalog</string>
-			<key>name</key>
-			<string>Images.xcassets</string>
-			<key>path</key>
-			<string>../Images.xcassets</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>AECC0AF9185AA97500815DA2</key>
-		<dict>
-			<key>fileRef</key>
-			<string>AECC0AF8185AA97500815DA2</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>AEDA15A117BDB2F300AC9DBA</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>wrapper.framework</string>
-			<key>name</key>
-			<string>AudioToolbox.framework</string>
-			<key>path</key>
-			<string>System/Library/Frameworks/AudioToolbox.framework</string>
-			<key>sourceTree</key>
-			<string>SDKROOT</string>
-		</dict>
-		<key>AEDA15A217BDB2F300AC9DBA</key>
-		<dict>
-			<key>fileRef</key>
-			<string>AEDA15A117BDB2F300AC9DBA</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>AEE1D65018B9C773006FF6C2</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>name</key>
-			<string>TTTimerVCSpec.m</string>
-			<key>path</key>
-			<string>Toastmasters Timer Tests/TTTimerVCSpec.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>AEE1D65118B9C773006FF6C2</key>
-		<dict>
-			<key>fileRef</key>
-			<string>AEE1D65018B9C773006FF6C2</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>AEE1D65218B9CC3B006FF6C2</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>TTSpecHelper.h</string>
-			<key>path</key>
-			<string>Toastmasters Timer Tests/TTSpecHelper.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>AEE1D65318B9CC3B006FF6C2</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>name</key>
-			<string>TTSpecHelper.m</string>
-			<key>path</key>
-			<string>Toastmasters Timer Tests/TTSpecHelper.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>AEE1D65418B9CC3B006FF6C2</key>
-		<dict>
-			<key>fileRef</key>
-			<string>AEE1D65318B9CC3B006FF6C2</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>AEE1D65518BAB2A3006FF6C2</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>AEB3E50218EE380800E6A5FA</string>
-				<string>AE06488418B91E0F006902A4</string>
-				<string>AEE1D65018B9C773006FF6C2</string>
-				<string>AE07586718BAB4570052784C</string>
-				<string>AE393C0A18DF427B0058AEC6</string>
-				<string>AEB3E50018EE34B000E6A5FA</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Specs</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>AEF3115A17E90DB500D10C32</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>image.png</string>
-			<key>path</key>
-			<string>icon120.png</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>AEF3115B17E90DB500D10C32</key>
-		<dict>
-			<key>fileRef</key>
-			<string>AEF3115A17E90DB500D10C32</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>AEF3115C17E90EB800D10C32</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>image.png</string>
-			<key>path</key>
-			<string>icon29.png</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>AEF3115D17E90EB800D10C32</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>image.png</string>
-			<key>path</key>
-			<string>icon29@2x.png</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>AEF3115E17E90EB800D10C32</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>image.png</string>
-			<key>path</key>
-			<string>icon80.png</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>AEF3115F17E90EB800D10C32</key>
-		<dict>
-			<key>fileRef</key>
-			<string>AEF3115C17E90EB800D10C32</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>AEF3116017E90EB800D10C32</key>
-		<dict>
-			<key>fileRef</key>
-			<string>AEF3115D17E90EB800D10C32</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>AEF3116117E90EB800D10C32</key>
-		<dict>
-			<key>fileRef</key>
-			<string>AEF3115E17E90EB800D10C32</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>AEF3116217E911C000D10C32</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>image.png</string>
-			<key>path</key>
-			<string>Default-568h@2x.png</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>AEF3116317E911C000D10C32</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>image.png</string>
-			<key>path</key>
-			<string>Default.png</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>AEF3116417E911C000D10C32</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>image.png</string>
-			<key>path</key>
-			<string>Default@2x.png</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>AEF3116517E911C000D10C32</key>
-		<dict>
-			<key>fileRef</key>
-			<string>AEF3116217E911C000D10C32</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>AEF3116617E911C000D10C32</key>
-		<dict>
-			<key>fileRef</key>
-			<string>AEF3116317E911C000D10C32</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>AEF3116717E911C000D10C32</key>
-		<dict>
-			<key>fileRef</key>
-			<string>AEF3116417E911C000D10C32</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>B4CF1A3C75604EC39B94C368</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.xcconfig</string>
-			<key>name</key>
-			<string>Pods.xcconfig</string>
-			<key>path</key>
-			<string>../Pods/Pods.xcconfig</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>D922069EBAB54014839BEFB7</key>
-		<dict>
-			<key>explicitFileType</key>
-			<string>archive.ar</string>
-			<key>includeInIndex</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>path</key>
-			<string>libPods-Toastmasters Timer Tests.a</string>
-			<key>sourceTree</key>
-			<string>BUILT_PRODUCTS_DIR</string>
-		</dict>
-		<key>DAE3F2B8B7D94D5CBB85ED05</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array/>
-			<key>inputPaths</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXShellScriptBuildPhase</string>
-			<key>name</key>
-			<string>Copy Pods Resources</string>
-			<key>outputPaths</key>
-			<array/>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-			<key>shellPath</key>
-			<string>/bin/sh</string>
-			<key>shellScript</key>
-			<string>"${SRCROOT}/Pods/Pods-resources.sh"
-</string>
-			<key>showEnvVarsInLog</key>
-			<string>0</string>
-		</dict>
-		<key>F6079043BE5B41BE8CD19E37</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array/>
-			<key>inputPaths</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXShellScriptBuildPhase</string>
-			<key>name</key>
-			<string>Check Pods Manifest.lock</string>
-			<key>outputPaths</key>
-			<array/>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-			<key>shellPath</key>
-			<string>/bin/sh</string>
-			<key>shellScript</key>
-			<string>diff "${PODS_ROOT}/../Podfile.lock" "${PODS_ROOT}/Manifest.lock" &gt; /dev/null
-if [[ $? != 0 ]] ; then
-    cat &lt;&lt; EOM
-error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.
-EOM
-    exit 1
-fi
-</string>
-			<key>showEnvVarsInLog</key>
-			<string>0</string>
-		</dict>
-		<key>FDF4590CAB9E48DCA7FF886C</key>
-		<dict>
-			<key>explicitFileType</key>
-			<string>archive.ar</string>
-			<key>includeInIndex</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>path</key>
-			<string>libPods-Toastmasters TimerTests.a</string>
-			<key>sourceTree</key>
-			<string>BUILT_PRODUCTS_DIR</string>
-		</dict>
-	</dict>
-	<key>rootObject</key>
-	<string>AE72239D17BDAB65003B60A5</string>
-</dict>
-</plist>
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		892860AD74CE40D1A754749B /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 72DF7A9796AB4451856D0F01 /* libPods.a */; };
+		8D25208D1C4D4BC08429557D /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B1AE27F6A6D4FEC86180439 /* libPods.a */; };
+		9F5C02F20DAC41F19921AF8D /* libPods-Toastmasters Timer Tests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D922069EBAB54014839BEFB7 /* libPods-Toastmasters Timer Tests.a */; };
+		AE022C0218FF3970000303A2 /* TTAnalyticsInterfaceSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = AE022C0118FF3970000303A2 /* TTAnalyticsInterfaceSpec.m */; };
+		AE022C0518FF399F000303A2 /* TTAnalyticsInterface.m in Sources */ = {isa = PBXBuildFile; fileRef = AE022C0418FF399F000303A2 /* TTAnalyticsInterface.m */; };
+		AE0648A518B924B0006902A4 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE06488C18B9243E006902A4 /* XCTest.framework */; };
+		AE0648A618B924B0006902A4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE06488E18B9243E006902A4 /* Foundation.framework */; };
+		AE0648A718B924B0006902A4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE06489018B9243E006902A4 /* UIKit.framework */; };
+		AE0648AD18B924B0006902A4 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = AE0648AB18B924B0006902A4 /* InfoPlist.strings */; };
+		AE0648B618B92540006902A4 /* TTTimeEntryVCSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = AE06488418B91E0F006902A4 /* TTTimeEntryVCSpec.m */; };
+		AE07586818BAB4570052784C /* TTInfoVCSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = AE07586718BAB4570052784C /* TTInfoVCSpec.m */; };
+		AE0BAEBE1874B91B009F8066 /* TTColorButton.m in Sources */ = {isa = PBXBuildFile; fileRef = AE0BAEBD1874B91B009F8066 /* TTColorButton.m */; };
+		AE0BAEC8187BA11F009F8066 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE0BAEC7187BA11F009F8066 /* Crashlytics.framework */; };
+		AE111F9B17CED99900254EF4 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = AE111F9A17CED99900254EF4 /* libz.dylib */; };
+		AE111FA117CEE81500254EF4 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = AE111FA017CEE81500254EF4 /* icon.png */; };
+		AE111FA317CEE81B00254EF4 /* icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AE111FA217CEE81B00254EF4 /* icon@2x.png */; };
+		AE111FA817D0024400254EF4 /* twitter.png in Resources */ = {isa = PBXBuildFile; fileRef = AE111FA417D0024300254EF4 /* twitter.png */; };
+		AE111FA917D0024400254EF4 /* twitter@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AE111FA517D0024300254EF4 /* twitter@2x.png */; };
+		AE111FAA17D0024400254EF4 /* website.png in Resources */ = {isa = PBXBuildFile; fileRef = AE111FA617D0024300254EF4 /* website.png */; };
+		AE111FAB17D0024400254EF4 /* website@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AE111FA717D0024300254EF4 /* website@2x.png */; };
+		AE111FAE17D0036300254EF4 /* TTInfoVC.m in Sources */ = {isa = PBXBuildFile; fileRef = AE111FAD17D0036300254EF4 /* TTInfoVC.m */; };
+		AE111FB117D019B500254EF4 /* mail.png in Resources */ = {isa = PBXBuildFile; fileRef = AE111FAF17D019B500254EF4 /* mail.png */; };
+		AE111FB217D019B500254EF4 /* mail@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AE111FB017D019B500254EF4 /* mail@2x.png */; };
+		AE111FB417D01FE700254EF4 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE111FB317D01FE700254EF4 /* MessageUI.framework */; };
+		AE393C0B18DF427B0058AEC6 /* TTHelperSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = AE393C0A18DF427B0058AEC6 /* TTHelperSpec.m */; };
+		AE3C7EC217ECF9080071725C /* TTAlertManager.m in Sources */ = {isa = PBXBuildFile; fileRef = AE3C7EC117ECF9080071725C /* TTAlertManager.m */; };
+		AE5208AA17C054AE002CFFD7 /* minus.png in Resources */ = {isa = PBXBuildFile; fileRef = AE5208A817C054AE002CFFD7 /* minus.png */; };
+		AE5208B217C0FF63002CFFD7 /* minus@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AE5208AE17C0FF63002CFFD7 /* minus@2x.png */; };
+		AE5208B317C0FF63002CFFD7 /* play.png in Resources */ = {isa = PBXBuildFile; fileRef = AE5208AF17C0FF63002CFFD7 /* play.png */; };
+		AE5208B417C0FF63002CFFD7 /* plus.png in Resources */ = {isa = PBXBuildFile; fileRef = AE5208B017C0FF63002CFFD7 /* plus.png */; };
+		AE5208B517C0FF63002CFFD7 /* plus@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AE5208B117C0FF63002CFFD7 /* plus@2x.png */; };
+		AE5208B817C100D2002CFFD7 /* pause.png in Resources */ = {isa = PBXBuildFile; fileRef = AE5208B617C100D2002CFFD7 /* pause.png */; };
+		AE5208B917C100D2002CFFD7 /* play@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AE5208B717C100D2002CFFD7 /* play@2x.png */; };
+		AE5208BE17C10B8C002CFFD7 /* stop.png in Resources */ = {isa = PBXBuildFile; fileRef = AE5208BC17C10B8C002CFFD7 /* stop.png */; };
+		AE5208BF17C10B8C002CFFD7 /* stop@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AE5208BD17C10B8C002CFFD7 /* stop@2x.png */; };
+		AE5208C117C10CE4002CFFD7 /* pause@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AE5208C017C10CE4002CFFD7 /* pause@2x.png */; };
+		AE5208CF17C16FFA002CFFD7 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE5208CE17C16FFA002CFFD7 /* QuartzCore.framework */; };
+		AE5208D317C17034002CFFD7 /* Toast+UIView.m in Sources */ = {isa = PBXBuildFile; fileRef = AE5208D217C17034002CFFD7 /* Toast+UIView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc -w"; }; };
+		AE6BB43617EC779C00D23DD6 /* SGDeepCopy.m in Sources */ = {isa = PBXBuildFile; fileRef = AE6BB43517EC779C00D23DD6 /* SGDeepCopy.m */; };
+		AE7223A917BDAB65003B60A5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE7223A817BDAB65003B60A5 /* UIKit.framework */; };
+		AE7223AB17BDAB65003B60A5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE7223AA17BDAB65003B60A5 /* Foundation.framework */; };
+		AE7223AD17BDAB65003B60A5 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE7223AC17BDAB65003B60A5 /* CoreGraphics.framework */; };
+		AE7223AF17BDAB65003B60A5 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE7223AE17BDAB65003B60A5 /* CoreData.framework */; };
+		AE7223B517BDAB66003B60A5 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = AE7223B317BDAB66003B60A5 /* InfoPlist.strings */; };
+		AE7223B717BDAB66003B60A5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AE7223B617BDAB66003B60A5 /* main.m */; };
+		AE7223BB17BDAB66003B60A5 /* TTAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AE7223BA17BDAB66003B60A5 /* TTAppDelegate.m */; };
+		AE7223E417BDABCA003B60A5 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE7223E317BDABCA003B60A5 /* Storyboard.storyboard */; };
+		AE7223E717BDAC8B003B60A5 /* TTTimerVC.m in Sources */ = {isa = PBXBuildFile; fileRef = AE7223E617BDAC8B003B60A5 /* TTTimerVC.m */; };
+		AE8732601831D51200BDD4B2 /* SGScrollWheel.m in Sources */ = {isa = PBXBuildFile; fileRef = AE87325F1831D51200BDD4B2 /* SGScrollWheel.m */; };
+		AE8D52FE17EE2D1300F265FC /* speakerOn.png in Resources */ = {isa = PBXBuildFile; fileRef = AE8D52FA17EE2D1300F265FC /* speakerOn.png */; };
+		AE8D52FF17EE2D1300F265FC /* speakerOn@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AE8D52FB17EE2D1300F265FC /* speakerOn@2x.png */; };
+		AE9F976417BDC4FA00626448 /* TTTimeEntryVC.m in Sources */ = {isa = PBXBuildFile; fileRef = AE9F976317BDC4FA00626448 /* TTTimeEntryVC.m */; };
+		AE9F976717BE538100626448 /* TTTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = AE9F976617BE538100626448 /* TTTimer.m */; };
+		AE9F976E17BEA00600626448 /* TTHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = AE9F976D17BEA00600626448 /* TTHelper.m */; };
+		AEAE24EB17CAB08300DA265B /* cancel.png in Resources */ = {isa = PBXBuildFile; fileRef = AEAE24E517CAB08300DA265B /* cancel.png */; };
+		AEAE24EC17CAB08300DA265B /* cancel@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AEAE24E617CAB08300DA265B /* cancel@2x.png */; };
+		AEAE24ED17CAB08300DA265B /* ok.png in Resources */ = {isa = PBXBuildFile; fileRef = AEAE24E717CAB08300DA265B /* ok.png */; };
+		AEAE24EE17CAB08300DA265B /* ok@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AEAE24E817CAB08300DA265B /* ok@2x.png */; };
+		AEAE24EF17CAB08300DA265B /* settings.png in Resources */ = {isa = PBXBuildFile; fileRef = AEAE24E917CAB08300DA265B /* settings.png */; };
+		AEAE24F017CAB08300DA265B /* settings@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AEAE24EA17CAB08300DA265B /* settings@2x.png */; };
+		AEB3E4FD18EE31BF00E6A5FA /* TTBaseVc.m in Sources */ = {isa = PBXBuildFile; fileRef = AEB3E4FC18EE31BF00E6A5FA /* TTBaseVc.m */; };
+		AEB3E50118EE34B000E6A5FA /* TTAppDelegateSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = AEB3E50018EE34B000E6A5FA /* TTAppDelegateSpec.m */; };
+		AEB3E50318EE380800E6A5FA /* TTBaseVcSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = AEB3E50218EE380800E6A5FA /* TTBaseVcSpec.m */; };
+		AEBAF2F517E7D9B000BA9479 /* info.png in Resources */ = {isa = PBXBuildFile; fileRef = AEBAF2F317E7D9B000BA9479 /* info.png */; };
+		AEBAF2F617E7D9B000BA9479 /* info@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AEBAF2F417E7D9B000BA9479 /* info@2x.png */; };
+		AECC0AF41856B61400815DA2 /* SGSection.m in Sources */ = {isa = PBXBuildFile; fileRef = AECC0AF31856B61400815DA2 /* SGSection.m */; };
+		AECC0AF9185AA97500815DA2 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AECC0AF8185AA97500815DA2 /* Images.xcassets */; };
+		AEDA15A217BDB2F300AC9DBA /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEDA15A117BDB2F300AC9DBA /* AudioToolbox.framework */; };
+		AEE1D65118B9C773006FF6C2 /* TTTimerVCSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = AEE1D65018B9C773006FF6C2 /* TTTimerVCSpec.m */; };
+		AEE1D65418B9CC3B006FF6C2 /* TTSpecHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = AEE1D65318B9CC3B006FF6C2 /* TTSpecHelper.m */; };
+		AEF3115B17E90DB500D10C32 /* icon120.png in Resources */ = {isa = PBXBuildFile; fileRef = AEF3115A17E90DB500D10C32 /* icon120.png */; };
+		AEF3115F17E90EB800D10C32 /* icon29.png in Resources */ = {isa = PBXBuildFile; fileRef = AEF3115C17E90EB800D10C32 /* icon29.png */; };
+		AEF3116017E90EB800D10C32 /* icon29@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AEF3115D17E90EB800D10C32 /* icon29@2x.png */; };
+		AEF3116117E90EB800D10C32 /* icon80.png in Resources */ = {isa = PBXBuildFile; fileRef = AEF3115E17E90EB800D10C32 /* icon80.png */; };
+		AEF3116517E911C000D10C32 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AEF3116217E911C000D10C32 /* Default-568h@2x.png */; };
+		AEF3116617E911C000D10C32 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = AEF3116317E911C000D10C32 /* Default.png */; };
+		AEF3116717E911C000D10C32 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AEF3116417E911C000D10C32 /* Default@2x.png */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		AE0648B118B924B1006902A4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AE72239D17BDAB65003B60A5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AE7223A417BDAB65003B60A5;
+			remoteInfo = "Toastmasters Timer";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		3B1AE27F6A6D4FEC86180439 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		72DF7A9796AB4451856D0F01 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		79E8424783BC43CA9202D5DD /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
+		9601ED1DC6624F528E0C2AB1 /* Pods-Toastmasters Timer Tests.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Toastmasters Timer Tests.xcconfig"; path = "../Pods/Pods-Toastmasters Timer Tests.xcconfig"; sourceTree = "<group>"; };
+		AE022C0118FF3970000303A2 /* TTAnalyticsInterfaceSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TTAnalyticsInterfaceSpec.m; path = "Toastmasters Timer Tests/TTAnalyticsInterfaceSpec.m"; sourceTree = "<group>"; };
+		AE022C0318FF399F000303A2 /* TTAnalyticsInterface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTAnalyticsInterface.h; sourceTree = "<group>"; };
+		AE022C0418FF399F000303A2 /* TTAnalyticsInterface.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTAnalyticsInterface.m; sourceTree = "<group>"; };
+		AE06488418B91E0F006902A4 /* TTTimeEntryVCSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TTTimeEntryVCSpec.m; path = "Toastmasters Timer Tests/TTTimeEntryVCSpec.m"; sourceTree = "<group>"; };
+		AE06488C18B9243E006902A4 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		AE06488E18B9243E006902A4 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		AE06489018B9243E006902A4 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		AE0648A418B924B0006902A4 /* Toastmasters Timer Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Toastmasters Timer Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		AE0648AA18B924B0006902A4 /* Toastmasters Timer Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Toastmasters Timer Tests-Info.plist"; sourceTree = "<group>"; };
+		AE0648AC18B924B0006902A4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		AE0648B018B924B0006902A4 /* Toastmasters Timer Tests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Toastmasters Timer Tests-Prefix.pch"; sourceTree = "<group>"; };
+		AE07586718BAB4570052784C /* TTInfoVCSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TTInfoVCSpec.m; path = "Toastmasters Timer Tests/TTInfoVCSpec.m"; sourceTree = "<group>"; };
+		AE0BAEBC1874B91B009F8066 /* TTColorButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTColorButton.h; sourceTree = "<group>"; };
+		AE0BAEBD1874B91B009F8066 /* TTColorButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTColorButton.m; sourceTree = "<group>"; };
+		AE0BAEC7187BA11F009F8066 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
+		AE111F9A17CED99900254EF4 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		AE111FA017CEE81500254EF4 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
+		AE111FA217CEE81B00254EF4 /* icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon@2x.png"; sourceTree = "<group>"; };
+		AE111FA417D0024300254EF4 /* twitter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = twitter.png; sourceTree = "<group>"; };
+		AE111FA517D0024300254EF4 /* twitter@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "twitter@2x.png"; sourceTree = "<group>"; };
+		AE111FA617D0024300254EF4 /* website.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = website.png; sourceTree = "<group>"; };
+		AE111FA717D0024300254EF4 /* website@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "website@2x.png"; sourceTree = "<group>"; };
+		AE111FAC17D0036300254EF4 /* TTInfoVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTInfoVC.h; sourceTree = "<group>"; };
+		AE111FAD17D0036300254EF4 /* TTInfoVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTInfoVC.m; sourceTree = "<group>"; };
+		AE111FAF17D019B500254EF4 /* mail.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mail.png; sourceTree = "<group>"; };
+		AE111FB017D019B500254EF4 /* mail@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mail@2x.png"; sourceTree = "<group>"; };
+		AE111FB317D01FE700254EF4 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		AE393C0A18DF427B0058AEC6 /* TTHelperSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TTHelperSpec.m; path = "Toastmasters Timer Tests/TTHelperSpec.m"; sourceTree = "<group>"; };
+		AE393C0D18DF49B30058AEC6 /* TTStrings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TTStrings.h; path = "Toastmasters Timer/TTStrings.h"; sourceTree = "<group>"; };
+		AE3C7EC017ECF9080071725C /* TTAlertManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTAlertManager.h; sourceTree = "<group>"; };
+		AE3C7EC117ECF9080071725C /* TTAlertManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = TTAlertManager.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		AE3C7EC317ECFBA90071725C /* TTConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TTConstants.h; path = "Toastmasters Timer/TTConstants.h"; sourceTree = "<group>"; };
+		AE5208A817C054AE002CFFD7 /* minus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = minus.png; sourceTree = "<group>"; };
+		AE5208AE17C0FF63002CFFD7 /* minus@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "minus@2x.png"; sourceTree = "<group>"; };
+		AE5208AF17C0FF63002CFFD7 /* play.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = play.png; sourceTree = "<group>"; };
+		AE5208B017C0FF63002CFFD7 /* plus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = plus.png; sourceTree = "<group>"; };
+		AE5208B117C0FF63002CFFD7 /* plus@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "plus@2x.png"; sourceTree = "<group>"; };
+		AE5208B617C100D2002CFFD7 /* pause.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pause.png; sourceTree = "<group>"; };
+		AE5208B717C100D2002CFFD7 /* play@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "play@2x.png"; sourceTree = "<group>"; };
+		AE5208BC17C10B8C002CFFD7 /* stop.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stop.png; sourceTree = "<group>"; };
+		AE5208BD17C10B8C002CFFD7 /* stop@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "stop@2x.png"; sourceTree = "<group>"; };
+		AE5208C017C10CE4002CFFD7 /* pause@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pause@2x.png"; sourceTree = "<group>"; };
+		AE5208CE17C16FFA002CFFD7 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		AE5208D117C17034002CFFD7 /* Toast+UIView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Toast+UIView.h"; sourceTree = "<group>"; };
+		AE5208D217C17034002CFFD7 /* Toast+UIView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Toast+UIView.m"; sourceTree = "<group>"; };
+		AE6BB43417EC779C00D23DD6 /* SGDeepCopy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGDeepCopy.h; sourceTree = "<group>"; };
+		AE6BB43517EC779C00D23DD6 /* SGDeepCopy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGDeepCopy.m; sourceTree = "<group>"; };
+		AE7223A517BDAB65003B60A5 /* Toastmasters Timer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Toastmasters Timer.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		AE7223A817BDAB65003B60A5 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		AE7223AA17BDAB65003B60A5 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		AE7223AC17BDAB65003B60A5 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		AE7223AE17BDAB65003B60A5 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		AE7223B217BDAB66003B60A5 /* Toastmasters Timer-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Toastmasters Timer-Info.plist"; sourceTree = "<group>"; };
+		AE7223B417BDAB66003B60A5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		AE7223B617BDAB66003B60A5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		AE7223B817BDAB66003B60A5 /* Toastmasters Timer-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Toastmasters Timer-Prefix.pch"; sourceTree = "<group>"; };
+		AE7223B917BDAB66003B60A5 /* TTAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TTAppDelegate.h; sourceTree = "<group>"; };
+		AE7223BA17BDAB66003B60A5 /* TTAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TTAppDelegate.m; sourceTree = "<group>"; };
+		AE7223CB17BDAB66003B60A5 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		AE7223E317BDABCA003B60A5 /* Storyboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
+		AE7223E517BDAC8B003B60A5 /* TTTimerVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTTimerVC.h; sourceTree = "<group>"; };
+		AE7223E617BDAC8B003B60A5 /* TTTimerVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = TTTimerVC.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		AE87325E1831D51200BDD4B2 /* SGScrollWheel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGScrollWheel.h; sourceTree = "<group>"; };
+		AE87325F1831D51200BDD4B2 /* SGScrollWheel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGScrollWheel.m; sourceTree = "<group>"; };
+		AE8D52FA17EE2D1300F265FC /* speakerOn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = speakerOn.png; sourceTree = "<group>"; };
+		AE8D52FB17EE2D1300F265FC /* speakerOn@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "speakerOn@2x.png"; sourceTree = "<group>"; };
+		AE9F976217BDC4FA00626448 /* TTTimeEntryVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTTimeEntryVC.h; sourceTree = "<group>"; };
+		AE9F976317BDC4FA00626448 /* TTTimeEntryVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = TTTimeEntryVC.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		AE9F976517BE538100626448 /* TTTimer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTTimer.h; sourceTree = "<group>"; };
+		AE9F976617BE538100626448 /* TTTimer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTTimer.m; sourceTree = "<group>"; };
+		AE9F976C17BEA00600626448 /* TTHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTHelper.h; sourceTree = "<group>"; };
+		AE9F976D17BEA00600626448 /* TTHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = TTHelper.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		AEAE24E517CAB08300DA265B /* cancel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cancel.png; sourceTree = "<group>"; };
+		AEAE24E617CAB08300DA265B /* cancel@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cancel@2x.png"; sourceTree = "<group>"; };
+		AEAE24E717CAB08300DA265B /* ok.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ok.png; sourceTree = "<group>"; };
+		AEAE24E817CAB08300DA265B /* ok@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ok@2x.png"; sourceTree = "<group>"; };
+		AEAE24E917CAB08300DA265B /* settings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = settings.png; sourceTree = "<group>"; };
+		AEAE24EA17CAB08300DA265B /* settings@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "settings@2x.png"; sourceTree = "<group>"; };
+		AEB3E4EA18ECEDA400E6A5FA /* TTModalDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTModalDelegate.h; sourceTree = "<group>"; };
+		AEB3E4FB18EE31BF00E6A5FA /* TTBaseVc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTBaseVc.h; sourceTree = "<group>"; };
+		AEB3E4FC18EE31BF00E6A5FA /* TTBaseVc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTBaseVc.m; sourceTree = "<group>"; };
+		AEB3E50018EE34B000E6A5FA /* TTAppDelegateSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TTAppDelegateSpec.m; path = "Toastmasters Timer Tests/TTAppDelegateSpec.m"; sourceTree = "<group>"; };
+		AEB3E50218EE380800E6A5FA /* TTBaseVcSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TTBaseVcSpec.m; path = "Toastmasters Timer Tests/TTBaseVcSpec.m"; sourceTree = "<group>"; };
+		AEBAF2F317E7D9B000BA9479 /* info.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = info.png; sourceTree = "<group>"; };
+		AEBAF2F417E7D9B000BA9479 /* info@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "info@2x.png"; sourceTree = "<group>"; };
+		AECC0AF21856B61400815DA2 /* SGSection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGSection.h; sourceTree = "<group>"; };
+		AECC0AF31856B61400815DA2 /* SGSection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGSection.m; sourceTree = "<group>"; };
+		AECC0AF8185AA97500815DA2 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = ../Images.xcassets; sourceTree = "<group>"; };
+		AEDA15A117BDB2F300AC9DBA /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		AEE1D65018B9C773006FF6C2 /* TTTimerVCSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TTTimerVCSpec.m; path = "Toastmasters Timer Tests/TTTimerVCSpec.m"; sourceTree = "<group>"; };
+		AEE1D65218B9CC3B006FF6C2 /* TTSpecHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TTSpecHelper.h; path = "Toastmasters Timer Tests/TTSpecHelper.h"; sourceTree = "<group>"; };
+		AEE1D65318B9CC3B006FF6C2 /* TTSpecHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TTSpecHelper.m; path = "Toastmasters Timer Tests/TTSpecHelper.m"; sourceTree = "<group>"; };
+		AEF3115A17E90DB500D10C32 /* icon120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon120.png; sourceTree = "<group>"; };
+		AEF3115C17E90EB800D10C32 /* icon29.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon29.png; sourceTree = "<group>"; };
+		AEF3115D17E90EB800D10C32 /* icon29@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon29@2x.png"; sourceTree = "<group>"; };
+		AEF3115E17E90EB800D10C32 /* icon80.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon80.png; sourceTree = "<group>"; };
+		AEF3116217E911C000D10C32 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		AEF3116317E911C000D10C32 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		AEF3116417E911C000D10C32 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		B4CF1A3C75604EC39B94C368 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = ../Pods/Pods.xcconfig; sourceTree = "<group>"; };
+		D922069EBAB54014839BEFB7 /* libPods-Toastmasters Timer Tests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Toastmasters Timer Tests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FDF4590CAB9E48DCA7FF886C /* libPods-Toastmasters TimerTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Toastmasters TimerTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		AE0648A118B924B0006902A4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AE0648A518B924B0006902A4 /* XCTest.framework in Frameworks */,
+				AE0648A718B924B0006902A4 /* UIKit.framework in Frameworks */,
+				AE0648A618B924B0006902A4 /* Foundation.framework in Frameworks */,
+				9F5C02F20DAC41F19921AF8D /* libPods-Toastmasters Timer Tests.a in Frameworks */,
+				8D25208D1C4D4BC08429557D /* libPods.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AE7223A217BDAB65003B60A5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AE111FB417D01FE700254EF4 /* MessageUI.framework in Frameworks */,
+				AE0BAEC8187BA11F009F8066 /* Crashlytics.framework in Frameworks */,
+				AE111F9B17CED99900254EF4 /* libz.dylib in Frameworks */,
+				AE5208CF17C16FFA002CFFD7 /* QuartzCore.framework in Frameworks */,
+				AEDA15A217BDB2F300AC9DBA /* AudioToolbox.framework in Frameworks */,
+				AE7223A917BDAB65003B60A5 /* UIKit.framework in Frameworks */,
+				AE7223AB17BDAB65003B60A5 /* Foundation.framework in Frameworks */,
+				AE7223AD17BDAB65003B60A5 /* CoreGraphics.framework in Frameworks */,
+				AE7223AF17BDAB65003B60A5 /* CoreData.framework in Frameworks */,
+				892860AD74CE40D1A754749B /* libPods.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A8270FFA71A3463F9296307F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3B1AE27F6A6D4FEC86180439 /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		AE06488118B91ABF006902A4 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				AE5208A717C054AE002CFFD7 /* Images */,
+				AE3C7EC317ECFBA90071725C /* TTConstants.h */,
+				AE393C0D18DF49B30058AEC6 /* TTStrings.h */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		AE06488218B91BEF006902A4 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				AE07586618BAB42E0052784C /* Helpers */,
+				AEE1D65518BAB2A3006FF6C2 /* Specs */,
+				AE0648A918B924B0006902A4 /* Supporting Files */,
+			);
+			name = Tests;
+			sourceTree = "<group>";
+		};
+		AE06488318B91C65006902A4 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				AE488FC917DD2A5B0090E139 /* Controllers */,
+				AE06488118B91ABF006902A4 /* Resources */,
+				AE7223B117BDAB66003B60A5 /* Supporting Files */,
+				AE488FC817DD2A510090E139 /* Views */,
+			);
+			name = App;
+			sourceTree = "<group>";
+		};
+		AE06488B18B9243E006902A4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				72DF7A9796AB4451856D0F01 /* libPods.a */,
+				FDF4590CAB9E48DCA7FF886C /* libPods-Toastmasters TimerTests.a */,
+				AE0BAEC7187BA11F009F8066 /* Crashlytics.framework */,
+				AE111FB317D01FE700254EF4 /* MessageUI.framework */,
+				AE111F9A17CED99900254EF4 /* libz.dylib */,
+				AE5208CE17C16FFA002CFFD7 /* QuartzCore.framework */,
+				AEDA15A117BDB2F300AC9DBA /* AudioToolbox.framework */,
+				AE7223A817BDAB65003B60A5 /* UIKit.framework */,
+				AE7223AA17BDAB65003B60A5 /* Foundation.framework */,
+				AE7223AC17BDAB65003B60A5 /* CoreGraphics.framework */,
+				AE7223AE17BDAB65003B60A5 /* CoreData.framework */,
+				AE7223CB17BDAB66003B60A5 /* SenTestingKit.framework */,
+				AE7223B317BDAB66003B60A5 /* InfoPlist.strings */,
+				AE06488C18B9243E006902A4 /* XCTest.framework */,
+				AE06488E18B9243E006902A4 /* Foundation.framework */,
+				AE06489018B9243E006902A4 /* UIKit.framework */,
+				D922069EBAB54014839BEFB7 /* libPods-Toastmasters Timer Tests.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		AE0648A918B924B0006902A4 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				9601ED1DC6624F528E0C2AB1 /* Pods-Toastmasters Timer Tests.xcconfig */,
+				AE0648AA18B924B0006902A4 /* Toastmasters Timer Tests-Info.plist */,
+				AE0648AB18B924B0006902A4 /* InfoPlist.strings */,
+				AE0648B018B924B0006902A4 /* Toastmasters Timer Tests-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			path = "Toastmasters Timer Tests";
+			sourceTree = "<group>";
+		};
+		AE07586618BAB42E0052784C /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				AEE1D65218B9CC3B006FF6C2 /* TTSpecHelper.h */,
+				AEE1D65318B9CC3B006FF6C2 /* TTSpecHelper.m */,
+			);
+			name = Helpers;
+			sourceTree = "<group>";
+		};
+		AE0BAEBB1874B6E9009F8066 /* Scroll Wheel */ = {
+			isa = PBXGroup;
+			children = (
+				AECC0AF21856B61400815DA2 /* SGSection.h */,
+				AECC0AF31856B61400815DA2 /* SGSection.m */,
+				AE87325E1831D51200BDD4B2 /* SGScrollWheel.h */,
+				AE87325F1831D51200BDD4B2 /* SGScrollWheel.m */,
+			);
+			name = "Scroll Wheel";
+			path = "Toastmasters Timer";
+			sourceTree = "<group>";
+		};
+		AE1FF8CE18B927590074AC7B /* External */ = {
+			isa = PBXGroup;
+			children = (
+				AE488FCA17DD2AC70090E139 /* Libraries */,
+				AE06488B18B9243E006902A4 /* Frameworks */,
+			);
+			name = External;
+			sourceTree = "<group>";
+		};
+		AE488FC817DD2A510090E139 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				AE111FAC17D0036300254EF4 /* TTInfoVC.h */,
+				AE111FAD17D0036300254EF4 /* TTInfoVC.m */,
+				AE7223E317BDABCA003B60A5 /* Storyboard.storyboard */,
+				AE9F976217BDC4FA00626448 /* TTTimeEntryVC.h */,
+				AE9F976317BDC4FA00626448 /* TTTimeEntryVC.m */,
+				AE7223E517BDAC8B003B60A5 /* TTTimerVC.h */,
+				AE7223E617BDAC8B003B60A5 /* TTTimerVC.m */,
+				AE0BAEBC1874B91B009F8066 /* TTColorButton.h */,
+				AE0BAEBD1874B91B009F8066 /* TTColorButton.m */,
+				AEB3E4FB18EE31BF00E6A5FA /* TTBaseVc.h */,
+				AEB3E4FC18EE31BF00E6A5FA /* TTBaseVc.m */,
+			);
+			name = Views;
+			path = "Toastmasters Timer";
+			sourceTree = "<group>";
+		};
+		AE488FC917DD2A5B0090E139 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				AEB3E4EA18ECEDA400E6A5FA /* TTModalDelegate.h */,
+				AE9F976517BE538100626448 /* TTTimer.h */,
+				AE9F976617BE538100626448 /* TTTimer.m */,
+				AE7223B917BDAB66003B60A5 /* TTAppDelegate.h */,
+				AE7223BA17BDAB66003B60A5 /* TTAppDelegate.m */,
+				AE9F976C17BEA00600626448 /* TTHelper.h */,
+				AE9F976D17BEA00600626448 /* TTHelper.m */,
+				AE3C7EC017ECF9080071725C /* TTAlertManager.h */,
+				AE3C7EC117ECF9080071725C /* TTAlertManager.m */,
+				AE022C0318FF399F000303A2 /* TTAnalyticsInterface.h */,
+				AE022C0418FF399F000303A2 /* TTAnalyticsInterface.m */,
+			);
+			name = Controllers;
+			path = "Toastmasters Timer";
+			sourceTree = "<group>";
+		};
+		AE488FCA17DD2AC70090E139 /* Libraries */ = {
+			isa = PBXGroup;
+			children = (
+				AE0BAEBB1874B6E9009F8066 /* Scroll Wheel */,
+				AE6BB43317EC779C00D23DD6 /* SGDeepCopy */,
+				AE5208D017C17034002CFFD7 /* Toast */,
+			);
+			name = Libraries;
+			sourceTree = "<group>";
+		};
+		AE5208A717C054AE002CFFD7 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				AECC0AF8185AA97500815DA2 /* Images.xcassets */,
+				AEAE24E517CAB08300DA265B /* cancel.png */,
+				AEAE24E617CAB08300DA265B /* cancel@2x.png */,
+				AEF3116217E911C000D10C32 /* Default-568h@2x.png */,
+				AEF3116317E911C000D10C32 /* Default.png */,
+				AEF3116417E911C000D10C32 /* Default@2x.png */,
+				AE111FA017CEE81500254EF4 /* icon.png */,
+				AEF3115A17E90DB500D10C32 /* icon120.png */,
+				AEF3115C17E90EB800D10C32 /* icon29.png */,
+				AEF3115D17E90EB800D10C32 /* icon29@2x.png */,
+				AEF3115E17E90EB800D10C32 /* icon80.png */,
+				AE111FA217CEE81B00254EF4 /* icon@2x.png */,
+				AEBAF2F317E7D9B000BA9479 /* info.png */,
+				AEBAF2F417E7D9B000BA9479 /* info@2x.png */,
+				AE111FAF17D019B500254EF4 /* mail.png */,
+				AE111FB017D019B500254EF4 /* mail@2x.png */,
+				AE5208A817C054AE002CFFD7 /* minus.png */,
+				AE5208AE17C0FF63002CFFD7 /* minus@2x.png */,
+				AEAE24E717CAB08300DA265B /* ok.png */,
+				AEAE24E817CAB08300DA265B /* ok@2x.png */,
+				AE5208B617C100D2002CFFD7 /* pause.png */,
+				AE5208C017C10CE4002CFFD7 /* pause@2x.png */,
+				AE5208AF17C0FF63002CFFD7 /* play.png */,
+				AE5208B717C100D2002CFFD7 /* play@2x.png */,
+				AE5208B017C0FF63002CFFD7 /* plus.png */,
+				AE5208B117C0FF63002CFFD7 /* plus@2x.png */,
+				AEAE24E917CAB08300DA265B /* settings.png */,
+				AEAE24EA17CAB08300DA265B /* settings@2x.png */,
+				AE8D52FA17EE2D1300F265FC /* speakerOn.png */,
+				AE8D52FB17EE2D1300F265FC /* speakerOn@2x.png */,
+				AE5208BC17C10B8C002CFFD7 /* stop.png */,
+				AE5208BD17C10B8C002CFFD7 /* stop@2x.png */,
+				AE111FA417D0024300254EF4 /* twitter.png */,
+				AE111FA517D0024300254EF4 /* twitter@2x.png */,
+				AE111FA617D0024300254EF4 /* website.png */,
+				AE111FA717D0024300254EF4 /* website@2x.png */,
+			);
+			name = Images;
+			path = "Toastmasters Timer/images";
+			sourceTree = "<group>";
+		};
+		AE5208D017C17034002CFFD7 /* Toast */ = {
+			isa = PBXGroup;
+			children = (
+				AE5208D117C17034002CFFD7 /* Toast+UIView.h */,
+				AE5208D217C17034002CFFD7 /* Toast+UIView.m */,
+			);
+			name = Toast;
+			path = "Toastmasters Timer/libraries/Toast";
+			sourceTree = "<group>";
+		};
+		AE6BB43317EC779C00D23DD6 /* SGDeepCopy */ = {
+			isa = PBXGroup;
+			children = (
+				AE6BB43417EC779C00D23DD6 /* SGDeepCopy.h */,
+				AE6BB43517EC779C00D23DD6 /* SGDeepCopy.m */,
+			);
+			name = SGDeepCopy;
+			path = "Toastmasters Timer/libraries/SGDeepCopy";
+			sourceTree = "<group>";
+		};
+		AE72239C17BDAB65003B60A5 = {
+			isa = PBXGroup;
+			children = (
+				AE06488318B91C65006902A4 /* App */,
+				AE1FF8CE18B927590074AC7B /* External */,
+				AE06488218B91BEF006902A4 /* Tests */,
+				79E8424783BC43CA9202D5DD /* Pods.xcconfig */,
+				A8270FFA71A3463F9296307F /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		AE7223A617BDAB65003B60A5 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AE7223A517BDAB65003B60A5 /* Toastmasters Timer.app */,
+				AE0648A418B924B0006902A4 /* Toastmasters Timer Tests.xctest */,
+			);
+			name = Products;
+			path = ..;
+			sourceTree = "<group>";
+		};
+		AE7223B117BDAB66003B60A5 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				AE7223B617BDAB66003B60A5 /* main.m */,
+				B4CF1A3C75604EC39B94C368 /* Pods.xcconfig */,
+				AE7223A617BDAB65003B60A5 /* Products */,
+				AE7223B217BDAB66003B60A5 /* Toastmasters Timer-Info.plist */,
+				AE7223B817BDAB66003B60A5 /* Toastmasters Timer-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			path = "Toastmasters Timer";
+			sourceTree = "<group>";
+		};
+		AEE1D65518BAB2A3006FF6C2 /* Specs */ = {
+			isa = PBXGroup;
+			children = (
+				AEB3E50218EE380800E6A5FA /* TTBaseVcSpec.m */,
+				AE06488418B91E0F006902A4 /* TTTimeEntryVCSpec.m */,
+				AEE1D65018B9C773006FF6C2 /* TTTimerVCSpec.m */,
+				AE07586718BAB4570052784C /* TTInfoVCSpec.m */,
+				AE393C0A18DF427B0058AEC6 /* TTHelperSpec.m */,
+				AEB3E50018EE34B000E6A5FA /* TTAppDelegateSpec.m */,
+				AE022C0118FF3970000303A2 /* TTAnalyticsInterfaceSpec.m */,
+			);
+			name = Specs;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		AE0648A318B924B0006902A4 /* Toastmasters Timer Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AE0648B318B924B1006902A4 /* Build configuration list for PBXNativeTarget "Toastmasters Timer Tests" */;
+			buildPhases = (
+				ABF1131D2C744192A1CA4DBA /* Check Pods Manifest.lock */,
+				AE0648A018B924B0006902A4 /* Sources */,
+				AE0648A118B924B0006902A4 /* Frameworks */,
+				AE0648A218B924B0006902A4 /* Resources */,
+				748D9AB3573340F0AB7D8523 /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AE0648B218B924B1006902A4 /* PBXTargetDependency */,
+			);
+			name = "Toastmasters Timer Tests";
+			productName = "Toastmasters Timer Tests";
+			productReference = AE0648A418B924B0006902A4 /* Toastmasters Timer Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		AE7223A417BDAB65003B60A5 /* Toastmasters Timer */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AE7223DD17BDAB66003B60A5 /* Build configuration list for PBXNativeTarget "Toastmasters Timer" */;
+			buildPhases = (
+				F6079043BE5B41BE8CD19E37 /* Check Pods Manifest.lock */,
+				AE0BAEC51878D4AB009F8066 /* ShellScript */,
+				AE7223A117BDAB65003B60A5 /* Sources */,
+				AE7223A217BDAB65003B60A5 /* Frameworks */,
+				AE7223A317BDAB65003B60A5 /* Resources */,
+				AE0BAEC6187BA0CA009F8066 /* ShellScript */,
+				DAE3F2B8B7D94D5CBB85ED05 /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Toastmasters Timer";
+			productName = "Toastmasters Timer";
+			productReference = AE7223A517BDAB65003B60A5 /* Toastmasters Timer.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		AE72239D17BDAB65003B60A5 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = TT;
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = "Sundeep Gupta";
+				TargetAttributes = {
+					AE0648A318B924B0006902A4 = {
+						TestTargetID = AE7223A417BDAB65003B60A5;
+					};
+					AE7223A417BDAB65003B60A5 = {
+						DevelopmentTeam = M3NJ52HVCE;
+					};
+				};
+			};
+			buildConfigurationList = AE7223A017BDAB65003B60A5 /* Build configuration list for PBXProject "Toastmasters Timer" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = AE72239C17BDAB65003B60A5;
+			productRefGroup = AE7223A617BDAB65003B60A5 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				AE7223A417BDAB65003B60A5 /* Toastmasters Timer */,
+				AE0648A318B924B0006902A4 /* Toastmasters Timer Tests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		AE0648A218B924B0006902A4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AE0648AD18B924B0006902A4 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AE7223A317BDAB65003B60A5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AE7223B517BDAB66003B60A5 /* InfoPlist.strings in Resources */,
+				AEBAF2F617E7D9B000BA9479 /* info@2x.png in Resources */,
+				AEF3116517E911C000D10C32 /* Default-568h@2x.png in Resources */,
+				AE7223E417BDABCA003B60A5 /* Storyboard.storyboard in Resources */,
+				AE5208AA17C054AE002CFFD7 /* minus.png in Resources */,
+				AE5208B217C0FF63002CFFD7 /* minus@2x.png in Resources */,
+				AE5208B317C0FF63002CFFD7 /* play.png in Resources */,
+				AE5208B417C0FF63002CFFD7 /* plus.png in Resources */,
+				AE5208B517C0FF63002CFFD7 /* plus@2x.png in Resources */,
+				AE5208B817C100D2002CFFD7 /* pause.png in Resources */,
+				AEBAF2F517E7D9B000BA9479 /* info.png in Resources */,
+				AE5208B917C100D2002CFFD7 /* play@2x.png in Resources */,
+				AEF3115B17E90DB500D10C32 /* icon120.png in Resources */,
+				AEF3116717E911C000D10C32 /* Default@2x.png in Resources */,
+				AE5208BE17C10B8C002CFFD7 /* stop.png in Resources */,
+				AECC0AF9185AA97500815DA2 /* Images.xcassets in Resources */,
+				AE5208BF17C10B8C002CFFD7 /* stop@2x.png in Resources */,
+				AE5208C117C10CE4002CFFD7 /* pause@2x.png in Resources */,
+				AEF3115F17E90EB800D10C32 /* icon29.png in Resources */,
+				AEAE24EB17CAB08300DA265B /* cancel.png in Resources */,
+				AEAE24EC17CAB08300DA265B /* cancel@2x.png in Resources */,
+				AE8D52FF17EE2D1300F265FC /* speakerOn@2x.png in Resources */,
+				AEAE24ED17CAB08300DA265B /* ok.png in Resources */,
+				AEAE24EE17CAB08300DA265B /* ok@2x.png in Resources */,
+				AEAE24EF17CAB08300DA265B /* settings.png in Resources */,
+				AE8D52FE17EE2D1300F265FC /* speakerOn.png in Resources */,
+				AEF3116617E911C000D10C32 /* Default.png in Resources */,
+				AEAE24F017CAB08300DA265B /* settings@2x.png in Resources */,
+				AE111FA117CEE81500254EF4 /* icon.png in Resources */,
+				AE111FA317CEE81B00254EF4 /* icon@2x.png in Resources */,
+				AE111FA817D0024400254EF4 /* twitter.png in Resources */,
+				AEF3116117E90EB800D10C32 /* icon80.png in Resources */,
+				AE111FA917D0024400254EF4 /* twitter@2x.png in Resources */,
+				AE111FAA17D0024400254EF4 /* website.png in Resources */,
+				AE111FAB17D0024400254EF4 /* website@2x.png in Resources */,
+				AE111FB117D019B500254EF4 /* mail.png in Resources */,
+				AEF3116017E90EB800D10C32 /* icon29@2x.png in Resources */,
+				AE111FB217D019B500254EF4 /* mail@2x.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		748D9AB3573340F0AB7D8523 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		ABF1131D2C744192A1CA4DBA /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		AE0BAEC51878D4AB009F8066 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "#!/bin/bash\nbN=$(/usr/libexec/PlistBuddy -c \"Print CFBundleVersion\" \"$INFOPLIST_FILE\")\nbN=$((bN += 1))\nbN=$(printf \"%d\" $bN)\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $bN\" \"$INFOPLIST_FILE\"";
+		};
+		AE0BAEC6187BA0CA009F8066 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "./Crashlytics.framework/run 8326e081af65babd59690e3dc0bbfea5dcd9abd3";
+		};
+		DAE3F2B8B7D94D5CBB85ED05 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F6079043BE5B41BE8CD19E37 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		AE0648A018B924B0006902A4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AE0648B618B92540006902A4 /* TTTimeEntryVCSpec.m in Sources */,
+				AE022C0218FF3970000303A2 /* TTAnalyticsInterfaceSpec.m in Sources */,
+				AEB3E50318EE380800E6A5FA /* TTBaseVcSpec.m in Sources */,
+				AEE1D65118B9C773006FF6C2 /* TTTimerVCSpec.m in Sources */,
+				AEE1D65418B9CC3B006FF6C2 /* TTSpecHelper.m in Sources */,
+				AEB3E50118EE34B000E6A5FA /* TTAppDelegateSpec.m in Sources */,
+				AE393C0B18DF427B0058AEC6 /* TTHelperSpec.m in Sources */,
+				AE07586818BAB4570052784C /* TTInfoVCSpec.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AE7223A117BDAB65003B60A5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AE022C0518FF399F000303A2 /* TTAnalyticsInterface.m in Sources */,
+				AE7223B717BDAB66003B60A5 /* main.m in Sources */,
+				AE7223BB17BDAB66003B60A5 /* TTAppDelegate.m in Sources */,
+				AE3C7EC217ECF9080071725C /* TTAlertManager.m in Sources */,
+				AE7223E717BDAC8B003B60A5 /* TTTimerVC.m in Sources */,
+				AE6BB43617EC779C00D23DD6 /* SGDeepCopy.m in Sources */,
+				AE9F976417BDC4FA00626448 /* TTTimeEntryVC.m in Sources */,
+				AE9F976717BE538100626448 /* TTTimer.m in Sources */,
+				AE8732601831D51200BDD4B2 /* SGScrollWheel.m in Sources */,
+				AE0BAEBE1874B91B009F8066 /* TTColorButton.m in Sources */,
+				AE9F976E17BEA00600626448 /* TTHelper.m in Sources */,
+				AECC0AF41856B61400815DA2 /* SGSection.m in Sources */,
+				AEB3E4FD18EE31BF00E6A5FA /* TTBaseVc.m in Sources */,
+				AE5208D317C17034002CFFD7 /* Toast+UIView.m in Sources */,
+				AE111FAE17D0036300254EF4 /* TTInfoVC.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		AE0648B218B924B1006902A4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AE7223A417BDAB65003B60A5 /* Toastmasters Timer */;
+			targetProxy = AE0648B118B924B1006902A4 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		AE0648AB18B924B0006902A4 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AE0648AC18B924B0006902A4 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		AE7223B317BDAB66003B60A5 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AE7223B417BDAB66003B60A5 /* en */,
+			);
+			name = InfoPlist.strings;
+			path = "Toastmasters Timer";
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		AE0648B418B924B1006902A4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 79E8424783BC43CA9202D5DD /* Pods.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Toastmasters Timer.app/Toastmasters Timer";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Toastmasters Timer Tests/Toastmasters Timer Tests-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				HEADER_SEARCH_PATHS = (
+					"\"${PODS_ROOT}/Headers\"",
+					"\"${PODS_ROOT}/Headers/CocoaLumberjack\"",
+					"\"${PODS_ROOT}/Headers/Kiwi\"",
+					"\"${PODS_ROOT}/Headers/iRate\"",
+				);
+				INFOPLIST_FILE = "Toastmasters Timer Tests/Toastmasters Timer Tests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		AE0648B518B924B1006902A4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 79E8424783BC43CA9202D5DD /* Pods.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Toastmasters Timer.app/Toastmasters Timer";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				ENABLE_NS_ASSERTIONS = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Toastmasters Timer Tests/Toastmasters Timer Tests-Prefix.pch";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				HEADER_SEARCH_PATHS = (
+					"\"${PODS_ROOT}/Headers\"",
+					"\"${PODS_ROOT}/Headers/CocoaLumberjack\"",
+					"\"${PODS_ROOT}/Headers/Kiwi\"",
+					"\"${PODS_ROOT}/Headers/iRate\"",
+				);
+				INFOPLIST_FILE = "Toastmasters Timer Tests/Toastmasters Timer Tests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+		AE7223DB17BDAB66003B60A5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		AE7223DC17BDAB66003B60A5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		AE7223DE17BDAB66003B60A5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B4CF1A3C75604EC39B94C368 /* Pods.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/sundeep/drive/projects/toastmastersTimer/app,
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Toastmasters Timer/Toastmasters Timer-Prefix.pch";
+				INFOPLIST_FILE = "Toastmasters Timer/Toastmasters Timer-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "5BA8E67F-F9CA-49DF-B94F-3C5383B1D85B";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		AE7223DF17BDAB66003B60A5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B4CF1A3C75604EC39B94C368 /* Pods.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/sundeep/drive/projects/toastmastersTimer/app,
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Toastmasters Timer/Toastmasters Timer-Prefix.pch";
+				INFOPLIST_FILE = "Toastmasters Timer/Toastmasters Timer-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "71363225-3173-4FF0-9279-BAF34E07A74A";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		AE0648B318B924B1006902A4 /* Build configuration list for PBXNativeTarget "Toastmasters Timer Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AE0648B418B924B1006902A4 /* Debug */,
+				AE0648B518B924B1006902A4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AE7223A017BDAB65003B60A5 /* Build configuration list for PBXProject "Toastmasters Timer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AE7223DB17BDAB66003B60A5 /* Debug */,
+				AE7223DC17BDAB66003B60A5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AE7223DD17BDAB66003B60A5 /* Build configuration list for PBXNativeTarget "Toastmasters Timer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AE7223DE17BDAB66003B60A5 /* Debug */,
+				AE7223DF17BDAB66003B60A5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = AE72239D17BDAB65003B60A5 /* Project object */;
+}

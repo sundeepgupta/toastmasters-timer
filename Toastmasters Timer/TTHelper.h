@@ -53,7 +53,5 @@
 + (void)updateTitle:(NSString *)title forButton:(UIButton *)button;
 + (BOOL)isFirstLaunch;
 
-#pragma mark - Google Analytics
-+ (void)sendTrackingInfoWithCategory:(NSString *)category action:(NSString *)action label:(NSString *)label value:(NSNumber *)value;
 
 @end

@@ -6,6 +6,7 @@
 #import "TTAlertManager.h"
 #import "TTColorButton.h"
 #import "TTStrings.h"
+#import "TTAnalyticsInterface.h"
 
 
 
@@ -217,7 +218,7 @@
 
 - (void)handleColorButtonPressForIndex:(ColorIndex)index {
     [self presentTimeEntryVcWithIndex:index];
-    [TTHelper sendTrackingInfoWithCategory:GOOGLE_ANALYTICS_CATEGORY_COLOR_TIMES action:GOOGLE_ANALYTICS_ACTION_CHANGE label:nil value:nil];
+    [TTAnalyticsInterface sendTrackingInfoWithCategory:GOOGLE_ANALYTICS_CATEGORY_COLOR_TIMES action:GOOGLE_ANALYTICS_ACTION_CHANGE];
 }
 
 - (void)presentTimeEntryVcWithIndex:(ColorIndex)index {
