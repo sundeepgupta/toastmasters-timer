@@ -3,10 +3,13 @@
 #import "TTInfoVC.h"
 #import "TTHelper.h"
 #import "TTAnalyticsInterface.h"
+#import <MessageUI/MessageUI.h>
+
 
 @interface TTInfoVC ()
 - (IBAction)rateAppButtonPress:(id)sender;
 - (IBAction)doneButtonPress:(id)sender;
+- (IBAction)developerButtonPress:(id)sender;
 @end
 
 
@@ -19,6 +22,9 @@ describe(@"InfoVC", ^{
     
     beforeEach(^{
         subject = (TTInfoVC *)[SpecHelper vcForClass:[TTInfoVC class]];
+        UIWindow *window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+        [window makeKeyAndVisible];
+        window.rootViewController = subject;
         [subject view];
     });
     
@@ -33,6 +39,48 @@ describe(@"InfoVC", ^{
             [subject rateAppButtonPress:nil];
         });
     });
+    
+
+    context(@"when the developer button is pressed", ^{
+        
+        context(@"when the app can send mail", ^{
+            
+            __block KWCaptureSpy *spy;
+            
+            beforeEach(^{
+                [MFMailComposeViewController stub:@selector(canSendMail) andReturn:theValue(YES)];
+                spy = [subject captureArgument:@selector(presentViewController:animated:completion:) atIndex:0];
+            });
+            
+            it(@"should open the email composer", ^{
+                [[subject should] receive:@selector(presentViewController:animated:completion:)];
+                [subject developerButtonPress:nil];
+                id presentedVc = spy.argument;
+                [[presentedVc should] beKindOfClass:[MFMailComposeViewController class]];
+            });
+            
+        });
+        
+        context(@"when the app can't send mail", ^{
+            
+            beforeEach(^{
+                [MFMailComposeViewController stub:@selector(canSendMail) andReturn:theValue(NO)];
+            });
+            
+            it(@"should display an alert", ^{
+                [[TTHelper should] receive:@selector(showAlertWithTitle:withMessage:)];
+                [subject developerButtonPress:nil];
+            });
+        });
+        
+        
+        it(@"should send an analytics event", ^{
+            [[TTAnalyticsInterface should] receive:@selector(sendTrackingInfoWithCategory:action:) withArguments:GOOGLE_ANALYTICS_CATEGORY_GENERAL, GOOGLE_ANALYTICS_ACTION_CONTACT_DEVELOPER];
+            [subject developerButtonPress:nil];
+        });
+    });
+
+    
     
     context(@"when the done button is pressed", ^{
         it(@"it should notify the delegate", ^{

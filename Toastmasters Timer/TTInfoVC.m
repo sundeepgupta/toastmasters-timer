@@ -1,4 +1,5 @@
 #import "TTInfoVC.h"
+#import "TTStrings.h"
 
 
 @interface TTInfoVC ()
@@ -44,43 +45,44 @@
 }
 
 
-#pragma mark - Sundeep Button
-- (IBAction)sundeepButtonPress:(id)sender {
+#pragma mark - Developer Button
+
+
+- (IBAction)developerButtonPress:(id)sender {
+    [self tryToSendEmail];
+    [TTAnalyticsInterface sendTrackingInfoWithCategory:GOOGLE_ANALYTICS_CATEGORY_GENERAL action:GOOGLE_ANALYTICS_ACTION_CONTACT_DEVELOPER];
+}
+
+- (void)tryToSendEmail {
     if ([MFMailComposeViewController canSendMail]) {
         [self email];
     } else {
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Can't Send Mail" message:@"It looks like your device isn't setup to send mail. If your device supports it, make sure you've configured your email account." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
-        [alert show];
+        [TTHelper showAlertWithTitle:STRING_ERROR_TTITLE_CANT_SEND_MAIL withMessage:STRING_ERROR_MESSAGE_CANT_SEND_MAIL];
     }
 }
 
-- (void)email
-{
+- (void)email {
     MFMailComposeViewController *mailer = [self setupMailer];
     [self presentViewController:mailer animated:YES completion:nil];
 }
 
-- (MFMailComposeViewController *)setupMailer
-{
+- (MFMailComposeViewController *)setupMailer {
     MFMailComposeViewController *mailer = [[MFMailComposeViewController alloc] init];
     [self setupPropertiesforMailer:mailer];
     return mailer;
 }
 
-- (void)setupPropertiesforMailer:(MFMailComposeViewController *)mailer
-{
+- (void)setupPropertiesforMailer:(MFMailComposeViewController *)mailer {
     mailer.mailComposeDelegate = self;
     [self setupRecipientsForMailer:mailer];
     [self setupSubjectForMailer:mailer];
 }
 
-- (void)setupRecipientsForMailer:(MFMailComposeViewController *)mailer
-{
+- (void)setupRecipientsForMailer:(MFMailComposeViewController *)mailer {
     [self setupToRecipientsForMailer:mailer];
 }
 
-- (void)setupToRecipientsForMailer:(MFMailComposeViewController *)mailer
-{
+- (void)setupToRecipientsForMailer:(MFMailComposeViewController *)mailer {
     NSArray *toRecipients = [NSArray arrayWithObject:@"sundeep@sundeepgupta.ca"];
     [mailer setToRecipients:toRecipients];
 }
@@ -95,15 +97,14 @@
 #pragma mark - MFMailComposerViewController Delegate Methods
 - (void)mailComposeController:(MFMailComposeViewController *)controller
           didFinishWithResult:(MFMailComposeResult)result
-                        error:(NSError *)error
-{
+                        error:(NSError *)error {
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 
 
-#pragma mark - Nicole Button
-- (IBAction)nicoleButtonPress:(id)sender {
+#pragma mark - Designer Button
+- (IBAction)designerButtonPress:(id)sender {
     NSString *urlString = @"http://www.redconservatory.com";
     NSURL *url = [NSURL URLWithString:urlString];
     UIApplication *app = [UIApplication sharedApplication];
