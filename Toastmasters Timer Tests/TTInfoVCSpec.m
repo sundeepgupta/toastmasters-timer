@@ -2,7 +2,7 @@
 #import "TTSpecHelper.h"
 #import "TTInfoVC.h"
 #import "TTHelper.h"
-
+#import "TTAnalyticsInterface.h"
 
 @interface TTInfoVC ()
 - (IBAction)rateAppButtonPress:(id)sender;
@@ -25,6 +25,11 @@ describe(@"InfoVC", ^{
     context(@"when the rate me button is pressed", ^{
         it(@"should open the correct website", ^{
             [[TTHelper should] receive:@selector(openAppWithUrlString:) withArguments:@"itms-apps://itunes.apple.com/app/id708807408"];
+            [subject rateAppButtonPress:nil];
+        });
+        
+        it(@"should send an analytics event", ^{
+            [[TTAnalyticsInterface should] receive:@selector(sendTrackingInfoWithCategory:action:) withArguments:GOOGLE_ANALYTICS_CATEGORY_GENERAL, GOOGLE_ANALYTICS_ACTION_RATE_APP];
             [subject rateAppButtonPress:nil];
         });
     });

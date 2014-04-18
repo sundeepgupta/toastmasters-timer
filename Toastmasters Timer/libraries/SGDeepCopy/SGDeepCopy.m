@@ -13,7 +13,7 @@
 @implementation NSArray (SGDeepCopy)
 
 - (NSArray*) deepCopy {
-    unsigned int count = [self count];
+    NSInteger count = [self count];
     id cArray[count];
     
     for (unsigned int i = 0; i < count; ++i) {
@@ -29,7 +29,7 @@
     return ret;
 }
 - (NSMutableArray*) mutableDeepCopy {
-    unsigned int count = [self count];
+    NSInteger count = [self count];
     id cArray[count];
     
     for (unsigned int i = 0; i < count; ++i) {
@@ -67,7 +67,7 @@
 @implementation NSDictionary (SGDeepCopy)
 
 - (NSDictionary*) deepCopy {
-    unsigned int count = [self count];
+    NSInteger count = [self count];
     id cObjects[count];
     id cKeys[count];
     
@@ -96,7 +96,7 @@
 }
 
 - (NSMutableDictionary*) mutableDeepCopy {
-    unsigned int count = [self count];
+    NSInteger count = [self count];
     id cObjects[count];
     id cKeys[count];
     

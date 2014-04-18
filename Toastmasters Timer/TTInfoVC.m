@@ -1,5 +1,5 @@
 #import "TTInfoVC.h"
-
+#import "TTAnalyticsInterface.h"
 
 @interface TTInfoVC ()
 @property (weak, nonatomic) IBOutlet UILabel *timerLabel;
@@ -37,6 +37,7 @@
 #pragma mark - Rate App Button
 - (IBAction)rateAppButtonPress:(id)sender {
     [TTHelper openAppWithUrlString:self.urlStringForRateApp];
+    [TTAnalyticsInterface sendTrackingInfoWithCategory:GOOGLE_ANALYTICS_CATEGORY_GENERAL action:GOOGLE_ANALYTICS_ACTION_RATE_APP];
 }
 - (NSString *)urlStringForRateApp {
     return [NSString stringWithFormat:@"%@%@", BASE_URL_RATE_APP, APP_ID];

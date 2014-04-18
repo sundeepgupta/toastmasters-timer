@@ -218,7 +218,6 @@
 
 - (void)handleColorButtonPressForIndex:(ColorIndex)index {
     [self presentTimeEntryVcWithIndex:index];
-    [TTAnalyticsInterface sendTrackingInfoWithCategory:GOOGLE_ANALYTICS_CATEGORY_COLOR_TIMES action:GOOGLE_ANALYTICS_ACTION_CHANGE];
 }
 
 - (void)presentTimeEntryVcWithIndex:(ColorIndex)index {
@@ -242,7 +241,6 @@
 - (IBAction)toggleAudioAlertButtonPress:(id)sender {
     [self toggleShouldAudioAlert];
     [self.alertManager recreateNotifications];
-    [TTAnalyticsInterface sendTrackingInfoWithCategory:GOOGLE_ANALYTICS_CATEGORY_AUDIO_ALERT action:GOOGLE_ANALYTICS_ACTION_CHANGE];
 }
 - (void)toggleShouldAudioAlert {
     BOOL shouldAlert = [self.defaults boolForKey:SHOULD_AUDIO_ALERT_KEY];
@@ -255,10 +253,12 @@
 - (void)disableAudioAlert {
     self.audioAlertButton.alpha = DISABLED_ALPHA;
     [self.defaults setBool:NO forKey:SHOULD_AUDIO_ALERT_KEY];
+    [TTAnalyticsInterface sendTrackingInfoWithCategory:GOOGLE_ANALYTICS_CATEGORY_GENERAL action:GOOGLE_ANALYTICS_ACTION_AUDIO_DISABLED];
 }
 - (void)enableAudioAlert {
     self.audioAlertButton.alpha = 1;
     [self.defaults setBool:YES forKey:SHOULD_AUDIO_ALERT_KEY];
+    [TTAnalyticsInterface sendTrackingInfoWithCategory:GOOGLE_ANALYTICS_CATEGORY_GENERAL action:GOOGLE_ANALYTICS_ACTION_AUDIO_ENABLED];
 }
 
 

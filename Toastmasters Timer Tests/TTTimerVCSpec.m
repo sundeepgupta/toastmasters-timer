@@ -46,6 +46,7 @@ describe(@"TimerVC", ^{
         [subject view];
     });
     
+    
     context(@"on first launch", ^{
 
         beforeEach(^{
@@ -58,6 +59,7 @@ describe(@"TimerVC", ^{
         });
     });
     
+    
     context(@"when pressing the audio alert button", ^{
         
         context(@"when audio is currently disabled", ^{
@@ -69,23 +71,23 @@ describe(@"TimerVC", ^{
             it(@"should enable audio alerts", ^{
                 [subject.audioAlertButton sendActionsForControlEvents:UIControlEventTouchDown];
                 
-                //need to redesign the code, or explicitly remove the stub
+#warning need to redesign the code, or explicitly remove the stub
                 
                 BOOL shouldAudioAlert = [subject.defaults boolForKey:SHOULD_AUDIO_ALERT_KEY];
                 [[theValue(shouldAudioAlert) should] equal:theValue(YES)];
             });
+            
+            it(@"should send an analytics tracking event", ^{
+                [[TTAnalyticsInterface should] receive:@selector(sendTrackingInfoWithCategory:action:) withArguments:GOOGLE_ANALYTICS_CATEGORY_GENERAL, GOOGLE_ANALYTICS_ACTION_AUDIO_ENABLED];
+                [subject.audioAlertButton sendActionsForControlEvents:UIControlEventTouchDown];
+            });
         });
         
-        //add flipside context.
+#warning ADD WHEN AUDIO DISABLED
         
         
         it(@"should recreate the local notifications", ^{
             [[subject.alertManager should] receive:@selector(recreateNotifications)];
-            [subject.audioAlertButton sendActionsForControlEvents:UIControlEventTouchDown];
-        });
-        
-        it(@"should send an analytics tracking event", ^{
-            [[TTAnalyticsInterface should] receive:@selector(sendTrackingInfoWithCategory:action:) withArguments:GOOGLE_ANALYTICS_CATEGORY_AUDIO_ALERT, GOOGLE_ANALYTICS_ACTION_CHANGE];
             [subject.audioAlertButton sendActionsForControlEvents:UIControlEventTouchDown];
         });
     });
@@ -101,13 +103,8 @@ describe(@"TimerVC", ^{
             [[subject.presentedViewController shouldEventually] beKindOfClass:[TTTimeEntryVC class]];
             [subject presentTimeEntryVcWithIndex:0];
         });
-        
-        it(@"should send an analytics tracking event", ^{
-            [[TTAnalyticsInterface should] receive:@selector(sendTrackingInfoWithCategory:action:) withArguments:GOOGLE_ANALYTICS_CATEGORY_COLOR_TIMES, GOOGLE_ANALYTICS_ACTION_CHANGE];
-            [subject.greenButton sendActionsForControlEvents:UIControlEventTouchUpInside];
-        });
-        
     });
+
 
     context(@"When creating the TimeEntryVC", ^{
         it(@"should be setup correctly", ^{
@@ -123,6 +120,7 @@ describe(@"TimerVC", ^{
             [[timeEntryVc.timeEntryDelegate should] equal:subject];
         });
     });
+    
     
     context(@"when pressing the info button", ^{
         it(@"should perform the correct segue", ^{
@@ -142,6 +140,7 @@ describe(@"TimerVC", ^{
             [[infoVC.modalDelegate should] equal:subject];
         });
     });;
+    
     
     context(@"When creating the TimeEntryVC", ^{
         it(@"should be setup correctly", ^{
@@ -172,12 +171,14 @@ describe(@"TimerVC", ^{
         });
     });
     
+    
     context(@"when the colour time did change", ^{
         it(@"should de-emphasize that colour", ^{
             [[subject should] receive:@selector(deEmphasizeColorWithIndex:) withArguments:theValue(AMBER_COLOR_INDEX)];
             [subject colorTimeDidChangeForIndex:AMBER_COLOR_INDEX];
         });
     });
+    
     
     context(@"when the reset all colours button was pressed", ^{
         it(@"should de-emphasize that colour", ^{
