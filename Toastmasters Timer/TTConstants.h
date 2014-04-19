@@ -70,8 +70,9 @@ static NSString *const GOOGLE_ANALYTICS_CATEGORY_GENERAL = @"General";
 static NSString *const GOOGLE_ANALYTICS_ACTION_RATE_APP = @"Rate App";
 static NSString *const GOOGLE_ANALYTICS_ACTION_CONTACT_DEVELOPER = @"Contact Developer";
 static NSString *const GOOGLE_ANALYTICS_ACTION_CONTACT_DESIGNER = @"Contact Designer";
-static NSString *const GOOGLE_ANALYTICS_ACTION_AUDIO_ENABLED = @"Audio Alerts Enabled";
-static NSString *const GOOGLE_ANALYTICS_ACTION_AUDIO_DISABLED = @"Audio Alerts Disabled";
+static NSString *const GOOGLE_ANALYTICS_ACTION_AUDIO_ENABLE = @"Enable Audio Alerts";
+static NSString *const GOOGLE_ANALYTICS_ACTION_AUDIO_DISABLE = @"Disable Audio Alerts";
+static NSString *const GOOGLE_ANALYTICS_ACTION_RESET_COLOURS = @"Reset Colours";
 
 
 //Info View

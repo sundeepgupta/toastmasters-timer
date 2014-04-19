@@ -65,6 +65,10 @@ describe(@"TimeEntryVC", ^{
             [[subject.bellButton.titleLabel.text should] equal:@"00:00"];
         });
         
+        it(@"should send an analytics event", ^{
+            [[TTAnalyticsInterface should] receive:@selector(sendTrackingInfoWithCategory:action:) withArguments:GOOGLE_ANALYTICS_CATEGORY_GENERAL, GOOGLE_ANALYTICS_ACTION_RESET_COLOURS];
+            [subject resetButtonPress];
+        });
         
     });
     

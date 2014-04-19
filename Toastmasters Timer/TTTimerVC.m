@@ -249,12 +249,12 @@
 - (void)disableAudioAlert {
     self.audioAlertButton.alpha = DISABLED_ALPHA;
     [self.defaults setBool:NO forKey:SHOULD_AUDIO_ALERT_KEY];
-    [TTAnalyticsInterface sendTrackingInfoWithCategory:GOOGLE_ANALYTICS_CATEGORY_GENERAL action:GOOGLE_ANALYTICS_ACTION_AUDIO_DISABLED];
+    [TTAnalyticsInterface sendTrackingInfoWithCategory:GOOGLE_ANALYTICS_CATEGORY_GENERAL action:GOOGLE_ANALYTICS_ACTION_AUDIO_DISABLE];
 }
 - (void)enableAudioAlert {
     self.audioAlertButton.alpha = 1;
     [self.defaults setBool:YES forKey:SHOULD_AUDIO_ALERT_KEY];
-    [TTAnalyticsInterface sendTrackingInfoWithCategory:GOOGLE_ANALYTICS_CATEGORY_GENERAL action:GOOGLE_ANALYTICS_ACTION_AUDIO_ENABLED];
+    [TTAnalyticsInterface sendTrackingInfoWithCategory:GOOGLE_ANALYTICS_CATEGORY_GENERAL action:GOOGLE_ANALYTICS_ACTION_AUDIO_ENABLE];
 }
 
 - (BOOL)shouldAudioAlert {

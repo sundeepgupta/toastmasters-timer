@@ -3,6 +3,7 @@
 #import "SGScrollWheel.h"
 #import "TTColorButton.h"
 #import "TTAlertManager.h"
+#import "TTAnalyticsInterface.h"
 
 
 #define WHEEL_PADDING 0
@@ -105,6 +106,7 @@
 - (IBAction)resetButtonPress {
     [self resetColors];
     [self.timeEntryDelegate didResetAllColourTimes];
+    [TTAnalyticsInterface sendTrackingInfoWithCategory:GOOGLE_ANALYTICS_CATEGORY_GENERAL action:GOOGLE_ANALYTICS_ACTION_RESET_COLOURS];
 }
 - (void)resetColors {
     for (TTColorButton *button in self.colorButtonArray) {
