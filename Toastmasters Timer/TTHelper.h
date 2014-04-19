@@ -54,4 +54,7 @@
 + (BOOL)isFirstLaunch;
 
 
+#pragma mark - Analytics
++ (void)sendColorTimeValuesToAnalytics;
+
 @end

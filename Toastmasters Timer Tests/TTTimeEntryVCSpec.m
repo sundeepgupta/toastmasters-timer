@@ -35,6 +35,7 @@ describe(@"TimeEntryVC", ^{
         
     });
     
+    
     context(@"when loaded", ^{
         it(@"should setup the reset button properly", ^{
             [[subject.resetButton should] beKindOfClass:[UIButton class]];
@@ -46,6 +47,7 @@ describe(@"TimeEntryVC", ^{
             [[buttonSelectorName should] equal:subjectSelectorName];
         });
     });
+    
     
     context(@"when pressing the reset button", ^{
         it(@"should notify its delegate with the correct methods", ^{
@@ -66,10 +68,9 @@ describe(@"TimeEntryVC", ^{
         });
         
         it(@"should send an analytics event", ^{
-            [[TTAnalyticsInterface should] receive:@selector(sendTrackingInfoWithCategory:action:) withArguments:GOOGLE_ANALYTICS_CATEGORY_GENERAL, GOOGLE_ANALYTICS_ACTION_RESET_COLOURS];
+            [[TTAnalyticsInterface should] receive:@selector(sendCategory:action:) withArguments:GOOGLE_ANALYTICS_CATEGORY_TIME_ENTRY, GOOGLE_ANALYTICS_ACTION_RESET_COLOURS];
             [subject resetButtonPress];
         });
-        
     });
     
     
@@ -85,6 +86,7 @@ describe(@"TimeEntryVC", ^{
         });
     });
     
+    
     context(@"when finished changing times when timer is running", ^{
         it(@"the local notifications should be recreated", ^{
             TTAlertManager *alertManager = [TTAlertManager new];
@@ -96,8 +98,22 @@ describe(@"TimeEntryVC", ^{
     
     
     context(@"when pressing the done button", ^{
+        
+        pending(@"should save the colour times", ^{
+            
+        });
+        
+        pending(@"should recreate the the notifications", ^{
+            
+        });
+        
         it(@"should notify its delegate with the correct methods", ^{
             [[subject.modalDelegate should] receive:@selector(modalShouldDismiss)];
+            [subject doneButtonPress:nil];
+        });
+        
+        it(@"should send a tracking event for each colour time", ^{
+            [[TTHelper should] receive:@selector(sendColorTimeValuesToAnalytics)];
             [subject doneButtonPress:nil];
         });
     });

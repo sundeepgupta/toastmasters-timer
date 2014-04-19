@@ -1,6 +1,8 @@
 #import "TTHelper.h"
 #import "TTColorButton.h"
 #import "TTStrings.h"
+#import "TTAnalyticsInterface.h"
+
 
 #define MAX_SECONDS 5995 //99:55
 
@@ -114,15 +116,6 @@
 }
 
 
-
-
-
-
-
-
-
-
-
 + (UIImage *)imageWithColor:(UIColor *)color {
     UIImage *img = nil;
     CGRect rect = CGRectMake(0, 0, 1, 1);
@@ -134,45 +127,6 @@
     UIGraphicsEndImageContext();
     return img;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-+ (NSString *)nameForColorIndex:(ColorIndex)index {
-    NSString *name;
-    
-    switch (index) {
-        case GREEN_COLOR_INDEX:
-            name = @"green";
-            break;
-        case AMBER_COLOR_INDEX:
-            name = @"amber";
-            break;
-        case RED_COLOR_INDEX:
-            name = @"red";
-            break;
-        case BELL_COLOR_INDEX:
-            name = @"bell";
-            break;
-        default:
-            break;
-    }
-
-    return name;
-}
-
-
-
-
-
 
 
 
@@ -191,7 +145,7 @@
 
 
 
-#pragma mark - Universal Helpers 
+#pragma mark - Universal Helpers
 + (void)updateTitle:(NSString *)title forButton:(UIButton *)button {
     [UIView setAnimationsEnabled:NO];
     [button setTitle:title forState:UIControlStateNormal];
@@ -212,7 +166,38 @@
 }
 
 
+#pragma mark - Colour button names
++ (NSString *)nameForColorIndex:(ColorIndex)index {
+    NSString *name;
+    
+    switch (index) {
+        case GREEN_COLOR_INDEX:
+            name = @"green";
+            break;
+        case AMBER_COLOR_INDEX:
+            name = @"amber";
+            break;
+        case RED_COLOR_INDEX:
+            name = @"red";
+            break;
+        case BELL_COLOR_INDEX:
+            name = @"bell";
+            break;
+        default:
+            break;
+    }
+    
+    return name;
+}
 
+
+
+#pragma mark - Analytics
++ (void)sendColorTimeValuesToAnalytics {
+    NSArray *times = [[NSUserDefaults standardUserDefaults] arrayForKey:COLOR_TIMES_KEY];
+    NSString *label = [NSString stringWithFormat:@"%@,%@,%@,%@", times[GREEN_COLOR_INDEX], times[AMBER_COLOR_INDEX], times[RED_COLOR_INDEX], times[BELL_COLOR_INDEX]];
+    [TTAnalyticsInterface sendCategory:GOOGLE_ANALYTICS_CATEGORY_TIME_ENTRY action:GOOGLE_ANALYTICS_ACTION_SAVE_COLOURS label:label];
+}
 
 
 @end

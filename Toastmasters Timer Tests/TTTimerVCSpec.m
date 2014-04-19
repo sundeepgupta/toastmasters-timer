@@ -76,7 +76,7 @@ describe(@"TimerVC", ^{
             });
             
             it(@"should send an analytics tracking event", ^{
-                [[TTAnalyticsInterface should] receive:@selector(sendTrackingInfoWithCategory:action:) withArguments:GOOGLE_ANALYTICS_CATEGORY_GENERAL, GOOGLE_ANALYTICS_ACTION_AUDIO_ENABLE];
+                [[TTAnalyticsInterface should] receive:@selector(sendCategory:action:) withArguments:GOOGLE_ANALYTICS_CATEGORY_TIMER, GOOGLE_ANALYTICS_ACTION_AUDIO_ENABLE];
                 [subject.audioAlertButton sendActionsForControlEvents:UIControlEventTouchDown];
             });
         });
@@ -94,7 +94,7 @@ describe(@"TimerVC", ^{
             });
             
             it(@"should send an analytics tracking event", ^{
-                [[TTAnalyticsInterface should] receive:@selector(sendTrackingInfoWithCategory:action:) withArguments:GOOGLE_ANALYTICS_CATEGORY_GENERAL, GOOGLE_ANALYTICS_ACTION_AUDIO_DISABLE];
+                [[TTAnalyticsInterface should] receive:@selector(sendCategory:action:) withArguments:GOOGLE_ANALYTICS_CATEGORY_TIMER, GOOGLE_ANALYTICS_ACTION_AUDIO_DISABLE];
                 [subject.audioAlertButton sendActionsForControlEvents:UIControlEventTouchDown];
             });
         });

@@ -66,13 +66,19 @@ static NSString *const APP_ID = @"708807408";
 
 //Google Analytics
 static NSString *const GOOGLE_ANALYTICS_TRACKING_ID = @"UA-49711300-2";
-static NSString *const GOOGLE_ANALYTICS_CATEGORY_GENERAL = @"General";
+
+static NSString *const GOOGLE_ANALYTICS_CATEGORY_TIMER = @"Timer";
+static NSString *const GOOGLE_ANALYTICS_ACTION_AUDIO_ENABLE = @"Enable Audio Alerts";
+static NSString *const GOOGLE_ANALYTICS_ACTION_AUDIO_DISABLE = @"Disable Audio Alerts";
+
+static NSString *const GOOGLE_ANALYTICS_CATEGORY_INFO = @"Info";
 static NSString *const GOOGLE_ANALYTICS_ACTION_RATE_APP = @"Rate App";
 static NSString *const GOOGLE_ANALYTICS_ACTION_CONTACT_DEVELOPER = @"Contact Developer";
 static NSString *const GOOGLE_ANALYTICS_ACTION_CONTACT_DESIGNER = @"Contact Designer";
-static NSString *const GOOGLE_ANALYTICS_ACTION_AUDIO_ENABLE = @"Enable Audio Alerts";
-static NSString *const GOOGLE_ANALYTICS_ACTION_AUDIO_DISABLE = @"Disable Audio Alerts";
+
+static NSString *const GOOGLE_ANALYTICS_CATEGORY_TIME_ENTRY = @"Time Entry";
 static NSString *const GOOGLE_ANALYTICS_ACTION_RESET_COLOURS = @"Reset Colours";
+static NSString *const GOOGLE_ANALYTICS_ACTION_SAVE_COLOURS = @"Save Colours";
 
 
 //Info View

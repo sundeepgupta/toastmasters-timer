@@ -38,7 +38,7 @@
 #pragma mark - Rate App Button
 - (IBAction)rateAppButtonPress:(id)sender {
     [TTHelper openAppWithUrlString:self.urlStringForRateApp];
-    [TTAnalyticsInterface sendTrackingInfoWithCategory:GOOGLE_ANALYTICS_CATEGORY_GENERAL action:GOOGLE_ANALYTICS_ACTION_RATE_APP];
+    [TTAnalyticsInterface sendCategory:GOOGLE_ANALYTICS_CATEGORY_INFO action:GOOGLE_ANALYTICS_ACTION_RATE_APP];
 }
 - (NSString *)urlStringForRateApp {
     return [NSString stringWithFormat:@"%@%@", BASE_URL_RATE_APP, APP_ID];
@@ -50,7 +50,7 @@
 
 - (IBAction)developerButtonPress:(id)sender {
     [self tryToSendEmail];
-    [TTAnalyticsInterface sendTrackingInfoWithCategory:GOOGLE_ANALYTICS_CATEGORY_GENERAL action:GOOGLE_ANALYTICS_ACTION_CONTACT_DEVELOPER];
+    [TTAnalyticsInterface sendCategory:GOOGLE_ANALYTICS_CATEGORY_INFO action:GOOGLE_ANALYTICS_ACTION_CONTACT_DEVELOPER];
 }
 
 - (void)tryToSendEmail {
@@ -106,7 +106,7 @@
 #pragma mark - Designer Button
 - (IBAction)designerButtonPress:(id)sender {
     [TTHelper openWebsiteWithUrlString:URL_DESIGNER];
-    [TTAnalyticsInterface sendTrackingInfoWithCategory:GOOGLE_ANALYTICS_CATEGORY_GENERAL action:GOOGLE_ANALYTICS_ACTION_CONTACT_DESIGNER];
+    [TTAnalyticsInterface sendCategory:GOOGLE_ANALYTICS_CATEGORY_INFO action:GOOGLE_ANALYTICS_ACTION_CONTACT_DESIGNER];
 }
 
 

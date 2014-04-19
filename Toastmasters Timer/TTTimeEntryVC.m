@@ -4,7 +4,7 @@
 #import "TTColorButton.h"
 #import "TTAlertManager.h"
 #import "TTAnalyticsInterface.h"
-
+#import "TTHelper.h"
 
 #define WHEEL_PADDING 0
 
@@ -106,7 +106,7 @@
 - (IBAction)resetButtonPress {
     [self resetColors];
     [self.timeEntryDelegate didResetAllColourTimes];
-    [TTAnalyticsInterface sendTrackingInfoWithCategory:GOOGLE_ANALYTICS_CATEGORY_GENERAL action:GOOGLE_ANALYTICS_ACTION_RESET_COLOURS];
+    [TTAnalyticsInterface sendCategory:GOOGLE_ANALYTICS_CATEGORY_TIME_ENTRY action: GOOGLE_ANALYTICS_ACTION_RESET_COLOURS];
 }
 - (void)resetColors {
     for (TTColorButton *button in self.colorButtonArray) {
@@ -196,6 +196,7 @@
     [self saveColorsToDefaults];
     [self.alertManager recreateNotifications];
     [self.modalDelegate modalShouldDismiss];
+    [TTHelper sendColorTimeValuesToAnalytics];
 }
 - (void)saveColorsToDefaults {
     NSArray *colorArray = [self newColorArray];

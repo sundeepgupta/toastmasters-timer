@@ -36,7 +36,7 @@ describe(@"InfoVC", ^{
         });
         
         it(@"should send an analytics event", ^{
-            [[TTAnalyticsInterface should] receive:@selector(sendTrackingInfoWithCategory:action:) withArguments:GOOGLE_ANALYTICS_CATEGORY_GENERAL, GOOGLE_ANALYTICS_ACTION_RATE_APP];
+            [[TTAnalyticsInterface should] receive:@selector(sendCategory:action:) withArguments:GOOGLE_ANALYTICS_CATEGORY_INFO, GOOGLE_ANALYTICS_ACTION_RATE_APP];
             [subject rateAppButtonPress:nil];
         });
     });
@@ -76,7 +76,7 @@ describe(@"InfoVC", ^{
         
         
         it(@"should send an analytics event", ^{
-            [[TTAnalyticsInterface should] receive:@selector(sendTrackingInfoWithCategory:action:) withArguments:GOOGLE_ANALYTICS_CATEGORY_GENERAL, GOOGLE_ANALYTICS_ACTION_CONTACT_DEVELOPER];
+            [[TTAnalyticsInterface should] receive:@selector(sendCategory:action:) withArguments:GOOGLE_ANALYTICS_CATEGORY_INFO, GOOGLE_ANALYTICS_ACTION_CONTACT_DEVELOPER];
             [subject developerButtonPress:nil];
         });
     });
@@ -90,7 +90,7 @@ describe(@"InfoVC", ^{
         });
         
         it(@"should send an analytics event", ^{
-            [[TTAnalyticsInterface should] receive:@selector(sendTrackingInfoWithCategory:action:) withArguments:GOOGLE_ANALYTICS_CATEGORY_GENERAL, GOOGLE_ANALYTICS_ACTION_CONTACT_DESIGNER];
+            [[TTAnalyticsInterface should] receive:@selector(sendCategory:action:) withArguments:GOOGLE_ANALYTICS_CATEGORY_INFO, GOOGLE_ANALYTICS_ACTION_CONTACT_DESIGNER];
             [subject designerButtonPress:nil];
         });
     });
