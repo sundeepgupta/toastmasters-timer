@@ -4,6 +4,7 @@
 
 @interface TTInfoVC ()
 @property (weak, nonatomic) IBOutlet UILabel *timerLabel;
+@property (weak, nonatomic) IBOutlet UILabel *versionLabel;
 @end
 
 
@@ -14,6 +15,7 @@
     [super viewDidLoad];
     [TTHelper registerForTimerNotificationsWithObject:self];
     [self setupTimerLabel];
+    [self setupVersionLabel];
 }
 
 - (void)setupTimerLabel {
@@ -22,6 +24,9 @@
     }
 }
 
+- (void)setupVersionLabel {
+    self.versionLabel.text = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleShortVersionString"];
+}
 
 
 #pragma mark - Timer Notification

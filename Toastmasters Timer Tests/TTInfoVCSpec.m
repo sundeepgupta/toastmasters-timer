@@ -29,6 +29,7 @@ describe(@"InfoVC", ^{
         [subject view];
     });
     
+    
     context(@"when the rate me button is pressed", ^{
         it(@"should open the correct website", ^{
             [[TTHelper should] receive:@selector(openAppWithUrlString:) withArguments:@"itms-apps://itunes.apple.com/app/id708807408"];

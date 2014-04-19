@@ -395,7 +395,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ncp-pp-iFd" userLabel="Header View">
-                                <rect key="frame" x="20" y="40" width="280" height="106"/>
+                                <rect key="frame" x="20" y="40" width="280" height="130"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="icon.png" translatesAutoresizingMaskIntoConstraints="NO" id="Vqi-qD-DZo">
@@ -411,13 +411,19 @@
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" text="0.0.0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pvd-Y2-aw4">
+                                        <rect key="frame" x="49" y="112" width="182" height="18"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <color key="textColor" red="0.92941176469999998" green="0.92941176469999998" blue="0.92941176469999998" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="106" id="6rQ-Db-lLy"/>
+                                    <constraint firstAttribute="height" constant="130" id="6rQ-Db-lLy"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CqI-YM-Wrp" userLabel="contact View">
-                                <rect key="frame" x="20" y="147" width="280" height="186"/>
+                                <rect key="frame" x="20" y="167" width="280" height="186"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" text="Written by Sundeep Gupta" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fCk-Qx-E7q">
@@ -503,12 +509,13 @@
                             <constraint firstItem="ndP-Au-QuW" firstAttribute="top" secondItem="1V9-nM-4Uh" secondAttribute="bottom" constant="20" id="FTI-kb-wYM"/>
                             <constraint firstAttribute="trailing" secondItem="ncp-pp-iFd" secondAttribute="trailing" constant="20" id="Hxb-YE-PGi"/>
                             <constraint firstItem="1V9-nM-4Uh" firstAttribute="leading" secondItem="AVm-5B-Wnt" secondAttribute="leading" constant="20" id="XrY-0T-rJH"/>
-                            <constraint firstAttribute="centerY" secondItem="CqI-YM-Wrp" secondAttribute="centerY" id="pWN-5W-va4"/>
+                            <constraint firstAttribute="centerY" secondItem="CqI-YM-Wrp" secondAttribute="centerY" constant="-20" id="pWN-5W-va4"/>
                             <constraint firstItem="ncp-pp-iFd" firstAttribute="leading" secondItem="AVm-5B-Wnt" secondAttribute="leading" constant="20" id="pqa-Lz-ssz"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="timerLabel" destination="1V9-nM-4Uh" id="1xv-53-QzN"/>
+                        <outlet property="versionLabel" destination="pvd-Y2-aw4" id="x2b-V6-EEo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="st3-1r-ex5" userLabel="First Responder" sceneMemberID="firstResponder"/>
