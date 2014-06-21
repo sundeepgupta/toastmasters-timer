@@ -95,7 +95,7 @@
     }
 }
 - (void)showAlertForColorIndex:(ColorIndex)index {
-    NSString *title = @"Attention!";
+    NSString *title = NSLocalizedString(@"color alert title", nil);
     NSString *message = [self alertMessageForColorIndex:index];
     UIImage *image = [self visualAlertImageForColorIndex:index];
     UIViewController *vcForToast = [self currentViewController];
