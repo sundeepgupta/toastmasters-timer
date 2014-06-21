@@ -12,6 +12,7 @@ inhibit_all_warnings!
 #Normal Pods
 pod 'CocoaLumberjack'
 pod 'GoogleAnalytics-iOS-SDK'
+pod 'CrashlyticsFramework'
 
 
 #Kiwi
