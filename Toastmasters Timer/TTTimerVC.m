@@ -5,7 +5,7 @@
 #import "TTInfoVC.h"
 #import "TTAlertManager.h"
 #import "TTColorButton.h"
-#import "TTStrings.h"
+#import "TTCommonStrings.h"
 
 
 @interface TTTimerVC () <TTModalDelegate, TTTimeEntryVCDelegate>
@@ -280,7 +280,7 @@
 
 #pragma mark - Tips
 - (void)showTips {
-    [TTHelper showAlertWithTitle:STRING_TIP_TITLE withMessage:STRING_TIP_START_TIMER_EARLIER];
+    [TTHelper showAlertWithTitle:NSLocalizedString(@"tip alert title", nil) withMessage:NSLocalizedString(@"start timer first tip message", @"The title of the tip alert")];
 }
 
 

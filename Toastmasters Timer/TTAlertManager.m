@@ -116,10 +116,10 @@
 - (NSString *)alertMessageForColorIndex:(ColorIndex)index {
     NSString *message;
     if (index == BELL_COLOR_INDEX) {
-        message = @"Ring the bell.";
+        message = NSLocalizedString(@"ring bell alert message", nil);
     } else {
         NSString *colorName = [TTHelper nameForColorIndex:index];
-        message = [NSString stringWithFormat:@"Turn the %@ light on.", colorName];
+        message = [NSString stringWithFormat:NSLocalizedString(@"turn color light on message", nil), colorName];
     }
     return message;
 }

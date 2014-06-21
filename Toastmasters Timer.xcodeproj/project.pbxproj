@@ -10,6 +10,8 @@
 		892860AD74CE40D1A754749B /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 72DF7A9796AB4451856D0F01 /* libPods.a */; };
 		8D25208D1C4D4BC08429557D /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B1AE27F6A6D4FEC86180439 /* libPods.a */; };
 		9F5C02F20DAC41F19921AF8D /* libPods-Toastmasters Timer Tests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D922069EBAB54014839BEFB7 /* libPods-Toastmasters Timer Tests.a */; };
+		AE00965A195634480004DFDE /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE00965C195634480004DFDE /* Storyboard.storyboard */; };
+		AE0096621956349A0004DFDE /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = AE0096641956349A0004DFDE /* Localizable.strings */; };
 		AE022C0218FF3970000303A2 /* TTAnalyticsInterfaceSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = AE022C0118FF3970000303A2 /* TTAnalyticsInterfaceSpec.m */; };
 		AE022C0518FF399F000303A2 /* TTAnalyticsInterface.m in Sources */ = {isa = PBXBuildFile; fileRef = AE022C0418FF399F000303A2 /* TTAnalyticsInterface.m */; };
 		AE0648A518B924B0006902A4 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE06488C18B9243E006902A4 /* XCTest.framework */; };
@@ -53,7 +55,6 @@
 		AE7223B517BDAB66003B60A5 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = AE7223B317BDAB66003B60A5 /* InfoPlist.strings */; };
 		AE7223B717BDAB66003B60A5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AE7223B617BDAB66003B60A5 /* main.m */; };
 		AE7223BB17BDAB66003B60A5 /* TTAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AE7223BA17BDAB66003B60A5 /* TTAppDelegate.m */; };
-		AE7223E417BDABCA003B60A5 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE7223E317BDABCA003B60A5 /* Storyboard.storyboard */; };
 		AE7223E717BDAC8B003B60A5 /* TTTimerVC.m in Sources */ = {isa = PBXBuildFile; fileRef = AE7223E617BDAC8B003B60A5 /* TTTimerVC.m */; };
 		AE8732601831D51200BDD4B2 /* SGScrollWheel.m in Sources */ = {isa = PBXBuildFile; fileRef = AE87325F1831D51200BDD4B2 /* SGScrollWheel.m */; };
 		AE8D52FE17EE2D1300F265FC /* speakerOn.png in Resources */ = {isa = PBXBuildFile; fileRef = AE8D52FA17EE2D1300F265FC /* speakerOn.png */; };
@@ -101,6 +102,10 @@
 		72DF7A9796AB4451856D0F01 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		79E8424783BC43CA9202D5DD /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		9601ED1DC6624F528E0C2AB1 /* Pods-Toastmasters Timer Tests.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Toastmasters Timer Tests.xcconfig"; path = "../Pods/Pods-Toastmasters Timer Tests.xcconfig"; sourceTree = "<group>"; };
+		AE00965D1956345B0004DFDE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Storyboard.storyboard; sourceTree = "<group>"; };
+		AE0096631956349A0004DFDE /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
+		AE009665195634C20004DFDE /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Storyboard.strings; sourceTree = "<group>"; };
+		AE0096661956352B0004DFDE /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		AE022C0118FF3970000303A2 /* TTAnalyticsInterfaceSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TTAnalyticsInterfaceSpec.m; path = "Toastmasters Timer Tests/TTAnalyticsInterfaceSpec.m"; sourceTree = "<group>"; };
 		AE022C0318FF399F000303A2 /* TTAnalyticsInterface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTAnalyticsInterface.h; sourceTree = "<group>"; };
 		AE022C0418FF399F000303A2 /* TTAnalyticsInterface.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTAnalyticsInterface.m; sourceTree = "<group>"; };
@@ -129,7 +134,7 @@
 		AE111FB017D019B500254EF4 /* mail@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mail@2x.png"; sourceTree = "<group>"; };
 		AE111FB317D01FE700254EF4 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		AE393C0A18DF427B0058AEC6 /* TTHelperSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TTHelperSpec.m; path = "Toastmasters Timer Tests/TTHelperSpec.m"; sourceTree = "<group>"; };
-		AE393C0D18DF49B30058AEC6 /* TTStrings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TTStrings.h; path = "Toastmasters Timer/TTStrings.h"; sourceTree = "<group>"; };
+		AE393C0D18DF49B30058AEC6 /* TTCommonStrings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TTCommonStrings.h; path = "Toastmasters Timer/TTCommonStrings.h"; sourceTree = "<group>"; };
 		AE3C7EC017ECF9080071725C /* TTAlertManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTAlertManager.h; sourceTree = "<group>"; };
 		AE3C7EC117ECF9080071725C /* TTAlertManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = TTAlertManager.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		AE3C7EC317ECFBA90071725C /* TTConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TTConstants.h; path = "Toastmasters Timer/TTConstants.h"; sourceTree = "<group>"; };
@@ -160,7 +165,6 @@
 		AE7223B917BDAB66003B60A5 /* TTAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TTAppDelegate.h; sourceTree = "<group>"; };
 		AE7223BA17BDAB66003B60A5 /* TTAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TTAppDelegate.m; sourceTree = "<group>"; };
 		AE7223CB17BDAB66003B60A5 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
-		AE7223E317BDABCA003B60A5 /* Storyboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
 		AE7223E517BDAC8B003B60A5 /* TTTimerVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTTimerVC.h; sourceTree = "<group>"; };
 		AE7223E617BDAC8B003B60A5 /* TTTimerVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = TTTimerVC.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		AE87325E1831D51200BDD4B2 /* SGScrollWheel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGScrollWheel.h; sourceTree = "<group>"; };
@@ -251,7 +255,8 @@
 			children = (
 				AE5208A717C054AE002CFFD7 /* Images */,
 				AE3C7EC317ECFBA90071725C /* TTConstants.h */,
-				AE393C0D18DF49B30058AEC6 /* TTStrings.h */,
+				AE393C0D18DF49B30058AEC6 /* TTCommonStrings.h */,
+				AE0096641956349A0004DFDE /* Localizable.strings */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -348,7 +353,7 @@
 			children = (
 				AE111FAC17D0036300254EF4 /* TTInfoVC.h */,
 				AE111FAD17D0036300254EF4 /* TTInfoVC.m */,
-				AE7223E317BDABCA003B60A5 /* Storyboard.storyboard */,
+				AE00965C195634480004DFDE /* Storyboard.storyboard */,
 				AE9F976217BDC4FA00626448 /* TTTimeEntryVC.h */,
 				AE9F976317BDC4FA00626448 /* TTTimeEntryVC.m */,
 				AE7223E517BDAC8B003B60A5 /* TTTimerVC.h */,
@@ -571,6 +576,8 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
+				fr,
 			);
 			mainGroup = AE72239C17BDAB65003B60A5;
 			productRefGroup = AE7223A617BDAB65003B60A5 /* Products */;
@@ -599,7 +606,7 @@
 				AE7223B517BDAB66003B60A5 /* InfoPlist.strings in Resources */,
 				AEBAF2F617E7D9B000BA9479 /* info@2x.png in Resources */,
 				AEF3116517E911C000D10C32 /* Default-568h@2x.png in Resources */,
-				AE7223E417BDABCA003B60A5 /* Storyboard.storyboard in Resources */,
+				AE00965A195634480004DFDE /* Storyboard.storyboard in Resources */,
 				AE5208AA17C054AE002CFFD7 /* minus.png in Resources */,
 				AE5208B217C0FF63002CFFD7 /* minus@2x.png in Resources */,
 				AE5208B317C0FF63002CFFD7 /* play.png in Resources */,
@@ -618,6 +625,7 @@
 				AEAE24EB17CAB08300DA265B /* cancel.png in Resources */,
 				AEAE24EC17CAB08300DA265B /* cancel@2x.png in Resources */,
 				AE8D52FF17EE2D1300F265FC /* speakerOn@2x.png in Resources */,
+				AE0096621956349A0004DFDE /* Localizable.strings in Resources */,
 				AEAE24ED17CAB08300DA265B /* ok.png in Resources */,
 				AEAE24EE17CAB08300DA265B /* ok@2x.png in Resources */,
 				AEAE24EF17CAB08300DA265B /* settings.png in Resources */,
@@ -777,6 +785,25 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		AE00965C195634480004DFDE /* Storyboard.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AE00965D1956345B0004DFDE /* Base */,
+				AE009665195634C20004DFDE /* fr */,
+			);
+			name = Storyboard.storyboard;
+			sourceTree = "<group>";
+		};
+		AE0096641956349A0004DFDE /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AE0096631956349A0004DFDE /* Base */,
+				AE0096661956352B0004DFDE /* fr */,
+			);
+			name = Localizable.strings;
+			path = "Toastmasters Timer";
+			sourceTree = "<group>";
+		};
 		AE0648AB18B924B0006902A4 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (

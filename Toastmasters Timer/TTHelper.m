@@ -1,6 +1,6 @@
 #import "TTHelper.h"
 #import "TTColorButton.h"
-#import "TTStrings.h"
+#import "TTCommonStrings.h"
 #import "TTAnalyticsInterface.h"
 
 
@@ -15,7 +15,7 @@
     if ([self canOpenAppWithUrlPrefix:@"http://"]) {
         [self openAppWithUrlString:urlString];
     } else {
-        [self showAlertWithTitle:STRING_ERROR_TTITLE_GENERAL withMessage:STRING_ERROR_MESSAGE_CANT_OPEN_LINK];
+        [self showAlertWithTitle:STRING_ERROR_TTITLE_GENERAL withMessage:NSLocalizedString(@"can't open link message", @"The message in the error when the device can't open web links.")];
     }
 }
 + (BOOL)canOpenAppWithUrlPrefix:(NSString *)urlPrefix {
@@ -172,16 +172,16 @@
     
     switch (index) {
         case GREEN_COLOR_INDEX:
-            name = @"green";
+            name = NSLocalizedString(@"green color name", nil);
             break;
         case AMBER_COLOR_INDEX:
-            name = @"amber";
+            name = NSLocalizedString(@"amber color name", nil);
             break;
         case RED_COLOR_INDEX:
-            name = @"red";
+            name = NSLocalizedString(@"red color name", nil);
             break;
         case BELL_COLOR_INDEX:
-            name = @"bell";
+            name = NSLocalizedString(@"bell color name", nil);
             break;
         default:
             break;

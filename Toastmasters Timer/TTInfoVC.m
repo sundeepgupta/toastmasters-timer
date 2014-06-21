@@ -1,5 +1,5 @@
 #import "TTInfoVC.h"
-#import "TTStrings.h"
+#import "TTCommonStrings.h"
 #import "TTConstants.h"
 
 @interface TTInfoVC ()
@@ -62,7 +62,7 @@
     if ([MFMailComposeViewController canSendMail]) {
         [self email];
     } else {
-        [TTHelper showAlertWithTitle:STRING_ERROR_TTITLE_GENERAL withMessage:STRING_ERROR_MESSAGE_CANT_SEND_MAIL];
+        [TTHelper showAlertWithTitle:STRING_ERROR_TTITLE_GENERAL withMessage:NSLocalizedString(@"can't sent email message", @"The message in the error when the device can't send emails")];
     }
 }
 

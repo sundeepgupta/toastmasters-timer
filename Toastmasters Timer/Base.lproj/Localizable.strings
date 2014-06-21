@@ -1,0 +1,13 @@
+"color alert title" = "Attention!";
+"ring bell alert message" = "Ring the bell.";
+"turn color light on message" = "Turn the %@ light on.";
+"green color name" = "green";
+"amber color name" = "amber";
+"red color name" = "red";
+"bell color name" = "bell";
+"tip alert title" = "Tip!";
+"start timer first tip message" = "You can set the colors after starting the timer :)";
+"default alert button title" = "OK";
+"default error title" = "Oops!";
+"can't sent email message" = "Your device isn't setup to send email.";
+"can't open link message" = "Your device can't open the link.";

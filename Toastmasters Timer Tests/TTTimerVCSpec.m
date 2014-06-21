@@ -5,7 +5,7 @@
 #import "TTAlertManager.h"
 #import "TTColorButton.h"
 #import "TTHelper.h"
-#import "TTStrings.h"
+#import "TTCommonStrings.h"
 #import "TTModalDelegate.h"
 #import "TTInfoVC.h"
 #import "TTAnalyticsInterface.h"
@@ -55,7 +55,7 @@ describe(@"TimerVC", ^{
         });
         
         it(@"should let the user know of any tips", ^{
-            [[TTHelper should] receive:@selector(showAlertWithTitle:withMessage:) withArguments:STRING_TIP_TITLE, STRING_TIP_START_TIMER_EARLIER];
+            [[TTHelper should] receive:@selector(showAlertWithTitle:withMessage:)];
             [subject viewDidLoad];
         });
     });

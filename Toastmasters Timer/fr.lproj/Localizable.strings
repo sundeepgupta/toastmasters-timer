@@ -1,0 +1,13 @@
+"color alert title" = "Attention!";
+"ring bell alert message" = "Sonnez la cloche.";
+"turn color light on message" = "Mettez la lumière %@.";
+"green color name" = "vert";
+"amber color name" = "ambre";
+"red color name" = "rouge";
+"bell color name" = "cloche";
+"tip alert title" = "Suggestion!";
+"start timer first tip message" = "Vous pouvez définir les couleurs après le début de la minuterie :)";
+"default alert button title" = "OK";
+"default error title" = "Houp-là!";
+"can't sent email message" = "Votre appareil n'est pas configuré pour envoyer email.";
+"can't open link message" = "Votre appareil ne peut pas ouvrir le lien.";
