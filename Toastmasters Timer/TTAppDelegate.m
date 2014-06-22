@@ -16,15 +16,18 @@ int ddLogLevel;
 
 @implementation TTAppDelegate
 
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
-{
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     [self setupLogger];
     [self setupStatusBarForApplication:application];
     [self setupTimerVc];
     [self setupDefaults];
     [self clearAppIconBadge];
-    [self setupCrashlytics];
     [TTAnalyticsInterface loadAnalytics];
+
+#ifndef DEBUG
+    [self setupCrashlytics];
+#endif
+    
     return YES;
 }
 
@@ -74,14 +77,12 @@ int ddLogLevel;
     [self clearAppIconBadge];
 }
 
-- (void)applicationDidEnterBackground:(UIApplication *)application
-{
+- (void)applicationDidEnterBackground:(UIApplication *)application {
     [self.timerVc setupViewForBackground];
     [self clearAppIconBadge];
 }
 
-- (void)applicationWillEnterForeground:(UIApplication *)application
-{
+- (void)applicationWillEnterForeground:(UIApplication *)application {
     [self.timerVc setupViewForReturningToForeground];
     [self clearAppIconBadge];
 }

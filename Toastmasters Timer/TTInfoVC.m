@@ -5,6 +5,7 @@
 @interface TTInfoVC ()
 @property (weak, nonatomic) IBOutlet UILabel *timerLabel;
 @property (weak, nonatomic) IBOutlet UILabel *versionLabel;
+@property (weak, nonatomic) IBOutlet UILabel *appNameLabel;
 @end
 
 
@@ -15,6 +16,7 @@
     [super viewDidLoad];
     [TTHelper registerForTimerNotificationsWithObject:self];
     [self setupTimerLabel];
+    [self setupAppNameLabel];
     [self setupVersionLabel];
 }
 
@@ -24,9 +26,14 @@
     }
 }
 
+- (void)setupAppNameLabel {
+    self.appNameLabel.text = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleDisplayName"];
+}
+
 - (void)setupVersionLabel {
     self.versionLabel.text = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleShortVersionString"];
 }
+
 
 
 #pragma mark - Timer Notification

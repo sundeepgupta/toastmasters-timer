@@ -12,6 +12,9 @@
 		9F5C02F20DAC41F19921AF8D /* libPods-Toastmasters Timer Tests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D922069EBAB54014839BEFB7 /* libPods-Toastmasters Timer Tests.a */; };
 		AE00965A195634480004DFDE /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE00965C195634480004DFDE /* Storyboard.storyboard */; };
 		AE0096621956349A0004DFDE /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = AE0096641956349A0004DFDE /* Localizable.strings */; };
+		AE00966E195641040004DFDE /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = AE009668195641040004DFDE /* InfoPlist.strings */; };
+		AE00966F195641040004DFDE /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = AE00966A195641040004DFDE /* Localizable.strings */; };
+		AE009670195641040004DFDE /* Storyboard.strings in Resources */ = {isa = PBXBuildFile; fileRef = AE00966C195641040004DFDE /* Storyboard.strings */; };
 		AE022C0218FF3970000303A2 /* TTAnalyticsInterfaceSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = AE022C0118FF3970000303A2 /* TTAnalyticsInterfaceSpec.m */; };
 		AE022C0518FF399F000303A2 /* TTAnalyticsInterface.m in Sources */ = {isa = PBXBuildFile; fileRef = AE022C0418FF399F000303A2 /* TTAnalyticsInterface.m */; };
 		AE0648A518B924B0006902A4 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE06488C18B9243E006902A4 /* XCTest.framework */; };
@@ -106,6 +109,9 @@
 		AE0096631956349A0004DFDE /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		AE009665195634C20004DFDE /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Storyboard.strings; sourceTree = "<group>"; };
 		AE0096661956352B0004DFDE /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
+		AE009669195641040004DFDE /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = InfoPlist.strings; sourceTree = "<group>"; };
+		AE00966B195641040004DFDE /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = Localizable.strings; sourceTree = "<group>"; };
+		AE00966D195641040004DFDE /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = Storyboard.strings; sourceTree = "<group>"; };
 		AE022C0118FF3970000303A2 /* TTAnalyticsInterfaceSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TTAnalyticsInterfaceSpec.m; path = "Toastmasters Timer Tests/TTAnalyticsInterfaceSpec.m"; sourceTree = "<group>"; };
 		AE022C0318FF399F000303A2 /* TTAnalyticsInterface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTAnalyticsInterface.h; sourceTree = "<group>"; };
 		AE022C0418FF399F000303A2 /* TTAnalyticsInterface.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTAnalyticsInterface.m; sourceTree = "<group>"; };
@@ -250,9 +256,21 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		AE009667195641040004DFDE /* fr.lproj */ = {
+			isa = PBXGroup;
+			children = (
+				AE009668195641040004DFDE /* InfoPlist.strings */,
+				AE00966A195641040004DFDE /* Localizable.strings */,
+				AE00966C195641040004DFDE /* Storyboard.strings */,
+			);
+			name = fr.lproj;
+			path = "Toastmasters Timer/fr.lproj";
+			sourceTree = "<group>";
+		};
 		AE06488118B91ABF006902A4 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				AE009667195641040004DFDE /* fr.lproj */,
 				AE5208A717C054AE002CFFD7 /* Images */,
 				AE3C7EC317ECFBA90071725C /* TTConstants.h */,
 				AE393C0D18DF49B30058AEC6 /* TTCommonStrings.h */,
@@ -612,6 +630,7 @@
 				AE5208B317C0FF63002CFFD7 /* play.png in Resources */,
 				AE5208B417C0FF63002CFFD7 /* plus.png in Resources */,
 				AE5208B517C0FF63002CFFD7 /* plus@2x.png in Resources */,
+				AE00966E195641040004DFDE /* InfoPlist.strings in Resources */,
 				AE5208B817C100D2002CFFD7 /* pause.png in Resources */,
 				AEBAF2F517E7D9B000BA9479 /* info.png in Resources */,
 				AE5208B917C100D2002CFFD7 /* play@2x.png in Resources */,
@@ -627,6 +646,7 @@
 				AE8D52FF17EE2D1300F265FC /* speakerOn@2x.png in Resources */,
 				AE0096621956349A0004DFDE /* Localizable.strings in Resources */,
 				AEAE24ED17CAB08300DA265B /* ok.png in Resources */,
+				AE009670195641040004DFDE /* Storyboard.strings in Resources */,
 				AEAE24EE17CAB08300DA265B /* ok@2x.png in Resources */,
 				AEAE24EF17CAB08300DA265B /* settings.png in Resources */,
 				AE8D52FE17EE2D1300F265FC /* speakerOn.png in Resources */,
@@ -634,6 +654,7 @@
 				AEAE24F017CAB08300DA265B /* settings@2x.png in Resources */,
 				AE111FA117CEE81500254EF4 /* icon.png in Resources */,
 				AE111FA317CEE81B00254EF4 /* icon@2x.png in Resources */,
+				AE00966F195641040004DFDE /* Localizable.strings in Resources */,
 				AE111FA817D0024400254EF4 /* twitter.png in Resources */,
 				AEF3116117E90EB800D10C32 /* icon80.png in Resources */,
 				AE111FA917D0024400254EF4 /* twitter@2x.png in Resources */,
@@ -802,6 +823,30 @@
 			);
 			name = Localizable.strings;
 			path = "Toastmasters Timer";
+			sourceTree = "<group>";
+		};
+		AE009668195641040004DFDE /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AE009669195641040004DFDE /* fr */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		AE00966A195641040004DFDE /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AE00966B195641040004DFDE /* fr */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		AE00966C195641040004DFDE /* Storyboard.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AE00966D195641040004DFDE /* fr */,
+			);
+			name = Storyboard.strings;
 			sourceTree = "<group>";
 		};
 		AE0648AB18B924B0006902A4 /* InfoPlist.strings */ = {

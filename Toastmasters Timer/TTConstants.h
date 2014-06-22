@@ -65,7 +65,8 @@ static NSString *const APP_ID = @"708807408";
 
 
 //Google Analytics
-static NSString *const GOOGLE_ANALYTICS_TRACKING_ID = @"UA-49711300-2";
+static NSString *const GOOGLE_ANALYTICS_TRACKING_ID_PROD = @"UA-49711300-2";
+static NSString *const GOOGLE_ANALYTICS_TRACKING_ID_DEV = @"UA-49711300-3";
 
 static NSString *const GOOGLE_ANALYTICS_CATEGORY_TIMER = @"Timer";
 static NSString *const GOOGLE_ANALYTICS_ACTION_AUDIO_ENABLE = @"Enable Audio Alerts";

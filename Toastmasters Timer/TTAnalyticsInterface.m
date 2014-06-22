@@ -20,7 +20,12 @@
 + (void)setupAnalytics {
     [GAI sharedInstance].trackUncaughtExceptions = YES;
     [[[GAI sharedInstance] logger] setLogLevel:kGAILogLevelVerbose];
-    [[GAI sharedInstance] trackerWithTrackingId:GOOGLE_ANALYTICS_TRACKING_ID];
+    
+#ifdef DEBUG
+    [[GAI sharedInstance] trackerWithTrackingId:GOOGLE_ANALYTICS_TRACKING_ID_DEV];
+#else
+    [[GAI sharedInstance] trackerWithTrackingId:GOOGLE_ANALYTICS_TRACKING_ID_PROD];
+#endif
 }
 
 

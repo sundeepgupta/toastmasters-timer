@@ -106,7 +106,7 @@
 - (IBAction)resetButtonPress {
     [self resetColors];
     [self.timeEntryDelegate didResetAllColourTimes];
-    [TTAnalyticsInterface sendCategory:GOOGLE_ANALYTICS_CATEGORY_TIME_ENTRY action: GOOGLE_ANALYTICS_ACTION_RESET_COLOURS];
+    [TTAnalyticsInterface sendCategory:GOOGLE_ANALYTICS_CATEGORY_TIME_ENTRY action:GOOGLE_ANALYTICS_ACTION_RESET_COLOURS];
 }
 - (void)resetColors {
     for (TTColorButton *button in self.colorButtonArray) {
