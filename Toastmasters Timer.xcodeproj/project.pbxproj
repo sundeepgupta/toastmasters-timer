@@ -65,6 +65,7 @@
 		AE9F976417BDC4FA00626448 /* TTTimeEntryVC.m in Sources */ = {isa = PBXBuildFile; fileRef = AE9F976317BDC4FA00626448 /* TTTimeEntryVC.m */; };
 		AE9F976717BE538100626448 /* TTTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = AE9F976617BE538100626448 /* TTTimer.m */; };
 		AE9F976E17BEA00600626448 /* TTHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = AE9F976D17BEA00600626448 /* TTHelper.m */; };
+		AEA5D05B1959106B006F59BF /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEA5D05A1959106B006F59BF /* iAd.framework */; };
 		AEAE24EB17CAB08300DA265B /* cancel.png in Resources */ = {isa = PBXBuildFile; fileRef = AEAE24E517CAB08300DA265B /* cancel.png */; };
 		AEAE24EC17CAB08300DA265B /* cancel@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AEAE24E617CAB08300DA265B /* cancel@2x.png */; };
 		AEAE24ED17CAB08300DA265B /* ok.png in Resources */ = {isa = PBXBuildFile; fileRef = AEAE24E717CAB08300DA265B /* ok.png */; };
@@ -183,6 +184,7 @@
 		AE9F976617BE538100626448 /* TTTimer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTTimer.m; sourceTree = "<group>"; };
 		AE9F976C17BEA00600626448 /* TTHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTHelper.h; sourceTree = "<group>"; };
 		AE9F976D17BEA00600626448 /* TTHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = TTHelper.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		AEA5D05A1959106B006F59BF /* iAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iAd.framework; path = System/Library/Frameworks/iAd.framework; sourceTree = SDKROOT; };
 		AEAE24E517CAB08300DA265B /* cancel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cancel.png; sourceTree = "<group>"; };
 		AEAE24E617CAB08300DA265B /* cancel@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cancel@2x.png"; sourceTree = "<group>"; };
 		AEAE24E717CAB08300DA265B /* ok.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ok.png; sourceTree = "<group>"; };
@@ -232,6 +234,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AEA5D05B1959106B006F59BF /* iAd.framework in Frameworks */,
 				AE111FB417D01FE700254EF4 /* MessageUI.framework in Frameworks */,
 				AE0BAEC8187BA11F009F8066 /* Crashlytics.framework in Frameworks */,
 				AE111F9B17CED99900254EF4 /* libz.dylib in Frameworks */,
@@ -251,6 +254,7 @@
 		A8270FFA71A3463F9296307F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				AEA5D05A1959106B006F59BF /* iAd.framework */,
 				3B1AE27F6A6D4FEC86180439 /* libPods.a */,
 			);
 			name = Frameworks;
@@ -360,6 +364,7 @@
 		AE1FF8CE18B927590074AC7B /* External */ = {
 			isa = PBXGroup;
 			children = (
+				79E8424783BC43CA9202D5DD /* Pods.xcconfig */,
 				AE488FCA17DD2AC70090E139 /* Libraries */,
 				AE06488B18B9243E006902A4 /* Frameworks */,
 			);
@@ -484,7 +489,6 @@
 				AE06488318B91C65006902A4 /* App */,
 				AE1FF8CE18B927590074AC7B /* External */,
 				AE06488218B91BEF006902A4 /* Tests */,
-				79E8424783BC43CA9202D5DD /* Pods.xcconfig */,
 				A8270FFA71A3463F9296307F /* Frameworks */,
 			);
 			sourceTree = "<group>";

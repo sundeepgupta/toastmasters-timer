@@ -9,7 +9,7 @@
 #import "TTModalDelegate.h"
 #import "TTInfoVC.h"
 #import "TTAnalyticsInterface.h"
-
+#import <iAd/iAd.h>
 
 @interface TTTimerVC ()
 @property (nonatomic, strong) TTAlertManager *alertManager;
@@ -17,6 +17,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *timerLabel;
 @property (weak, nonatomic) IBOutlet UIButton *audioAlertButton;
 @property (strong, nonatomic) NSUserDefaults *defaults;
+@property (weak, nonatomic) IBOutlet ADBannerView *adBannerView;
 
 - (void)presentTimeEntryVcWithIndex:(ColorIndex)index;
 - (TTTimeEntryVC *)timeEntryVcWithIndex:(ColorIndex)index;
@@ -29,6 +30,8 @@
 - (IBAction)infoButtonPress:(id)sender;
 - (void)didResetAllColourTimes;
 - (BOOL)shouldAudioAlert;
+- (void)bannerViewDidLoadAd:(ADBannerView *)banner;
+- (void)bannerView:(ADBannerView *)banner didFailToReceiveAdWithError:(NSError *)error;
 @end
 
 
@@ -199,6 +202,36 @@ describe(@"TimerVC", ^{
             [subject didResetAllColourTimes];
         });
     });
+    
+    
+    context(@"when ad is hidden", ^{
+        
+        beforeEach(^{
+            subject.adBannerView.hidden = YES;
+        });
+        
+        context(@"when an ad loads successfully", ^{
+            it(@"shows the ad", ^{
+                [subject bannerViewDidLoadAd:subject.adBannerView];
+                [[theValue(subject.adBannerView.hidden) should] equal:theValue(NO)];
+            });
+        });
+    });
+    
+    context(@"when ad is NOT hidden", ^{
+        
+        beforeEach(^{
+            subject.adBannerView.hidden = NO;
+        });
+        
+        context(@"when an ad loads successfully", ^{
+            it(@"shows the ad", ^{
+                [subject bannerView:subject.adBannerView didFailToReceiveAdWithError:nil];
+                [[theValue(subject.adBannerView.hidden) should] equal:theValue(YES)];
+            });
+        });
+    });
+
     
 });
 

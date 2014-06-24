@@ -6,7 +6,7 @@
 #import "TTAlertManager.h"
 #import "TTColorButton.h"
 #import "TTCommonStrings.h"
-
+#import <iAd/iAd.h>
 
 @interface TTTimerVC () <TTModalDelegate, TTTimeEntryVCDelegate>
 @property (strong, nonatomic) TTTimer *timer;
@@ -21,6 +21,7 @@
 @property (weak, nonatomic) IBOutlet TTColorButton *redButton;
 @property (weak, nonatomic) IBOutlet TTColorButton *bellButton;
 @property (nonatomic, strong) NSArray *colorButtonArray;
+@property (weak, nonatomic) IBOutlet ADBannerView *adBannerView;
 @end
 
 
@@ -356,5 +357,13 @@
 }
 
 
+#pragma mark - iAd Delegates
+- (void)bannerViewDidLoadAd:(ADBannerView *)banner {
+    self.adBannerView.hidden = NO;
+}
+
+- (void)bannerView:(ADBannerView *)banner didFailToReceiveAdWithError:(NSError *)error {
+    self.adBannerView.hidden = YES;
+}
 
 @end
