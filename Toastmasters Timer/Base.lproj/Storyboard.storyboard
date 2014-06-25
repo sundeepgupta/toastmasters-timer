@@ -454,6 +454,9 @@
                                                 <state key="normal" backgroundImage="upgrade">
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="upgradeButtonPress:" destination="B8c-de-NeP" eventType="touchUpInside" id="exr-xD-kkP"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </view>
@@ -495,6 +498,9 @@
                                                 <state key="normal" backgroundImage="share">
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="shareButtonPress:" destination="B8c-de-NeP" eventType="touchUpInside" id="YM6-8l-G2o"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </view>

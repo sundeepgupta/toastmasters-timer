@@ -46,15 +46,10 @@
 }
 
 
+#pragma mark - Upgrade Button
+- (IBAction)upgradeButtonPress:(id)sender {
+}
 
-#pragma mark - Rate App Button
-- (IBAction)rateAppButtonPress:(id)sender {
-    [TTHelper openAppWithUrlString:self.urlStringForRateApp];
-    [TTAnalyticsInterface sendCategory:GOOGLE_ANALYTICS_CATEGORY_INFO action:GOOGLE_ANALYTICS_ACTION_RATE_APP];
-}
-- (NSString *)urlStringForRateApp {
-    return [NSString stringWithFormat:@"%@%@", BASE_URL_RATE_APP, APP_ID];
-}
 
 
 #pragma mark - Developer Button
@@ -111,7 +106,25 @@
 
 
 
-#pragma mark -
+#pragma mark - Rate App Button
+- (IBAction)rateAppButtonPress:(id)sender {
+    [TTHelper openAppWithUrlString:self.urlStringForRateApp];
+    [TTAnalyticsInterface sendCategory:GOOGLE_ANALYTICS_CATEGORY_INFO action:GOOGLE_ANALYTICS_ACTION_RATE_APP];
+}
+- (NSString *)urlStringForRateApp {
+    return [NSString stringWithFormat:@"%@%@", BASE_URL_RATE_APP, APP_ID];
+}
+
+
+
+#pragma mark - Share Button
+- (IBAction)shareButtonPress:(id)sender {
+}
+
+
+
+
+
 
 
 
