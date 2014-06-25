@@ -27,7 +27,7 @@
 }
 
 - (void)setupAppNameLabel {
-    self.appNameLabel.text = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleDisplayName"];
+    self.appNameLabel.text = [TTHelper bundleName];
 }
 
 - (void)setupVersionLabel {
@@ -58,8 +58,6 @@
 
 
 #pragma mark - Developer Button
-
-
 - (IBAction)developerButtonPress:(id)sender {
     [self tryToSendEmail];
     [TTAnalyticsInterface sendCategory:GOOGLE_ANALYTICS_CATEGORY_INFO action:GOOGLE_ANALYTICS_ACTION_CONTACT_DEVELOPER];
@@ -69,7 +67,7 @@
     if ([MFMailComposeViewController canSendMail]) {
         [self email];
     } else {
-        [TTHelper showAlertWithTitle:STRING_ERROR_TTITLE_GENERAL withMessage:NSLocalizedString(@"can't sent email message", @"The message in the error when the device can't send emails")];
+        [TTHelper showAlertWithTitle:STRING_ERROR_TTITLE_GENERAL withMessage:NSLocalizedString(@"Can't sent email message", @"The message in the error when the device can't send emails")];
     }
 }
 
@@ -100,9 +98,7 @@
 }
 
 - (void)setupSubjectForMailer:(MFMailComposeViewController *)mailer {
-    NSBundle *bundle = [NSBundle mainBundle];
-    NSString *appName = [bundle objectForInfoDictionaryKey:@"CFBundleName"];
-    NSString *subject = [NSString stringWithFormat:@"%@ App", appName];
+    NSString *subject = [TTHelper bundleName];
     [mailer setSubject:subject];
 }
 
@@ -115,11 +111,7 @@
 
 
 
-#pragma mark - Designer Button
-- (IBAction)designerButtonPress:(id)sender {
-    [TTHelper openWebsiteWithUrlString:URL_DESIGNER];
-    [TTAnalyticsInterface sendCategory:GOOGLE_ANALYTICS_CATEGORY_INFO action:GOOGLE_ANALYTICS_ACTION_CONTACT_DESIGNER];
-}
+#pragma mark -
 
 
 

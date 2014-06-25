@@ -566,6 +566,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="appNameLabel" destination="ACT-ac-9eH" id="FXC-89-HLB"/>
                         <outlet property="timerLabel" destination="1V9-nM-4Uh" id="1xv-53-QzN"/>
                         <outlet property="versionLabel" destination="pvd-Y2-aw4" id="x2b-V6-EEo"/>
                     </connections>

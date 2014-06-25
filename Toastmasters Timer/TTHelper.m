@@ -42,7 +42,10 @@
 
 
 
-
+#pragma mark - Info Plist
++ (NSString *)bundleName {
+    return [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleName"];
+}
 
 
 

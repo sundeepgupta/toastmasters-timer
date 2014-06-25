@@ -33,7 +33,8 @@
 + (void)setupTitleForColorButton:(TTColorButton *)button withSeconds:(NSInteger)seconds;
 
 
-
+#pragma mark - Info Plist
++ (NSString *)bundleName;
 
 
 
