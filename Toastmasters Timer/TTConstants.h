@@ -18,6 +18,7 @@ static NSString *const API_KEY_CRASHLYTICS = @"8326e081af65babd59690e3dc0bbfea5d
 #pragma mark - URLs
 static NSString *const BASE_URL_RATE_APP = @"itms-apps://itunes.apple.com/app/id";
 static NSString *const APP_ID = @"708807408";
+static NSString *const APP_STORE_URL = @"https://itunes.apple.com/us/app/id708807408";
 
 
 //Timer Notification

@@ -119,6 +119,9 @@
 
 #pragma mark - Share Button
 - (IBAction)shareButtonPress:(id)sender {
+    NSString *shareMessage = [NSString stringWithFormat:NSLocalizedString(@"Checkout this cool Toastmasters Timer app! %@", nil), APP_STORE_URL];
+    UIActivityViewController *shareController = [[UIActivityViewController alloc] initWithActivityItems:@[shareMessage] applicationActivities:nil];
+    [self presentViewController:shareController animated:YES completion:nil];
 }
 
 
