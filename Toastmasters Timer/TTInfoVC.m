@@ -1,8 +1,13 @@
 #import "TTInfoVC.h"
 #import "TTCommonStrings.h"
 #import "TTConstants.h"
+#import "TTInAppPurchaseHelper.h"
 
-@interface TTInfoVC ()
+#import <StoreKit/StoreKit.h>
+
+
+
+@interface TTInfoVC () <SKProductsRequestDelegate>
 @property (weak, nonatomic) IBOutlet UILabel *timerLabel;
 @property (weak, nonatomic) IBOutlet UILabel *versionLabel;
 @property (weak, nonatomic) IBOutlet UILabel *appNameLabel;
@@ -48,6 +53,32 @@
 
 #pragma mark - Upgrade Button
 - (IBAction)upgradeButtonPress:(id)sender {
+    NSSet *identifiers = [NSSet setWithObjects:@"ca.sundeepgupta.toastmasterstimer.removeads", nil];
+    
+    SKProductsRequest *productsRequest = [[SKProductsRequest alloc] initWithProductIdentifiers:identifiers];
+    productsRequest.delegate = self;
+    [productsRequest start];
+    
+//    TTInAppPurchaseHelper *iapHelper = [[TTInAppPurchaseHelper alloc] initWithProductIdentifiers:identifiers];
+//    [iapHelper requestProductsWithCompletionHandler:^(BOOL success, NSArray *products) {
+//        if (success) {
+//            NSLog(@"%@", products);
+//        } else {
+//            NSLog(@"products request failed");
+//        }
+//    }];
+}
+
+- (void)productsRequest:(SKProductsRequest *)request didReceiveResponse:(SKProductsResponse *)response {
+    NSArray *products = response.products;
+    NSLog(@"products: %@", products);
+    
+    NSLog(@"invalid products: %@", response.invalidProductIdentifiers);
+    
+}
+
+- (void)request:(SKRequest *)request didFailWithError:(NSError *)error {
+    NSLog(@"error fetching products");
 }
 
 
@@ -123,11 +154,6 @@
     UIActivityViewController *shareController = [[UIActivityViewController alloc] initWithActivityItems:@[shareMessage] applicationActivities:nil];
     [self presentViewController:shareController animated:YES completion:nil];
 }
-
-
-
-
-
 
 
 
