@@ -53,8 +53,11 @@
 
 #pragma mark - Upgrade Button
 - (IBAction)upgradeButtonPress:(id)sender {
-    NSSet *identifiers = [NSSet setWithObjects:@"ca.sundeepgupta.toastmasterstimer.removeads", nil];
+    [TTAnalyticsInterface sendCategory:GOOGLE_ANALYTICS_CATEGORY_INFO action:GOOGLE_ANALYTICS_ACTION_UPGRADE];
+
     
+    
+    NSSet *identifiers = [NSSet setWithObjects:@"ca.sundeepgupta.toastmasterstimer.removeads", nil];
     SKProductsRequest *productsRequest = [[SKProductsRequest alloc] initWithProductIdentifiers:identifiers];
     productsRequest.delegate = self;
     [productsRequest start];
@@ -69,20 +72,30 @@
 //    }];
     
     
-    [TTAnalyticsInterface sendCategory:GOOGLE_ANALYTICS_CATEGORY_INFO action:GOOGLE_ANALYTICS_ACTION_UPGRADE];
 }
+
+
+
+
+
+
+
 
 - (void)productsRequest:(SKProductsRequest *)request didReceiveResponse:(SKProductsResponse *)response {
     NSArray *products = response.products;
-    NSLog(@"products: %@", products);
-    
-    NSLog(@"invalid products: %@", response.invalidProductIdentifiers);
-    
+    SKProduct *product = products.firstObject;
+    DDLogVerbose(@"Received products. First product: %@", product.productIdentifier);
 }
 
 - (void)request:(SKRequest *)request didFailWithError:(NSError *)error {
-    NSLog(@"error fetching products");
+    DDLogError(@"Failed to fetch products with error: %@\n%s", error.localizedDescription, __PRETTY_FUNCTION__);
 }
+
+
+
+
+
+
 
 
 

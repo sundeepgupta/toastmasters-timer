@@ -22,7 +22,7 @@ int ddLogLevel;
     [self setupTimerVc];
     [self setupDefaults];
     [self clearAppIconBadge];
-    [TTAnalyticsInterface loadAnalytics];
+//    [TTAnalyticsInterface loadAnalytics];
 
 #ifndef DEBUG
     [self setupCrashlytics];

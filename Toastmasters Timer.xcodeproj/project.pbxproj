@@ -571,11 +571,11 @@
 			buildConfigurationList = AE7223DD17BDAB66003B60A5 /* Build configuration list for PBXNativeTarget "Toastmasters Timer" */;
 			buildPhases = (
 				F6079043BE5B41BE8CD19E37 /* Check Pods Manifest.lock */,
-				AE0BAEC51878D4AB009F8066 /* ShellScript */,
+				AE0BAEC51878D4AB009F8066 /* Bump Build Number Script */,
 				AE7223A117BDAB65003B60A5 /* Sources */,
 				AE7223A217BDAB65003B60A5 /* Frameworks */,
 				AE7223A317BDAB65003B60A5 /* Resources */,
-				AE0BAEC6187BA0CA009F8066 /* ShellScript */,
+				AE0BAEC6187BA0CA009F8066 /* Crashlytics Script */,
 				DAE3F2B8B7D94D5CBB85ED05 /* Copy Pods Resources */,
 			);
 			buildRules = (
@@ -716,26 +716,28 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		AE0BAEC51878D4AB009F8066 /* ShellScript */ = {
+		AE0BAEC51878D4AB009F8066 /* Bump Build Number Script */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
+			name = "Bump Build Number Script";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "#!/bin/bash\nbN=$(/usr/libexec/PlistBuddy -c \"Print CFBundleVersion\" \"$INFOPLIST_FILE\")\nbN=$((bN += 1))\nbN=$(printf \"%d\" $bN)\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $bN\" \"$INFOPLIST_FILE\"";
 		};
-		AE0BAEC6187BA0CA009F8066 /* ShellScript */ = {
+		AE0BAEC6187BA0CA009F8066 /* Crashlytics Script */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
+			name = "Crashlytics Script";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1027,9 +1029,9 @@
 				GCC_PREFIX_HEADER = "Toastmasters Timer/Toastmasters Timer-Prefix.pch";
 				INFOPLIST_FILE = "Toastmasters Timer/Toastmasters Timer-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
-				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				LIBRARY_SEARCH_PATHS = "$(SRCROOT)/**";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "FF330164-5664-4156-B326-807F4EA4B729";
+				PROVISIONING_PROFILE = "6391CF85-98A6-44F7-9A26-105E15FF55DA";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -1047,9 +1049,9 @@
 				GCC_PREFIX_HEADER = "Toastmasters Timer/Toastmasters Timer-Prefix.pch";
 				INFOPLIST_FILE = "Toastmasters Timer/Toastmasters Timer-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
-				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				LIBRARY_SEARCH_PATHS = "$(SRCROOT)/**";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "FF330164-5664-4156-B326-807F4EA4B729";
+				PROVISIONING_PROFILE = "6391CF85-98A6-44F7-9A26-105E15FF55DA";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
