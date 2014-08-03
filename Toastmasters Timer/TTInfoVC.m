@@ -67,6 +67,9 @@
 //            NSLog(@"products request failed");
 //        }
 //    }];
+    
+    
+    [TTAnalyticsInterface sendCategory:GOOGLE_ANALYTICS_CATEGORY_INFO action:GOOGLE_ANALYTICS_ACTION_UPGRADE];
 }
 
 - (void)productsRequest:(SKProductsRequest *)request didReceiveResponse:(SKProductsResponse *)response {
@@ -153,6 +156,7 @@
     NSString *shareMessage = [NSString stringWithFormat:NSLocalizedString(@"Checkout this cool Toastmasters Timer app! %@", nil), APP_STORE_URL];
     UIActivityViewController *shareController = [[UIActivityViewController alloc] initWithActivityItems:@[shareMessage] applicationActivities:nil];
     [self presentViewController:shareController animated:YES completion:nil];
+    [TTAnalyticsInterface sendCategory:GOOGLE_ANALYTICS_CATEGORY_INFO action:GOOGLE_ANALYTICS_ACTION_SHARE];
 }
 
 

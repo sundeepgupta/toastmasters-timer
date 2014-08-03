@@ -77,6 +77,8 @@ static NSString *const GOOGLE_ANALYTICS_CATEGORY_INFO = @"Info";
 static NSString *const GOOGLE_ANALYTICS_ACTION_RATE_APP = @"Rate App";
 static NSString *const GOOGLE_ANALYTICS_ACTION_CONTACT_DEVELOPER = @"Contact Developer";
 static NSString *const GOOGLE_ANALYTICS_ACTION_CONTACT_DESIGNER = @"Contact Designer";
+static NSString *const GOOGLE_ANALYTICS_ACTION_UPGRADE = @"Upgrade";
+static NSString *const GOOGLE_ANALYTICS_ACTION_SHARE = @"Share";
 
 static NSString *const GOOGLE_ANALYTICS_CATEGORY_TIME_ENTRY = @"Time Entry";
 static NSString *const GOOGLE_ANALYTICS_ACTION_RESET_COLOURS = @"Reset Colours";

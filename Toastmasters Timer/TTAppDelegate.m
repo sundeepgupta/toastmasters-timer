@@ -82,7 +82,7 @@ int ddLogLevel;
     [self clearAppIconBadge];
 }
 
-- (void)applicationWillEnterForeground:(UIApplication *)application {
+- (void)applicationWillEnterForeground:(UIApplication *)application{
     [self.timerVc setupViewForReturningToForeground];
     [self clearAppIconBadge];
 }
