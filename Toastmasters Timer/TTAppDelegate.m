@@ -4,7 +4,7 @@
 #import "DDTTYLogger.h"
 #import "DDASLLogger.h"
 #import "TTAnalyticsInterface.h"
-
+#import "TTInAppPurchaser.h"
 
 int ddLogLevel;
 
@@ -22,11 +22,15 @@ int ddLogLevel;
     [self setupTimerVc];
     [self setupDefaults];
     [self clearAppIconBadge];
+
+    //To register transaction observer in case of wierd stuff happening during transaction.
+    [self instantiateInAppPurchaser];
+    
 //    [TTAnalyticsInterface loadAnalytics];
 
-#ifndef DEBUG
-    [self setupCrashlytics];
-#endif
+    #ifndef DEBUG
+        [self setupCrashlytics];
+    #endif
     
     return YES;
 }
@@ -37,9 +41,9 @@ int ddLogLevel;
 }
 - (void)setupLogLevel {
     ddLogLevel = LOG_LEVEL_ERROR;
-#ifdef DEBUG
-    ddLogLevel = LOG_LEVEL_VERBOSE;
-#endif
+    #ifdef DEBUG
+        ddLogLevel = LOG_LEVEL_VERBOSE;
+    #endif
 }
 - (void)addLoggers {
     [DDLog addLogger:[DDASLLogger sharedInstance]];
@@ -66,6 +70,10 @@ int ddLogLevel;
 
 - (void)clearAppIconBadge {
     [UIApplication sharedApplication].applicationIconBadgeNumber = 0;
+}
+
+- (void)instantiateInAppPurchaser {
+    [TTInAppPurchaser sharedInstance];
 }
 
 - (void)setupCrashlytics {

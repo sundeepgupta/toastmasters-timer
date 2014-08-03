@@ -79,7 +79,7 @@
 		AEBAF2F617E7D9B000BA9479 /* info@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AEBAF2F417E7D9B000BA9479 /* info@2x.png */; };
 		AEC4813F195BADF20007E46C /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEC4813E195BADF20007E46C /* CFNetwork.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		AECA2EED196072700071B6CE /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AECA2EEC196072700071B6CE /* StoreKit.framework */; };
-		AECA2EF0196073090071B6CE /* TTInAppPurchaseHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = AECA2EEF196073090071B6CE /* TTInAppPurchaseHelper.m */; };
+		AECA2EF0196073090071B6CE /* TTInAppPurchaser.m in Sources */ = {isa = PBXBuildFile; fileRef = AECA2EEF196073090071B6CE /* TTInAppPurchaser.m */; };
 		AECC0AF41856B61400815DA2 /* SGSection.m in Sources */ = {isa = PBXBuildFile; fileRef = AECC0AF31856B61400815DA2 /* SGSection.m */; };
 		AECC0AF9185AA97500815DA2 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AECC0AF8185AA97500815DA2 /* Images.xcassets */; };
 		AEDA15A217BDB2F300AC9DBA /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEDA15A117BDB2F300AC9DBA /* AudioToolbox.framework */; };
@@ -203,8 +203,8 @@
 		AEBAF2F417E7D9B000BA9479 /* info@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "info@2x.png"; sourceTree = "<group>"; };
 		AEC4813E195BADF20007E46C /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		AECA2EEC196072700071B6CE /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
-		AECA2EEE196073090071B6CE /* TTInAppPurchaseHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TTInAppPurchaseHelper.h; path = "Toastmasters Timer/TTInAppPurchaseHelper.h"; sourceTree = "<group>"; };
-		AECA2EEF196073090071B6CE /* TTInAppPurchaseHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TTInAppPurchaseHelper.m; path = "Toastmasters Timer/TTInAppPurchaseHelper.m"; sourceTree = "<group>"; };
+		AECA2EEE196073090071B6CE /* TTInAppPurchaser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TTInAppPurchaser.h; path = "Toastmasters Timer/TTInAppPurchaser.h"; sourceTree = "<group>"; };
+		AECA2EEF196073090071B6CE /* TTInAppPurchaser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TTInAppPurchaser.m; path = "Toastmasters Timer/TTInAppPurchaser.m"; sourceTree = "<group>"; };
 		AECC0AF21856B61400815DA2 /* SGSection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGSection.h; sourceTree = "<group>"; };
 		AECC0AF31856B61400815DA2 /* SGSection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGSection.m; sourceTree = "<group>"; };
 		AECC0AF8185AA97500815DA2 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = ../Images.xcassets; sourceTree = "<group>"; };
@@ -307,8 +307,8 @@
 		AE06488318B91C65006902A4 /* App */ = {
 			isa = PBXGroup;
 			children = (
-				AECA2EEE196073090071B6CE /* TTInAppPurchaseHelper.h */,
-				AECA2EEF196073090071B6CE /* TTInAppPurchaseHelper.m */,
+				AECA2EEE196073090071B6CE /* TTInAppPurchaser.h */,
+				AECA2EEF196073090071B6CE /* TTInAppPurchaser.m */,
 				AE488FC917DD2A5B0090E139 /* Controllers */,
 				AE06488118B91ABF006902A4 /* Resources */,
 				AE7223B117BDAB66003B60A5 /* Supporting Files */,
@@ -809,7 +809,7 @@
 				AE9F976E17BEA00600626448 /* TTHelper.m in Sources */,
 				AECC0AF41856B61400815DA2 /* SGSection.m in Sources */,
 				AEB3E4FD18EE31BF00E6A5FA /* TTBaseVc.m in Sources */,
-				AECA2EF0196073090071B6CE /* TTInAppPurchaseHelper.m in Sources */,
+				AECA2EF0196073090071B6CE /* TTInAppPurchaser.m in Sources */,
 				AE5208D317C17034002CFFD7 /* Toast+UIView.m in Sources */,
 				AE111FAE17D0036300254EF4 /* TTInfoVC.m in Sources */,
 			);

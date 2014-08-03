@@ -7,8 +7,9 @@ typedef NS_ENUM(NSUInteger, ColorIndex) {
     COLOR_INDEX_COUNT
 };
 
-#pragma mark - Keys
+#pragma mark - Hash Keys
 static NSString *const IS_NOT_FIRST_LAUNCH = @"IsNotFirstLaunch";
+static NSString *const UPGRADED = @"Upgraded";
 
 
 #pragma mark - API Keys
@@ -87,3 +88,4 @@ static NSString *const GOOGLE_ANALYTICS_ACTION_SAVE_COLOURS = @"Save Colours";
 
 //Info View
 static NSString *const URL_DESIGNER = @"http://www.redconservatory.com";
+static NSString *const REMOVE_ADS_PRODUCT_ID = @"ca.sundeepgupta.toastmasterstimer.removeads";
