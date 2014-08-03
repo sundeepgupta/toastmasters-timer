@@ -7,7 +7,15 @@
 
 
 
-@interface TTInfoVC () <SKProductsRequestDelegate>
+
+
+
+@interface TTInfoVC ()
+
+<SKProductsRequestDelegate, SKPaymentTransactionObserver>
+
+
+
 @property (weak, nonatomic) IBOutlet UILabel *timerLabel;
 @property (weak, nonatomic) IBOutlet UILabel *versionLabel;
 @property (weak, nonatomic) IBOutlet UILabel *appNameLabel;
@@ -85,6 +93,7 @@
     NSArray *products = response.products;
     SKProduct *product = products.firstObject;
     DDLogVerbose(@"Received products. First product: %@", product.productIdentifier);
+    [self buyProduct:product];
 }
 
 - (void)request:(SKRequest *)request didFailWithError:(NSError *)error {
@@ -92,7 +101,32 @@
 }
 
 
+- (void)buyProduct:(SKProduct *)product {
+    SKPayment *payment = [SKPayment paymentWithProduct:product];
+    [[SKPaymentQueue defaultQueue] addPayment:payment];
+    [[SKPaymentQueue defaultQueue] addTransactionObserver:self];
+}
 
+- (void)paymentQueue:(SKPaymentQueue *)queue updatedTransactions:(NSArray *)transactions {
+    for (SKPaymentTransaction *transaction in transactions) {
+        switch (transaction.transactionState) {
+            case SKPaymentTransactionStatePurchased:
+                [self completeTransaction:transaction];
+                break;
+            default:
+                break;
+        }
+    }
+}
+
+- (void)completeTransaction:(SKPaymentTransaction *)transaction {
+    [self provideContentForProductIdentifier:transaction.payment.productIdentifier];
+    [[SKPaymentQueue defaultQueue] finishTransaction:transaction];
+}
+
+- (void)provideContentForProductIdentifier:(NSString *)identifier {
+    
+}
 
 
 
