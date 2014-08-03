@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6154.21" systemVersion="13D65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="MHZ-8T-RmM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="MHZ-8T-RmM">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6153.13"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
     <scenes>
         <!--TimerVC-->
@@ -305,7 +305,7 @@
                                     <constraint firstAttribute="centerX" secondItem="rrW-J8-M7H" secondAttribute="centerX" id="Kfz-oz-jPH"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="toD-yk-PvK" userLabel="spacer 2"/>
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="toD-yk-PvK" userLabel="spacer 2"/>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U6Q-az-m9l" userLabel="timer label">
                                 <rect key="frame" x="20" y="438" width="50" height="22"/>
                                 <constraints>
@@ -532,6 +532,8 @@
                     <connections>
                         <outlet property="appNameLabel" destination="ACT-ac-9eH" id="FXC-89-HLB"/>
                         <outlet property="timerLabel" destination="1V9-nM-4Uh" id="1xv-53-QzN"/>
+                        <outlet property="upgradeButton" destination="PFO-NC-PKO" id="8PU-E7-Yne"/>
+                        <outlet property="upgradeLabel" destination="ykl-Tk-vPh" id="9v6-zM-JRP"/>
                         <outlet property="versionLabel" destination="pvd-Y2-aw4" id="x2b-V6-EEo"/>
                     </connections>
                 </viewController>

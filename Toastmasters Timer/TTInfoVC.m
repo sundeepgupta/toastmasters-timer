@@ -8,18 +8,21 @@
 @property (weak, nonatomic) IBOutlet UILabel *timerLabel;
 @property (weak, nonatomic) IBOutlet UILabel *versionLabel;
 @property (weak, nonatomic) IBOutlet UILabel *appNameLabel;
+@property (weak, nonatomic) IBOutlet UIButton *upgradeButton;
+@property (weak, nonatomic) IBOutlet UILabel *upgradeLabel;
 @end
 
 
 @implementation TTInfoVC
 
-- (void)viewDidLoad
-{
+#pragma mark - View Lifecycle
+- (void)viewDidLoad {
     [super viewDidLoad];
     [TTHelper registerForTimerNotificationsWithObject:self];
     [self setupTimerLabel];
     [self setupAppNameLabel];
     [self setupVersionLabel];
+    [self setupUpgradeButton];
 }
 
 - (void)setupTimerLabel {
@@ -34,6 +37,13 @@
 
 - (void)setupVersionLabel {
     self.versionLabel.text = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleShortVersionString"];
+}
+
+- (void)setupUpgradeButton {
+    BOOL upgraded = [[NSUserDefaults standardUserDefaults] boolForKey:UPGRADED];
+    if (upgraded) {
+        [self disableUpgradeButton];
+    }
 }
 
 
@@ -59,7 +69,8 @@
 
 - (void)purchaseUpgrade {
     [[TTInAppPurchaser sharedInstance] purchaseProductWithIdentifier:REMOVE_ADS_PRODUCT_ID success:^{
-
+        [self disableUpgradeButton];
+        
         //stop spinner
         
     } failure:^(NSError *error) {
@@ -68,6 +79,14 @@
         DDLogError(@"In app purchase failed with error: %@\n%s", error.localizedDescription, __PRETTY_FUNCTION__);
     }];
 }
+
+- (void)disableUpgradeButton {
+    self.upgradeButton.enabled = NO;
+    self.upgradeButton.alpha = 0.5;
+    self.upgradeLabel.alpha = 0.5;
+}
+
+
 
 
 
