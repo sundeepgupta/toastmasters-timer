@@ -52,6 +52,7 @@ describe(@"InfoVC", ^{
             KWCaptureSpy *spy = [[TTInAppPurchaser sharedInstance] captureArgument:@selector(purchaseProductWithIdentifier:success:failure:) atIndex:1];
             [subject upgradeButtonPress:nil];
             void (^success)() = [spy argument];
+            [[NSUserDefaults standardUserDefaults] stub:@selector(boolForKey:) andReturn:theValue(YES)];
             success();
             [[theValue(subject.upgradeButton.enabled) should] equal:theValue(NO)];
             [[theValue(subject.upgradeButton.alpha) should] beLessThan:theValue(1)];
