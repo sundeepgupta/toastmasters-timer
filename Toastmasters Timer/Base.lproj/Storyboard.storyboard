@@ -424,6 +424,11 @@
                                                     <action selector="upgradeButtonPress:" destination="B8c-de-NeP" eventType="touchUpInside" id="exr-xD-kkP"/>
                                                 </connections>
                                             </button>
+                                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="e0X-Mz-scf">
+                                                <rect key="frame" x="57" y="45" width="20" height="20"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="color" red="0.92941176469999998" green="0.92941176469999998" blue="0.92941176469999998" alpha="1" colorSpace="calibratedRGB"/>
+                                            </activityIndicatorView>
                                         </subviews>
                                     </view>
                                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="26c-Hc-Zpb">
@@ -531,6 +536,7 @@
                     </view>
                     <connections>
                         <outlet property="appNameLabel" destination="ACT-ac-9eH" id="FXC-89-HLB"/>
+                        <outlet property="spinner" destination="e0X-Mz-scf" id="VhJ-0B-NNm"/>
                         <outlet property="timerLabel" destination="1V9-nM-4Uh" id="1xv-53-QzN"/>
                         <outlet property="upgradeButton" destination="PFO-NC-PKO" id="8PU-E7-Yne"/>
                         <outlet property="upgradeLabel" destination="ykl-Tk-vPh" id="9v6-zM-JRP"/>

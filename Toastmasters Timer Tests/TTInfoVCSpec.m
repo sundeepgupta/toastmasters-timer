@@ -44,12 +44,12 @@ describe(@"InfoVC", ^{
     
     context(@"when the upgrade button is pressed", ^{
         it(@"starts the upgrade process", ^{
-            [[[TTUpgrader sharedInstance] should] receive:@selector(purchaseProductWithIdentifier:success:failure:)];
+            [[[TTUpgrader sharedInstance] should] receive:@selector(purchaseProductWithIdentifier:success:cancel:failure:)];
             [subject upgradeButtonPress:nil];
         });
         
         it(@"disables the upgrade button on sucess", ^{
-            KWCaptureSpy *spy = [[TTUpgrader sharedInstance] captureArgument:@selector(purchaseProductWithIdentifier:success:failure:) atIndex:1];
+            KWCaptureSpy *spy = [[TTUpgrader sharedInstance] captureArgument:@selector(purchaseProductWithIdentifier:success:cancel:failure:) atIndex:1];
             [subject upgradeButtonPress:nil];
             void (^success)() = [spy argument];
             [[NSUserDefaults standardUserDefaults] stub:@selector(boolForKey:) andReturn:theValue(YES)];

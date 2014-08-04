@@ -27,7 +27,7 @@ describe(@"TTUpgrader", ^{
         [subject stub:@selector(requestPurchase)];
         [subject purchaseProductWithIdentifier:REMOVE_ADS_PRODUCT_ID success:^{
             successBlockInvoked = YES;
-        } failure:^(NSError *error) {
+        } cancel:nil failure:^(NSError *error) {
             failureBlockInvoked = YES;
         }];
     });

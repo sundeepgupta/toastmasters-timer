@@ -10,6 +10,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *appNameLabel;
 @property (weak, nonatomic) IBOutlet UIButton *upgradeButton;
 @property (weak, nonatomic) IBOutlet UILabel *upgradeLabel;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *spinner;
 @end
 
 
@@ -60,8 +61,7 @@
 
 #pragma mark - Upgrade Button
 - (IBAction)upgradeButtonPress:(id)sender {
-    //start spinner
-    
+    [self startSpinner];
     [self purchaseUpgrade];
     [TTAnalyticsInterface sendCategory:GOOGLE_ANALYTICS_CATEGORY_INFO action:GOOGLE_ANALYTICS_ACTION_UPGRADE];
 }
@@ -69,15 +69,15 @@
 - (void)purchaseUpgrade {
     [[TTUpgrader sharedInstance] purchaseProductWithIdentifier:REMOVE_ADS_PRODUCT_ID success:^{
         [self setupUpgradeButton];
-        
-        //stop spinner
-        
+        [self stopSpinner];
+    } cancel:^{
+        [self stopSpinner];
     } failure:^(NSError *error) {
         //Do we even need this? OS may provide a good message.
         NSString *message = [NSString stringWithFormat:NSLocalizedString(@"In app purchase failure", @"The message shown when trying to upgrade the app via in app purchase, but there was a failure somewhere."), error.localizedDescription];
         [TTHelper showAlertWithTitle:STRING_ERROR_TTITLE_GENERAL withMessage:message];
-        
         DDLogError(@"In app purchase failed with error: %@\n%s", error.localizedDescription, __PRETTY_FUNCTION__);
+        [self stopSpinner];
     }];
 }
 
@@ -85,6 +85,16 @@
     self.upgradeButton.enabled = NO;
     self.upgradeButton.alpha = 0.5;
     self.upgradeLabel.alpha = 0.5;
+}
+
+- (void)startSpinner {
+    self.upgradeButton.hidden = YES;
+    [self.spinner startAnimating];
+}
+
+- (void)stopSpinner {
+    self.upgradeButton.hidden = NO;
+    [self.spinner stopAnimating];
 }
 
 

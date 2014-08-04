@@ -6,6 +6,7 @@
 @interface TTUpgrader() <SKProductsRequestDelegate, SKPaymentTransactionObserver>
 @property (nonatomic, strong) NSString *productIdentifier;
 @property (nonatomic, copy) void (^successBlock)();
+@property (nonatomic, copy) void (^cancelBlock)();
 @property (nonatomic, copy) void (^failureBlock)(NSError *);
 @end
 
@@ -23,9 +24,13 @@
     return instance;
 }
 
-- (void)purchaseProductWithIdentifier:(NSString *)identifier success:(void (^)())sucess failure:(void (^)(NSError *))failure {
+- (void)purchaseProductWithIdentifier:(NSString *)identifier
+                              success:(void (^)())sucess
+                               cancel:(void (^)())cancel
+                              failure:(void (^)(NSError *))failure {
     self.productIdentifier = identifier;
     self.successBlock = sucess;
+    self.cancelBlock = cancel;
     self.failureBlock = failure;
     [self requestPurchase];
 }
@@ -102,8 +107,11 @@
 }
 
 - (void)handleFailedTransaction:(SKPaymentTransaction *)transaction {
-    DDLogVerbose(@"Transaction failed.");
-    if (transaction.error.code != SKErrorPaymentCancelled) {
+    if (transaction.error.code == SKErrorPaymentCancelled) {
+        if (self.cancelBlock) {
+            self.cancelBlock();
+        }
+    } else {
         if (self.failureBlock) {
             self.failureBlock(transaction.error);
         }
