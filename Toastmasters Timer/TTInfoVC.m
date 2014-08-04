@@ -89,8 +89,6 @@
 
 
 
-
-
 #pragma mark - Developer Button
 - (IBAction)developerButtonPress:(id)sender {
     [self tryToSendEmail];

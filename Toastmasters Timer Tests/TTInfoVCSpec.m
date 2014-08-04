@@ -4,13 +4,15 @@
 #import "TTHelper.h"
 #import "TTAnalyticsInterface.h"
 #import <MessageUI/MessageUI.h>
+#import "TTInAppPurchaser.h"
 
 
 @interface TTInfoVC ()
 - (IBAction)rateAppButtonPress:(id)sender;
 - (IBAction)doneButtonPress:(id)sender;
 - (IBAction)developerButtonPress:(id)sender;
-- (IBAction)designerButtonPress:(id)sender;
+- (IBAction)upgradeButtonPress:(id)sender;
+@property (weak, nonatomic) IBOutlet UIButton *upgradeButton;
 @end
 
 
@@ -27,6 +29,33 @@ describe(@"InfoVC", ^{
         [window makeKeyAndVisible];
         window.rootViewController = subject;
         [subject view];
+    });
+    
+    
+    context(@"when the app has already been upgraded", ^{
+        it(@"disables the upgrade button", ^{
+            [[NSUserDefaults standardUserDefaults] stub:@selector(boolForKey:) andReturn:theValue(YES)];
+            [subject viewDidLoad];
+            [[theValue(subject.upgradeButton.enabled) should] equal:theValue(NO)];
+            [[theValue(subject.upgradeButton.alpha) should] beLessThan:theValue(1)];
+        });
+    });
+    
+    
+    context(@"when the upgrade button is pressed", ^{
+        it(@"starts the upgrade process", ^{
+            [[[TTInAppPurchaser sharedInstance] should] receive:@selector(purchaseProductWithIdentifier:success:failure:)];
+            [subject upgradeButtonPress:nil];
+        });
+        
+        it(@"disables the upgrade button on sucess", ^{
+            KWCaptureSpy *spy = [[TTInAppPurchaser sharedInstance] captureArgument:@selector(purchaseProductWithIdentifier:success:failure:) atIndex:1];
+            [subject upgradeButtonPress:nil];
+            void (^success)() = [spy argument];
+            success();
+            [[theValue(subject.upgradeButton.enabled) should] equal:theValue(NO)];
+            [[theValue(subject.upgradeButton.alpha) should] beLessThan:theValue(1)];
+        });
     });
     
     
@@ -81,21 +110,6 @@ describe(@"InfoVC", ^{
             [subject developerButtonPress:nil];
         });
     });
-
-    
-    context(@"when the designer button is pressed", ^{
-        
-        it(@"should open the email composer", ^{
-            [[TTHelper should] receive:@selector(openWebsiteWithUrlString:) withArguments:URL_DESIGNER];
-            [subject designerButtonPress:nil];
-        });
-        
-        it(@"should send an analytics event", ^{
-            [[TTAnalyticsInterface should] receive:@selector(sendCategory:action:) withArguments:GOOGLE_ANALYTICS_CATEGORY_INFO, GOOGLE_ANALYTICS_ACTION_CONTACT_DESIGNER];
-            [subject designerButtonPress:nil];
-        });
-    });
-    
     
     
     context(@"when the done button is pressed", ^{
