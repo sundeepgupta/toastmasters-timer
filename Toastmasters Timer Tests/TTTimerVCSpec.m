@@ -17,7 +17,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *timerLabel;
 @property (weak, nonatomic) IBOutlet UIButton *audioAlertButton;
 @property (strong, nonatomic) NSUserDefaults *defaults;
-@property (weak, nonatomic) IBOutlet ADBannerView *adBannerView;
+@property (weak, nonatomic) IBOutlet ADBannerView *adView;
 
 - (void)presentTimeEntryVcWithIndex:(ColorIndex)index;
 - (TTTimeEntryVC *)timeEntryVcWithIndex:(ColorIndex)index;
@@ -60,6 +60,14 @@ describe(@"TimerVC", ^{
         it(@"should let the user know of any tips", ^{
             [[TTHelper should] receive:@selector(showAlertWithTitle:withMessage:)];
             [subject viewDidLoad];
+        });
+    });
+    
+    
+    context(@"when the view will appears", ^{
+        it(@"hides the ads if the user has upgraded", ^{
+            [[NSUserDefaults standardUserDefaults] stub:@selector(boolForKey:) andReturn:theValue(YES) withArguments:UPGRADED];
+            [[theValue(subject.adView.hidden) should] equal:theValue(YES)];
         });
     });
     
@@ -207,27 +215,27 @@ describe(@"TimerVC", ^{
     context(@"when ad is hidden", ^{
         
         beforeEach(^{
-            subject.adBannerView.hidden = YES;
+            subject.adView.alpha = 0;
         });
         
         context(@"when an ad loads successfully", ^{
             it(@"shows the ad", ^{
-                [subject bannerViewDidLoadAd:subject.adBannerView];
-                [[theValue(subject.adBannerView.hidden) should] equal:theValue(NO)];
+                [subject bannerViewDidLoadAd:subject.adView];
+                [[theValue(subject.adView.alpha) should] equal:theValue(1)];
             });
         });
     });
     
-    context(@"when ad is NOT hidden", ^{
+    context(@"when ad is showing", ^{
         
         beforeEach(^{
-            subject.adBannerView.hidden = NO;
+            subject.adView.alpha = 1;
         });
         
-        context(@"when an ad loads successfully", ^{
-            it(@"shows the ad", ^{
-                [subject bannerView:subject.adBannerView didFailToReceiveAdWithError:nil];
-                [[theValue(subject.adBannerView.hidden) should] equal:theValue(YES)];
+        context(@"when an ad fails", ^{
+            it(@"hides the ad", ^{
+                [subject bannerView:subject.adView didFailToReceiveAdWithError:nil];
+                [[theValue(subject.adView.alpha) should] equal:theValue(0)];
             });
         });
     });

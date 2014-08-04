@@ -21,7 +21,7 @@
 @property (weak, nonatomic) IBOutlet TTColorButton *redButton;
 @property (weak, nonatomic) IBOutlet TTColorButton *bellButton;
 @property (nonatomic, strong) NSArray *colorButtonArray;
-@property (weak, nonatomic) IBOutlet ADBannerView *adBannerView;
+@property (weak, nonatomic) IBOutlet ADBannerView *adView;
 @end
 
 
@@ -77,16 +77,23 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    [self updateView];
+    [self updateColors];
+    [self updateAdView];
 }
 
-- (void)updateView {
+- (void)updateColors {
     [self setupColorArray];
     [TTHelper setupTitlesForColorButtons:self.colorButtonArray withColorArray:self.colorArray];
 }
 
 - (void)setupColorArray {
     self.colorArray = [self.defaults arrayForKey:COLOR_TIMES_KEY];
+}
+
+- (void)updateAdView {
+    if ([TTHelper upgraded]) {
+        self.adView.hidden = YES;
+    }
 }
 
 
@@ -359,11 +366,11 @@
 
 #pragma mark - iAd Delegates
 - (void)bannerViewDidLoadAd:(ADBannerView *)banner {
-    self.adBannerView.hidden = NO;
+    self.adView.alpha = 1;
 }
 
 - (void)bannerView:(ADBannerView *)banner didFailToReceiveAdWithError:(NSError *)error {
-    self.adBannerView.hidden = YES;
+    self.adView.alpha = 0;
 }
 
 @end

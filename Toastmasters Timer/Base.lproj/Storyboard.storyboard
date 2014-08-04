@@ -110,10 +110,10 @@
                                     <action selector="infoButtonPress:" destination="MHZ-8T-RmM" eventType="touchUpInside" id="icJ-W1-chD"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fh2-Iz-h9V" userLabel="spacer 1">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fh2-Iz-h9V" userLabel="spacer 1">
                                 <rect key="frame" x="20" y="225" width="280" height="22"/>
                             </view>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ioh-FI-OgF" userLabel="timer label">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ioh-FI-OgF" userLabel="timer label">
                                 <rect key="frame" x="20" y="247" width="280" height="78"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="78" id="tkF-Da-1lT"/>
@@ -122,7 +122,7 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8g7-Ed-e74" userLabel="spacer 2">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8g7-Ed-e74" userLabel="spacer 2">
                                 <rect key="frame" x="20" y="325" width="280" height="28"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ROd-OP-V04" userLabel="timer controls view">
@@ -153,7 +153,7 @@
                                     <constraint firstAttribute="height" constant="64" id="WBX-BN-PHN"/>
                                 </constraints>
                             </view>
-                            <adBannerView hidden="YES" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" translatesAutoresizingMaskIntoConstraints="NO" id="XQC-bV-Jjg">
+                            <adBannerView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" alpha="0.0" contentMode="center" translatesAutoresizingMaskIntoConstraints="NO" id="XQC-bV-Jjg">
                                 <rect key="frame" x="0.0" y="430" width="320" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="bLf-z3-S9x"/>
@@ -192,7 +192,7 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="adBannerView" destination="XQC-bV-Jjg" id="7hP-Tp-8Ve"/>
+                        <outlet property="adView" destination="XQC-bV-Jjg" id="Lcy-dP-XH7"/>
                         <outlet property="amberButton" destination="MOK-cG-Dzx" id="TMR-dA-qqv"/>
                         <outlet property="audioAlertButton" destination="E4i-9o-xr5" id="bLO-vj-ai8"/>
                         <outlet property="bellButton" destination="5gi-2j-BJn" id="e45-kR-Zu7"/>

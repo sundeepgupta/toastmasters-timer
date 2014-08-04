@@ -99,14 +99,6 @@ describe(@"TimeEntryVC", ^{
     
     context(@"when pressing the done button", ^{
         
-        pending(@"should save the colour times", ^{
-            
-        });
-        
-        pending(@"should recreate the the notifications", ^{
-            
-        });
-        
         it(@"should notify its delegate with the correct methods", ^{
             [[subject.modalDelegate should] receive:@selector(modalShouldDismiss)];
             [subject doneButtonPress:nil];
