@@ -4,7 +4,7 @@
 #import "TTHelper.h"
 #import "TTAnalyticsInterface.h"
 #import <MessageUI/MessageUI.h>
-#import "TTInAppPurchaser.h"
+#import "TTUpgrader.h"
 
 
 @interface TTInfoVC ()
@@ -44,12 +44,12 @@ describe(@"InfoVC", ^{
     
     context(@"when the upgrade button is pressed", ^{
         it(@"starts the upgrade process", ^{
-            [[[TTInAppPurchaser sharedInstance] should] receive:@selector(purchaseProductWithIdentifier:success:failure:)];
+            [[[TTUpgrader sharedInstance] should] receive:@selector(purchaseProductWithIdentifier:success:failure:)];
             [subject upgradeButtonPress:nil];
         });
         
         it(@"disables the upgrade button on sucess", ^{
-            KWCaptureSpy *spy = [[TTInAppPurchaser sharedInstance] captureArgument:@selector(purchaseProductWithIdentifier:success:failure:) atIndex:1];
+            KWCaptureSpy *spy = [[TTUpgrader sharedInstance] captureArgument:@selector(purchaseProductWithIdentifier:success:failure:) atIndex:1];
             [subject upgradeButtonPress:nil];
             void (^success)() = [spy argument];
             [[NSUserDefaults standardUserDefaults] stub:@selector(boolForKey:) andReturn:theValue(YES)];

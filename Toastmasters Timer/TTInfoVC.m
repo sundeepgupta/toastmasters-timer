@@ -1,7 +1,7 @@
 #import "TTInfoVC.h"
 #import "TTCommonStrings.h"
 #import "TTConstants.h"
-#import "TTInAppPurchaser.h"
+#import "TTUpgrader.h"
 
 
 @interface TTInfoVC ()
@@ -67,7 +67,7 @@
 }
 
 - (void)purchaseUpgrade {
-    [[TTInAppPurchaser sharedInstance] purchaseProductWithIdentifier:REMOVE_ADS_PRODUCT_ID success:^{
+    [[TTUpgrader sharedInstance] purchaseProductWithIdentifier:REMOVE_ADS_PRODUCT_ID success:^{
         [self setupUpgradeButton];
         
         //stop spinner

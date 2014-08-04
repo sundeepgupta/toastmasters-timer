@@ -1,19 +1,20 @@
-#import "TTInAppPurchaser.h"
+#import "TTUpgrader.h"
 #import <StoreKit/StoreKit.h>
 #import "TTConstants.h"
 
-@interface TTInAppPurchaser() <SKProductsRequestDelegate, SKPaymentTransactionObserver>
+
+@interface TTUpgrader() <SKProductsRequestDelegate, SKPaymentTransactionObserver>
 @property (nonatomic, strong) NSString *productIdentifier;
 @property (nonatomic, copy) void (^successBlock)();
 @property (nonatomic, copy) void (^failureBlock)(NSError *);
 @end
 
 
-@implementation TTInAppPurchaser
+@implementation TTUpgrader
 
 #pragma mark - Public
 + (instancetype)sharedInstance {
-    static TTInAppPurchaser *instance;
+    static TTUpgrader *instance;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         instance = [self new];
@@ -124,6 +125,7 @@
 - (void)saveUpgradeStatus {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     [defaults setBool:YES forKey:UPGRADED];
+    [defaults synchronize];
     DDLogVerbose(@"Saved upgrade status");
 }
 

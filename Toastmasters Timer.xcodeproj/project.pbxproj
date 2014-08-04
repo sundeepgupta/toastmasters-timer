@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		277B2B1E198F288A005CDA54 /* TTUpgraderSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 277B2B1D198F288A005CDA54 /* TTUpgraderSpec.m */; };
 		892860AD74CE40D1A754749B /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 72DF7A9796AB4451856D0F01 /* libPods.a */; };
 		8D25208D1C4D4BC08429557D /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B1AE27F6A6D4FEC86180439 /* libPods.a */; };
 		9F5C02F20DAC41F19921AF8D /* libPods-Toastmasters Timer Tests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D922069EBAB54014839BEFB7 /* libPods-Toastmasters Timer Tests.a */; };
@@ -15,7 +16,6 @@
 		AE00966E195641040004DFDE /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = AE009668195641040004DFDE /* InfoPlist.strings */; };
 		AE00966F195641040004DFDE /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = AE00966A195641040004DFDE /* Localizable.strings */; };
 		AE009670195641040004DFDE /* Storyboard.strings in Resources */ = {isa = PBXBuildFile; fileRef = AE00966C195641040004DFDE /* Storyboard.strings */; };
-		AE022C0218FF3970000303A2 /* TTAnalyticsInterfaceSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = AE022C0118FF3970000303A2 /* TTAnalyticsInterfaceSpec.m */; };
 		AE022C0518FF399F000303A2 /* TTAnalyticsInterface.m in Sources */ = {isa = PBXBuildFile; fileRef = AE022C0418FF399F000303A2 /* TTAnalyticsInterface.m */; };
 		AE0648A518B924B0006902A4 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE06488C18B9243E006902A4 /* XCTest.framework */; };
 		AE0648A618B924B0006902A4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE06488E18B9243E006902A4 /* Foundation.framework */; };
@@ -73,13 +73,12 @@
 		AEAE24EF17CAB08300DA265B /* settings.png in Resources */ = {isa = PBXBuildFile; fileRef = AEAE24E917CAB08300DA265B /* settings.png */; };
 		AEAE24F017CAB08300DA265B /* settings@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AEAE24EA17CAB08300DA265B /* settings@2x.png */; };
 		AEB3E4FD18EE31BF00E6A5FA /* TTBaseVc.m in Sources */ = {isa = PBXBuildFile; fileRef = AEB3E4FC18EE31BF00E6A5FA /* TTBaseVc.m */; };
-		AEB3E50118EE34B000E6A5FA /* TTAppDelegateSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = AEB3E50018EE34B000E6A5FA /* TTAppDelegateSpec.m */; };
 		AEB3E50318EE380800E6A5FA /* TTBaseVcSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = AEB3E50218EE380800E6A5FA /* TTBaseVcSpec.m */; };
 		AEBAF2F517E7D9B000BA9479 /* info.png in Resources */ = {isa = PBXBuildFile; fileRef = AEBAF2F317E7D9B000BA9479 /* info.png */; };
 		AEBAF2F617E7D9B000BA9479 /* info@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AEBAF2F417E7D9B000BA9479 /* info@2x.png */; };
 		AEC4813F195BADF20007E46C /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEC4813E195BADF20007E46C /* CFNetwork.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		AECA2EED196072700071B6CE /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AECA2EEC196072700071B6CE /* StoreKit.framework */; };
-		AECA2EF0196073090071B6CE /* TTInAppPurchaser.m in Sources */ = {isa = PBXBuildFile; fileRef = AECA2EEF196073090071B6CE /* TTInAppPurchaser.m */; };
+		AECA2EF0196073090071B6CE /* TTUpgrader.m in Sources */ = {isa = PBXBuildFile; fileRef = AECA2EEF196073090071B6CE /* TTUpgrader.m */; };
 		AECC0AF41856B61400815DA2 /* SGSection.m in Sources */ = {isa = PBXBuildFile; fileRef = AECC0AF31856B61400815DA2 /* SGSection.m */; };
 		AECC0AF9185AA97500815DA2 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AECC0AF8185AA97500815DA2 /* Images.xcassets */; };
 		AEDA15A217BDB2F300AC9DBA /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEDA15A117BDB2F300AC9DBA /* AudioToolbox.framework */; };
@@ -105,6 +104,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		277B2B1D198F288A005CDA54 /* TTUpgraderSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TTUpgraderSpec.m; path = "Toastmasters Timer Tests/TTUpgraderSpec.m"; sourceTree = "<group>"; };
 		3B1AE27F6A6D4FEC86180439 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		72DF7A9796AB4451856D0F01 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		79E8424783BC43CA9202D5DD /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
@@ -116,7 +116,6 @@
 		AE009669195641040004DFDE /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = InfoPlist.strings; sourceTree = "<group>"; };
 		AE00966B195641040004DFDE /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = Localizable.strings; sourceTree = "<group>"; };
 		AE00966D195641040004DFDE /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = Storyboard.strings; sourceTree = "<group>"; };
-		AE022C0118FF3970000303A2 /* TTAnalyticsInterfaceSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TTAnalyticsInterfaceSpec.m; path = "Toastmasters Timer Tests/TTAnalyticsInterfaceSpec.m"; sourceTree = "<group>"; };
 		AE022C0318FF399F000303A2 /* TTAnalyticsInterface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTAnalyticsInterface.h; sourceTree = "<group>"; };
 		AE022C0418FF399F000303A2 /* TTAnalyticsInterface.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTAnalyticsInterface.m; sourceTree = "<group>"; };
 		AE06488418B91E0F006902A4 /* TTTimeEntryVCSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TTTimeEntryVCSpec.m; path = "Toastmasters Timer Tests/TTTimeEntryVCSpec.m"; sourceTree = "<group>"; };
@@ -197,14 +196,13 @@
 		AEB3E4EA18ECEDA400E6A5FA /* TTModalDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTModalDelegate.h; sourceTree = "<group>"; };
 		AEB3E4FB18EE31BF00E6A5FA /* TTBaseVc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTBaseVc.h; sourceTree = "<group>"; };
 		AEB3E4FC18EE31BF00E6A5FA /* TTBaseVc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTBaseVc.m; sourceTree = "<group>"; };
-		AEB3E50018EE34B000E6A5FA /* TTAppDelegateSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TTAppDelegateSpec.m; path = "Toastmasters Timer Tests/TTAppDelegateSpec.m"; sourceTree = "<group>"; };
 		AEB3E50218EE380800E6A5FA /* TTBaseVcSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TTBaseVcSpec.m; path = "Toastmasters Timer Tests/TTBaseVcSpec.m"; sourceTree = "<group>"; };
 		AEBAF2F317E7D9B000BA9479 /* info.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = info.png; sourceTree = "<group>"; };
 		AEBAF2F417E7D9B000BA9479 /* info@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "info@2x.png"; sourceTree = "<group>"; };
 		AEC4813E195BADF20007E46C /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		AECA2EEC196072700071B6CE /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
-		AECA2EEE196073090071B6CE /* TTInAppPurchaser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TTInAppPurchaser.h; path = "Toastmasters Timer/TTInAppPurchaser.h"; sourceTree = "<group>"; };
-		AECA2EEF196073090071B6CE /* TTInAppPurchaser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TTInAppPurchaser.m; path = "Toastmasters Timer/TTInAppPurchaser.m"; sourceTree = "<group>"; };
+		AECA2EEE196073090071B6CE /* TTUpgrader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TTUpgrader.h; path = "Toastmasters Timer/TTUpgrader.h"; sourceTree = "<group>"; };
+		AECA2EEF196073090071B6CE /* TTUpgrader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TTUpgrader.m; path = "Toastmasters Timer/TTUpgrader.m"; sourceTree = "<group>"; };
 		AECC0AF21856B61400815DA2 /* SGSection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGSection.h; sourceTree = "<group>"; };
 		AECC0AF31856B61400815DA2 /* SGSection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGSection.m; sourceTree = "<group>"; };
 		AECC0AF8185AA97500815DA2 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = ../Images.xcassets; sourceTree = "<group>"; };
@@ -307,8 +305,8 @@
 		AE06488318B91C65006902A4 /* App */ = {
 			isa = PBXGroup;
 			children = (
-				AECA2EEE196073090071B6CE /* TTInAppPurchaser.h */,
-				AECA2EEF196073090071B6CE /* TTInAppPurchaser.m */,
+				AECA2EEE196073090071B6CE /* TTUpgrader.h */,
+				AECA2EEF196073090071B6CE /* TTUpgrader.m */,
 				AE488FC917DD2A5B0090E139 /* Controllers */,
 				AE06488118B91ABF006902A4 /* Resources */,
 				AE7223B117BDAB66003B60A5 /* Supporting Files */,
@@ -537,8 +535,7 @@
 				AEE1D65018B9C773006FF6C2 /* TTTimerVCSpec.m */,
 				AE07586718BAB4570052784C /* TTInfoVCSpec.m */,
 				AE393C0A18DF427B0058AEC6 /* TTHelperSpec.m */,
-				AEB3E50018EE34B000E6A5FA /* TTAppDelegateSpec.m */,
-				AE022C0118FF3970000303A2 /* TTAnalyticsInterfaceSpec.m */,
+				277B2B1D198F288A005CDA54 /* TTUpgraderSpec.m */,
 			);
 			name = Specs;
 			sourceTree = "<group>";
@@ -782,11 +779,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				AE0648B618B92540006902A4 /* TTTimeEntryVCSpec.m in Sources */,
-				AE022C0218FF3970000303A2 /* TTAnalyticsInterfaceSpec.m in Sources */,
 				AEB3E50318EE380800E6A5FA /* TTBaseVcSpec.m in Sources */,
 				AEE1D65118B9C773006FF6C2 /* TTTimerVCSpec.m in Sources */,
 				AEE1D65418B9CC3B006FF6C2 /* TTSpecHelper.m in Sources */,
-				AEB3E50118EE34B000E6A5FA /* TTAppDelegateSpec.m in Sources */,
+				277B2B1E198F288A005CDA54 /* TTUpgraderSpec.m in Sources */,
 				AE393C0B18DF427B0058AEC6 /* TTHelperSpec.m in Sources */,
 				AE07586818BAB4570052784C /* TTInfoVCSpec.m in Sources */,
 			);
@@ -809,7 +805,7 @@
 				AE9F976E17BEA00600626448 /* TTHelper.m in Sources */,
 				AECC0AF41856B61400815DA2 /* SGSection.m in Sources */,
 				AEB3E4FD18EE31BF00E6A5FA /* TTBaseVc.m in Sources */,
-				AECA2EF0196073090071B6CE /* TTInAppPurchaser.m in Sources */,
+				AECA2EF0196073090071B6CE /* TTUpgrader.m in Sources */,
 				AE5208D317C17034002CFFD7 /* Toast+UIView.m in Sources */,
 				AE111FAE17D0036300254EF4 /* TTInfoVC.m in Sources */,
 			);

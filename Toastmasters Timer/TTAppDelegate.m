@@ -4,7 +4,7 @@
 #import "DDTTYLogger.h"
 #import "DDASLLogger.h"
 #import "TTAnalyticsInterface.h"
-#import "TTInAppPurchaser.h"
+#import "TTUpgrader.h"
 
 int ddLogLevel;
 
@@ -73,7 +73,7 @@ int ddLogLevel;
 }
 
 - (void)instantiateInAppPurchaser {
-    [TTInAppPurchaser sharedInstance];
+    [TTUpgrader sharedInstance];
 }
 
 - (void)setupCrashlytics {
