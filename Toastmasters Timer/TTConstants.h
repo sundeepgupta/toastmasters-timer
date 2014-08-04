@@ -81,6 +81,10 @@ static NSString *const GOOGLE_ANALYTICS_ACTION_CONTACT_DESIGNER = @"Contact Desi
 static NSString *const GOOGLE_ANALYTICS_ACTION_UPGRADE = @"Upgrade";
 static NSString *const GOOGLE_ANALYTICS_ACTION_SHARE = @"Share";
 
+static NSString *const GOOGLE_ANALYTICS_ACTION_UPGRADE_PURCHASED = @"Upgrade Purchased";
+static NSString *const GOOGLE_ANALYTICS_ACTION_UPGRADE_CANCELLED = @"Upgrade Cancelled";
+static NSString *const GOOGLE_ANALYTICS_ACTION_UPGRADE_FAILED = @"Upgrade Failed";
+
 static NSString *const GOOGLE_ANALYTICS_CATEGORY_TIME_ENTRY = @"Time Entry";
 static NSString *const GOOGLE_ANALYTICS_ACTION_RESET_COLOURS = @"Reset Colours";
 static NSString *const GOOGLE_ANALYTICS_ACTION_SAVE_COLOURS = @"Save Colours";

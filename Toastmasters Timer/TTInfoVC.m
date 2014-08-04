@@ -70,14 +70,17 @@
     [[TTUpgrader sharedInstance] purchaseProductWithIdentifier:REMOVE_ADS_PRODUCT_ID success:^{
         [self setupUpgradeButton];
         [self stopSpinner];
+        [TTAnalyticsInterface sendCategory:GOOGLE_ANALYTICS_CATEGORY_INFO action:GOOGLE_ANALYTICS_ACTION_UPGRADE_PURCHASED];
     } cancel:^{
         [self stopSpinner];
+        [TTAnalyticsInterface sendCategory:GOOGLE_ANALYTICS_CATEGORY_INFO action:GOOGLE_ANALYTICS_ACTION_UPGRADE_CANCELLED];
     } failure:^(NSError *error) {
         //Do we even need this? OS may provide a good message.
         NSString *message = [NSString stringWithFormat:NSLocalizedString(@"In app purchase failure", @"The message shown when trying to upgrade the app via in app purchase, but there was a failure somewhere."), error.localizedDescription];
         [TTHelper showAlertWithTitle:STRING_ERROR_TTITLE_GENERAL withMessage:message];
         DDLogError(@"In app purchase failed with error: %@\n%s", error.localizedDescription, __PRETTY_FUNCTION__);
         [self stopSpinner];
+        [TTAnalyticsInterface sendCategory:GOOGLE_ANALYTICS_CATEGORY_INFO action:GOOGLE_ANALYTICS_ACTION_UPGRADE_FAILED];
     }];
 }
 
