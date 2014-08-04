@@ -41,6 +41,8 @@
     DDLogVerbose(@"Requested products available for in-app purchases");
 }
 
+
+
 #pragma mark - SKProductsRequestDelegate
 - (void)productsRequest:(SKProductsRequest *)request didReceiveResponse:(SKProductsResponse *)response {
     NSArray *products = response.products;
@@ -65,11 +67,14 @@
 }
 
 
+
 #pragma mark - Purchase Product
 - (void)purchaseProduct:(SKProduct *)product {
     SKPayment *payment = [SKPayment paymentWithProduct:product];
     [[SKPaymentQueue defaultQueue] addPayment:payment];
 }
+
+
 
 #pragma mark - SKPaymentTransactionObserver
 - (void)paymentQueue:(SKPaymentQueue *)queue updatedTransactions:(NSArray *)transactions {
@@ -87,7 +92,6 @@
             default:
                 break;
         }
-        
     }
 }
 
@@ -106,6 +110,7 @@
     }
     [[SKPaymentQueue defaultQueue] finishTransaction:transaction];
 }
+
 
 
 #pragma mark - Upgrading

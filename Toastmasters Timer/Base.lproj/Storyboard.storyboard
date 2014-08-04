@@ -110,10 +110,10 @@
                                     <action selector="infoButtonPress:" destination="MHZ-8T-RmM" eventType="touchUpInside" id="icJ-W1-chD"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fh2-Iz-h9V" userLabel="spacer 1">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fh2-Iz-h9V" userLabel="spacer 1">
                                 <rect key="frame" x="20" y="225" width="280" height="22"/>
                             </view>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ioh-FI-OgF" userLabel="timer label">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ioh-FI-OgF" userLabel="timer label">
                                 <rect key="frame" x="20" y="247" width="280" height="78"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="78" id="tkF-Da-1lT"/>
@@ -122,7 +122,7 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8g7-Ed-e74" userLabel="spacer 2">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8g7-Ed-e74" userLabel="spacer 2">
                                 <rect key="frame" x="20" y="325" width="280" height="28"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ROd-OP-V04" userLabel="timer controls view">
@@ -305,7 +305,7 @@
                                     <constraint firstAttribute="centerX" secondItem="rrW-J8-M7H" secondAttribute="centerX" id="Kfz-oz-jPH"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="toD-yk-PvK" userLabel="spacer 2"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="toD-yk-PvK" userLabel="spacer 2"/>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U6Q-az-m9l" userLabel="timer label">
                                 <rect key="frame" x="20" y="438" width="50" height="22"/>
                                 <constraints>
@@ -334,20 +334,20 @@
                         <constraints>
                             <constraint firstItem="ZZH-fO-ZnC" firstAttribute="top" secondItem="U6Q-az-m9l" secondAttribute="bottom" constant="20" id="0Wo-Kj-b55"/>
                             <constraint firstItem="U6Q-az-m9l" firstAttribute="leading" secondItem="9Fw-4P-LEf" secondAttribute="leading" constant="20" id="2UT-tU-VF8"/>
-                            <constraint firstItem="ZZH-fO-ZnC" firstAttribute="top" secondItem="toD-yk-PvK" secondAttribute="bottom" constant="20" id="2mm-sl-aNE"/>
+                            <constraint firstItem="ZZH-fO-ZnC" firstAttribute="top" secondItem="toD-yk-PvK" secondAttribute="bottom" constant="480" id="2mm-sl-aNE"/>
                             <constraint firstItem="3JZ-es-6bI" firstAttribute="top" secondItem="4Sj-yU-dEL" secondAttribute="bottom" constant="20" id="ELW-x0-JcP"/>
                             <constraint firstAttribute="centerX" secondItem="EPW-ih-eam" secondAttribute="centerX" id="EUP-p5-e8O"/>
                             <constraint firstAttribute="trailing" secondItem="ffR-7o-vMb" secondAttribute="trailing" constant="20" id="Gmz-ji-fXt"/>
                             <constraint firstAttribute="centerX" secondItem="IZy-is-lCp" secondAttribute="centerX" id="GxD-pP-kef"/>
-                            <constraint firstItem="toD-yk-PvK" firstAttribute="leading" secondItem="9Fw-4P-LEf" secondAttribute="leading" constant="20" id="JTE-i0-NxA"/>
+                            <constraint firstItem="toD-yk-PvK" firstAttribute="leading" secondItem="9Fw-4P-LEf" secondAttribute="leading" id="JTE-i0-NxA"/>
                             <constraint firstAttribute="trailing" secondItem="C7L-au-Kzc" secondAttribute="trailing" constant="20" id="K42-YY-xe9"/>
                             <constraint firstItem="EPW-ih-eam" firstAttribute="top" secondItem="ffR-7o-vMb" secondAttribute="bottom" id="QaL-h1-hSU"/>
                             <constraint firstItem="ffR-7o-vMb" firstAttribute="leading" secondItem="9Fw-4P-LEf" secondAttribute="leading" constant="20" id="STQ-IK-7g1"/>
                             <constraint firstItem="ZZH-fO-ZnC" firstAttribute="top" secondItem="C7L-au-Kzc" secondAttribute="bottom" constant="14" id="eCP-Xk-PbB"/>
-                            <constraint firstAttribute="trailing" secondItem="toD-yk-PvK" secondAttribute="trailing" constant="20" id="eFf-LK-plu"/>
+                            <constraint firstAttribute="trailing" secondItem="toD-yk-PvK" secondAttribute="trailing" constant="320" id="eFf-LK-plu"/>
                             <constraint firstItem="ffR-7o-vMb" firstAttribute="height" secondItem="toD-yk-PvK" secondAttribute="height" constant="1" id="i69-fl-HSn"/>
                             <constraint firstItem="IZy-is-lCp" firstAttribute="top" secondItem="4Sj-yU-dEL" secondAttribute="bottom" constant="20" id="kSl-Kn-xwJ"/>
-                            <constraint firstItem="toD-yk-PvK" firstAttribute="top" secondItem="EPW-ih-eam" secondAttribute="bottom" constant="-4" id="qnv-lZ-SYE"/>
+                            <constraint firstItem="toD-yk-PvK" firstAttribute="top" secondItem="EPW-ih-eam" secondAttribute="bottom" constant="-464" id="qnv-lZ-SYE"/>
                             <constraint firstItem="3JZ-es-6bI" firstAttribute="leading" secondItem="9Fw-4P-LEf" secondAttribute="leading" constant="20" id="sfo-FX-xUp"/>
                             <constraint firstItem="ffR-7o-vMb" firstAttribute="top" secondItem="IZy-is-lCp" secondAttribute="bottom" constant="8" id="umR-Lg-iuH"/>
                         </constraints>

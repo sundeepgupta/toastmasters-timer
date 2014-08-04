@@ -11,3 +11,4 @@
 "default error title" = "Oops!";
 "can't sent email message" = "Your device isn't setup to send email.";
 "can't open link message" = "Your device can't open the link.";
+"In app purchase failure" = "An error occured while upgrading: %@";

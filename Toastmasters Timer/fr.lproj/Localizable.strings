@@ -11,3 +11,4 @@
 "default error title" = "Houp-là!";
 "can't sent email message" = "Votre appareil n'est pas configuré pour envoyer email.";
 "can't open link message" = "Votre appareil ne peut pas ouvrir le lien.";
+"In app purchase failure" = "Une erreur s'est produite lors de la mise à niveau: %@";

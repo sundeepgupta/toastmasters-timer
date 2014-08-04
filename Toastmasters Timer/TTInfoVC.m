@@ -73,8 +73,10 @@
         //stop spinner
         
     } failure:^(NSError *error) {
-        NSString *message = [NSString stringWithFormat:@"In app purchased failed with error: %@", error.localizedDescription];
-        [TTHelper showAlertWithTitle:@"Error" withMessage:message];
+        //Do we even need this? OS may provide a good message.
+        NSString *message = [NSString stringWithFormat:NSLocalizedString(@"In app purchase failure", @"The message shown when trying to upgrade the app via in app purchase, but there was a failure somewhere."), error.localizedDescription];
+        [TTHelper showAlertWithTitle:STRING_ERROR_TTITLE_GENERAL withMessage:message];
+        
         DDLogError(@"In app purchase failed with error: %@\n%s", error.localizedDescription, __PRETTY_FUNCTION__);
     }];
 }
