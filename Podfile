@@ -17,5 +17,5 @@ pod 'CrashlyticsFramework'
 
 #Kiwi
 target :"Toastmasters Timer Tests", :exclusive => true do
-    pod "Kiwi/XCTest"
+    pod 'Kiwi'
 end
