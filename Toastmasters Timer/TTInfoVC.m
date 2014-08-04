@@ -40,8 +40,7 @@
 }
 
 - (void)setupUpgradeButton {
-    BOOL upgraded = [[NSUserDefaults standardUserDefaults] boolForKey:UPGRADED];
-    if (upgraded) {
+    if ([TTHelper upgraded]) {
         [self disableUpgradeButton];
     }
 }
@@ -69,7 +68,7 @@
 
 - (void)purchaseUpgrade {
     [[TTInAppPurchaser sharedInstance] purchaseProductWithIdentifier:REMOVE_ADS_PRODUCT_ID success:^{
-        [self disableUpgradeButton];
+        [self setupUpgradeButton];
         
         //stop spinner
         

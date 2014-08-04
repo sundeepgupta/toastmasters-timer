@@ -53,6 +53,7 @@
 #pragma mark - Universal Helpers
 + (void)updateTitle:(NSString *)title forButton:(UIButton *)button;
 + (BOOL)isFirstLaunch;
++ (BOOL)upgraded;
 
 
 #pragma mark - Analytics

@@ -155,7 +155,6 @@
     [UIView setAnimationsEnabled:YES];
 }
 
-
 + (BOOL)isFirstLaunch {
     BOOL isFirstLaunch;
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
@@ -167,6 +166,11 @@
     }
     return isFirstLaunch;
 }
+
++ (BOOL)upgraded {
+    return [[NSUserDefaults standardUserDefaults] boolForKey:UPGRADED];
+}
+
 
 
 #pragma mark - Colour button names
